@@ -1,4 +1,6 @@
 {
   "name": "stonelinks",
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "~3.0.0"
+  }
 }
