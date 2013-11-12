@@ -1,14 +1,11 @@
 # Dependencies
-markdown:         rdiscount
-pygments:         true
+markdown: rdiscount
+pygments: true
 
 # Permalinks
-permalink:        none
+permalink: none
 
 # Server
-destination:      ./_site
-exclude:          [".editorconfig", ".gitignore", "bower.json", "CNAME", "Gruntfile.js", "package.json", "node_modules", "README.md"]
-port:             9001
-
-# Custom vars
-current_version:    0.0.0
+destination: ./_site
+exclude: [".editorconfig", ".gitignore", "bower.json", "CNAME", "Gruntfile.js", "package.json", "node_modules", "README.md", "vagrant", ".vagrant"]
+port: 9001

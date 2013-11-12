@@ -1,71 +1,82 @@
+module.exports = function(grunt) {
 'use strict';
 
-module.exports = function(grunt) {
+  // load all grunt tasks
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-    // load all grunt tasks
-    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+  grunt.initConfig({
 
-    grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
 
-        pkg: grunt.file.readJSON('package.json'),
+    jekyll: {
+      website: {}
+    },
 
-        jekyll: {
-            website: {}
-        },
+    exec: {
+      options: {
+        cwd: __dirname
+      },
 
-        watch: {
+      fixjsstyle: {
+        command: 'fixjsstyle *.js',
+        stdout: true
+      }
+    },
 
-            options: {
-                livereload: 12345
-            },
+    watch: {
 
-            // build the website if anything changes
-            website: {
-                files: [
-                    '_config.yml',
-                    'assets/**/*',
-                    '_includes/**/*.html',
-                    '_layouts/**/*.html',
-                    'examples/**/*',
-                    'bower_components/**/*',
-                    '*.html'
-                ],
-                tasks: ['jekyll']
-            }
-        },
+      options: {
+        livereload: 12345
+      },
 
-        // testing server
-        connect: {
+      // build the website if anything changes
+      website: {
+        files: [
+          '_config.yml',
+          '_includes/**/*.html',
+          '_layouts/**/*.html',
+          'examples/**/*',
+          'bower_components/**/*',
+          '*.html'
+        ],
+        tasks: ['jekyll']
+      }
+    },
 
-            options: {
-                hostname: '*',
-                port: 1234,
-                livereload: 12345,
-                base: '_site'
-            },
+    // testing server
+    connect: {
 
-            testserver: {}
-        }
+      options: {
+        hostname: '*',
+        port: 1234,
+        livereload: 12345,
+        base: '_site'
+      },
 
-    });
+      testserver: {}
+    }
+  });
 
-    grunt.registerTask('website', function() {
+  grunt.registerTask('website', function() {
 
-        grunt.task.run([
-            'jekyll',
-            'connect',
-            'watch'
-        ]);
-    });
+    grunt.task.run([
+      'jekyll',
+      'connect',
+      'watch'
+    ]);
+  });
 
-    grunt.registerTask('build', function(target) {
+  grunt.registerTask('default', function() {
 
-    grunt.registerTask('default', function() {
+    grunt.option('force', true);
 
-        grunt.option('force', true);
+    grunt.task.run([
+      'website'
+    ]);
+  });
 
-        grunt.task.run([
-            'website'
-        ]);
-    });
+  // gaze, to be used along with server
+  grunt.registerTask('lint', [
+    'exec:fixjsstyle'
+  ]);
 };
