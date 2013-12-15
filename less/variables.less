@@ -23,6 +23,7 @@
 @brand-warning:         #EFB73E;
 @brand-danger:          #DF382C;
 @brand-info:            #772953;
+//@brand-info:            #56433A;
 
 // Scaffolding
 // -------------------------
@@ -39,10 +40,10 @@
 // Typography
 // -------------------------
 
-//@font-family-sans-serif:  "Ubuntu", Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
-//@font-family-serif:       Georgia, "Times New Roman", Times, serif;
-//@font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
-//@font-family-base:        @font-family-sans-serif;
+@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-base:        @font-family-sans-serif;
 
 @font-size-base:          14px;
 @font-size-large:         ceil(@font-size-base * 1.25); // ~18px
@@ -58,7 +59,7 @@
 @line-height-base:        1.428571429; // 20/14
 @line-height-computed:    floor(@font-size-base * @line-height-base); // ~20px
 
-//@headings-font-family:    @font-family-base;
+@headings-font-family:    @font-family-base;
 @headings-font-weight:    500;
 @headings-line-height:    1.1;
 @headings-color:          inherit;
@@ -288,8 +289,7 @@
 //
 // Reset inverted navbar basics
 @navbar-inverse-color:                      #fff;
-//@navbar-inverse-bg:                         @brand-info;
-@navbar-inverse-bg:                         #3B3B3B;
+@navbar-inverse-bg:                         @brand-info;
 @navbar-inverse-border:                     darken(@navbar-inverse-bg, 10%);
 
 // Inverted navbar links
