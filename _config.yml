@@ -1,11 +1,10 @@
-# Dependencies
-markdown: rdiscount
+# dependencies
+markdown: redcarpet
 pygments: true
 
-# Permalinks
+# permalinks
 permalink: none
 
-# Server
-destination: ./_site
-exclude: [".editorconfig", ".gitignore", "bower.json", "CNAME", "Gruntfile.js", "package.json", "node_modules", "README.md", "vagrant", ".vagrant"]
-port: 9001
+# server
+destination: _site
+exclude: ["_site", ".gitignore", ".htaccess", "bower.json", "CNAME", "Gruntfile.js", "package.json", "node_modules", "README.md", "vagrant", ".vagrant", "old", "src"]

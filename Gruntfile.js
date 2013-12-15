@@ -12,16 +12,55 @@ module.exports = function(grunt) {
       website: {}
     },
 
-    exec: {
+    rsync: {
+
       options: {
-        cwd: __dirname
+        recursive: true
       },
 
-      fixjsstyle: {
-        command: 'fixjsstyle *.js',
-        stdout: true
+      assets: {
+        options: {
+          src: [
+            'img',
+            'css',
+            'js'
+          ],
+          dest: '_site'
+        }
+      },
+
+      bower_components: {
+        options: {
+          src: [
+            'bower_components'
+          ],
+          dest: '_site'
+        }
+      },
+
+      deploy: {
+        options: {
+          src: ['_site'],
+          dest: '/var/www/www/mujin.co.jp',
+          host: 'www-data@mujin.co.jp',
+          syncDest: true
+        }
       }
     },
+
+    less: {
+
+      production: {
+        options: {
+          yuicompress: true
+        },
+        files: {
+          'css/bootstrap.min.css': 'less/bootstrap.less'
+        }
+      }
+    },
+
+    clean: ['_site'],
 
     watch: {
 
@@ -32,14 +71,38 @@ module.exports = function(grunt) {
       // build the website if anything changes
       website: {
         files: [
-          '_config.yml',
-          '_includes/**/*.html',
-          '_layouts/**/*.html',
-          'examples/**/*',
-          'bower_components/**/*',
-          '*.html'
+          '**/*.yml',
+          '**/*.md',
+          '**/*.html',
+
+          // exclude a bunch of crap that should not be watched
+          '!**/.git/**',
+          '!**/node_modules/**',
+          '!**/bower_components/**',
+          '!**/_site/**'
         ],
         tasks: ['jekyll']
+      },
+
+      assets: {
+        files: [
+          'img/**/*',
+          'js/**/*',
+          'css/**/*'
+        ],
+        tasks: ['rsync:assets']
+      },
+
+      less: {
+        files: ['less/**/*'],
+        tasks: ['less']
+      },
+
+      bower_components: {
+        files: [
+          'bower_components/**/*',
+        ],
+        tasks: ['rsync:bower_components']
       }
     },
 
@@ -60,8 +123,17 @@ module.exports = function(grunt) {
   grunt.registerTask('website', function() {
 
     grunt.task.run([
-      'jekyll',
+      'clean',
+      'less',
+      'jekyll'
+    ]);
+  });
+
+  grunt.registerTask('gaze', function() {
+
+    grunt.task.run([
       'connect',
+      'website',
       'watch'
     ]);
   });
@@ -72,6 +144,14 @@ module.exports = function(grunt) {
 
     grunt.task.run([
       'website'
+    ]);
+  });
+
+  grunt.registerTask('deploy', function() {
+
+    grunt.task.run([
+      'website',
+      'rsync:deploy'
     ]);
   });
 
