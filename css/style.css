@@ -265,16 +265,26 @@ footer {
   font-weight: 600;
 }
 
+
 .carousel-caption > h1 {
-  -webkit-box-shadow:  0px 0px 10px 10px rgba(0, 0, 0, .6);
-  box-shadow:  0px 0px 10px 10px rgba(0, 0, 0, .6);
+  -webkit-box-shadow:  0px 0px 10px 10px rgba(0, 0, 0, .4);
+  box-shadow:  0px 0px 10px 10px rgba(0, 0, 0, .4);
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, .6);
+  background-color: rgba(0, 0, 0, .4);
   padding-top: 3px;
   padding-bottom: 3px;
+}
+
+.carousel-inner .item .fill {
+  opacity: .4;
 }
 
 #nav-sidebar .affix {
   width: 262.5px;
   position: fixed;
+}
+
+.carousel-caption small,
+.navbar-brand small {
+  color: #FFFFFF;
 }
