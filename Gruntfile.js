@@ -3,6 +3,8 @@ module.exports = function(grunt) {
 
   // load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+  
+  var SITE_DIR = '_site'
 
   grunt.initConfig({
 
@@ -25,7 +27,7 @@ module.exports = function(grunt) {
             'css',
             'js'
           ],
-          dest: '_site'
+          dest: SITE_DIR
         }
       },
 
@@ -34,13 +36,13 @@ module.exports = function(grunt) {
           src: [
             'bower_components'
           ],
-          dest: '_site'
+          dest: SITE_DIR
         }
       },
 
       deploy: {
         options: {
-          src: ['_site'],
+          src: [SITE_DIR],
           dest: '/var/www/www/mujin.co.jp',
           host: 'www-data@mujin.co.jp',
           syncDest: true
@@ -50,17 +52,23 @@ module.exports = function(grunt) {
 
     less: {
 
+      dev: {
+        files: {
+          'css/main.css': 'less/main.less'
+        }
+      },
+
       production: {
         options: {
-          yuicompress: true
+          cleancss: true
         },
         files: {
-          'css/bootstrap.min.css': 'less/bootstrap.less'
+          'css/main.min.css': 'less/main.less'
         }
       }
     },
 
-    clean: ['_site'],
+    clean: [SITE_DIR],
 
     watch: {
 
@@ -79,7 +87,7 @@ module.exports = function(grunt) {
           '!**/.git/**',
           '!**/node_modules/**',
           '!**/bower_components/**',
-          '!**/_site/**'
+          '!**/' + SITE_DIR + '/**'
         ],
         tasks: ['jekyll']
       },
@@ -113,7 +121,7 @@ module.exports = function(grunt) {
         hostname: '*',
         port: 1234,
         livereload: 12345,
-        base: '_site'
+        base: SITE_DIR
       },
 
       testserver: {}
