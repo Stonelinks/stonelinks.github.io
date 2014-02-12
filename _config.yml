@@ -8,3 +8,12 @@ permalink: none
 # server
 destination: _site
 exclude: ["_site", ".gitignore", ".htaccess", "bower.json", "CNAME", "Gruntfile.js", "package.json", "node_modules", "README.md", "vagrant", ".vagrant", "old", "src"]
+
+
+# social links
+facebook: 'https://www.facebook.com/stonelinks'
+github: 'https://github.com/Stonelinks'
+twitter: 'https://twitter.com/#!/Stonelinks'
+googleplus: 'https://plus.google.com/116178490514652721625/posts'
+linkedin: 'http://www.linkedin.com/pub/lucas-doyle/25/550/169'
+youtube: 'http://www.youtube.com/user/RealStonelinks'

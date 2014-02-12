@@ -24,72 +24,13 @@ base_url: "./"
 
 {% include main-slider.html %}
 
-<div class="section-colored">
-
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-lg-6 col-md-6 col-sm-6">
-        <h3>Stonelinks Controller</h3>
-        <p class="lead">Our platform for programming and optimizing industrial robots.</p>
-        <div class="text-center">
-          <a href="{{ page.base_url }}videos.html#controller">
-            <img style="width: 90%; height: auto;" src="{{ page.base_url }}img/video_thumbs/controller_demo.png"/>
-          </a>
-        </div>
-      </div>
-
-      <div class="col-lg-6 col-md-6 col-sm-6">
-        <h3>Stonelinks Scanner</h3>
-        <p class="lead">Save time by modeling simple parts and complex environments.</p>
-        <div class="text-center">
-          <a href="{{ page.base_url }}videos.html#scanner">
-            <img style="width: 90%; height: auto;" src="{{ page.base_url }}img/video_thumbs/quickscan_demo.png"/>
-          </a>
-        </div>
-      </div>
-
-    </div>
-    <div class="row">
-
-      <div class="col-lg-6 col-md-6 col-sm-6">
-        <h3>Fast Liquid Handling</h3>
-<!--
-        <p class="lead">Demonstration of Stonelinks's powerful planning pipeline.</p>
--->
-        <div class="text-center">
-          <a href="{{ page.base_url }}videos.html#fluid">
-            <img style="width: 90%; height: auto;" src="{{ page.base_url }}img/video_thumbs/liquid_fast_handling_demo.png"/>
-          </a>
-        </div>
-      </div>
-
-      <div class="col-lg-6 col-md-6 col-sm-6">
-        <h3>Bin Picking Demonstration</h3>
-<!--
-        <p class="lead">Save time by modeling simple parts and complex environments.</p>
--->
-        <div class="text-center">
-          <a href="{{ page.base_url }}videos.html#pick-worker">
-            <img style="width: 90%; height: auto;" src="{{ page.base_url }}img/video_thumbs/pickworker_demo.png"/>
-          </a>
-        </div>
-      </div>
-
-    </div><!-- /.row -->
-
-  </div><!-- /.container -->
-
-</div><!-- /.section -->
-
 <div class="section">
 
   <div class="container">
 
     <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-6">
-        <h1>Latest News</h1>
+      <div class="col-lg-8 col-md-8 col-sm-8">
+        <h1>Latest posts</h1>
         <ul>
 
           {% for post in site.posts limit:5 %}
@@ -101,11 +42,10 @@ base_url: "./"
 
         </ul>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-6">
-        <a href="{{ page.base_url }}products/controller.html" class="btn btn-default btn-lg btn-block">Stonelinks Controller &raquo;</a>
-        <a href="{{ page.base_url }}" class="btn btn-default btn-lg btn-block">Stonelinks Scanner &raquo;</a>
-        <a href="{{ page.base_url }}" class="btn btn-default btn-lg btn-block">Engineering Services &raquo;</a>
-        <a href="{{ page.base_url }}" class="btn btn-default btn-lg btn-block">Our Technology &raquo;</a>
+      <div class="col-lg-4 col-md-4 col-sm-4x`">
+        <a href="{{ page.base_url }}blog/controller.html" class="btn btn-default btn-lg btn-block">Projects &raquo;</a>
+        <a href="{{ page.base_url }}" class="btn btn-default btn-lg btn-block">Blog &raquo;</a>
+        <a href="{{ page.base_url }}" class="btn btn-default btn-lg btn-block">About Luke &raquo;</a>
       </div>
     </div><!-- /.row -->
 
