@@ -1,5 +1,3 @@
-{{disable comments}}
-{{disable sidebar}}
 
 <style type="text/css">
 

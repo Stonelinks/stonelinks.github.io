@@ -3,7 +3,7 @@
 
 When you fire up the simulator for the first time, you should see something like what is shown below.
 
-<img src="{{wr}}static/img/stoolbotics/1.png">
+<img src="{{ page.base_url }}img/stoolbotics/1.png">
 
 <br>
 
@@ -50,32 +50,31 @@ All these variables can be changed once the simulator has started using the <cod
 
 <br>
 
-<img src="{{wr}}static/img/stoolbotics/3.png">
+<img src="{{ page.base_url }}img/stoolbotics/3.png">
 
 In the above case, we looked at the help for the <code>axis</code> command. Let&#8217;s see what it actually does:
 
 <br>
 
-<img src="{{wr}}static/img/stoolbotics/4.png">
+<img src="{{ page.base_url }}img/stoolbotics/4.png">
 
 It is clear then that the axis command can be used to turn on and off the the axis for each intermediary joint coordinate frame. There are many other commands that can be used to manipulate the cosmetics of the simulation environment. These are all covered later in an example section on manipulating the environment. For now though, let&#8217;s check out another command, the <code>play</code> command. A simulator is pretty useless unless it can actually simulate things. The <code>play</code> command starts the simulation:
 
 <br>
 
-<img src="{{wr}}static/img/stoolbotics/5.png">
+<img src="{{ page.base_url }}img/stoolbotics/5.png">
 
 To stop the simulator, just type <code>stop</code>. All the variables we set earlier are still modifiable during the runtime. To set these, we use the <code>set</code> command. For example, let&#8217;s set q3 to cos(t) by typing <code>set q3 cos(t)</code> into the command prompt:
 
 <br>
 
-<img src="{{wr}}static/img/stoolbotics/6.png">
+<img src="{{ page.base_url }}img/stoolbotics/6.png">
 
 Though you can't see it in a static picture, that joint is now moving pretty fast. Let&#8217;s use the <code>set</code> command again to slow it down. Type <code>set tscale .05</code> command and notice that it now goes slower. The value of an appropriate timescale may vary depending on how fast your computer is. <code>skew</code> mode can be enabled to rapidly adjust timescale as well as other parameters. For now though, just use <code>set</code>: 
 
 <br>
 
-<img src="{{wr}}static/img/stoolbotics/7.png">
+<img src="{{ page.base_url }}img/stoolbotics/7.png">
 
-This concludes the quickstart. To do more advanced things like play, record, manipulate the environment, drive the simulator from matlab, etc., check out the [usage]({{wr}}projects/stoolbotics/use.html) section!
+This concludes the quickstart. To do more advanced things like play, record, manipulate the environment, drive the simulator from matlab, etc., check out the [usage]({{ page.base_url }}projects/stoolbotics/use.html) section!
 
-{{disable comments}}

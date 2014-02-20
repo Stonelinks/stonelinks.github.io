@@ -10,7 +10,7 @@ Here is where I showcase and document the various projects and work that I spend
 <div class="row-fluid">
   <div class="span5 projectitem">
       <a href="wingbox.html">
-        <center><img class="thumbnail" width="70%" src="{{wr}}static/img/wingbox/screenshot.png"></center>
+        <center><img class="thumbnail" width="70%" src="{{ page.base_url }}img/wingbox/screenshot.png"></center>
       </a>
       <br>
       <a href="wingbox.html"><h2>Boeing Robotic Wingbox</h2></a>
@@ -19,7 +19,7 @@ Here is where I showcase and document the various projects and work that I spend
   </div>
   <div class="span5 projectitem">
       <a href="anybots.html">
-        <center><img class="thumbnail" width="70%" src="{{wr}}static/img/anybots/qb_tn.jpg"></center>
+        <center><img class="thumbnail" width="70%" src="{{ page.base_url }}img/anybots/qb_tn.jpg"></center>
       </a>
       <br>
       <a href="anybots.html"><h2>Super_robert and Anystats</h2></a>
@@ -30,7 +30,7 @@ Here is where I showcase and document the various projects and work that I spend
 <div class="row-fluid">
   <div class="span5 projectitem">
       <a href="stoolbotics/index.html">
-        <center><img class="thumbnail" width="80%" src="{{wr}}static/img/stoolbotics.png"></center>
+        <center><img class="thumbnail" width="80%" src="{{ page.base_url }}img/stoolbotics.png"></center>
       </a>
       <br>
       <a href="stoolbotics/index.html"><h2>Stoolbotics</h2></a>
@@ -39,7 +39,7 @@ Here is where I showcase and document the various projects and work that I spend
   </div>
   <div class="span5 projectitem">
       <a href="DaBuzz/index.html">
-        <center><img class="thumbnail" width="70%" src="{{wr}}static/img/stupid.png"></center>
+        <center><img class="thumbnail" width="70%" src="{{ page.base_url }}img/stupid.png"></center>
       </a>
       <br>
       <a href="DaBuzz/index.html"><h2>DaBuzz</h2></a>
@@ -50,7 +50,7 @@ Here is where I showcase and document the various projects and work that I spend
 <div class="row-fluid">
   <div class="span5 projectitem">
       <a href="harvard.html">
-        <center><img class="thumbnail" width="80%" src="{{wr}}static/img/chamber.png"></center>
+        <center><img class="thumbnail" width="80%" src="{{ page.base_url }}img/chamber.png"></center>
       </a>
       <br>
       <a href="harvard.html"><h2>Automated Multilayer Fabrication</h2></a>
@@ -59,7 +59,7 @@ Here is where I showcase and document the various projects and work that I spend
   </div>
   <div class="span5 projectitem">
       <a href="abs.html">
-        <center><img class="thumbnail" src="{{wr}}static/img/ABSlogo.png"></center>
+        <center><img class="thumbnail" src="{{ page.base_url }}img/ABSlogo.png"></center>
       </a>
       <br>
       <a href="abs.html"><h2>Awesome Backup System</h2></a>
@@ -70,7 +70,7 @@ Here is where I showcase and document the various projects and work that I spend
 <div class="row-fluid">
   <div class="span5 projectitem">
       <a href="stonelinks.html">
-        <center><img class="thumbnail" width="90%" src="{{wr}}static/img/logo-big.png"></center>
+        <center><img class="thumbnail" width="90%" src="{{ page.base_url }}img/logo-big.png"></center>
       </a>
       <br>
       <a href="stonelinks.html"><h2>Stonelinks Web Framework</h2></a>
@@ -79,7 +79,7 @@ Here is where I showcase and document the various projects and work that I spend
   </div>
   <div class="span5 projectitem">
       <a href="robots-general.html">
-        <center><img class="thumbnail" width="90%" src="{{wr}}static/img/ied-robot.jpg"></center>
+        <center><img class="thumbnail" width="90%" src="{{ page.base_url }}img/ied-robot.jpg"></center>
       </a>
       <br>
       <a href="robots-general.html"><h2>Robots</h2></a>
@@ -90,7 +90,7 @@ Here is where I showcase and document the various projects and work that I spend
 <div class="row-fluid">
   <div class="span5 projectitem">
       <a href="battlebot.html">
-        <center><img class="thumbnail" width="90%" src="{{wr}}static/img/galleries/battlebot/4.jpg">
+        <center><img class="thumbnail" width="90%" src="{{ page.base_url }}img/galleries/battlebot/4.jpg">
       </a>
       <br>
       <a href="battlebot.html"><h2>Battlebots</h2></a>
@@ -99,7 +99,7 @@ Here is where I showcase and document the various projects and work that I spend
   </div>
   <div class="span5 projectitem">
       <a href="mindshare/index.html">
-        <center><img class="thumbnail" width="90%" src="{{wr}}static/img/corgi.jpg"></center>
+        <center><img class="thumbnail" width="90%" src="{{ page.base_url }}img/corgi.jpg"></center>
       </a>
       <br>
       <a href="mindshare/index.html"><h2>Mindshare</h2></a>
@@ -112,7 +112,7 @@ Here is where I showcase and document the various projects and work that I spend
 <div class="row-fluid">
   <div class="span5 projectitem">
       <a href="FIRST.html">
-        <center><img class="thumbnail" width="90%" src="{{wr}}static/img/FIRST.jpg">
+        <center><img class="thumbnail" width="90%" src="{{ page.base_url }}img/FIRST.jpg">
       </a>
       <br>
       <a href="FIRST.html"><h2>FIRST Robotics</h2></a>
@@ -121,5 +121,3 @@ Here is where I showcase and document the various projects and work that I spend
   </div>
 </div>
 
-{{disable comments}}
-{{disable sidebar}}

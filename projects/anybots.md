@@ -1,7 +1,7 @@
 #Anybots
 
 <center>
-<img src="{{wr}}static/img/anybots/qb.jpg" class="thumbnail" width="26%">
+<img src="{{ page.base_url }}img/anybots/qb.jpg" class="thumbnail" width="26%">
 
 Anybots QB
 
@@ -22,7 +22,7 @@ During my short time at Anybots, I noticed a severe lack of infrastructure for m
 <br>
 
 <center>
-<img src="{{wr}}static/img/anybots/montydexter.jpg" class="thumbnail" width="84%">
+<img src="{{ page.base_url }}img/anybots/montydexter.jpg" class="thumbnail" width="84%">
 
 Anybots research robots Monty (left) and Dexter (right)
 
@@ -57,4 +57,3 @@ Some highlights of the system are:
 
 Working with the actual codebase for the robot was tough because it was very large, several years old and I only had a few months there. However, I did developed some UI features for the touchscreen on the forehead of the robot, including a "dashboard" to display internal robot device health and connectivity. I also wrote call screen to allow users to answer or deny calls made to their robot.
 
-{{disable comments}}

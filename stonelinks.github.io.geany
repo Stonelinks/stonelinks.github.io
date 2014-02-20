@@ -16,18 +16,18 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=24
-FILE_NAME_0=756;HTML;0;16;0;1;1;/home/ld/stonelinks.github.io/index.html;0;2
+current_page=0
+FILE_NAME_0=1567;HTML;0;16;0;1;1;/home/ld/stonelinks.github.io/index.html;0;2
 FILE_NAME_1=184;None;0;16;0;1;1;/home/ld/stonelinks.github.io/bower.json;0;2
-FILE_NAME_2=0;Sh;0;16;0;1;1;/home/ld/stonelinks.github.io/become-a-website-developer.bash;0;2
+FILE_NAME_2=638;Sh;0;16;0;1;1;/home/ld/stonelinks.github.io/become-a-website-developer.bash;0;2
 FILE_NAME_3=608;YAML;0;16;0;1;1;/home/ld/stonelinks.github.io/_config.yml;0;2
-FILE_NAME_4=1809;Javascript;0;16;0;1;1;/home/ld/stonelinks.github.io/Gruntfile.js;0;2
+FILE_NAME_4=2308;Javascript;0;16;0;1;1;/home/ld/stonelinks.github.io/Gruntfile.js;0;2
 FILE_NAME_5=0;Markdown;0;16;0;1;1;/home/ld/stonelinks.github.io/index.md;0;2
 FILE_NAME_6=527;None;0;16;0;1;1;/home/ld/stonelinks.github.io/package.json;0;2
 FILE_NAME_7=0;Markdown;0;16;0;1;1;/home/ld/stonelinks.github.io/README.md;0;2
 FILE_NAME_8=0;Markdown;0;16;0;1;1;/home/ld/stonelinks.github.io/frc-simulator/index.md;0;2
 FILE_NAME_9=52;Javascript;0;16;0;1;1;/home/ld/stonelinks.github.io/js/main.js;0;2
-FILE_NAME_10=937;HTML;0;16;0;1;1;/home/ld/stonelinks.github.io/_includes/footer.html;0;2
+FILE_NAME_10=1249;HTML;0;16;0;1;1;/home/ld/stonelinks.github.io/_includes/footer.html;0;2
 FILE_NAME_11=224;HTML;0;16;0;1;1;/home/ld/stonelinks.github.io/_includes/header.html;0;2
 FILE_NAME_12=1480;HTML;0;16;0;1;1;/home/ld/stonelinks.github.io/_includes/main-slider.html;0;2
 FILE_NAME_13=1302;HTML;0;16;0;1;1;/home/ld/stonelinks.github.io/_includes/nav-main.html;0;2
@@ -42,6 +42,7 @@ FILE_NAME_21=836;CSS;0;16;0;1;1;/home/ld/stonelinks.github.io/less/main.less;0;2
 FILE_NAME_22=0;None;0;16;0;1;1;/home/ld/xaphoon/bower.json;0;2
 FILE_NAME_23=335;None;0;16;0;1;1;/home/ld/stonelinks.github.io/.gitignore;0;2
 FILE_NAME_24=1492;None;0;16;0;1;1;/home/ld/stonelinks.github.io/less/startbootstrap.less;0;2
+FILE_NAME_25=462;HTML;0;16;0;1;1;/home/ld/stonelinks.github.io/_includes/google-analytics.html;0;2
 
 [gproject]
 source_patterns=*.c;*.C;*.cpp;*.cxx;*.c++;*.cc;

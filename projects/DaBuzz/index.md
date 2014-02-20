@@ -4,7 +4,7 @@
 
 <center>
 
-<img class="thumbnail" src="{{wr}}static/img/stupid.png">
+<img class="thumbnail" src="{{ page.base_url }}img/stupid.png">
 
 </center>
 
@@ -25,7 +25,7 @@ DaBuzz is a [Rensselaer Center for Open Source (RCOS)](http://rcos.rpi.edu/) pro
 <br>
 
 ##Poster
-###[Here is a poster]({{wr}}static/misc/dabuzz_poster.pdf) from a presentation we gave about Dabuzz.
+###[Here is a poster]({{ page.base_url }}misc/dabuzz_poster.pdf) from a presentation we gave about Dabuzz.
 
 <br>
 
@@ -34,4 +34,3 @@ DaBuzz is a [Rensselaer Center for Open Source (RCOS)](http://rcos.rpi.edu/) pro
 DaBuzz is open source! See the code that runs DaBuzz on github!
 ###[https://github.com/Stonelinks/DaBuzz](https://github.com/Stonelinks/DaBuzz)
 
-{{disable comments}}

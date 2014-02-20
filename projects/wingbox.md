@@ -1,7 +1,7 @@
 #Boeing Robotic Wingbox
 
 <center>
-<img src="{{wr}}static/img/wingbox/screenshot.png" class="thumbnail" width="54%">
+<img src="{{ page.base_url }}img/wingbox/screenshot.png" class="thumbnail" width="54%">
 
 Simulation window
 </center>
@@ -27,7 +27,7 @@ My capstone team was tasked to develop a simulation and control system for a rob
 <br>
 
 <center>
-<img src="{{wr}}static/img/wingbox/sc14.png" class="thumbnail" width="99%">
+<img src="{{ page.base_url }}img/wingbox/sc14.png" class="thumbnail" width="99%">
 
 Screenshot of the Client aligning to bolt holes.
 
@@ -63,4 +63,3 @@ Jamel Bland, Hillary Barr and Mark Goldhammer at Boeing for their technical inpu
 
 Rosen Diankov for his assistance and OpenRAVE, one of the most awesome libraries I've worked with
 
-{{disable comments}}

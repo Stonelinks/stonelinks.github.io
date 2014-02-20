@@ -5,6 +5,6 @@ This is the beginnings of an attempt to a clone a really addicting android game 
 
 I did this as an educational exercise, mostly to play around with WebGL and improve my skills at Javascript. Plus programming is fun in general. The WebGL library I used used is Mr. Doob's excellent [Three.js](https://github.com/mrdoob/three.js). Hope you enjoy! Best results   using Google Chrome.
 
-<iframe src="{{wr}}static/misc/blox.html" width="700" height="550" scrolling="no">
+<iframe src="{{ page.base_url }}misc/blox.html" width="700" height="550" scrolling="no">
   <p>Your browser does not support iframes.</p>
 </iframe>

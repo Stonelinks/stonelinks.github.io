@@ -3,7 +3,7 @@
 
 <br>
 
-<img src="{{wr}}static/img/ABSlogo.png">
+<img src="{{ page.base_url }}img/ABSlogo.png">
 
 </center>
 
@@ -41,4 +41,3 @@ The The Awesome Backup System (ABS) is a cross platform file backup solution. It
 ABS is open source! See the code that runs ABS on github!
 ###[https://github.com/Lorem/ABS](https://github.com/Lorem/ABS)
 
-{{disable comments}}

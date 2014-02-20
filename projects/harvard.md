@@ -2,7 +2,7 @@
 ##Automated Multilayer Fabrication
 
 <center>
-<img src="{{wr}}static/img/chamber.png" class="thumbnail" width="66%">
+<img src="{{ page.base_url }}img/chamber.png" class="thumbnail" width="66%">
 </center>
 <br>
 
@@ -24,7 +24,7 @@ My major accomplishment at Harvard has been writing a software suite to automate
 <br>
 
 <center>
-<img src="{{wr}}static/img/screen.jpg" class="thumbnail" width="84%">
+<img src="{{ page.base_url }}img/screen.jpg" class="thumbnail" width="84%">
 
 </center>
 <small>
@@ -78,4 +78,3 @@ Further work I've done at Harvard includes:
 - Helped with data distribution for an experiment run at Brookhaven National Laboratory
 - Probably more things that I am forgetting about.
 
-{{disable comments}}

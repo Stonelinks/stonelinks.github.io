@@ -10,7 +10,7 @@ I had the great fortune of being able to participate and be the captain of a FIR
 
 <br>
 
-<img src="{{wr}}static/img/misc/2006.jpg" class="thumbnail" width="100%">
+<img src="{{ page.base_url }}img/misc/2006.jpg" class="thumbnail" width="100%">
 
 </center>
 
@@ -39,10 +39,9 @@ As is probably evident from that video, this robot represented our team's first 
 
 <br>
 
-<img src="{{wr}}static/img/misc/2008.jpg" class="thumbnail" width="100%">
+<img src="{{ page.base_url }}img/misc/2008.jpg" class="thumbnail" width="100%">
 
 </center>
 
 This was basically 2007's design, part two. The competition was [Overdrive](http://en.wikipedia.org/wiki/FIRST_Overdrive), which was essentially a race with large balls in the track that optionally accumulate points. As captain, I wanted to steer the team in the direction of "do one thing and do it well" and essentially wanted to design a dragster type robot. However, part of working as a team is accepting other people's ideas even when you don't necessarily agree with them. The team went with mechanum wheels again, and we lost sight of what we were originally trying to do (heard the ball). Still, I tried to make the best of it and designed a completely modular chassis for the wheels, whereby one standard "box" design (included a speed controller, wheel, bearings, pillow blocks, etc) could be iterated four times and bolted together. This saved design time, simplified troubleshooting and made it a breeze to replace parts. Another interesting side effect of this design -- I learned how to properly weld aluminum (there were a TON of joints), which is quite tricky. All in all our team had really perfected the mechanum drive train, so it was not a total loss. Also, this particular year I did not do any nordic skiing for the school, as I contributed much of the programming as well as work on the electrical system of the robot on top of my usual help with the CAD and machining of the drive train.
 
-{{disable comments}}

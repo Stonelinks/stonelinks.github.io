@@ -2,4 +2,3 @@
 
 {{gallery="battlebot"}}
 
-{{disable comments}}

@@ -2,4 +2,3 @@
 
 {{gallery="ied"}}
 
-{{disable comments}}

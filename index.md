@@ -15,8 +15,8 @@ Hello! I'm Lucas Doyle. I'm a programmer, roboticist, engineer and web developer
 <div id="myCarousel" class="carousel slide">
   <div class="carousel-inner">
     <div class="item active">
-      <a href="{{wr}}projects/stoolbotics/index.html">
-        <img src="{{wr}}static/img/stoolbotics/5-alt.png" alt="" width="100%">
+      <a href="{{ page.base_url }}projects/stoolbotics/index.html">
+        <img src="{{ page.base_url }}img/stoolbotics/5-alt.png" alt="" width="100%">
       </a>
       <div class="carousel-caption">
         <h3 style="color: white;">Stoolbotics Robot Simulator</h3>
@@ -25,8 +25,8 @@ Hello! I'm Lucas Doyle. I'm a programmer, roboticist, engineer and web developer
       </div>
     </div>
     <div class="item">
-      <a href="{{wr}}projects/harvard.html">
-        <img src="{{wr}}static/img/chamber-logo.png" alt="" width="100%">
+      <a href="{{ page.base_url }}projects/harvard.html">
+        <img src="{{ page.base_url }}img/chamber-logo.png" alt="" width="100%">
       </a>
       <div class="carousel-caption">
         <h3 style="color: white;">Automated Multilayer Fabrication</h3>
@@ -35,8 +35,8 @@ Hello! I'm Lucas Doyle. I'm a programmer, roboticist, engineer and web developer
       </div>
     </div>
     <div class="item">
-      <a href="{{wr}}projects/wingbox.html">
-        <img src="{{wr}}static/img/wingbox/sc14-alt.png" alt="" width="100%">
+      <a href="{{ page.base_url }}projects/wingbox.html">
+        <img src="{{ page.base_url }}img/wingbox/sc14-alt.png" alt="" width="100%">
       </a>
       <div class="carousel-caption">
         <h3 style="color: white;">Boeing Robotic Wingbox Simulation and Control</h3>
@@ -45,8 +45,8 @@ Hello! I'm Lucas Doyle. I'm a programmer, roboticist, engineer and web developer
       </div>
     </div>
     <div class="item">
-      <a href="{{wr}}projects/wingbox.html">
-        <img src="{{wr}}static/img/dabuzz-carousel.png" alt="" width="100%">
+      <a href="{{ page.base_url }}projects/wingbox.html">
+        <img src="{{ page.base_url }}img/dabuzz-carousel.png" alt="" width="100%">
       </a>
       <div class="carousel-caption">
         <h3 style="color: white;">DaBuzz</h3>
@@ -62,20 +62,19 @@ Hello! I'm Lucas Doyle. I'm a programmer, roboticist, engineer and web developer
 
 <div class="row-fluid">
   <div class="span4">
-    <a href="{{wr}}projects/index.html"><h2>Projects</h2></a>
+    <a href="{{ page.base_url }}projects/index.html"><h2>Projects</h2></a>
     <p>Here is where I showcase and document the various projects I spend time on. They span many years, multiple programming languages, and are about everything from robotics to web applications.</p>
-    <p><a class="btn" href="{{wr}}projects/index.html">See Luke's Projects &raquo;</a></p>
+    <p><a class="btn" href="{{ page.base_url }}projects/index.html">See Luke's Projects &raquo;</a></p>
   </div>
   <div class="span4">
-    <a href="{{wr}}blog/index.html"><h2>Blog</h2></a>
+    <a href="{{ page.base_url }}blog/index.html"><h2>Blog</h2></a>
     <p>My (mostly technical) writings that I occasionally do go here. A lot of one-off projects and tutorials go here.</p>
-    <p><a class="btn" href="{{wr}}blog/index.html">See the blog &raquo;</a></p>
+    <p><a class="btn" href="{{ page.base_url }}blog/index.html">See the blog &raquo;</a></p>
   </div>
   <div class="span4">
-    <a href="{{wr}}luke/index.html"><h2>About Luke</h2></a>
+    <a href="{{ page.base_url }}luke/index.html"><h2>About Luke</h2></a>
     <p>My biography, resume, contact information, calendar and more.</p>
-    <p><a class="btn" href="{{wr}}luke/index.html">About Luke &raquo;</a></p>
+    <p><a class="btn" href="{{ page.base_url }}luke/index.html">About Luke &raquo;</a></p>
   </div>
 </div>
 
-{{disable comments}}

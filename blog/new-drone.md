@@ -6,7 +6,7 @@
 Good news and bad news! The good news is that in the last month or so at RPI, my friend Drew and I were able to cobble together some electronics with my airplane and squeeze in some successful flights of an RC drone! In the video above you can see one of our voyages. I piloted it over RPI's campus pretty successfully for about a half hour until the winds started to pick up and things got messy.
 
 <center>
-<img src="{{wr}}static/img/misc/drone.jpg" class="thumbnail" width="80%">
+<img src="{{ page.base_url }}img/misc/drone.jpg" class="thumbnail" width="80%">
 
 Early mock up of the drone with the wings removed.
 

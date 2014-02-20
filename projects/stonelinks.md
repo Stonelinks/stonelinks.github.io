@@ -4,7 +4,7 @@
 
 <br>
 
-<img class="thumbnail" src="{{wr}}static/img/logo-big.png" width="60%">
+<img class="thumbnail" src="{{ page.base_url }}img/logo-big.png" width="60%">
 
 </center>
 
@@ -122,4 +122,3 @@ Lets consider a website with the following structure:
 
 As you can see, the files `index.md`, `content.md`, `about.md`, and `projects[1-3].md` are compiled in a straightforward manner, and their html files are placed in the cooresponding location in the build directory. However, one will notice that if you were to visit `www.domain.com/projects`, no index would be presented. Therefore, when this occurs, the parent page object (created from the `projects` directory) generates a dummy index.
 
-{{disable comments}}

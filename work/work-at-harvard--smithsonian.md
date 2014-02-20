@@ -1,7 +1,7 @@
 #Harvard - Smithsonian Center for Astrophysics
 
 <center>
-<img src="{{wr}}static/img/chamber.png" class="thumbnail" width="66%">
+<img src="{{ page.base_url }}img/chamber.png" class="thumbnail" width="66%">
 </center>
 <br>
 
@@ -17,7 +17,7 @@ Other random things I have done in the lab include the repair of a very expensiv
 <br>
 
 <center>
-<img src="{{wr}}static/img/screen.jpg" class="thumbnail" width="84%">
+<img src="{{ page.base_url }}img/screen.jpg" class="thumbnail" width="84%">
 </center>
 <br>
 
@@ -50,4 +50,3 @@ Once a run is started, the user sits back and monitors the chamber and magnetron
 
 Further work I've done includes unifying all versions of of the software for all the different chambers / optic geometries, designing chamber hardware from CAD, to ordering fabrication of parts through machinists, chamber assembly, supervising a high school student, fixing a $70,000 profile-meter, decrease shutter latency by designing a money saving part, the list goes on.
 
-{{disable comments}}

@@ -4,7 +4,6 @@ title: Home
 base_url: "./"
 ---
 
-
 <div class="text-center jumbotron">
 
   <img style="width: 20%; height: auto;" src="{{ page.base_url }}img/logos/big-logo.png"/> 
@@ -34,10 +33,10 @@ base_url: "./"
         <ul>
 
           {% for post in site.posts limit:5 %}
-             <li>
-               <span>{{ post.date | date_to_string }}</span> &raquo;
-               <a href="{{ site.baseurl_root }}{{ post.url }}">{{ post.title }}</a>
-             </li>
+            <li>
+              <span>{{ post.date | date_to_string }}</span> &raquo;
+              <a href="{{ site.baseurl_root }}{{ post.url }}">{{ post.title }}</a>
+            </li>
           {% endfor %}
 
         </ul>
@@ -45,7 +44,7 @@ base_url: "./"
       <div class="col-lg-4 col-md-4 col-sm-4">
         <a href="{{ page.base_url }}blog/controller.html" class="btn btn-default btn-lg btn-block">Projects &raquo;</a>
         <a href="{{ page.base_url }}" class="btn btn-default btn-lg btn-block">Blog &raquo;</a>
-        <a href="{{ page.base_url }}" class="btn btn-default btn-lg btn-block">About Luke &raquo;</a>
+        <a href="{{ page.base_url }}luke/index.html" class="btn btn-default btn-lg btn-block">About Luke &raquo;</a>
       </div>
     </div><!-- /.row -->
 

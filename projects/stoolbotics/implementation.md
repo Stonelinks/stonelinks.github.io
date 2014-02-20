@@ -74,4 +74,3 @@ To get around this, we could have used a windowing toolkit. There are many windo
 
 Therefore, the decision was made to implement a simple terminal window inside OpenGL. This gave us the most control with regards to commands entered to the command prompt. Additionally, it makes the application more portable because no additional library dependencies are introduced.
 
-{{disable comments}}

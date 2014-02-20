@@ -2,7 +2,7 @@
 11/12/2010
 
 <center>
-<img src="{{wr}}static/img/old/downsize_4-225x300.jpg" class="thumbnail" width="50%">
+<img src="{{ page.base_url }}img/old/downsize_4-225x300.jpg" class="thumbnail" width="50%">
 </center>
 <br>
 
@@ -15,10 +15,10 @@ Needless to say it was a bit ambitious for a project for the middle of summer an
 
 <center>
 
-<img class="thumbnail" width="50%" src="{{wr}}static/img/old/downsize_2-150x150.jpg">
-<img class="thumbnail" width="50%" src="{{wr}}static/img/old/downsize-150x150.jpg">
-<img class="thumbnail" width="50%" src="{{wr}}static/img/old/downsize_3-150x150.jpg">
-<img class="thumbnail" width="50%" src="{{wr}}static/img/old/Screenshot-150x150.png">
+<img class="thumbnail" width="50%" src="{{ page.base_url }}img/old/downsize_2-150x150.jpg">
+<img class="thumbnail" width="50%" src="{{ page.base_url }}img/old/downsize-150x150.jpg">
+<img class="thumbnail" width="50%" src="{{ page.base_url }}img/old/downsize_3-150x150.jpg">
+<img class="thumbnail" width="50%" src="{{ page.base_url }}img/old/Screenshot-150x150.png">
 
 </center>
 

@@ -1,6 +1,6 @@
 #Using the Simulator
 
-This section of the documentation goes into some more detailed use cases of Stoolbotics. Before reading this you should probably check out the [quickstart]({{wr}}projects/stoolbotics/quickstart.html).
+This section of the documentation goes into some more detailed use cases of Stoolbotics. Before reading this you should probably check out the [quickstart]({{ page.base_url }}projects/stoolbotics/quickstart.html).
 
 <br>
 
@@ -87,7 +87,7 @@ The cosmetics of the simulation environment are highly configurable. Here are so
 
 Here is an example of some simulation environment manipulation with the above commands and the result:
 
-<img src="{{wr}}static/img/stoolbotics/8.png">
+<img src="{{ page.base_url }}img/stoolbotics/8.png">
 
 <br>
 
@@ -247,4 +247,3 @@ As you can see, since this is technically operating over a network we need to sp
 
 Next, the port needs to match what you entered with the <code>>server start</code> command. From then on, all that needs to happen is to do some calculation, and pass off the comma separated list of joint angled to the simulator.
 
-{{disable comments}}

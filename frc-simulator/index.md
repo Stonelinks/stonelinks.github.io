@@ -1,6 +1,6 @@
 #Experimental FIRST Robotics Simulator
 
-<script src="{{wr}}static/js/physics/physi.js" type="text/javascript"></script>
+<script src="{{ page.base_url }}js/physics/physi.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 
@@ -25,5 +25,3 @@ Score:<b id="score">0</b>
 <div id="simulator">
 </div>
 
-{{disable comments}}
-{{disable sidebar}}

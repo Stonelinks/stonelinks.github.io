@@ -15,16 +15,15 @@ Here are some websites I've made and / or improved, maintained, etc.
 - [The Laboratory of Dr. K. V. Lakshmi](http://baruch60center.org/group/) - Webmaster and Systems Manager
     - Wrote whole site from scratch, but made to look like Wordpress at Dr. Lakshmi's request.
 
-- [Border Patrol Robot]({{wr}}projects/robots/index.html#ied_border_patrol_robot_-_sophomore_year_2010)
+- [Border Patrol Robot]({{ page.base_url }}projects/robots/index.html#ied_border_patrol_robot_-_sophomore_year_2010)
     - Wrote a complete web based UI for a border patrol robot.
     - Wrote libraries for GPS position, microcontroller communication, cameras, google maps, etc.
-    - No live link to the robot as it was taken apart, however here is the [technical report]({{wr}}static/misc/IED_tech_report_final.pdf).
+    - No live link to the robot as it was taken apart, however here is the [technical report]({{ page.base_url }}misc/IED_tech_report_final.pdf).
 
 - [The one that started it all! Stonelinks.org](http://stonelinks.org) - Founder and Owner
     - Personal server, sandbox website as well as primary way of interacting with the general public on the web.
 
 ##Clients
 
-My schedule is very full right now, and with existing clients (namely Dr. Lakshmi and the Baruch Center) I'd be hesitant to bring on any new clients. That being said, if for some reason you really need / want me, [here is how to contact me]({{wr}}luke/contact).
+My schedule is very full right now, and with existing clients (namely Dr. Lakshmi and the Baruch Center) I'd be hesitant to bring on any new clients. That being said, if for some reason you really need / want me, [here is how to contact me]({{ page.base_url }}luke/contact).
 
-{{disable comments}}

@@ -22,4 +22,3 @@
 <script src="http://feeds.feedburner.com/blogspot/THwRQ?format=sigpro" type="text/javascript" ></script><noscript><p>Subscribe to RSS headline updates from: <a href="http://feeds.feedburner.com/blogspot/THwRQ"></a><br/>Powered by FeedBurner</p> </noscript>
 
 
-{{disable comments}}

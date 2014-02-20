@@ -1,13 +1,13 @@
 #Robot List
 
-Robotics has been a long standing passion of mine. This page is to showcase robots I have designed, programmed, built or had anything to do with over the years. Other robots such as FIRST or Battlebots can be seen elsewhere on the site (like the [projects]({{wr}}projects/index.html) page).
+Robotics has been a long standing passion of mine. This page is to showcase robots I have designed, programmed, built or had anything to do with over the years. Other robots such as FIRST or Battlebots can be seen elsewhere on the site (like the [projects]({{ page.base_url }}projects/index.html) page).
 
 * * * * *
 
 ##IED Border Patrol Robot - Sophomore year (2010)
 
 <center>
-<img src="{{wr}}static/img/galleries/ied/100_03881.jpg" class="thumbnail" width="80%">
+<img src="{{ page.base_url }}img/galleries/ied/100_03881.jpg" class="thumbnail" width="80%">
 </center>
 <br>
 
@@ -15,14 +15,14 @@ Despite its shortcomings, this remains as one of the best builds I have been a p
 
 On one hand, this project was a failure as we totally failed to produce a mechanically sound robot that could drive around and do what we wanted. On the other hand, I got to write some amazing software to control this thing from the internet, write NMEA parsers for the GPS data, discovered MJPG streaming, work with the Google maps API, etc. More importantly, I also learned a ton about how a team can break down, how to think about design problems in terms of what a customer wants, how to conduct research and benchmarking against similar products, how to lead a group, how to present things to a non-technical customer (that one was fun! I couldn't talk about programming at all in the final presentation) and make efficient technical decisions with a deadline in mind.
 
-Probably the most frustrating thing about this robot was that despite having five of our seven team members on the mechanical side of things, the only thing that didn't work were the mechanics. It was the kind of team dynamic where two team members (Matt Williamson and I... Matt deserves a medal for his work on the electrical system) made up for everyone else's lack of experience or slacking off in the end. Matt and I basically ended up writing most of the 137 page [technical report]({{wr}}static/misc/IED_tech_report_final.pdf). Overall I had a blast with it, and it remains a robot I am very proud of. You can see a gallery of pictures of this robot [here]({{wr}}galleries/ied-gallery.html).
+Probably the most frustrating thing about this robot was that despite having five of our seven team members on the mechanical side of things, the only thing that didn't work were the mechanics. It was the kind of team dynamic where two team members (Matt Williamson and I... Matt deserves a medal for his work on the electrical system) made up for everyone else's lack of experience or slacking off in the end. Matt and I basically ended up writing most of the 137 page [technical report]({{ page.base_url }}misc/IED_tech_report_final.pdf). Overall I had a blast with it, and it remains a robot I am very proud of. You can see a gallery of pictures of this robot [here]({{ page.base_url }}galleries/ied-gallery.html).
 
 * * * * *
 
 ##Litec Blimp - Sophomore year (2010)
 
 <center>
-<img src="{{wr}}static/img/misc/IMG_0184-1024x682.jpg" class="thumbnail" width="80%">
+<img src="{{ page.base_url }}img/misc/IMG_0184-1024x682.jpg" class="thumbnail" width="80%">
 </center>
 <br>
 
@@ -33,11 +33,11 @@ The Litec blimp was the final project for an embedded control class I took at th
 ##Battlebot - Sophomore (2009 - early 2010)
 
 <center>
-<img src="{{wr}}static/img/misc/101.jpg" class="thumbnail" width="80%">
+<img src="{{ page.base_url }}img/misc/101.jpg" class="thumbnail" width="80%">
 </center>
 <br>
 
-Unfortunately I went through the trouble of designing most of this robot on my own for a now dissolved group of students at RPI interested in starting a Battlebot team. It never made it into the real world but still remains a viable design as far as I am concerned. A lot written about it [here]({{wr}}projects/battlebot.html).
+Unfortunately I went through the trouble of designing most of this robot on my own for a now dissolved group of students at RPI interested in starting a Battlebot team. It never made it into the real world but still remains a viable design as far as I am concerned. A lot written about it [here]({{ page.base_url }}projects/battlebot.html).
 
 * * * * *
 
@@ -55,7 +55,7 @@ This robot at first wasn't even really a robot, just some servos, a pan tilt mod
 ##AI Autonomous Boat - Junior Summer (2007)
 
 <center>
-<img src="{{wr}}static/img/misc/AIboat.jpg" class="thumbnail" width="80%">
+<img src="{{ page.base_url }}img/misc/AIboat.jpg" class="thumbnail" width="80%">
 </center>
 <br>
 </center>
@@ -67,10 +67,9 @@ One of the best summers of my life was spent in Concord NH at the St. Paul's Adv
 ##The RCX Lego Programmable Brick - circa 4th grade (\~1999)
 
 <center>
-<img src="{{wr}}static/img/misc/rcx.jpg" class="thumbnail" width="80%">
+<img src="{{ page.base_url }}img/misc/rcx.jpg" class="thumbnail" width="80%">
 <br>
 </center>
 
 I may or may not owe approximately all of my engineering and mechanical intuition to Legos. I used to (and most likely still do -- I used this all through high school) love playing with these things. The pinnacle of any Lego set I have ever gotten or probably will ever get has to be the Robotics Invention System. Thank god for my generous and understanding parents for not laughing me out of the room when 4th grader me wanted this $200 kit (I'm not spoiled, they made me work for it, don't worry). Just writing about it makes me want to jump out of this chair, run down to the basement and pull it out and start building. I cannot tell you the hours I spent building and programming (though mostly building) with this thing. More than any other robot on this page, the RCX played a pivotal role in who I am now as a roboticist (if I can even call myself that), as it is endlessly configurable by curious youngsters such as myself.
 
-{{disable comments}}

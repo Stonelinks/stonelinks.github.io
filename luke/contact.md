@@ -21,4 +21,3 @@ Gilford NH 03249
 
 {{social_large}}
 
-{{disable comments}}
