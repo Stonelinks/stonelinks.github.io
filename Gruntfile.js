@@ -5,7 +5,7 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
   require('time-grunt')(grunt);
 
-  var SITE_DIR = '_site'
+  var SITE_DIR = '_site';
 
   grunt.initConfig({
 
@@ -13,6 +13,17 @@ module.exports = function(grunt) {
 
     jekyll: {
       website: {}
+    },
+
+    exec: {
+      options: {
+        cwd: __dirname
+      },
+
+      fixjsstyle: {
+        command: 'fixjsstyle *.js && fixjsstyle -r js/',
+        stdout: true
+      }
     },
 
     rsync: {
@@ -109,7 +120,7 @@ module.exports = function(grunt) {
 
       bower_components: {
         files: [
-          'bower_components/**/*',
+          'bower_components/**/*'
         ],
         tasks: ['rsync:bower_components']
       }
