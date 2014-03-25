@@ -6,6 +6,8 @@ module.exports = function(grunt) {
   require('time-grunt')(grunt);
 
   var SITE_DIR = '_site';
+  var LIVERELOAD_PORT = 19898;
+  var WEBSERVER_PORT = 87812;
 
   grunt.initConfig({
 
@@ -85,7 +87,7 @@ module.exports = function(grunt) {
     watch: {
 
       options: {
-        livereload: 12345
+        livereload: LIVERELOAD_PORT
       },
 
       // build the website if anything changes
@@ -131,8 +133,8 @@ module.exports = function(grunt) {
 
       options: {
         hostname: '*',
-        port: 1234,
-        livereload: 12345,
+        port: WEBSERVER_PORT,
+        livereload: LIVERELOAD_PORT,
         base: SITE_DIR
       },
 
