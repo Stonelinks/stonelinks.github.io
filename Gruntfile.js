@@ -1,9 +1,10 @@
-module.exports = function(grunt) {
 'use strict';
 
-  // load all grunt tasks
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-  
+module.exports = function(grunt) {
+
+  require('load-grunt-tasks')(grunt);
+  require('time-grunt')(grunt);
+
   var SITE_DIR = '_site'
 
   grunt.initConfig({
