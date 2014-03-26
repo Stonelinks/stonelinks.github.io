@@ -1,3 +1,9 @@
+---
+layout: page
+title: Home Locator
+base_url: "../../"
+---
+
 #Home Locator
 
 <hr>

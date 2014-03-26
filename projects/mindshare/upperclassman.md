@@ -1,3 +1,9 @@
+---
+layout: page
+title: UpperClassMan
+base_url: "../../"
+---
+
 #UpperClassMan
 
 <hr>

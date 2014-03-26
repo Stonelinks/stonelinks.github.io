@@ -1,3 +1,13 @@
+---
+layout: page
+title: Stoolbotics
+base_url: "../../"
+---
+
+<!--
+TODO: review, check links
+-->
+
 #Stoolbotics
 
 <center>

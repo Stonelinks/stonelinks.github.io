@@ -46,3 +46,13 @@ You should only do this if your name is Lucas Doyle (actually it won't work if y
 
         grunt deploy
 
+TODO:
+- update this README
+- come up with standard project format
+- fix galleries
+- consider automatic title insertion for "page" layout
+- figure out how to get mindshare on to one page
+- add MUJIN to work
+- add new crap to projects
+- redo resume
+- create technical and personal blog entries (use tags?)

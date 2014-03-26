@@ -1,3 +1,13 @@
+---
+layout: page
+title: Stoolbotics - Implementation
+base_url: "../../"
+---
+
+<!--
+TODO: review, check links
+-->
+
 #Implementation
 
 Many technical challenges were overcome during the development of Stoolbotics, but it was a lot fun to write! To take a look at the code yourself, here is a [link](https://github.com/Stonelinks/Stoolbotics) to our GitHub. Choice algorithms and segments of the code will be explained and highlighted in this section.

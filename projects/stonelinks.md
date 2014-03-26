@@ -1,3 +1,13 @@
+---
+layout: page
+title: Stonelinks web framework
+base_url: "../"
+---
+
+<!--
+TODO: read over
+-->
+
 #Stonelinks web framework
 
 <center>

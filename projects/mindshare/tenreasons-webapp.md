@@ -1,3 +1,9 @@
+---
+layout: page
+title: TenReasons (WebApp)
+base_url: "../../"
+---
+
 #TenReasons (WebApp)
 
 <hr>

@@ -1,3 +1,9 @@
+---
+layout: page
+title: Shower Field Generator
+base_url: "../../"
+---
+
 #The "Shower" Field Generator
 
 <hr>

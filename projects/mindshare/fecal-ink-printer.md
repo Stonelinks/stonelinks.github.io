@@ -1,3 +1,9 @@
+---
+layout: page
+title: Fecal Ink Printer
+base_url: "../../"
+---
+
 #Fecal Ink Printer
 
 <hr>

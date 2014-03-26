@@ -1,3 +1,13 @@
+---
+layout: page
+title: Stoolbotics - Using the Simulator
+base_url: "../../"
+---
+
+<!--
+TODO: review, check links
+-->
+
 #Using the Simulator
 
 This section of the documentation goes into some more detailed use cases of Stoolbotics. Before reading this you should probably check out the [quickstart]({{ page.base_url }}projects/stoolbotics/quickstart.html).

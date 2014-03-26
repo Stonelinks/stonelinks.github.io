@@ -1,3 +1,13 @@
+---
+layout: page
+title: Battlebot
+base_url: "../"
+---
+
+<!--
+TODO: read over
+-->
+
 #The Battlebot
 
 This was a design I came up with for a now-defunct Battlebots Club that used to be at RPI. It ultimately failed due to lack of funding and participation, but it went on long enough for us to brainstorm up bot ideas. Most of the work you see here was done over a week during winter break of 2009. From the progression of the renderings you can see the evolution of the design.

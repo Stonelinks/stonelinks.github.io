@@ -1,3 +1,9 @@
+---
+layout: page
+title: Harvard Dining Club
+base_url: "../../"
+---
+
 #Harvard Dining Club
 
 <hr>

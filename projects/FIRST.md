@@ -1,3 +1,13 @@
+---
+layout: page
+title: FIRST
+base_url: "../"
+---
+
+<!--
+TODO: read over, fix some image sizing issues
+-->
+
 #FIRST Robotics
 
 I had the great fortune of being able to participate and be the captain of a FIRST robotics throughout my time at Gilford High School. Here are the robots we built in chronological order.

@@ -1,3 +1,9 @@
+---
+layout: page
+title: Auto Index for Directories
+base_url: "../../"
+---
+
 #Auto Index for Directories
 
 <hr>

@@ -1,3 +1,13 @@
+---
+layout: page
+title: Robot list
+base_url: "../"
+---
+
+<!--
+TODO: read over, fix image sizing
+-->
+
 #Robot List
 
 Robotics has been a long standing passion of mine. This page is to showcase robots I have designed, programmed, built or had anything to do with over the years. Other robots such as FIRST or Battlebots can be seen elsewhere on the site (like the [projects]({{ page.base_url }}projects/index.html) page).

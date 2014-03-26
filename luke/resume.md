@@ -1,3 +1,12 @@
+---
+layout: page
+title: Resume
+base_url: "../"
+---
+
+<!--
+TODO: revamp this
+-->
 
 <style type="text/css">
 

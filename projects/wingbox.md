@@ -1,3 +1,13 @@
+---
+layout: page
+title: Boeing Robotic Wingbox
+base_url: "../"
+---
+
+<!--
+TODO: read over
+-->
+
 #Boeing Robotic Wingbox
 
 <center>

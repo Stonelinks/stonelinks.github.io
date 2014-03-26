@@ -1,4 +1,10 @@
-#Experimental FIRST Robotics Simulator
+---
+layout: page
+title: Experimental FIRST Robotics Simulator
+base_url: "../"
+---
+
+TODO: fix everything
 
 <script src="{{ page.base_url }}js/physics/physi.js" type="text/javascript"></script>
 

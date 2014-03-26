@@ -1,3 +1,9 @@
+---
+layout: page
+title: Universal Apps IDE
+base_url: "../../"
+---
+
 #Universal "Apps" IDE
 
 <hr>

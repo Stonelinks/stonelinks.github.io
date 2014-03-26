@@ -1,3 +1,9 @@
+---
+layout: page
+title: In & Out Board
+base_url: "../../"
+---
+
 #In & Out Board
 
 <hr>

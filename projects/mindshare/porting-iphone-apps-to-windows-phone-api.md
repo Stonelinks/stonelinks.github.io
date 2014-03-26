@@ -1,3 +1,9 @@
+---
+layout: page
+title: Porting iPhone Apps to Windows Phone API
+base_url: "../../"
+---
+
 #Porting iPhone Apps to Windows Phone API
 
 <hr>

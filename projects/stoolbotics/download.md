@@ -1,3 +1,13 @@
+---
+layout: page
+title: Stoolbotics - Download
+base_url: "../../"
+---
+
+<!--
+TODO: review, check links
+-->
+
 #Download
 
 <br>

@@ -1,3 +1,9 @@
+---
+layout: page
+title: City Drone
+base_url: "../../"
+---
+
 #City Drone
 
 <hr>

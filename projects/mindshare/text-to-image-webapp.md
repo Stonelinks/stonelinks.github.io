@@ -1,3 +1,9 @@
+---
+layout: page
+title: Text to Image (WebApp)
+base_url: "../../"
+---
+
 #Text to Image (WebApp)
 
 <hr>

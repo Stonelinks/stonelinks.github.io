@@ -1,3 +1,9 @@
+---
+layout: page
+title: Cardboard Umbrella
+base_url: "../../"
+---
+
 #Cardboard Umbrella
 
 <hr>

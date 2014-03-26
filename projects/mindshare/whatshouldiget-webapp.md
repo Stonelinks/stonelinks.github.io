@@ -1,3 +1,9 @@
+---
+layout: page
+title: WhatShouldIGet? (WebApp)
+base_url: "../../"
+---
+
 #WhatShouldIGet? (WebApp)
 
 <hr>

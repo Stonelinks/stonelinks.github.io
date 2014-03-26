@@ -1,3 +1,13 @@
+---
+layout: page
+title: Projects
+base_url: "../"
+---
+
+<!--
+TODO: read over, come up with automated way of generating layout, fix image sizing issues
+-->
+
 #Projects
 
 <br>

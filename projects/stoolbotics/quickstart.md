@@ -1,3 +1,12 @@
+---
+layout: page
+title: Stoolbotics - Quickstart
+base_url: "../../"
+---
+
+<!--
+TODO: review, check links
+-->
 
 #Quickstart
 

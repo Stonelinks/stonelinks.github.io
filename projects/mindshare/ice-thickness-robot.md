@@ -1,3 +1,9 @@
+---
+layout: page
+title: Ice Thickness Robot
+base_url: "../../"
+---
+
 #Ice Thickness Robot
 
 <hr>

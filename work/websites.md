@@ -1,3 +1,13 @@
+---
+layout: page
+title: Websites
+base_url: "../"
+---
+
+<!--
+TODO: review, probably rewrite
+-->
+
 #Websites
 
 I make websites. It started out as a hobby -- sometime around my senior year in high school I started questioning how the internet works. This lead to me discovering what a web server was. Fast forward to today and you can see that the whole thing has snowballed to the point where a fair amount of my time goes into making websites. Whenever possible, I try to use existing solutions instead of wasting my time doing everything from scratch. To this end, a fair amount of the websites I've worked on have used Wordpress. Wordpress is technically a blogging platform, however it is such a versatile tool that it can be used like a CMS. I have fooled around with "real" CMS like Drupal but found it very hard to use (that being said, it was awhile ago and I know more now so perhaps I should give it a second chance). Wordpress main advantage is that it lets clients edit the contents of their websites without having to go back and forth with me. This being said, Wordpress isn't always desirable or practical, and I still make and maintain sites that do not use it.

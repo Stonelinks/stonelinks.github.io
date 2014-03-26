@@ -1,3 +1,13 @@
+---
+layout: page
+title: Anybots
+base_url: "../"
+---
+
+<!--
+TODO: read over
+-->
+
 #Anybots
 
 <center>

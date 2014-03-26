@@ -1,3 +1,13 @@
+---
+layout: page
+title: DaBuzz
+base_url: "../../"
+---
+
+<!--
+TODO: read over, get rid of demo
+-->
+
 #DaBuzz
 
 <br>

@@ -1,3 +1,9 @@
+---
+layout: page
+title: First date cheat code
+base_url: "../../"
+---
+
 #First date cheat code
 
 <hr>

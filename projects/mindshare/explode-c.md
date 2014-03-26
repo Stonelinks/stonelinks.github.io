@@ -1,3 +1,9 @@
+---
+layout: page
+title: Explode (C)
+base_url: "../../"
+---
+
 #Explode (C)
 
 <hr>

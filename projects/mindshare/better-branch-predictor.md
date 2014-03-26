@@ -1,3 +1,9 @@
+---
+layout: page
+title: Better Branch Predictor
+base_url: "../../"
+---
+
 #Better Branch Predictor?
 
 <hr>

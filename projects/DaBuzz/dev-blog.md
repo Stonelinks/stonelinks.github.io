@@ -1,3 +1,13 @@
+---
+layout: page
+title: DaBuzz Development Blog
+base_url: "../../"
+---
+
+<!--
+TODO: read over
+-->
+
 #Development Blog
 
 <style type="text/css">

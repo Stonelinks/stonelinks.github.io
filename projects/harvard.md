@@ -1,3 +1,13 @@
+---
+layout: page
+title: Harvard - Smithsonian Center for Astrophysics
+base_url: "../"
+---
+
+<!--
+TODO: read over
+-->
+
 #Harvard - Smithsonian Center for Astrophysics
 ##Automated Multilayer Fabrication
 

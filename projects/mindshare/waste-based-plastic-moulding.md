@@ -1,3 +1,9 @@
+---
+layout: page
+title: Waste Based Plastic Moulding
+base_url: "../../"
+---
+
 #Waste Based Plastic Moulding
 
 <hr>

@@ -1,3 +1,13 @@
+---
+layout: page
+title: Websites
+base_url: "../"
+---
+
+<!--
+TODO: review, probably rewrite
+-->
+
 #Harvard - Smithsonian Center for Astrophysics
 
 <center>

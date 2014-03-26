@@ -1,3 +1,9 @@
+---
+layout: page
+title: Assassins (WebApp)
+base_url: "../../"
+---
+
 #Assassins (WebApp)
 
 <hr>
