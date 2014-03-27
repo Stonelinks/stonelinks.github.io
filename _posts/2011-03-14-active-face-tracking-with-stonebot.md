@@ -1,5 +1,9 @@
-#Active Face Tracking with Stonebot
-03/14/2011
+---
+layout: post
+title: Active Face Tracking with Stonebot
+date: 2011-03-14
+base_url: "../"
+---
 
 I finally have it working! Very excited as I write this. So glad spring break exists otherwise I'd never have the time for this. Long story short, I have face detection working on my personal robot, watch the video to see it in action.
 

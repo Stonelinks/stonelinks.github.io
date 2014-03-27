@@ -1,3 +1,10 @@
+---
+layout: post
+title: Binocular Face Tracking Sneak Peek
+date: 2011-03-14
+base_url: "../"
+---
+
 #Binocular Face Tracking Sneak Peek
 04/18/2011
 

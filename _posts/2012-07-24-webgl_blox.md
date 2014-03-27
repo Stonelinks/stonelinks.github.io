@@ -1,5 +1,9 @@
-#WebGL Blox
-07/24/2012
+---
+layout: post
+title: WebGL Blox
+date: 2012-07-24
+base_url: "../"
+---
 
 This is the beginnings of an attempt to a clone a really addicting android game called [Tap Blox](https://play.google.com/store/apps/details?id=com.entwicklerx.tapblox&hl=en). Play by clicking on groups of three or more of the same colored blocks. Currently there is no timing / scoring system, but I plan on implementing that in the future.
 

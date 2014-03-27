@@ -1,6 +1,9 @@
-#Dr. Serverlove, or How I Learned to Stop Worrying and Love the RAID
-12/07/2010
-
+---
+layout: post
+title: Dr. Serverlove, or How I Learned to Stop Worrying and Love the RAID
+date: 2010-12-07
+base_url: "../"
+---
 
 <center>
 <img src="{{ page.base_url }}img/old/downsize-300x225.jpg" class="thumbnail" width="50%">

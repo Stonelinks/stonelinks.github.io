@@ -1,5 +1,9 @@
-#Windows Based Webcam Control Software
-09/30/2010
+---
+layout: post
+title: Windows Based Webcam Control Software
+date: 2010-09-30
+base_url: "../"
+---
 
 **Edit:** This is old. It is also the first implementation of my remote-controlled camera... under windows. It is really really bad and nobody should use it. However, I thougt I was pretty cool when I made it, and maybe it will be useful to somebody here, so I'll leave it up. I put a much more improved version this software to use on [the border patrol robot]({{ page.base_url }}misc/IED_tech_report_final.pdf). Check out page 48 of the report to see the final results and the page 118 for the code behind it.
 

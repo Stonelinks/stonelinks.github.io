@@ -1,5 +1,9 @@
-#Sudoku Solver
-01/02/2012
+---
+layout: post
+title: Sudoku Solver
+date: 2012-01-02
+base_url: "../"
+---
 
 I got really bored over the holidays and wrote a very naive sudoku solver in C++.
 

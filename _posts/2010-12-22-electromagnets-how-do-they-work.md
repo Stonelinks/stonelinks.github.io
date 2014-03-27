@@ -1,5 +1,9 @@
-#Electromagnets, How do They Work?
-12/22/2010
+---
+layout: post
+title: Electromagnets, How do They Work?
+date: 2010-12-22
+base_url: "../"
+---
 
 <center>
 <img src="{{ page.base_url }}img/old/downsize1-225x300.jpg" class="thumbnail" width="50%">

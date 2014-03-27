@@ -1,5 +1,9 @@
-#First Contribution to someone else's Open Source Software
-3/27/2012
+---
+layout: post
+title: First Contribution to someone else's Open Source Software
+date: 2012-03-27
+base_url: "../"
+---
 
 <center><iframe width="500px" height="400px" src="http://www.youtube.com/embed/gLsdHmCKoEw" frameborder="0" allowfullscreen></iframe></center>
 

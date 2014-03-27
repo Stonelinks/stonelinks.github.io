@@ -1,5 +1,9 @@
-#Execute, Time and Plot C++ Programs with Python
-02/03/2011
+---
+layout: post
+title: Execute, Time and Plot C++ Programs with Python
+date: 2011-02-03
+base_url: "../"
+---
 
 <center>
 <img src="{{ page.base_url }}img/misc/Fig.png" class="thumbnail" width="80%">

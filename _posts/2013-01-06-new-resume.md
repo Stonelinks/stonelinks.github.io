@@ -1,5 +1,9 @@
-#New Resume
-01/06/2013
+---
+layout: post
+title: New Resume
+date: 2013-01-06
+base_url: "../"
+---
 
 ##[github repo](https://github.com/Stonelinks/resume)
 

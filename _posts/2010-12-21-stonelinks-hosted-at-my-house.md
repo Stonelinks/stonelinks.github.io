@@ -1,5 +1,9 @@
-#Stonelinks Hosted at my House
-12/21/2010
+---
+layout: post
+title: Stonelinks Hosted at my House
+date: 2010-12-21
+base_url: "../"
+---
 
 Looks like the kinks of my new [two-server](dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid.html) setup are not ironed out. I just got home from RPI and the old Dell is acting wacky. I thoroughly checked both machines before I left for home, and I thought everything was okay. However, upon arriving home, I checked the web server to find that it doesn't work -- not even a 404 page or a time out error, the browser just hangs.
 

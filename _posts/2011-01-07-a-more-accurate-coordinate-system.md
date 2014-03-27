@@ -1,5 +1,9 @@
-#A More Accurate Coordinate System
-01/07/2011
+---
+layout: post
+title: A More Accurate Coordinate System
+date: 2011-01-07
+base_url: "../"
+---
 
 <center>
 <iframe width="550" height="450" src="http://www.youtube.com/embed/c72tK4KTTj0" frameborder="0" allowfullscreen></iframe>

@@ -1,5 +1,9 @@
-#How I do Word Processing
-4/30/2012
+---
+layout: post
+title: How I do Word Processing
+date: 2012-04-30
+base_url: "../"
+---
 
 A few months ago, I came up with [Lite Write](https://github.com/Stonelinks/Lite-Write) and have been using it in place of a word processor with great success. Like most people who write a lot of code, I'm most comfortable manipulating text in my editor of choice. However, I do a fair amount of writing that needs to be accessible to non programmers, which means my work really can't stay in plain text forever. Lite write is a simple setup (basically a Makefile and some bits of HTML/CSS) that does just that. It has the following features:
 

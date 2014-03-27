@@ -1,5 +1,9 @@
-#Door Mounted Robo Schwarzenegger
-11/12/2010
+---
+layout: post
+title: Door Mounted Robo Schwarzenegger
+date: 2010-11-12
+base_url: "../"
+---
 
 <center>
 <img src="{{ page.base_url }}img/old/downsize_4-225x300.jpg" class="thumbnail" width="50%">

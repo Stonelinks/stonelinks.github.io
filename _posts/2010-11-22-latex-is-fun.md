@@ -1,5 +1,9 @@
-#Latex is Fun
-11/22/2010
+---
+layout: post
+title: Latex is Fun
+date: 2010-11-22
+base_url: "../"
+---
 
 I'm using my documentation for work at the Center for Astrophysics as an excuse to learn LaTeX. For those in my generation who have grown up with MS Office or openoffice.org, LaTeX is an ancient typesetting language that can trace its roots back to the legendary [Donald Knuth](http://en.wikipedia.org/wiki/Donald_Knuth) who wrote TeX back in the '70s.
 
