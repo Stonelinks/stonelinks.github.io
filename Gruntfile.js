@@ -21,6 +21,11 @@ module.exports = function(grunt) {
         tasks: ['assemble']
       },
 
+      less: {
+        files: ['<%= config.dist %>/less/**/*.less'],
+        tasks: ['less']
+      },
+
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
@@ -35,11 +40,13 @@ module.exports = function(grunt) {
     },
 
     connect: {
+
       options: {
         port: 9000,
         livereload: 35729,
         hostname: '0.0.0.0'
       },
+
       livereload: {
         options: {
           open: true,
@@ -67,6 +74,15 @@ module.exports = function(grunt) {
       }
     },
 
+    less: {
+
+      main: {
+        files: {
+          '<%= config.dist %>/assets/css/main.css': '<%= config.dist %>/assets/less/main.less'
+        }
+      }
+    },
+
     // before generating any new files,
     // remove any previously-created files.
     clean: ['<%= config.dist %>/**/*.{html,xml}']
@@ -76,13 +92,15 @@ module.exports = function(grunt) {
   grunt.registerTask('server', [
     'clean',
     'assemble',
+    'less',
     'connect:livereload',
     'watch'
   ]);
 
   grunt.registerTask('build', [
     'clean',
-    'assemble'
+    'assemble',
+    'less'
   ]);
 
   grunt.registerTask('default', [
