@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog | Stonelinks github io</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- Bootstrap theme -->
+    <link href="assets/css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/theme.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    
+<!-- Fixed navbar -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Stonelinks github io</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <!-- you can exclude pages using {{#isnt}} helper: {{#isnt data.title 'Blog'}} -->
+        
+        <li class="active">
+          <a href="blog.html">Blog</a>
+        </li>
+        
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Github <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="https://github.com/assemble/assemble">Assemble</a></li>
+            <li><a href="https://github.com/assemble/generator-assemble">Generator Assemble</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">Plugins</li>
+            
+          </ul>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+
+    <div class="container theme-showcase" role="main">
+
+      
+<h1>Posts</h1>
+
+  <h1 id="-stonelinks-github-io-http-stonelinks-github-io-"><a href="http://stonelinks.github.io">stonelinks.github.io</a></h1>
+<p>This is a work in progress</p>
+<h3 id="quick-start">Quick start</h3>
+<p>If you want to do any work on the website please follow these steps</p>
+<ol>
+<li><p>Clone the repo and its submodules:</p>
+<pre><code>   git clone https://github.com/stonelinks/stonelinks.github.io.git
+   cd stonelinks.github.io
+   git submodule update --init</code></pre>
+</li>
+<li><p>Install dependencies to build the website. All you have to do is run:</p>
+<pre><code>   ./become-a-website-developer.bash</code></pre>
+<p>This installs all the dependencies</p>
+<ul>
+<li><code>bower</code> and <code>grunt</code> (which need <code>node</code> and <code>npm</code>)</li>
+<li><code>jekyll</code> (which needs ruby 1.9.3, <code>rvm</code>)</li>
+</ul>
+<p>Since <code>rvm</code> did some things to your shell to get the right version of ruby, you also need to run</p>
+<pre><code>   source ~/.rvm/scripts/rvm</code></pre>
+<p>This only needs to be done once though.</p>
+</li>
+<li><p>You&#39;re done. Now you can build the website for the first time:</p>
+<pre><code>   grunt</code></pre>
+</li>
+</ol>
+<h3 id="vagrant">Vagrant</h3>
+<p>If you can&#39;t (or don&#39;t want to) follow the quickstart for whatever reason, you can do all of your work inside a VM if you like. First, install <a href="http://www.vagrantup.com/">vagrant</a>. After that, <code>cd vagrant</code>, <code>vagrant up</code> and <code>vagrant ssh</code>. You&#39;ll find a ready to use dev environment in <code>~/mujinwww</code>.</p>
+<h3 id="actual-website-development">Actual website development</h3>
+<p>The website is implemented with <a href="http://jekyllrb.com/">jekyll</a>, which is a static site generator that is very well documented.</p>
+<p>To work on the website, just run <code>grunt gaze</code> and point your browser to <a href="http://localhost:1234"><a href="http://localhost:1234">http://localhost:1234</a></a>. You can now modify any part of the website and it will be automatically rebuilt and your browser will refresh for you. Right now the jekyll build can be slow (It is because of internationalizations -- I&#39;m working on speedups for it).</p>
+<h3 id="deployment">Deployment</h3>
+<p>You should only do this if your name is Lucas Doyle (actually it won&#39;t work if you don&#39;t have SSH keys)</p>
+<pre><code>    grunt deploy</code></pre>
+<p>TODO:</p>
+<ul>
+<li>update this README</li>
+<li>come up with standard project format</li>
+<li>fix galleries</li>
+<li>consider automatic title insertion for &quot;page&quot; layout</li>
+<li>figure out how to get mindshare on to one page</li>
+<li>add MUJIN to work</li>
+<li>add new crap to projects</li>
+<li>redo resume</li>
+<li>create technical and personal blog entries (use tags?)</li>
+</ul>
+
+
+
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
