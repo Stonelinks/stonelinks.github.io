@@ -14,13 +14,23 @@
   </head>
   <body>
 
-    {{> navbar-fixed-top }}
+    {{> navbar-top }}
 
-    <div class="container theme-showcase" role="main">
+    <div class="container">
 
       {{> body }}
 
     </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; Company 2013</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="{{assets}}/vendor/bootstrap/dist/js/bootstrap.min.js"></script>

@@ -1,8 +1,11 @@
 ---
 component: navbar
 ---
-<!-- Fixed navbar -->
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+<a href="{{relative page.dest "dist/index.html"}}" class="brand"><img src="{{ assets }}/img/{{ site.logo }}"> {{ site.title }}</a>
+<div class="tagline-bar">{{ site.tagline }}</div>
+
+<div class="navbar navbar-default" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
