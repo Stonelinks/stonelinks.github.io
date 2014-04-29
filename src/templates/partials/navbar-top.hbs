@@ -17,17 +17,15 @@ component: navbar
       <a class="navbar-brand" href="{{relative page.dest "dist/index.html"}}">
         {{ site.title }}
       </a>
-      <a class="navbar-brand navbar-brand-tagline" href="{{relative page.dest "dist/index.html"}}">
-        {{ site.tagline }}
-      </a>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <!-- you can exclude pages using \{{#isnt}} helper: \{{#isnt data.title 'Blog'}} -->
         {{#each pages}}
-        <li{{#if this.isCurrentPage}} class="active"{{/if}}>
-          <a href="{{relative dest this.dest}}">{{ data.title }}</a>
-        </li>
+          {{#isnt data.title 'Home'}}
+            <li{{#if this.isCurrentPage}} class="active"{{/if}}>
+              <a href="{{relative dest this.dest}}">{{ data.title }}</a>
+            </li>
+          {{/isnt}}
         {{/each}}
       </ul>
     </div><!--/.nav-collapse -->
