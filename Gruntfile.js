@@ -17,19 +17,21 @@ module.exports = function(grunt) {
     watch: {
 
       assemble: {
-        files: ['<%= config.src %>/{content,data,templates}/**/*.{md,hbs,yml}'],
+        files: ['<%= config.src %>/{data,templates}/**/*.{md,hbs,yml}'],
         tasks: ['assemble']
       },
 
       less: {
-        files: ['<%= config.dist %>/less/**/*.less'],
+        files: ['<%= config.dist %>/assets/less/**/*.less'],
         tasks: ['less']
       },
 
       livereload: {
+
         options: {
           livereload: '<%= connect.options.livereload %>'
         },
+
         files: [
           '<%= config.dist %>/**/*.html',
           '<%= config.dist %>/assets/**/*.css',
@@ -89,18 +91,16 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('server', [
-    'clean',
-    'assemble',
-    'less',
-    'connect:livereload',
-    'watch'
-  ]);
-
   grunt.registerTask('build', [
     'clean',
     'assemble',
     'less'
+  ]);
+
+  grunt.registerTask('server', [
+    'build',
+    'connect:livereload',
+    'watch'
   ]);
 
   grunt.registerTask('default', [
