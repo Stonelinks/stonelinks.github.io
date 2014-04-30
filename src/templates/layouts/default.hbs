@@ -1,38 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{title}} | {{site.title}}</title>
+---
+layout: base.hbs
+---
 
-    <link rel="stylesheet" href="{{assets}}/css/main.css">
+{{> navbar-top }}
 
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
+<div class="container">
 
-    {{> navbar-top }}
+  {{> body }}
 
-    <div class="container">
+</div>
 
-      {{> body }}
-
-    </div>
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <p>Copyright &copy; Company 2013</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="{{assets}}/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-  </body>
-</html>
+{{> footer }}

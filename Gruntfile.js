@@ -60,21 +60,35 @@ module.exports = function(grunt) {
     },
 
     assemble: {
+      options: {
+        flatten: true,
+        assets: '<%= config.dist %>/assets',
+        layoutdir: '<%= config.src %>/templates/layouts',
+        layout: 'default.hbs',
+        data: '<%= config.src %>/data/*.{json,yml}',
+        partials: '<%= config.src %>/templates/partials/*.hbs',
+        helpers: ['handlebars-helper-compose'],
+        compose: {
+          compare: function(a, b) {
+            return a.data.date >= b.data.date ? -1 : 1;
+          }
+        }
+      },
 
       pages: {
-        options: {
-          flatten: true,
-          assets: '<%= config.dist %>/assets',
-          layoutdir: '<%= config.src %>/templates/layouts',
-          layout: 'default.hbs',
-          data: '<%= config.src %>/data/*.{json,yml}',
-          partials: '<%= config.src %>/templates/partials/*.hbs'
-        },
-
         files: {
           '<%= config.dist %>/': ['<%= config.src %>/templates/pages/*.hbs']
         }
       }
+
+      // blog: {
+        // options: {
+          // layout: 'post.hbs'
+        // },
+        // files: {
+          // '<%= config.dist %>/': ['<%= config.src %>/templates/posts/*.md']
+        // }
+      // }
     },
 
     less: {
