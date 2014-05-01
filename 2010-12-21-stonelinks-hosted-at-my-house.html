@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stonelinks Hosted at my House | Stonelinks</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    
+
+
+
+<a href="index.html" class="brand"><img src="assets/img/logos/big-logo.png"> Stonelinks</a>
+<div class="tagline-bar">The brainchild of Lucas Doyle</div>
+
+<div class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">
+        Stonelinks
+      </a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/blog.html">Blog</a>
+        </li>
+        <li>
+          <a href="/about.html">About</a>
+        </li>
+        <li>
+          <a href="/projects.html">Projects</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+
+  
+
+<div class="row">
+  <div class="box">
+    <div class="col-lg-12">
+      <hr>
+      <a href="/2010-12-21-stonelinks-hosted-at-my-house.html">
+      <h1 class="intro-text text-center">Stonelinks Hosted at my House
+      <br/>
+      <small>12/21/2010</small>
+      </h1></a>
+      <hr>
+      <p>Looks like the kinks of my new <a href="dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid.html">two-server</a> setup are not ironed out. I just got home from RPI and the old Dell is acting wacky. I thoroughly checked both machines before I left for home, and I thought everything was okay. However, upon arriving home, I checked the web server to find that it doesn&#39;t work -- not even a 404 page or a time out error, the browser just hangs.</p>
+<p>To use anything other than HTTP on port 80, I need to be on RIP&#39;s VPN. I log into the VPN and start with the basics. The machine (which is not behind a router) responds to ping, however ssh shows the same symptoms as apache. I don&#39;t even get a connection refused or path not found or timeout error, the login literally just hangs (I left it running for like 30 min now).</p>
+<p>After being thoroughly baffled by this, I ran NMAP from another machine on the same network:</p>
+<pre>
+[luke@void ~]$ nmap -A -T4 stonelinks.org
+Starting Nmap 4.11 ( http://www.insecure.org/nmap/ ) at 2010-12-27 03:39 EST
+Interesting ports on doylel2.stu.rpi.edu (128.113.38.125):
+Not shown: 1676 closed ports
+PORT    STATE SERVICE  VERSION
+21/tcp  open  ftp?
+22/tcp  open  ssh?
+80/tcp  open  http?
+111/tcp open  rpcbind?
+</pre>
+
+<p>I have VPN access and control over other computers on the same network, but obviously no physical access to the machine. I have no idea what is going on here, my assumption is that the kernel is hanging on something, but I guess I&#39;ll find out when I get back. Because of the way RPI manages IP addresses, the firewall at RPI, and the uncertainty of the other computer, I&#39;m hesitant to just tell my desktop to take the old MAC / IP for Stonelinks until I get back on campus in case I lose both machines. Luckily I had a backup of Stonelinks that I moved to my house. So until I get back on campus, I am hosting off my houses internet connection! Be warned in this time Stonelinks will be operating in a pretty crippled capacity.</p>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <p>Copyright &copy; Company 2013</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

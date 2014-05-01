@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LabVIEW Custom Documentation Formats | Stonelinks</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    
+
+
+
+<a href="index.html" class="brand"><img src="assets/img/logos/big-logo.png"> Stonelinks</a>
+<div class="tagline-bar">The brainchild of Lucas Doyle</div>
+
+<div class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">
+        Stonelinks
+      </a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/blog.html">Blog</a>
+        </li>
+        <li>
+          <a href="/about.html">About</a>
+        </li>
+        <li>
+          <a href="/projects.html">Projects</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+
+  
+
+<div class="row">
+  <div class="box">
+    <div class="col-lg-12">
+      <hr>
+      <a href="/2010-11-22-labview-custom-documentation-formats.html">
+      <h1 class="intro-text text-center">LabVIEW Custom Documentation Formats
+      <br/>
+      <small>11/22/2010</small>
+      </h1></a>
+      <hr>
+      <p>LabVIEW is a necessary evil, but sometimes it pulls through. Earlier today I found myself in the position of needing a whole bunch of icons, block diagrams and VI hierarchies extracted from a bunch of LabVIEW that I wrote for work to go in my documentation, which is in written in LaTeX. Up until now I thought this would mean trying to do a million screenshots over VNC on my work computer, and then going back and cropping what I needed. However on further research I was thrilled to find out that LabVIEW can pretty much do this on its own. See the <a href="http://zone.ni.com/reference/en-XX/help/371361B-01/lvconcepts/printing_vis/">NI website on printing VI documentation</a>.</p>
+<p>Basically what I did was import the VI hierarchy for my top level VI (the dashboard in this case), created a custom format for my documentation, checked off what I wanted to appear, and then outputted it all as HTML. The end result looks <a href="luke/work/cfa/example/">something like this</a>. Since the directory where the HTML was generated is now chock full o&#39; images, I took what images I wanted and insert them into my documentation. Probably an hour of tedious work saved! Just goes to show you how a user can find many different ways to use a one part of a program for what it might not have originally been intended.</p>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <p>Copyright &copy; Company 2013</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

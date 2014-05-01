@@ -1,4 +1,0 @@
-#Battlebot Gallery
-
-{{gallery="battlebot"}}
-
