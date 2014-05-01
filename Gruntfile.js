@@ -67,6 +67,9 @@ module.exports = function(grunt) {
         layout: 'default.hbs',
         data: '<%= config.src %>/data/*.{json,yml}',
         partials: '<%= config.src %>/templates/partials/*.hbs',
+
+        BG_IMAGES: grunt.file.expand('dist/assets/img/backgrounds/*.{png,jpg}'),
+
         helpers: ['handlebars-helper-compose'],
         compose: {
           compare: function(a, b) {
@@ -112,7 +115,7 @@ module.exports = function(grunt) {
       src: ['**']
     }
   });
-
+  
   grunt.registerTask('build', [
     'clean',
     'assemble',
