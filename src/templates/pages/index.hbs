@@ -1,4 +1,36 @@
 ---
 title: Home
-layout: landing.hbs
+layout: base.hbs
 ---
+
+<div class="top-padding">
+</div>
+
+<a href="{{relative page.dest "dist/index.html"}}" class="brand"><img src="{{ assets }}/img/{{ site.logo }}"> {{ site.title }}</a>
+<div class="tagline-bar">{{ site.tagline }}</div>
+
+<div class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{{relative page.dest "dist/index.html"}}">
+        {{ site.title }}
+      </a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/blog.html">Blog</a>
+        </li>
+        <li>
+          <a href="/about.html">About</a>
+        </li>
+        <li>
+          <a href="/projects.html">Projects</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-padding">
+</div>

@@ -7,6 +7,8 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('assemble');
 
+  var BG_IMAGE_PATH = 'dist/assets/img/backgrounds/*.{png,jpg}'
+
   grunt.initConfig({
 
     config: {
@@ -68,7 +70,7 @@ module.exports = function(grunt) {
         data: '<%= config.src %>/data/*.{json,yml}',
         partials: '<%= config.src %>/templates/partials/*.hbs',
 
-        BG_IMAGES: grunt.file.expand('dist/assets/img/backgrounds/*.{png,jpg}'),
+        BG_IMAGES: grunt.file.expand(BG_IMAGE_PATH),
 
         helpers: ['handlebars-helper-compose'],
         compose: {
@@ -113,13 +115,26 @@ module.exports = function(grunt) {
         branch: 'master'
       },
       src: ['**']
+    },
+    
+    imagemin: {
+      bg_images: {
+        options: {
+          optimizationLevel: 5
+        },
+        files: [{
+          expand: true,
+          src: [BG_IMAGE_PATH]
+        }]
+      }
     }
   });
   
   grunt.registerTask('build', [
     'clean',
     'assemble',
-    'less'
+    'less',
+    'imagemin'
   ]);
 
   grunt.registerTask('publish', [
