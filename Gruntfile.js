@@ -79,16 +79,16 @@ module.exports = function(grunt) {
         files: {
           '<%= config.dist %>/': ['<%= config.src %>/templates/pages/*.hbs']
         }
-      }
+      },
 
-      // blog: {
-        // options: {
-          // layout: 'post.hbs'
-        // },
-        // files: {
-          // '<%= config.dist %>/': ['<%= config.src %>/templates/posts/*.md']
-        // }
-      // }
+      blog: {
+        options: {
+          layout: 'post.hbs'
+        },
+        files: {
+          '<%= config.dist %>/': ['<%= config.src %>/templates/posts/*.md']
+        }
+      }
     },
 
     less: {

@@ -20,14 +20,16 @@ component: navbar
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        {{#each pages}}
-          {{#isnt data.title 'Home'}}
-            <li{{#if this.isCurrentPage}} class="active"{{/if}}>
-              <a href="{{relative dest this.dest}}">{{ data.title }}</a>
-            </li>
-          {{/isnt}}
-        {{/each}}
+        <li>
+          <a href="/blog.html">Blog</a>
+        </li>
+        <li>
+          <a href="/about.html">About</a>
+        </li>
+        <li>
+          <a href="/projects.html">Projects</a>
+        </li>
       </ul>
-    </div><!--/.nav-collapse -->
+    </div>
   </div>
 </div>
