@@ -102,14 +102,25 @@ module.exports = function(grunt) {
 
     // before generating any new files,
     // remove any previously-created files.
-    clean: ['<%= config.dist %>/**/*.{html,xml}']
+    clean: ['<%= config.dist %>/**/*.{html,xml}'],
 
+    'gh-pages': {
+      options: {
+        base: 'dist'
+      },
+      src: ['**']
+    }
   });
 
   grunt.registerTask('build', [
     'clean',
     'assemble',
     'less'
+  ]);
+
+  grunt.registerTask('publish', [
+    'build',
+    'gh-pages'
   ]);
 
   grunt.registerTask('server', [
