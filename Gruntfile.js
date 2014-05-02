@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('assemble');
 
-  var BG_IMAGE_PATH = 'dist/assets/img/backgrounds/*.{png,jpg}'
+  var BG_IMAGE_PATH = 'dist/assets/img/backgrounds/*.{png,jpg}';
 
   grunt.initConfig({
 
@@ -115,26 +115,13 @@ module.exports = function(grunt) {
         branch: 'master'
       },
       src: ['**']
-    },
-    
-    imagemin: {
-      bg_images: {
-        options: {
-          optimizationLevel: 5
-        },
-        files: [{
-          expand: true,
-          src: [BG_IMAGE_PATH]
-        }]
-      }
     }
   });
-  
+
   grunt.registerTask('build', [
     'clean',
     'assemble',
-    'less',
-    'imagemin'
+    'less'
   ]);
 
   grunt.registerTask('publish', [
