@@ -2,8 +2,10 @@
 component: navbar
 ---
 
-<a href="{{relative page.dest "dist/index.html"}}" class="brand"><img src="{{ assets }}/img/{{ site.logo }}"> {{ site.title }}</a>
-<div class="tagline-bar">{{ site.tagline }}</div>
+<div class="landing">
+  <a href="{{relative page.dest "dist/index.html"}}" class="brand"><img src="{{ assets }}/img/{{ site.logo }}"> {{ site.title }}</a>
+  <div class="tagline-bar">{{ site.tagline }}</div>
+</div>
 
 <div class="navbar navbar-default" role="navigation">
   <div class="container">

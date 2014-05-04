@@ -5773,7 +5773,7 @@ button.close {
   }
 }
 body {
-  background-image: linear-gradient(#158cba, #083647);
+  background: linear-gradient(#158cba, #083647) no-repeat center center / 100% 100% fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -5938,4 +5938,7 @@ footer p {
     display: table;
     clear: both;
   }
+}
+.landing {
+  background-color: rgba(0, 0, 0, 0.4);
 }

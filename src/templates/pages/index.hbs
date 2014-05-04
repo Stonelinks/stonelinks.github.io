@@ -6,14 +6,19 @@ layout: base.hbs
 <div class="top-padding">
 </div>
 
-<a href="{{relative page.dest "dist/index.html"}}" class="brand"><img src="{{ assets }}/img/{{ site.logo }}"> {{ site.title }}</a>
-<div class="tagline-bar">{{ site.tagline }}</div>
+<div class="landing">
+  <a href="{{relative page.dest "dist/index.html"}}" class="brand"><img src="{{ assets }}/img/{{ site.logo }}"> {{ site.title }}</a>
+  <div class="tagline-bar">{{ site.tagline }}</div>
+</div>
 
 <div class="navbar navbar-default" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="{{relative page.dest "dist/index.html"}}">
         {{ site.title }}
+      </a>
+      <a class="navbar-brand" href="{{relative page.dest "dist/index.html"}}">
+        <small>{{ site.tagline }}</small>
       </a>
     </div>
     <div>
