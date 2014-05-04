@@ -11,29 +11,32 @@ layout: base.hbs
   <div class="tagline-bar">{{ site.tagline }}</div>
 </div>
 
-<div class="navbar navbar-default" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="{{relative page.dest "dist/index.html"}}">
-        <img src="{{ assets }}/img/{{ site.logo }}">
-        {{ site.title }}<br/>
-        <small class="text-muted">{{ site.tagline }}</small>
-      </a>
-    </div>
-    <div>
-      <ul class="nav navbar-nav">
-        <li>
-          <a href="/blog.html">Blog</a>
-        </li>
-        <li>
-          <a href="/about.html">About</a>
-        </li>
-        <li>
-          <a href="/projects.html">Projects</a>
-        </li>
-      </ul>
+<div class="landing-navbar-wrapper">
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="{{relative page.dest "dist/index.html"}}">
+          <img src="{{ assets }}/img/{{ site.logo }}">
+          {{ site.title }}<br/>
+          <small class="text-muted">{{ site.tagline }}</small>
+        </a>
+      </div>
+      <div>
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="/blog.html">Blog</a>
+          </li>
+          <li>
+            <a href="/about.html">About</a>
+          </li>
+          <li>
+            <a href="/projects.html">Projects</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
+  {{> footer }}
 </div>
 
 <div class="bottom-padding">

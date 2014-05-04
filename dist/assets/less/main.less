@@ -1,5 +1,8 @@
 @import "bootstrap.less";
 
+@import "../vendor/font-awesome/less/font-awesome.less";
+@fa-font-path: "../vendor/font-awesome/fonts";
+
 body {
 
   background: linear-gradient(darken(@brand-primary, 0%), darken(@brand-primary, 25%)) no-repeat center center / 100% 100% fixed;
@@ -45,7 +48,7 @@ hr {
   font-weight: 900;
 
   margin-bottom: 5px;
-  width: 60%;
+  width: 315px;
 }
 
 .navbar-brand img {
@@ -210,4 +213,24 @@ footer p {
 
 .landing {
   background-color: rgba(0, 0, 0, .4);
+}
+
+.social {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.footer-link {
+  font-size: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.footer-link:hover,
+.social:hover {
+  text-decoration: none;
+}
+
+.landing-navbar-wrapper .navbar {
+  margin-bottom: 0px;
 }

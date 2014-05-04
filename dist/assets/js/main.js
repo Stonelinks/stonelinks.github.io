@@ -19,10 +19,10 @@ $(document).ready(function() {
     // vertical center (pity this isn't elegant with css)
     var verticalCenter = function() {
       var windowHeight = $(window).height();
-      var navBarHeight = $('.navbar').height();
+      var landingHeight = $('.landing-navbar-wrapper').height();
 
       var ratio = 0.6;
-      var paddingHeight = Math.abs(windowHeight - navBarHeight) / 2.0;
+      var paddingHeight = Math.abs(windowHeight - landingHeight) / 2.0;
 
       $('.top-padding').height(ratio * paddingHeight);
       $('.bottom-padding').height((1.0 + (1.0 - ratio)) * paddingHeight);
@@ -31,7 +31,7 @@ $(document).ready(function() {
     verticalCenter();
     $(window).resize(verticalCenter);
 
-    var interval = 6600;
+    var interval = 8000;
     var _setBGImage = function() {
       var imagePath = chooseRandomImage();
       setBGImage(imagePath);
