@@ -15,10 +15,9 @@ layout: base.hbs
   <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="{{relative page.dest "dist/index.html"}}">
-        {{ site.title }}
-      </a>
-      <a class="navbar-brand" href="{{relative page.dest "dist/index.html"}}">
-        <small>{{ site.tagline }}</small>
+        <img src="{{ assets }}/img/{{ site.logo }}">
+        {{ site.title }}<br/>
+        <small class="text-muted">{{ site.tagline }}</small>
       </a>
     </div>
     <div>

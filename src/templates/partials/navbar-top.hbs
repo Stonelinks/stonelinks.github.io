@@ -17,7 +17,9 @@ component: navbar
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="{{relative page.dest "dist/index.html"}}">
-        {{ site.title }}
+        <img src="{{ assets }}/img/{{ site.logo }}">
+        {{ site.title }}<br/>
+        <small class="text-muted">{{ site.tagline }}</small>
       </a>
     </div>
     <div class="navbar-collapse collapse">
