@@ -2,7 +2,7 @@
 
 body {
 
-  background-image: linear-gradient(darken(@brand-primary, 0%), darken(@brand-primary, 25%));
+  background: linear-gradient(darken(@brand-primary, 0%), darken(@brand-primary, 25%)) no-repeat center center / 100% 100% fixed;
 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -43,6 +43,15 @@ hr {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 900;
+
+  margin-bottom: 5px;
+  width: 60%;
+}
+
+.navbar-brand img {
+  float: left;
+  height: 130%;
+  margin-right: 5px;
 }
 
 .navbar-nav {
@@ -197,4 +206,8 @@ footer p {
         display: table;
         clear: both;
     }
+}
+
+.landing {
+  background-color: rgba(0, 0, 0, .4);
 }

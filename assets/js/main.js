@@ -1,13 +1,15 @@
 $(document).ready(function() {
 
-  // pick a random background
-  var setBGImage = function() {
-    var bg_image = window.BG_IMAGES[Math.floor(Math.random() * window.BG_IMAGES.length)];
-    $('body').css('background', 'url(' + bg_image.replace('dist/', '') + ') no-repeat center center / 100% 100% fixed');
+  var chooseRandomImage = function() {
+    return window.BG_IMAGES[Math.floor(Math.random() * window.BG_IMAGES.length)].replace('dist/', '');
   };
-  setBGImage();
 
-  // special stuff just for the landing page
+  var setBGImage = function(imageURL) {
+
+    // specifically DONT use jquery here since the image doesn't always load smoothly
+    document.body.style.backgroundImage = 'url(\'' + imageURL + '\')';
+  };
+
   if (window.BASENAME == 'index') {
 
     // disable scrolling
@@ -25,8 +27,20 @@ $(document).ready(function() {
       $('.top-padding').height(ratio * paddingHeight);
       $('.bottom-padding').height((1.0 + (1.0 - ratio)) * paddingHeight);
     };
-    setInterval(setBGImage, 7000);
+
     verticalCenter();
     $(window).resize(verticalCenter);
+
+    var interval = 6600;
+    var _setBGImage = function() {
+      var imagePath = chooseRandomImage();
+      setBGImage(imagePath);
+      setTimeout(_setBGImage, interval);
+    };
+    _setBGImage();
+
+  }
+  else {
+    setBGImage(chooseRandomImage());
   }
 });
