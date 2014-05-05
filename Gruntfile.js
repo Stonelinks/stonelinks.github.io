@@ -114,7 +114,7 @@ module.exports = function(grunt) {
         base: 'dist',
         branch: 'master'
       },
-      src: ['**']
+      src: ['**', '.*']
     }
   });
 
