@@ -7305,3 +7305,6 @@ footer p {
 .landing-navbar-wrapper .navbar {
   margin-bottom: 0px;
 }
+.landing-navbar-wrapper footer {
+  padding-bottom: 25px;
+}
