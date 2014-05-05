@@ -4,14 +4,14 @@ logo: logos/big-logo.png
 
 social_networks: 
   - name: facebook
-    link: 'https://www.facebook.com/stonelinks'
+    link: https://www.facebook.com/stonelinks
   - name: github
-    link: 'https://github.com/Stone  links'
+    link: https://github.com/Stonelinks
   - name: twitter
-    link: 'https://twitter.com/#!/Stone  links'
+    link: https://twitter.com/#!/Stonelinks
   - name: google-plus
-    link: 'https://plus.google.com/116178490514652721625/posts'
+    link: https://plus.google.com/116178490514652721625/posts
   - name: linkedin
-    link: 'http://www.  linkedin.com/pub/lucas-doyle/25/550/169'
+    link: http://www.linkedin.com/pub/lucas-doyle/25/550/169
   - name: youtube
-    link: 'http://www.youtube.com/user/RealStone  links'
+    link: http://www.youtube.com/user/RealStonelinks
