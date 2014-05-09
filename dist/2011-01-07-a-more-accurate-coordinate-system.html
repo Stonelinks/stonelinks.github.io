@@ -78,10 +78,13 @@
       <small>01/07/2011</small>
       </h1></a>
       <hr>
-      <p><center></p>
-<p><iframe width="550" height="450" src="http://www.youtube.com/embed/c72tK4KTTj0" frameborder="0" allowfullscreen></iframe>
+      
+
+<center>
+<iframe width="550" height="450" src="http://www.youtube.com/embed/c72tK4KTTj0" frameborder="0" allowfullscreen></iframe>
 </center>
-<br></p>
+<br>
+
 <p>Unfortunately RPI health and safety inspections did not take as kindly to my <a href="door-mounted-roboschwarzenegger.html">door mounted Robo-Schwarzenegger</a> as I would have hoped. Apparently having a computer and a camera mounted to your door is fine, and so is having the whole affair viewable and controllable from any internet browser on campus, but the power cord across the doorway is a tripping hazard. Whether I agree with this or not, I took it down and brought the bot home with me over the break with the goal of teaching myself some python and jumping into OpenCV. I played with both OpenCV and Python a few years ago when I more or less <a href="http://blog.jozilla.net/2008/06/27/fun-with-python-opencv-and-face-detection/">followed this tutorial</a>, but ultimately could not garner decent control of the camera (lack of sophistication in protocol design by me between the PC / microcontroller). Also, the script I wrote had a memory leak I didn&#39;t know how to fix, presumably because I was a python noob. Don&#39;t get me wrong, I still am a python noob, just slightly less of one after the improvements described here. As you can see from the video, I have pretty good control over where the camera points. This was accomplished with a rewrite of the code running on the Arduino as well as python running on the PC. First I&#39;ll talk about the Arduino and then the python.</p>
 <h2 id="the-arduino">The Arduino</h2>
 <hr>
@@ -129,6 +132,7 @@ def spiral():
 <li><a href="http://dl.dropbox.com/u/4428042/stonelinks_public/main.py">Python main code</a></li>
 <li><a href="http://dl.dropbox.com/u/4428042/stonelinks_public/servo.py">Python servo module</a></li>
 </ul>
+
 
     </div>
   </div>

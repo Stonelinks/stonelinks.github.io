@@ -8,6 +8,8 @@ date: 2011-01-07
 </center>
 <br>
 
+{{#markdown}}
+
 Unfortunately RPI health and safety inspections did not take as kindly to my [door mounted Robo-Schwarzenegger](door-mounted-roboschwarzenegger.html) as I would have hoped. Apparently having a computer and a camera mounted to your door is fine, and so is having the whole affair viewable and controllable from any internet browser on campus, but the power cord across the doorway is a tripping hazard. Whether I agree with this or not, I took it down and brought the bot home with me over the break with the goal of teaching myself some python and jumping into OpenCV. I played with both OpenCV and Python a few years ago when I more or less [followed this tutorial](http://blog.jozilla.net/2008/06/27/fun-with-python-opencv-and-face-detection/), but ultimately could not garner decent control of the camera (lack of sophistication in protocol design by me between the PC / microcontroller). Also, the script I wrote had a memory leak I didn't know how to fix, presumably because I was a python noob. Don't get me wrong, I still am a python noob, just slightly less of one after the improvements described here. As you can see from the video, I have pretty good control over where the camera points. This was accomplished with a rewrite of the code running on the Arduino as well as python running on the PC. First I'll talk about the Arduino and then the python.
 
 ##The Arduino
@@ -65,4 +67,4 @@ So that was it! Now I have unrestricted access to use python to do (almost) what
 - [Python main code](http://dl.dropbox.com/u/4428042/stonelinks_public/main.py)
 - [Python servo module](http://dl.dropbox.com/u/4428042/stonelinks_public/servo.py)
 
-
+{{/markdown}}

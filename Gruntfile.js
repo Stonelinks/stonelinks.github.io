@@ -91,7 +91,7 @@ module.exports = function(grunt) {
           layout: 'post.hbs'
         },
         files: {
-          '<%= config.dist %>/': ['<%= config.src %>/templates/posts/*.md']
+          '<%= config.dist %>/': ['<%= config.src %>/templates/posts/*.{hbs,md}']
         }
       }
     },
