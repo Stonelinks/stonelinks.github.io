@@ -81,23 +81,24 @@
           </h1>
         </a>
         <hr/>
-        Over the holidays I finally got around to implementing what I wish existed back when I was looking for a job: a quick, easy and flexible way to write and publish a resume in many formats. The more people who see your resume, the better your chances of getting an interview or call back from a potential employer. This means the more formats and places that your resume is viewable in, the better. I tried to follow this strategy, however quickly tired making the same change on multiple versions of my resume.
+        <p>Over the holidays I finally got around to implementing what I wish existed back when I was looking for a job: a quick, easy and flexible way to write and publish a resume in many formats. The more people who see your resume, the better your chances of getting an interview or call back from a potential employer. This means the more formats and places that your resume is viewable in, the better. I tried to follow this strategy, however quickly tired making the same change on multiple versions of my resume.</p>
+<p>Like any programmer that has to do anything more than once, I wanted to automate this tedious editing. So I endeavoured create a better reseume authoring solution. Specifically, I wanted these features:</p>
+<ul>
+<li>Explicit seperation of resume data from resume formatting</li>
+<li>Store data in an intuitive and easy to manipulate format</li>
+<li>Write once, publish and deploy resume everywhere</li>
+</ul>
+<p>In order to separate data from formatting, I decided the best thing would be to store the resume data in a JSON file and then use a python script to print out different views of the content. I called this program the &quot;generator&quot; since it essentially generated a resume instance from an input JSON file. The generator uses different &quot;writers&quot; to print it back out in different formats. Here is a breakdown of the different formats supported using a combination of the generator and some macros in a Makefile:</p>
+<ul>
+<li>text</li>
+<li>html</li>
+<li>pdf (using <a href="http://code.google.com/p/wkhtmltopdf/">wkhtmltopdf</a>)</li>
+<li>markdown</li>
+<li>stonelinks-specific markdown (which is what is used to generate the html for my resume on this website)</li>
+</ul>
+<p>Anyhow it is finished and it works great for my purposes. The code is available <a href="https://github.com/Stonelinks/resume">here</a> on github. It should be easy for others to use it, just fork and modify the JSON with your resume data and use the generator to re-generate the resumes.</p>
 
-Like any programmer that has to do anything more than once, I wanted to automate this tedious editing. So I endeavoured create a better reseume authoring solution. Specifically, I wanted these features:
 
-- Explicit seperation of resume data from resume formatting
-- Store data in an intuitive and easy to manipulate format
-- Write once, publish and deploy resume everywhere
-
-In order to separate data from formatting, I decided the best thing would be to store the resume data in a JSON file and then use a python script to print out different views of the content. I called this program the "generator" since it essentially generated a resume instance from an input JSON file. The generator uses different "writers" to print it back out in different formats. Here is a breakdown of the different formats supported using a combination of the generator and some macros in a Makefile:
-
-- text
-- html
-- pdf (using [wkhtmltopdf](http://code.google.com/p/wkhtmltopdf/))
-- markdown
-- stonelinks-specific markdown (which is what is used to generate the html for my resume on this website)
-
-Anyhow it is finished and it works great for my purposes. The code is available [here](https://github.com/Stonelinks/resume) on github. It should be easy for others to use it, just fork and modify the JSON with your resume data and use the generator to re-generate the resumes.
 
       </div>
     </div>
@@ -141,16 +142,17 @@ Anyhow it is finished and it works great for my purposes. The code is available 
           </h1>
         </a>
         <hr/>
-        A few months ago, I came up with a quick way to write text documents called [Lite Write](https://github.com/Stonelinks/Lite-Write) and have been using it in place of a word processor with great success. Like most people who write a lot of code, I'm most comfortable manipulating text in my editor of choice. However, I do a fair amount of writing that needs to be accessible to non programmers, which means my work really can't stay in plain text forever. Lite write is a simple setup (basically a Makefile and some bits of HTML/CSS) that does just that. It has the following features:
+        <p>A few months ago, I came up with a quick way to write text documents called <a href="https://github.com/Stonelinks/Lite-Write">Lite Write</a> and have been using it in place of a word processor with great success. Like most people who write a lot of code, I&#39;m most comfortable manipulating text in my editor of choice. However, I do a fair amount of writing that needs to be accessible to non programmers, which means my work really can&#39;t stay in plain text forever. Lite write is a simple setup (basically a Makefile and some bits of HTML/CSS) that does just that. It has the following features:</p>
+<ul>
+<li>Write everything in markdown</li>
+<li>Produce a PDF of your document</li>
+<li>Produce a standalone HTML version of your document anyone can view online</li>
+<li>Simple, easy to extended</li>
+</ul>
+<p>Over time I&#39;ve grown very frustrated with traditional word processors (MS Word, OpenOffice, etc.). Google Docs is pretty good, but not well suited for when you&#39;re offline or need fine control over formatting. I used LaTeX for awhile because it gave me that control over formatting and produced beautiful looking documents. While awesome for equations, large amounts of text and so many other things, LaTeX&#39;s syntax got to be cumbersome (at least in my opinion) for shorter documents. It would distract me from actually getting any writing done.</p>
+<p>Enter Lite Write. Markdown is simple enough that you don&#39;t even need to think about it when writing, and if you need finer control over formatting, just write HTML. So far has been great, and hopefully other people will read this, use it and maybe even add more formats to it.</p>
 
-- Write everything in markdown
-- Produce a PDF of your document
-- Produce a standalone HTML version of your document anyone can view online
-- Simple, easy to extended
 
-Over time I've grown very frustrated with traditional word processors (MS Word, OpenOffice, etc.). Google Docs is pretty good, but not well suited for when you're offline or need fine control over formatting. I used LaTeX for awhile because it gave me that control over formatting and produced beautiful looking documents. While awesome for equations, large amounts of text and so many other things, LaTeX's syntax got to be cumbersome (at least in my opinion) for shorter documents. It would distract me from actually getting any writing done.
-
-Enter Lite Write. Markdown is simple enough that you don't even need to think about it when writing, and if you need finer control over formatting, just write HTML. So far has been great, and hopefully other people will read this, use it and maybe even add more formats to it.
 
       </div>
     </div>
@@ -241,9 +243,10 @@ The camera has since been mounted to a custom pan/tilt module under the engine.
           </h1>
         </a>
         <hr/>
-        I got really bored over the holidays and wrote a very naive sudoku solver in C++.
+        <p>I got really bored over the holidays and wrote a very naive sudoku solver in C++.</p>
+<p>See it on github: <a href="https://gist.github.com/1522578"><a href="https://gist.github.com/1522578">https://gist.github.com/1522578</a></a></p>
 
-See it on github: [https://gist.github.com/1522578](https://gist.github.com/1522578)
+
 
       </div>
     </div>
@@ -334,12 +337,9 @@ $ sudo apt-get install OpenCV python-OpenCV
 <img src="img/misc/Fig.png" class="thumbnail" width="80%">
 </center>
 
-Hate excel? Have python take all the pain away from you! This should appeal to everyone out there who needs a quick way to analyze the runtime time of a bunch of commands to a program given an arbitrary list of arguments. Hating excel/openoffice/spreadsheets in general is optional.
-
-Just like every programmer, I am always trying to find new and interesting ways of automating myself out of a job. To that end, I wrote a pretty cool program last night to help automate my first algorithms lab.
-
-Consistent with the recent trend of mine, it is in python and makes use of the [subprocess](http://docs.python.org/library/subprocess.html) module to spawn and time instances of my C++ program and [pylab](http://matplotlib.sourceforge.net/) to make plotting the times super easy. The comments in my code explain things in more detail, but here is the one sentence summary: Python is being used to execute two programs written in C++ with the same set of arguments and spits out a plot of their times. In this case the two C++ programs are recursive (rfib) and iterative (ifib) implementations of the Fibonacci algorithm. The fun stuff is in the python:
-
+<p>Hate excel? Have python take all the pain away from you! This should appeal to everyone out there who needs a quick way to analyze the runtime time of a bunch of commands to a program given an arbitrary list of arguments. Hating excel/openoffice/spreadsheets in general is optional.</p>
+<p>Just like every programmer, I am always trying to find new and interesting ways of automating myself out of a job. To that end, I wrote a pretty cool program last night to help automate my first algorithms lab.</p>
+<p>Consistent with the recent trend of mine, it is in python and makes use of the <a href="http://docs.python.org/library/subprocess.html">subprocess</a> module to spawn and time instances of my C++ program and <a href="http://matplotlib.sourceforge.net/">pylab</a> to make plotting the times super easy. The comments in my code explain things in more detail, but here is the one sentence summary: Python is being used to execute two programs written in C++ with the same set of arguments and spits out a plot of their times. In this case the two C++ programs are recursive (rfib) and iterative (ifib) implementations of the Fibonacci algorithm. The fun stuff is in the python:</p>
 <pre>
 #!/usr/bin/env python
 
@@ -353,40 +353,40 @@ import pylab  # matplotlib
 def timerun(program, args) :
     print 'Starting timed execution of ' + program + ' with ' + str(len(args)) + ' arguments.'
     i = 1
-    
+
     # Execute program, once for each n argument
     for n in args :
-        
+
         # This was really annoying. Build the arguments to the time system call to the time command.
         # First of all, for whatever reason 'time' didn't work correctly with any arguments other than -p, 
         # so I used /usr/bin/time instead. Since I could not figure out why the output of 'time' was not
         # coming back to stdin, I use the -o (output file) and -a (append) option to just output the real
         # execution time ( thats where '-f' and '%e' comes from ) to the file.
         p = subprocess.Popen(['/usr/bin/time', '-o', 'runtimes.txt', '-a', '-f', '%e', './' + program, str(n)], stdout=subprocess.PIPE)
-        
+
         # Read back from stdin, print where we are (not required, but its nice)
         output = p.communicate()[0]
         sys.stdout.write( str(i) + ':\tfib('+ str(n) + ') = ' + output)
         i += 1
     print 'done'
-    
+
     # Open up, read and return the times in the output file
     f = open('runtimes.txt', 'r')
     times = f.read().splitlines()
 
     # Clean up old runtimes
     subprocess.Popen(['rm', 'runtimes.txt'],stdout=subprocess.PIPE)
-    
+
     return times
 
 def main():
-    
+
     # Arguments we are interested in testing runtimes for
     # args = 1, 5, 10, 15, 20, 25, 30, 35, 40, 41, 42, 43, 44, 45, 46, 47, 48
     args = range(1, 56)
-    
-    
-    
+
+
+
     # Compute the runtimes of the recursive algorithm, then the iterative one
     rtimes = timerun('rfib', args)
     itimes = timerun('ifib', args)
@@ -416,7 +416,8 @@ if __name__ == "__main__":
 
 </pre>
 
-I've also attached the whole lab [here](misc/lab1.zip) in case the python does not make sense by itself. Hope someone finds this useful!
+<p>I&#39;ve also attached the whole lab <a href="misc/lab1.zip">here</a> in case the python does not make sense by itself. Hope someone finds this useful!</p>
+
 
 
       </div>
@@ -436,15 +437,13 @@ I've also attached the whole lab [here](misc/lab1.zip) in case the python does n
           </h1>
         </a>
         <hr/>
-        Another example of python being super useful. I found myself today with a need to network a printer so my room mates and I could print from anywhere on campus. However, figuring out what ports to forward, trying to get IPP to work and just being generally unhappy with CUPS and the way RPIs network restricts printer traffic / discovery lead me to consider alternate solutions.
+        <p>Another example of python being super useful. I found myself today with a need to network a printer so my room mates and I could print from anywhere on campus. However, figuring out what ports to forward, trying to get IPP to work and just being generally unhappy with CUPS and the way RPIs network restricts printer traffic / discovery lead me to consider alternate solutions.</p>
+<p>Enter python and Gmail! I wanted to be able to have someone email me a message with a few keywords in the subject line that would tag any attachments for printing. I then had python log into my email and download the most recent email for printing, and if the attachment was new to it, print it. I wrote a nice little script that does just that:</p>
+<p><a href="https://github.com/Stonelinks/gmail-printsrv">Here it is on github</a></p>
+<p>All you gotta do is edit the username and password at the top of the script, and set up a cron job to call the script on the machine with the printer attached.</p>
+<p>A couple of other comments about this: It is dangerous! Someone could email you a file with a malformed name and escape out of the print command that gets called by the subprocess. Not good. There are probably other security risks (like the fact that your password is stored in plaintext). Thats it! have fun kids!</p>
 
-Enter python and Gmail! I wanted to be able to have someone email me a message with a few keywords in the subject line that would tag any attachments for printing. I then had python log into my email and download the most recent email for printing, and if the attachment was new to it, print it. I wrote a nice little script that does just that:
 
-[Here it is on github](https://github.com/Stonelinks/gmail-printsrv)
-
-All you gotta do is edit the username and password at the top of the script, and set up a cron job to call the script on the machine with the printer attached.
-
-A couple of other comments about this: It is dangerous! Someone could email you a file with a malformed name and escape out of the print command that gets called by the subprocess. Not good. There are probably other security risks (like the fact that your password is stored in plaintext). Thats it! have fun kids!
 
       </div>
     </div>
@@ -538,11 +537,10 @@ def spiral():
 <img src="img/old/downsize1-225x300.jpg" class="thumbnail" width="50%">
 </center>
 
-Home for the break! My brother asked me for help making a small electromagnet to bring into Boy Scouts for electricity merit badge. I of course jumped at the opportunity, and asked what kind of power source they are going to be using to drive said magnet. He tells me they will be using a single D battery. Thinking this is kind of small, I spent a few hours making the biggest electromagnet from things around the house I could find.
+<p>Home for the break! My brother asked me for help making a small electromagnet to bring into Boy Scouts for electricity merit badge. I of course jumped at the opportunity, and asked what kind of power source they are going to be using to drive said magnet. He tells me they will be using a single D battery. Thinking this is kind of small, I spent a few hours making the biggest electromagnet from things around the house I could find.</p>
+<p>I ultimately settled on sawing an old golf club in half, stuffing a large bolt down the hollow inside, and then mounting the whole thing in a drill to facilitate easy winding of some low-gauge wire I found in our garage. To top it off, I powered the whole thing with an old computer power supply (5V at 25A I believe). The whole affair vaguely looks like some kind of torture device. The end result is a large electro magnet that can pick up very heavy weights and gets furiously hot and smells like burning plastic if left on for more than 5 minutes. Totally overkill for Boy Scouts, but totally awesome.</p>
+<p>Mission: Success.</p>
 
-I ultimately settled on sawing an old golf club in half, stuffing a large bolt down the hollow inside, and then mounting the whole thing in a drill to facilitate easy winding of some low-gauge wire I found in our garage. To top it off, I powered the whole thing with an old computer power supply (5V at 25A I believe). The whole affair vaguely looks like some kind of torture device. The end result is a large electro magnet that can pick up very heavy weights and gets furiously hot and smells like burning plastic if left on for more than 5 minutes. Totally overkill for Boy Scouts, but totally awesome.
-
-Mission: Success.
 
 
       </div>
@@ -562,12 +560,9 @@ Mission: Success.
           </h1>
         </a>
         <hr/>
-        Looks like the kinks of my new [two-server](dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid.html) setup are not ironed out. I just got home from RPI and the old Dell is acting wacky. I thoroughly checked both machines before I left for home, and I thought everything was okay. However, upon arriving home, I checked the web server to find that it doesn't work -- not even a 404 page or a time out error, the browser just hangs.
-
-To use anything other than HTTP on port 80, I need to be on RIP's VPN. I log into the VPN and start with the basics. The machine (which is not behind a router) responds to ping, however ssh shows the same symptoms as apache. I don't even get a connection refused or path not found or timeout error, the login literally just hangs (I left it running for like 30 min now).
-
-After being thoroughly baffled by this, I ran NMAP from another machine on the same network:
-
+        <p>Looks like the kinks of my new <a href="dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid.html">two-server</a> setup are not ironed out. I just got home from RPI and the old Dell is acting wacky. I thoroughly checked both machines before I left for home, and I thought everything was okay. However, upon arriving home, I checked the web server to find that it doesn&#39;t work -- not even a 404 page or a time out error, the browser just hangs.</p>
+<p>To use anything other than HTTP on port 80, I need to be on RIP&#39;s VPN. I log into the VPN and start with the basics. The machine (which is not behind a router) responds to ping, however ssh shows the same symptoms as apache. I don&#39;t even get a connection refused or path not found or timeout error, the login literally just hangs (I left it running for like 30 min now).</p>
+<p>After being thoroughly baffled by this, I ran NMAP from another machine on the same network:</p>
 <pre>
 [luke@void ~]$ nmap -A -T4 stonelinks.org
 Starting Nmap 4.11 ( http://www.insecure.org/nmap/ ) at 2010-12-27 03:39 EST
@@ -580,7 +575,9 @@ PORT    STATE SERVICE  VERSION
 111/tcp open  rpcbind?
 </pre>
 
-I have VPN access and control over other computers on the same network, but obviously no physical access to the machine. I have no idea what is going on here, my assumption is that the kernel is hanging on something, but I guess I'll find out when I get back. Because of the way RPI manages IP addresses, the firewall at RPI, and the uncertainty of the other computer, I'm hesitant to just tell my desktop to take the old MAC / IP for Stonelinks until I get back on campus in case I lose both machines. Luckily I had a backup of Stonelinks that I moved to my house. So until I get back on campus, I am hosting off my houses internet connection! Be warned in this time Stonelinks will be operating in a pretty crippled capacity.
+<p>I have VPN access and control over other computers on the same network, but obviously no physical access to the machine. I have no idea what is going on here, my assumption is that the kernel is hanging on something, but I guess I&#39;ll find out when I get back. Because of the way RPI manages IP addresses, the firewall at RPI, and the uncertainty of the other computer, I&#39;m hesitant to just tell my desktop to take the old MAC / IP for Stonelinks until I get back on campus in case I lose both machines. Luckily I had a backup of Stonelinks that I moved to my house. So until I get back on campus, I am hosting off my houses internet connection! Be warned in this time Stonelinks will be operating in a pretty crippled capacity.</p>
+
+
 
       </div>
     </div>
@@ -605,25 +602,21 @@ I have VPN access and control over other computers on the same network, but obvi
 These two suckers now live on my desk and throw off a ton of heat.
 </center>
 
-Recently completed some much needed upgrades to the servers (hardware and software) that run Stonelinks! This has me very excited and has been a long time in the works! (Warning: long story of blood, sweat, nerdrage and glorious payoff ahead) Despite being a humongous Linux nerd, for years I have hosted Stonelinks using Windows / [WAMP](http://www.wampserver.com/en/) server (which is the same thing as LAMP, just replace Linux with Windows). For a long time this was my only option as far as "free" hosting on RPI's bandwidth goes, as my desktop is the only computer that is consistently on 24/7 and can act like a server.
+<p>Recently completed some much needed upgrades to the servers (hardware and software) that run Stonelinks! This has me very excited and has been a long time in the works! (Warning: long story of blood, sweat, nerdrage and glorious payoff ahead) Despite being a humongous Linux nerd, for years I have hosted Stonelinks using Windows / <a href="http://www.wampserver.com/en/">WAMP</a> server (which is the same thing as LAMP, just replace Linux with Windows). For a long time this was my only option as far as &quot;free&quot; hosting on RPI&#39;s bandwidth goes, as my desktop is the only computer that is consistently on 24/7 and can act like a server.</p>
+<p>By necessity, my desktop needs to be running Windows 7 because unfortunately I need access to a bunch of programs that I can&#39;t get for Linux. Things like LabVIEW for work at the <a href="work/work-at-harvard--smithsonian.html">Center for Astrophysics</a>, MATLAB so my room mate can run his week long computational fluid dynamic simulations on for his research (we need our own supercomputer for this!), Solidworks for random CAD I occasionally do, Netflix because content licensing people are afraid of Linux and finally Team Fortress 2 because I occasionally like to get my game on. Because of the sporadic nature of when I use most of these programs, it also means that dual booting between Linux and Windows was is of the question. I didn&#39;t want to shut down the server while someone was using it just so I could boot into Windows and do some CAD.</p>
+<p>Therefore, I have stuck with my WAMP setup for many years. As far as WAMP is concerned, it has sort of been &quot;fine&quot; most of the time, but definitely not ideal. All of the other websites I work on are hosted from some flavor of Linux, as it is free, stable, makes administration and development a breeze compared to Windows (what a nightmare it was to get PHP&#39;s mail() command to work with SSL in Windows), the list goes on. Obviously hosting Stonelinks under Linux has been a goal of mine. Occasionally I would try using a virtual machine to host, but I&#39;d always find that to be too resource intensive and would BSOD my computer after awhile if left on for too long. Cygwin was and always has been a nightmare for me, so I didn&#39;t even go there. Interestingly, I did have some success with something called <a href="http://www.andlinux.org/">andLinux</a> which, from my understanding, is an Ubuntu installation based around a Linux kernel compiled to use win32 executables a la <a href="http://www.colinux.org/">coLinux</a>. All the benefits of a virtual machine without the instability and losing a massive chunk of RAM. I ultimately dumped andLinux, chiefly because andLinux uses a virtual network adapter to communicate with Windows, so a webserver running under andLinux would be heavily bandwidth constrained for any clients other than localhost. So up until writing this I&#39;ve been really, throughly stuck.</p>
+<p>Fast forward to a few weeks before Christmas. For an early Christmas present, I decided to replace my Dad&#39;s aging Dell with a Newegg special custom desktop. I built him a pretty sweet machine, and even got him using Ubuntu (quite the tech-savvy 63 year old!), with a Windows XP virtual machine to fall back on if he ever gets really stuck with something. This left his old desktop vacated for me to use! The Dell made it&#39;s glorious pilgrimage back to RPI with me where I proceeded to wipe it&#39;s brains and installed the latest Ubuntu on it. I then began the task of porting Stonelinks over to that machine. One problem though: my Dad&#39;s old Dell did not have enough disk space for it. Queue my second Newegg purchase: I bought two 2-TB SATA disks and a RAID card (among other things) on cyber Monday for the crazy price of $180 (granted the RAID card is not a &quot;real&quot; RAID card, as none of the parity checking for RAID is done by hardware on the card it is basically a glorified SATA controller). I wrongfully assumed that since the RAID card was PCI, it would be compatible with the old Dell. I thought that since there were no SATA ports on the motherboard of the Dell I could use the RAID card to be the root of the webserver. At the very worst, I knew the firmware on the card was swappable so I could re-flash firmware on the card to make it act as a pass through (no RAID) for the drives to the OS. Booooy was I wrong.</p>
+<p>First of all, the RAID controller was not being picked up, not even in the BIOS, on the Dell. No matter what I tried, it wouldn&#39;t work in the Dell (and yes I had the Linux drivers for it / proper kernel modules running). I thought I might have a defective card so I tried it in a spare PCI slot on my desktop. The card worked like a charm! At this point I was tearing my hair out -- I didn&#39;t even care about RAID on the card, I just wanted SATA drives to work on the Dell at which point I could use something like <a href="http://en.wikipedia.org/wiki/Mdadm">mdadm</a> for my fake RAID. I thought that flashing the firmware that makes the card act like a pass through was a good idea. This opened up a new can of nightmares for me!</p>
+<p>Turns out that Silicon Image (SI from here on out), the maker of the &quot;fake&quot; RAID controller chip on the card I bought, supplies its chips / firmware to 3rd parties that put together the cards and sell them. In order to even begin messing with the firmware on the card I had to use a bunch of really bad DOS executables that I called from the command line, and then echo the return value (took me forever to figure out how to do... damn windows shell) so I could match the number up with the response code on some PDF off their website. At this point I am furious that I&#39;ve wasted so much time on this. Using the sinfully awful SI tools, I eventually figured out that my card manufacturer, Rosewill, was storing the device firmware on an external flash chip that I could not flash with any different firmware.</p>
+<p>At this point I have not slept in probably 24 hours and am feeling like I want to skewer the card on my African war sword (yes I own one) throw it in the oven, set it to clean and walk away. I am too stubborn to give up like that though, so I cook up a phenomenal, and what will be my final, solution to hosting this iteration of Stonelinks.</p>
+<p>Essentially, I separated content from the servers by keeping the RAID array on my desktop, sharing it as a Windows share, and then using <a href="https://help.ubuntu.com/community/Autofs">autofs</a> to mount the share on the Dell. Both machines live behind the same 10/100 switch and I can pull data off there at fairly high speeds, so I was very happy! The hardest part about getting this to work was managing permissions between the two machines and finding a good way to keep track of my Desktop because its IP was no longer static. I accomplished the former by being clever, and the latter with a dynamic DNS. Overall, I&#39;d say the lessons I learned from this were things I already knew but were reinforced:</p>
+<ul>
+<li>Don&#39;t buy something (RAID card in this case) just because it is cheap</li>
+<li>Don&#39;t make assumptions about how something will work</li>
+<li>Instead of trying solve a complicated problem all at once and banging your head against the wall, stay sane and walk away, then come back and attack it bit by bit</li>
+</ul>
 
-By necessity, my desktop needs to be running Windows 7 because unfortunately I need access to a bunch of programs that I can't get for Linux. Things like LabVIEW for work at the [Center for Astrophysics](work/work-at-harvard--smithsonian.html), MATLAB so my room mate can run his week long computational fluid dynamic simulations on for his research (we need our own supercomputer for this!), Solidworks for random CAD I occasionally do, Netflix because content licensing people are afraid of Linux and finally Team Fortress 2 because I occasionally like to get my game on. Because of the sporadic nature of when I use most of these programs, it also means that dual booting between Linux and Windows was is of the question. I didn't want to shut down the server while someone was using it just so I could boot into Windows and do some CAD.
 
-Therefore, I have stuck with my WAMP setup for many years. As far as WAMP is concerned, it has sort of been "fine" most of the time, but definitely not ideal. All of the other websites I work on are hosted from some flavor of Linux, as it is free, stable, makes administration and development a breeze compared to Windows (what a nightmare it was to get PHP's mail() command to work with SSL in Windows), the list goes on. Obviously hosting Stonelinks under Linux has been a goal of mine. Occasionally I would try using a virtual machine to host, but I'd always find that to be too resource intensive and would BSOD my computer after awhile if left on for too long. Cygwin was and always has been a nightmare for me, so I didn't even go there. Interestingly, I did have some success with something called [andLinux](http://www.andlinux.org/) which, from my understanding, is an Ubuntu installation based around a Linux kernel compiled to use win32 executables a la [coLinux](http://www.colinux.org/). All the benefits of a virtual machine without the instability and losing a massive chunk of RAM. I ultimately dumped andLinux, chiefly because andLinux uses a virtual network adapter to communicate with Windows, so a webserver running under andLinux would be heavily bandwidth constrained for any clients other than localhost. So up until writing this I've been really, throughly stuck.
-
-Fast forward to a few weeks before Christmas. For an early Christmas present, I decided to replace my Dad's aging Dell with a Newegg special custom desktop. I built him a pretty sweet machine, and even got him using Ubuntu (quite the tech-savvy 63 year old!), with a Windows XP virtual machine to fall back on if he ever gets really stuck with something. This left his old desktop vacated for me to use! The Dell made it's glorious pilgrimage back to RPI with me where I proceeded to wipe it's brains and installed the latest Ubuntu on it. I then began the task of porting Stonelinks over to that machine. One problem though: my Dad's old Dell did not have enough disk space for it. Queue my second Newegg purchase: I bought two 2-TB SATA disks and a RAID card (among other things) on cyber Monday for the crazy price of $180 (granted the RAID card is not a "real" RAID card, as none of the parity checking for RAID is done by hardware on the card it is basically a glorified SATA controller). I wrongfully assumed that since the RAID card was PCI, it would be compatible with the old Dell. I thought that since there were no SATA ports on the motherboard of the Dell I could use the RAID card to be the root of the webserver. At the very worst, I knew the firmware on the card was swappable so I could re-flash firmware on the card to make it act as a pass through (no RAID) for the drives to the OS. Booooy was I wrong.
-
-First of all, the RAID controller was not being picked up, not even in the BIOS, on the Dell. No matter what I tried, it wouldn't work in the Dell (and yes I had the Linux drivers for it / proper kernel modules running). I thought I might have a defective card so I tried it in a spare PCI slot on my desktop. The card worked like a charm! At this point I was tearing my hair out -- I didn't even care about RAID on the card, I just wanted SATA drives to work on the Dell at which point I could use something like [mdadm](http://en.wikipedia.org/wiki/Mdadm) for my fake RAID. I thought that flashing the firmware that makes the card act like a pass through was a good idea. This opened up a new can of nightmares for me!
-
-Turns out that Silicon Image (SI from here on out), the maker of the "fake" RAID controller chip on the card I bought, supplies its chips / firmware to 3rd parties that put together the cards and sell them. In order to even begin messing with the firmware on the card I had to use a bunch of really bad DOS executables that I called from the command line, and then echo the return value (took me forever to figure out how to do... damn windows shell) so I could match the number up with the response code on some PDF off their website. At this point I am furious that I've wasted so much time on this. Using the sinfully awful SI tools, I eventually figured out that my card manufacturer, Rosewill, was storing the device firmware on an external flash chip that I could not flash with any different firmware.
-
-At this point I have not slept in probably 24 hours and am feeling like I want to skewer the card on my African war sword (yes I own one) throw it in the oven, set it to clean and walk away. I am too stubborn to give up like that though, so I cook up a phenomenal, and what will be my final, solution to hosting this iteration of Stonelinks.
-
-Essentially, I separated content from the servers by keeping the RAID array on my desktop, sharing it as a Windows share, and then using [autofs](https://help.ubuntu.com/community/Autofs) to mount the share on the Dell. Both machines live behind the same 10/100 switch and I can pull data off there at fairly high speeds, so I was very happy! The hardest part about getting this to work was managing permissions between the two machines and finding a good way to keep track of my Desktop because its IP was no longer static. I accomplished the former by being clever, and the latter with a dynamic DNS. Overall, I'd say the lessons I learned from this were things I already knew but were reinforced:
-
-- Don't buy something (RAID card in this case) just because it is cheap
-- Don't make assumptions about how something will work
-- Instead of trying solve a complicated problem all at once and banging your head against the wall, stay sane and walk away, then come back and attack it bit by bit
 
       </div>
     </div>
@@ -642,7 +635,8 @@ Essentially, I separated content from the servers by keeping the RAID array on m
           </h1>
         </a>
         <hr/>
-        Suzanne has told me to stop working on the current incarnation of the documentation as I had been writing it for an audience unacquainted with my work, not for her and my coworker. I have provided her with what she needs, but it would be a shame for all the writing I did not to see the light of day. Maybe it will be useful to someone. After all, it was written for an unacquainted audience, so you might learn something! [Here it is](misc/CfA_doc.pdf)
+        <p>Suzanne has told me to stop working on the current incarnation of the documentation as I had been writing it for an audience unacquainted with my work, not for her and my coworker. I have provided her with what she needs, but it would be a shame for all the writing I did not to see the light of day. Maybe it will be useful to someone. After all, it was written for an unacquainted audience, so you might learn something! <a href="misc/CfA_doc.pdf">Here it is</a></p>
+
 
 
       </div>
@@ -662,9 +656,10 @@ Essentially, I separated content from the servers by keeping the RAID array on m
           </h1>
         </a>
         <hr/>
-        I'm using my documentation for work at the Center for Astrophysics as an excuse to learn LaTeX. For those in my generation who have grown up with MS Office or openoffice.org, LaTeX is an ancient typesetting language that can trace its roots back to the legendary [Donald Knuth](http://en.wikipedia.org/wiki/Donald_Knuth) who wrote TeX back in the '70s.
+        <p>I&#39;m using my documentation for work at the Center for Astrophysics as an excuse to learn LaTeX. For those in my generation who have grown up with MS Office or openoffice.org, LaTeX is an ancient typesetting language that can trace its roots back to the legendary <a href="http://en.wikipedia.org/wiki/Donald_Knuth">Donald Knuth</a> who wrote TeX back in the &#39;70s.</p>
+<p>Long story short, it is awesome and as a programmer, really straightforward. Honestly the thing that upsets me the most about LaTeX is that I didn&#39;t know it existed back when Matt and I were writing / editing that <a href="misc/IED_tech_report_final.pdf">137 page paper</a> for the IED border patrol robot!</p>
 
-Long story short, it is awesome and as a programmer, really straightforward. Honestly the thing that upsets me the most about LaTeX is that I didn't know it existed back when Matt and I were writing / editing that [137 page paper](misc/IED_tech_report_final.pdf) for the IED border patrol robot!
+
 
       </div>
     </div>
@@ -683,9 +678,9 @@ Long story short, it is awesome and as a programmer, really straightforward. Hon
           </h1>
         </a>
         <hr/>
-        LabVIEW is a necessary evil, but sometimes it pulls through. Earlier today I found myself in the position of needing a whole bunch of icons, block diagrams and VI hierarchies extracted from a bunch of LabVIEW that I wrote for work to go in my documentation, which is in written in LaTeX. Up until now I thought this would mean trying to do a million screenshots over VNC on my work computer, and then going back and cropping what I needed. However on further research I was thrilled to find out that LabVIEW can pretty much do this on its own. See the [NI website on printing VI documentation](http://zone.ni.com/reference/en-XX/help/371361B-01/lvconcepts/printing_vis/).
+        <p>LabVIEW is a necessary evil, but sometimes it pulls through. Earlier today I found myself in the position of needing a whole bunch of icons, block diagrams and VI hierarchies extracted from a bunch of LabVIEW that I wrote for work to go in my documentation, which is in written in LaTeX. Up until now I thought this would mean trying to do a million screenshots over VNC on my work computer, and then going back and cropping what I needed. However on further research I was thrilled to find out that LabVIEW can pretty much do this on its own. See the <a href="http://zone.ni.com/reference/en-XX/help/371361B-01/lvconcepts/printing_vis/">NI website on printing VI documentation</a>.</p>
+<p>Basically what I did was import the VI hierarchy for my top level VI (the dashboard in this case), created a custom format for my documentation, checked off what I wanted to appear, and then outputted it all as HTML. The end result looks <a href="luke/work/cfa/example/">something like this</a>. Since the directory where the HTML was generated is now chock full o&#39; images, I took what images I wanted and insert them into my documentation. Probably an hour of tedious work saved! Just goes to show you how a user can find many different ways to use a one part of a program for what it might not have originally been intended.</p>
 
-Basically what I did was import the VI hierarchy for my top level VI (the dashboard in this case), created a custom format for my documentation, checked off what I wanted to appear, and then outputted it all as HTML. The end result looks [something like this](luke/work/cfa/example/). Since the directory where the HTML was generated is now chock full o' images, I took what images I wanted and insert them into my documentation. Probably an hour of tedious work saved! Just goes to show you how a user can find many different ways to use a one part of a program for what it might not have originally been intended.
 
 
       </div>
@@ -710,9 +705,9 @@ Basically what I did was import the VI hierarchy for my top level VI (the dashbo
 </center>
 <br>
 
-I don't get to fool around with my own projects nearly as much as I would like, but this weekend I did devote a few hours to finishing up a robotic internet controlled camera on our apartment door. The pre-existing peep hole didn't exactly work, and I'm tired of people knocking and having no idea who is at the door, so I felt like this was an appropriate solution. The story of exactly how and why I made this thing can find their roots back in the summer. One day in August I had this idea of creating a Generic Web Enabled Robotic Operating System (GWEROS... yeah I know it's a pretty stupid sounding acronym, give me a break) that would essentially allow you to create an awesome, high functioning robot out of a wide variety of off the shelf hardware so long as it had a few basic things: a web server, a web cam, a serial port attached to a micro controller (arduino, pic, whatever) and some servos, motors, wheels or whatever. The aspiring robot enthusiast would cobble together whatever hardware he or she can manage, install GWEROS (make the install/update process simple like [wordpress](http://codex.wordpress.org/Installing_WordPress)) and be up and running in no time.
+I don&#39;t get to fool around with my own projects nearly as much as I would like, but this weekend I did devote a few hours to finishing up a robotic internet controlled camera on our apartment door. The pre-existing peep hole didn&#39;t exactly work, and I&#39;m tired of people knocking and having no idea who is at the door, so I felt like this was an appropriate solution. The story of exactly how and why I made this thing can find their roots back in the summer. One day in August I had this idea of creating a Generic Web Enabled Robotic Operating System (GWEROS... yeah I know it&#39;s a pretty stupid sounding acronym, give me a break) that would essentially allow you to create an awesome, high functioning robot out of a wide variety of off the shelf hardware so long as it had a few basic things: a web server, a web cam, a serial port attached to a micro controller (arduino, pic, whatever) and some servos, motors, wheels or whatever. The aspiring robot enthusiast would cobble together whatever hardware he or she can manage, install GWEROS (make the install/update process simple like <a href="http://codex.wordpress.org/Installing_WordPress">wordpress</a>) and be up and running in no time.
 
-Basically I thought it could be like a less hardcore version of [ROS](http://www.ros.org/wiki/) (which is totally badass) for use exclusively in the browser. I even think if done properly and given enough time to gather community support, people much smarter than myself could write plugins that would allow GWEROS users to do powerful things with their robots [from their web browser](http://mjpg-streamer.svn.sourceforge.net/viewvc/mjpg-streamer/mjpg-streamer/www/javascript_motiondetection.html?revision=83&view=markup&pathrev=83) typically reserved high end or high price robots.
+Basically I thought it could be like a less hardcore version of <a href="http://www.ros.org/wiki/">ROS</a> (which is totally badass) for use exclusively in the browser. I even think if done properly and given enough time to gather community support, people much smarter than myself could write plugins that would allow GWEROS users to do powerful things with their robots <a href="http://mjpg-streamer.svn.sourceforge.net/viewvc/mjpg-streamer/mjpg-streamer/www/javascript_motiondetection.html?revision=83&amp;view=markup&amp;pathrev=83">from their web browser</a> typically reserved high end or high price robots.
 
 Needless to say it was a bit ambitious for a project for the middle of summer and while I wish I had the time to pour into making it a reality, I had more than enough on my plate at the Center for Astrophysics. Therefore I only started writing the interface and just finished writing some basic camera / telemetry code this weekend. The end result is what you see here:
 
@@ -726,7 +721,9 @@ Needless to say it was a bit ambitious for a project for the middle of summer an
 
 </center>
 
-The best part about it? Nobody even knows it's there because it is disguised as Arnold Schwarzenegger.
+<p>The best part about it? Nobody even knows it&#39;s there because it is disguised as Arnold Schwarzenegger.</p>
+
+
 
       </div>
     </div>
@@ -745,40 +742,23 @@ The best part about it? Nobody even knows it's there because it is disguised as 
           </h1>
         </a>
         <hr/>
-        **Edit:** This is old. It is also the first implementation of my remote-controlled camera... under windows. It is really really bad and nobody should use it. However, I thougt I was pretty cool when I made it, and maybe it will be useful to somebody here, so I'll leave it up. I put a much more improved version this software to use on [the border patrol robot](misc/IED_tech_report_final.pdf). Check out page 48 of the report to see the final results and the page 118 for the code behind it.
-
-##Intro
-
-I love nothing more in life than creating and tinkering with the stuff around me. Over the years, this love has taken many different forms. It started out somewhere in elementary school with Legos and taking stuff apart and has evolved over the years into weekend projects such as the one you see here. [![image](img/old/2010-02-08-193147-150x150.jpg "2010-02-08-193147")](img/old/2010-02-08-193147.jpg)
-
-One weekend early in the semester, I found myself with some rare free time and so I chose to make my own internet-aware pan-tilt fixture for my webcam. To my room mates [delight](http://en.wikipedia.org/wiki/Sarcasm), I have placed the controls on this website. Projects such as this are just the kind of thing that I love taking time to do. They span concepts that go from very low level micro controller programming to high level web programming, using all sorts of code and hardware as intermediaries. It required quite a lot of different skill sets and knowledge of systems integration to work. I'll describe how I did it starting very low level at the and working my way up.
-
-##Step 0: The Hardware
-
-###The Microcontroller
-
-[![image](img/old/2010-02-08-193359-150x150.jpg "2010-02-08-193359")](img/old/2010-02-08-193359.jpg)
-
-This summer I came into possession of an [Arduino](http://www.arduino.cc/) micro controller and [some servos](http://www.rcuniverse.com/product_guide/servoprofile.cfm?servo_id=67). As you can see from the pictures, I connected the servos up to the micro controller, making Y-cables for the power, ground, and signal pins of the servos. I also added a laser diode for good measure. All output pins were of course wired to the digital I/O port on the controller. Once I had everything wired up, I stuffed the Arduino in a metal box I had lying around and hot glued everything together. Predictably, the webcam itself did not require much work. It was actually given to me for free! (previous owner couldn't find drivers for it). All in all, this was not complicated to build at all and has performed very well for what it was designed to do.
-
-* * * * *
-
-###The Web Server
-
-[![image](img/old/2010-02-08-193241-150x150.jpg "2010-02-08-193241")](img/old/2010-02-08-193241.jpg)
-
-The Arduino is cool and all, but since the ultimate goal of this project is to control it over the internet, having a web server is an obvious requirement. Unfortunately for me, my web server also happens to be my self-built desktop that I use for almost all my engineering work. Because of this, I need access to few applications ( Solidworks, LabVIEW, Photoshop, Steam, etc.. ) that are only available for Windoze. Therefore I am forced into the unfortunate position of hosting this website and making this project work under Windows 7. This is an example of [the wrong tool for the job](http://www.burtonco.com/xsites/Appraisers/burtonco1/content/uploadedFiles/wrong%20tool.jpg), and it actually caused me quite a lot of headaches down the line. In the future when I have another computer to spare and improve on this project, I will use the [right tool](http://blog.taragana.com/wp-content/uploads/2008/03/linux-logo.jpg). After all that rambling, you're probably wondering how I have my web server configured. The only relevant details are that I am running [WampServer](http://www.wampserver.com/en/) with PHP 5.3.0 with short tags enabled.
-
-* * * * *
-
-##Step 1: Establishing Basic Control of the Camera
-
-* * * * *
-
-###Microcontroller Code
-
-I wrote the following code to establish basic control of the Arduino over its USB to serial adapter. The comments explain what is going on, but for further background reading you can check out this about[PWM control](http://en.wikipedia.org/wiki/Pulse-width_modulation) and this about [what EEPROM is](http://en.wikipedia.org/wiki/EEPROM). Sorry ahead of time that the formatting of the code is all mangled, it was the best I could do.
-
+        <p><strong>Edit:</strong> This is old. It is also the first implementation of my remote-controlled camera... under windows. It is really really bad and nobody should use it. However, I thougt I was pretty cool when I made it, and maybe it will be useful to somebody here, so I&#39;ll leave it up. I put a much more improved version this software to use on <a href="misc/IED_tech_report_final.pdf">the border patrol robot</a>. Check out page 48 of the report to see the final results and the page 118 for the code behind it.</p>
+<h2 id="intro">Intro</h2>
+<p>I love nothing more in life than creating and tinkering with the stuff around me. Over the years, this love has taken many different forms. It started out somewhere in elementary school with Legos and taking stuff apart and has evolved over the years into weekend projects such as the one you see here. <a href="img/old/2010-02-08-193147.jpg"><img src="img/old/2010-02-08-193147-150x150.jpg" alt="image" title="2010-02-08-193147"></a></p>
+<p>One weekend early in the semester, I found myself with some rare free time and so I chose to make my own internet-aware pan-tilt fixture for my webcam. To my room mates <a href="http://en.wikipedia.org/wiki/Sarcasm">delight</a>, I have placed the controls on this website. Projects such as this are just the kind of thing that I love taking time to do. They span concepts that go from very low level micro controller programming to high level web programming, using all sorts of code and hardware as intermediaries. It required quite a lot of different skill sets and knowledge of systems integration to work. I&#39;ll describe how I did it starting very low level at the and working my way up.</p>
+<h2 id="step-0-the-hardware">Step 0: The Hardware</h2>
+<h3 id="the-microcontroller">The Microcontroller</h3>
+<p><a href="img/old/2010-02-08-193359.jpg"><img src="img/old/2010-02-08-193359-150x150.jpg" alt="image" title="2010-02-08-193359"></a></p>
+<p>This summer I came into possession of an <a href="http://www.arduino.cc/">Arduino</a> micro controller and <a href="http://www.rcuniverse.com/product_guide/servoprofile.cfm?servo_id=67">some servos</a>. As you can see from the pictures, I connected the servos up to the micro controller, making Y-cables for the power, ground, and signal pins of the servos. I also added a laser diode for good measure. All output pins were of course wired to the digital I/O port on the controller. Once I had everything wired up, I stuffed the Arduino in a metal box I had lying around and hot glued everything together. Predictably, the webcam itself did not require much work. It was actually given to me for free! (previous owner couldn&#39;t find drivers for it). All in all, this was not complicated to build at all and has performed very well for what it was designed to do.</p>
+<hr>
+<h3 id="the-web-server">The Web Server</h3>
+<p><a href="img/old/2010-02-08-193241.jpg"><img src="img/old/2010-02-08-193241-150x150.jpg" alt="image" title="2010-02-08-193241"></a></p>
+<p>The Arduino is cool and all, but since the ultimate goal of this project is to control it over the internet, having a web server is an obvious requirement. Unfortunately for me, my web server also happens to be my self-built desktop that I use for almost all my engineering work. Because of this, I need access to few applications ( Solidworks, LabVIEW, Photoshop, Steam, etc.. ) that are only available for Windoze. Therefore I am forced into the unfortunate position of hosting this website and making this project work under Windows 7. This is an example of <a href="http://www.burtonco.com/xsites/Appraisers/burtonco1/content/uploadedFiles/wrong%20tool.jpg">the wrong tool for the job</a>, and it actually caused me quite a lot of headaches down the line. In the future when I have another computer to spare and improve on this project, I will use the <a href="http://blog.taragana.com/wp-content/uploads/2008/03/linux-logo.jpg">right tool</a>. After all that rambling, you&#39;re probably wondering how I have my web server configured. The only relevant details are that I am running <a href="http://www.wampserver.com/en/">WampServer</a> with PHP 5.3.0 with short tags enabled.</p>
+<hr>
+<h2 id="step-1-establishing-basic-control-of-the-camera">Step 1: Establishing Basic Control of the Camera</h2>
+<hr>
+<h3 id="microcontroller-code">Microcontroller Code</h3>
+<p>I wrote the following code to establish basic control of the Arduino over its USB to serial adapter. The comments explain what is going on, but for further background reading you can check out this about<a href="http://en.wikipedia.org/wiki/Pulse-width_modulation">PWM control</a> and this about <a href="http://en.wikipedia.org/wiki/EEPROM">what EEPROM is</a>. Sorry ahead of time that the formatting of the code is all mangled, it was the best I could do.</p>
 <pre>
 /*
  * File:          pantilt.c
@@ -845,30 +825,30 @@ unsigned int EEPROMReadInt(int p_address)
   byte lowByte = EEPROM.read(p_address);
   byte highByte = EEPROM.read(p_address + 1);
   return ((lowByte << 0) & 0xFF) + ((highByte << 8) & 0xFF00); }
-  
-  
+
+
 void setup()
 {
   // Set up servo and laser pins as an output  
   pinMode(servoPinX, OUTPUT);  
   pinMode(laserpin, OUTPUT);
   pinMode(servoPinY, OUTPUT);  
-  
+
   // calculate center positions for both servos  
   centerServoX = maxPulseX - ((maxPulseX - minPulseX)/2);  
   centerServoY = maxPulseY - (((maxPulseY - minPulseY)/2)-280);  
-  
+
   // If you're running this for the first time on your arduino,  
   // uncomment the next two lines to initialize the EEPROM
   // EEPROMWriteInt(0, centerServoX);  
   // EEPROMWriteInt(2, centerServoY);  
-  
+
   pulseWidthX = EEPROMReadInt(0);  
   pulseWidthY = EEPROMReadInt(2);  
-  
+
   // begin serial communication  
   Serial.begin(9600);  
-  
+
   //Serial.println("Arduino Serial Pan/tilt Control");
   //Serial.println("Standard WASD to move, spacebar to center");
   //Serial.println("L toggles the laser, TFGH goes to the extremes");
@@ -942,12 +922,12 @@ void loop()
   if (pulseWidthX < minPulseX) { pulseWidthX = minPulseX; }
   if (pulseWidthY > maxPulseY) { pulseWidthY = maxPulseY; }
   if (pulseWidthY < minPulseY) { pulseWidthY = minPulseY; }
-  
+
   // print pulseWidth back to the Serial Monitor (uncomment to debug)
   // Serial.print("Pulse Width: ");
   // Serial.print(pulseWidth);
   // Serial.println("us");   // microseconds
-  
+
   // pulse the servo every 20 ms (refreshTime) with current pulseWidth
   // this will hold the servo's position if unchanged, or move it if changed
   if (millis() - lastPulse >= refreshTime)
@@ -968,28 +948,19 @@ void loop()
 }
 </pre>
 
-##Establishing Serial Communication
-
-* * * * *
-
-If you load the above code into the Arduino's IDE and download it on to your controller, you end up with a nice, intuitive way of manually controlling your pan / tilt mechanism. You can try things out by opening the Serial Monitor in the Arduino IDE and moving around using WASD, or move to the extremes using TFGH. Pressing 'C' centers the camera back and 'L' [fires the laser](http://spf.fotolog.com/photo/47/10/95/vanguardista2104/1211331863_f.jpg). Arguably, you could stop here and technically still have a way of controlling the camera over the internet with the power of linux. All one would need to do is open up a terminal or ssh into a remote workstation and run the following command:
-
+<h2 id="establishing-serial-communication">Establishing Serial Communication</h2>
+<hr>
+<p>If you load the above code into the Arduino&#39;s IDE and download it on to your controller, you end up with a nice, intuitive way of manually controlling your pan / tilt mechanism. You can try things out by opening the Serial Monitor in the Arduino IDE and moving around using WASD, or move to the extremes using TFGH. Pressing &#39;C&#39; centers the camera back and &#39;L&#39; <a href="http://spf.fotolog.com/photo/47/10/95/vanguardista2104/1211331863_f.jpg">fires the laser</a>. Arguably, you could stop here and technically still have a way of controlling the camera over the internet with the power of linux. All one would need to do is open up a terminal or ssh into a remote workstation and run the following command:</p>
 <pre>
  ~$ screen /dev/ttyUSB0
 </pre>
 
-This was not good enough for me though, as I wanted to control this through a web browser, which brings us to...
-
-* * * * *
-
-##Step 2: Interfacing with the Internet
-
-* * * * *
-
-###Nightmare in PHP land
-
-I thought this would be easy. Since PHP is a server side scripting language, it has libraries that allow it to read and write to and from serial ports. So one would think that the following would work:
-
+<p>This was not good enough for me though, as I wanted to control this through a web browser, which brings us to...</p>
+<hr>
+<h2 id="step-2-interfacing-with-the-internet">Step 2: Interfacing with the Internet</h2>
+<hr>
+<h3 id="nightmare-in-php-land">Nightmare in PHP land</h3>
+<p>I thought this would be easy. Since PHP is a server side scripting language, it has libraries that allow it to read and write to and from serial ports. So one would think that the following would work:</p>
 <pre>
 $fp =fopen("COM3", "w");
 fwrite($fp, chr('c')); // write your character to the Arduino here
@@ -997,14 +968,10 @@ sleep(1);
 fclose($fp);
 </pre>
 
-However, for reasons I do not completely understand, this did not work for me under Windows 7, but it did with Linux (substituting COM3 for /dev/ttyUSB0 of course). This problem persisted, as I also tried using the [PHP serial class](http://www.phpclasses.org/browse/package/3679.html), but it too proved to be equally as ineffective. I finally circumvented the need for PHP to communicate with the COM port entirely by compiling several very basic exe's in [processing](http://processing.org/) that sent commands to the Arduino and then called them using the exec() function in PHP. This, while extremely inefficient, was the quickest, most reliable, consistent and intuitive solution to my problem. Of course, this would all have been avoided in the first place had I been using Linux, as PHP has no problem writing to /dev/ttyUSB0 like it would a normal file, such as in my example above.
-
-* * * * *
-
-##Building the Webpage
-
-By using the [PHP $\_GET](http://www.w3schools.com/PHP/php_get.asp) function, I was able to incorporate controls into a webpage. The PHP included in the header of the page is shown here:
-
+<p>However, for reasons I do not completely understand, this did not work for me under Windows 7, but it did with Linux (substituting COM3 for /dev/ttyUSB0 of course). This problem persisted, as I also tried using the <a href="http://www.phpclasses.org/browse/package/3679.html">PHP serial class</a>, but it too proved to be equally as ineffective. I finally circumvented the need for PHP to communicate with the COM port entirely by compiling several very basic exe&#39;s in <a href="http://processing.org/">processing</a> that sent commands to the Arduino and then called them using the exec() function in PHP. This, while extremely inefficient, was the quickest, most reliable, consistent and intuitive solution to my problem. Of course, this would all have been avoided in the first place had I been using Linux, as PHP has no problem writing to /dev/ttyUSB0 like it would a normal file, such as in my example above.</p>
+<hr>
+<h2 id="building-the-webpage">Building the Webpage</h2>
+<p>By using the <a href="http://www.w3schools.com/PHP/php_get.asp">PHP $_GET</a> function, I was able to incorporate controls into a webpage. The PHP included in the header of the page is shown here:</p>
 <pre>
 //check the GET action var to see if an action is to be performed
 if (isset($_GET['action']))
@@ -1016,21 +983,16 @@ if (isset($_GET['action']))
 }
 </pre>
 
-And the HTML I used to create a basic control panel is simply a 3x3 table with some hyperlinks to the right URLs to control PHP.
+<p>And the HTML I used to create a basic control panel is simply a 3x3 table with some hyperlinks to the right URLs to control PHP.</p>
+<hr>
+<h2 id="step-3-enjoy-your-remote-webcam-">Step 3: Enjoy your Remote Webcam!</h2>
+<h3 id="remarks">Remarks</h3>
+<p>To manage the webcam feed, I am using a program called <a href="http://www.lundie.ca/fwink/">Fwink</a> to take a picture every second and then using AJAX to automatically refresh the image once the page is loaded. However, there are hundreds of ways to manage a webcam feed and the details of how you do it is out of the scope of what I&#39;m talking about here.</p>
+<hr>
+<h2 id="conclusions-future-improvements">Conclusions / Future Improvements</h2>
+<p>As expected, performance with this setup is less than impressive, although I have no doubts in my mind it is due to the wonky way in which I have to execute system calls to run the Processing exe&#39;s. For the future, as this is a rough prototype, it can and will be running a lot faster under Linux. Additionally, this is the vision component to my personal robot, and its brains (a first generation ASUS eeepc netbook) are currently on loan to a friend of mine. Next time I see him I&#39;ll get the machine back and we&#39;ll start cooking with gas! (and by gas I mean Linux).</p>
 
-* * * * *
 
-##Step 3: Enjoy your Remote Webcam!
-
-###Remarks
-
-To manage the webcam feed, I am using a program called [Fwink](http://www.lundie.ca/fwink/) to take a picture every second and then using AJAX to automatically refresh the image once the page is loaded. However, there are hundreds of ways to manage a webcam feed and the details of how you do it is out of the scope of what I'm talking about here.
-
-* * * * *
-
-##Conclusions / Future Improvements
-
-As expected, performance with this setup is less than impressive, although I have no doubts in my mind it is due to the wonky way in which I have to execute system calls to run the Processing exe's. For the future, as this is a rough prototype, it can and will be running a lot faster under Linux. Additionally, this is the vision component to my personal robot, and its brains (a first generation ASUS eeepc netbook) are currently on loan to a friend of mine. Next time I see him I'll get the machine back and we'll start cooking with gas! (and by gas I mean Linux).
 
       </div>
     </div>
@@ -1049,26 +1011,16 @@ As expected, performance with this setup is less than impressive, although I hav
           </h1>
         </a>
         <hr/>
-        *** This is old. Look at posts if you want to see current versions of my projects. This was like the first thing of great significance I did with Stonelinks on my own (read: I didn't know what I was doing). Similar to the Windows based webcam thing, I thought it was a big deal at the time. Looking back it is funny how trivial this would be to implement nowadays. Oh also, there are things in here that are just plain wrong and/or bad practice (left as an exercise to the reader to find). ***
-
-# Purpose and Demonstration
-
-* * * * *
-
-You may notice that I have little collapsible trees all over the place on this website. I wanted a quick, easy and effective way to integrate entire directories of files on my computer on to webpages. Wasn't really happy with anything currently out there, so I made this myself. However, using [jquery](http://jquery.com/) made things extremely easy.
-
-# The HTML
-
-* * * * *
-
-Put this in your header! It loads the necessary files from the jquery treeview plugin. I recommend saving them somewhere local on your server.
-
-# The PHP
-
-* * * * *
-
-It doesn't matter where this goes, but calling the function getDirectory() will echo the tree back on to your webpage.
-
+        <p><strong><em> This is old. Look at posts if you want to see current versions of my projects. This was like the first thing of great significance I did with Stonelinks on my own (read: I didn&#39;t know what I was doing). Similar to the Windows based webcam thing, I thought it was a big deal at the time. Looking back it is funny how trivial this would be to implement nowadays. Oh also, there are things in here that are just plain wrong and/or bad practice (left as an exercise to the reader to find). </em></strong></p>
+<h1 id="purpose-and-demonstration">Purpose and Demonstration</h1>
+<hr>
+<p>You may notice that I have little collapsible trees all over the place on this website. I wanted a quick, easy and effective way to integrate entire directories of files on my computer on to webpages. Wasn&#39;t really happy with anything currently out there, so I made this myself. However, using <a href="http://jquery.com/">jquery</a> made things extremely easy.</p>
+<h1 id="the-html">The HTML</h1>
+<hr>
+<p>Put this in your header! It loads the necessary files from the jquery treeview plugin. I recommend saving them somewhere local on your server.</p>
+<h1 id="the-php">The PHP</h1>
+<hr>
+<p>It doesn&#39;t matter where this goes, but calling the function getDirectory() will echo the tree back on to your webpage.</p>
 <pre>
 // Use this to format filesizes into things that are human readable.
 function format_bytes($size) {
@@ -1079,85 +1031,88 @@ function format_bytes($size) {
 
 function getDirectory($path='.',$level=0)
 {
-	// ignore anything that appears in this array
-	$ignore=array('cgi-bin','.','..');
+    // ignore anything that appears in this array
+    $ignore=array('cgi-bin','.','..');
 
-	// open the directory handle at the given path
-	$dh=@opendir($path);
+    // open the directory handle at the given path
+    $dh=@opendir($path);
 
-	// if this is the first level, set the class of the unordered list to match our javascript stuff
-	if($level == 0)
-	{
-		echo'
+    // if this is the first level, set the class of the unordered list to match our javascript stuff
+    if($level == 0)
+    {
+        echo'
 <ul id="tree" class="filetree">
-	<li>
+    <li>
 <ul>';
-	}
-	echo'<span>';
+    }
+    echo'<span>';
 
-	// while there are still directories to read
-	while(false!==($file=readdir($dh)))
-	{
-		// if we should not ignore it
-		if(!in_array($file,$ignore))
-		{
-			// if it is a directory
-			if(is_dir("$path/$file"))
-			{
-				// if we're over the first level
-				if($level&gt;=0)
-				{
-					// display the folder closed by default
-					echo'
-	<li class="closed">';
-				}
-				else
-				{
-					// otherwise just use normal tags
-					echo'</li>
-	<li>';
-				}
+    // while there are still directories to read
+    while(false!==($file=readdir($dh)))
+    {
+        // if we should not ignore it
+        if(!in_array($file,$ignore))
+        {
+            // if it is a directory
+            if(is_dir("$path/$file"))
+            {
+                // if we're over the first level
+                if($level&gt;=0)
+                {
+                    // display the folder closed by default
+                    echo'
+    <li class="closed">';
+                }
+                else
+                {
+                    // otherwise just use normal tags
+                    echo'</li>
+    <li>';
+                }
 
-				// write the folder to the webpage
-				echo'<span class="folder"><strong>',$file,'</strong></span>';
+                // write the folder to the webpage
+                echo'<span class="folder"><strong>',$file,'</strong></span>';
 
-				// now recursively call the function again to [hopefully] display any other files / folders
-				getDirectory("$path/$file",($level+1));
+                // now recursively call the function again to [hopefully] display any other files / folders
+                getDirectory("$path/$file",($level+1));
 
-				// close tags from our first few echos
-				echo"</li>
+                // close tags from our first few echos
+                echo"</li>
 </span></ul>
 </li>
 ';
-	}
-	else
-	{
-		// if this is our second or more time, just use a normal unordered list tag
-		echo'
+    }
+    else
+    {
+        // if this is our second or more time, just use a normal unordered list tag
+        echo'
 
 ";
-			}
-			// it isnt a directory, so its a file
-			else
-			{
-				// display a link to the file along with the filesize
-				echo'
-	<li><span class="default"><a href="; 				echo &quot;">',' ',$file,'</a>    ('.format_bytes(filesize( $path.'/'.$file)).')</span></li>
+            }
+            // it isnt a directory, so its a file
+            else
+            {
+                // display a link to the file along with the filesize
+                echo'
+    <li><span class="default"><a href=";                 echo &quot;">',' ',$file,'</a>    ('.format_bytes(filesize( $path.'/'.$file)).')</span></li>
 ';
-			}
-		// end ignore case
-		}
-	// end while loop
-	}
-	// close the handle
-	closedir($dh);
+            }
+        // end ignore case
+        }
+    // end while loop
+    }
+    // close the handle
+    closedir($dh);
 
-	// added this so people know they can contribute to files on stonelinks
-	echo'<a href="../stonelinks-uploader">
+    // added this so people know they can contribute to files on stonelinks
+    echo'<a href="../stonelinks-uploader">
 <h2>Contribute</h2>
 </a>';
 }</ul>
 </pre>
+
+
+
 
       </div>
     </div>
