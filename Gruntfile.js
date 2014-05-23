@@ -1,5 +1,9 @@
 'use strict';
 
+var HOST = '0.0.0.0';
+var PORT = 9000;
+var LIVERELOAD_PORT = 88231;
+
 module.exports = function(grunt) {
 
   require('time-grunt')(grunt);
@@ -46,9 +50,9 @@ module.exports = function(grunt) {
     connect: {
 
       options: {
-        port: 9000,
-        livereload: 35729,
-        hostname: '0.0.0.0'
+        port: PORT,
+        livereload: LIVERELOAD_PORT,
+        hostname: HOST
       },
 
       livereload: {
@@ -58,6 +62,24 @@ module.exports = function(grunt) {
             '<%= config.dist %>'
           ]
         }
+      },
+
+      throttledLivereload: {
+        options: {
+          open: 'http://' + HOST + ':' + (PORT + 1),
+          base: [
+            '<%= config.dist %>'
+          ]
+        }
+      }
+    },
+
+    throttle: {
+      default: {
+        remote_port: PORT,
+        local_port: PORT + 1,
+        upstream: 10 * 1024,
+        downstream: 100 * 1024
       }
     },
 
@@ -132,6 +154,13 @@ module.exports = function(grunt) {
   grunt.registerTask('server', [
     'build',
     'connect:livereload',
+    'watch'
+  ]);
+
+  grunt.registerTask('server-throttle', [
+    'build',
+    'connect:throttledLivereload',
+    'throttle',
     'watch'
   ]);
 

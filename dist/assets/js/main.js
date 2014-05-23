@@ -61,6 +61,8 @@ $(document).ready(function() {
       var speed = 0.05;
       var delta = speed;
 
+      var changeImage = false;
+
       // draw the canvas
       var drawStuff = function() {
 
@@ -82,26 +84,28 @@ $(document).ready(function() {
           delta = 0.0;
         }
 
+        if (changeImage) {
+          changeImage = false;
+          img.src = chooseRandomImage();
+          delta = -speed;
+        }
+
         // repeat forever
         requestAnimFrame(drawStuff);
       };
 
-      // periodically change the image, setting the old one as the background image of the page
-      setInterval(function() {
-        setBGImage(img.src);
-        setTimeout(function() {
-          img.src = chooseRandomImage();
-          delta = -speed;
-        }, 2000);
-      }, 6000);
-      img.src = chooseRandomImage();
-      setBGImage(img.src);
-
       // when the image is done loading, set alpha and delta to fade it in
+      // periodically change the image, setting the old one as the background image of the page
       img.onload = function() {
         alpha = 0.0;
         delta = speed;
+        setTimeout(function() {
+          setBGImage(img.src);
+          changeImage = true;
+        }, 6000);
       };
+      img.src = chooseRandomImage();
+      setBGImage(img.src);
 
       // update canvas size
       var resizeCanvas = function() {
