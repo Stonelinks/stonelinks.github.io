@@ -3,6 +3,37 @@ title: Home
 layout: base.hbs
 ---
 
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+  
+  canvas {
+    display: block;
+  }
+
+  #canvas {
+    background: #eee;
+  }
+
+  .landing-wrapper {
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    width: 100%;
+  }
+  
+</style>
+
+<div class="landing-wrapper">
+
 <div class="top-padding">
 </div>
 
@@ -41,6 +72,12 @@ layout: base.hbs
 
 <div class="bottom-padding">
 </div>
+
+</div>
+
+
+<canvas id="canvas"></canvas>
+
 
 
 <!-- test -->
