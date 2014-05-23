@@ -35,123 +35,84 @@ $(document).ready(function() {
         $('.top-padding').height(ratio * paddingHeight);
         $('.bottom-padding').height((1.0 + (1.0 - ratio)) * paddingHeight);
       };
-
       verticalCenter();
       $(window).resize(verticalCenter);
 
-      var canvas = $('#canvas')[0];
-      var ctx = canvas.getContext('2d');
-
       // requestAnimFrame shim
-      var requestAnimFrame = (function()
-      {
-         return window.requestAnimationFrame ||
-                 window.webkitRequestAnimationFrame ||
-                 window.mozRequestAnimationFrame ||
-                 window.oRequestAnimationFrame ||
-                 window.msRequestAnimationFrame ||
-                 function(callback, frameOffset)
-                 {
-                     window.setTimeout(callback, frameOffset);
-                 };
+      var requestAnimFrame = (function() {
+        return window.requestAnimationFrame ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame ||
+          window.oRequestAnimationFrame ||
+          window.msRequestAnimationFrame ||
+          function(callback, frameOffset) {
+            window.setTimeout(callback, frameOffset);
+          };
       })();
 
+      // a nice canvas / background image based crossfading image switcher
+      var canvas = $('#canvas')[0];
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      var ctx = canvas.getContext('2d');
+      var img = new Image();
+      var alpha = 0.0;
+      var speed = 0.05;
+      var delta = speed;
+
+      // draw the canvas
       var drawStuff = function() {
 
-        var width = canvas.width;
-        var height = canvas.height;
+        // compute new alpha
+        alpha += delta;
 
-        // setup aliases
-        var Rnd = Math.random,
-            Sin = Math.sin,
-            Floor = Math.floor;
+        // draw faded image`
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.globalAlpha = alpha;
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-        // constants and storage for objects that represent star positions
-        var warpZ = 16,
-            units = 200,
-            Z = 0.025 + (1 / 25 * 2);
-
-        // function to reset a star object
-        function resetstar(a)
-        {
-           a.x = (Rnd() * width - (width * 0.5)) * warpZ;
-           a.y = (Rnd() * height - (height * 0.5)) * warpZ;
-           a.z = warpZ;
-           a.px = 0;
-           a.py = 0;
+        // stop fading if all the way faded in or out
+        if (alpha >= 1.0) {
+          alpha = 1.0;
+          delta = 0.0;
+        }
+        else if (alpha < 0) {
+          alpha = 0.0;
+          delta = 0.0;
         }
 
-        // initialisation
-        if (typeof stars === 'undefined')
-        {
-           stars = [];
-           // initial star setup
-           for (var i = 0, n; i < units; i++)
-           {
-              n = {};
-              resetstar(n);
-              stars.push(n);
-           }
-           cycle = 0;
-        }
-
-        // star rendering
-        ctx.globalAlpha = 0.3;
-        ctx.fillStyle = '#000';
-        ctx.fillRect(0, 0, width, height);
-
-        var cx = width / 2,
-            cy = height / 2;
-
-        // update all stars
-        var sat = Floor(Z * 500);       // Z range 0.01 -> 0.5
-        if (sat > 100) sat = 100;
-        for (var i = 0; i < units; i++)
-        {
-           var n = stars[i],            // the star
-               xx = n.x / n.z,          // star position
-               yy = n.y / n.z,
-               e = (1.0 / n.z + 1) * 2;   // size i.e. z
-
-           if (n.px)
-           {
-              // hsl colour from a sine wave
-              ctx.strokeStyle = 'hsl(' + ((cycle * i) % 360) + ',80%,80%)';
-              ctx.lineWidth = e;
-              ctx.beginPath();
-              ctx.moveTo(xx + cx, yy + cy);
-              ctx.lineTo(n.px + cx, n.py + cy);
-              ctx.stroke();
-           }
-
-           // update star position values with new settings
-           n.px = xx;
-           n.py = yy;
-           n.z -= Z;
-
-           // reset when star is out of the view field
-           if (n.z < Z || n.px > width || n.py > height)
-           {
-              // reset star
-              resetstar(n);
-           }
-        }
-
-        // colour cycle sinewave rotation
-        cycle += 0.01;
-
+        // repeat forever
         requestAnimFrame(drawStuff);
-
       };
 
+      // periodically change the image, setting the old one as the background image of the page
+      setInterval(function() {
+        setBGImage(img.src);
+        setTimeout(function() {
+          img.src = chooseRandomImage();
+          delta = -speed;
+        }, 2000);
+      }, 6000);
+      img.src = chooseRandomImage();
+      setBGImage(img.src);
+
+      // when the image is done loading, set alpha and delta to fade it in
+      img.onload = function() {
+        alpha = 0.0;
+        delta = speed;
+      };
+
+      // update canvas size
       var resizeCanvas = function() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-
-        drawStuff();
       };
       resizeCanvas();
       $(window).resize(resizeCanvas);
+
+      // start
+      drawStuff();
     },
 
     blox: pass
