@@ -16,7 +16,7 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=5
+current_page=47
 FILE_NAME_0=440;None;0;16;0;1;1;/home/ld/stonelinks.github.io/bower.json;0;2
 FILE_NAME_1=717;None;0;16;0;1;1;/home/ld/stonelinks.github.io/package.json;0;2
 FILE_NAME_2=2126;Markdown;0;16;0;1;1;/home/ld/stonelinks.github.io/README.md;0;2
@@ -58,15 +58,13 @@ FILE_NAME_37=0;HTML;0;16;0;1;1;/home/ld/stonelinks.github.io/old/_includes/nav-m
 FILE_NAME_38=1510;Javascript;0;16;0;1;1;/home/ld/stonelinks.github.io/dist/assets/js/main.js;0;2
 FILE_NAME_39=467;YAML;0;16;0;1;1;/home/ld/stonelinks.github.io/old/_config.yml;0;2
 FILE_NAME_40=145;None;0;16;0;1;1;/home/ld/xaphoon/app/less/main.less;0;2
-FILE_NAME_41=0;Javascript;0;16;0;1;1;/home/ld/Desktop/WebGL Blox_files/app.js;0;2
-FILE_NAME_42=14080;HTML;0;0;0;1;1;/home/ld/Desktop/WebGL Blox.html;0;2
-FILE_NAME_43=43;None;0;16;0;1;1;/home/ld/stonelinks.github.io/src/templates/pages/blox.hbs;0;2
-FILE_NAME_44=0;None;0;16;0;1;1;/home/ld/stonelinks.github.io/src/templates/posts/2011-01-07-a-more-accurate-coordinate-system.hbs;0;2
-FILE_NAME_45=0;None;0;16;0;1;1;/home/ld/stonelinks.github.io/src/templates/posts/2011-03-14-active-face-tracking-with-stonebot.hbs;0;2
-FILE_NAME_46=0;None;0;16;0;1;1;/home/ld/stonelinks.github.io/src/templates/posts/2011-03-14-binocular-face-tracking-sneak-peek.hbs;0;2
-FILE_NAME_47=0;None;0;16;0;1;1;/home/ld/stonelinks.github.io/src/templates/posts/2012-03-27-first-contribution-to-opensource.hbs;0;2
-FILE_NAME_48=0;None;0;16;0;1;1;/home/ld/stonelinks.github.io/src/templates/posts/2012-04-22-new-drone.hbs;0;2
-FILE_NAME_49=0;None;0;16;0;1;1;/home/ld/stonelinks.github.io/src/templates/posts/2012-07-24-webgl_blox.hbs;0;2
+FILE_NAME_41=43;None;0;16;0;1;1;/home/ld/stonelinks.github.io/src/templates/pages/blox.hbs;0;2
+FILE_NAME_42=0;None;0;16;0;1;1;/home/ld/stonelinks.github.io/src/templates/posts/2011-01-07-a-more-accurate-coordinate-system.hbs;0;2
+FILE_NAME_43=0;None;0;16;0;1;1;/home/ld/stonelinks.github.io/src/templates/posts/2011-03-14-active-face-tracking-with-stonebot.hbs;0;2
+FILE_NAME_44=0;None;0;16;0;1;1;/home/ld/stonelinks.github.io/src/templates/posts/2011-03-14-binocular-face-tracking-sneak-peek.hbs;0;2
+FILE_NAME_45=0;None;0;16;0;1;1;/home/ld/stonelinks.github.io/src/templates/posts/2012-03-27-first-contribution-to-opensource.hbs;0;2
+FILE_NAME_46=0;None;0;16;0;1;1;/home/ld/stonelinks.github.io/src/templates/posts/2012-04-22-new-drone.hbs;0;2
+FILE_NAME_47=855;None;0;16;0;1;1;/home/ld/stonelinks.github.io/src/templates/posts/2012-07-24-webgl_blox.hbs;0;2
 
 [gproject]
 source_patterns=*.c;*.C;*.cpp;*.cxx;*.c++;*.cc;

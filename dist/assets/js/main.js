@@ -20,6 +20,9 @@ $(document).ready(function() {
 
     index: function() {
 
+      // start out by picking a random image as the background
+      setBGImage(chooseRandomImage());
+
       // disable scrolling
       $('body').bind('touchmove', function(e) {e.preventDefault()});
       $('body').css('overflow', 'hidden');
@@ -50,18 +53,17 @@ $(document).ready(function() {
           };
       })();
 
-      // a nice canvas / background image based crossfading image switcher
+      // a nice canvas based crossfading image switcher
       var canvas = $('#canvas')[0];
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
 
       var ctx = canvas.getContext('2d');
       var img = new Image();
+      var bgImg = new Image();
       var alpha = 0.0;
       var speed = 0.05;
       var delta = speed;
-
-      var changeImage = false;
 
       // draw the canvas
       var drawStuff = function() {
@@ -69,12 +71,7 @@ $(document).ready(function() {
         // compute new alpha
         alpha += delta;
 
-        // draw faded image`
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.globalAlpha = alpha;
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-        // stop fading if all the way faded in or out
+        // clip alpha and stop fading if all the way faded in or out
         if (alpha >= 1.0) {
           alpha = 1.0;
           delta = 0.0;
@@ -84,28 +81,45 @@ $(document).ready(function() {
           delta = 0.0;
         }
 
-        if (changeImage) {
-          changeImage = false;
-          img.src = chooseRandomImage();
-          delta = -speed;
-        }
+        // clear everything
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // background at full opacity
+        ctx.save();
+        ctx.globalAlpha = 1.0;
+        ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
+        ctx.restore();
+
+        // faded image
+        ctx.globalAlpha = alpha;
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
         // repeat forever
         requestAnimFrame(drawStuff);
       };
 
-      // when the image is done loading, set alpha and delta to fade it in
-      // periodically change the image, setting the old one as the background image of the page
+      // fade images back and fourth
       img.onload = function() {
+
+        // fade image in
         alpha = 0.0;
         delta = speed;
+
+        // switch every six seconds
         setTimeout(function() {
-          setBGImage(img.src);
-          changeImage = true;
+          bgImg.onload = function() {
+
+            // fade image out
+            alpha = 1.0;
+            delta = -speed;
+
+            img.src = chooseRandomImage();
+          };
+
+          bgImg.src = img.src;
         }, 6000);
       };
       img.src = chooseRandomImage();
-      setBGImage(img.src);
 
       // update canvas size
       var resizeCanvas = function() {
