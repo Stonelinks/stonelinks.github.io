@@ -119,7 +119,7 @@ $(document).ready(function() {
           bgImg.src = img.src;
         }, 6000);
       };
-      img.src = chooseRandomImage();
+      img.src = bgImg.src = chooseRandomImage();
 
       // update canvas size
       var resizeCanvas = function() {
