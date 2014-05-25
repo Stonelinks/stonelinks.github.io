@@ -107,18 +107,19 @@ $(document).ready(function() {
 
         // switch every six seconds
         setTimeout(function() {
-          bgImg.onload = function() {
-
-            // fade image out
-            alpha = 1.0;
-            delta = -speed;
-
-            img.src = chooseRandomImage();
-          };
-
           bgImg.src = img.src;
         }, 6000);
       };
+
+      bgImg.onload = function() {
+
+        // fade image out
+        alpha = 1.0;
+        delta = -speed;
+
+        img.src = chooseRandomImage();
+      };
+
       img.src = bgImg.src = chooseRandomImage();
 
       // update canvas size
