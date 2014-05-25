@@ -108,14 +108,24 @@ module.exports = function(grunt) {
         }
       },
 
-      blog: {
+      posts: {
         options: {
           layout: 'post.hbs'
         },
         files: {
-          '<%= config.dist %>/': ['<%= config.src %>/templates/posts/*.{hbs,md}']
+          '<%= config.dist %>/posts/': ['<%= config.src %>/templates/posts/*.hbs']
         }
-      }
+      },
+      
+      // this will make plain html renderings of posts
+      posts_raw: {
+        options: {
+          layout: 'post_raw.hbs'
+        },
+        files: {
+          '<%= config.dist %>/posts_raw/': ['<%= config.src %>/templates/posts/*.hbs']
+        }
+      },
     },
 
     less: {

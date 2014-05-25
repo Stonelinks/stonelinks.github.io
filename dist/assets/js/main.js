@@ -7,7 +7,7 @@ $(document).ready(function() {
   };
 
   var chooseRandomImage = function() {
-    return window.BG_IMAGES[Math.floor(Math.random() * window.BG_IMAGES.length)].replace('dist/', '');
+    return window.BG_IMAGES[Math.floor(Math.random() * window.BG_IMAGES.length)].replace('dist/assets', window.ASSETS);
   };
 
   var setBGImage = function(imageURL) {
