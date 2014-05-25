@@ -116,7 +116,7 @@ module.exports = function(grunt) {
           '<%= config.dist %>/posts/': ['<%= config.src %>/templates/posts/*.hbs']
         }
       },
-      
+
       // this will make plain html renderings of posts
       posts_raw: {
         options: {
@@ -125,7 +125,7 @@ module.exports = function(grunt) {
         files: {
           '<%= config.dist %>/posts_raw/': ['<%= config.src %>/templates/posts/*.hbs']
         }
-      },
+      }
     },
 
     less: {

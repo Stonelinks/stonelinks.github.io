@@ -5,9 +5,10 @@ title: Blog
 <script type="text/javascript">
   window.POSTS = [
     {{#compose src="src/templates/posts/*.hbs"}}
-      "/posts_raw/{{@basename}}.html",
+      '/posts_raw/{{@basename}}.html',
     {{/compose}}
   ]
 </script>
 
-
+<div id="blog-anchor">
+</div>

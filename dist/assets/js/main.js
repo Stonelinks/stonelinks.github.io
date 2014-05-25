@@ -20,9 +20,6 @@ $(document).ready(function() {
 
     index: function() {
 
-      // start out by picking a random image as the background
-      setBGImage(chooseRandomImage());
-
       // disable scrolling
       $('body').bind('touchmove', function(e) {e.preventDefault()});
       $('body').css('overflow', 'hidden');
@@ -134,13 +131,45 @@ $(document).ready(function() {
       drawStuff();
     },
 
+    blog: function() {
+
+      var posts = window.POSTS;
+
+      // get one post and add it to the page
+      var _getPost = function(postURL, callback) {
+        callback = callback || pass;
+        $.get(postURL, function(postHTML) {
+          $(postHTML).appendTo('#blog-anchor');
+          callback();
+        });
+      };
+
+      // fetch initial posts
+      var postsToLoad = 3;
+      var postsLength = posts.length;
+      var reversePosts = _.clone(posts).reverse();
+      var _getInitialPosts = function() {
+        _getPost(reversePosts.pop(), function() {
+          if (reversePosts.length + 1 > postsLength - postsToLoad) {
+            _getInitialPosts();
+          }
+        });
+      };
+      _getInitialPosts();
+
+      // load posts when scrolled to the bottom
+      $(window).scroll(_.throttle(function() {
+        if ($(window).scrollTop() >= $(document).height() - $(window).height()) {
+          _getPost(reversePosts.pop());
+        }
+      }, 500));
+    },
+
     blox: pass
   };
 
   if (pages.hasOwnProperty(window.BASENAME)) {
     pages[window.BASENAME]();
   }
-  else {
-    setBGImage(chooseRandomImage());
-  }
+  setBGImage(chooseRandomImage());
 });
