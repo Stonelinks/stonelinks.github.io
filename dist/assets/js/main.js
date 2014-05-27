@@ -133,19 +133,31 @@ $(document).ready(function() {
 
     blog: function() {
 
+      var $loader = $('#loader');
+
+      var _showLoader = function() {
+        $loader.show();
+      };
+      var _hideLoader = function() {
+        $loader.hide();
+      };
+
       var posts = window.POSTS;
 
       // get one post and add it to the page
       var _getPost = function(postURL, callback) {
         callback = callback || pass;
+
+        _showLoader();
         $.get(postURL, function(postHTML) {
           $(postHTML).appendTo('#blog-anchor');
+          _hideLoader();
           callback();
         });
       };
 
       // fetch initial posts
-      var postsToLoad = 3;
+      var postsToLoad = 0;
       var postsLength = posts.length;
       var reversePosts = _.clone(posts).reverse();
       var _getInitialPosts = function() {
