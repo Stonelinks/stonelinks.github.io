@@ -16,6 +16,11 @@ $(document).ready(function() {
     document.body.style.backgroundImage = 'url(\'' + imageURL + '\')';
   };
 
+  var origHash = window.location.hash;
+  var changeHash = function(hash) {
+    window.location.hash = hash;
+  };
+
   var pages = {
 
     index: function() {
@@ -51,7 +56,7 @@ $(document).ready(function() {
       })();
 
       // a nice canvas based crossfading image switcher
-      var canvas = $('#canvas')[0];
+      var canvas = $('#canvas').get(0);
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
 
@@ -133,36 +138,86 @@ $(document).ready(function() {
 
     blog: function() {
 
+      var $loader = $('#loader');
+
+      var _showLoader = function() {
+        $loader.show();
+      };
+      var _hideLoader = function() {
+        $loader.hide();
+      };
+
       var posts = window.POSTS;
 
       // get one post and add it to the page
       var _getPost = function(postURL, callback) {
         callback = callback || pass;
+
+        _showLoader();
         $.get(postURL, function(postHTML) {
           $(postHTML).appendTo('#blog-anchor');
-          callback();
+          _hideLoader();
+
+          var id = '#' + $(postHTML).find('a:first').attr('id');
+          callback(id);
         });
       };
 
       // fetch initial posts
-      var postsToLoad = 3;
       var postsLength = posts.length;
+
+      // number of posts to load
+      // pays attention to hash so we stop on the correct post
+      var postsToLoad;
+      if (origHash.length) {
+        postsToLoad = posts.indexOf(_.find(posts, function(post) {
+          return post.indexOf(origHash.slice(1)) != -1;
+        }));
+      }
+      if (postsToLoad === undefined || postsToLoad == -1) {
+        postsToLoad = 5;
+      }
+
+      var _done = _.after(postsToLoad, function() {
+
+        // scroll to the post when done loading
+        if (origHash.length) {
+          if ($(origHash).get(0)) {
+            $(origHash).get(0).scrollIntoView(true);
+          }
+        }
+      });
+
+      // load posts
       var reversePosts = _.clone(posts).reverse();
-      var _getInitialPosts = function() {
-        _getPost(reversePosts.pop(), function() {
+      var _getInitialPosts = function(callback) {
+        _getPost(reversePosts.pop(), function(id) {
           if (reversePosts.length + 1 > postsLength - postsToLoad) {
             _getInitialPosts();
           }
+          _done();
         });
       };
       _getInitialPosts();
 
-      // load posts when scrolled to the bottom
       $(window).scroll(_.throttle(function() {
+
+        // load posts when scrolled to the bottom
         if ($(window).scrollTop() >= $(document).height() - $(window).height()) {
-          _getPost(reversePosts.pop());
+          _getPost(reversePosts.pop(), function(id) {
+            changeHash(id);
+          });
         }
-      }, 500));
+        else {
+
+          // change hash as we scroll through posts
+          $('.post').each(function() {
+            if ($(this).offset().top - 50 < window.pageYOffset && $(this).offset().top + 50 > window.pageYOffset) {
+              changeHash($(this).find('a:first').attr('id'));
+            }
+          });
+        }
+      }, 50));
     },
 
     blox: pass
