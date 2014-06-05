@@ -7303,3 +7303,8 @@ footer p {
 .landing-navbar-wrapper footer {
   padding-bottom: 25px;
 }
+ul {
+  font-size: 15px;
+  line-height: 25px;
+  color: #000000;
+}
