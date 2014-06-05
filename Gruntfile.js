@@ -19,7 +19,7 @@ module.exports = function(grunt) {
     watch: {
 
       assemble: {
-        files: ['<%= config.src %>/{data,templates}/**/*.{md,hbs,yml}'],
+        files: ['<%= config.src %>/{data,templates}/**/*.{md,hbs,yml,underscore}'],
         tasks: ['assemble']
       },
 
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
 
       livereload: {
         options: {
-          open: true,
+          // open: true,
           base: [
             '<%= config.dist %>'
           ]
@@ -62,7 +62,7 @@ module.exports = function(grunt) {
 
       throttledLivereload: {
         options: {
-          open: 'http://<%= connect.options.hostname %>:<%= connect.options.port %>',
+          // open: 'http://<%= connect.options.hostname %>:<%= connect.options.port + 1 %>',
           base: [
             '<%= config.dist %>'
           ]
@@ -74,6 +74,7 @@ module.exports = function(grunt) {
       default: {
         remote_port: '<%= connect.options.port %>',
         local_port: '<%= connect.options.port + 1 %>',
+        local_host: '<%= connect.options.hostname %>',
         upstream: 10 * 1024,
         downstream: 100 * 1024
       }
@@ -110,16 +111,6 @@ module.exports = function(grunt) {
         },
         files: {
           '<%= config.dist %>/posts/': ['<%= config.src %>/templates/posts/*.hbs']
-        }
-      },
-
-      // this will make plain html renderings of posts
-      posts_raw: {
-        options: {
-          layout: 'post_raw.hbs'
-        },
-        files: {
-          '<%= config.dist %>/posts_raw/': ['<%= config.src %>/templates/posts/*.hbs']
         }
       }
     },

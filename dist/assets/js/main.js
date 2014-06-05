@@ -16,7 +16,9 @@ var setBGImage = function(imageURL) {
 
 var origHash = window.location.hash;
 var changeHash = function(hash) {
-  window.location.hash = hash;
+  if (hash !== undefined) {
+    window.location.hash = hash;
+  }
 };
 
 var pages = {
@@ -135,31 +137,30 @@ var pages = {
   },
 
   blog: function() {
-
-    var $loader = $('#loader');
-
-    var _showLoader = function() {
-      $loader.show();
-    };
-    var _hideLoader = function() {
-      $loader.hide();
-    };
+    setBGImage(chooseRandomImage());
+    
+    var _renderPost = _.template($('#post-template').html())
 
     var posts = window.POSTS;
+    _.forEach(posts, function(post) {
+      var $postContent = $('#post-content-' + post.id)
+      if ($postContent.get(0) !== undefined) {
+        post.$content = $postContent.detach()
+      }
+    });
 
     // get one post and add it to the page
-    var i = 0;
-    var _getPost = function(postURL, callback) {
+    var _getPost = function(postID, callback) {
       callback = callback || pass;
-
-      _showLoader();
-      $.get(postURL, function(postHTML) {
-        $(postHTML).appendTo('#blog-anchor');
-        _hideLoader();
-
-        var id = '#' + $(postHTML).find('a:first').attr('id');
-        callback(id);
-      });
+      
+      var post = _.findWhere(posts, {
+        id: postID
+      })
+      
+      if (post !== undefined) {
+        $(_renderPost(post)).appendTo('#blog-anchor');
+      }
+      callback(post);
     };
 
     // fetch initial posts
@@ -170,11 +171,11 @@ var pages = {
     var postsToLoad;
     if (origHash.length) {
       postsToLoad = posts.indexOf(_.find(posts, function(post) {
-        return post.indexOf(origHash.slice(1)) != -1;
+        return post.id.indexOf(origHash.slice(1)) != -1;
       })) + 3;
     }
     if (postsToLoad === undefined || postsToLoad == -1) {
-      postsToLoad = 5;
+      postsToLoad = 3;
     }
 
     var _done = function() {
@@ -188,9 +189,9 @@ var pages = {
       $(window).scroll(_.throttle(function() {
 
         // load posts when scrolled to the bottom
-        if ($(window).scrollTop() >= $(document).height() - $(window).height()) {
-          _getPost(reversePosts.pop(), function(id) {
-            changeHash(id);
+        if (reversePosts.length && $(window).scrollTop() >= $(document).height() - $(window).height()) {
+          _getPost(reversePosts.pop().id, function(post) {
+            changeHash(post.id);
           });
         }
         else {
@@ -208,7 +209,7 @@ var pages = {
     // load posts
     var reversePosts = _.clone(posts).reverse();
     var _getInitialPosts = function(callback) {
-      _getPost(reversePosts.pop(), function(id) {
+      _getPost(reversePosts.pop().id, function() {
         if (reversePosts.length + 1 > postsLength - postsToLoad) {
           _getInitialPosts();
         }
@@ -227,5 +228,7 @@ $(document).ready(function() {
   if (pages.hasOwnProperty(window.BASENAME)) {
     pages[window.BASENAME]();
   }
-  setBGImage(chooseRandomImage());
+  else {
+    setBGImage(chooseRandomImage());
+  }
 });

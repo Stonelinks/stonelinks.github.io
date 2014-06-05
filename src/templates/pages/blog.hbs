@@ -2,28 +2,30 @@
 title: Blog
 ---
 
+<div id="blog-anchor">
+</div>
+
 <script type="text/javascript">
   window.POSTS = [
     {{#compose src="src/templates/posts/*.hbs"}}
-      '/posts_raw/{{@basename}}.html',
+      {
+        id: '{{@basename}}',
+        title: '{{@title}}',
+        date: '{{formatDate @date "%m/%d/%Y"}}'
+      },
     {{/compose}}
   ]
 </script>
 
-<div id="blog-anchor">
-</div>
-
-
-<div id="loader" class="row">
-  <div class="col-sm-2 col-sm-offset-5">
-    <div class="loading-row box">
-      <div>
-        <div class="circle one"></div>
-        <div class="circle two"></div>
-        <div class="circle three"></div>
-      </div>
+<div class="hide"></div>
+  {{#compose src="src/templates/posts/*.hbs"}}
+    <div id="post-content-{{@basename}}">
+      {{{@content}}}
     </div>
-  </div>
+  {{/compose}}
 </div>
 
+<script id="post-template" type="text/template" class="template">
+  {{glob 'src/templates/layouts/post.underscore'}}
+</script>
 
