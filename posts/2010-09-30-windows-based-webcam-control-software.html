@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Windows Based Webcam Control Software | Stonelinks</title>
 
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400italic,400,700">
     <link rel="stylesheet" href="../assets/css/main.css">
 
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <script src="../assets/html5shiv/dist/html5shiv.min.js"></script>
+      <script src="../assets/respond/dest/respond.min.js"></script>
     <![endif]-->
 
-    <script src="../assets/vendor/jquery/jquery.js"></script>
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
     <script src="../assets/vendor/underscore/underscore.js"></script>
     <script type="text/javascript">
       window.ASSETS = '../assets';
@@ -81,15 +82,15 @@
 
 <p><strong>Edit:</strong> This is old. It is also the first implementation of my remote-controlled camera... under windows. It is really really bad and nobody should use it. However, I thougt I was pretty cool when I made it, and maybe it will be useful to somebody here, so I&#39;ll leave it up. I put a much more improved version this software to use on <a href="misc/IED_tech_report_final.pdf">the border patrol robot</a>. Check out page 48 of the report to see the final results and the page 118 for the code behind it.</p>
 <h2 id="intro">Intro</h2>
-<p>I love nothing more in life than creating and tinkering with the stuff around me. Over the years, this love has taken many different forms. It started out somewhere in elementary school with Legos and taking stuff apart and has evolved over the years into weekend projects such as the one you see here. <a href="img/old/2010-02-08-193147.jpg"><img src="img/old/2010-02-08-193147-150x150.jpg" alt="image" title="2010-02-08-193147"></a></p>
+<p>I love nothing more in life than creating and tinkering with the stuff around me. Over the years, this love has taken many different forms. It started out somewhere in elementary school with Legos and taking stuff apart and has evolved over the years into weekend projects such as the I&#39;m about to tell you about.</p>
 <p>One weekend early in the semester, I found myself with some rare free time and so I chose to make my own internet-aware pan-tilt fixture for my webcam. To my room mates <a href="http://en.wikipedia.org/wiki/Sarcasm">delight</a>, I have placed the controls on this website. Projects such as this are just the kind of thing that I love taking time to do. They span concepts that go from very low level micro controller programming to high level web programming, using all sorts of code and hardware as intermediaries. It required quite a lot of different skill sets and knowledge of systems integration to work. I&#39;ll describe how I did it starting very low level at the and working my way up.</p>
 <h2 id="step-0-the-hardware">Step 0: The Hardware</h2>
 <h3 id="the-microcontroller">The Microcontroller</h3>
-<p><a href="img/old/2010-02-08-193359.jpg"><img src="img/old/2010-02-08-193359-150x150.jpg" alt="image" title="2010-02-08-193359"></a></p>
+<p><a href="../assets/img/posts/2010-02-08-193359.jpg"><img src="../assets/img/posts/2010-02-08-193359-150x150.jpg" alt="image" title="2010-02-08-193359"></a></p>
 <p>This summer I came into possession of an <a href="http://www.arduino.cc/">Arduino</a> micro controller and <a href="http://www.rcuniverse.com/product_guide/servoprofile.cfm?servo_id=67">some servos</a>. As you can see from the pictures, I connected the servos up to the micro controller, making Y-cables for the power, ground, and signal pins of the servos. I also added a laser diode for good measure. All output pins were of course wired to the digital I/O port on the controller. Once I had everything wired up, I stuffed the Arduino in a metal box I had lying around and hot glued everything together. Predictably, the webcam itself did not require much work. It was actually given to me for free! (previous owner couldn&#39;t find drivers for it). All in all, this was not complicated to build at all and has performed very well for what it was designed to do.</p>
 <hr>
 <h3 id="the-web-server">The Web Server</h3>
-<p><a href="img/old/2010-02-08-193241.jpg"><img src="img/old/2010-02-08-193241-150x150.jpg" alt="image" title="2010-02-08-193241"></a></p>
+<p><a href="../assets/img/posts/2010-02-08-193241.jpg"><img src="../assets/img/posts/2010-02-08-193241-150x150.jpg" alt="image" title="2010-02-08-193241"></a></p>
 <p>The Arduino is cool and all, but since the ultimate goal of this project is to control it over the internet, having a web server is an obvious requirement. Unfortunately for me, my web server also happens to be my self-built desktop that I use for almost all my engineering work. Because of this, I need access to few applications ( Solidworks, LabVIEW, Photoshop, Steam, etc.. ) that are only available for Windoze. Therefore I am forced into the unfortunate position of hosting this website and making this project work under Windows 7. This is an example of <a href="http://www.burtonco.com/xsites/Appraisers/burtonco1/content/uploadedFiles/wrong%20tool.jpg">the wrong tool for the job</a>, and it actually caused me quite a lot of headaches down the line. In the future when I have another computer to spare and improve on this project, I will use the <a href="http://blog.taragana.com/wp-content/uploads/2008/03/linux-logo.jpg">right tool</a>. After all that rambling, you&#39;re probably wondering how I have my web server configured. The only relevant details are that I am running <a href="http://www.wampserver.com/en/">WampServer</a> with PHP 5.3.0 with short tags enabled.</p>
 <hr>
 <h2 id="step-1-establishing-basic-control-of-the-camera">Step 1: Establishing Basic Control of the Camera</h2>

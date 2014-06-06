@@ -1,10 +1,10 @@
 @import "bootstrap.less";
-@import "loader.less";
 
 @import "../vendor/font-awesome/less/font-awesome.less";
 @fa-font-path: "../vendor/font-awesome/fonts";
 
 body {
+  font-family: 'PT Sans', Helvetica, Arial, sans-serif;
 
   background: linear-gradient(darken(@brand-primary, 0%), darken(@brand-primary, 25%)) no-repeat center center / 100% 100% fixed;
 
@@ -82,7 +82,6 @@ hr {
 .intro-text {
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 1.25em;
   font-weight: 400;
 }
 
@@ -229,4 +228,10 @@ footer p {
 
 .landing-navbar-wrapper footer {
   padding-bottom: 25px;
+}
+
+ul {
+  font-size: 15px;
+  line-height: 25px;
+  color: rgb(0, 0, 0);
 }
