@@ -80,39 +80,30 @@
       <hr>
       
 
-<p><strong>Edit:</strong> This is old. It is also the first implementation of my remote-controlled camera... under windows. It is really really bad and nobody should use it. However, I thougt I was pretty cool when I made it, and maybe it will be useful to somebody here, so I&#39;ll leave it up. I put a much more improved version this software to use on <a href="misc/IED_tech_report_final.pdf">the border patrol robot</a>. Check out page 48 of the report to see the final results and the page 118 for the code behind it.</p>
-<h2 id="intro">Intro</h2>
-<p>I love nothing more in life than creating and tinkering with the stuff around me. Over the years, this love has taken many different forms. It started out somewhere in elementary school with Legos and taking stuff apart and has evolved over the years into weekend projects such as the I&#39;m about to tell you about.</p>
-<p>One weekend early in the semester, I found myself with some rare free time and so I chose to make my own internet-aware pan-tilt fixture for my webcam. To my room mates <a href="http://en.wikipedia.org/wiki/Sarcasm">delight</a>, I have placed the controls on this website. Projects such as this are just the kind of thing that I love taking time to do. They span concepts that go from very low level micro controller programming to high level web programming, using all sorts of code and hardware as intermediaries. It required quite a lot of different skill sets and knowledge of systems integration to work. I&#39;ll describe how I did it starting very low level at the and working my way up.</p>
-<h2 id="step-0-the-hardware">Step 0: The Hardware</h2>
-<h3 id="the-microcontroller">The Microcontroller</h3>
+<p>I love nothing more in life than creating and tinkering with the stuff around me. Over the years, this love has taken many different forms. It started out somewhere in elementary school with Legos and taking my toys apart (much to the chigrin of my loving parents). Today it has evolved over the years into weekend projects such as the I&#39;m about to tell you about.</p>
+<p>One weekend early in the semester, I found myself with some rare free time and so I chose to make my own internet-aware pan-tilt fixture for my webcam. To my room mates <a href="http://en.wikipedia.org/wiki/Sarcasm">delight</a>, I have placed the controls to this camera on this website.</p>
+<p>Projects such as this are just the kind of thing that I love taking time to do. They span the full stack, and involve concepts that go from very low level micro controller programming to high level web programming, using all sorts of code and hardware as inbetween. It requirees quite a lot of different skill sets and knowledge of systems integration for this to work. Anyhow enough self-aggrandizing, I&#39;ll describe how I did it starting very low level at the and working my way up.</p>
+<h3 id="hardware">Hardware</h3>
 <p><a href="../assets/img/posts/2010-02-08-193359.jpg"><img src="../assets/img/posts/2010-02-08-193359-150x150.jpg" alt="image" title="2010-02-08-193359"></a></p>
-<p>This summer I came into possession of an <a href="http://www.arduino.cc/">Arduino</a> micro controller and <a href="http://www.rcuniverse.com/product_guide/servoprofile.cfm?servo_id=67">some servos</a>. As you can see from the pictures, I connected the servos up to the micro controller, making Y-cables for the power, ground, and signal pins of the servos. I also added a laser diode for good measure. All output pins were of course wired to the digital I/O port on the controller. Once I had everything wired up, I stuffed the Arduino in a metal box I had lying around and hot glued everything together. Predictably, the webcam itself did not require much work. It was actually given to me for free! (previous owner couldn&#39;t find drivers for it). All in all, this was not complicated to build at all and has performed very well for what it was designed to do.</p>
-<hr>
-<h3 id="the-web-server">The Web Server</h3>
-<p><a href="../assets/img/posts/2010-02-08-193241.jpg"><img src="../assets/img/posts/2010-02-08-193241-150x150.jpg" alt="image" title="2010-02-08-193241"></a></p>
-<p>The Arduino is cool and all, but since the ultimate goal of this project is to control it over the internet, having a web server is an obvious requirement. Unfortunately for me, my web server also happens to be my self-built desktop that I use for almost all my engineering work. Because of this, I need access to few applications ( Solidworks, LabVIEW, Photoshop, Steam, etc.. ) that are only available for Windoze. Therefore I am forced into the unfortunate position of hosting this website and making this project work under Windows 7. This is an example of <a href="http://www.burtonco.com/xsites/Appraisers/burtonco1/content/uploadedFiles/wrong%20tool.jpg">the wrong tool for the job</a>, and it actually caused me quite a lot of headaches down the line. In the future when I have another computer to spare and improve on this project, I will use the <a href="http://blog.taragana.com/wp-content/uploads/2008/03/linux-logo.jpg">right tool</a>. After all that rambling, you&#39;re probably wondering how I have my web server configured. The only relevant details are that I am running <a href="http://www.wampserver.com/en/">WampServer</a> with PHP 5.3.0 with short tags enabled.</p>
-<hr>
-<h2 id="step-1-establishing-basic-control-of-the-camera">Step 1: Establishing Basic Control of the Camera</h2>
+<p>This summer I came into possession of an <a href="http://www.arduino.cc/">Arduino</a> micro controller and <a href="http://www.rcuniverse.com/product_guide/servoprofile.cfm?servo_id=67">some servos</a>. As you can see from the pictures, I connected the servos up to the micro controller, making Y-cables for the power, ground, and signal pins of the servos. I also added a laser diode for good measure.</p>
+<p>The servo signal pins were wired to the digital I/O ports on the arduino. I stuffed the Arduino in a metal box I had lying around and hot glued everything together. Predictably, the webcam itself didn&#39;t require much work. It was actually given to me for free! (previous owner couldn&#39;t find drivers for it). I just ripped the stand off of it and glued it to the servos. All in all, this was a cheap and simple that has performed very well for what it was designed to do.</p>
 <hr>
 <h3 id="microcontroller-code">Microcontroller Code</h3>
-<p>I wrote the following code to establish basic control of the Arduino over its USB to serial adapter. The comments explain what is going on, but for further background reading you can check out this about<a href="http://en.wikipedia.org/wiki/Pulse-width_modulation">PWM control</a> and this about <a href="http://en.wikipedia.org/wiki/EEPROM">what EEPROM is</a>. Sorry ahead of time that the formatting of the code is all mangled, it was the best I could do.</p>
-<pre>
-/*
- * File:          pantilt.c
- * Description:   An program for asynchronously controlling
- *          servos (via EEPROM and PWM) for use on a pan / tilt
- *          setup on my robot
- * Author:          Lucas Doyle
+<p>I wrote the following code to establish basic control of the Arduino over its USB serial adapter. The servos are controlled using a technique called pulse width modulation (PWM). The comments explain what is going on, but for further background reading you can check out <a href="http://en.wikipedia.org/wiki/Pulse-width_modulation">this</a>. It also uses EEPROM to store the position of the camera between power cycles and resets. For some background about what EEPROM is check out <a href="http://en.wikipedia.org/wiki/EEPROM">this</a>.</p>
+<pre><code class="language-c">/*
+ * File:            pantilt.c
+ * Description:     A program for controlling
+ *                  servos for use on a pan / tilt
+ *                  module on my robot
+ * Author:          Lucas Doyle (lucas.p.doyle@gmail.com)
  * Creation Date:   October 16, 2009
  * Revision Date:   Jan 31, 2010
  */
 
 // Since the Arduino resets itself every time a serial connection is
-// made in windows (if you're writing characters from PHP or something),
+// made in windows (if you&#39;re writing characters from PHP or something),
 // I have chosen to use the Arduinos EEPROM to store the positions
 // between resets. Therefore we include the EEPROM header.
-
 #include EEPROM
 
 // variables dealing with the pins
@@ -121,12 +112,12 @@ char servoPinY    =  3;    // control pin for the second
 char laserpin     = 13;    // the camera has a little laser diode on it
 
 // PWM variables
-int minPulseX    =  600;  // minimum servo position
-int maxPulseX    =  2400; // maximum servo position
+int minPulseX    = 600;  // minimum servo position
+int maxPulseX    = 2400; // maximum servo position
 int minPulseY    = 500;   // same thing for other servo
-int maxPulseY  = 1850;
-char turnRate     =  100;  // servo turn rate increment (larger value, faster rate)
-char refreshTime  =  20;   // time (ms) between pulses (50Hz)
+int maxPulseY    = 1850;
+char turnRate    = 100;  // servo turn rate increment (larger value, faster rate)
+char refreshTim  = 20;   // time (ms) between pulses (50Hz)
 
 // The Arduino will calculate these values
 int centerServoX;         // center servo position
@@ -139,17 +130,19 @@ long lastPulse   = 0;     // recorded time (ms) of the last pulse
 
 // mode variables
 int laseron      = 0;     // start out with the laser off by default
-int partymode    = 0;     // party mode, some stupid idea i had to have the camera
-        // spaz out and strobe the laser, has not been written yet
-        // because i have not had time
+
+// party mode, some stupid idea i had to have the camera
+// spaz out and strobe the laser, has not been written yet
+// because i have not had time
+int partymode    = 0;
 
 // This function writes an int to eeprom at p_address
 // Adapted from Marc Cardinals work:
 // http://blog.ncode.ca/wp-content/uploads/2008/08/eeprom-int-readwrite.pde
 void EEPROMWriteInt(int p_address, int p_value)
 {
-  byte lowByte = ((p_value >> 0) & 0xFF);
-  byte highByte = ((p_value >> 8) & 0xFF);
+  byte lowByte = ((p_value &gt;&gt; 0) &amp; 0xFF);
+  byte highByte = ((p_value &gt;&gt; 8) &amp; 0xFF);
 
   EEPROM.write(p_address, lowByte);
   EEPROM.write(p_address + 1, highByte);
@@ -162,7 +155,7 @@ unsigned int EEPROMReadInt(int p_address)
 {
   byte lowByte = EEPROM.read(p_address);
   byte highByte = EEPROM.read(p_address + 1);
-  return ((lowByte << 0) & 0xFF) + ((highByte << 8) & 0xFF00); }
+  return ((lowByte &lt;&lt; 0) &amp; 0xFF) + ((highByte &lt;&lt; 8) &amp; 0xFF00); }
 
 
 void setup()
@@ -176,7 +169,7 @@ void setup()
   centerServoX = maxPulseX - ((maxPulseX - minPulseX)/2);  
   centerServoY = maxPulseY - (((maxPulseY - minPulseY)/2)-280);  
 
-  // If you're running this for the first time on your arduino,  
+  // If you&#39;re running this for the first time on your arduino,  
   // uncomment the next two lines to initialize the EEPROM
   // EEPROMWriteInt(0, centerServoX);  
   // EEPROMWriteInt(2, centerServoY);  
@@ -187,15 +180,15 @@ void setup()
   // begin serial communication  
   Serial.begin(9600);  
 
-  //Serial.println("Arduino Serial Pan/tilt Control");
-  //Serial.println("Standard WASD to move, spacebar to center");
-  //Serial.println("L toggles the laser, TFGH goes to the extremes");
+  //Serial.println(&quot;Arduino Serial Pan/tilt Control&quot;);
+  //Serial.println(&quot;Standard WASD to move, spacebar to center&quot;);
+  //Serial.println(&quot;L toggles the laser, TFGH goes to the extremes&quot;);
 }
 
 void loop()
 {  
   // wait for serial input
-  if (Serial.available() > 0)
+  if (Serial.available() &gt; 0)
   {
     // read the incoming byte:
     moveServo = Serial.read();
@@ -203,37 +196,37 @@ void loop()
     // if party mode is off, read in commands
     //if (partymode == 0)
     {
-      //if (moveServo == (char) " ") {/*nothing happens*/}
+      //if (moveServo == (char) &quot; &quot;) {/*nothing happens*/}
 
       // move left
-      if (moveServo == 'a') { pulseWidthX = pulseWidthX - turnRate; }
+      if (moveServo == &#39;a&#39;) { pulseWidthX = pulseWidthX - turnRate; }
 
       // move right
-      else if (moveServo == 'd') { pulseWidthX = pulseWidthX + turnRate; }
+      else if (moveServo == &#39;d&#39;) { pulseWidthX = pulseWidthX + turnRate; }
 
       // move up
-      else if (moveServo == 'w') { pulseWidthY = pulseWidthY - turnRate; }
+      else if (moveServo == &#39;w&#39;) { pulseWidthY = pulseWidthY - turnRate; }
 
       // move down
-      else if (moveServo == 's') { pulseWidthY = pulseWidthY + turnRate; }
+      else if (moveServo == &#39;s&#39;) { pulseWidthY = pulseWidthY + turnRate; }
 
       // center
-      else if (moveServo == 'c') { pulseWidthX = centerServoX; pulseWidthY = centerServoY;}
+      else if (moveServo == &#39;c&#39;) { pulseWidthX = centerServoX; pulseWidthY = centerServoY;}
 
       // move hard left
-      else if (moveServo == 'f') {pulseWidthX = minPulseX; }
+      else if (moveServo == &#39;f&#39;) {pulseWidthX = minPulseX; }
 
       // move hard right
-      else if (moveServo == 'h') {pulseWidthX = maxPulseX; }
+      else if (moveServo == &#39;h&#39;) {pulseWidthX = maxPulseX; }
 
       // move hard up
-      else if (moveServo == 't') {pulseWidthY = minPulseY; }
+      else if (moveServo == &#39;t&#39;) {pulseWidthY = minPulseY; }
 
       // move hard down
-      else if (moveServo == 'g') {pulseWidthY = maxPulseY; }
+      else if (moveServo == &#39;g&#39;) {pulseWidthY = maxPulseY; }
 
       // toggle the laser
-      else if (moveServo == 'l')
+      else if (moveServo == &#39;l&#39;)
       {
         if (laseron == 0) { digitalWrite(laserpin, HIGH); laseron = 1; }
         else if (laseron == 1) { digitalWrite(laserpin, LOW); laseron = 0; }
@@ -244,11 +237,11 @@ void loop()
     //else if (partymode == 1)
     //{
       // do some awesome stuff (not yet implemented)
-    //  Serial.print("Party!!! ");
+    //  Serial.print(&quot;Party!!! &quot;);
     //}
 
     // party mode
-    //else if (moveServo == 'p')
+    //else if (moveServo == &#39;p&#39;)
     //{
     //  if (partymode == 0) { partymode = 1; }
     //  else if (partymode == 1) { partymode = 0; }
@@ -256,19 +249,19 @@ void loop()
   }
 
   // stop servo pulse at min and max
-  if (pulseWidthX > maxPulseX) { pulseWidthX = maxPulseX; }
-  if (pulseWidthX < minPulseX) { pulseWidthX = minPulseX; }
-  if (pulseWidthY > maxPulseY) { pulseWidthY = maxPulseY; }
-  if (pulseWidthY < minPulseY) { pulseWidthY = minPulseY; }
+  if (pulseWidthX &gt; maxPulseX) { pulseWidthX = maxPulseX; }
+  if (pulseWidthX &lt; minPulseX) { pulseWidthX = minPulseX; }
+  if (pulseWidthY &gt; maxPulseY) { pulseWidthY = maxPulseY; }
+  if (pulseWidthY &lt; minPulseY) { pulseWidthY = minPulseY; }
 
   // print pulseWidth back to the Serial Monitor (uncomment to debug)
-  // Serial.print("Pulse Width: ");
+  // Serial.print(&quot;Pulse Width: &quot;);
   // Serial.print(pulseWidth);
-  // Serial.println("us");   // microseconds
+  // Serial.println(&quot;us&quot;);   // microseconds
 
   // pulse the servo every 20 ms (refreshTime) with current pulseWidth
-  // this will hold the servo's position if unchanged, or move it if changed
-  if (millis() - lastPulse >= refreshTime)
+  // this will hold the servo&#39;s position if unchanged, or move it if changed
+  if (millis() - lastPulse &gt;= refreshTime)
   {
     EEPROMWriteInt(0, pulseWidthX);
     EEPROMWriteInt(2, pulseWidthY);
@@ -283,52 +276,39 @@ void loop()
 
     lastPulse = millis();            // save the time of the last pulse
   }
-}
-</pre>
-
-<h2 id="establishing-serial-communication">Establishing Serial Communication</h2>
-<hr>
-<p>If you load the above code into the Arduino&#39;s IDE and download it on to your controller, you end up with a nice, intuitive way of manually controlling your pan / tilt mechanism. You can try things out by opening the Serial Monitor in the Arduino IDE and moving around using WASD, or move to the extremes using TFGH. Pressing &#39;C&#39; centers the camera back and &#39;L&#39; <a href="http://spf.fotolog.com/photo/47/10/95/vanguardista2104/1211331863_f.jpg">fires the laser</a>. Arguably, you could stop here and technically still have a way of controlling the camera over the internet with the power of linux. All one would need to do is open up a terminal or ssh into a remote workstation and run the following command:</p>
-<pre>
- ~$ screen /dev/ttyUSB0
-</pre>
-
+}</code></pre>
+<h3 id="establishing-serial-communication">Establishing Serial Communication</h3>
+<p>If you load the above code into the Arduino&#39;s IDE and flash it to your microcontroller, you end up with a nice, intuitive way of manually controlling your pan / tilt mechanism. You can try things out by opening the Serial Monitor in the Arduino IDE and moving around using WASD, or move to the extremes using TFGH. Pressing &#39;C&#39; centers the camera back and &#39;L&#39; <a href="http://spf.fotolog.com/photo/47/10/95/vanguardista2104/1211331863_f.jpg">fires the laser</a>. Arguably, you could stop here and technically still have a way of controlling the camera over the internet with the power of linux. All one would need to do is open up a terminal or ssh into the machine and run the following command:</p>
+<pre><code class="language-bash"> ~$ screen /dev/ttyUSB0</code></pre>
 <p>This was not good enough for me though, as I wanted to control this through a web browser, which brings us to...</p>
-<hr>
-<h2 id="step-2-interfacing-with-the-internet">Step 2: Interfacing with the Internet</h2>
-<hr>
+<h3 id="the-web-server">The Web Server</h3>
+<p><a href="../assets/img/posts/2010-02-08-193241.jpg"><img src="../assets/img/posts/2010-02-08-193241-150x150.jpg" alt="image" title="2010-02-08-193241"></a></p>
+<p>The Arduino is cool and all, but since the ultimate goal of this project is to control it over the internet, having a web server is an obvious requirement. Unfortunately for me, my web server also happens to be my self-built desktop that I use for almost all my other engineering work and day to day activities. Because of this, I need access to few windows only applications (Solidworks, LabVIEW, Photoshop, Steam, etc..) which rules out any linux server platforms if I want 100% uptime. This is an unfortunate contstraint that caused me quite a lot of headaches down the line. In the future when I have another computer to spare and improve on this project, I will use the <a href="http://blog.taragana.com/wp-content/uploads/2008/03/linux-logo.jpg">right tool</a> for the job. </p>
+<p>After all that rambling, you&#39;re probably wondering how I have my web server configured. The only relevant details are that I am running stock <a href="http://www.wampserver.com/en/">WampServer</a> with PHP 5.3.0 with short tags enabled.</p>
 <h3 id="nightmare-in-php-land">Nightmare in PHP land</h3>
-<p>I thought this would be easy. Since PHP is a server side scripting language, it has libraries that allow it to read and write to and from serial ports. So one would think that the following would work:</p>
-<pre>
-$fp =fopen("COM3", "w");
-fwrite($fp, chr('c')); // write your character to the Arduino here
-sleep(1);
-fclose($fp);
-</pre>
-
-<p>However, for reasons I do not completely understand, this did not work for me under Windows 7, but it did with Linux (substituting COM3 for /dev/ttyUSB0 of course). This problem persisted, as I also tried using the <a href="http://www.phpclasses.org/browse/package/3679.html">PHP serial class</a>, but it too proved to be equally as ineffective. I finally circumvented the need for PHP to communicate with the COM port entirely by compiling several very basic exe&#39;s in <a href="http://processing.org/">processing</a> that sent commands to the Arduino and then called them using the exec() function in PHP. This, while extremely inefficient, was the quickest, most reliable, consistent and intuitive solution to my problem. Of course, this would all have been avoided in the first place had I been using Linux, as PHP has no problem writing to /dev/ttyUSB0 like it would a normal file, such as in my example above.</p>
-<hr>
-<h2 id="building-the-webpage">Building the Webpage</h2>
-<p>By using the <a href="http://www.w3schools.com/PHP/php_get.asp">PHP $_GET</a> function, I was able to incorporate controls into a webpage. The PHP included in the header of the page is shown here:</p>
-<pre>
-//check the GET action var to see if an action is to be performed
-if (isset($_GET['action']))
+<p>I thought this would be easy. Since PHP is a server side scripting language, it has libraries that allow it to read and write to and from serial ports. So one would think that something like the following would work:</p>
+<pre><code class="language-php"><span class="variable">$fp</span> =fopen(<span class="string">"COM3"</span>, <span class="string">"w"</span>);
+fwrite(<span class="variable">$fp</span>, chr(<span class="string">'c'</span>)); <span class="comment">// write your character to the Arduino here</span>
+sleep(<span class="number">1</span>);
+fclose(<span class="variable">$fp</span>);</code></pre>
+<p>However, for reasons I do not completely understand, this did not work for me under Windows 7, but it did with Linux (substituting COM3 for /dev/ttyUSB0). This problem persisted, as I also tried using the <a href="http://www.phpclasses.org/browse/package/3679.html">PHP serial class</a>, but it too proved to be equally as ineffective. I finally circumvented the need for PHP to communicate with the COM port entirely by compiling several very basic exe&#39;s in <a href="http://processing.org/">processing</a> that sent individual character commands to the Arduino and then called them in PHP using the exec() function.</p>
+<p>While extremely inefficient, this was the quickest, most reliable solution to my problem. Of course, this would all have been avoided in the first place had I been using Linux, as PHP has no problem writing to /dev/ttyUSB0 like it would a normal file in Linux.</p>
+<h3 id="building-the-webpage">Building the Webpage</h3>
+<p>By accessing the <a href="http://www.w3schools.com/PHP/php_get.asp">PHP $_GET</a> array, I was able to map incoming GET requests to different URLS to control what commands were sent to the camera. The PHP included in the header of the page is shown here:</p>
+<pre><code class="language-php"><span class="comment">// check the GET action var to see if an action is to be performed</span>
+<span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">'action'</span>]))
 {
-   //Action required! Build our command...
-   $basecmd = "F:\\wamp\\www\\luke\\Projects\\personal_robot\\personal robot\\commands\\";
-   $cmd = $basecmd . $_GET['action'] . "\\application.windows\\" . $_GET['action'] . ".exe";
-   exec($cmd);
-}
-</pre>
-
-<p>And the HTML I used to create a basic control panel is simply a 3x3 table with some hyperlinks to the right URLs to control PHP.</p>
-<hr>
-<h2 id="step-3-enjoy-your-remote-webcam-">Step 3: Enjoy your Remote Webcam!</h2>
-<h3 id="remarks">Remarks</h3>
-<p>To manage the webcam feed, I am using a program called <a href="http://www.lundie.ca/fwink/">Fwink</a> to take a picture every second and then using AJAX to automatically refresh the image once the page is loaded. However, there are hundreds of ways to manage a webcam feed and the details of how you do it is out of the scope of what I&#39;m talking about here.</p>
-<hr>
-<h2 id="conclusions-future-improvements">Conclusions / Future Improvements</h2>
-<p>As expected, performance with this setup is less than impressive, although I have no doubts in my mind it is due to the wonky way in which I have to execute system calls to run the Processing exe&#39;s. For the future, as this is a rough prototype, it can and will be running a lot faster under Linux. Additionally, this is the vision component to my personal robot, and its brains (a first generation ASUS eeepc netbook) are currently on loan to a friend of mine. Next time I see him I&#39;ll get the machine back and we&#39;ll start cooking with gas! (and by gas I mean Linux).</p>
+   <span class="comment">// action required! build our command...</span>
+   <span class="variable">$basecmd</span> = <span class="string">"F:\\wamp\\www\\luke\\Projects\\personal_robot\\personal robot\\commands\\"</span>;
+   <span class="variable">$cmd</span> = <span class="variable">$basecmd</span> . <span class="variable">$_GET</span>[<span class="string">'action'</span>] . <span class="string">"\\application.windows\\"</span> . <span class="variable">$_GET</span>[<span class="string">'action'</span>] . <span class="string">".exe"</span>;
+   exec(<span class="variable">$cmd</span>);
+}</code></pre>
+<p>And the HTML for the rest of the page is simply a 3x3 table with some hyperlinks to the right URLs with things like ?action=up, ?action=down, ect. placed in the right spot.</p>
+<h3 id="webcam">Webcam</h3>
+<p>To manage the webcam feed, I am using a program called <a href="http://www.lundie.ca/fwink/">Fwink</a> to take a picture every second and then using AJAX to automatically refresh the image once the page is loaded. However, there are many ways to manage a webcam feed and the details of how you do it is out of the scope of what I&#39;m talking about here.</p>
+<h2 id="conclusions-and-future-improvements">Conclusions and Future Improvements</h2>
+<p>As expected, performance with this setup is less than impressive, but this was more a learning excersize than it was a perfect execution. I have no doubts in my mind that the low performance is due to the wonky way in which I have to execute system calls to run the Processing exes. For the future, as this is a rough prototype, a lot can be improved / simplified by moving to Linux.</p>
+<p>Additionally, this is the vision component to my yet-to-be-completed personal robot, and its brains (a first generation ASUS eeepc netbook) are currently on loan to a friend of mine. Next time I see him I&#39;ll get the machine back and we&#39;ll start cooking with gas! (and by gas I mean Linux).</p>
 
 
 
