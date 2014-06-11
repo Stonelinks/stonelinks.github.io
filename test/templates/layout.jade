@@ -25,7 +25,7 @@ html(lang='en')
     script(src='/vendor/underscore/underscore.js')
     script(src='/js/main.js')
 
-  body(class=bodyclass)
+  body
 
     .landing
       a.brand(href='/')
@@ -33,6 +33,7 @@ html(lang='en')
         = locals.title
       .tagline-bar
         = locals.tagline
+
     .navbar.navbar-default(role='navigation')
       .container
         .navbar-header
@@ -53,25 +54,15 @@ html(lang='en')
             li
               a(href='/projects.html') Projects
 
-      header.header
-        div.content-wrap
-          block header
-            div.logo
-              h1
-                a(href=locals.url)= locals.name
-              p.description= locals.description
+    .container
+      block content
 
-
-    div#content
-      div.content-wrap
-        block content
-          h2 Welcome to zombocom!
     footer
-      div.content-wrap
-        block footer
-          section.about
-            !=contents['about.md'].html
-          section.copy
-            p &copy; #{ new Date().getFullYear() } #{ locals.owner } &mdash; powered by&nbsp;
-              a(href='https://github.com/jnordberg/wintersmith') Wintersmith
-              //- please leave the "powered by" if you use the design
+      .container
+        .row
+          .col-lg-12.text-center
+            each network in locals.social_networks
+              a.social(href=network.link, target='_blank')
+                i(class='fa fa-'+ network.name)
+            a.footer-link(href='/contact.html')
+              | contact

@@ -1,6 +1,5 @@
 ---
 title: README
-author: the-wintersmith
 date: 2013-04-30
 template: article.jade
 ---
@@ -55,7 +54,6 @@ Articles are sorted by date and 3 are shown per page, you can configure this and
 ```markdown
 ---
 title: Hear me blog
-author: johndoe
 date: 2012-12-12 12:12
 ---
 
