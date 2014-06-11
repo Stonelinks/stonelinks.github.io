@@ -1,0 +1,64 @@
+{
+  "port": 9021,
+  "locals": {
+    "url": "",
+    "name": "Stonelinks",
+    "owner": "Lucas Doyle",
+    "description": "Lucas Doyle's website",
+
+    "title": "Stonelinks",
+    "tagline": "Lucas Doyle's website",
+    "logo": "logos/big-logo.png",
+
+    "social_networks": [
+      {
+        "name": "facebook",
+        "link": "https://www.facebook.com/stonelinks"
+      },
+      {
+        "name": "github",
+        "link": "https://github.com/Stonelinks"
+      },
+      {
+        "name": "twitter",
+        "link": "https://twitter.com/#!/Stonelinks"
+      },
+      {
+        "name": "google-plus",
+        "link": "https://plus.google.com/116178490514652721625/posts"
+      },
+      {
+        "name": "linkedin",
+        "link": "http://www.linkedin.com/pub/lucas-doyle/25/550/169"
+      },
+      {
+        "name": "youtube",
+        "link": "http://www.youtube.com/user/RealStonelinks"
+      }
+    ]
+  },
+  "plugins": [
+    "./plugins/paginator.coffee",
+    "wintersmith-livereload"
+  ],
+  "require": {
+    "moment": "moment",
+    "_": "underscore",
+    "typogr": "typogr"
+  },
+  "jade": {
+    "pretty": true
+  },
+  "markdown": {
+    "smartLists": true,
+    "smartypants": true
+  },
+  "ignore":  [
+    "less",
+    "**/config.json",
+    "**/.DS_Store"
+  ],
+  "paginator": {
+    "perPage": 10
+  }
+}
