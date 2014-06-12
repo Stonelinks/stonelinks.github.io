@@ -59,6 +59,13 @@ module.exports = function(grunt) {
         logConcurrentOutput: true
       }
     },
+    
+    copy: {
+      nojekyll: {
+        src: '.nojekyll',
+        dest: '<%= config.dist %>/'
+      }
+    },
 
     'gh-pages': {
       options: {
@@ -75,7 +82,8 @@ module.exports = function(grunt) {
   
   grunt.registerTask('build', [
     'pre',
-    'wintersmith:build'
+    'wintersmith:build',
+    'copy:nojekyll'
   ]);
 
   grunt.registerTask('publish', [
