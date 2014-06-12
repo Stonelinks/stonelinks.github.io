@@ -19,10 +19,18 @@ block content
               a(href=article.url) more
 
 block prepend footer
-  div.nav
-    if prevPage
-      a(href=prevPage.url) « Newer
-    else
-      a(href='/archive.html') « Archives
-    if nextPage
-      a(href=nextPage.url) Next page »
+  .row
+    .box
+      .col-lg-12
+        if prevPage
+          a(href=prevPage.url)
+            h2.pull-left
+              | « Newer
+        else
+          a(href='/archive.html')
+            h2.pull-left
+              | « Archives
+        if nextPage
+          a(href=nextPage.url)
+            h2.pull-right
+              | Next page »

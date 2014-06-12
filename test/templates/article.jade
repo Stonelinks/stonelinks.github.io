@@ -17,5 +17,9 @@ block content
         | !{ typogr(page.html).typogrify() }
 
 block prepend footer
-  div.nav
-    a(href=contents.index.url) « Full blog
+  .row
+    .box
+      .col-lg-12
+        a(href=contents.index.url)
+          h2.pull-left
+            | « Back

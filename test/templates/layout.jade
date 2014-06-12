@@ -57,12 +57,13 @@ html(lang='en')
     .container
       block content
 
-    footer
-      .container
-        .row
-          .col-lg-12.text-center
-            each network in locals.social_networks
-              a.social(href=network.link, target='_blank')
-                i(class='fa fa-'+ network.name)
-            a.footer-link(href='/contact.html')
-              | contact
+    block footer
+      footer
+        .container
+          .row
+            .col-lg-12.text-center
+              each network in locals.social_networks
+                a.social(href=network.link, target='_blank')
+                  i(class='fa fa-'+ network.name)
+              a.footer-link(href='/contact.html')
+                | contact
