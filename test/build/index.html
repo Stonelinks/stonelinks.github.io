@@ -7,96 +7,231 @@
     <title>Stonelinks
     </title>
     <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Lucas Doyle's website">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400italic,400,700">
+    <link rel="stylesheet" href="/css/main.css"><!--[if lt IE 9]>
+    <script src="vendor/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="vendor/html5shiv/dest/respond.min.js"></script><![endif]-->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/underscore/underscore.js"></script>
+    <script src="/js/main.js"></script>
   </head>
   <body>
-    <header class="header">
-      <div class="content-wrap">
-        <div class="logo">
-          <h1><a href="">Stonelinks</a></h1>
-          <p class="description">Lucas Doyle's website</p>
+    <div class="landing"><a href="/" class="brand"><img src="/img/logos/big-logo.png">Stonelinks</a>
+      <div class="tagline-bar">Lucas Doyle's website
+      </div>
+    </div>
+    <div role="navigation" class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><img src="/img/logos/big-logo.png">Stonelinks</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+          </ul>
         </div>
       </div>
-    </header>
-    <div id="content">
-      <div class="content-wrap">
-        <article class="article intro">
-          <header>
-            <p class="date"><span>30. April 2013</span></p>
-            <h2><a href="/articles/hello-world/">README</a></h2>
-          </header>
-          <section class="content"><p>Welcome to titch bits! This is the default blog template with <span class="caps">RSS</span>, pagination and an archive. There are other templates available — run <code>wintersmith new --help</code> to list&nbsp;them.</p>
+    </div>
+    <div class="container">
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/articles/new-resume/">
+              <h1 class="intro-text text-center">New Resume<br><small>06. January 2013</small></h1></a>
+            <hr><p>Over the holidays I finally got around to implementing what I wish existed back when I was looking for a job: a quick, easy, flexible way to write and publish a resume in many formats. The more people who see your resume, the better your chances of getting an interview or call back from a potential employer. This means the more formats and places that your resume is viewable in, the better. When I was looking for a job, I tried to follow this strategy but quickly tired making the same change on multiple versions of my resume in different&nbsp;formats.</p>
+<p>Like any programmer that has to do anything more than once, I wanted to automate this tedious editing. So I endeavoured create a better reseume authoring solution. Specifically, I wanted these&nbsp;features:</p>
+<ul>
+<li>Explicit seperation of resume data from resume&nbsp;formatting</li>
+<li>Store resume data in an easy to manipulate&nbsp;format</li>
+<li>Write once, publish and deploy the resume&nbsp;everywhere</li>
+</ul>
+<p>I ended up engineering a solution that used a <span class="caps">JSON</span> file to store resume data, and a simple python program that would use different “writers” to spit out the resume in different formats. Here is a breakdown of the supported formats using a combination of the generator and some macros in a&nbsp;Makefile:</p>
+<ul>
+<li>text</li>
+<li>html</li>
+<li>pdf (using <a href="http://code.google.com/p/wkhtmltopdf/">wkhtmltopdf</a>)</li>
+<li>markdown</li>
+<li>stonelinks-specific markdown (basically a special markdown template used specifically for the resume on this&nbsp;website)</li>
+</ul>
+<p>Anyhow it is finished and it works great for my purposes. The code is available <a href="https://github.com/Stonelinks/resume">here</a> on github. It should be easy for others to use it, just fork and modify the <span class="caps">JSON</span> with your resume data and have at&nbsp;it!</p>
 
-            <p class="more"><a href="/articles/hello-world/">more</a></p>
-          </section>
-        </article>
-        <article class="article intro">
-          <header>
-            <p class="date"><span>01. April 2013</span></p>
-            <h2><a href="/articles/red-herring/">A red herring</a></h2>
-          </header>
-          <section class="content"><p>A long time ago, when the world was young — someone put some food on their tongue.
-They tasted the food, and thought it was nice. Most fruit liked it — but banana’s thought&nbsp;twice.</p>
-<p>
-            <p class="more"><a href="/articles/red-herring/">more</a></p>
-          </section>
-        </article>
-        <article class="article intro">
-          <header>
-            <p class="date"><span>01. October 2012</span></p>
-            <h2><a href="/articles/another-test/">Code and stuff!</a></h2>
-          </header>
-          <section class="content"><p>Syntax highlighting with <a href="http://softwaremaniacs.org/soft/highlight/en/">highlight.js</a>.
-The theme used is tomorrow, you can find more themes <a href="http://jmblog.github.io/color-themes-for-highlightjs/">here</a>.</p>
-<p>
-            <p class="more"><a href="/articles/another-test/">more</a></p>
-          </section>
-        </article>
-        <article class="article intro">
-          <header>
-            <p class="date"><span>02. February 2012</span></p>
-            <h2><a href="/articles/markdown-syntax/">Markdown syntax</a></h2>
-          </header>
-          <section class="content"><p>Full markdown syntax taken from John Gruber’s <a href="http://daringfireball.net/projects/markdown/syntax">Daring Fireball</a>.
-Did you know that 9 out of 10 bloggers prefer to write in&nbsp;markdown?</p>
+          </div>
+        </div>
+      </div>
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/articles/webgl_blox/">
+              <h1 class="intro-text text-center">WebGL Blox<br><small>24. July 2012</small></h1></a>
+            <hr><p>This is a quick and dirty attempt to a clone a really addicting android game called <a href="https://play.google.com/store/apps/details?id=com.entwicklerx.tapblox&amp;hl=en">Tap Blox</a>. Play by eliminating groups of three or more adjacent blocks of the same color. Currently there is no timing / scoring&nbsp;system.</p>
+<p>I did this as an educational exercise, mostly to play around with WebGL and improve my skills at Javascript (which I know very little about). Plus programming is fun in general. The WebGL library I used used is Mr. Doob’s excellent <a href="https://github.com/mrdoob/three.js">Three.js</a>. Hope you enjoy! Best results with Google&nbsp;Chrome.</p>
+<div class="text-center">
+  <a href="{{relative page.dest "dist/blox.html"}}" class="btn btn-info btn-lg" target="_blank">Click here to play</a>
+</div>
 
-            <p class="more"><a href="/articles/markdown-syntax/">more</a></p>
-          </section>
-        </article>
-        <article class="article intro">
-          <header>
-            <p class="date"><span>01. February 2012</span></p>
-            <h2><a href="/articles/bamboo-cutter/">Taketori Monogatari</a></h2>
-          </header>
-          <section class="content"><p>Long, long ago, there lived an old bamboo&nbsp;wood-cutter.</p>
-<p>He was very poor and sad also, for no child had Heaven sent to cheer his old age, and in his heart there was no hope of rest from work till he died and was laid in the quiet grave. Every morning he went forth into the woods and hills wherever the bamboo reared its lithe green plumes against the sky. When he had made his choice, he would cut down these feathers of the forest, and splitting them lengthwise, or cutting them into joints, would carry the bamboo wood home and make it into various articles for the household, and he and his old wife gained a small livelihood by selling&nbsp;them.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/articles/lite-write/">
+              <h1 class="intro-text text-center">How I do Word Processing<br><small>30. April 2012</small></h1></a>
+            <hr><p>A few months ago I came up with a quick and dirty way to write text documents. I’m calling it <a href="https://github.com/Stonelinks/Lite-Write">Lite Write</a> because it is so simple. I’ve been using it in place of a word processor for awhile and been very happy with&nbsp;it.</p>
+<p>Like most people who write a lot of code, I’m most comfortable manipulating text in my editor of choice. However, I do a fair amount of writing that needs to be accessible to non programmers, which means my work really can’t stay in plain text forever. Lite write is a simple setup (basically a Makefile and some bits of <span class="caps">HTML</span>/CSS) that allows you&nbsp;to:</p>
+<ul>
+<li>Write everything in&nbsp;markdown</li>
+<li>Produce a <span class="caps">PDF</span> of your&nbsp;document</li>
+<li>Produce a standalone <span class="caps">HTML</span> version of your document anyone can view online (this works really nice with&nbsp;dropbox)</li>
+<li>Simple, easy to&nbsp;extended</li>
+</ul>
+<p>Over time I’ve grown very frustrated with traditional word processors (<span class="caps">MS</span> Word, OpenOffice, etc.). Google Docs is pretty good, but not well suited for when you’re offline or need fine control over formatting. I used LaTeX for awhile because it gave me that control over formatting and produced beautiful looking documents. But while awesome for equations, large amounts of text and so many other things, LaTeX’s syntax felt cumbersome for me and seemed way overkill for shorter&nbsp;documents.</p>
+<p>Enter Lite Write. Markdown is simple enough that you don’t even need to think about it when writing, and if you need finer control over formatting, just write <span class="caps">HTML</span>. So far has been great, and hopefully other people will read this, use it and maybe even add more formats to&nbsp;it.</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/articles/new-drone/">
+              <h1 class="intro-text text-center">New Aerial Drone<br><small>22. April 2012</small></h1></a>
+            <hr><div class="text-center"><iframe width="500px" height="400px" src="http://www.youtube.com/embed/3jVKegQwZ24" frameborder="0" allowfullscreen></iframe></div>
+
+
+<p>Good news and bad news! The good news is that in the last month or so at <span class="caps">RPI</span>, my friend Drew and I were able to cobble together some electronics with my airplane and squeeze in some successful flights of an RC drone! In the video above you can see one of our voyages. I successfully piloted the plane over RPI’s campus for about a half hour until the winds started to pick up and things got&nbsp;messy.</p>
+<div class="text-center">
+
+<img src="{{ assets }}/img/posts/drone.jpg" class="thumbnail" width="80%">
+
+Early mock up of the drone with the wings removed.
+
+The camera has since been mounted to a custom pan/tilt module under the engine.
+
+</div>
+
+<p><br>
+<br></p>
+<p>Which leads to the bad news. The bad news is that it crashed! Or rather I crashed it. Basically the wind was really strong and blew it out of range. We think it took a nose dive several hundred feet into the ground and crashed near Troy Highschool, which was very far away from us. It was lost for two days before we recovered it thanks to <a href="http://www.reddit.com/r/RPI/comments/tj2b2/anyone_seen_a_red_rc_plane_last_seen_doing_a_nose/">Reddit</a>.</p>
+<p>The damage was substantial. Besides the airframe being totally trashed, I lost my camera and a brushless motor. Drew faired better, only suffering minor damage to his radio&nbsp;equipment.</p>
+<p>Future plans for the drone&nbsp;are:</p>
+<ul>
+<li>Repair it to pre-crash condition, and never fly in heavy winds&nbsp;again</li>
+<li>Make it controllable from a computer (probably with a microcontroller and an&nbsp;Xbee)</li>
+<li>Make it autonomously fly! (with <span class="caps">GPS</span>, some kind of horizon sensor, accelerometers, gyros&nbsp;etc.)</li>
+</ul>
+<p>Other cool applications I can think&nbsp;of:</p>
+<ul>
+<li>Make 3d maps of things (e.g. map my neighborhood by flying around it while saving images with location and orientation of the&nbsp;drone)</li>
+<li>Automatically follow things (maybe use another <span class="caps">GPS</span> as a beacon or build a classifier for&nbsp;OpenCV)</li>
+<li>Go to waypoints and drop things (how cool would it be to stand in the middle of a field and have a candy bar drop from the&nbsp;sky?)</li>
+</ul>
+<p>At any rate, a fun new&nbsp;experiment!</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/articles/first-contribution-to-opensource/">
+              <h1 class="intro-text text-center">Contribution to Open Source Software<br><small>27. March 2012</small></h1></a>
+            <hr><center><iframe width="500px" height="400px" src="http://www.youtube.com/embed/gLsdHmCKoEw" frameborder="0" allowfullscreen></iframe></center>
+
+<p>Up until now, all my contributions to open source have been programs I have written, and as a general practice I like to make all my work open source if I can. However, its a nice feeling to have some code I wrote incorporated into someone else’s project for a&nbsp;change.</p>
+<p>The program in question here is called <a href="https://github.com/gnebehay/OpenTLD">OpenTLD</a>. Its a program for tracking objects (not just faces) in unconstrained video streams with <span class="caps">NO</span> training data beforehand (TLD stands for Tracking, Learning and Detection). Instead of using precomputed classifiers (like I previously have done with OpenCV), OpenTLD builds a model of what it is supposed to be detecting on the fly. To demonstrate, above is a slightly creepy demo of OpenTLD tracking my&nbsp;face.</p>
 <p>
-            <p class="more"><a href="/articles/bamboo-cutter/">more</a></p>
-          </section>
-        </article>
+            <p class="text-center"><a href="/articles/first-contribution-to-opensource/" class="btn btn-info">Read more »</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/articles/sudoku-solver/">
+              <h1 class="intro-text text-center">Sudoku Solver<br><small>02. January 2012</small></h1></a>
+            <hr><p>I got really bored over the holidays and wrote a very naive sudoku solver in&nbsp;C++.</p>
+<p>See it on github: <a href="https://gist.github.com/1522578">https://gist.github.com/1522578</a></p>
+
+          </div>
+        </div>
+      </div>
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/articles/binocular-face-tracking-sneak-peek/">
+              <h1 class="intro-text text-center">Binocular Face Tracking Sneak Peek<br><small>14. March 2011</small></h1></a>
+            <hr><p>The code needs a little more polish before I’m happy releasing it, but here is a demo video of the latest incarnation of the ‘bot doing some binocular face detection and tracking. For added fun (and in honor of <a href="http://www.thinkwithportals.com/">Portal 2</a> which comes out this week), I have it playing context-aware sound clips from the turrets in the game when it spots people or loses track of&nbsp;them.</p>
+<center>
+<iframe width="80%" height="400px" src="http://www.youtube.com/embed/MACHkIpAZ_w" frameborder="0" allowfullscreen></iframe>
+</center>
+
+          </div>
+        </div>
+      </div>
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/articles/active-face-tracking-with-stonebot/">
+              <h1 class="intro-text text-center">Active Face Tracking with Stonebot<br><small>14. March 2011</small></h1></a>
+            <hr><p>I finally have it working! Very excited as I write this. So glad spring break exists otherwise I’d never have the time for this. Long story short, I have face detection working on my personal robot. Check out the video after the break to see it in&nbsp;action.</p>
+<center>
+<iframe width="80%" height="400px" src="http://www.youtube.com/embed/RRwMJ8GYT7Y" frameborder="0" allowfullscreen></iframe>
+</center>
+
+<p>This has been a goal of mine ever since I started building my personal robot (which, in keeping with the Stonelinks legacy, shall henceforth be known as “Stonebot”). This face tracking makes use of my <a href="/articles/active-face-tracking-with-stonebot/a-more-accurate-coordinate-system.html">new method for positioning the camera</a> that I worked on a little over winter break, and is probably the most complicated piece of python I have written to date. Here are some highlights of the&nbsp;project:</p>
+<p>
+            <p class="text-center"><a href="/articles/active-face-tracking-with-stonebot/" class="btn btn-info">Read more »</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/articles/execute-time-and-plot-c-programs-with-python/">
+              <h1 class="intro-text text-center">Execute, Time and Plot C++ Programs with Python<br><small>03. February 2011</small></h1></a>
+            <hr><center>
+<img src="{{ assets }}/img/posts/Fig.png" class="thumbnail" width="80%">
+</center>
+
+<p>Hate excel? Have python take all the pain away from you! This should appeal to everyone out there who needs a quick way to analyze the runtime time of a bunch of commands to a program given an arbitrary list of arguments. Hating excel/openoffice/spreadsheets in general is&nbsp;optional.</p>
+<p>Just like every programmer, I am always trying to find new and interesting ways of automating myself out of a job. To that end, I wrote a pretty cool program last night to help automate my first algorithms&nbsp;lab.</p>
+<p>
+            <p class="text-center"><a href="/articles/execute-time-and-plot-c-programs-with-python/" class="btn btn-info">Read more »</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/articles/rudimentary-gmailbased-print-server/">
+              <h1 class="intro-text text-center">Rudimentary Gmail-based Print Server<br><small>26. January 2011</small></h1></a>
+            <hr><p>Another example of python being super useful. I found myself today with a need to network a printer so my room mates and I could print from anywhere on campus. However, figuring out what ports to forward, trying to get <span class="caps">IPP</span> to work and just being generally unhappy with CUPS and the way RPIs network restricts printer traffic / discovery lead me to consider alternate&nbsp;solutions.</p>
+<p>Enter python and Gmail! I wanted to be able to have someone email me a message with a few keywords in the subject line that would tag any attachments for printing. I then had python log into my email and download the most recent email for printing, and if the attachment was new to it, print it. I wrote a nice little script that does just&nbsp;that:</p>
+<p><a href="https://github.com/Stonelinks/gmail-printsrv">Here it is on&nbsp;github</a></p>
+<p>All you gotta do is edit the username and password at the top of the script, and set up a cron job to call the script on the machine with the printer&nbsp;attached.</p>
+<p>A couple of other comments about this: It is dangerous! Someone could email you a file with a malformed name and escape out of the print command that gets called by the subprocess. Not good. There are probably other security risks (like the fact that your password is stored in plaintext). Thats it! have fun&nbsp;kids!</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="width: 100%; margin:0px;" class="row">
+      <div style="display: table; width: 100%;" class="box">
+        <div class="col-lg-12"><a href="/archive.html">
+            <h3 class="pull-left">« Archives</h3></a><a href="/page/2/">
+            <h3 class="pull-right">Next page »</h3></a>
+        </div>
       </div>
     </div>
     <footer>
-      <div class="content-wrap">
-        <div class="nav"><a href="/archive.html">« Archives</a>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center"><a href="https://www.facebook.com/stonelinks" target="_blank" class="social"><i class="fa fa-facebook"></i></a><a href="https://github.com/Stonelinks" target="_blank" class="social"><i class="fa fa-github"></i></a><a href="https://twitter.com/#!/Stonelinks" target="_blank" class="social"><i class="fa fa-twitter"></i></a><a href="https://plus.google.com/116178490514652721625/posts" target="_blank" class="social"><i class="fa fa-google-plus"></i></a><a href="http://www.linkedin.com/pub/lucas-doyle/25/550/169" target="_blank" class="social"><i class="fa fa-linkedin"></i></a><a href="http://www.youtube.com/user/RealStonelinks" target="_blank" class="social"><i class="fa fa-youtube"></i></a><a href="/contact.html" class="footer-link">contact</a>
+          </div>
         </div>
-        <section class="about"><p>Wintersmith is made by <a href="http://johan-nordberg.com/">Johan Nordberg</a> and licensed under the <a href="http://opensource.org/licenses/MIT">MIT-license</a>.
-This footer text can be edited in about.md</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat.</p>
-<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-dolore eu fugiat nulla pariatur.</p>
-<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-deserunt mollit anim id est laborum.</p>
-
-        </section>
-        <section class="copy">
-          <p>&copy; 2014 Lucas Doyle &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a>
-          </p>
-        </section>
       </div>
     </footer>
   </body>

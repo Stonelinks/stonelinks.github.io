@@ -226,9 +226,9 @@ var pages = {
 
 $(document).ready(function() {
   if (pages.hasOwnProperty(window.BASENAME)) {
-    pages[window.BASENAME]();
+    // pages[window.BASENAME]();
   }
   else {
-    setBGImage(chooseRandomImage());
+    // setBGImage(chooseRandomImage());
   }
 });

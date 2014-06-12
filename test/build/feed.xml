@@ -5,952 +5,697 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link></link>
     <description>Lucas Doyle's website</description>
-    <pubDate>Tue, 30 Apr 2013 09:00:00 +0900</pubDate>
+    <pubDate>Sun, 06 Jan 2013 09:00:00 +0900</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
     <item>
-      <title>README</title>
-      <link>/articles/hello-world/</link>
-      <pubDate>Tue, 30 Apr 2013 09:00:00 +0900</pubDate>
-      <guid isPermaLink="true">/articles/hello-world/</guid>
-      <author></author>
-      <description>&lt;p&gt;Welcome to titch bits! This is the default blog template with RSS, pagination and an archive. There are other templates available — run &lt;code&gt;wintersmith new --help&lt;/code&gt; to list them.&lt;/p&gt;
-&lt;h2 id=&quot;_repeat-after-me-_-this-is-my-blog-there-are-many-like-it-but-this-one-is-mine-my-blog-is-my-best-friend-it-is-my-life-i-must-master-it-as-i-must-master-my-life-my-blog-without-me-is-useless-without-my-blog-i-am-useless-&quot;&gt;&lt;em&gt;Repeat after me:&lt;/em&gt; This is my blog. There are many like it, but this one is mine. My blog is my best friend. It is my life. I must master it as I must master my life. My blog, without me, is useless. Without my blog, I am useless.&lt;/h2&gt;
-&lt;p&gt;Good, now, the directory structure of your blog is as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;├── config.json               &amp;lt;- site configuration
-├── contents
-│   ├── about.md
-│   ├── archive.json
-│   ├── articles              &amp;lt;– each article has its own directory
-│   │   ├── another-test
-│   │   │   └── index.md
-│   │   ├── bamboo-cutter
-│   │   │   ├── index.md
-│   │   │   └── taketori_monogatari.jpg
-│   │   ├── hello-world
-│   │   │   └── index.md
-│   │   ├── markdown-syntax
-│   │   │   └── index.md
-│   │   └── red-herring
-│   │       ├── banana.png
-│   │       └── index.md
-│   ├── authors               &amp;lt;- author metadata, check author.jade
-│   │   ├── baker.json
-│   │   └── the-wintersmith.json
-│   ├── css
-│   │   └── main.css
-│   └── feed.json
-├── plugins
-│   └── paginator.coffee      &amp;lt;- paginator plugin
-├── templates
-│   ├── archive.jade
-│   ├── article.jade
-│   ├── author.jade
-│   ├── feed.jade
-│   ├── index.jade
-│   └── layout.jade
-└── views
-    └── articles.coffee       &amp;lt;- view that lists articles
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Articles are sorted by date and 3 are shown per page, you can configure this and more in config.json. Check paginator.coffee for all options related to pagination, most plugins also have their own options.&lt;/p&gt;
-&lt;h3 id=&quot;a-typical-article&quot;&gt;A typical article&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-markdown&quot;&gt;&lt;span class=&quot;horizontal_rule&quot;&gt;---&lt;/span&gt;
-title: Hear me blog
-author: johndoe
-&lt;span class=&quot;header&quot;&gt;date: 2012-12-12 12:12
----&lt;/span&gt;
-
-This will be shown as the article excerpt.
-
-&lt;span class=&quot;header&quot;&gt;## A h2, hr or &amp;lt;span class=&quot;more&quot;&amp;gt; marks where the intro cuts off&lt;/span&gt;
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This is where I leave you to your own devices. Join &lt;strong&gt;#wintersmith&lt;/strong&gt; on freenode if you have any questions.&lt;/p&gt;
-</description>
-    </item>
-    <item>
-      <title>A red herring</title>
-      <link>/articles/red-herring/</link>
-      <pubDate>Mon, 01 Apr 2013 09:00:00 +0900</pubDate>
-      <guid isPermaLink="true">/articles/red-herring/</guid>
-      <author></author>
-      <description>&lt;p&gt;A long time ago, when the world was young — someone put some food on their tongue.
-They tasted the food, and thought it was nice. Most fruit liked it — but banana’s thought twice.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;They held a meeting at quarter past eight.
-Whilst the human’s were getting home late.
-They decided they didn’t want to be eaten they said:
-“No way, we’re not going to be beaten”.&lt;/p&gt;
-&lt;p&gt;So time went by, and human’s got old.
-Banana’s got ready, for their prophets had told.
-That soon shall come the dawn of war.
-Where humans will rule the earth no more.&lt;/p&gt;
-&lt;p&gt;The humans knew not of the evil banana’s plans.
-They made their cars, guitars and aluminum cans.
-And the banana’s began to take over the east.
-While humans knew not, and kept having their feast.&lt;/p&gt;
-&lt;p&gt;But time has run out, no more hiding there can be.
-Or else the banana’s will kill you and me.
-We must take up arms, and fight to the end.
-Because, believe it or not, a banana is not a friend.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/articles/red-herring/banana.png&quot; alt=&quot;a banana&quot;&gt;&lt;/p&gt;
-</description>
-    </item>
-    <item>
-      <title>Code and stuff!</title>
-      <link>/articles/another-test/</link>
-      <pubDate>Mon, 01 Oct 2012 15:00:00 +0900</pubDate>
-      <guid isPermaLink="true">/articles/another-test/</guid>
-      <author></author>
-      <description>&lt;p&gt;Syntax highlighting with &lt;a href=&quot;http://softwaremaniacs.org/soft/highlight/en/&quot;&gt;highlight.js&lt;/a&gt;.
-The theme used is tomorrow, you can find more themes &lt;a href=&quot;http://jmblog.github.io/color-themes-for-highlightjs/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;h3 id=&quot;javascript&quot;&gt;JavaScript&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;getRandomNumber&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; {&lt;/span&gt;
-    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// chosen by fair dice roll.&lt;/span&gt;
-              &lt;span class=&quot;comment&quot;&gt;// guaranteed to be random.&lt;/span&gt;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;coffeescript&quot;&gt;CoffeeScript&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-coffeescript&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Animal&lt;/span&gt;&lt;/span&gt;
-  &lt;span class=&quot;comment&quot;&gt;### Intellegent design ###&lt;/span&gt;
-  &lt;span class=&quot;attribute&quot;&gt;getDNA&lt;/span&gt;:&lt;span class=&quot;function&quot;&gt; -&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;built_in&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;'sequencing...'&lt;/span&gt;
-    &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;
-      sleep &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;
-
-&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Monkey&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Animal&lt;/span&gt;&lt;/span&gt;
-  &lt;span class=&quot;attribute&quot;&gt;speak&lt;/span&gt;:&lt;span class=&quot;function&quot;&gt; -&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;built_in&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;'ah ah ah'&lt;/span&gt;
-
-&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Human&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Monkey&lt;/span&gt;&lt;/span&gt;
-  &lt;span class=&quot;attribute&quot;&gt;speak&lt;/span&gt;:&lt;span class=&quot;function&quot;&gt; -&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;built_in&quot;&gt;print&lt;/span&gt; [&lt;span class=&quot;string&quot;&gt;'yolo'&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;unless&lt;/span&gt; i % &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;] + [&lt;span class=&quot;string&quot;&gt;'swag'&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;unless&lt;/span&gt; i % &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;] &lt;span class=&quot;keyword&quot;&gt;or&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; [&lt;span class=&quot;number&quot;&gt;1.&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.100&lt;/span&gt;]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;c&quot;&gt;C&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-c&quot;&gt;&lt;span class=&quot;preprocessor&quot;&gt;#include &amp;lt;stdio.h&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; main(&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt;)
-{
-  &lt;span class=&quot;built_in&quot;&gt;printf&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;Hello world\n&quot;&lt;/span&gt;);
-  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;c-&quot;&gt;C++&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-cpp&quot;&gt;&lt;span class=&quot;preprocessor&quot;&gt;#include &amp;lt;iostream&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; main()
-{
-  &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;::&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt; &amp;lt;&amp;lt; &lt;span class=&quot;string&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt; &amp;lt;&amp;lt; &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;::endl;
-  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;c-sharp&quot;&gt;C-sharp&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-cs&quot;&gt;class ExampleClass
-{
-    &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; Main()
-    {
-        System.Console.WriteLine(&lt;span class=&quot;string&quot;&gt;&quot;Hello, world!&quot;&lt;/span&gt;);
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;erlang&quot;&gt;Erlang&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-erlang&quot;&gt;io:format(&lt;span class=&quot;string&quot;&gt;&quot;~s~n&quot;&lt;/span&gt;, [&lt;span class=&quot;string&quot;&gt;&quot;hello, world&quot;&lt;/span&gt;])
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;go&quot;&gt;Go&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-go&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;package&lt;/span&gt; main
-
-&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;fmt&quot;&lt;/span&gt;
-
-&lt;span class=&quot;keyword&quot;&gt;func&lt;/span&gt; main() {
-   fmt.Println(&lt;span class=&quot;string&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt;)
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;java&quot;&gt;Java&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-java&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;HelloWorld&lt;/span&gt; {&lt;/span&gt;
-   &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;(String[] args) {
-       System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;Hello world!&quot;&lt;/span&gt;);
-   }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;objectivec&quot;&gt;ObjectiveC&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-objectivec&quot;&gt;&lt;span class=&quot;preprocessor&quot;&gt;#import &lt;span class=&quot;title&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
-
-&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; main(&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt;)
-{
-    printf(&lt;span class=&quot;string&quot;&gt;&quot;Hello, World!\n&quot;&lt;/span&gt;);
-    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;php&quot;&gt;PHP&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-php&quot;&gt;&lt;span class=&quot;preprocessor&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;'Hello, world'&lt;/span&gt;; &lt;span class=&quot;preprocessor&quot;&gt;?&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;python&quot;&gt;Python&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-python&quot;&gt;print(&lt;span class=&quot;string&quot;&gt;&quot;Hello World&quot;&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;ruby&quot;&gt;Ruby&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-ruby&quot;&gt;puts &lt;span class=&quot;string&quot;&gt;&quot;Hello world!&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    <item>
-      <title>Markdown syntax</title>
-      <link>/articles/markdown-syntax/</link>
-      <pubDate>Thu, 02 Feb 2012 09:00:00 +0900</pubDate>
-      <guid isPermaLink="true">/articles/markdown-syntax/</guid>
-      <author></author>
-      <description>&lt;p&gt;Full markdown syntax taken from John Gruber’s &lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;Daring Fireball&lt;/a&gt;.
-Did you know that 9 out of 10 bloggers prefer to write in markdown?&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;markdown-syntax&quot;&gt;Markdown: Syntax&lt;/h1&gt;
+      <title>New Resume</title>
+      <link>/articles/new-resume/</link>
+      <pubDate>Sun, 06 Jan 2013 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/articles/new-resume/</guid>
+      <description>&lt;p&gt;Over the holidays I finally got around to implementing what I wish existed back when I was looking for a job: a quick, easy, flexible way to write and publish a resume in many formats. The more people who see your resume, the better your chances of getting an interview or call back from a potential employer. This means the more formats and places that your resume is viewable in, the better. When I was looking for a job, I tried to follow this strategy but quickly tired making the same change on multiple versions of my resume in different formats.&lt;/p&gt;
+&lt;p&gt;Like any programmer that has to do anything more than once, I wanted to automate this tedious editing. So I endeavoured create a better reseume authoring solution. Specifically, I wanted these features:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;/articles/markdown-syntax/#overview&quot;&gt;Overview&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;/articles/markdown-syntax/#philosophy&quot;&gt;Philosophy&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/articles/markdown-syntax/#html&quot;&gt;Inline HTML&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/articles/markdown-syntax/#autoescape&quot;&gt;Automatic Escaping for Special Characters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Explicit seperation of resume data from resume formatting&lt;/li&gt;
+&lt;li&gt;Store resume data in an easy to manipulate format&lt;/li&gt;
+&lt;li&gt;Write once, publish and deploy the resume everywhere&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/articles/markdown-syntax/#block&quot;&gt;Block Elements&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;/articles/markdown-syntax/#p&quot;&gt;Paragraphs and Line Breaks&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/articles/markdown-syntax/#header&quot;&gt;Headers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/articles/markdown-syntax/#blockquote&quot;&gt;Blockquotes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/articles/markdown-syntax/#list&quot;&gt;Lists&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/articles/markdown-syntax/#precode&quot;&gt;Code Blocks&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/articles/markdown-syntax/#hr&quot;&gt;Horizontal Rules&lt;/a&gt;&lt;/li&gt;
+&lt;p&gt;I ended up engineering a solution that used a JSON file to store resume data, and a simple python program that would use different “writers” to spit out the resume in different formats. Here is a breakdown of the supported formats using a combination of the generator and some macros in a Makefile:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;text&lt;/li&gt;
+&lt;li&gt;html&lt;/li&gt;
+&lt;li&gt;pdf (using &lt;a href=&quot;http://code.google.com/p/wkhtmltopdf/&quot;&gt;wkhtmltopdf&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;markdown&lt;/li&gt;
+&lt;li&gt;stonelinks-specific markdown (basically a special markdown template used specifically for the resume on this website)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/articles/markdown-syntax/#span&quot;&gt;Span Elements&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;/articles/markdown-syntax/#link&quot;&gt;Links&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/articles/markdown-syntax/#em&quot;&gt;Emphasis&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/articles/markdown-syntax/#code&quot;&gt;Code&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/articles/markdown-syntax/#img&quot;&gt;Images&lt;/a&gt;&lt;/li&gt;
+&lt;p&gt;Anyhow it is finished and it works great for my purposes. The code is available &lt;a href=&quot;https://github.com/Stonelinks/resume&quot;&gt;here&lt;/a&gt; on github. It should be easy for others to use it, just fork and modify the JSON with your resume data and have at it!&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>WebGL Blox</title>
+      <link>/articles/webgl_blox/</link>
+      <pubDate>Tue, 24 Jul 2012 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/articles/webgl_blox/</guid>
+      <description>&lt;p&gt;This is a quick and dirty attempt to a clone a really addicting android game called &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.entwicklerx.tapblox&amp;amp;hl=en&quot;&gt;Tap Blox&lt;/a&gt;. Play by eliminating groups of three or more adjacent blocks of the same color. Currently there is no timing / scoring system.&lt;/p&gt;
+&lt;p&gt;I did this as an educational exercise, mostly to play around with WebGL and improve my skills at Javascript (which I know very little about). Plus programming is fun in general. The WebGL library I used used is Mr. Doob’s excellent &lt;a href=&quot;https://github.com/mrdoob/three.js&quot;&gt;Three.js&lt;/a&gt;. Hope you enjoy! Best results with Google Chrome.&lt;/p&gt;
+&lt;div class=&quot;text-center&quot;&gt;
+  &lt;a href=&quot;{{relative page.dest &quot;dist/blox.html&quot;}}&quot; class=&quot;btn btn-info btn-lg&quot; target=&quot;_blank&quot;&gt;Click here to play&lt;/a&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    <item>
+      <title>How I do Word Processing</title>
+      <link>/articles/lite-write/</link>
+      <pubDate>Mon, 30 Apr 2012 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/articles/lite-write/</guid>
+      <description>&lt;p&gt;A few months ago I came up with a quick and dirty way to write text documents. I’m calling it &lt;a href=&quot;https://github.com/Stonelinks/Lite-Write&quot;&gt;Lite Write&lt;/a&gt; because it is so simple. I’ve been using it in place of a word processor for awhile and been very happy with it.&lt;/p&gt;
+&lt;p&gt;Like most people who write a lot of code, I’m most comfortable manipulating text in my editor of choice. However, I do a fair amount of writing that needs to be accessible to non programmers, which means my work really can’t stay in plain text forever. Lite write is a simple setup (basically a Makefile and some bits of HTML/CSS) that allows you to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Write everything in markdown&lt;/li&gt;
+&lt;li&gt;Produce a PDF of your document&lt;/li&gt;
+&lt;li&gt;Produce a standalone HTML version of your document anyone can view online (this works really nice with dropbox)&lt;/li&gt;
+&lt;li&gt;Simple, easy to extended&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/articles/markdown-syntax/#misc&quot;&gt;Miscellaneous&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;/articles/markdown-syntax/#backslash&quot;&gt;Backslash Escapes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/articles/markdown-syntax/#autolink&quot;&gt;Automatic Links&lt;/a&gt;&lt;/li&gt;
+&lt;p&gt;Over time I’ve grown very frustrated with traditional word processors (MS Word, OpenOffice, etc.). Google Docs is pretty good, but not well suited for when you’re offline or need fine control over formatting. I used LaTeX for awhile because it gave me that control over formatting and produced beautiful looking documents. But while awesome for equations, large amounts of text and so many other things, LaTeX’s syntax felt cumbersome for me and seemed way overkill for shorter documents.&lt;/p&gt;
+&lt;p&gt;Enter Lite Write. Markdown is simple enough that you don’t even need to think about it when writing, and if you need finer control over formatting, just write HTML. So far has been great, and hopefully other people will read this, use it and maybe even add more formats to it.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>New Aerial Drone</title>
+      <link>/articles/new-drone/</link>
+      <pubDate>Sun, 22 Apr 2012 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/articles/new-drone/</guid>
+      <description>&lt;div class=&quot;text-center&quot;&gt;&lt;iframe width=&quot;500px&quot; height=&quot;400px&quot; src=&quot;http://www.youtube.com/embed/3jVKegQwZ24&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Good news and bad news! The good news is that in the last month or so at RPI, my friend Drew and I were able to cobble together some electronics with my airplane and squeeze in some successful flights of an RC drone! In the video above you can see one of our voyages. I successfully piloted the plane over RPI’s campus for about a half hour until the winds started to pick up and things got messy.&lt;/p&gt;
+&lt;div class=&quot;text-center&quot;&gt;
+
+&lt;img src=&quot;{{ assets }}/img/posts/drone.jpg&quot; class=&quot;thumbnail&quot; width=&quot;80%&quot;&gt;
+
+Early mock up of the drone with the wings removed.
+
+The camera has since been mounted to a custom pan/tilt module under the engine.
+
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Which leads to the bad news. The bad news is that it crashed! Or rather I crashed it. Basically the wind was really strong and blew it out of range. We think it took a nose dive several hundred feet into the ground and crashed near Troy Highschool, which was very far away from us. It was lost for two days before we recovered it thanks to &lt;a href=&quot;http://www.reddit.com/r/RPI/comments/tj2b2/anyone_seen_a_red_rc_plane_last_seen_doing_a_nose/&quot;&gt;Reddit&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The damage was substantial. Besides the airframe being totally trashed, I lost my camera and a brushless motor. Drew faired better, only suffering minor damage to his radio equipment.&lt;/p&gt;
+&lt;p&gt;Future plans for the drone are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Repair it to pre-crash condition, and never fly in heavy winds again&lt;/li&gt;
+&lt;li&gt;Make it controllable from a computer (probably with a microcontroller and an Xbee)&lt;/li&gt;
+&lt;li&gt;Make it autonomously fly! (with GPS, some kind of horizon sensor, accelerometers, gyros etc.)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
+&lt;p&gt;Other cool applications I can think of:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Make 3d maps of things (e.g. map my neighborhood by flying around it while saving images with location and orientation of the drone)&lt;/li&gt;
+&lt;li&gt;Automatically follow things (maybe use another GPS as a beacon or build a classifier for OpenCV)&lt;/li&gt;
+&lt;li&gt;Go to waypoints and drop things (how cool would it be to stand in the middle of a field and have a candy bar drop from the sky?)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This document is itself written using Markdown; you
-can &lt;a href=&quot;/projects/markdown/syntax.text&quot;&gt;see the source for it by adding ‘.text’ to the URL&lt;/a&gt;.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;At any rate, a fun new experiment!&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Contribution to Open Source Software</title>
+      <link>/articles/first-contribution-to-opensource/</link>
+      <pubDate>Tue, 27 Mar 2012 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/articles/first-contribution-to-opensource/</guid>
+      <description>&lt;center&gt;&lt;iframe width=&quot;500px&quot; height=&quot;400px&quot; src=&quot;http://www.youtube.com/embed/gLsdHmCKoEw&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/center&gt;
 
-&lt;h3 id=&quot;philosophy&quot;&gt;Philosophy&lt;/h3&gt;
+&lt;p&gt;Up until now, all my contributions to open source have been programs I have written, and as a general practice I like to make all my work open source if I can. However, its a nice feeling to have some code I wrote incorporated into someone else’s project for a change.&lt;/p&gt;
+&lt;p&gt;The program in question here is called &lt;a href=&quot;https://github.com/gnebehay/OpenTLD&quot;&gt;OpenTLD&lt;/a&gt;. Its a program for tracking objects (not just faces) in unconstrained video streams with NO training data beforehand (TLD stands for Tracking, Learning and Detection). Instead of using precomputed classifiers (like I previously have done with OpenCV), OpenTLD builds a model of what it is supposed to be detecting on the fly. To demonstrate, above is a slightly creepy demo of OpenTLD tracking my face.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The version of OpenTLD here is actually the C++ implementation of OpenTLD. OpenTLD began life as a bunch of &lt;a href=&quot;https://github.com/zk00006/OpenTLD&quot;&gt;Matlab programs&lt;/a&gt; written as part of Zdenek Kalal’s PHD thesis. &lt;a href=&quot;http://www.youtube.com/watch?v=1GhNXHCQGsM&quot;&gt;Here&lt;/a&gt; is a more advanced video by him talking / showing off OpenTLD (he calls it Predator).&lt;/p&gt;
+&lt;p&gt;But so yeah! &lt;a href=&quot;https://github.com/gnebehay/OpenTLD/pull/11&quot;&gt;I actually contributed to this&lt;/a&gt;! Even though the code I wrote is trivial (it had to do with the bounding box when you first start the program), it still makes me really excited. I plan on taking a closer look at the codebase sometime later and trying to learn how it works. Up until now all my contributions to open source have been programs I have written. It feels really cool to have a change I made rolled into this super advanced computer vision program!&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Sudoku Solver</title>
+      <link>/articles/sudoku-solver/</link>
+      <pubDate>Mon, 02 Jan 2012 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/articles/sudoku-solver/</guid>
+      <description>&lt;p&gt;I got really bored over the holidays and wrote a very naive sudoku solver in C++.&lt;/p&gt;
+&lt;p&gt;See it on github: &lt;a href=&quot;https://gist.github.com/1522578&quot;&gt;https://gist.github.com/1522578&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Binocular Face Tracking Sneak Peek</title>
+      <link>/articles/binocular-face-tracking-sneak-peek/</link>
+      <pubDate>Mon, 14 Mar 2011 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/articles/binocular-face-tracking-sneak-peek/</guid>
+      <description>&lt;p&gt;The code needs a little more polish before I’m happy releasing it, but here is a demo video of the latest incarnation of the ‘bot doing some binocular face detection and tracking. For added fun (and in honor of &lt;a href=&quot;http://www.thinkwithportals.com/&quot;&gt;Portal 2&lt;/a&gt; which comes out this week), I have it playing context-aware sound clips from the turrets in the game when it spots people or loses track of them.&lt;/p&gt;
+&lt;center&gt;
+&lt;iframe width=&quot;80%&quot; height=&quot;400px&quot; src=&quot;http://www.youtube.com/embed/MACHkIpAZ_w&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/center&gt;
+</description>
+    </item>
+    <item>
+      <title>Active Face Tracking with Stonebot</title>
+      <link>/articles/active-face-tracking-with-stonebot/</link>
+      <pubDate>Mon, 14 Mar 2011 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/articles/active-face-tracking-with-stonebot/</guid>
+      <description>&lt;p&gt;I finally have it working! Very excited as I write this. So glad spring break exists otherwise I’d never have the time for this. Long story short, I have face detection working on my personal robot. Check out the video after the break to see it in action.&lt;/p&gt;
+&lt;center&gt;
+&lt;iframe width=&quot;80%&quot; height=&quot;400px&quot; src=&quot;http://www.youtube.com/embed/RRwMJ8GYT7Y&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/center&gt;
 
-&lt;p&gt;Markdown is intended to be as easy-to-read and easy-to-write as is feasible.&lt;/p&gt;
-&lt;p&gt;Readability, however, is emphasized above all else. A Markdown-formatted
-document should be publishable as-is, as plain text, without looking
-like it’s been marked up with tags or formatting instructions. While
-Markdown’s syntax has been influenced by several existing text-to-HTML
-filters — including &lt;a href=&quot;http://docutils.sourceforge.net/mirror/setext.html&quot;&gt;Setext&lt;/a&gt;, &lt;a href=&quot;http://www.aaronsw.com/2002/atx/&quot;&gt;atx&lt;/a&gt;, &lt;a href=&quot;http://textism.com/tools/textile/&quot;&gt;Textile&lt;/a&gt;, &lt;a href=&quot;http://docutils.sourceforge.net/rst.html&quot;&gt;reStructuredText&lt;/a&gt;,
-&lt;a href=&quot;http://www.triptico.com/software/grutatxt.html&quot;&gt;Grutatext&lt;/a&gt;, and &lt;a href=&quot;http://ettext.taint.org/doc/&quot;&gt;EtText&lt;/a&gt; — the single biggest source of
-inspiration for Markdown’s syntax is the format of plain text email.&lt;/p&gt;
-&lt;p&gt;To this end, Markdown’s syntax is comprised entirely of punctuation
-characters, which punctuation characters have been carefully chosen so
-as to look like what they mean. E.g., asterisks around a word actually
-look like *emphasis*. Markdown lists look like, well, lists. Even
-blockquotes look like quoted passages of text, assuming you’ve ever
-used email.&lt;/p&gt;
-&lt;h3 id=&quot;html&quot;&gt;Inline HTML&lt;/h3&gt;
+&lt;p&gt;This has been a goal of mine ever since I started building my personal robot (which, in keeping with the Stonelinks legacy, shall henceforth be known as “Stonebot”). This face tracking makes use of my &lt;a href=&quot;/articles/active-face-tracking-with-stonebot/a-more-accurate-coordinate-system.html&quot;&gt;new method for positioning the camera&lt;/a&gt; that I worked on a little over winter break, and is probably the most complicated piece of python I have written to date. Here are some highlights of the project:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&quot;opencv&quot;&gt;OpenCV&lt;/h3&gt;
+&lt;p&gt;By far, the hardest thing about this was getting OpenCV set up correctly. Once set up, it is relatively easy to use, comes with a lot of cool examples and seems extremely powerful (if you don’t believe me check out what the folks over at &lt;a href=&quot;http://www.willowgarage.com/&quot;&gt;Willow Garage&lt;/a&gt; do with it on a routine basis). In the future it is definitely something I want to experiment more with, and not just use for face and object detection.&lt;/p&gt;
+&lt;p&gt;So a summary of the build process: If you’re like me and running Ubuntu 10.04, you’ll want to save some time from having to compile OpenCV from source (especially if you are on a 900MHz single core eee pc like I originally was). Unfortunately, the most recent version of OpenCV is 2.2 while the latest version in the official Ubuntu repos it is only 2.0. Now normally I would not care about using an older version of the same library, however when I looked at the python examples for 2.2, 2.1 and 2.0, things looked much cleaner in 2.2 and 2.1 (you can import everything under the single namespace using &lt;code&gt;import cv&lt;/code&gt; in 2.1 on up for example).&lt;/p&gt;
+&lt;p&gt;Additionally, presumably the newer the library, the better it will be. I tried compiling OpenCV 2.1 and 2.2 a couple of times with no luck on various machines (the eee included… that took about an hour and a half). However I was delighted to find that someone that someone had compiled 2.1 for Ubuntu 10.04 and 10.10. All that was needed to be done to install it was:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-bash&quot;&gt;$ &lt;span class=&quot;built_in&quot;&gt;sudo&lt;/span&gt; add-apt-repository ppa:gijzelaar/OpenCV2
+$ &lt;span class=&quot;built_in&quot;&gt;sudo&lt;/span&gt; apt-get update
+$ &lt;span class=&quot;built_in&quot;&gt;sudo&lt;/span&gt; apt-get install OpenCV python-OpenCV
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and OpenCV is yours for the taking! Install the documentation and run the examples to figure out if all your V4L2 and webcam drivers will play nice with it.&lt;/p&gt;
+&lt;h3 id=&quot;classifiers-are-easily-fooled&quot;&gt;Classifiers are easily fooled&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/XPuhpl.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+&lt;p&gt;This is pretty self explanatory. I drew the above face with a purple magic marker in about five seconds and it is able to fool the Haar classifier.&lt;/p&gt;
+&lt;p&gt;Additionally, I have found that the wrong lighting, glasses, and long hair can throw it off as well. To be fair, Haar feature detection in this case is not incredibly accurate. The advantage it possesses in this application is relatively low computational complexity which translates into a speedy detection algorithm.&lt;/p&gt;
+&lt;h3 id=&quot;cpu-speed&quot;&gt;CPU speed&lt;/h3&gt;
+&lt;p&gt;As I said in the video, performance on the eee PC was terrible. While not surprising, this is kind of upsetting as I was considering putting it to use as the brains of the robot once I add some sort of locomotion to the system. I was pleasantly surprised however when I loaded up the code on to my new laptop (which has a Core 2 duo operating at 1.3GHz) and things worked beautifully. It would seem that OpenCV, even though I thought that python couldn’t be threaded, is somehow threading itself across both cores of the processor. As I’m still new to python and all of these technology, so sit tight! I’m still learning how all this stuff works. &lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Execute, Time and Plot C++ Programs with Python</title>
+      <link>/articles/execute-time-and-plot-c-programs-with-python/</link>
+      <pubDate>Thu, 03 Feb 2011 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/articles/execute-time-and-plot-c-programs-with-python/</guid>
+      <description>&lt;center&gt;
+&lt;img src=&quot;{{ assets }}/img/posts/Fig.png&quot; class=&quot;thumbnail&quot; width=&quot;80%&quot;&gt;
+&lt;/center&gt;
 
-&lt;p&gt;Markdown’s syntax is intended for one purpose: to be used as a
-format for &lt;em&gt;writing&lt;/em&gt; for the web.&lt;/p&gt;
-&lt;p&gt;Markdown is not a replacement for HTML, or even close to it. Its
-syntax is very small, corresponding only to a very small subset of
-HTML tags. The idea is &lt;em&gt;not&lt;/em&gt; to create a syntax that makes it easier
-to insert HTML tags. In my opinion, HTML tags are already easy to
-insert. The idea for Markdown is to make it easy to read, write, and
-edit prose. HTML is a &lt;em&gt;publishing&lt;/em&gt; format; Markdown is a &lt;em&gt;writing&lt;/em&gt;
-format. Thus, Markdown’s formatting syntax only addresses issues that
-can be conveyed in plain text.&lt;/p&gt;
-&lt;p&gt;For any markup that is not covered by Markdown’s syntax, you simply
-use HTML itself. There’s no need to preface it or delimit it to
-indicate that you’re switching from Markdown to HTML; you just use
-the tags.&lt;/p&gt;
-&lt;p&gt;The only restrictions are that block-level HTML elements — e.g. &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;,
-&lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt;, etc. — must be separated from surrounding
-content by blank lines, and the start and end tags of the block should
-not be indented with tabs or spaces. Markdown is smart enough not
-to add extra (unwanted) &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; tags around HTML block-level tags.&lt;/p&gt;
-&lt;p&gt;For example, to add an HTML table to a Markdown article:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;This is a regular paragraph.
+&lt;p&gt;Hate excel? Have python take all the pain away from you! This should appeal to everyone out there who needs a quick way to analyze the runtime time of a bunch of commands to a program given an arbitrary list of arguments. Hating excel/openoffice/spreadsheets in general is optional.&lt;/p&gt;
+&lt;p&gt;Just like every programmer, I am always trying to find new and interesting ways of automating myself out of a job. To that end, I wrote a pretty cool program last night to help automate my first algorithms lab.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Consistent with the recent trend of mine, it is in python and makes use of the &lt;a href=&quot;http://docs.python.org/library/subprocess.html&quot;&gt;subprocess&lt;/a&gt; module to spawn and time instances of my C++ program and &lt;a href=&quot;http://matplotlib.sourceforge.net/&quot;&gt;pylab&lt;/a&gt; to make plotting the times super easy. The comments in my code explain things in more detail, but here is the one sentence summary: Python is being used to execute two programs written in C++ with the same set of arguments and spits out a plot of their times. In this case the two C++ programs are recursive (rfib) and iterative (ifib) implementations of the Fibonacci algorithm. The fun stuff is in the python:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-pre&quot;&gt;#!/usr/bin/env python
 
-&amp;lt;table&amp;gt;
-    &amp;lt;tr&amp;gt;
-        &amp;lt;td&amp;gt;Foo&amp;lt;/td&amp;gt;
-    &amp;lt;/tr&amp;gt;
-&amp;lt;/table&amp;gt;
+# Lucas Doyle wrote this
 
-This is another regular paragraph.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Note that Markdown formatting syntax is not processed within block-level
-HTML tags. E.g., you can’t use Markdown-style &lt;code&gt;*emphasis*&lt;/code&gt; inside an
-HTML block.&lt;/p&gt;
-&lt;p&gt;Span-level HTML tags — e.g. &lt;code&gt;&amp;lt;span&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;cite&amp;gt;&lt;/code&gt;, or &lt;code&gt;&amp;lt;del&amp;gt;&lt;/code&gt; — can be
-used anywhere in a Markdown paragraph, list item, or header. If you
-want, you can even use HTML tags instead of Markdown formatting; e.g. if
-you’d prefer to use HTML &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; or &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; tags instead of Markdown’s
-link or image syntax, go right ahead.&lt;/p&gt;
-&lt;p&gt;Unlike block-level HTML tags, Markdown syntax &lt;em&gt;is&lt;/em&gt; processed within
-span-level tags.&lt;/p&gt;
-&lt;h3 id=&quot;autoescape&quot;&gt;Automatic Escaping for Special Characters&lt;/h3&gt;
+import subprocess
+import string
+import sys
+import pylab  # matplotlib
 
-&lt;p&gt;In HTML, there are two characters that demand special treatment: &lt;code&gt;&amp;lt;&lt;/code&gt;
-and &lt;code&gt;&amp;amp;&lt;/code&gt;. Left angle brackets are used to start tags; ampersands are
-used to denote HTML entities. If you want to use them as literal
-characters, you must escape them as entities, e.g. &lt;code&gt;&amp;amp;lt;&lt;/code&gt;, and
-&lt;code&gt;&amp;amp;amp;&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Ampersands in particular are bedeviling for web writers. If you want to
-write about ‘AT&amp;amp;T’, you need to write ‘&lt;code&gt;AT&amp;amp;amp;T&lt;/code&gt;‘. You even need to
-escape ampersands within URLs. Thus, if you want to link to:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;http://images.google.com/images?num=30&amp;amp;q=larry+bird
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;you need to encode the URL as:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;http://images.google.com/images?num=30&amp;amp;amp;q=larry+bird
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;in your anchor tag &lt;code&gt;href&lt;/code&gt; attribute. Needless to say, this is easy to
-forget, and is probably the single most common source of HTML validation
-errors in otherwise well-marked-up web sites.&lt;/p&gt;
-&lt;p&gt;Markdown allows you to use these characters naturally, taking care of
-all the necessary escaping for you. If you use an ampersand as part of
-an HTML entity, it remains unchanged; otherwise it will be translated
-into &lt;code&gt;&amp;amp;amp;&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;So, if you want to include a copyright symbol in your article, you can write:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;amp;copy;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;and Markdown will leave it alone. But if you write:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;AT&amp;amp;T
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Markdown will translate it to:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;AT&amp;amp;amp;T
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Similarly, because Markdown supports &lt;a href=&quot;/articles/markdown-syntax/#html&quot;&gt;inline HTML&lt;/a&gt;, if you use
-angle brackets as delimiters for HTML tags, Markdown will treat them as
-such. But if you write:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;4 &amp;lt; 5
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Markdown will translate it to:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;4 &amp;amp;lt; 5
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;However, inside Markdown code spans and blocks, angle brackets and
-ampersands are &lt;em&gt;always&lt;/em&gt; encoded automatically. This makes it easy to use
-Markdown to write about HTML code. (As opposed to raw HTML, which is a
-terrible format for writing about HTML syntax, because every single &lt;code&gt;&amp;lt;&lt;/code&gt;
-and &lt;code&gt;&amp;amp;&lt;/code&gt; in your example code needs to be escaped.)&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;block&quot;&gt;Block Elements&lt;/h2&gt;
+def timerun(program, args) :
+    print &amp;#39;Starting timed execution of &amp;#39; + program + &amp;#39; with &amp;#39; + str(len(args)) + &amp;#39; arguments.&amp;#39;
+    i = 1
+
+    # Execute program, once for each n argument
+    for n in args :
+
+        # This was really annoying. Build the arguments to the time system call to the time command.
+        # First of all, for whatever reason &amp;#39;time&amp;#39; didn&amp;#39;t work correctly with any arguments other than -p, 
+        # so I used /usr/bin/time instead. Since I could not figure out why the output of &amp;#39;time&amp;#39; was not
+        # coming back to stdin, I use the -o (output file) and -a (append) option to just output the real
+        # execution time ( thats where &amp;#39;-f&amp;#39; and &amp;#39;%e&amp;#39; comes from ) to the file.
+        p = subprocess.Popen([&amp;#39;/usr/bin/time&amp;#39;, &amp;#39;-o&amp;#39;, &amp;#39;runtimes.txt&amp;#39;, &amp;#39;-a&amp;#39;, &amp;#39;-f&amp;#39;, &amp;#39;%e&amp;#39;, &amp;#39;./&amp;#39; + program, str(n)], stdout=subprocess.PIPE)
+
+        # Read back from stdin, print where we are (not required, but its nice)
+        output = p.communicate()[0]
+        sys.stdout.write( str(i) + &amp;#39;:\tfib(&amp;#39;+ str(n) + &amp;#39;) = &amp;#39; + output)
+        i += 1
+    print &amp;#39;done&amp;#39;
+
+    # Open up, read and return the times in the output file
+    f = open(&amp;#39;runtimes.txt&amp;#39;, &amp;#39;r&amp;#39;)
+    times = f.read().splitlines()
+
+    # Clean up old runtimes
+    subprocess.Popen([&amp;#39;rm&amp;#39;, &amp;#39;runtimes.txt&amp;#39;],stdout=subprocess.PIPE)
+
+    return times
+
+def main():
+
+    # Arguments we are interested in testing runtimes for
+    # args = 1, 5, 10, 15, 20, 25, 30, 35, 40, 41, 42, 43, 44, 45, 46, 47, 48
+    args = range(1, 56)
 
 
-&lt;h3 id=&quot;p&quot;&gt;Paragraphs and Line Breaks&lt;/h3&gt;
 
-&lt;p&gt;A paragraph is simply one or more consecutive lines of text, separated
-by one or more blank lines. (A blank line is any line that looks like a
-blank line — a line containing nothing but spaces or tabs is considered
-blank.) Normal paragraphs should not be indented with spaces or tabs.&lt;/p&gt;
-&lt;p&gt;The implication of the “one or more consecutive lines of text” rule is
-that Markdown supports “hard-wrapped” text paragraphs. This differs
-significantly from most other text-to-HTML formatters (including Movable
-Type’s “Convert Line Breaks” option) which translate every line break
-character in a paragraph into a &lt;code&gt;&amp;lt;br /&amp;gt;&lt;/code&gt; tag.&lt;/p&gt;
-&lt;p&gt;When you &lt;em&gt;do&lt;/em&gt; want to insert a &lt;code&gt;&amp;lt;br /&amp;gt;&lt;/code&gt; break tag using Markdown, you
-end a line with two or more spaces, then type return.&lt;/p&gt;
-&lt;p&gt;Yes, this takes a tad more effort to create a &lt;code&gt;&amp;lt;br /&amp;gt;&lt;/code&gt;, but a simplistic
-“every line break is a &lt;code&gt;&amp;lt;br /&amp;gt;&lt;/code&gt;“ rule wouldn’t work for Markdown.
-Markdown’s email-style &lt;a href=&quot;/articles/markdown-syntax/#blockquote&quot;&gt;blockquoting&lt;/a&gt; and multi-paragraph &lt;a href=&quot;/articles/markdown-syntax/#list&quot;&gt;list items&lt;/a&gt;
-work best — and look better — when you format them with hard breaks.&lt;/p&gt;
-&lt;h3 id=&quot;header&quot;&gt;Headers&lt;/h3&gt;
+    # Compute the runtimes of the recursive algorithm, then the iterative one
+    rtimes = timerun(&amp;#39;rfib&amp;#39;, args)
+    itimes = timerun(&amp;#39;ifib&amp;#39;, args)
 
-&lt;p&gt;Markdown supports two styles of headers, &lt;a href=&quot;http://docutils.sourceforge.net/mirror/setext.html&quot;&gt;Setext&lt;/a&gt; and &lt;a href=&quot;http://www.aaronsw.com/2002/atx/&quot;&gt;atx&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Setext-style headers are “underlined” using equal signs (for first-level
-headers) and dashes (for second-level headers). For example:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;This is an H1
-=============
+    # Plot it with pylab
+    pylab.xlabel(&amp;#39;N&amp;#39;)
+    pylab.ylabel(&amp;#39;Time to compute fib(N) (seconds)&amp;#39;)
+    pylab.title(&amp;#39;Recursive vs. Iterative Execution Time for Fibionacci Sequence&amp;#39;)
+    pylab.plot(args, rtimes, &amp;#39;ro-&amp;#39;, label=&amp;#39;Recursive&amp;#39;)
+    pylab.plot(args, itimes, &amp;#39;bo-&amp;#39;, label=&amp;#39;Iterative&amp;#39;)
+    pylab.legend()
 
-This is an H2
--------------
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Any number of underlining &lt;code&gt;=&lt;/code&gt;‘s or &lt;code&gt;-&lt;/code&gt;‘s will work.&lt;/p&gt;
-&lt;p&gt;Atx-style headers use 1-6 hash characters at the start of the line,
-corresponding to header levels 1-6. For example:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# This is an H1
+    # other drawing styles for plots in pylab:
+    # &amp;#39;r&amp;#39; red line, &amp;#39;g&amp;#39; green line, &amp;#39;y&amp;#39; yellow line 
+    # &amp;#39;ro&amp;#39; red dots as markers, &amp;#39;r.&amp;#39; smaller red dots, &amp;#39;r+&amp;#39; red pluses
+    # &amp;#39;r--&amp;#39; red dashed line, &amp;#39;g^&amp;#39; green triangles, &amp;#39;bs&amp;#39; blue squares
+    # &amp;#39;rp&amp;#39; red pentagons, &amp;#39;r1&amp;#39;, &amp;#39;r2&amp;#39;, &amp;#39;r3&amp;#39;, &amp;#39;r4&amp;#39; well, check out the markers
 
-## This is an H2
+    # save the plot as a PNG image
+    pylab.savefig(&amp;#39;Fig.png&amp;#39;)
 
-###### This is an H6
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Optionally, you may “close” atx-style headers. This is purely
-cosmetic — you can use this if you think it looks better. The
-closing hashes don’t even need to match the number of hashes
-used to open the header. (The number of opening hashes
-determines the header level.) :&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# This is an H1 #
+    # show the pylab plot window
+    pylab.show()
 
-## This is an H2 ##
-
-### This is an H3 ######
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;blockquote&quot;&gt;Blockquotes&lt;/h3&gt;
-
-&lt;p&gt;Markdown uses email-style &lt;code&gt;&amp;gt;&lt;/code&gt; characters for blockquoting. If you’re
-familiar with quoting passages of text in an email message, then you
-know how to create a blockquote in Markdown. It looks best if you hard
-wrap the text and put a &lt;code&gt;&amp;gt;&lt;/code&gt; before every line:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-&amp;gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-&amp;gt; Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
-&amp;gt;
-&amp;gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-&amp;gt; id sem consectetuer libero luctus adipiscing.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Markdown allows you to be lazy and only put the &lt;code&gt;&amp;gt;&lt;/code&gt; before the first
-line of a hard-wrapped paragraph:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
-
-&amp;gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-id sem consectetuer libero luctus adipiscing.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by
-adding additional levels of &lt;code&gt;&amp;gt;&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt; This is the first level of quoting.
-&amp;gt;
-&amp;gt; &amp;gt; This is nested blockquote.
-&amp;gt;
-&amp;gt; Back to the first level.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Blockquotes can contain other Markdown elements, including headers, lists,
-and code blocks:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;h2 id=&quot;this-is-a-header-&quot;&gt;This is a header.&lt;/h2&gt;
+if __name__ == &amp;quot;__main__&amp;quot;:
+    main()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I’ve also attached the whole lab &lt;a href=&quot;/articles/execute-time-and-plot-c-programs-with-python/{{%20page.base_url%20}}misc/lab1.zip&quot;&gt;here&lt;/a&gt; in case the python does not make sense by itself. Hope someone finds this useful!&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Rudimentary Gmail-based Print Server</title>
+      <link>/articles/rudimentary-gmailbased-print-server/</link>
+      <pubDate>Wed, 26 Jan 2011 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/articles/rudimentary-gmailbased-print-server/</guid>
+      <description>&lt;p&gt;Another example of python being super useful. I found myself today with a need to network a printer so my room mates and I could print from anywhere on campus. However, figuring out what ports to forward, trying to get IPP to work and just being generally unhappy with CUPS and the way RPIs network restricts printer traffic / discovery lead me to consider alternate solutions.&lt;/p&gt;
+&lt;p&gt;Enter python and Gmail! I wanted to be able to have someone email me a message with a few keywords in the subject line that would tag any attachments for printing. I then had python log into my email and download the most recent email for printing, and if the attachment was new to it, print it. I wrote a nice little script that does just that:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Stonelinks/gmail-printsrv&quot;&gt;Here it is on github&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;All you gotta do is edit the username and password at the top of the script, and set up a cron job to call the script on the machine with the printer attached.&lt;/p&gt;
+&lt;p&gt;A couple of other comments about this: It is dangerous! Someone could email you a file with a malformed name and escape out of the print command that gets called by the subprocess. Not good. There are probably other security risks (like the fact that your password is stored in plaintext). Thats it! have fun kids!&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>A More Accurate Coordinate System</title>
+      <link>/articles/a-more-accurate-coordinate-system/</link>
+      <pubDate>Fri, 07 Jan 2011 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/articles/a-more-accurate-coordinate-system/</guid>
+      <description>&lt;p&gt;&lt;center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;iframe width=&quot;550&quot; height=&quot;450&quot; src=&quot;http://www.youtube.com/embed/c72tK4KTTj0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/center&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;RPI health and safety inspections did not take kindly to my &lt;a href=&quot;/articles/a-more-accurate-coordinate-system/door-mounted-roboschwarzenegger.html&quot;&gt;door mounted Robo-Schwarzenegger&lt;/a&gt;. Apparently I’m not breaking any rules with an internet controlled webcam hanging from my door, but the power cord across the doorway is a tripping hazard. I took Arnold down and brought him home with me over the break with the goal of teaching myself some python and jumping into OpenCV.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;  &lt;/p&gt;
+&lt;p&gt;I played with both OpenCV and Python a few years ago when I more or less &lt;a href=&quot;http://blog.jozilla.net/2008/06/27/fun-with-python-opencv-and-face-detection/&quot;&gt;followed this tutorial&lt;/a&gt;, but ultimately could not get decent control of the camera. I figured the first step in doing this the right way was to get better control over the camera. Below I’ll describe how I accomplished this.&lt;/p&gt;
+&lt;h3 id=&quot;the-arduino&quot;&gt;The Arduino&lt;/h3&gt;
+&lt;p&gt;The old way I had of doing things on the Arduino was very simplistic and took no advantage of any Arduino libraries. Essentially the protocol between the computer and the arduino was a single character corresponding to a single action. Like many modern PC games, movement of the camera was set up in standard WASD fashion (“W” moved the Y axis up, “S” moved it down, “A” moved the X axis left, etc). Using PWM this was straightforward to code: an if-else block that would do things like “if W comes down the serial line, increment the current Y pulse width by 10”. At the end of the if-else block, if it was time to make a pulse the program would bring the pins connected to the servo high, wait for the pulse width, then bring it back low. There was also a hard coded center, and limits set up so the servos did not go past their limits. All in all, very simple, but it got the job done. The new way of doing things is a little more complicated, but is much more useful in terms of precision. It takes inspiration from this &lt;a href=&quot;http://principialabs.com/arduino-python-4-axis-servo-control/&quot;&gt;wonderful tutorial&lt;/a&gt; to take advantages of the Arduino servo libraries and simplify things. First, a three part protocol between the PC and Arduino is established:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;This is the first list item.&lt;/li&gt;
-&lt;li&gt;This is the second list item.&lt;/li&gt;
+&lt;li&gt;The PC sends a ‘255’ to the Arduino to let it know that we want to move servos. This is good for future expansion because we can use 0-254 to do other things with the micro-controller. For example, send something like ‘254’ to move speed controllers or get a reading from a GPS. 255 is essentially the servo “channel”.&lt;/li&gt;
+&lt;li&gt;The PC sends a number corresponding to the index of a servo on the Arduino it wants to move. In my setup, 1 means the X axis and 2-means the Y axis.&lt;/li&gt;
+&lt;li&gt;Last, an angle between 0 and 180 is sent telling the Arduino where to move the servo.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Here’s some example code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;return shell_exec(&amp;quot;echo $input | $markdown_script&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;Any decent text editor should make email-style quoting easy. For
-example, with BBEdit, you can make a selection and choose Increase
-Quote Level from the Text menu.&lt;/p&gt;
-&lt;h3 id=&quot;list&quot;&gt;Lists&lt;/h3&gt;
-
-&lt;p&gt;Markdown supports ordered (numbered) and unordered (bulleted) lists.&lt;/p&gt;
-&lt;p&gt;Unordered lists use asterisks, pluses, and hyphens — interchangably
-— as list markers:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;*   Red
-*   Green
-*   Blue
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;is equivalent to:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;+   Red
-+   Green
-+   Blue
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;and:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;-   Red
--   Green
--   Blue
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ordered lists use numbers followed by periods:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;1.  Bird
-2.  McHale
-3.  Parish
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It’s important to note that the actual numbers you use to mark the
-list have no effect on the HTML output Markdown produces. The HTML
-Markdown produces from the above list is:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;ol&amp;gt;
-&amp;lt;li&amp;gt;Bird&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;McHale&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Parish&amp;lt;/li&amp;gt;
-&amp;lt;/ol&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you instead wrote the list in Markdown like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;1.  Bird
-1.  McHale
-1.  Parish
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;or even:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;3. Bird
-1. McHale
-8. Parish
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;you’d get the exact same HTML output. The point is, if you want to,
-you can use ordinal numbers in your ordered Markdown lists, so that
-the numbers in your source match the numbers in your published HTML.
-But if you want to be lazy, you don’t have to.&lt;/p&gt;
-&lt;p&gt;If you do use lazy list numbering, however, you should still start the
-list with the number 1. At some point in the future, Markdown may support
-starting ordered lists at an arbitrary number.&lt;/p&gt;
-&lt;p&gt;List markers typically start at the left margin, but may be indented by
-up to three spaces. List markers must be followed by one or more spaces
-or a tab.&lt;/p&gt;
-&lt;p&gt;To make lists look nice, you can wrap items with hanging indents:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-    Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
-    viverra nec, fringilla in, laoreet vitae, risus.
-*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
-    Suspendisse id sem consectetuer libero luctus adipiscing.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;But if you want to be lazy, you don’t have to:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
-viverra nec, fringilla in, laoreet vitae, risus.
-*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
-Suspendisse id sem consectetuer libero luctus adipiscing.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If list items are separated by blank lines, Markdown will wrap the
-items in &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; tags in the HTML output. For example, this input:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;*   Bird
-*   Magic
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;will turn into:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;ul&amp;gt;
-&amp;lt;li&amp;gt;Bird&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Magic&amp;lt;/li&amp;gt;
-&amp;lt;/ul&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;But this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;*   Bird
-
-*   Magic
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;will turn into:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;ul&amp;gt;
-&amp;lt;li&amp;gt;&amp;lt;p&amp;gt;Bird&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;&amp;lt;p&amp;gt;Magic&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;
-&amp;lt;/ul&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;List items may consist of multiple paragraphs. Each subsequent
-paragraph in a list item must be indented by either 4 spaces
-or one tab:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;1.  This is a list item with two paragraphs. Lorem ipsum dolor
-    sit amet, consectetuer adipiscing elit. Aliquam hendrerit
-    mi posuere lectus.
-
-    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
-    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
-    sit amet velit.
-
-2.  Suspendisse id sem consectetuer libero luctus adipiscing.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It looks nice if you indent every line of the subsequent
-paragraphs, but here again, Markdown will allow you to be
-lazy:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;*   This is a list item with two paragraphs.
-
-    This is the second paragraph in the list item. You&amp;#39;re
-only required to indent the first line. Lorem ipsum dolor
-sit amet, consectetuer adipiscing elit.
-
-*   Another item in the same list.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To put a blockquote within a list item, the blockquote’s &lt;code&gt;&amp;gt;&lt;/code&gt;
-delimiters need to be indented:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;*   A list item with a blockquote:
-
-    &amp;gt; This is a blockquote
-    &amp;gt; inside a list item.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To put a code block within a list item, the code block needs
-to be indented &lt;em&gt;twice&lt;/em&gt; — 8 spaces or two tabs:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;*   A list item with a code block:
-
-        &amp;lt;code goes here&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It’s worth noting that it’s possible to trigger an ordered list by
-accident, by writing something like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;1986. What a great season.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In other words, a &lt;em&gt;number-period-space&lt;/em&gt; sequence at the beginning of a
-line. To avoid this, you can backslash-escape the period:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;1986\. What a great season.
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;precode&quot;&gt;Code Blocks&lt;/h3&gt;
-
-&lt;p&gt;Pre-formatted code blocks are used for writing about programming or
-markup source code. Rather than forming normal paragraphs, the lines
-of a code block are interpreted literally. Markdown wraps a code block
-in both &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; tags.&lt;/p&gt;
-&lt;p&gt;To produce a code block in Markdown, simply indent every line of the
-block by at least 4 spaces or 1 tab. For example, given this input:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;This is a normal paragraph:
-
-    This is a code block.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Markdown will generate:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;This is a normal paragraph:&amp;lt;/p&amp;gt;
-
-&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;This is a code block.
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;One level of indentation — 4 spaces or 1 tab — is removed from each
-line of the code block. For example, this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Here is an example of AppleScript:
-
-    tell application &amp;quot;Foo&amp;quot;
-        beep
-    end tell
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;will turn into:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;Here is an example of AppleScript:&amp;lt;/p&amp;gt;
-
-&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;tell application &amp;quot;Foo&amp;quot;
-    beep
-end tell
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;A code block continues until it reaches a line that is not indented
-(or the end of the article).&lt;/p&gt;
-&lt;p&gt;Within a code block, ampersands (&lt;code&gt;&amp;amp;&lt;/code&gt;) and angle brackets (&lt;code&gt;&amp;lt;&lt;/code&gt; and &lt;code&gt;&amp;gt;&lt;/code&gt;)
-are automatically converted into HTML entities. This makes it very
-easy to include example HTML source code using Markdown — just paste
-it and indent it, and Markdown will handle the hassle of encoding the
-ampersands and angle brackets. For example, this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    &amp;lt;div class=&amp;quot;footer&amp;quot;&amp;gt;
-        &amp;amp;copy; 2004 Foo Corporation
-    &amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;will turn into:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;&amp;amp;lt;div class=&amp;quot;footer&amp;quot;&amp;amp;gt;
-    &amp;amp;amp;copy; 2004 Foo Corporation
-&amp;amp;lt;/div&amp;amp;gt;
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Regular Markdown syntax is not processed within code blocks. E.g.,
-asterisks are just literal asterisks within a code block. This means
-it’s also easy to use Markdown to write about Markdown’s own syntax.&lt;/p&gt;
-&lt;h3 id=&quot;hr&quot;&gt;Horizontal Rules&lt;/h3&gt;
-
-&lt;p&gt;You can produce a horizontal rule tag (&lt;code&gt;&amp;lt;hr /&amp;gt;&lt;/code&gt;) by placing three or
-more hyphens, asterisks, or underscores on a line by themselves. If you
-wish, you may use spaces between the hyphens or asterisks. Each of the
-following lines will produce a horizontal rule:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;* * *
-
-***
-
-*****
-
-- - -
-
----------------------------------------
-&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
-&lt;h2 id=&quot;span&quot;&gt;Span Elements&lt;/h2&gt;
-
-&lt;h3 id=&quot;link&quot;&gt;Links&lt;/h3&gt;
-
-&lt;p&gt;Markdown supports two style of links: &lt;em&gt;inline&lt;/em&gt; and &lt;em&gt;reference&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;In both styles, the link text is delimited by [square brackets].&lt;/p&gt;
-&lt;p&gt;To create an inline link, use a set of regular parentheses immediately
-after the link text’s closing square bracket. Inside the parentheses,
-put the URL where you want the link to point, along with an &lt;em&gt;optional&lt;/em&gt;
-title for the link, surrounded in quotes. For example:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;This is [an example](http://example.com/ &amp;quot;Title&amp;quot;) inline link.
-
-[This link](http://example.net/) has no title attribute.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Will produce:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;This is &amp;lt;a href=&amp;quot;http://example.com/&amp;quot; title=&amp;quot;Title&amp;quot;&amp;gt;
-an example&amp;lt;/a&amp;gt; inline link.&amp;lt;/p&amp;gt;
-
-&amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://example.net/&amp;quot;&amp;gt;This link&amp;lt;/a&amp;gt; has no
-title attribute.&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you’re referring to a local resource on the same server, you can
-use relative paths:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;See my [About](/about/) page for details.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Reference-style links use a second set of square brackets, inside
-which you place a label of your choosing to identify the link:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;This is [an example][id] reference-style link.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can optionally use a space to separate the sets of brackets:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;This is [an example] [id] reference-style link.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then, anywhere in the document, you define your link label like this,
-on a line by itself:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[id]: http://example.com/  &amp;quot;Optional Title Here&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;That is:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Square brackets containing the link identifier (optionally
-indented from the left margin using up to three spaces);&lt;/li&gt;
-&lt;li&gt;followed by a colon;&lt;/li&gt;
-&lt;li&gt;followed by one or more spaces (or tabs);&lt;/li&gt;
-&lt;li&gt;followed by the URL for the link;&lt;/li&gt;
-&lt;li&gt;optionally followed by a title attribute for the link, enclosed
-in double or single quotes, or enclosed in parentheses.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The following three link definitions are equivalent:&lt;/p&gt;
-&lt;p&gt;  &lt;a href=&quot;http://example.com/&quot; title=&quot;Optional Title Here&quot;&gt;foo&lt;/a&gt;: &lt;a href=&quot;http://example.com/&quot;&gt;http://example.com/&lt;/a&gt;  ‘Optional Title Here’&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; There is a known bug in Markdown.pl 1.0.1 which prevents
-single quotes from being used to delimit link titles.&lt;/p&gt;
-&lt;p&gt;The link URL may, optionally, be surrounded by angle brackets:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[id]: &amp;lt;http://example.com/&amp;gt;  &amp;quot;Optional Title Here&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can put the title attribute on the next line and use extra spaces
-or tabs for padding, which tends to look better with longer URLs:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[id]: http://example.com/longish/path/to/resource/here
-    &amp;quot;Optional Title Here&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Link definitions are only used for creating links during Markdown
-processing, and are stripped from your document in the HTML output.&lt;/p&gt;
-&lt;p&gt;Link definition names may consist of letters, numbers, spaces, and
-punctuation — but they are &lt;em&gt;not&lt;/em&gt; case sensitive. E.g. these two
-links:&lt;/p&gt;
-&lt;p&gt;  [link text][a]
-  [link text][A]&lt;/p&gt;
-&lt;p&gt;are equivalent.&lt;/p&gt;
-&lt;p&gt;The &lt;em&gt;implicit link name&lt;/em&gt; shortcut allows you to omit the name of the
-link, in which case the link text itself is used as the name.
-Just use an empty set of square brackets — e.g., to link the word
-“Google” to the google.com web site, you could simply write:&lt;/p&gt;
-&lt;p&gt;  &lt;a href=&quot;http://google.com/&quot;&gt;Google&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;And then define the link:&lt;/p&gt;
-&lt;p&gt;Because link names may contain spaces, this shortcut even works for
-multiple words in the link text:&lt;/p&gt;
-&lt;p&gt;  Visit &lt;a href=&quot;http://daringfireball.net/&quot;&gt;Daring Fireball&lt;/a&gt; for more information.&lt;/p&gt;
-&lt;p&gt;And then define the link:&lt;/p&gt;
-&lt;p&gt;Link definitions can be placed anywhere in your Markdown document. I
-tend to put them immediately after each paragraph in which they’re
-used, but if you want, you can put them all at the end of your
-document, sort of like footnotes.&lt;/p&gt;
-&lt;p&gt;Here’s an example of reference links in action:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;I get 10 times more traffic from [Google] [1] than from
-[Yahoo] [2] or [MSN] [3].
-
-  [1]: http://google.com/        &amp;quot;Google&amp;quot;
-  [2]: http://search.yahoo.com/  &amp;quot;Yahoo Search&amp;quot;
-  [3]: http://search.msn.com/    &amp;quot;MSN Search&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Using the implicit link name shortcut, you could instead write:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;I get 10 times more traffic from [Google][] than from
-[Yahoo][] or [MSN][].
-
-  [google]: http://google.com/        &amp;quot;Google&amp;quot;
-  [yahoo]:  http://search.yahoo.com/  &amp;quot;Yahoo Search&amp;quot;
-  [msn]:    http://search.msn.com/    &amp;quot;MSN Search&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Both of the above examples will produce the following HTML output:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;I get 10 times more traffic from &amp;lt;a href=&amp;quot;http://google.com/&amp;quot;
-title=&amp;quot;Google&amp;quot;&amp;gt;Google&amp;lt;/a&amp;gt; than from
-&amp;lt;a href=&amp;quot;http://search.yahoo.com/&amp;quot; title=&amp;quot;Yahoo Search&amp;quot;&amp;gt;Yahoo&amp;lt;/a&amp;gt;
-or &amp;lt;a href=&amp;quot;http://search.msn.com/&amp;quot; title=&amp;quot;MSN Search&amp;quot;&amp;gt;MSN&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For comparison, here is the same paragraph written using
-Markdown’s inline link style:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;I get 10 times more traffic from [Google](http://google.com/ &amp;quot;Google&amp;quot;)
-than from [Yahoo](http://search.yahoo.com/ &amp;quot;Yahoo Search&amp;quot;) or
-[MSN](http://search.msn.com/ &amp;quot;MSN Search&amp;quot;).
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The point of reference-style links is not that they’re easier to
-write. The point is that with reference-style links, your document
-source is vastly more readable. Compare the above examples: using
-reference-style links, the paragraph itself is only 81 characters
-long; with inline-style links, it’s 176 characters; and as raw HTML,
-it’s 234 characters. In the raw HTML, there’s more markup than there
-is text.&lt;/p&gt;
-&lt;p&gt;With Markdown’s reference-style links, a source document much more
-closely resembles the final output, as rendered in a browser. By
-allowing you to move the markup-related metadata out of the paragraph,
-you can add links without interrupting the narrative flow of your
-prose.&lt;/p&gt;
-&lt;h3 id=&quot;em&quot;&gt;Emphasis&lt;/h3&gt;
-
-&lt;p&gt;Markdown treats asterisks (&lt;code&gt;*&lt;/code&gt;) and underscores (&lt;code&gt;_&lt;/code&gt;) as indicators of
-emphasis. Text wrapped with one &lt;code&gt;*&lt;/code&gt; or &lt;code&gt;_&lt;/code&gt; will be wrapped with an
-HTML &lt;code&gt;&amp;lt;em&amp;gt;&lt;/code&gt; tag; double &lt;code&gt;*&lt;/code&gt;‘s or &lt;code&gt;_&lt;/code&gt;‘s will be wrapped with an HTML
-&lt;code&gt;&amp;lt;strong&amp;gt;&lt;/code&gt; tag. E.g., this input:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;*single asterisks*
-
-_single underscores_
-
-**double asterisks**
-
-__double underscores__
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;will produce:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;em&amp;gt;single asterisks&amp;lt;/em&amp;gt;
-
-&amp;lt;em&amp;gt;single underscores&amp;lt;/em&amp;gt;
-
-&amp;lt;strong&amp;gt;double asterisks&amp;lt;/strong&amp;gt;
-
-&amp;lt;strong&amp;gt;double underscores&amp;lt;/strong&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can use whichever style you prefer; the lone restriction is that
-the same character must be used to open and close an emphasis span.&lt;/p&gt;
-&lt;p&gt;Emphasis can be used in the middle of a word:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;un*frigging*believable
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;But if you surround an &lt;code&gt;*&lt;/code&gt; or &lt;code&gt;_&lt;/code&gt; with spaces, it’ll be treated as a
-literal asterisk or underscore.&lt;/p&gt;
-&lt;p&gt;To produce a literal asterisk or underscore at a position where it
-would otherwise be used as an emphasis delimiter, you can backslash
-escape it:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;\*this text is surrounded by literal asterisks\*
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
-
-&lt;p&gt;To indicate a span of code, wrap it with backtick quotes (&lt;code&gt;` &lt;/code&gt;).
-Unlike a pre-formatted code block, a code span indicates code within a
-normal paragraph. For example:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Use the `printf()` function.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;will produce:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;Use the &amp;lt;code&amp;gt;printf()&amp;lt;/code&amp;gt; function.&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To include a literal backtick character within a code span, you can use
-multiple backticks as the opening and closing delimiters:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;``There is a literal backtick (`) here.``
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;which will produce this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;There is a literal backtick (`) here.&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The backtick delimiters surrounding a code span may include spaces —
-one after the opening, one before the closing. This allows you to place
-literal backtick characters at the beginning or end of a code span:&lt;/p&gt;
-&lt;p&gt;  A single backtick in a code span: &lt;code&gt;` &lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;  A backtick-delimited string in a code span: &lt;code&gt;`foo` &lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;will produce:&lt;/p&gt;
-  &lt;p&gt;A single backtick in a code span: &lt;code&gt;`&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;A backtick-delimited string in a code span: &lt;code&gt;&lt;code&gt;foo&lt;/code&gt;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;With a code span, ampersands and angle brackets are encoded as HTML
-entities automatically, which makes it easy to include example HTML
-tags. Markdown will turn this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Please don&amp;#39;t use any `&amp;lt;blink&amp;gt;` tags.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;into:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;Please don&amp;#39;t use any &amp;lt;code&amp;gt;&amp;amp;lt;blink&amp;amp;gt;&amp;lt;/code&amp;gt; tags.&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can write this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;`&amp;amp;#8212;` is the decimal-encoded equivalent of `&amp;amp;mdash;`.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;to produce:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;&amp;amp;amp;#8212;&amp;lt;/code&amp;gt; is the decimal-encoded
-equivalent of &amp;lt;code&amp;gt;&amp;amp;amp;mdash;&amp;lt;/code&amp;gt;.&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;img&quot;&gt;Images&lt;/h3&gt;
-
-&lt;p&gt;Admittedly, it’s fairly difficult to devise a “natural” syntax for
-placing images into a plain text document format.&lt;/p&gt;
-&lt;p&gt;Markdown uses an image syntax that is intended to resemble the syntax
-for links, allowing for two styles: &lt;em&gt;inline&lt;/em&gt; and &lt;em&gt;reference&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Inline image syntax looks like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;![Alt text](/path/to/img.jpg)
-
-![Alt text](/path/to/img.jpg &amp;quot;Optional title&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;That is:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;An exclamation mark: &lt;code&gt;!&lt;/code&gt;;&lt;/li&gt;
-&lt;li&gt;followed by a set of square brackets, containing the &lt;code&gt;alt&lt;/code&gt;
-attribute text for the image;&lt;/li&gt;
-&lt;li&gt;followed by a set of parentheses, containing the URL or path to
-the image, and an optional &lt;code&gt;title&lt;/code&gt; attribute enclosed in double
-or single quotes.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Reference-style image syntax looks like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;![Alt text][id]
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Where “id” is the name of a defined image reference. Image references
-are defined using syntax identical to link references:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[id]: url/to/image  &amp;quot;Optional title attribute&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;As of this writing, Markdown has no syntax for specifying the
-dimensions of an image; if this is important to you, you can simply
-use regular HTML &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; tags.&lt;/p&gt;
+&lt;p&gt;When implementing this protocol,  in that list is used to pick a servo object to apply the &lt;a href=&quot;http://arduino.cc/en/Reference/ServoWrite&quot;&gt;write()&lt;/a&gt; function that takes the angle in number three as its argument. The Arduino does the rest! There is a catch though — in order for the Arduino to properly instantiate a servo object, you need to use the attach() function. Since there are minimum and maximum pulse widths (hardware limits) we care about so the pan tilt module doesn’t rip itself apart, those minimum and maximum pulse widths need to be known. I actually used the old version of my code and a couple print statements to write a diagnostic program I could use to figure out the pulse width limits. I have that attached as well as the real code.&lt;/p&gt;
+&lt;h2 id=&quot;the-python&quot;&gt;The Python&lt;/h2&gt;
 &lt;hr&gt;
-&lt;h2 id=&quot;misc&quot;&gt;Miscellaneous&lt;/h2&gt;
+&lt;p&gt;Now not to diss PHP or anything (which is what I have most of my experience with at this point), but python just seems like a more grown up language. There is a lot to like about it. Every time I read or hear about something cool being done, it is almost always involves python! So far with the tutorials out there it has been awesome. The python segments here are short and not very advanced. I wrote one important function - move(). It takes an angle and a servo as arguments and — you guessed it — moves the specified servo to their specified angle. One problem though — due to me being an imperfect craftsman and not mounting the servos perfectly straight, the angular position of (90, 90) does not make the camera point straight ahead as one would expect. Therefore I wrote another simple diagnostic function to allow the interactive centering of the servos. Once I had the middle for the X and Y axis, I could use this in the move function to shift the centers.&lt;/p&gt;
+&lt;p&gt;Once move() was done, I wrote some test code and it worked like a champ! I then started stacking calls to move() inside of loops and I wrote some code to make the camera move in simple rectangles. Some problems then became clear: the pan tilt module either moves too slow, too fast or just spazzes out if you issue enough commands to it. Increasing the baud rate helped to speed things up, however it would still freak out if you told it to move really fast. I determined that there needs to be some delay between move() calls. Once again, I wrote some diagnostic code to determine this. The pan tilt module would move in rectangles with increasingly longer pauses between move() calls. At some critical delay value, the pan tilt module stopped jittering and moved smoothly (but still pretty fast) around the perimeter of the rectangle (turned out to be 0.003 seconds). As a final example of what the system can do, I wrote the spiral code that appears in the video above. It is only a few lines of python, but I spaced them out and commented them for ease of understanding:&lt;/p&gt;
+&lt;pre&gt;
+def spiral():
+    a = .01;  # &quot;stretch&quot; factor for sin and cosine
+    t = 0;    # time value
 
-&lt;h3 id=&quot;autolink&quot;&gt;Automatic Links&lt;/h3&gt;
+    # time loop that stops when the stretch factor is 1
+    while (a &lt; 1) :
 
-&lt;p&gt;Markdown supports a shortcut style for creating “automatic” links for URLs and email addresses: simply surround the URL or email address with angle brackets. What this means is that if you want to show the actual text of a URL or email address, and also have it be a clickable link, you can do this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;http://example.com/&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Markdown will turn this into:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;a href=&amp;quot;http://example.com/&amp;quot;&amp;gt;http://example.com/&amp;lt;/a&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Automatic links for email addresses work similarly, except that
-Markdown will also perform a bit of randomized decimal and hex
-entity-encoding to help obscure your address from address-harvesting
-spambots. For example, Markdown will turn this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;address@example.com&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;into something like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;a href=&amp;quot;&amp;amp;#x6D;&amp;amp;#x61;i&amp;amp;#x6C;&amp;amp;#x74;&amp;amp;#x6F;:&amp;amp;#x61;&amp;amp;#x64;&amp;amp;#x64;&amp;amp;#x72;&amp;amp;#x65;
-&amp;amp;#115;&amp;amp;#115;&amp;amp;#64;&amp;amp;#101;&amp;amp;#120;&amp;amp;#x61;&amp;amp;#109;&amp;amp;#x70;&amp;amp;#x6C;e&amp;amp;#x2E;&amp;amp;#99;&amp;amp;#111;
-&amp;amp;#109;&amp;quot;&amp;gt;&amp;amp;#x61;&amp;amp;#x64;&amp;amp;#x64;&amp;amp;#x72;&amp;amp;#x65;&amp;amp;#115;&amp;amp;#115;&amp;amp;#64;&amp;amp;#101;&amp;amp;#120;&amp;amp;#x61;
-&amp;amp;#109;&amp;amp;#x70;&amp;amp;#x6C;e&amp;amp;#x2E;&amp;amp;#99;&amp;amp;#111;&amp;amp;#109;&amp;lt;/a&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;which will render in a browser as a clickable link to “address@example.com”.&lt;/p&gt;
-&lt;p&gt;(This sort of entity-encoding trick will indeed fool many, if not
-most, address-harvesting bots, but it definitely won’t fool all of
-them. It’s better than nothing, but an address published in this way
-will probably eventually start receiving spam.)&lt;/p&gt;
-&lt;h3 id=&quot;backslash&quot;&gt;Backslash Escapes&lt;/h3&gt;
+        # increase the time step
+        t+=1
 
-&lt;p&gt;Markdown allows you to use backslash escapes to generate literal
-characters which would otherwise have special meaning in Markdown’s
-formatting syntax. For example, if you wanted to surround a word
-with literal asterisks (instead of an HTML &lt;code&gt;&amp;lt;em&amp;gt;&lt;/code&gt; tag), you can use
-backslashes before the asterisks, like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;\*literal asterisks\*
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Markdown provides backslash escapes for the following characters:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;\   backslash
-`   backtick
-*   asterisk
-_   underscore
-{}  curly braces
-[]  square brackets
-()  parentheses
-#   hash mark
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;plus sign&lt;/li&gt;
-&lt;/ul&gt;
+        # if 50 time steps have gone by, increment a
+        if (t % 50 == 0) : a+=.01
+
+        # move the servos to middle, plus or minus some scaled
+        # value of sin or cosine. Change 'a' to something fixed
+        # between 0 and 1 and the spiral is now a circle
+        servo.move(1, 90 + a * math.degrees(math.cos(math.radians(t))))
+        servo.move(2, 90 + a * math.degrees(math.sin(math.radians(t))))
+
+        # delay between the move calls
+        time.sleep(.0045)
+&lt;/pre&gt;
+
+&lt;h2 id=&quot;conclusion-attachments&quot;&gt;Conclusion &amp;amp; Attachments&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;So that was it! Now I have unrestricted access to use python to do (almost) whatever I want! Looking at the python bindings for OpenCV next!&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;minus sign (hyphen)
-.   dot
-!   exclamation mark&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dl.dropbox.com/u/4428042/stonelinks_public/main.cpp&quot;&gt;Arduino main code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dl.dropbox.com/u/4428042/stonelinks_public/servolimits.cpp&quot;&gt;Arduino servo pulsewidth diagnostic code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dl.dropbox.com/u/4428042/stonelinks_public/main.py&quot;&gt;Python main code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dl.dropbox.com/u/4428042/stonelinks_public/servo.py&quot;&gt;Python servo module&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
     <item>
-      <title>Taketori Monogatari</title>
-      <link>/articles/bamboo-cutter/</link>
-      <pubDate>Wed, 01 Feb 2012 09:00:00 +0900</pubDate>
-      <guid isPermaLink="true">/articles/bamboo-cutter/</guid>
-      <author></author>
-      <description>&lt;p&gt;Long, long ago, there lived an old bamboo wood-cutter.&lt;/p&gt;
-&lt;p&gt;He was very poor and sad also, for no child had Heaven sent to cheer his old age, and in his heart there was no hope of rest from work till he died and was laid in the quiet grave. Every morning he went forth into the woods and hills wherever the bamboo reared its lithe green plumes against the sky. When he had made his choice, he would cut down these feathers of the forest, and splitting them lengthwise, or cutting them into joints, would carry the bamboo wood home and make it into various articles for the household, and he and his old wife gained a small livelihood by selling them.&lt;/p&gt;
+      <title>Electromagnets, How do They Work?</title>
+      <link>/articles/electromagnets-how-do-they-work/</link>
+      <pubDate>Wed, 22 Dec 2010 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/articles/electromagnets-how-do-they-work/</guid>
+      <description>&lt;center&gt;
+&lt;img src=&quot;{{ assets }}/img/posts/downsize1-225x300.jpg&quot; class=&quot;thumbnail&quot; width=&quot;50%&quot;&gt;
+&lt;/center&gt;
+
+&lt;p&gt;Home for the break! My brother asked me for help making a small electromagnet to bring into Boy Scouts for electricity merit badge. I of course jumped at the opportunity, and asked what kind of power source they are going to be using to drive said magnet. He tells me they will be using a single D battery. Thinking this is kind of small, I spent a few hours making the biggest electromagnet I could from a few things around the house I could find.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/articles/bamboo-cutter/taketori_monogatari.jpg&quot; alt=&quot;Taketori Monogatari&quot;&gt;&lt;/p&gt;
-&lt;p&gt;One morning as usual he had gone out to his work, and having found a nice clump of bamboos, had set to work to cut some of them down. Suddenly the green grove of bamboos was flooded with a bright soft light, as if the full moon had risen over the spot. Looking round in astonishment, he saw that the brilliance was streaming from one bamboo. The old man. full of wonder. dropped his ax and went towards the light. On nearer approach he saw that this soft splendor came from a hollow in the green bamboo stem, and still more wonderful to behold, in the midst of the brilliance stood a tiny human being, only three inches in height, and exquisitely beautiful in appearance.&lt;/p&gt;
-&lt;p&gt;“You must be sent to be my child, for I find you here among the bamboos where lies my daily work,” said the old man, and taking the little creature in his hand he took it home to his wife to bring up. The tiny girl was so exceedingly beautiful and so small, that the old woman put her into a basket to safeguard her from the least possibility of being hurt in any way.&lt;/p&gt;
-&lt;p&gt;The old couple were now very happy, for it had been a lifelong regret that they had no children of their own, and with joy they now expended all the love of their old age on the little child who had come to them in so marvelous a manner.&lt;/p&gt;
-&lt;p&gt;From this time on, the old man often found gold in the notches of the bamboos when he hewed them down and cut them up; not only gold, but precious stones also, so that by degrees he became rich. He built himself a fine house, and was no longer known as the poor bamboo woodcutter, but as a wealthy man.&lt;/p&gt;
-&lt;p&gt;Three months passed quickly away, and in that time the bamboo child had, wonderful to say, become a full-grown girl, so her foster- parents did up her hair and dressed her in beautiful kimonos. She was of such wondrous beauty that they placed her behind the screens like a princess, and allowed no one to see her, waiting upon her themselves. It seemed as if she were made of light, for the house was filled with a soft shining, so that even in the dark of night it was like daytime. Her presence seemed to have a benign influence on those there. Whenever the old man felt sad, he had only to look upon his foster-daughter and his sorrow vanished, and he became as happy as when he was a youth.&lt;/p&gt;
-&lt;p&gt;At last the day came for the naming of their new-found child, so the old couple called in a celebrated name-giver, and he gave her the name of Princess Moonlight, because her body gave forth so much soft bright light that she might have been a daughter of the Moon God.&lt;/p&gt;
-&lt;p&gt;For three days the festival was kept up with song and dance and music. All the friends and relations of the old couple were present, and great was their enjoyment of the festivities held to celebrate the naming of Princess Moonlight. Everyone who saw her declared that there never had been seen any one so lovely; all the beauties throughout the length and breadth of the land would grow pale beside her, so they said. The fame of the Princess’s loveliness spread far and wide, and many were the suitors who desired to win her hand, or even so much as to see her.&lt;/p&gt;
-&lt;p&gt;Suitors from far and near posted themselves outside the house, and made little holes in the fence, in the hope of catching a glimpse of the Princess as she went from one room to the other along the veranda. They stayed there day and night, sacrificing even their sleep for a chance of seeing her, but all in vain. Then they approached the house, and tried to speak to the old man and his wife or some of the servants, but not even this was granted them.&lt;/p&gt;
-&lt;p&gt;Still, in spite of all this disappointment they stayed on day after day, and night after night, and counted it as nothing, so great was their desire to see the Princess.&lt;/p&gt;
-&lt;p&gt;At last, however, most of the men, seeing how hopeless their quest was, lost heart and hope both, and returned to their homes. All except five Knights, whose ardor and determination, instead of waning, seemed to wax greater with obstacles. These five men even went without their meals, and took snatches of whatever they could get brought to them, so that they might always stand outside the dwelling. They stood there in all weathers, in sunshine and in rain.&lt;/p&gt;
-&lt;p&gt;Sometimes they wrote letters to the Princess, but no answer was vouchsafed to them. Then when letters failed to draw any reply, they wrote poems to her telling her of the hopeless love which kept them from sleep, from food, from rest, and even from their homes. Still Princes Moonlight gave no sign of having received their verses.&lt;/p&gt;
-&lt;p&gt;In this hopeless state the winter passed. The snow and frost and the cold winds gradually gave place to the gentle warmth of spring. Then the summer came, and the sun burned white and scorching in the heavens above and on the earth beneath, and still these faithful Knights kept watch and waited. At the end of these long months they called out to the old bamboo-cutter and entreated him to have some mercy upon them and to show them the Princess, but he answered only that as he was not her real father he could not insist on her obeying him against her wishes.&lt;/p&gt;
-&lt;p&gt;The five Knights on receiving this stern answer returned to their several homes, and pondered over the best means of touching the proud Princess’s heart, even so much as to grant them a hearing. They took their rosaries in hand and knelt before their household shrines, and burned precious incense, praying to Buddha to give them their heart’s desire. Thus several days passed, but even so they could not rest in their homes.&lt;/p&gt;
-&lt;p&gt;So again they set out for the bamboo-cutter’s house. This time the old man came out to see them, and they asked him to let them know if it was the Princess’s resolution never to see any man whatsoever, and they implored him to speak for them and to tell her the greatness of their love, and how long they had waited through the cold of winter and the heat of summer, sleepless and roofless through all weathers, without food and without rest, in the ardent hope of winning her, and they were willing to consider this long vigil as pleasure if she would but give them one chance of pleading their cause with her.&lt;/p&gt;
-&lt;p&gt;The old man lent a willing ear to their tale of love, for in his inmost heart he felt sorry for these faithful suitors and would have liked to see his lovely foster-daughter married to one of them. So he went in to Princess Moonlight and said reverently:&lt;/p&gt;
-&lt;p&gt;“Although you have always seemed to me to be a heavenly being, yet I have had the trouble of bringing you up as my own child and you have been glad of the protection of my roof. Will you refuse to do as I wish?”&lt;/p&gt;
-&lt;p&gt;Then Princess Moonlight replied that there was nothing she would not do for him, that she honored and loved him as her own father, and that as for herself she could not remember the time before she came to earth.&lt;/p&gt;
-&lt;p&gt;The old man listened with great joy as she spoke these dutiful words. Then he told her how anxious he was to see her safely and happily married before he died.&lt;/p&gt;
-&lt;p&gt;“I am an old man, over seventy years of age, and my end may come any time now. It is necessary and right that you should see these five suitors and choose one of them.”&lt;/p&gt;
-&lt;p&gt;“Oh, why,” said the Princess in distress, “must I do this? I have no wish to marry now.”&lt;/p&gt;
-&lt;p&gt;“I found you,” answered the old man, “many years ago, when you were a little creature three inches high, in the midst of a great white light. The light streamed from the bamboo in which you were hid and led me to you. So I have always thought that you were more than mortal woman. While I am alive it is right for you to remain as you are if you wish to do so, but some day I shall cease to be and who will take care of you then? Therefore I pray you to meet these five brave men one at a time and make up your mind to marry one of them!”&lt;/p&gt;
-&lt;p&gt;Then the Princess answered that she felt sure that she was not as beautiful as perhaps report made her out to be, and that even if she consented to marry any one of them, not really knowing her before, his heart might change afterwards. So as she did not feel sure of them, even though her father told her they were worthy Knights, she did not feel it wise to see them.&lt;/p&gt;
-&lt;p&gt;“All you say is very reasonable,” said the old man, “but what kind of men will you consent to see? I do not call these five men who have waited on you for months, light-hearted. They have stood outside this house through the winter and the summer, often denying themselves food and sleep so that they may win you. What more can you demand?”&lt;/p&gt;
-&lt;p&gt;Then Princess Moonlight said she must make further trial of their love before she would grant their request to interview her. The five warriors were to prove their love by each bringing her from distant countries something that she desired to possess.&lt;/p&gt;
-&lt;p&gt;That same evening the suitors arrived and began to play their flutes in turn, and to sing their self-composed songs telling of their great and tireless love. The bamboo-cutter went out to them and offered them his sympathy for all they had endured and all the patience they had shown in their desire to win his foster-daughter. Then he gave them her message, that she would consent to marry whosoever was successful in bringing her what she wanted. This was to test them.&lt;/p&gt;
-&lt;p&gt;The five all accepted the trial, and thought it an excellent plan, for it would prevent jealousy between them.&lt;/p&gt;
-&lt;p&gt;Princess Moonlight then sent word to the First Knight that she requested him to bring her the stone bowl which had belonged to Buddha in India.&lt;/p&gt;
-&lt;p&gt;The Second Knight was asked to go to the Mountain of Horai, said to be situated in the Eastern Sea, and to bring her a branch of the wonderful tree that grew on its summit. The roots of this tree were of silver, the trunk of gold, and the branches bore as fruit white jewels.&lt;/p&gt;
-&lt;p&gt;The Third Knight was told to go to China and search for the fire-rat and to bring her its skin.&lt;/p&gt;
-&lt;p&gt;The Fourth Knight was told to search for the dragon that carried on its head the stone radiating five colors and to bring the stone to her.&lt;/p&gt;
-&lt;p&gt;The Fifth Knight was to find the swallow which carried a shell in its stomach and to bring the shell to her.&lt;/p&gt;
-&lt;p&gt;The old man thought these very hard tasks and hesitated to carry the messages, but the Princess would make no other conditions. So her commands were issued word for word to the five men who, when they heard what was required of them, were all disheartened and disgusted at what seemed to them the impossibility of the tasks given them and returned to their own homes in despair.&lt;/p&gt;
-&lt;p&gt;But after a time, when they thought of the Princess, the love in their hearts revived for her, and they resolved to make an attempt to get what she desired of them.&lt;/p&gt;
-&lt;p&gt;The First Knight sent word to the Princess that he was starting out that day on the quest of Buddha’s bowl, and he hoped soon to bring it to her. But he had not the courage to go all the way to India, for in those days traveling was very difficult and full of danger, so he went to one of the temples in Kyoto and took a stone bowl from the altar there, paying the priest a large sum of money for it. He then wrapped it in a cloth of gold and, waiting quietly for three years, returned and carried it to the old man.&lt;/p&gt;
-&lt;p&gt;Princess Moonlight wondered that the Knight should have returned so soon. She took the bowl from its gold wrapping, expecting it to make the room full of light, but it did not shine at all, so she knew that it was a sham thing and not the true bowl of Buddha. She returned it at once and refused to see him. The Knight threw the bowl away and returned to his home in despair. He gave up now all hopes of ever winning the Princess.&lt;/p&gt;
-&lt;p&gt;The Second Knight told his parents that he needed change of air for his health, for he was ashamed to tell them that love for the Princess Moonlight was the real cause of his leaving them. He then left his home, at the same time sending word to the Princess that he was setting out for Mount Horai in the hope of getting her a branch of the gold and silver tree which she so much wished to have. He only allowed his servants to accompany him half-way, and then sent them back. He reached the seashore and embarked on a small ship, and after sailing away for three days he landed and employed several carpenters to build him a house contrived in such a way that no one could get access to it. He then shut himself up with six skilled jewelers, and endeavored to make such a gold and silver branch as he thought would satisfy the Princess as having come from the wonderful tree growing on Mount Horai. Every one whom he had asked declared that Mount Horai belonged to the land of fable and not to fact.&lt;/p&gt;
-&lt;p&gt;When the branch was finished, he took his journey home and tried to make himself look as if he were wearied and worn out with travel. He put the jeweled branch into a lacquer box and carried it to the bamboo-cutter, begging him to present it to the Princess.&lt;/p&gt;
-&lt;p&gt;The old man was quite deceived by the travel-stained appearance of the Knight, and thought that he had only just returned from his long journey with the branch. So he tried to persuade the Princess to consent to see the man. But she remained silent and looked very sad. The old man began to take out the branch and praised it as a wonderful treasure to be found nowhere in the whole land. Then he spoke of the Knight, how handsome and how brave he was to have undertaken a journey to so remote a place as the Mount of Horai.&lt;/p&gt;
-&lt;p&gt;Princess Moonlight took the branch in her hand and looked at it carefully. She then told her foster-parent that she knew it was impossible for the man to have obtained a branch from the gold and silver tree growing on Mount Horai so quickly or so easily, and she was sorry to say she believed it artificial.&lt;/p&gt;
-&lt;p&gt;The old man then went out to the expectant Knight, who had now approached the house, and asked where he had found the branch. Then the man did not scruple to make up a long story.&lt;/p&gt;
-&lt;p&gt;“Two years ago I took a ship and started in search of Mount Horai. After going before the wind for some time I reached the far Eastern Sea. Then a great storm arose and I was tossed about for many days, losing all count of the points of the compass, and finally we were blown ashore on an unknown island. Here I found the place inhabited by demons who at one time threatened to kill and eat me. However, I managed to make friends with these horrible creatures, and they helped me and my sailors to repair the boat, and I set sail again. Our food gave out, and we suffered much from sickness on board. At last, on the five-hundredth day from the day of starting, I saw far off on the horizon what looked like the peak of a mountain. On nearer approach, this proved to be an island, in the center of which rose a high mountain. I landed, and after wandering about for two or three days, I saw a shining being coming towards me on the beach, holding in his hands a golden bowl. I went up to him and asked him if I had, by good chance, found the island of Mount Horai, and he answered:”&lt;/p&gt;
-&lt;p&gt;“‘Yes, this is Mount Horai!’”&lt;/p&gt;
-&lt;p&gt;“With much difficulty I climbed to the summit, here stood the golden tree growing with silver roots in the ground. The wonders of that strange land are many, and if I began to tell you about them I could never stop. In spite of my wish to stay there long, on breaking off the branch I hurried back. With utmost speed it has taken me four hundred days to get back, and, as you see, my clothes are still damp from exposure on the long sea voyage. I have not even waited to change my raiment, so anxious was I to bring the branch to the Princess quickly.”&lt;/p&gt;
-&lt;p&gt;Just at this moment the six jewelers, who had been employed on the making of the branch, but not yet paid by the Knight, arrived at the house and sent in a petition to the Princess to be paid for their labor. They said that they had worked for over a thousand days making the branch of gold, with its silver twigs and its jeweled fruit, that was now presented to her by the Knight, but as yet they had received nothing in payment. So this Knight’s deception was thus found out, and the Princess, glad of an escape from one more importunate suitor, was only too pleased to send back the branch. She called in the workmen and had them paid liberally, and they went away happy. But on the way home they were overtaken by the disappointed man. who beat them till they were nearly dead, for letting out the secret, and they barely escaped with their lives. The Knight then returned home, raging in his heart; and in despair of ever winning the Princess gave up society and retired to a solitary life among the mountains.&lt;/p&gt;
-&lt;p&gt;Now the Third Knight had a friend in China, so he wrote to him to get the skin of the fire-rat. The virtue of any part of this animal was that no fire could harm it. He promised his friend any amount of money he liked to ask if only he could get him the desired article. As soon as the news came that the ship on which his friend had sailed home had come into port, he rode seven days on horseback to meet him. He handed his friend a large sum of money, and received the fire-rat’s skin. When he reached home he put it carefully in a box and sent it in to the Princess while he waited outside for her answer.&lt;/p&gt;
-&lt;p&gt;The bamboo-cutter took the box from the Knight and, as usual, carried it in to her and tried to coax her to see the Knight at once, but Princess Moonlight refused, saying that she must first put the skin to test by putting it into the fire. If it were the real thing it would not burn. So she took off the crape wrapper and opened the box, and then threw the skin into the fire. The skin crackled and burnt up at once, and the Princess knew that this man also had not fulfilled his word. So the Third Knight failed also.&lt;/p&gt;
-&lt;p&gt;Now the Fourth Knight was no more enterprising than the rest. Instead of starting out on the quest of the dragon bearing on its head the five-color-radiating jewel, he called all his servants together and gave them the order to seek for it far and wide in Japan and in China, and he strictly forbade any of them to return till they had found it.&lt;/p&gt;
-&lt;p&gt;His numerous retainers and servants started out in different directions, with no intention, however, of obeying what they considered an impossible order. They simply took a holiday, went to pleasant country places together, and grumbled at their master’s unreasonableness.&lt;/p&gt;
-&lt;p&gt;The Knight meanwhile, thinking that his retainers could not fail to find the jewel, repaired to his house, and fitted it up beautifully for the reception of the Princess, he felt so sure of winning her.&lt;/p&gt;
-&lt;p&gt;One year passed away in weary waiting, and still his men did not return with the dragon-jewel. The Knight became desperate. He could wait no longer, so taking with him only two men he hired a ship and commanded the captain to go in search of the dragon; the captain and the sailors refused to undertake what they said was an absurd search, but the Knight compelled them at last to put out to sea.&lt;/p&gt;
-&lt;p&gt;When they had been but a few days out they encountered a great storm which lasted so long that, by the time its fury abated, the Knight had determined to give up the hunt of the dragon. They were at last blown on shore, for navigation was primitive in those days. Worn out with his travels and anxiety, the fourth suitor gave himself up to rest. He had caught a very heavy cold, and had to go to bed with a swollen face.&lt;/p&gt;
-&lt;p&gt;The governor of the place, hearing of his plight, sent messengers with a letter inviting him to his house. While he was there thinking over all his troubles, his love for the Princess turned to anger, and he blamed her for all the hardships he had undergone. He thought that it was quite probable she had wished to kill him so that she might be rid of him, and in order to carry out her wish had sent him upon his impossible quest.&lt;/p&gt;
-&lt;p&gt;At this point all the servants he had sent out to find the jewel came to see him, and were surprised to find praise instead of displeasure awaiting them. Their master told them that he was heartily sick of adventure, and said that he never intended to go near the Princess’s house again in the future.&lt;/p&gt;
-&lt;p&gt;Like all the rest, the Fifth Knight failed in his quest—he could not find the swallow’s shell.&lt;/p&gt;
-&lt;p&gt;By this time the fame of Princess Moonlight’s beauty had reached the ears of the Emperor, and he sent one of the Court ladies to see if she were really as lovely as report said; if so he would summon her to the Palace and make her one of the ladies-in-waiting.&lt;/p&gt;
-&lt;p&gt;When the Court lady arrived, in spite of her father’s entreaties, Princess Moonlight refused to see her. The Imperial messenger insisted, saying it was the Emperor’s order. Then Princess Moonlight told the old man that if she was forced to go to the Palace in obedience to the Emperor’s order, she would vanish from the earth.&lt;/p&gt;
-&lt;p&gt;When the Emperor was told of her persistence in refusing to obey his summons, and that if pressed to obey she would disappear altogether from sight, he determined to go and see her. So he planned to go on a hunting excursion in the neighborhood of the bamboo-cutter’s house, and see the Princess himself. He sent word to the old man of his intention, and he received consent to the scheme. The next day the Emperor set out with his retinue, which he soon managed to outride. He found the bamboo-cutter’s house and dismounted. He then entered the house and went straight to where the Princess was sitting with her attendant maidens.&lt;/p&gt;
-&lt;p&gt;Never had he seen any one so wonderfully beautiful, and he could not but look at her, for she was more lovely than any human being as she shone in her own soft radiance. When Princess Moonlight became aware that a stranger was looking at her she tried to escape from the room, but the Emperor caught her and begged her to listen to what he had to say. Her only answer was to hide her face in her sleeves.&lt;/p&gt;
-&lt;p&gt;The Emperor fell deeply in love with her, and begged her to come to the Court, where he would give her a position of honor and everything she could wish for. He was about to send for one of the Imperial palanquins to take her back with him at once, saying that her grace and beauty should adorn a Court, and not be hidden in a bamboo-cutter’s cottage.&lt;/p&gt;
-&lt;p&gt;But the Princess stopped him. She said that if she were forced to go to the Palace she would turn at once into a shadow, and even as she spoke she began to lose her form. Her figure faded from his sight while he looked.&lt;/p&gt;
-&lt;p&gt;The Emperor then promised to leave her free if only she would resume her former shape, which she did.&lt;/p&gt;
-&lt;p&gt;It was now time for him to return, for his retinue would be wondering what had happened to their Royal master when they missed him for so long. So be bade her good-by, and left the house with a sad heart. Princess Moonlight was for him the most beautiful woman in the world; all others were dark beside her, and he thought of her night and day. His Majesty now spent much of his time in writing poems, telling her of his love and devotion, and sent them to her, and though she refused to see him again she answered with many verses of her own composing, which told him gently and kindly that she could never marry any one on this earth. These little songs always gave him pleasure.&lt;/p&gt;
-&lt;p&gt;At this time her foster-parents noticed that night after night the Princess would sit on her balcony and gaze for hours at the moon, in a spirit of the deepest dejection, ending always in a burst of tears. One night the old man found her thus weeping as if her heart were broken, and he besought her to tell him the reason of her sorrow.&lt;/p&gt;
-&lt;p&gt;With many tears she told him that he had guessed rightly when he supposed her not to belong to this world—that she had in truth come from the moon, and that her time on earth would soon be over. On the fifteenth day of that very month of August her friends from the moon would come to fetch her, and she would have to return. Her parents were both there, but having spent a lifetime on the earth she had forgotten them, and also the moon-world to which she belonged. It made her weep, she said, to think of leaving her kind foster- parents, and the home where she had been happy for so long.&lt;/p&gt;
-&lt;p&gt;When her attendants heard this they were very sad, and could not eat or drink for sadness at the thought that the Princess was so soon to leave them.&lt;/p&gt;
-&lt;p&gt;The Emperor, as soon as the news was carried to him, sent messengers to the house to find out if the report were true or not.&lt;/p&gt;
-&lt;p&gt;The old bamboo-cutter went out to meet the Imperial messengers. The last few days of sorrow had told upon the old man; he had aged greatly, and looked much more than his seventy years. Weeping bitterly, he told them that the report was only too true, but he intended, however, to make prisoners of the envoys from the moon, and to do all he could to prevent the Princess from being carried back.&lt;/p&gt;
-&lt;p&gt;The men returned and told His Majesty all that had passed. On the fifteenth day of that month the Emperor sent a guard of two thousand warriors to watch the house. One thousand stationed themselves on the roof, another thousand kept watch round all the entrances of the house. All were well trained archers, with bows and arrows. The bamboo-cutter and his wife hid Princess Moonlight in an inner room.&lt;/p&gt;
-&lt;p&gt;The old man gave orders that no one was to sleep that night, all in the house were to keep a strict watch, and be ready to protect the Princess. With these precautions, and the help of the Emperor’s men- at-arms, he hoped to withstand the moon-messengers, but the Princess told him that all these measures to keep her would be useless, and that when her people came for her nothing whatever could prevent them from carrying out their purpose. Even the Emperors men would be powerless. Then she added with tears that she was very, very sorry to leave him and his wife, whom she had learned to love as her parents, that if she could do as she liked she would stay with them in their old age, and try to make some return for all the love and kindness they had showered upon her during all her earthly life.&lt;/p&gt;
-&lt;p&gt;The night wore on! The yellow harvest moon rose high in the heavens, flooding the world asleep with her golden light. Silence reigned over the pine and the bamboo forests, and on the roof where the thousand men-at-arms waited.&lt;/p&gt;
-&lt;p&gt;Then the night grew gray towards the dawn and all hoped that the danger was over—that Princess Moonlight would not have to leave them after all. Then suddenly the watchers saw a cloud form round the moon—and while they looked this cloud began to roll earthwards. Nearer and nearer it came, and every one saw with dismay that its course lay towards the house.&lt;/p&gt;
-&lt;p&gt;In a short time the sky was entirely obscured, till at last the cloud lay over the dwelling only ten feet off the ground. In the midst of the cloud there stood a flying chariot, and in the chariot a band of luminous beings. One amongst them who looked like a king and appeared to be the chief stepped out of the chariot, and, poised in air, called to the old man to come out.&lt;/p&gt;
-&lt;p&gt;“The time has come,” he said, “for Princess Moonlight to return to the moon from whence she came. She committed a grave fault, and as a punishment was sent to live down here for a time. We know what good care you have taken of the Princess, and we have rewarded you for this and have sent you wealth and prosperity. We put the gold in the bamboos for you to find.”&lt;/p&gt;
-&lt;p&gt;“I have brought up this Princess for twenty years and never once has she done a wrong thing, therefore the lady you are seeking cannot be this one,” said the old man. “I pray you to look elsewhere.”&lt;/p&gt;
-&lt;p&gt;Then the messenger called aloud, saying:&lt;/p&gt;
-&lt;p&gt;“Princess Moonlight, come out from this lowly dwelling. Rest not here another moment,”&lt;/p&gt;
-&lt;p&gt;At these words the screens of the Princess’s room slid open of their own accord, revealing the Princess shining in her own radiance, bright and wonderful and full of beauty.&lt;/p&gt;
-&lt;p&gt;The messenger led her forth and placed her in the chariot. She looked back, and saw with pity the deep sorrow of the old man. She spoke to him many comforting words, and told him that it was not her will to leave him and that he must always think of her when looking at the moon.&lt;/p&gt;
-&lt;p&gt;The bamboo-cutter implored to be allowed to accompany her, but this was not allowed. The Princess took off her embroidered outer garment and gave it to him as a keepsake.&lt;/p&gt;
-&lt;p&gt;One of the moon beings in the chariot held a wonderful coat of wings, another had a phial full of the Elixir of Life which was given the Princess to drink. She swallowed a little and was about to give the rest to the old man, but she was prevented from doing so.&lt;/p&gt;
-&lt;p&gt;The robe of wings was about to be put upon her shoulders, but she said:&lt;/p&gt;
-&lt;p&gt;“Wait a little. I must not forget my good friend the Emperor. I must write him once more to say good-by while still in this human form.”&lt;/p&gt;
-&lt;p&gt;In spite of the impatience of the messengers and charioteers she kept them waiting while she wrote. She placed the phial of the Elixir of Life with the letter, and, giving them to the old man, she asked him to deliver them to the Emperor.&lt;/p&gt;
-&lt;p&gt;Then the chariot began to roll heavenwards towards the moon, and as they all gazed with tearful eyes at the receding Princess, the dawn broke, and in the rosy light of day the moon-chariot and all in it were lost amongst the fleecy clouds that were now wafted across the sky on the wings of the morning wind.&lt;/p&gt;
-&lt;p&gt;Princess Moonlight’s letter was carried to the Palace. His Majesty was afraid to touch the Elixir of Life, so he sent it with the letter to the top of the most sacred mountain in the land. Mount Fuji, and there the Royal emissaries burnt it on the summit at sunrise. So to this day people say there is smoke to be seen rising from the top of Mount Fuji to the clouds.&lt;/p&gt;
+&lt;p&gt;I ultimately settled on sawing an old golf club in half, stuffing a large bolt down the hollow inside, and then mounting the whole thing in a drill to facilitate easy winding of some low-gauge wire I found in our garage. To top it off, I powered the whole thing with an old computer power supply (5V at 25A I believe). The whole affair vaguely looks like some kind of torture device. The end result is a large electro magnet that can pick up very heavy weights and gets furiously hot and smells like burning plastic if left on for more than 5 minutes. Totally overkill for Boy Scouts, but totally awesome.&lt;/p&gt;
+&lt;p&gt;Mission: Success.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Stonelinks Hosted at my House</title>
+      <link>/articles/stonelinks-hosted-at-my-house/</link>
+      <pubDate>Tue, 21 Dec 2010 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/articles/stonelinks-hosted-at-my-house/</guid>
+      <description>&lt;p&gt;Looks like the kinks of my new &lt;a href=&quot;/articles/stonelinks-hosted-at-my-house/dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid.html&quot;&gt;two-server&lt;/a&gt; setup are not ironed out. I just got home from RPI and the old Dell is acting wacky at school. I thoroughly checked both machines before I left for home, and I thought everything was okay. However, upon arriving home, I checked the web server to find that it doesn’t work — not even a 404 page or a time out error, the browser just hangs.&lt;/p&gt;
+&lt;p&gt;To use anything other than HTTP on port 80, I need to be on RIP’s VPN. I log into the VPN and start with the basics. The machine (which is not behind a NAT router) responds to ping, however ssh shows the same symptoms as apache and the conenction just hangs. I don’t even get a connection refused, path not found or timeout error.&lt;/p&gt;
+&lt;p&gt;After being thoroughly baffled by this, I ran NMAP from another machine on the same network:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-bash&quot;&gt;[luke@void ~]$ nmap -A -T4 stonelinks.org
+Starting Nmap &lt;span class=&quot;number&quot;&gt;4.11&lt;/span&gt; ( http://www.insecure.org/nmap/ ) at &lt;span class=&quot;number&quot;&gt;2010&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;12&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;27&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;03&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;39&lt;/span&gt; EST
+Interesting ports on doylel2.stu.rpi.edu (&lt;span class=&quot;number&quot;&gt;128.113&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;38.125&lt;/span&gt;):
+Not shown: &lt;span class=&quot;number&quot;&gt;1676&lt;/span&gt; closed ports
+PORT    STATE SERVICE  VERSION
+&lt;span class=&quot;number&quot;&gt;21&lt;/span&gt;/tcp  open  ftp?
+&lt;span class=&quot;number&quot;&gt;22&lt;/span&gt;/tcp  open  ssh?
+&lt;span class=&quot;number&quot;&gt;80&lt;/span&gt;/tcp  open  http?
+&lt;span class=&quot;number&quot;&gt;111&lt;/span&gt;/tcp open  rpcbind?
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I have VPN access and control over other computers on the same network, but obviously no physical access to the machine. I have no idea what is going on here. My assumption is that the kernel is hanging on something? But I guess I’ll find out when I get back. Because of the way RPI manages IP addresses, the firewall at RPI, and the uncertainty of the other computer, I’m hesitant to just tell my desktop to take the old MAC / IP combo for Stonelinks until I get back on campus in case I lose both machines. Luckily I had a backup of Stonelinks that I moved to my house. Until I get back on campus, I am hosting off my houses internet connection! Be warned in this time Stonelinks will be operating in a pretty crippled capacity.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Dr. Serverlove, or How I Learned to Stop Worrying and Love the RAID</title>
+      <link>/articles/dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid/</link>
+      <pubDate>Tue, 07 Dec 2010 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/articles/dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid/</guid>
+      <description>&lt;center&gt;
+&lt;img src=&quot;{{ assets }}/img/posts/downsize-300x225.jpg&quot; class=&quot;thumbnail&quot; width=&quot;50%&quot;&gt;
+&lt;br&gt;
+These two suckers now live on my desk and throw off a ton of heat.
+&lt;/center&gt;
+
+&lt;p&gt;I recently completed some much needed upgrades to the servers (hardware and software) that run Stonelinks. This has me very excited and has been a long time in the works! Warning: long and somewhat pointless story of blood, sweat, nerdrage and glorious payoff ahead.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Despite being a humongous Linux nerd, for years I have hosted Stonelinks using Windows / &lt;a href=&quot;http://www.wampserver.com/en/&quot;&gt;WAMP&lt;/a&gt; server (which is the same thing as LAMP, just replace Linux with Windows). For a long time this was my only option as far as “free” hosting using RPI’s bandwidth, as my desktop is the only computer I own that is consistently on 24/7 and can function in a server role.&lt;/p&gt;
+&lt;p&gt;By necessity, my desktop needs to be running Windows 7 because unfortunately I need access to a bunch of programs that I can’t get or don’t exist for Linux. Things like LabVIEW for work at the &lt;a href=&quot;/articles/dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid/{{%20page.base_url%20}}work/work-at-harvard--smithsonian.html&quot;&gt;Harvard-Smithsonain Center for Astrophysics&lt;/a&gt;, MATLAB so my room mate can run his week long computational fluid dynamic simulations on for his research (we need our own supercomputer for this!), Solidworks for random CAD I occasionally do, Netflix because content licensing people are afraid of Linux and finally Team Fortress 2 because I occasionally like to get my game on. Because of the sporadic nature of when I use most of these programs, it also means that dual booting between Linux and Windows is of the question since that doesn’t guarentee uptime. I didn’t want to shut down the server while someone was using it just so I could boot into Windows and do some CAD.&lt;/p&gt;
+&lt;p&gt;Therefore, I have stuck with my WAMP setup for many years. As far as WAMP is concerned, it has sort of been “fine” most of the time, but definitely not ideal. All of the other websites I work on are hosted from some flavor of Linux. It is free, extremely stable, makes administration and development a breeze compared to Windows (what a nightmare it was to get PHP’s mail() command to work with SSL in Windows), the list goes on. &lt;/p&gt;
+&lt;p&gt;Hosting Stonelinks under Linux has been a goal/dream of mine for awhile now. Occasionally I would try using a virtual machine to host, but I’d always find that to be too resource intensive and would BSOD windows after awhile if left on for too long. Cygwin was and always has been a nightmare for me too, so I didn’t even go there. Interestingly, I did have some success with something called &lt;a href=&quot;http://www.andlinux.org/&quot;&gt;andLinux&lt;/a&gt; which, by my understanding, is an Ubuntu installation based around a Linux kernel compiled to use win32 system calls a la &lt;a href=&quot;http://www.colinux.org/&quot;&gt;coLinux&lt;/a&gt;. All the benefits of a virtual machine without the instability and losing a massive chunk of RAM. I ultimately dumped andLinux, mostly because andLinux uses a virtual network adapter to communicate with Windows. A webserver running under andLinux would be heavily bandwidth constrained for any clients other than localhost. So up until writing this I’ve been really, throughly stuck.&lt;/p&gt;
+&lt;p&gt;Fast forward to a few weeks before Christmas. For an early Christmas present, I decided to replace my Dad’s aging Dell with a Newegg special custom desktop. I built him a pretty sweet machine, and even got him using Ubuntu (quite the tech-savvy 63 year old!), with a Windows XP virtual machine to fall back on if he ever gets really stuck with something. This left his old desktop vacated for me to use!&lt;/p&gt;
+&lt;p&gt;The Dell made it’s glorious pilgrimage to RPI with me where I proceeded to wipe it’s brains and installed the latest Ubuntu on it. I then began the task of porting Stonelinks over to that machine. One problem though: my Dad’s old Dell did not have enough disk space for it. Queue my second Newegg purchase: I bought two 2-TB SATA disks and a RAID card (among other things) on cyber Monday for the crazy price of $180 (granted the RAID card is not a “real” RAID card, as none of the parity checking for RAID is done by hardware on the card it is basically a glorified SATA controller). I wrongfully assumed that since the RAID card was PCI, it would be compatible with the old Dell. I thought that since there were no SATA ports on the motherboard of the Dell I could use the RAID card to be the root of the webserver. At the very worst, I knew the firmware on the card was swappable so I could re-flash firmware on the card to make it act as a pass through (no RAID whatsoever) for the drives to the OS. Booooy was I wrong.&lt;/p&gt;
+&lt;p&gt;First of all, the RAID controller was not being picked up, not even in the BIOS, on the Dell. No matter what I tried, it wouldn’t work in the Dell (and yes I had the Linux drivers for it / proper kernel modules running). I thought I might have a defective card so I tried it in a spare PCI slot on my desktop. The card worked like a charm! At this point I was tearing my hair out — Something on the Dell’s motherboard was incompatable with the RAID card? I didn’t even care about RAID at this point, I just wanted SATA drives to work on the Dell at which point I could use something like &lt;a href=&quot;http://en.wikipedia.org/wiki/Mdadm&quot;&gt;mdadm&lt;/a&gt; for fake RAID. I thought that flashing the firmware that makes the card act like a pass through was a good idea. This opened up a new can of nightmares for me!&lt;/p&gt;
+&lt;p&gt;Turns out that Silicon Image (SI from here on out), the maker of the “fake” RAID controller chip on the card I bought, supplies its chips / firmware to 3rd parties that put together the cards and sell them. In order to even begin messing with the firmware on the card I had to use a bunch of really bad DOS executables that I called from the command line, and then had to echo the return value (took me forever to figure out how to do… damn windows shell) so I could match the number up with the response code on some PDF off their website and figure out what was wrong. At this point I am furious that I’ve wasted so much time on this. Using the sinfully awful SI tools, I eventually figured out that my card manufacturer, Rosewill, was storing the device firmware on an external flash chip that I could not flash with any different firmware.&lt;/p&gt;
+&lt;p&gt;At this point I have not slept in probably 24 hours and am feeling like I want to skewer the card on my African war sword (yes I own one of these) throw it in the oven, set it to self clean and walk away. Alas, I am too stubborn to give up like that though, so I cook up a phenomena (and what will be my final) solution to hosting this iteration of Stonelinks.&lt;/p&gt;
+&lt;p&gt;Essentially, I separated content between the two servers by keeping the RAID array on my main desktop, sharing it as a Windows share, and then using &lt;a href=&quot;https://help.ubuntu.com/community/Autofs&quot;&gt;autofs&lt;/a&gt; to mount the share on the Dell and serve it. Both machines live behind the same 10/100 switch and I can pull data off there at fairly high speeds, so I was happy! The hardest part about getting this to work was managing permissions between the two machines and finding a good way to keep track of my Desktop because its IP was no longer static. I accomplished the former by being a clever chmod user, and the latter with dynamic DNS. Overall, I’d say the lessons I learned from this were things I already knew but were or sure reinforced:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Don’t buy something (RAID card in this case) just because it is cheap.&lt;/li&gt;
+&lt;li&gt;Don’t make assumptions about how something will work, do your research.&lt;/li&gt;
+&lt;li&gt;Instead of trying solve a complicated problem all at once and banging your head against the wall, walk away from it. When you come back and attack it bit by bit, you’re more likely to have more energy and better insight.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>Documentation is done</title>
+      <link>/articles/documentation-is-done/</link>
+      <pubDate>Thu, 25 Nov 2010 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/articles/documentation-is-done/</guid>
+      <description>&lt;p&gt;Suzanne has told me to stop working on the current iteration of the documentation as I had been writing it for an audience unacquainted with my work, not for her and my coworker. I have provided her with what she needs, but it would be a shame for all the writing I did not to see the light of day. Maybe it will be useful to someone. After all, it was written for an unacquainted audience, so you might learn something! &lt;a href=&quot;/articles/documentation-is-done/{{%20page.base_url%20}}misc/CfA_doc.pdf&quot;&gt;Here it is&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>LabVIEW Custom Documentation Formats</title>
+      <link>/articles/labview-custom-documentation-formats/</link>
+      <pubDate>Mon, 22 Nov 2010 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/articles/labview-custom-documentation-formats/</guid>
+      <description>&lt;p&gt;LabVIEW is a necessary and constant evil with my work at the Harvard-Smithsonian Center for Astrophysics, but sometimes it pulls through. Earlier today I found myself with a need to extract a whole bunch of icons, block diagrams and VI hierarchies a bunch of LabVIEW programs. I had begun that onerous task that many programmers like to sip: documentation. In my case, I was using LaTeX and wanted to include visuals from my LabVIEW stuff.&lt;/p&gt;
+&lt;p&gt;Up until now I thought this would mean trying to do a million screenshots over VNC on my work computer, and then going back and cropping what I needed. This seemed horrible though and on further research I was thrilled to find out that LabVIEW can pretty much do this on its own. See the &lt;a href=&quot;http://zone.ni.com/reference/en-XX/help/371361B-01/lvconcepts/printing_vis/&quot;&gt;NI website on printing VI documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Basically what I did was import the VI hierarchy for my top level VI (the lab dashboard in my case), create a custom format for my documentation, check off what I want to appear, and then output it all as HTML. The end result looks &lt;a href=&quot;/articles/labview-custom-documentation-formats/{{%20page.base_url%20}}luke/work/cfa/example/&quot;&gt;something like this&lt;/a&gt;. Since the directory where the HTML was generated is now chock full o’ images, I just took what ones I wanted and inserted them into my documentation and discarded the HTML. Just goes to show you how a user can find many different ways to use a one part of a program for what it might not have originally been intended. Probably a couple hours of tedious screenshotting saved! And I can re-run the process any time if things change.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Latex is Fun</title>
+      <link>/articles/latex-is-fun/</link>
+      <pubDate>Mon, 22 Nov 2010 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/articles/latex-is-fun/</guid>
+      <description>&lt;p&gt;I’m using the documentation I’m writing for work at the Harvard-Smithsonain Center for Astrophysics as an excuse to learn LaTeX. For those in my generation who have grown up with MS Office or openoffice.org, LaTeX is a typesetting language that can trace its roots back to the legendary &lt;a href=&quot;http://en.wikipedia.org/wiki/Donald_Knuth&quot;&gt;Donald Knuth&lt;/a&gt; who wrote TeX back in the ‘70s.&lt;/p&gt;
+&lt;p&gt;Long story short, it is awesome and really straightforward if you’re a programmer. Honestly the thing that upsets me the most about LaTeX is that I didn’t know it existed back when Matt and I were writing / editing that &lt;a href=&quot;/articles/latex-is-fun/{{%20page.base_url%20}}misc/IED_tech_report_final.pdf&quot;&gt;137 page paper&lt;/a&gt; for the IED border patrol robot!&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Door Mounted Robo Schwarzenegger</title>
+      <link>/articles/door-mounted-roboschwarzenegger/</link>
+      <pubDate>Fri, 12 Nov 2010 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/articles/door-mounted-roboschwarzenegger/</guid>
+      <description>&lt;center&gt;
+&lt;img src=&quot;{{ assets }}/img/posts/downsize_4-225x300.jpg&quot; class=&quot;thumbnail&quot; width=&quot;50%&quot;&gt;
+&lt;/center&gt;
+&lt;br&gt;
+
+I don’t get to fool around with my own projects nearly as much as I would like, but this weekend I did devote a few hours to finishing up a robotic internet controlled camera on our apartment door, and I made it look like Arnold Schwarzenegger.
+
+&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;
+
+The pre-existing peep hole on our door didn’t exactly work, and I’m tired of people knocking and having no idea who is there, so I felt like this was an appropriate solution. The story of exactly how and why I made this goes back to this summer.
+
+One day in August I had this idea of creating a Generic Web Enabled Robotic Operating System (GWEROS… yeah I know it’s a pretty stupid sounding name, give me a break) that would essentially allow you to create an awesome, high functioning robot out of a wide variety of off the shelf hardware and popular web technologies so long as it had a few basic requirements: a webserver, a webcam, a serial port attached to a microcontroller (arduino, pic, whatever) and some servos, motors, wheels or whatever. The aspiring robot enthusiast would cobble together whatever hardware he or she can manage, install GWEROS (make the install/update process really simple like &lt;a href=&quot;http://codex.wordpress.org/Installing_WordPress&quot;&gt;wordpress&lt;/a&gt;) and be up and running in no time.
+
+Basically I thought it could be like a less hardcore version of &lt;a href=&quot;http://www.ros.org/wiki/&quot;&gt;ROS&lt;/a&gt; (which is totally badass) for use exclusively in the browser. I even think if done properly and given enough time to gather community support, people much smarter than myself could write plugins that would allow GWEROS users to do powerful things with their robots &lt;a href=&quot;http://mjpg-streamer.svn.sourceforge.net/viewvc/mjpg-streamer/mjpg-streamer/www/javascript_motiondetection.html?revision=83&amp;amp;view=markup&amp;amp;pathrev=83&quot;&gt;right from their web browser&lt;/a&gt; typically reserved high end or high priced robots.
+
+Needless to say it was an extremely ambitious for a project for the middle of a busy summer internship. While I wish I had the time to pour into making it a reality, I had more than enough on my plate at the Harvard-Smithsonain Center for Astrophysics. Therefore I only started writing the interface and just finished writing some basic camera / telemetry code this weekend. The end result is what you see here:
+
+&lt;center&gt;
+
+&lt;img class=&quot;thumbnail&quot; width=&quot;50%&quot; src=&quot;{{ assets }}/img/posts/downsize_2-150x150.jpg&quot;&gt;
+&lt;img class=&quot;thumbnail&quot; width=&quot;50%&quot; src=&quot;{{ assets }}/img/posts/downsize-150x150.jpg&quot;&gt;
+&lt;img class=&quot;thumbnail&quot; width=&quot;50%&quot; src=&quot;{{ assets }}/img/posts/downsize_3-150x150.jpg&quot;&gt;
+&lt;img class=&quot;thumbnail&quot; width=&quot;50%&quot; src=&quot;{{ assets }}/img/posts/Screenshot-150x150.png&quot;&gt;
+
+&lt;/center&gt;
+
+&lt;p&gt;The best part about it? Nobody even knows it’s there because it is disguised as Arnold Schwarzenegger.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Recursive Directory Lister</title>
+      <link>/articles/looking-back/</link>
+      <pubDate>Thu, 30 Sep 2010 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/articles/looking-back/</guid>
+      <description>&lt;p&gt;This is old. Look at posts if you want to see current versions of my projects. This was like the first thing of great significance I did with Stonelinks on my own (read: I didn’t know what I was doing). Similar to the Windows based webcam thing, I thought it was a big deal at the time. Looking back it is funny how trivial this would be to implement nowadays. Oh also, there are things in here that are just plain wrong and/or bad practice (left as an exercise to the reader to find).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; This is old. It is also the first implementation of my remote-controlled camera… under windows. It is really really bad and nobody should use it. However, I thougt I was pretty cool when I made it, and maybe it will be useful to somebody here, so I’ll leave it up. I put a much more improved version this software to use on &lt;a href=&quot;/articles/looking-back/{{%20page.base_url%20}}misc/IED_tech_report_final.pdf&quot;&gt;the border patrol robot&lt;/a&gt;. Check out page 48 of the report to see the final results and the page 118 for the code behind it.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Windows Based Webcam Control Software</title>
+      <link>/articles/windows-based-webcam-control-software/</link>
+      <pubDate>Thu, 30 Sep 2010 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/articles/windows-based-webcam-control-software/</guid>
+      <description>&lt;p&gt;I love nothing more in life than creating and tinkering with the stuff around me. Over the years, this love has taken many different forms. It started out somewhere in elementary school with Legos and taking my toys apart (much to the chigrin of my loving parents). Today it has evolved over the years into weekend projects such as the I’m about to tell you about.&lt;/p&gt;
+&lt;p&gt;One weekend early in the semester, I found myself with some rare free time and so I chose to make my own internet-aware pan-tilt fixture for my webcam. To my room mates &lt;a href=&quot;http://en.wikipedia.org/wiki/Sarcasm&quot;&gt;delight&lt;/a&gt;, I have placed the controls to this camera on this website.&lt;/p&gt;
+&lt;p&gt;Projects such as this are just the kind of thing that I love taking time to do. They span the full stack, and involve concepts that go from very low level micro controller programming to high level web programming, using all sorts of code and hardware as inbetween. It requirees quite a lot of different skill sets and knowledge of systems integration for this to work. Anyhow enough self-aggrandizing, I’ll describe how I did it starting very low level at the and working my way up.&lt;/p&gt;
+&lt;h3 id=&quot;hardware&quot;&gt;Hardware&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;/articles/windows-based-webcam-control-software/{{%20assets%20}}/img/posts/2010-02-08-193359.jpg&quot;&gt;&lt;img src=&quot;/articles/windows-based-webcam-control-software/{{%20assets%20}}/img/posts/2010-02-08-193359-150x150.jpg&quot; alt=&quot;image&quot; title=&quot;2010-02-08-193359&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This summer I came into possession of an &lt;a href=&quot;http://www.arduino.cc/&quot;&gt;Arduino&lt;/a&gt; micro controller and &lt;a href=&quot;http://www.rcuniverse.com/product_guide/servoprofile.cfm?servo_id=67&quot;&gt;some servos&lt;/a&gt;. As you can see from the pictures, I connected the servos up to the micro controller, making Y-cables for the power, ground, and signal pins of the servos. I also added a laser diode for good measure.&lt;/p&gt;
+&lt;p&gt;The servo signal pins were wired to the digital I/O ports on the arduino. I stuffed the Arduino in a metal box I had lying around and hot glued everything together. Predictably, the webcam itself didn’t require much work. It was actually given to me for free! (previous owner couldn’t find drivers for it). I just ripped the stand off of it and glued it to the servos. All in all, this was a cheap and simple that has performed very well for what it was designed to do.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;microcontroller-code&quot;&gt;Microcontroller Code&lt;/h3&gt;
+&lt;p&gt;I wrote the following code to establish basic control of the Arduino over its USB serial adapter. The servos are controlled using a technique called pulse width modulation (PWM). The comments explain what is going on, but for further background reading you can check out &lt;a href=&quot;http://en.wikipedia.org/wiki/Pulse-width_modulation&quot;&gt;this&lt;/a&gt;. It also uses EEPROM to store the position of the camera between power cycles and resets. For some background about what EEPROM is check out &lt;a href=&quot;http://en.wikipedia.org/wiki/EEPROM&quot;&gt;this&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-c&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/*
+ * File:            pantilt.c
+ * Description:     A program for controlling
+ *                  servos for use on a pan / tilt
+ *                  module on my robot
+ * Author:          Lucas Doyle (lucas.p.doyle@gmail.com)
+ * Creation Date:   October 16, 2009
+ * Revision Date:   Jan 31, 2010
+ */&lt;/span&gt;
+
+&lt;span class=&quot;comment&quot;&gt;// Since the Arduino resets itself every time a serial connection is&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;// made in windows (if you're writing characters from PHP or something),&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;// I have chosen to use the Arduinos EEPROM to store the positions&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;// between resets. Therefore we include the EEPROM header.&lt;/span&gt;
+&lt;span class=&quot;preprocessor&quot;&gt;#include EEPROM&lt;/span&gt;
+
+&lt;span class=&quot;comment&quot;&gt;// variables dealing with the pins&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt; servoPinX    =  &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;;    &lt;span class=&quot;comment&quot;&gt;// control pin for the first servo&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt; servoPinY    =  &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;;    &lt;span class=&quot;comment&quot;&gt;// control pin for the second&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt; laserpin     = &lt;span class=&quot;number&quot;&gt;13&lt;/span&gt;;    &lt;span class=&quot;comment&quot;&gt;// the camera has a little laser diode on it&lt;/span&gt;
+
+&lt;span class=&quot;comment&quot;&gt;// PWM variables&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; minPulseX    = &lt;span class=&quot;number&quot;&gt;600&lt;/span&gt;;  &lt;span class=&quot;comment&quot;&gt;// minimum servo position&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; maxPulseX    = &lt;span class=&quot;number&quot;&gt;2400&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// maximum servo position&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; minPulseY    = &lt;span class=&quot;number&quot;&gt;500&lt;/span&gt;;   &lt;span class=&quot;comment&quot;&gt;// same thing for other servo&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; maxPulseY    = &lt;span class=&quot;number&quot;&gt;1850&lt;/span&gt;;
+&lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt; turnRate    = &lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;;  &lt;span class=&quot;comment&quot;&gt;// servo turn rate increment (larger value, faster rate)&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt; refreshTim  = &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;;   &lt;span class=&quot;comment&quot;&gt;// time (ms) between pulses (50Hz)&lt;/span&gt;
+
+&lt;span class=&quot;comment&quot;&gt;// The Arduino will calculate these values&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; centerServoX;         &lt;span class=&quot;comment&quot;&gt;// center servo position&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; centerServoY;
+&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; pulseWidthX;          &lt;span class=&quot;comment&quot;&gt;// servo pulse width&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; pulseWidthY;
+&lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt; moveServo;            &lt;span class=&quot;comment&quot;&gt;// raw user input&lt;/span&gt;
+
+&lt;span class=&quot;keyword&quot;&gt;long&lt;/span&gt; lastPulse   = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;     &lt;span class=&quot;comment&quot;&gt;// recorded time (ms) of the last pulse&lt;/span&gt;
+
+&lt;span class=&quot;comment&quot;&gt;// mode variables&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; laseron      = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;     &lt;span class=&quot;comment&quot;&gt;// start out with the laser off by default&lt;/span&gt;
+
+&lt;span class=&quot;comment&quot;&gt;// party mode, some stupid idea i had to have the camera&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;// spaz out and strobe the laser, has not been written yet&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;// because i have not had time&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; partymode    = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;
+
+&lt;span class=&quot;comment&quot;&gt;// This function writes an int to eeprom at p_address&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;// Adapted from Marc Cardinals work:&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;// http://blog.ncode.ca/wp-content/uploads/2008/08/eeprom-int-readwrite.pde&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; EEPROMWriteInt(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; p_address, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; p_value)
+{
+  byte lowByte = ((p_value &amp;gt;&amp;gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;) &amp;amp; &lt;span class=&quot;number&quot;&gt;0xFF&lt;/span&gt;);
+  byte highByte = ((p_value &amp;gt;&amp;gt; &lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;) &amp;amp; &lt;span class=&quot;number&quot;&gt;0xFF&lt;/span&gt;);
+
+  EEPROM.write(p_address, lowByte);
+  EEPROM.write(p_address + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, highByte);
+}
+
+&lt;span class=&quot;comment&quot;&gt;// This function reads the int back&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;// Also adapted from Marc Cardinals work:&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;// http://blog.ncode.ca/wp-content/uploads/2008/08/eeprom-int-readwrite.pde&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; EEPROMReadInt(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; p_address)
+{
+  byte lowByte = EEPROM.read(p_address);
+  byte highByte = EEPROM.read(p_address + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);
+  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; ((lowByte &amp;lt;&amp;lt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;) &amp;amp; &lt;span class=&quot;number&quot;&gt;0xFF&lt;/span&gt;) + ((highByte &amp;lt;&amp;lt; &lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;) &amp;amp; &lt;span class=&quot;number&quot;&gt;0xFF00&lt;/span&gt;); }
+
+
+&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; setup()
+{
+  &lt;span class=&quot;comment&quot;&gt;// Set up servo and laser pins as an output  &lt;/span&gt;
+  pinMode(servoPinX, OUTPUT);  
+  pinMode(laserpin, OUTPUT);
+  pinMode(servoPinY, OUTPUT);  
+
+  &lt;span class=&quot;comment&quot;&gt;// calculate center positions for both servos  &lt;/span&gt;
+  centerServoX = maxPulseX - ((maxPulseX - minPulseX)/&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;);  
+  centerServoY = maxPulseY - (((maxPulseY - minPulseY)/&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)-&lt;span class=&quot;number&quot;&gt;280&lt;/span&gt;);  
+
+  &lt;span class=&quot;comment&quot;&gt;// If you're running this for the first time on your arduino,  &lt;/span&gt;
+  &lt;span class=&quot;comment&quot;&gt;// uncomment the next two lines to initialize the EEPROM&lt;/span&gt;
+  &lt;span class=&quot;comment&quot;&gt;// EEPROMWriteInt(0, centerServoX);  &lt;/span&gt;
+  &lt;span class=&quot;comment&quot;&gt;// EEPROMWriteInt(2, centerServoY);  &lt;/span&gt;
+
+  pulseWidthX = EEPROMReadInt(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;);  
+  pulseWidthY = EEPROMReadInt(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;);  
+
+  &lt;span class=&quot;comment&quot;&gt;// begin serial communication  &lt;/span&gt;
+  Serial.begin(&lt;span class=&quot;number&quot;&gt;9600&lt;/span&gt;);  
+
+  &lt;span class=&quot;comment&quot;&gt;//Serial.println(&quot;Arduino Serial Pan/tilt Control&quot;);&lt;/span&gt;
+  &lt;span class=&quot;comment&quot;&gt;//Serial.println(&quot;Standard WASD to move, spacebar to center&quot;);&lt;/span&gt;
+  &lt;span class=&quot;comment&quot;&gt;//Serial.println(&quot;L toggles the laser, TFGH goes to the extremes&quot;);&lt;/span&gt;
+}
+
+&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; loop()
+{  
+  &lt;span class=&quot;comment&quot;&gt;// wait for serial input&lt;/span&gt;
+  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (Serial.available() &amp;gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)
+  {
+    &lt;span class=&quot;comment&quot;&gt;// read the incoming byte:&lt;/span&gt;
+    moveServo = Serial.read();
+
+    &lt;span class=&quot;comment&quot;&gt;// if party mode is off, read in commands&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;//if (partymode == 0)&lt;/span&gt;
+    {
+      &lt;span class=&quot;comment&quot;&gt;//if (moveServo == (char) &quot; &quot;) {/*nothing happens*/}&lt;/span&gt;
+
+      &lt;span class=&quot;comment&quot;&gt;// move left&lt;/span&gt;
+      &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (moveServo == &lt;span class=&quot;string&quot;&gt;'a'&lt;/span&gt;) { pulseWidthX = pulseWidthX - turnRate; }
+
+      &lt;span class=&quot;comment&quot;&gt;// move right&lt;/span&gt;
+      &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (moveServo == &lt;span class=&quot;string&quot;&gt;'d'&lt;/span&gt;) { pulseWidthX = pulseWidthX + turnRate; }
+
+      &lt;span class=&quot;comment&quot;&gt;// move up&lt;/span&gt;
+      &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (moveServo == &lt;span class=&quot;string&quot;&gt;'w'&lt;/span&gt;) { pulseWidthY = pulseWidthY - turnRate; }
+
+      &lt;span class=&quot;comment&quot;&gt;// move down&lt;/span&gt;
+      &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (moveServo == &lt;span class=&quot;string&quot;&gt;'s'&lt;/span&gt;) { pulseWidthY = pulseWidthY + turnRate; }
+
+      &lt;span class=&quot;comment&quot;&gt;// center&lt;/span&gt;
+      &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (moveServo == &lt;span class=&quot;string&quot;&gt;'c'&lt;/span&gt;) { pulseWidthX = centerServoX; pulseWidthY = centerServoY;}
+
+      &lt;span class=&quot;comment&quot;&gt;// move hard left&lt;/span&gt;
+      &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (moveServo == &lt;span class=&quot;string&quot;&gt;'f'&lt;/span&gt;) {pulseWidthX = minPulseX; }
+
+      &lt;span class=&quot;comment&quot;&gt;// move hard right&lt;/span&gt;
+      &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (moveServo == &lt;span class=&quot;string&quot;&gt;'h'&lt;/span&gt;) {pulseWidthX = maxPulseX; }
+
+      &lt;span class=&quot;comment&quot;&gt;// move hard up&lt;/span&gt;
+      &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (moveServo == &lt;span class=&quot;string&quot;&gt;'t'&lt;/span&gt;) {pulseWidthY = minPulseY; }
+
+      &lt;span class=&quot;comment&quot;&gt;// move hard down&lt;/span&gt;
+      &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (moveServo == &lt;span class=&quot;string&quot;&gt;'g'&lt;/span&gt;) {pulseWidthY = maxPulseY; }
+
+      &lt;span class=&quot;comment&quot;&gt;// toggle the laser&lt;/span&gt;
+      &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (moveServo == &lt;span class=&quot;string&quot;&gt;'l'&lt;/span&gt;)
+      {
+        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (laseron == &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;) { digitalWrite(laserpin, HIGH); laseron = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; }
+        &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (laseron == &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) { digitalWrite(laserpin, LOW); laseron = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; }
+      }
+    }
+
+    &lt;span class=&quot;comment&quot;&gt;// however if party mode is enabled&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;//else if (partymode == 1)&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;//{&lt;/span&gt;
+      &lt;span class=&quot;comment&quot;&gt;// do some awesome stuff (not yet implemented)&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;//  Serial.print(&quot;Party!!! &quot;);&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;//}&lt;/span&gt;
+
+    &lt;span class=&quot;comment&quot;&gt;// party mode&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;//else if (moveServo == 'p')&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;//{&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;//  if (partymode == 0) { partymode = 1; }&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;//  else if (partymode == 1) { partymode = 0; }&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;//}&lt;/span&gt;
+  }
+
+  &lt;span class=&quot;comment&quot;&gt;// stop servo pulse at min and max&lt;/span&gt;
+  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (pulseWidthX &amp;gt; maxPulseX) { pulseWidthX = maxPulseX; }
+  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (pulseWidthX &amp;lt; minPulseX) { pulseWidthX = minPulseX; }
+  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (pulseWidthY &amp;gt; maxPulseY) { pulseWidthY = maxPulseY; }
+  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (pulseWidthY &amp;lt; minPulseY) { pulseWidthY = minPulseY; }
+
+  &lt;span class=&quot;comment&quot;&gt;// print pulseWidth back to the Serial Monitor (uncomment to debug)&lt;/span&gt;
+  &lt;span class=&quot;comment&quot;&gt;// Serial.print(&quot;Pulse Width: &quot;);&lt;/span&gt;
+  &lt;span class=&quot;comment&quot;&gt;// Serial.print(pulseWidth);&lt;/span&gt;
+  &lt;span class=&quot;comment&quot;&gt;// Serial.println(&quot;us&quot;);   // microseconds&lt;/span&gt;
+
+  &lt;span class=&quot;comment&quot;&gt;// pulse the servo every 20 ms (refreshTime) with current pulseWidth&lt;/span&gt;
+  &lt;span class=&quot;comment&quot;&gt;// this will hold the servo's position if unchanged, or move it if changed&lt;/span&gt;
+  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (millis() - lastPulse &amp;gt;= refreshTime)
+  {
+    EEPROMWriteInt(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, pulseWidthX);
+    EEPROMWriteInt(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, pulseWidthY);
+
+    digitalWrite(servoPinX, HIGH);   &lt;span class=&quot;comment&quot;&gt;// start the pulse&lt;/span&gt;
+    delayMicroseconds(pulseWidthX);  &lt;span class=&quot;comment&quot;&gt;// pulse width&lt;/span&gt;
+    digitalWrite(servoPinX, LOW);    &lt;span class=&quot;comment&quot;&gt;// end the pulse&lt;/span&gt;
+
+    digitalWrite(servoPinY, HIGH);   &lt;span class=&quot;comment&quot;&gt;// start the pulse for servo 2&lt;/span&gt;
+    delayMicroseconds(pulseWidthY);  &lt;span class=&quot;comment&quot;&gt;// pulse width&lt;/span&gt;
+    digitalWrite(servoPinY, LOW);    &lt;span class=&quot;comment&quot;&gt;// stop the pulse&lt;/span&gt;
+
+    lastPulse = millis();            &lt;span class=&quot;comment&quot;&gt;// save the time of the last pulse&lt;/span&gt;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;establishing-serial-communication&quot;&gt;Establishing Serial Communication&lt;/h3&gt;
+&lt;p&gt;If you load the above code into the Arduino’s IDE and flash it to your microcontroller, you end up with a nice, intuitive way of manually controlling your pan / tilt mechanism. You can try things out by opening the Serial Monitor in the Arduino IDE and moving around using WASD, or move to the extremes using TFGH. Pressing ‘C’ centers the camera back and ‘L’ &lt;a href=&quot;http://spf.fotolog.com/photo/47/10/95/vanguardista2104/1211331863_f.jpg&quot;&gt;fires the laser&lt;/a&gt;. Arguably, you could stop here and technically still have a way of controlling the camera over the internet with the power of linux. All one would need to do is open up a terminal or ssh into the machine and run the following command:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-bash&quot;&gt; ~$ screen /dev/ttyUSB0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This was not good enough for me though, as I wanted to control this through a web browser, which brings us to…&lt;/p&gt;
+&lt;h3 id=&quot;the-web-server&quot;&gt;The Web Server&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;/articles/windows-based-webcam-control-software/{{%20assets%20}}/img/posts/2010-02-08-193241.jpg&quot;&gt;&lt;img src=&quot;/articles/windows-based-webcam-control-software/{{%20assets%20}}/img/posts/2010-02-08-193241-150x150.jpg&quot; alt=&quot;image&quot; title=&quot;2010-02-08-193241&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The Arduino is cool and all, but since the ultimate goal of this project is to control it over the internet, having a web server is an obvious requirement. Unfortunately for me, my web server also happens to be my self-built desktop that I use for almost all my other engineering work and day to day activities. Because of this, I need access to few windows only applications (Solidworks, LabVIEW, Photoshop, Steam, etc..) which rules out any linux server platforms if I want 100% uptime. This is an unfortunate contstraint that caused me quite a lot of headaches down the line. In the future when I have another computer to spare and improve on this project, I will use the &lt;a href=&quot;http://blog.taragana.com/wp-content/uploads/2008/03/linux-logo.jpg&quot;&gt;right tool&lt;/a&gt; for the job. &lt;/p&gt;
+&lt;p&gt;After all that rambling, you’re probably wondering how I have my web server configured. The only relevant details are that I am running stock &lt;a href=&quot;http://www.wampserver.com/en/&quot;&gt;WampServer&lt;/a&gt; with PHP 5.3.0 with short tags enabled.&lt;/p&gt;
+&lt;h3 id=&quot;nightmare-in-php-land&quot;&gt;Nightmare in PHP land&lt;/h3&gt;
+&lt;p&gt;I thought this would be easy. Since PHP is a server side scripting language, it has libraries that allow it to read and write to and from serial ports. So one would think that something like the following would work:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-php&quot;&gt;&lt;span class=&quot;variable&quot;&gt;$fp&lt;/span&gt; =fopen(&lt;span class=&quot;string&quot;&gt;&quot;COM3&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;w&quot;&lt;/span&gt;);
+fwrite(&lt;span class=&quot;variable&quot;&gt;$fp&lt;/span&gt;, chr(&lt;span class=&quot;string&quot;&gt;'c'&lt;/span&gt;)); &lt;span class=&quot;comment&quot;&gt;// write your character to the Arduino here&lt;/span&gt;
+sleep(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);
+fclose(&lt;span class=&quot;variable&quot;&gt;$fp&lt;/span&gt;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;However, for reasons I do not completely understand, this did not work for me under Windows 7, but it did with Linux (substituting COM3 for /dev/ttyUSB0). This problem persisted, as I also tried using the &lt;a href=&quot;http://www.phpclasses.org/browse/package/3679.html&quot;&gt;PHP serial class&lt;/a&gt;, but it too proved to be equally as ineffective. I finally circumvented the need for PHP to communicate with the COM port entirely by compiling several very basic exe’s in &lt;a href=&quot;http://processing.org/&quot;&gt;processing&lt;/a&gt; that sent individual character commands to the Arduino and then called them in PHP using the exec() function.&lt;/p&gt;
+&lt;p&gt;While extremely inefficient, this was the quickest, most reliable solution to my problem. Of course, this would all have been avoided in the first place had I been using Linux, as PHP has no problem writing to /dev/ttyUSB0 like it would a normal file in Linux.&lt;/p&gt;
+&lt;h3 id=&quot;building-the-webpage&quot;&gt;Building the Webpage&lt;/h3&gt;
+&lt;p&gt;By accessing the &lt;a href=&quot;http://www.w3schools.com/PHP/php_get.asp&quot;&gt;PHP $_GET&lt;/a&gt; array, I was able to map incoming GET requests to different URLS to control what commands were sent to the camera. The PHP included in the header of the page is shown here:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-php&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// check the GET action var to see if an action is to be performed&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;isset&lt;/span&gt;(&lt;span class=&quot;variable&quot;&gt;$_GET&lt;/span&gt;[&lt;span class=&quot;string&quot;&gt;'action'&lt;/span&gt;]))
+{
+   &lt;span class=&quot;comment&quot;&gt;// action required! build our command...&lt;/span&gt;
+   &lt;span class=&quot;variable&quot;&gt;$basecmd&lt;/span&gt; = &lt;span class=&quot;string&quot;&gt;&quot;F:\\wamp\\www\\luke\\Projects\\personal_robot\\personal robot\\commands\\&quot;&lt;/span&gt;;
+   &lt;span class=&quot;variable&quot;&gt;$cmd&lt;/span&gt; = &lt;span class=&quot;variable&quot;&gt;$basecmd&lt;/span&gt; . &lt;span class=&quot;variable&quot;&gt;$_GET&lt;/span&gt;[&lt;span class=&quot;string&quot;&gt;'action'&lt;/span&gt;] . &lt;span class=&quot;string&quot;&gt;&quot;\\application.windows\\&quot;&lt;/span&gt; . &lt;span class=&quot;variable&quot;&gt;$_GET&lt;/span&gt;[&lt;span class=&quot;string&quot;&gt;'action'&lt;/span&gt;] . &lt;span class=&quot;string&quot;&gt;&quot;.exe&quot;&lt;/span&gt;;
+   exec(&lt;span class=&quot;variable&quot;&gt;$cmd&lt;/span&gt;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And the HTML for the rest of the page is simply a 3x3 table with some hyperlinks to the right URLs with things like ?action=up, ?action=down, ect. placed in the right spot.&lt;/p&gt;
+&lt;h3 id=&quot;webcam&quot;&gt;Webcam&lt;/h3&gt;
+&lt;p&gt;To manage the webcam feed, I am using a program called &lt;a href=&quot;http://www.lundie.ca/fwink/&quot;&gt;Fwink&lt;/a&gt; to take a picture every second and then using AJAX to automatically refresh the image once the page is loaded. However, there are many ways to manage a webcam feed and the details of how you do it is out of the scope of what I’m talking about here.&lt;/p&gt;
+&lt;h2 id=&quot;conclusions-and-future-improvements&quot;&gt;Conclusions and Future Improvements&lt;/h2&gt;
+&lt;p&gt;As expected, performance with this setup is less than impressive, but this was more a learning excersize than it was a perfect execution. I have no doubts in my mind that the low performance is due to the wonky way in which I have to execute system calls to run the Processing exes. For the future, as this is a rough prototype, a lot can be improved / simplified by moving to Linux.&lt;/p&gt;
+&lt;p&gt;Additionally, this is the vision component to my yet-to-be-completed personal robot, and its brains (a first generation ASUS eeepc netbook) are currently on loan to a friend of mine. Next time I see him I’ll get the machine back and we’ll start cooking with gas! (and by gas I mean Linux).&lt;/p&gt;
 </description>
     </item>
   </channel>

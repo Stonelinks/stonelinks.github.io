@@ -7307,3 +7307,7 @@ ul {
   line-height: 25px;
   color: #000000;
 }
+/* archive */
+.archive ul {
+  list-style: none;
+}
