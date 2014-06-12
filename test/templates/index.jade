@@ -15,22 +15,22 @@ block content
 
           | !{ typogr(article.intro).typogrify() }
           if article.hasMore
-            p.more
-              a(href=article.url) more
+            p.text-center
+              a.btn.btn-info(href=article.url) Read more »
 
 block prepend footer
-  .row
-    .box
+  .row(style='width: 100%; margin:0px;')
+    .box(style='display: table; width: 100%;')
       .col-lg-12
         if prevPage
           a(href=prevPage.url)
-            h2.pull-left
+            h3.pull-left
               | « Newer
         else
           a(href='/archive.html')
-            h2.pull-left
+            h3.pull-left
               | « Archives
         if nextPage
           a(href=nextPage.url)
-            h2.pull-right
+            h3.pull-right
               | Next page »
