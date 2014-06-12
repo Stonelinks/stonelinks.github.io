@@ -5,7 +5,6 @@ module.exports = function(grunt) {
   require('time-grunt')(grunt);
   require('load-grunt-tasks')(grunt);
 
-  // var BG_IMAGE_PATH = 'dist/assets/img/backgrounds/*.{png,jpg,JPG}';
 
   grunt.initConfig({
     
