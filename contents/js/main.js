@@ -5,7 +5,7 @@ var print = function(s) {
 };
 
 var chooseRandomImage = function() {
-  return window.BG_IMAGES[Math.floor(Math.random() * window.BG_IMAGES.length)].replace('dist/assets', window.ASSETS);
+  return window.BG_IMAGES[Math.floor(Math.random() * window.BG_IMAGES.length)];
 };
 
 var setBGImage = function(imageURL) {
@@ -225,10 +225,10 @@ var pages = {
 };
 
 $(document).ready(function() {
-  if (pages.hasOwnProperty(window.BASENAME)) {
+  // if (pages.hasOwnProperty(window.BASENAME)) {
     // pages[window.BASENAME]();
-  }
-  else {
-    // setBGImage(chooseRandomImage());
-  }
+  // }
+  // else {
+    setBGImage(chooseRandomImage());
+  // }
 });

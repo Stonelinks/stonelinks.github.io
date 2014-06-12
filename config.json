@@ -44,7 +44,8 @@
   "require": {
     "moment": "moment",
     "_": "underscore",
-    "typogr": "typogr"
+    "typogr": "typogr",
+    "grunt": "grunt"
   },
   "jade": {
     "pretty": true
