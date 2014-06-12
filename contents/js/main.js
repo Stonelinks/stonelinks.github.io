@@ -14,13 +14,6 @@ var setBGImage = function(imageURL) {
   document.body.style.backgroundImage = 'url(\'' + imageURL + '\')';
 };
 
-var origHash = window.location.hash;
-var changeHash = function(hash) {
-  if (hash !== undefined) {
-    window.location.hash = hash;
-  }
-};
-
 var pages = {
 
   index: function() {
@@ -136,99 +129,14 @@ var pages = {
     drawStuff();
   },
 
-  blog: function() {
-    setBGImage(chooseRandomImage());
-    
-    var _renderPost = _.template($('#post-template').html())
-
-    var posts = window.POSTS;
-    _.forEach(posts, function(post) {
-      var $postContent = $('#post-content-' + post.id)
-      if ($postContent.get(0) !== undefined) {
-        post.$content = $postContent.detach()
-      }
-    });
-
-    // get one post and add it to the page
-    var _getPost = function(postID, callback) {
-      callback = callback || pass;
-      
-      var post = _.findWhere(posts, {
-        id: postID
-      })
-      
-      if (post !== undefined) {
-        $(_renderPost(post)).appendTo('#blog-anchor');
-      }
-      callback(post);
-    };
-
-    // fetch initial posts
-    var postsLength = posts.length;
-
-    // number of posts to load
-    // pays attention to hash so we stop on the correct post
-    var postsToLoad;
-    if (origHash.length) {
-      postsToLoad = posts.indexOf(_.find(posts, function(post) {
-        return post.id.indexOf(origHash.slice(1)) != -1;
-      })) + 3;
-    }
-    if (postsToLoad === undefined || postsToLoad == -1) {
-      postsToLoad = 3;
-    }
-
-    var _done = function() {
-
-      // scroll to the post when done loading
-      if (origHash.length && $(origHash).get(0)) {
-        changeHash(origHash);
-        $(origHash).get(0).scrollIntoView(true);
-      }
-
-      $(window).scroll(_.throttle(function() {
-
-        // load posts when scrolled to the bottom
-        if (reversePosts.length && $(window).scrollTop() >= $(document).height() - $(window).height()) {
-          _getPost(reversePosts.pop().id, function(post) {
-            changeHash(post.id);
-          });
-        }
-        else {
-
-          // change hash as we scroll through posts
-          $('.post').each(function() {
-            if ($(this).offset().top - 50 < window.pageYOffset && $(this).offset().top + 50 > window.pageYOffset) {
-              changeHash($(this).find('a:first').attr('id'));
-            }
-          });
-        }
-      }, 50));
-    };
-
-    // load posts
-    var reversePosts = _.clone(posts).reverse();
-    var _getInitialPosts = function(callback) {
-      _getPost(reversePosts.pop().id, function() {
-        if (reversePosts.length + 1 > postsLength - postsToLoad) {
-          _getInitialPosts();
-        }
-        else {
-          _done();
-        }
-      });
-    };
-    _getInitialPosts();
-  },
-
   blox: pass
 };
 
 $(document).ready(function() {
-  // if (pages.hasOwnProperty(window.BASENAME)) {
-    // pages[window.BASENAME]();
-  // }
-  // else {
+  if (pages.hasOwnProperty(window.BASENAME)) {
+    pages[window.BASENAME]();
+  }
+  else {
     setBGImage(chooseRandomImage());
-  // }
+  }
 });

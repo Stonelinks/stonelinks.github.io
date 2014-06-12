@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 
 
   grunt.initConfig({
-    
+
     config: {
       src: 'contents',
       templates: 'templates',
@@ -15,12 +15,12 @@ module.exports = function(grunt) {
     },
 
     wintersmith: {
-      
+
       build: {},
-      
+
       preview: {
         options: {
-          action: "preview"
+          action: 'preview'
         }
       }
     },
@@ -52,14 +52,14 @@ module.exports = function(grunt) {
         }
       }
     },
-    
+
     concurrent: {
       server: ['wintersmith:preview', 'watch'],
       options: {
         logConcurrentOutput: true
       }
     },
-    
+
     copy: {
       nojekyll: {
         src: '.nojekyll',
@@ -79,7 +79,7 @@ module.exports = function(grunt) {
   grunt.registerTask('pre', [
     'less'
   ]);
-  
+
   grunt.registerTask('build', [
     'pre',
     'wintersmith:build',
