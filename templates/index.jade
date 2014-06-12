@@ -43,23 +43,24 @@ block body
       .tagline-bar
         = locals.tagline
 
-    .navbar.navbar-default(role='navigation')
-      .container
-        .navbar-header
-          a.navbar-brand(href='/')
-            img(src='/img/' + locals.logo)
-            = locals.title
-            br
-            small.text-muted
-              = locals.tagline
-        div
-          ul.nav.navbar-nav
-            li
-              a(href='/blog.html') Blog
-            li
-              a(href='/about.html') About
-            li
-              a(href='/projects.html') Projects
+    .landing-navbar-wrapper
+      .navbar.navbar-default(role='navigation')
+        .container
+          .navbar-header
+            a.navbar-brand(href='/')
+              img(src='/img/' + locals.logo)
+              = locals.title
+              br
+              small.text-muted
+                = locals.tagline
+          div
+            ul.nav.navbar-nav
+              li
+                a(href='/blog.html') Blog
+              li
+                a(href='/about.html') About
+              li
+                a(href='/projects.html') Projects
       footer
         .container
           .row
