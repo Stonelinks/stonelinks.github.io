@@ -1,0 +1,12 @@
+extends layout
+
+block prepend content
+  .row
+    .box
+      .col-lg-12
+        if page.title != 'Untitled'
+          hr
+          a(href=page.url)
+            h1.intro-text.text-center= page.title
+          hr
+        | !{ typogr(page.html).typogrify() }

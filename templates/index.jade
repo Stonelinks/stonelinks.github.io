@@ -1,36 +1,5 @@
 extends layout
 
 block content
-  each article in articles
-
-    .row.post
-      .box
-        .col-lg-12
-          hr
-          a(href=article.url)
-            h1.intro-text.text-center= article.title
-              br
-              small= moment.utc(article.date).format('DD. MMMM YYYY')
-          hr
-
-          | !{ typogr(article.intro).typogrify() }
-          if article.hasMore
-            p.text-center
-              a.btn.btn-info(href=article.url) Read more »
-
-block prepend footer
-  .row(style='width: 100%; margin:0px;')
-    .box(style='display: table; width: 100%;')
-      .col-lg-12
-        if prevPage
-          a(href=prevPage.url)
-            h4.pull-left
-              | « Newer
-        else
-          a(href='/archive.html')
-            h4.pull-left
-              | « Archives
-        if nextPage
-          a(href=nextPage.url)
-            h4.pull-right
-              | Next page »
+  h1
+    | hi there
