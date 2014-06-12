@@ -122,6 +122,17 @@ The camera has since been mounted to a custom pan/tilt module under the engine.
 </description>
     </item>
     <item>
+      <title>Binocular Face Tracking Sneak Peek</title>
+      <link>/articles/binocular-face-tracking-sneak-peek/</link>
+      <pubDate>Mon, 14 Mar 2011 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/articles/binocular-face-tracking-sneak-peek/</guid>
+      <description>&lt;p&gt;The code needs a little more polish before I’m happy releasing it, but here is a demo video of the latest incarnation of the ‘bot doing some binocular face detection and tracking. For added fun (and in honor of &lt;a href=&quot;http://www.thinkwithportals.com/&quot;&gt;Portal 2&lt;/a&gt; which comes out this week), I have it playing context-aware sound clips from the turrets in the game when it spots people or loses track of them.&lt;/p&gt;
+&lt;center&gt;
+&lt;iframe width=&quot;80%&quot; height=&quot;400px&quot; src=&quot;http://www.youtube.com/embed/MACHkIpAZ_w&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/center&gt;
+</description>
+    </item>
+    <item>
       <title>Active Face Tracking with Stonebot</title>
       <link>/articles/active-face-tracking-with-stonebot/</link>
       <pubDate>Mon, 14 Mar 2011 09:00:00 +0900</pubDate>
@@ -148,17 +159,6 @@ $ &lt;span class=&quot;built_in&quot;&gt;sudo&lt;/span&gt; apt-get install OpenC
 &lt;p&gt;Additionally, I have found that the wrong lighting, glasses, and long hair can throw it off as well. To be fair, Haar feature detection in this case is not incredibly accurate. The advantage it possesses in this application is relatively low computational complexity which translates into a speedy detection algorithm.&lt;/p&gt;
 &lt;h3 id=&quot;cpu-speed&quot;&gt;CPU speed&lt;/h3&gt;
 &lt;p&gt;As I said in the video, performance on the eee PC was terrible. While not surprising, this is kind of upsetting as I was considering putting it to use as the brains of the robot once I add some sort of locomotion to the system. I was pleasantly surprised however when I loaded up the code on to my new laptop (which has a Core 2 duo operating at 1.3GHz) and things worked beautifully. It would seem that OpenCV, even though I thought that python couldn’t be threaded, is somehow threading itself across both cores of the processor. As I’m still new to python and all of these technology, so sit tight! I’m still learning how all this stuff works. &lt;/p&gt;
-</description>
-    </item>
-    <item>
-      <title>Binocular Face Tracking Sneak Peek</title>
-      <link>/articles/binocular-face-tracking-sneak-peek/</link>
-      <pubDate>Mon, 14 Mar 2011 09:00:00 +0900</pubDate>
-      <guid isPermaLink="true">/articles/binocular-face-tracking-sneak-peek/</guid>
-      <description>&lt;p&gt;The code needs a little more polish before I’m happy releasing it, but here is a demo video of the latest incarnation of the ‘bot doing some binocular face detection and tracking. For added fun (and in honor of &lt;a href=&quot;http://www.thinkwithportals.com/&quot;&gt;Portal 2&lt;/a&gt; which comes out this week), I have it playing context-aware sound clips from the turrets in the game when it spots people or loses track of them.&lt;/p&gt;
-&lt;center&gt;
-&lt;iframe width=&quot;80%&quot; height=&quot;400px&quot; src=&quot;http://www.youtube.com/embed/MACHkIpAZ_w&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/center&gt;
 </description>
     </item>
     <item>
