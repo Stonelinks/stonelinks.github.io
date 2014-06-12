@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>New Resume - Stonelinks
+    </title>
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Lucas Doyle's website">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400italic,400,700">
+    <link rel="stylesheet" href="/css/main.css"><!--[if lt IE 9]>
+    <script src="vendor/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="vendor/html5shiv/dest/respond.min.js"></script><![endif]-->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/underscore/underscore.js"></script>
+    <script src="/js/main.js"></script>
+  </head>
+  <body>
+    <div class="landing"><a href="/" class="brand"><img src="/img/logos/big-logo.png">Stonelinks</a>
+      <div class="tagline-bar">Lucas Doyle's website
+      </div>
+    </div>
+    <div role="navigation" class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><img src="/img/logos/big-logo.png">Stonelinks</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/articles/new-resume/">
+              <h1 class="intro-text text-center">New Resume<br><small>06. January 2013</small></h1></a>
+            <hr><p>Over the holidays I finally got around to implementing what I wish existed back when I was looking for a job: a quick, easy, flexible way to write and publish a resume in many formats. The more people who see your resume, the better your chances of getting an interview or call back from a potential employer. This means the more formats and places that your resume is viewable in, the better. When I was looking for a job, I tried to follow this strategy but quickly tired making the same change on multiple versions of my resume in different&nbsp;formats.</p>
+<p>Like any programmer that has to do anything more than once, I wanted to automate this tedious editing. So I endeavoured create a better reseume authoring solution. Specifically, I wanted these&nbsp;features:</p>
+<ul>
+<li>Explicit seperation of resume data from resume&nbsp;formatting</li>
+<li>Store resume data in an easy to manipulate&nbsp;format</li>
+<li>Write once, publish and deploy the resume&nbsp;everywhere</li>
+</ul>
+<p>I ended up engineering a solution that used a <span class="caps">JSON</span> file to store resume data, and a simple python program that would use different “writers” to spit out the resume in different formats. Here is a breakdown of the supported formats using a combination of the generator and some macros in a&nbsp;Makefile:</p>
+<ul>
+<li>text</li>
+<li>html</li>
+<li>pdf (using <a href="http://code.google.com/p/wkhtmltopdf/">wkhtmltopdf</a>)</li>
+<li>markdown</li>
+<li>stonelinks-specific markdown (basically a special markdown template used specifically for the resume on this&nbsp;website)</li>
+</ul>
+<p>Anyhow it is finished and it works great for my purposes. The code is available <a href="https://github.com/Stonelinks/resume">here</a> on github. It should be easy for others to use it, just fork and modify the <span class="caps">JSON</span> with your resume data and have at&nbsp;it!</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="width: 100%; margin:0px;" class="row">
+      <div style="display: table; width: 100%;" class="box">
+        <div class="col-lg-12"><a href="/">
+            <h3>« Back</h3></a></div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center"><a href="https://www.facebook.com/stonelinks" target="_blank" class="social"><i class="fa fa-facebook"></i></a><a href="https://github.com/Stonelinks" target="_blank" class="social"><i class="fa fa-github"></i></a><a href="https://twitter.com/#!/Stonelinks" target="_blank" class="social"><i class="fa fa-twitter"></i></a><a href="https://plus.google.com/116178490514652721625/posts" target="_blank" class="social"><i class="fa fa-google-plus"></i></a><a href="http://www.linkedin.com/pub/lucas-doyle/25/550/169" target="_blank" class="social"><i class="fa fa-linkedin"></i></a><a href="http://www.youtube.com/user/RealStonelinks" target="_blank" class="social"><i class="fa fa-youtube"></i></a><a href="/contact.html" class="footer-link">contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

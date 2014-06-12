@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Execute, Time and Plot C++ Programs with Python - Stonelinks
+    </title>
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Lucas Doyle's website">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400italic,400,700">
+    <link rel="stylesheet" href="/css/main.css"><!--[if lt IE 9]>
+    <script src="vendor/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="vendor/html5shiv/dest/respond.min.js"></script><![endif]-->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/underscore/underscore.js"></script>
+    <script src="/js/main.js"></script>
+  </head>
+  <body>
+    <div class="landing"><a href="/" class="brand"><img src="/img/logos/big-logo.png">Stonelinks</a>
+      <div class="tagline-bar">Lucas Doyle's website
+      </div>
+    </div>
+    <div role="navigation" class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><img src="/img/logos/big-logo.png">Stonelinks</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/articles/execute-time-and-plot-c-programs-with-python/">
+              <h1 class="intro-text text-center">Execute, Time and Plot C++ Programs with Python<br><small>03. February 2011</small></h1></a>
+            <hr><center>
+<img src="{{ assets }}/img/posts/Fig.png" class="thumbnail" width="80%">
+</center>
+
+<p>Hate excel? Have python take all the pain away from you! This should appeal to everyone out there who needs a quick way to analyze the runtime time of a bunch of commands to a program given an arbitrary list of arguments. Hating excel/openoffice/spreadsheets in general is&nbsp;optional.</p>
+<p>Just like every programmer, I am always trying to find new and interesting ways of automating myself out of a job. To that end, I wrote a pretty cool program last night to help automate my first algorithms&nbsp;lab.</p>
+<p><span class="more"></span></p>
+<p>Consistent with the recent trend of mine, it is in python and makes use of the <a href="http://docs.python.org/library/subprocess.html">subprocess</a> module to spawn and time instances of my C++ program and <a href="http://matplotlib.sourceforge.net/">pylab</a> to make plotting the times super easy. The comments in my code explain things in more detail, but here is the one sentence summary: Python is being used to execute two programs written in C++ with the same set of arguments and spits out a plot of their times. In this case the two C++ programs are recursive (rfib) and iterative (ifib) implementations of the Fibonacci algorithm. The fun stuff is in the&nbsp;python:</p>
+<pre><code class="lang-pre">#!/usr/bin/env python
+
+# Lucas Doyle wrote this
+
+import subprocess
+import string
+import sys
+import pylab  # matplotlib
+
+def timerun(program, args) :
+    print &#39;Starting timed execution of &#39; + program + &#39; with &#39; + str(len(args)) + &#39; arguments.&#39;
+    i = 1
+
+    # Execute program, once for each n argument
+    for n in args :
+
+        # This was really annoying. Build the arguments to the time system call to the time command.
+        # First of all, for whatever reason &#39;time&#39; didn&#39;t work correctly with any arguments other than -p, 
+        # so I used /usr/bin/time instead. Since I could not figure out why the output of &#39;time&#39; was not
+        # coming back to stdin, I use the -o (output file) and -a (append) option to just output the real
+        # execution time ( thats where &#39;-f&#39; and &#39;%e&#39; comes from ) to the file.
+        p = subprocess.Popen([&#39;/usr/bin/time&#39;, &#39;-o&#39;, &#39;runtimes.txt&#39;, &#39;-a&#39;, &#39;-f&#39;, &#39;%e&#39;, &#39;./&#39; + program, str(n)], stdout=subprocess.PIPE)
+
+        # Read back from stdin, print where we are (not required, but its nice)
+        output = p.communicate()[0]
+        sys.stdout.write( str(i) + &#39;:\tfib(&#39;+ str(n) + &#39;) = &#39; + output)
+        i += 1
+    print &#39;done&#39;
+
+    # Open up, read and return the times in the output file
+    f = open(&#39;runtimes.txt&#39;, &#39;r&#39;)
+    times = f.read().splitlines()
+
+    # Clean up old runtimes
+    subprocess.Popen([&#39;rm&#39;, &#39;runtimes.txt&#39;],stdout=subprocess.PIPE)
+
+    return times
+
+def main():
+
+    # Arguments we are interested in testing runtimes for
+    # args = 1, 5, 10, 15, 20, 25, 30, 35, 40, 41, 42, 43, 44, 45, 46, 47, 48
+    args = range(1, 56)
+
+
+
+    # Compute the runtimes of the recursive algorithm, then the iterative one
+    rtimes = timerun(&#39;rfib&#39;, args)
+    itimes = timerun(&#39;ifib&#39;, args)
+
+    # Plot it with pylab
+    pylab.xlabel(&#39;N&#39;)
+    pylab.ylabel(&#39;Time to compute fib(N) (seconds)&#39;)
+    pylab.title(&#39;Recursive vs. Iterative Execution Time for Fibionacci Sequence&#39;)
+    pylab.plot(args, rtimes, &#39;ro-&#39;, label=&#39;Recursive&#39;)
+    pylab.plot(args, itimes, &#39;bo-&#39;, label=&#39;Iterative&#39;)
+    pylab.legend()
+
+    # other drawing styles for plots in pylab:
+    # &#39;r&#39; red line, &#39;g&#39; green line, &#39;y&#39; yellow line 
+    # &#39;ro&#39; red dots as markers, &#39;r.&#39; smaller red dots, &#39;r+&#39; red pluses
+    # &#39;r--&#39; red dashed line, &#39;g^&#39; green triangles, &#39;bs&#39; blue squares
+    # &#39;rp&#39; red pentagons, &#39;r1&#39;, &#39;r2&#39;, &#39;r3&#39;, &#39;r4&#39; well, check out the markers
+
+    # save the plot as a PNG image
+    pylab.savefig(&#39;Fig.png&#39;)
+
+    # show the pylab plot window
+    pylab.show()
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<p>I’ve also attached the whole lab <a href="/articles/execute-time-and-plot-c-programs-with-python/{{%20page.base_url%20}}misc/lab1.zip">here</a> in case the python does not make sense by itself. Hope someone finds this&nbsp;useful!</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="width: 100%; margin:0px;" class="row">
+      <div style="display: table; width: 100%;" class="box">
+        <div class="col-lg-12"><a href="/">
+            <h3>« Back</h3></a></div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center"><a href="https://www.facebook.com/stonelinks" target="_blank" class="social"><i class="fa fa-facebook"></i></a><a href="https://github.com/Stonelinks" target="_blank" class="social"><i class="fa fa-github"></i></a><a href="https://twitter.com/#!/Stonelinks" target="_blank" class="social"><i class="fa fa-twitter"></i></a><a href="https://plus.google.com/116178490514652721625/posts" target="_blank" class="social"><i class="fa fa-google-plus"></i></a><a href="http://www.linkedin.com/pub/lucas-doyle/25/550/169" target="_blank" class="social"><i class="fa fa-linkedin"></i></a><a href="http://www.youtube.com/user/RealStonelinks" target="_blank" class="social"><i class="fa fa-youtube"></i></a><a href="/contact.html" class="footer-link">contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

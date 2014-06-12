@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Stonelinks
+    </title>
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="Lucas Doyle's website">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400italic,400,700">
+    <link rel="stylesheet" href="/css/main.css"><!--[if lt IE 9]>
+    <script src="vendor/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="vendor/html5shiv/dest/respond.min.js"></script><![endif]-->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/underscore/underscore.js"></script>
+    <script src="/js/main.js"></script>
+  </head>
+  <body>
+    <div class="landing"><a href="/" class="brand"><img src="/img/logos/big-logo.png">Stonelinks</a>
+      <div class="tagline-bar">Lucas Doyle's website
+      </div>
+    </div>
+    <div role="navigation" class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><img src="/img/logos/big-logo.png">Stonelinks</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/articles/a-more-accurate-coordinate-system/">
+              <h1 class="intro-text text-center">A More Accurate Coordinate System<br><small>07. January 2011</small></h1></a>
+            <hr><p><center></p>
+<p><iframe width="550" height="450" src="http://www.youtube.com/embed/c72tK4KTTj0" frameborder="0" allowfullscreen></iframe>
+</center>
+<br></p>
+<p><span class="caps">RPI</span> health and safety inspections did not take kindly to my <a href="/articles/a-more-accurate-coordinate-system/door-mounted-roboschwarzenegger.html">door mounted Robo-Schwarzenegger</a>. Apparently I’m not breaking any rules with an internet controlled webcam hanging from my door, but the power cord across the doorway is a tripping hazard. I took Arnold down and brought him home with me over the break with the goal of teaching myself some python and jumping into&nbsp;OpenCV.</p>
+<p>
+            <p class="text-center"><a href="/articles/a-more-accurate-coordinate-system/" class="btn btn-info">Read more »</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/articles/electromagnets-how-do-they-work/">
+              <h1 class="intro-text text-center">Electromagnets, How do They Work?<br><small>22. December 2010</small></h1></a>
+            <hr><center>
+<img src="{{ assets }}/img/posts/downsize1-225x300.jpg" class="thumbnail" width="50%">
+</center>
+
+<p>Home for the break! My brother asked me for help making a small electromagnet to bring into Boy Scouts for electricity merit badge. I of course jumped at the opportunity, and asked what kind of power source they are going to be using to drive said magnet. He tells me they will be using a single D battery. Thinking this is kind of small, I spent a few hours making the biggest electromagnet I could from a few things around the house I could&nbsp;find.</p>
+<p>
+            <p class="text-center"><a href="/articles/electromagnets-how-do-they-work/" class="btn btn-info">Read more »</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/articles/stonelinks-hosted-at-my-house/">
+              <h1 class="intro-text text-center">Stonelinks Hosted at my House<br><small>21. December 2010</small></h1></a>
+            <hr><p>Looks like the kinks of my new <a href="/articles/stonelinks-hosted-at-my-house/dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid.html">two-server</a> setup are not ironed out. I just got home from <span class="caps">RPI</span> and the old Dell is acting wacky at school. I thoroughly checked both machines before I left for home, and I thought everything was okay. However, upon arriving home, I checked the web server to find that it doesn’t work — not even a 404 page or a time out error, the browser just&nbsp;hangs.</p>
+<p>To use anything other than <span class="caps">HTTP</span> on port 80, I need to be on RIP’s VPN. I log into the VPN and start with the basics. The machine (which is not behind a NAT router) responds to ping, however ssh shows the same symptoms as apache and the conenction just hangs. I don’t even get a connection refused, path not found or timeout&nbsp;error.</p>
+<p>After being thoroughly baffled by this, I ran <span class="caps">NMAP</span> from another machine on the same&nbsp;network:</p>
+<pre><code class="lang-bash">[luke@void ~]$ nmap -A -T4 stonelinks.org
+Starting Nmap <span class="number">4.11</span> ( http://www.insecure.org/nmap/ ) at <span class="number">2010</span>-<span class="number">12</span>-<span class="number">27</span> <span class="number">03</span>:<span class="number">39</span> <span class="caps">EST</span>
+Interesting ports on doylel2.stu.rpi.edu (<span class="number">128.113</span>.<span class="number">38.125</span>):
+Not shown: <span class="number">1676</span> closed ports
+<span class="caps">PORT</span>    STATE SERVICE  VERSION
+<span class="number">21</span>/tcp  open  ftp?
+<span class="number">22</span>/tcp  open  ssh?
+<span class="number">80</span>/tcp  open  http?
+<span class="number">111</span>/tcp open  rpcbind?
+</code></pre>
+<p>I have <span class="caps">VPN</span> access and control over other computers on the same network, but obviously no physical access to the machine. I have no idea what is going on here. My assumption is that the kernel is hanging on something? But I guess I’ll find out when I get back. Because of the way RPI manages IP addresses, the firewall at RPI, and the uncertainty of the other computer, I’m hesitant to just tell my desktop to take the old MAC / IP combo for Stonelinks until I get back on campus in case I lose both machines. Luckily I had a backup of Stonelinks that I moved to my house. Until I get back on campus, I am hosting off my houses internet connection! Be warned in this time Stonelinks will be operating in a pretty crippled&nbsp;capacity.</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/articles/dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid/">
+              <h1 class="intro-text text-center">Dr. Serverlove, or How I Learned to Stop Worrying and Love the RAID<br><small>07. December 2010</small></h1></a>
+            <hr><center>
+<img src="{{ assets }}/img/posts/downsize-300x225.jpg" class="thumbnail" width="50%">
+<br>
+These two suckers now live on my desk and throw off a ton of heat.
+</center>
+
+<p>I recently completed some much needed upgrades to the servers (hardware and software) that run Stonelinks. This has me very excited and has been a long time in the works! Warning: long and somewhat pointless story of blood, sweat, nerdrage and glorious payoff&nbsp;ahead.</p>
+<p>
+            <p class="text-center"><a href="/articles/dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid/" class="btn btn-info">Read more »</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/articles/documentation-is-done/">
+              <h1 class="intro-text text-center">Documentation is done<br><small>25. November 2010</small></h1></a>
+            <hr><p>Suzanne has told me to stop working on the current iteration of the documentation as I had been writing it for an audience unacquainted with my work, not for her and my coworker. I have provided her with what she needs, but it would be a shame for all the writing I did not to see the light of day. Maybe it will be useful to someone. After all, it was written for an unacquainted audience, so you might learn something! <a href="/articles/documentation-is-done/{{%20page.base_url%20}}misc/CfA_doc.pdf">Here it&nbsp;is</a></p>
+
+          </div>
+        </div>
+      </div>
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/articles/labview-custom-documentation-formats/">
+              <h1 class="intro-text text-center">LabVIEW Custom Documentation Formats<br><small>22. November 2010</small></h1></a>
+            <hr><p>LabVIEW is a necessary and constant evil with my work at the Harvard-Smithsonian Center for Astrophysics, but sometimes it pulls through. Earlier today I found myself with a need to extract a whole bunch of icons, block diagrams and <span class="caps">VI</span> hierarchies a bunch of LabVIEW programs. I had begun that onerous task that many programmers like to sip: documentation. In my case, I was using LaTeX and wanted to include visuals from my LabVIEW&nbsp;stuff.</p>
+<p>Up until now I thought this would mean trying to do a million screenshots over <span class="caps">VNC</span> on my work computer, and then going back and cropping what I needed. This seemed horrible though and on further research I was thrilled to find out that LabVIEW can pretty much do this on its own. See the <a href="http://zone.ni.com/reference/en-XX/help/371361B-01/lvconcepts/printing_vis/"><span class="caps">NI</span> website on printing VI documentation</a>.</p>
+<p>
+            <p class="text-center"><a href="/articles/labview-custom-documentation-formats/" class="btn btn-info">Read more »</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/articles/latex-is-fun/">
+              <h1 class="intro-text text-center">Latex is Fun<br><small>22. November 2010</small></h1></a>
+            <hr><p>I’m using the documentation I’m writing for work at the Harvard-Smithsonain Center for Astrophysics as an excuse to learn LaTeX. For those in my generation who have grown up with <span class="caps">MS</span> Office or openoffice.org, LaTeX is a typesetting language that can trace its roots back to the legendary <a href="http://en.wikipedia.org/wiki/Donald_Knuth">Donald Knuth</a> who wrote TeX back in the&nbsp;‘70s.</p>
+<p>Long story short, it is awesome and really straightforward if you’re a programmer. Honestly the thing that upsets me the most about LaTeX is that I didn’t know it existed back when Matt and I were writing / editing that <a href="/articles/latex-is-fun/{{%20page.base_url%20}}misc/IED_tech_report_final.pdf">137 page paper</a> for the <span class="caps">IED</span> border patrol&nbsp;robot!</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/articles/door-mounted-roboschwarzenegger/">
+              <h1 class="intro-text text-center">Door Mounted Robo Schwarzenegger<br><small>12. November 2010</small></h1></a>
+            <hr><center>
+<img src="{{ assets }}/img/posts/downsize_4-225x300.jpg" class="thumbnail" width="50%">
+</center>
+<br>
+
+I don’t get to fool around with my own projects nearly as much as I would like, but this weekend I did devote a few hours to finishing up a robotic internet controlled camera on our apartment door, and I made it look like Arnold&nbsp;Schwarzenegger.
+
+
+            <p class="text-center"><a href="/articles/door-mounted-roboschwarzenegger/" class="btn btn-info">Read more »</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/articles/looking-back/">
+              <h1 class="intro-text text-center">Recursive Directory Lister<br><small>30. September 2010</small></h1></a>
+            <hr><p>This is old. Look at posts if you want to see current versions of my projects. This was like the first thing of great significance I did with Stonelinks on my own (read: I didn’t know what I was doing). Similar to the Windows based webcam thing, I thought it was a big deal at the time. Looking back it is funny how trivial this would be to implement nowadays. Oh also, there are things in here that are just plain wrong and/or bad practice (left as an exercise to the reader to&nbsp;find).</p>
+<p><strong>Edit:</strong> This is old. It is also the first implementation of my remote-controlled camera… under windows. It is really really bad and nobody should use it. However, I thougt I was pretty cool when I made it, and maybe it will be useful to somebody here, so I’ll leave it up. I put a much more improved version this software to use on <a href="/articles/looking-back/{{%20page.base_url%20}}misc/IED_tech_report_final.pdf">the border patrol robot</a>. Check out page 48 of the report to see the final results and the page 118 for the code behind&nbsp;it.</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/articles/windows-based-webcam-control-software/">
+              <h1 class="intro-text text-center">Windows Based Webcam Control Software<br><small>30. September 2010</small></h1></a>
+            <hr><p>I love nothing more in life than creating and tinkering with the stuff around me. Over the years, this love has taken many different forms. It started out somewhere in elementary school with Legos and taking my toys apart (much to the chigrin of my loving parents). Today it has evolved over the years into weekend projects such as the I’m about to tell you&nbsp;about.</p>
+<p>One weekend early in the semester, I found myself with some rare free time and so I chose to make my own internet-aware pan-tilt fixture for my webcam. To my room mates <a href="http://en.wikipedia.org/wiki/Sarcasm">delight</a>, I have placed the controls to this camera on this&nbsp;website.</p>
+<p>Projects such as this are just the kind of thing that I love taking time to do. They span the full stack, and involve concepts that go from very low level micro controller programming to high level web programming, using all sorts of code and hardware as inbetween. It requirees quite a lot of different skill sets and knowledge of systems integration for this to work. Anyhow enough self-aggrandizing, I’ll describe how I did it starting very low level at the and working my way&nbsp;up.</p>
+<h3 id="hardware">Hardware</h3>
+<p><a href="/articles/windows-based-webcam-control-software/{{%20assets%20}}/img/posts/2010-02-08-193359.jpg"><img src="/articles/windows-based-webcam-control-software/{{%20assets%20}}/img/posts/2010-02-08-193359-150x150.jpg" alt="image" title="2010-02-08-193359"></a></p>
+<p>This summer I came into possession of an <a href="http://www.arduino.cc/">Arduino</a> micro controller and <a href="http://www.rcuniverse.com/product_guide/servoprofile.cfm?servo_id=67">some servos</a>. As you can see from the pictures, I connected the servos up to the micro controller, making Y-cables for the power, ground, and signal pins of the servos. I also added a laser diode for good&nbsp;measure.</p>
+<p>The servo signal pins were wired to the digital I/O ports on the arduino. I stuffed the Arduino in a metal box I had lying around and hot glued everything together. Predictably, the webcam itself didn’t require much work. It was actually given to me for free! (previous owner couldn’t find drivers for it). I just ripped the stand off of it and glued it to the servos. All in all, this was a cheap and simple that has performed very well for what it was designed to&nbsp;do.</p>
+
+            <p class="text-center"><a href="/articles/windows-based-webcam-control-software/" class="btn btn-info">Read more »</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="width: 100%; margin:0px;" class="row">
+      <div style="display: table; width: 100%;" class="box">
+        <div class="col-lg-12"><a href="/">
+            <h3 class="pull-left">« Newer</h3></a>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center"><a href="https://www.facebook.com/stonelinks" target="_blank" class="social"><i class="fa fa-facebook"></i></a><a href="https://github.com/Stonelinks" target="_blank" class="social"><i class="fa fa-github"></i></a><a href="https://twitter.com/#!/Stonelinks" target="_blank" class="social"><i class="fa fa-twitter"></i></a><a href="https://plus.google.com/116178490514652721625/posts" target="_blank" class="social"><i class="fa fa-google-plus"></i></a><a href="http://www.linkedin.com/pub/lucas-doyle/25/550/169" target="_blank" class="social"><i class="fa fa-linkedin"></i></a><a href="http://www.youtube.com/user/RealStonelinks" target="_blank" class="social"><i class="fa fa-youtube"></i></a><a href="/contact.html" class="footer-link">contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
