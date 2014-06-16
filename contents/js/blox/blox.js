@@ -1,0 +1,434 @@
+$(document).ready(function() {
+
+if (!Detector.webgl) Detector.addGetWebGLMessage();
+
+var block = function(color, x, y) {
+  var _this = this;
+  _this.color = color;
+  _this.x = x;
+  _this.y = y;
+  _this.x_offset = 0.3;
+
+  var geometry = new THREE.CubeGeometry(1, 1, 1);
+  //var geometry = new THREE.IcosahedronGeometry(0.6, 1.0);
+  var material = new THREE.MeshPhongMaterial({
+    opacity: 0.95,
+    ambient: 0x000000,
+    color: color,
+    specular: 0x555555,
+    shininess: 3,
+    shading: THREE.Flatshading
+  });
+
+  geometry.computeBoundingBox();
+  geometry.computeVertexNormals();
+
+  _this.block_mesh = new THREE.Mesh(geometry, material);
+
+  _this.block_mesh.position.x = x - boardWidth / 2 + _this.x_offset;
+  _this.block_mesh.position.y = y - boardHeight / 2;
+
+  _this.block_mesh.scale.x = 0.8;
+  _this.block_mesh.scale.y = 0.8;
+
+  _this.block_mesh._parent = _this;
+
+  scene.add(_this.block_mesh);
+
+  // deletes this block from the board
+  this.delete_block = function() {
+    board[_this.x][_this.y] = null;
+    scene.remove(_this.block_mesh);
+  };
+
+  // moves the block to a specified location
+  this._move = function(dest_x, dest_y) {
+    log('moving ' + _this.x + ', ' + _this.y + ' to ' + dest_x + ', ' + dest_y);
+    if (board[dest_x][dest_y] != null) {
+      log('WARNING, space ' + dest_x + ', ' + dest_y + ' has something in it');
+    }
+
+    var steps = 10;
+    var delay = 20;
+
+    var start_x = _this.x;
+    var start_y = _this.y;
+    var t = 0;
+    var dir_x, dir_y;
+
+    if (start_x > dest_x) dir_x = -1;
+    else dir_x = 1;
+    if (start_y > dest_y) dir_y = -1;
+    else dir_y = 1;
+
+    var update_block_pos = function() {
+        _this.block_mesh.position.x = _this.x - boardWidth / 2 + _this.x_offset;
+        _this.block_mesh.position.y = _this.y - boardHeight / 2;
+      };
+
+    var interval = setInterval(function() {
+      _this.x += dir_x * (dest_x - start_x) / steps;
+      // j is inverted
+      _this.y += -1 * dir_y * (dest_y - start_y) / steps;
+      update_block_pos();
+      t++;
+      if (t >= steps) {
+        _this.x = dest_x;
+        _this.y = dest_y;
+        update_block_pos();
+        clearInterval(interval);
+      }
+    }, delay);
+  };
+};
+
+// Three.js objects
+var container;
+var camera, scene, renderer;
+var projector = new THREE.Projector()
+var SHADOW_MAP_WIDTH = 2048;
+var SHADOW_MAP_HEIGHT = 1024;
+
+// mouse interaction
+var mouse = {
+  x: 0,
+  y: 0
+};
+var INTERSECTED, selectedBlock;
+var controls;
+var enable_controls = false;
+
+// game objects
+var boardWidth = 8;
+var boardHeight = 9;
+var board = [];
+var coloredNeighbors = [];
+var columnList = [];
+
+var textMesh;
+var text;
+var score = 0;
+
+// main
+init();
+animate();
+
+function init() {
+  container = document.createElement('div');
+  container.style.position = 'absolute';
+  container.style.overflow = 'hidden';
+  document.body.appendChild(container);
+
+  scene = new THREE.Scene();
+  camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 10000);
+
+  camera.position.set(0, 0, 10);
+  camera.rotation.set(0, 0, 1);
+  camera.lookAt(new THREE.Vector3());
+  scene.add(camera);
+
+  var light = new THREE.DirectionalLight(0xffffff, .2);
+  light.position.set(0, 0, 100);
+  scene.add(light);
+
+  var l = [
+    [0, 0, 50],
+    [0, 0, -50],
+    [0, 50, 0],
+    [0, -50, 0],
+    [50, 0, 0],
+    [-50, 0, 0]
+  ];
+
+  for (var i = 0; i < 6; i++) {
+    var pointLight = new THREE.PointLight(0xffffff, .7);
+    pointLight.position.set(l[i][0], l[i][1], l[i][2]);
+    scene.add(pointLight);
+  }
+
+  renderer = new THREE.WebGLRenderer({
+    clearAlpha: 1,
+    clearColor: 0x808080
+  });
+
+  renderer.shadowCameraNear = 3;
+  renderer.shadowCameraFar = camera.far;
+  renderer.shadowCameraFov = 50;
+  renderer.shadowMapBias = 0.0039;
+  renderer.shadowMapDarkness = 0.5;
+  renderer.shadowMapWidth = SHADOW_MAP_WIDTH;
+  renderer.shadowMapHeight = SHADOW_MAP_HEIGHT;
+  renderer.shadowMapEnabled = true;
+  renderer.shadowMapSoft = true;
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  container.appendChild(renderer.domElement);
+
+  // POSTPROCESSING
+  renderer.autoClear = true;
+
+  var renderModel = new THREE.RenderPass(scene, camera);
+  var effectBloom = new THREE.BloomPass(0.25);
+  var effectFilm = new THREE.FilmPass(0.5, 0.125, 2048, false);
+  var effectFXAA = new THREE.ShaderPass(THREE.ShaderExtras["fxaa"]);
+
+  effectFXAA.uniforms['resolution'].value.set(1 / window.innerWidth, 1 / window.innerHeight);
+
+  effectFilm.renderToScreen = true;
+
+  composer = new THREE.EffectComposer(renderer);
+
+  composer.addPass(renderModel);
+  composer.addPass(effectFXAA);
+  composer.addPass(effectBloom);
+  composer.addPass(effectFilm);
+
+  if (enable_controls) {
+    controls = new THREE.ViewportControls(camera, renderer.domElement);
+    controls.rotateSpeed = 1.0;
+    controls.zoomSpeed = 1.2;
+    controls.panSpeed = 0.2;
+    controls.noZoom = false;
+    controls.noPan = false;
+    controls.staticMoving = false;
+    controls.dynamicDampingFactor = 0.3;
+    controls.minDistance = 0;
+    controls.maxDistance = 500 * 100;
+    controls.keys = [65, 83, 68]; // [ rotateKey, zoomKey, panKey ]
+  }
+
+  updateScore(2);
+
+  for (var i = 0; i < boardWidth; i++) {
+    var col = [];
+    for (var j = 0; j < boardHeight; j++) {
+      var _block = new block(colorGenerator(), i, j);
+      col.push(_block);
+    }
+    board.push(col);
+  }
+  container.addEventListener('mousemove', onDocumentMouseMove, false);
+  container.addEventListener('mouseup', onDocumentMouseUp, false);
+};
+
+function onDocumentMouseMove(event) {
+  event.preventDefault();
+  mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+};
+
+function onDocumentMouseUp(event) {
+  event.preventDefault();
+  if (INTERSECTED) {
+    deleteNeighbors(selectedBlock);
+  }
+};
+
+function updateScore(amount) {
+  score += amount - 2;
+  printText("Score: " + score);
+};
+
+function printText(msg) {
+  text = msg;
+  scene.remove(textMesh);
+  createText();
+};
+
+function createText() {
+  var faceMaterial = new THREE.MeshFaceMaterial();
+  var textMaterialFront = new THREE.MeshPhongMaterial({
+    color: 0xffffff,
+    shading: THREE.FlatShading
+  });
+
+  var height = 0.1;
+  var size = 0.5;
+  var hover = 4.5;
+
+  var curveSegments = 0.1;
+
+  var font = "optimer";
+  var weight = "bold";
+  var style = "normal";
+
+  var textGeo = new THREE.TextGeometry(text, {
+    size: size,
+    height: height,
+    curveSegments: curveSegments,
+    font: font,
+    weight: weight,
+    style: style,
+    material: 0,
+    extrudeMaterial: 0
+  });
+
+  textGeo.materials = [textMaterialFront];
+
+  textGeo.computeBoundingBox();
+  textGeo.computeVertexNormals();
+
+  var centerOffset = -0.5 * (textGeo.boundingBox.max.x - textGeo.boundingBox.min.x);
+
+  textMesh = new THREE.Mesh(textGeo, faceMaterial);
+
+  textMesh.position.x = centerOffset;
+  textMesh.position.y = hover;
+  textMesh.position.z = 0;
+
+  scene.add(textMesh);
+};
+
+function findNeighbors(block) {
+  var neighbors = [];
+  log('finding neighbors of ' + block.x + ', ' + block.y);
+
+  if (block.x >= 0 && block.x <= boardWidth - 2) neighbors.push(board[block.x + 1][block.y]);
+  if (block.y >= 0 && block.y <= boardHeight - 2) neighbors.push(board[block.x][block.y + 1]);
+  if (block.x <= boardWidth - 1 && block.x >= 1) neighbors.push(board[block.x - 1][block.y]);
+  if (block.y <= boardHeight - 1 && block.y >= 1) neighbors.push(board[block.x][block.y - 1]);
+
+  for (var k = 0; k < neighbors.length; k++) {
+    var thisNeighbor = neighbors[k];
+    if (thisNeighbor == null || thisNeighbor.color != block.color) {
+      continue;
+    }
+    var inNeighbors = false;
+    for (var l = 0; l < coloredNeighbors.length; l++) {
+      if (thisNeighbor.y == coloredNeighbors[l].y && thisNeighbor.x == coloredNeighbors[l].x) {
+        inNeighbors = true;
+        break;
+      }
+    }
+    if (!inNeighbors) {
+      log('adding ' + thisNeighbor.x + ', ' + thisNeighbor.y + ' to neighbors');
+      coloredNeighbors.push(thisNeighbor);
+      findNeighbors(thisNeighbor);
+    }
+  }
+};
+
+function deleteNeighbors(block) {
+  coloredNeighbors = [block];
+  findNeighbors(block);
+  if (coloredNeighbors.length >= 3) {
+    log('deleting neighbors for ' + block.x + ', ' + block.y);
+    var colTracker = {};
+    for (var i = 0; i < coloredNeighbors.length; i++) {
+      coloredNeighbors[i].delete_block();
+      colTracker[coloredNeighbors[i].x.toString()] = 1;
+    }
+    for (var col in colTracker) {
+      columnList.push(parseInt(col));
+    }
+
+    updateScore(coloredNeighbors.length);
+
+  } else {
+    log('no neighbors for ' + block.x + ', ' + block.y);
+  }
+};
+
+function fillColumn(index) {
+  var j = 0;
+  while (j != boardHeight) {
+    // if the next space is the top and it is null create a new block, go back one
+    if (j + 1 == boardHeight && board[index][boardHeight - 1] == null) {
+      var _block = new block(colorGenerator(), index, boardHeight - 1);
+      board[index][boardHeight - 1] = _block;
+      j = 0;
+    }
+    // if this block is null
+    if (board[index][j] == null) {
+      var amount = 1;
+      while (board[index][j + amount] == null) {
+        if (j + amount >= boardHeight) break;
+        else amount++;
+      }
+      // move it down
+      if (board[index][j + amount] != null) {
+        moveDown(board[index][j + amount], amount);
+      }
+    }
+    j++;
+  }
+  log('done filling holes');
+};
+
+function moveDown(block, amount) {
+  move(block, block.x, block.y - amount);
+};
+
+function move(block, dest_x, dest_y) {
+  board[dest_x][dest_y] = block;
+  board[block.x][block.y] = null;
+  block._move(dest_x, dest_y);
+};
+
+function animate() {
+  requestAnimationFrame(animate);
+
+  composer.render(0.05);
+
+  if (enable_controls) {
+    controls.update();
+  }
+
+  // fill columns
+  if (columnList.length > 0) {
+    for (var i = 0; i < columnList.length; i++) {
+      log('filling col ' + columnList[i]);
+      fillColumn(columnList[i]);
+      columnList.remove(i);
+    }
+  }
+
+  // find intersections
+  var vector = new THREE.Vector3(mouse.x, mouse.y, 1);
+  projector.unprojectVector(vector, camera);
+  var ray = new THREE.Ray(camera.position, vector.subSelf(camera.position).normalize());
+  var intersects = ray.intersectObjects(scene.children);
+
+  if (intersects.length > 0) {
+    if (INTERSECTED != intersects[0].object) {
+      INTERSECTED = intersects[0].object;
+      selectedBlock = INTERSECTED._parent;
+    }
+  } else {
+    if (INTERSECTED) {
+      INTERSECTED = null;
+      selectedBlock = null;
+    }
+  }
+  renderer.render(scene, camera);
+};
+
+//////////////////////////////////
+// utility functions
+//////////////////////////////////
+
+// Array Remove - By John Resig (MIT Licensed)
+Array.prototype.remove = function(from, to) {
+  var rest = this.slice((to || from) + 1 || this.length);
+  this.length = from < 0 ? this.length + from : from;
+  return this.push.apply(this, rest);
+};
+
+function log(msg) {
+  setTimeout(function() {
+    console.log(msg);
+  }, 0);
+};
+
+function colorGenerator() {
+  var colors = [
+  0xff0000, //red
+  0x00ff00, //green
+  0x0000ff, //blue
+  0xffff00, //yellow
+  0xa020f0, //purple
+  0x00FFE3, //purple
+  ];
+  return colors[Math.floor(Math.random() * colors.length)];
+};
+
+});

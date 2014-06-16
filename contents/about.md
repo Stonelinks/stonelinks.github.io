@@ -9,7 +9,7 @@ template: page.jade
 <br>
 <br>
 
-Hi! I'm Lucas Doyle. I'm an engineer, programmer and roboticist from Gilford, NH. I'm a recent computer and systems engineering graduate from Rensselaer Polytechnic Institute and I currently work in Tokyo, Japan at an awesome robotics startup called [MUJIN](http://mujin.co.jp)!
+I'm Lucas Doyle. I'm an engineer, programmer and roboticist from Gilford, NH. I'm a recent computer and systems engineering graduate from Rensselaer Polytechnic Institute and I currently work in Tokyo, Japan at an awesome robotics startup called [MUJIN](http://mujin.co.jp)!
 
 <br>
 

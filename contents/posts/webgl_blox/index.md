@@ -9,5 +9,5 @@ This is a quick and dirty attempt to a clone a really addicting android game cal
 I did this as an educational exercise, mostly to play around with WebGL and improve my skills at Javascript (which I know very little about). Plus programming is fun in general. The WebGL library I used used is Mr. Doob's excellent [Three.js](https://github.com/mrdoob/three.js). Hope you enjoy! Best results with Google Chrome.
 
 <div class="text-center">
-  <a href="{{relative page.dest "dist/blox.html"}}" class="btn btn-info btn-lg" target="_blank">Click here to play</a>
+  <a href="/blox.html" class="btn btn-info btn-lg" target="_blank">Click here to play</a>
 </div>
