@@ -91,5 +91,5 @@ if __name__ == "__main__":
     main()
 ```
 
-I've also attached the whole lab [here]({{ page.base_url }}misc/lab1.zip) in case the python does not make sense by itself. Hope someone finds this useful!
+I've also attached the whole lab [here](/misc/lab1.zip) in case the python does not make sense by itself. Hope someone finds this useful!
 
