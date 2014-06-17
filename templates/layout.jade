@@ -1,7 +1,8 @@
 extends base
 
 block prepend title
-  | #{ page.title + " - "}
+  if page && page.title
+    | #{ page.title + " - "}
 
 block body
   block nav
