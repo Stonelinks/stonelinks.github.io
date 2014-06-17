@@ -7311,3 +7311,20 @@ ul {
 .archive ul {
   list-style: none;
 }
+.about-jumbotron {
+  background: url('/img/me.jpg');
+  background-repeat: no-repeat;
+  background-position: center 17%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 300px;
+  position: relative;
+  color: #fff;
+}
+.about-jumbotron h1 {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
