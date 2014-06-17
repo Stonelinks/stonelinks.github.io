@@ -4,10 +4,10 @@ block body
   block nav
     .landing
       a.brand(href='/')
-        img(src='/img/' + locals.logo)
-        = locals.title
+        img(src='/img/' + locals.site.logo)
+        = locals.site.title
       .tagline-bar
-        = locals.tagline
+        = locals.site.tagline
 
     .navbar.navbar-default(role='navigation')
       .container
@@ -18,8 +18,8 @@ block body
             span.icon-bar
             span.icon-bar
           a.navbar-brand(href='/')
-            img(src='/img/' + locals.logo)
-            = locals.title
+            img(src='/img/' + locals.site.logo)
+            = locals.site.title
         .navbar-collapse.collapse
           ul.nav.navbar-nav
             li

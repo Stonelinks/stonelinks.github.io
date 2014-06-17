@@ -2,13 +2,12 @@
   "port": 9021,
   "locals": {
     "url": "",
-    "name": "Stonelinks",
-    "owner": "Lucas Doyle",
-    "description": "Lucas Doyle's website",
 
-    "title": "Stonelinks",
-    "tagline": "Lucas Doyle's website",
-    "logo": "logos/big-logo.png",
+    "site": {
+      "title": "Stonelinks",
+      "tagline": "Lucas Doyle's website",
+      "logo": "logos/big-logo.png",
+    },
 
     "social_networks": [
       {

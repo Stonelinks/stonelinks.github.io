@@ -38,21 +38,21 @@ block body
     .top-padding
     .landing
       a.brand(href='/')
-        img(src='/img/' + locals.logo)
-        = locals.title
+        img(src='/img/' + locals.site.logo)
+        = locals.site.title
       .tagline-bar
-        = locals.tagline
+        = locals.site.tagline
 
     .landing-navbar-wrapper
       .navbar.navbar-default(role='navigation')
         .container
           .navbar-header
             a.navbar-brand(href='/')
-              img(src='/img/' + locals.logo)
-              = locals.title
+              img(src='/img/' + locals.site.logo)
+              = locals.site.title
               br
               small.text-muted
-                = locals.tagline
+                = locals.site.tagline
           div
             ul.nav.navbar-nav
               li
