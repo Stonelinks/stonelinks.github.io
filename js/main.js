@@ -129,7 +129,19 @@ var pages = {
     drawStuff();
   },
 
-  blox: pass
+  blox: pass,
+  
+  luke: function() {
+    setBGImage(chooseRandomImage());
+    var jumbotron = $('.about-jumbotron');
+    if (jumbotron.get(0) !== undefined) {
+      $(document).mousemove(function(e) {
+        jumbotron.css({
+          'background-position': (50 / ($(window).width() / e.pageX)) + '% ' + (50 / ($(window).height() / e.pageY)) + '%'
+        });
+      });
+    }
+  }
 };
 
 $(document).ready(function() {

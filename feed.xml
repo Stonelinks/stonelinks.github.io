@@ -396,6 +396,15 @@ These two suckers now live on my desk and throw off a ton of heat.
 </description>
     </item>
     <item>
+      <title>Latex is Fun</title>
+      <link>/posts/latex-is-fun/</link>
+      <pubDate>Mon, 22 Nov 2010 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/posts/latex-is-fun/</guid>
+      <description>&lt;p&gt;I’m using the documentation I’m writing for work at the Harvard-Smithsonain Center for Astrophysics as an excuse to learn LaTeX. For those in my generation who have grown up with MS Office or openoffice.org, LaTeX is a typesetting language that can trace its roots back to the legendary &lt;a href=&quot;http://en.wikipedia.org/wiki/Donald_Knuth&quot;&gt;Donald Knuth&lt;/a&gt; who wrote TeX back in the ‘70s.&lt;/p&gt;
+&lt;p&gt;Long story short, it is awesome and really straightforward if you’re a programmer. Honestly the thing that upsets me the most about LaTeX is that I didn’t know it existed back when Matt and I were writing / editing that &lt;a href=&quot;/misc/IED_tech_report_final.pdf&quot;&gt;137 page paper&lt;/a&gt; for the IED border patrol robot!&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>LabVIEW Custom Documentation Formats</title>
       <link>/posts/labview-custom-documentation-formats/</link>
       <pubDate>Mon, 22 Nov 2010 09:00:00 +0900</pubDate>
@@ -404,15 +413,6 @@ These two suckers now live on my desk and throw off a ton of heat.
 &lt;p&gt;Up until now I thought this would mean trying to do a million screenshots over VNC on my work computer, and then going back and cropping what I needed. This seemed horrible though and on further research I was thrilled to find out that LabVIEW can pretty much do this on its own. See the &lt;a href=&quot;http://zone.ni.com/reference/en-XX/help/371361B-01/lvconcepts/printing_vis/&quot;&gt;NI website on printing VI documentation&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Basically what I did was import the VI hierarchy for my top level VI (the lab dashboard in my case), create a custom format for my documentation, check off what I want to appear, and then output it all as HTML. The end result looks &lt;a href=&quot;/luke/work/cfa/example/&quot;&gt;something like this&lt;/a&gt;. Since the directory where the HTML was generated is now chock full o’ images, I just took what ones I wanted and inserted them into my documentation and discarded the HTML. Just goes to show you how a user can find many different ways to use a one part of a program for what it might not have originally been intended. Probably a couple hours of tedious screenshotting saved! And I can re-run the process any time if things change.&lt;/p&gt;
-</description>
-    </item>
-    <item>
-      <title>Latex is Fun</title>
-      <link>/posts/latex-is-fun/</link>
-      <pubDate>Mon, 22 Nov 2010 09:00:00 +0900</pubDate>
-      <guid isPermaLink="true">/posts/latex-is-fun/</guid>
-      <description>&lt;p&gt;I’m using the documentation I’m writing for work at the Harvard-Smithsonain Center for Astrophysics as an excuse to learn LaTeX. For those in my generation who have grown up with MS Office or openoffice.org, LaTeX is a typesetting language that can trace its roots back to the legendary &lt;a href=&quot;http://en.wikipedia.org/wiki/Donald_Knuth&quot;&gt;Donald Knuth&lt;/a&gt; who wrote TeX back in the ‘70s.&lt;/p&gt;
-&lt;p&gt;Long story short, it is awesome and really straightforward if you’re a programmer. Honestly the thing that upsets me the most about LaTeX is that I didn’t know it existed back when Matt and I were writing / editing that &lt;a href=&quot;/misc/IED_tech_report_final.pdf&quot;&gt;137 page paper&lt;/a&gt; for the IED border patrol robot!&lt;/p&gt;
 </description>
     </item>
     <item>
