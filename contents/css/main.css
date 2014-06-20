@@ -7137,7 +7137,7 @@ p {
 }
 hr {
   border-color: #999999;
-  max-width: 400px;
+  min-width: 400px;
 }
 .brand,
 .tagline-bar {
@@ -7147,6 +7147,7 @@ hr {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 900;
+  width: 250px;
 }
 .navbar-brand img {
   float: left;
@@ -7171,7 +7172,7 @@ hr {
 .tagline-divider {
   margin: 15px auto 3px;
   border-color: #999999;
-  max-width: 250px;
+  min-width: 250px;
 }
 .box {
   background: #fff;
@@ -7314,23 +7315,62 @@ ul {
 .about-jumbotron {
   background: url('/img/me.jpg');
   background-repeat: no-repeat;
-  background-position: 50% 17%;
-  /*
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-*/
-  -webkit-background-size: 120% auto;
-  -moz-background-size: 120% auto;
-  -o-background-size: 120% auto;
-  background-size: 120% auto;
-  height: 300px;
+  width: 100%;
   color: #fff;
   position: relative;
 }
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  .about-jumbotron {
+    background-position: 55% 11%;
+    -webkit-background-size: 230% 280%;
+    -moz-background-size: 230% 280%;
+    -o-background-size: 230% 280%;
+    background-size: 230% 280%;
+    height: 200px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .about-jumbotron {
+    background-position: 55% 10%;
+    -webkit-background-size: 160% 210%;
+    -moz-background-size: 160% 210%;
+    -o-background-size: 160% 210%;
+    background-size: 160% 210%;
+    height: 200px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .about-jumbotron {
+    background-position: 60% 0%;
+    -webkit-background-size: 140% 180%;
+    -moz-background-size: 140% 180%;
+    -o-background-size: 140% 180%;
+    background-size: 140% 180%;
+    height: 250px;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .about-jumbotron {
+    background-position: 40% -25%;
+    -webkit-background-size: 130% 180%;
+    -moz-background-size: 130% 180%;
+    -o-background-size: 130% 180%;
+    background-size: 130% 180%;
+    height: 300px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .about-jumbotron {
+    background-position: 40% 0%;
+    -webkit-background-size: 110% auto;
+    -moz-background-size: 110% auto;
+    -o-background-size: 110% auto;
+    background-size: 110% auto;
+    height: 300px;
+  }
+}
 .about-jumbotron h1 {
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
   left: 10px;
 }

@@ -130,16 +130,27 @@ var pages = {
   },
 
   blox: pass,
-  
+
   luke: function() {
     setBGImage(chooseRandomImage());
     var jumbotron = $('.about-jumbotron');
     if (jumbotron.get(0) !== undefined) {
-      $(document).mousemove(function(e) {
+      var _origPosition = jumbotron.css('background-position').split('% ');
+      var _origX = parseInt(_origPosition[0]);
+      var _origY = parseInt(_origPosition[1].replace('%', ''));
+      var _moveBackground = function(e) {
+        var scale = 25;
         jumbotron.css({
-          'background-position': (50 / ($(window).width() / e.pageX)) + '% ' + (50 / ($(window).height() / e.pageY)) + '%'
+          'background-position': (_origX + (scale / ($(window).width() / e.pageX))) + '% ' + (_origY + (scale / ($(window).height() / e.pageY))) + '%'
         });
-      });
+      };
+
+      $(document).mousemove(_moveBackground);
+
+      // TODO
+      //~ document.ontouchmove = function(e) {
+        //~ _moveBackground(e);
+      //~ }
     }
   }
 };

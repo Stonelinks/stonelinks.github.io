@@ -28,7 +28,7 @@ p {
 
 hr {
   border-color: #999999;
-  max-width: 400px;
+  min-width: 400px;
 }
 
 .brand,
@@ -40,6 +40,7 @@ hr {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 900;
+  width: 250px;
 }
 
 .navbar-brand img {
@@ -69,7 +70,7 @@ hr {
 .tagline-divider {
   margin: 15px auto 3px;
   border-color: #999999;
-  max-width: 250px;
+  min-width: 250px;
 }
 
 .box {
@@ -246,28 +247,99 @@ ul {
   background: url('/img/me.jpg');
   background-repeat: no-repeat;
   
-  background-position: 50% 17%;
-
-/*
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-*/
-
-  -webkit-background-size: 120% auto;
-  -moz-background-size: 120% auto;
-  -o-background-size: 120% auto;
-  background-size: 120% auto;
-
-  height: 300px;
+  width: 100%;
   color: #fff;
 
   position: relative;
 }
 
+@media screen and (min-width: 0px) and (max-width: @screen-xs) {
+
+  .about-jumbotron {
+
+    background-position: 55% 11%;
+    
+    @xs-w-size: 230%;
+    @xs-h-size: 280%;
+    -webkit-background-size: @xs-w-size @xs-h-size;
+    -moz-background-size: @xs-w-size @xs-h-size;
+    -o-background-size: @xs-w-size @xs-h-size;
+    background-size: @xs-w-size @xs-h-size;
+
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: @screen-xs) and (max-width: @screen-sm) {
+
+  .about-jumbotron {
+
+    background-position: 55% 10%;
+    
+    @sm-w-size: 160%;
+    @sm-h-size: 210%;
+    -webkit-background-size: @sm-w-size @sm-h-size;
+    -moz-background-size: @sm-w-size @sm-h-size;
+    -o-background-size: @sm-w-size @sm-h-size;
+    background-size: @sm-w-size @sm-h-size;
+
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: @screen-sm) and (max-width: @screen-md) {
+
+  .about-jumbotron {
+
+    background-position: 60% 0%;
+    
+    @md-w-size: 140%;
+    @md-h-size: 180%;
+    -webkit-background-size: @md-w-size @md-h-size;
+    -moz-background-size: @md-w-size @md-h-size;
+    -o-background-size: @md-w-size @md-h-size;
+    background-size: @md-w-size @md-h-size;
+
+    height: 250px;
+  }
+}
+
+@media screen and (min-width: @screen-md) and (max-width: @screen-lg) {
+
+  .about-jumbotron {
+
+    background-position: 40% -25%;
+    
+    @lg-w-size: 130%;
+    @lg-h-size: 180%;
+    -webkit-background-size: @lg-w-size @lg-h-size;
+    -moz-background-size: @lg-w-size @lg-h-size;
+    -o-background-size: @lg-w-size @lg-h-size;
+    background-size: @lg-w-size @lg-h-size;
+
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: @screen-lg) {
+
+  .about-jumbotron {
+
+    background-position: 40% 0%;
+    
+    @lg-w-size: 110%;
+    @lg-h-size: auto;
+    -webkit-background-size: @lg-w-size @lg-h-size;
+    -moz-background-size: @lg-w-size @lg-h-size;
+    -o-background-size: @lg-w-size @lg-h-size;
+    background-size: @lg-w-size @lg-h-size;
+
+    height: 300px;
+  }
+}
+
 .about-jumbotron h1 {
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
   left: 10px;
 }
