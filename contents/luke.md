@@ -15,7 +15,7 @@ In the past I've worked with microcontrollers, embedded [control systems](http:/
 
 Outside of robotics I also have a keen interest in avaiation, astronomy, economics, making things with my hands and running. I'm a naturally curious individual and constantly have side projects going on. Oh and I love the outdoors!
 
-<div class="">
+<div class="hide">
 
 ###Background
 

@@ -22,7 +22,7 @@ var pages = {
     $('body').bind('touchmove', function(e) {e.preventDefault()});
     $('body').css('overflow', 'hidden');
 
-    // vertical center (pity this isn't elegant with css)
+    // vertical center (pity this still isn't elegant with css)
     var verticalCenter = function() {
       var windowHeight = $(window).height();
       var landingHeight = $('.landing-navbar-wrapper').height();
@@ -56,6 +56,7 @@ var pages = {
     var ctx = canvas.getContext('2d');
     var img = new Image();
     var bgImg = new Image();
+    bgImgNotSet = true;
     var alpha = 0.0;
     var speed = 0.05;
     var delta = speed;
@@ -80,10 +81,12 @@ var pages = {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // background at full opacity
-      ctx.save();
-      ctx.globalAlpha = 1.0;
-      ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
-      ctx.restore();
+      if (!bgImgNotSet) {
+        ctx.save();
+        ctx.globalAlpha = 1.0;
+        ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
+        ctx.restore();
+      }
 
       // faded image
       ctx.globalAlpha = alpha;
@@ -102,6 +105,7 @@ var pages = {
 
       // switch every six seconds
       setTimeout(function() {
+        bgImgNotSet = false;
         bgImg.src = img.src;
       }, 6000);
     };
@@ -115,7 +119,7 @@ var pages = {
       img.src = chooseRandomImage();
     };
 
-    img.src = bgImg.src = chooseRandomImage();
+    img.src = chooseRandomImage();
 
     // update canvas size
     var resizeCanvas = function() {
