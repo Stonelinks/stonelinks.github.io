@@ -8,7 +8,7 @@ JSON.stringify([{
   id: 'anybots',
   name: 'Super_robert / Anystats',
   image: 'projects/anybots.jpg',
-  desc: 'Tools I wrote for Anybots that statistically monitor and compute information about fleets of robots.'
+  desc: 'Tools for Anybots that statistically monitor and compute information about fleets of robots.'
 },
 {
   id: 'stoolbotics',

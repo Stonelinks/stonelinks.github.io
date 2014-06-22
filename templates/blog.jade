@@ -11,7 +11,6 @@ block content
               br
               small= moment.utc(article.date).format('DD. MMMM YYYY')
           hr
-
           | !{ typogr(article.intro).typogrify() }
           if article.hasMore
             p.text-center

@@ -107,7 +107,7 @@ var pages = {
       setTimeout(function() {
         bgImgNotSet = false;
         bgImg.src = img.src;
-      }, 6000);
+      }, 4000);
     };
 
     bgImg.onload = function() {
@@ -169,15 +169,19 @@ var pages = {
         $(this).css('height', '');
         heights.push($(this).height());
       });
-      var maxHeight = _.max(heights);
-
       $s.each(function() {
-        $(this).height(maxHeight);
+        $(this).height(_.max(heights));
       });
     };
 
     var _setProjectPageHeights = function() {
-      _setMaxHeight('.project-box-outer');
+      var s = '.project-box-outer';
+      if ($(window).width() < 768) {
+        $(s).css('height', '');
+      }
+      else {
+        _setMaxHeight(s);
+      }
     };
     $('.project-row img').load(_setProjectPageHeights);
     $(window).resize(_setProjectPageHeights);

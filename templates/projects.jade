@@ -5,15 +5,15 @@ block prepend content
 
   .row.project-row
     each project in projects
-      .col-sm-12.col-md-4.col-lg-3.project-box-outer
+      .col-xs-12.col-sm-6.col-md-4.project-box-outer
         .project-box
           hr
           a(href='/projects/' + project.id + '/index.html')
             h3.intro-text.text-center
-              = project.name
+              | !{ typogr(project.name).typogrify() }
           hr
-          a(href='/projects/' + project.id + '/index.html')
+          a.img-link(href='/projects/' + project.id + '/index.html')
             img(src='/img/' + project.image)
           a(href='/projects/' + project.id + '/index.html')
             p
-              = project.desc
+              | !{ typogr(project.desc).typogrify() }
