@@ -73,11 +73,40 @@ hr {
   min-width: 250px;
 }
 
-.box {
+.box,
+.project-box {
   background: #fff;
   background: rgba(255,255,255,0.9);
   margin-bottom: 20px;
-  padding: 30px 15px;
+  padding: 10px;
+}
+
+.project-row {
+  margin-top: 0px;
+  margin-left: -25px;
+  margin-right: -25px;
+}
+
+.project-box-outer {
+  padding: 0px;
+}
+
+.project-box {
+  padding: 20px;
+  padding-top: 0px;
+  margin-right: 20px;
+}
+
+.project-box:before {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.project-box img,
+.project-box hr {
+  max-width: 100%;
+  min-width: 0%;
 }
 
 .intro-text {
