@@ -156,6 +156,31 @@ var pages = {
         //~ _moveBackground(e);
       //~ }
     }
+  },
+
+  projects: function() {
+    setBGImage(chooseRandomImage());
+
+    var _setMaxHeight = function(s) {
+      var $s = $(s);
+
+      var heights = [];
+      $s.each(function() {
+        $(this).css('height', '');
+        heights.push($(this).height());
+      });
+      var maxHeight = _.max(heights);
+
+      $s.each(function() {
+        $(this).height(maxHeight);
+      });
+    };
+
+    var _setProjectPageHeights = function() {
+      _setMaxHeight('.project-box-outer');
+    };
+    $('.project-row img').load(_setProjectPageHeights);
+    $(window).resize(_setProjectPageHeights);
   }
 };
 

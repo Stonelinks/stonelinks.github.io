@@ -5,13 +5,15 @@ block prepend content
 
   .row.project-row
     each project in projects
-      .col-sm-4.project-box-outer
+      .col-sm-12.col-md-4.col-lg-3.project-box-outer
         .project-box
           hr
           a(href='/projects/' + project.id + '/index.html')
-            h2.intro-text.text-center
+            h3.intro-text.text-center
               = project.name
           hr
-          img(src='/img/' + project.image)
-          p
-            = project.desc
+          a(href='/projects/' + project.id + '/index.html')
+            img(src='/img/' + project.image)
+          a(href='/projects/' + project.id + '/index.html')
+            p
+              = project.desc

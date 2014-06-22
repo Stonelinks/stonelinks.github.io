@@ -7192,7 +7192,8 @@ hr {
 .project-box {
   padding: 20px;
   padding-top: 0px;
-  margin-right: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .project-box:before {
   content: '';
@@ -7337,6 +7338,7 @@ ul {
   list-style: none;
 }
 .about-jumbotron {
+  margin-top: 12.5px;
   background: url('/img/me.jpg');
   background-repeat: no-repeat;
   width: 100%;
