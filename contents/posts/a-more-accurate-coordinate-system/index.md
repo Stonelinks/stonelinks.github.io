@@ -7,7 +7,6 @@ template: article.jade
 <center>
 <iframe width="550" height="450" src="http://www.youtube.com/embed/c72tK4KTTj0" frameborder="0" allowfullscreen></iframe>
 </center>
-<br>
 
 RPI health and safety inspections did not take kindly to my [door mounted Robo-Schwarzenegger](door-mounted-roboschwarzenegger.html). Apparently I'm not breaking any rules with an internet controlled webcam hanging from my door, but the power cord across the doorway is a tripping hazard. I took Arnold down and brought him home with me over the break with the goal of teaching myself some python and jumping into OpenCV.
 
@@ -27,7 +26,6 @@ When implementing this protocol,  in that list is used to pick a servo object to
 
 ##The Python
 
-* * * * *
 
 Now not to diss PHP or anything (which is what I have most of my experience with at this point), but python just seems like a more grown up language. There is a lot to like about it. Every time I read or hear about something cool being done, it is almost always involves python! So far with the tutorials out there it has been awesome. The python segments here are short and not very advanced. I wrote one important function - move(). It takes an angle and a servo as arguments and -- you guessed it -- moves the specified servo to their specified angle. One problem though -- due to me being an imperfect craftsman and not mounting the servos perfectly straight, the angular position of (90, 90) does not make the camera point straight ahead as one would expect. Therefore I wrote another simple diagnostic function to allow the interactive centering of the servos. Once I had the middle for the X and Y axis, I could use this in the move function to shift the centers.
 
@@ -59,7 +57,6 @@ def spiral():
 
 ##Conclusion & Attachments
 
-* * * * *
 
 So that was it! Now I have unrestricted access to use python to do (almost) whatever I want! Looking at the python bindings for OpenCV next!
 

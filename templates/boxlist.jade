@@ -1,0 +1,14 @@
+extends page
+
+block append content
+  .row
+    each thing in page.metadata.list
+      .box
+        .col-lg-12
+          hr
+          h1.intro-text.text-center= thing.name
+          hr
+          a.img-link(href='#')
+            img(src='/img/' + thing.image)
+          p
+            | !{ typogr(thing.desc).typogrify() }

@@ -5,7 +5,7 @@ template: article.jade
 ---
 
 <center>
-<img src="{{ assets }}/img/posts/downsize-300x225.jpg" class="thumbnail" width="50%">
+<img src="{{ assets }}/img/posts/downsize-300x225.jpg" width="50%">
 <br>
 These two suckers now live on my desk and throw off a ton of heat.
 </center>

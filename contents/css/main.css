@@ -7200,11 +7200,12 @@ hr {
   display: table;
   clear: both;
 }
-.project-box a.img-link {
+a.img-link {
   display: block;
   width: 100%;
   text-align: center;
 }
+a.img-link img,
 .project-box img {
   max-width: 100%;
   height: auto;

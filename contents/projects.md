@@ -5,12 +5,12 @@ projects:
   -
     id: boeing
     name: Boeing Robotic Wingbox
-    image: projects/wingbox.png
+    image: projects/boeing/screenshot.png
     desc: A robot that performs maintenance from inside an aircraft wing. Developed as part of my Boeing sponsored capstone project.
   -
     id: anybots
     name: Super_robert / Anystats
-    image: projects/anybots.jpg
+    image: projects/anybots/qb.jpg
     desc: Tools for Anybots that statistically monitor and compute information about fleets of robots.
   -
     id: stoolbotics
@@ -25,7 +25,7 @@ projects:
   -
     id: amf
     name: Automated Multilayer Fabrication
-    image: projects/chamber.png
+    image: projects/amf/chamber.png
     desc: Work at the Harvard-Smithsonian Center for Astrophysics on prototyping X-ray optics.
   -
     id: abs
@@ -52,4 +52,9 @@ projects:
     name: Mindshare
     image: projects/corgi.jpg
     desc: A forum I used to run for sharing ideas. Has nothing to do with corgis.
+  -
+    id: FIRST
+    name: FIRST Robotics
+    image: projects/FIRST.gif
+    desc: Robots I helped design as part of Team 1831.
 ---

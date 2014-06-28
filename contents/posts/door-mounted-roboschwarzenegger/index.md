@@ -5,9 +5,8 @@ template: article.jade
 ---
 
 <center>
-<img src="{{ assets }}/img/posts/downsize_4-225x300.jpg" class="thumbnail" width="50%">
+<img src="{{ assets }}/img/posts/downsize_4-225x300.jpg" width="50%">
 </center>
-<br>
 
 I don't get to fool around with my own projects nearly as much as I would like, but this weekend I did devote a few hours to finishing up a robotic internet controlled camera on our apartment door, and I made it look like Arnold Schwarzenegger.
 
@@ -23,10 +22,10 @@ Needless to say it was an extremely ambitious for a project for the middle of a 
 
 <center>
 
-<img class="thumbnail" width="50%" src="{{ assets }}/img/posts/downsize_2-150x150.jpg">
-<img class="thumbnail" width="50%" src="{{ assets }}/img/posts/downsize-150x150.jpg">
-<img class="thumbnail" width="50%" src="{{ assets }}/img/posts/downsize_3-150x150.jpg">
-<img class="thumbnail" width="50%" src="{{ assets }}/img/posts/Screenshot-150x150.png">
+<img width="50%" src="{{ assets }}/img/posts/downsize_2-150x150.jpg">
+<img width="50%" src="{{ assets }}/img/posts/downsize-150x150.jpg">
+<img width="50%" src="{{ assets }}/img/posts/downsize_3-150x150.jpg">
+<img width="50%" src="{{ assets }}/img/posts/Screenshot-150x150.png">
 
 </center>
 

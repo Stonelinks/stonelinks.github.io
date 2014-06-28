@@ -18,7 +18,6 @@ This summer I came into possession of an [Arduino](http://www.arduino.cc/) micro
 
 The servo signal pins were wired to the digital I/O ports on the arduino. I stuffed the Arduino in a metal box I had lying around and hot glued everything together. Predictably, the webcam itself didn't require much work. It was actually given to me for free! (previous owner couldn't find drivers for it). I just ripped the stand off of it and glued it to the servos. All in all, this was a cheap and simple that has performed very well for what it was designed to do.
 
-* * * * *
 
 ###Microcontroller Code
 
