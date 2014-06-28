@@ -23,7 +23,7 @@ var pages = {
     $('body').css('overflow', 'hidden');
 
     // vertical center (pity this still isn't elegant with css)
-    var verticalCenter = function() {
+    var _verticalCenter = function() {
       var windowHeight = $(window).height();
       var landingHeight = $('.landing-navbar-wrapper').height();
 
@@ -33,11 +33,11 @@ var pages = {
       $('.top-padding').height(ratio * paddingHeight);
       $('.bottom-padding').height((1.0 + (1.0 - ratio)) * paddingHeight);
     };
-    verticalCenter();
-    $(window).resize(verticalCenter);
+    _verticalCenter();
+    $(window).resize(_verticalCenter);
 
-    // requestAnimFrame shim
-    var requestAnimFrame = (function() {
+    // requestAnimationFrame shim
+    var _requestAnimationFrame = (function() {
       return window.requestAnimationFrame ||
         window.webkitRequestAnimationFrame ||
         window.mozRequestAnimationFrame ||
@@ -56,13 +56,31 @@ var pages = {
     var ctx = canvas.getContext('2d');
     var img = new Image();
     var bgImg = new Image();
+    var imagesShown = {};
     bgImgNotSet = true;
     var alpha = 0.0;
     var speed = 0.05;
     var delta = speed;
 
+    // choose a random image (but avoid repeats)
+    var _chooseImage = function() {
+      var candidate = chooseRandomImage();
+
+      window.imagesShown = imagesShown;
+
+      if (_.isEqual(_.keys(imagesShown).sort(), window.BG_IMAGES)) {
+        imagesShown = {};
+      }
+
+      while (imagesShown.hasOwnProperty(candidate)) {
+        candidate = chooseRandomImage();
+      }
+      imagesShown[candidate] = true;
+      return candidate;
+    };
+
     // draw the canvas
-    var drawStuff = function() {
+    var _drawStuff = function() {
 
       // compute new alpha
       alpha += delta;
@@ -93,7 +111,7 @@ var pages = {
       ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
       // repeat forever
-      requestAnimFrame(drawStuff);
+      _requestAnimationFrame(_drawStuff);
     };
 
     // fade images back and fourth
@@ -116,21 +134,21 @@ var pages = {
       alpha = 1.0;
       delta = -speed;
 
-      img.src = chooseRandomImage();
+      img.src = _chooseImage();
     };
 
-    img.src = chooseRandomImage();
+    img.src = _chooseImage();
 
     // update canvas size
-    var resizeCanvas = function() {
+    var _resizeCanvas = function() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
-    resizeCanvas();
-    $(window).resize(resizeCanvas);
+    _resizeCanvas();
+    $(window).resize(_resizeCanvas);
 
     // start
-    drawStuff();
+    _drawStuff();
   },
 
   blox: pass,
@@ -152,9 +170,9 @@ var pages = {
       $(document).mousemove(_moveBackground);
 
       // TODO
-      //~ document.ontouchmove = function(e) {
-        //~ _moveBackground(e);
-      //~ }
+      // document.ontouchmove = function(e) {
+        // _moveBackground(e);
+      // }
     }
   },
 
@@ -189,6 +207,7 @@ var pages = {
 };
 
 $(document).ready(function() {
+  window.BG_IMAGES = window.BG_IMAGES.sort();
   if (pages.hasOwnProperty(window.BASENAME)) {
     pages[window.BASENAME]();
   }
