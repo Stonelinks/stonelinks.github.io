@@ -12,7 +12,7 @@ template: page.jade
 </ul>
 
 
-This section of the documentation goes into some more detailed use cases of Stoolbotics. Before reading this you should probably check out the [quickstart]({{wr}}projects/stoolbotics/quickstart.html).
+This section of the documentation goes into some more detailed use cases of Stoolbotics. Before reading this you should probably check out the [quickstart](/projects/stoolbotics/quickstart.html).
 
 
 ##Working with Robots

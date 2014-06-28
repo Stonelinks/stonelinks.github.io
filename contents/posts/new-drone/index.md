@@ -12,7 +12,7 @@ Good news and bad news! The good news is that in the last month or so at RPI, my
 
 <div class="text-center">
 
-<img src="{{ assets }}/img/posts/drone.jpg" width="80%">
+<img src="/img/posts/drone.jpg" width="80%">
 
 Early mock up of the drone with the wings removed.
 
