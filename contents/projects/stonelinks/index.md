@@ -3,11 +3,11 @@ title: Stonelinks web framework
 template: page.jade
 ---
 
-<center>
+<div class="img-container">
 
-<img src="/img/projects/stonelinks-web-framework.png" width="50%">
+<img src="/img/projects/stonelinks-web-framework.png">
 
-</center>
+</div>
 
 This project is my take on how writing a mostly static website with a lot of content should work. It is what runs this very website. It requires no server side scripting or database of any kind. In fact it is all static files that are compiled from simple markdown files. It is a not well suited for web apps with an API and lots of dynamic content.
 

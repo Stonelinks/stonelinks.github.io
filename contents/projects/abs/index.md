@@ -3,11 +3,11 @@ title: Awesome Backup System
 template: page.jade
 ---
 
-<center>
+<div class="img-container">
 
 <img src="/img/projects/abs.png">
 
-</center>
+</div>
 
 The The Awesome Backup System (ABS) is a cross platform file backup solution. It consists of a server and three native clients for OS X, Windows and Linux. They all communicate with the server through a common API. It was written for a Software Design and Documentation class at RPI in the fall of 2011 by Lucas Doyle, Peter Fernandes, Kevin Todisco and Jeff Hui. Because of this, the majority of the time making ABS was actually spent documenting things.
 

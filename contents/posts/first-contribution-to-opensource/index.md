@@ -4,7 +4,11 @@ date: 2012-03-27
 template: article.jade
 ---
 
-<center><iframe width="500px" height="400px" src="http://www.youtube.com/embed/gLsdHmCKoEw" frameborder="0" allowfullscreen></iframe></center>
+<div class="img-container">
+
+<iframe src="http://www.youtube.com/embed/gLsdHmCKoEw" frameborder="0" allowfullscreen></iframe>
+
+</div>
 
 Up until now, all my contributions to open source have been programs I have written, and as a general practice I like to make all my work open source if I can. However, its a nice feeling to have some code I wrote incorporated into someone else's project for a change.
 

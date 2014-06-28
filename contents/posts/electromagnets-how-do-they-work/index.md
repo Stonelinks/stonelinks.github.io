@@ -4,9 +4,11 @@ date: 2010-12-22
 template: article.jade
 ---
 
-<center>
-<img src="/img/posts/downsize1-225x300.jpg" width="50%">
-</center>
+<div class="img-container">
+
+<img src="/img/posts/downsize1-225x300.jpg">
+
+</div>
 
 Home for the break! My brother asked me for help making a small electromagnet to bring into Boy Scouts for electricity merit badge. I of course jumped at the opportunity, and asked what kind of power source they are going to be using to drive said magnet. He tells me they will be using a single D battery. Thinking this is kind of small, I spent a few hours making the biggest electromagnet I could from a few things around the house I could find.
 

@@ -8,7 +8,7 @@ block append content
           hr
           h1.intro-text.text-center= thing.name
           hr
-          a.img-link(href='#')
+          .text-center.img-container
             img(src='/img/' + thing.image)
           p
             | !{ typogr(thing.desc).typogrify() }

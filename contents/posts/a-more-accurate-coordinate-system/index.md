@@ -4,9 +4,11 @@ date: 2011-01-07
 template: article.jade
 ---
 
-<center>
-<iframe width="550" height="450" src="http://www.youtube.com/embed/c72tK4KTTj0" frameborder="0" allowfullscreen></iframe>
-</center>
+<div class="img-container">
+
+<iframe src="http://www.youtube.com/embed/c72tK4KTTj0" frameborder="0" allowfullscreen></iframe>
+
+</div>
 
 RPI health and safety inspections did not take kindly to my [door mounted Robo-Schwarzenegger](door-mounted-roboschwarzenegger.html). Apparently I'm not breaking any rules with an internet controlled webcam hanging from my door, but the power cord across the doorway is a tripping hazard. I took Arnold down and brought him home with me over the break with the goal of teaching myself some python and jumping into OpenCV.
 

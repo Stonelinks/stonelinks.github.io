@@ -4,9 +4,11 @@ date: 2011-02-03
 template: article.jade
 ---
 
-<center>
-<img src="/img/posts/Fig.png" width="80%">
-</center>
+<div class="img-container">
+
+<img src="/img/posts/Fig.png">
+
+</div>
 
 Hate excel? Have python take all the pain away from you! This should appeal to everyone out there who needs a quick way to analyze the runtime time of a bunch of commands to a program given an arbitrary list of arguments. Hating excel/openoffice/spreadsheets in general is optional.
 

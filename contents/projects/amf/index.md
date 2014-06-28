@@ -3,9 +3,11 @@ title: Harvard - Smithsonian Center for Astrophysics
 template: page.jade
 ---
 
-<center>
-<img src="/img/projects/amf/chamber-logo.png" width="66%">
-</center>
+<div class="img-container">
+
+<img src="/img/projects/amf/chamber-logo.png">
+
+</div>
 
 For the past two and a half years I have worked at the [Harvard-Smithsonian Center for Astrophysics](http://www.cfa.harvard.edu/hea/). I have had the distinct pleasure of working with Dr. Suzanne Romaine and Ricardo Bruni integrating hardware and writing software that automates the fabrication of multilayer (and sometimes non-multilayer) coatings on the surfaces of optics to be used for X-ray imaging (mostly in astronomy).
 
@@ -19,13 +21,13 @@ My time at Harvard-CFA has been tremendously valuable to me. While there, I have
 
 My major accomplishment at Harvard has been writing a software suite to automate the complex task of creating an optic given specific geometry, thicknesses, and various other parameters. Along the journey of implementing this software, I have had to develop a fairly complex UI, control sequences, hardware monitors, error checkers and motion control algorithms. One of the most challenging parts has been the program's organization. As the complexity of the programs have increased, I've had to rework the architecture several times to increase efficiency, eliminate redundant code, and ultimately make the whole application much tighter, portable and friendly to use and develop. The utilities I wrote also allow me to monitor and control chamber hardware without being physically present in the lab (extremely valuable for troubleshooting from home or out of state).
 
-<center>
-<img src="/img/projects/amf/screen.jpg" width="84%">
+<div class="img-container">
 
-</center>
-<small>
-**Multilayer Fabrication Software**: The gray window is for production runs, the blue window is for manually controlling chamber hardware, and the yellow window displays the state of the chamber.
-</small>
+<img src="/img/projects/amf/screen.jpg">
+
+<p>**Multilayer Fabrication Software**: The gray window is for production runs, the blue window is for manually controlling chamber hardware, and the yellow window displays the state of the chamber.</p>
+
+</div>
 
 Ultimately the end result has been the creation of a robust and easy to use system that makes the daunting task of producing any kind of X-ray optic as easy and stress free as possible for someone not intimately familiar with the details. Hopefully if NASA ever gets enough funding, my tools will end up creating something that ends up in space!
 

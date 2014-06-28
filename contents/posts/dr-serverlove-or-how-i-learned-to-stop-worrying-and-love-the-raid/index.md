@@ -4,11 +4,13 @@ date: 2010-12-07
 template: article.jade
 ---
 
-<center>
-<img src="/img/posts/downsize-300x225.jpg" width="50%">
-<br>
-These two suckers now live on my desk and throw off a ton of heat.
-</center>
+<div class="img-container">
+
+<img src="/img/posts/downsize-300x225.jpg">
+
+<p>These two suckers now live on my desk and throw off a ton of heat.</p>
+
+</div>
 
 I recently completed some much needed upgrades to the servers (hardware and software) that run Stonelinks. This has me very excited and has been a long time in the works! Warning: long and somewhat pointless story of blood, sweat, nerdrage and glorious payoff ahead.
 

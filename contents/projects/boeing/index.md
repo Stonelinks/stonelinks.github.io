@@ -3,11 +3,11 @@ title: Boeing Robotic Wingbox
 template: page.jade
 ---
 
-<center>
-<img src="/img/projects/boeing/screenshot.png" width="54%">
+<div class="img-container">
 
-Simulation window
-</center>
+<img src="/img/projects/boeing/screenshot.png">
+
+</div>
 
 ##Introduction
 
@@ -19,12 +19,13 @@ Boeing is therefore very interested in developing a robotic system that could op
 
 My capstone team was tasked to develop a simulation and control system for a robot designed to operate inside an aircraft wing. In addition to being the the team leader, I also wrote all the code for the simulator and the control system as other members of the team were not familiar with programming. The general architecture of the system was split into three parts: a client, server and the simulation data.
 
-<center>
-<img src="/img/projects/boeing/sc14.png" width="99%">
+<div class="img-container">
 
-Screenshot of the Client aligning to bolt holes.
+<img src="/img/projects/boeing/sc14.png">
 
-</center>
+<p>Screenshot of the client aligning to bolt holes.</p>
+
+</div>
 
 General operation started out with the client to coordinate and control the robot. Using joysticks, renderings of the robot in its environment and a video feed, the operator could modify the client's simulation environment to be in some desired state. This state could then be sent to the server, which would do all the heavy computations necessary to smoothly and safely transition the robot from current state to the desired state. The server also did other computationally intensive tasks, such as object recognition of things like bolt holes, physics calculations, etc. Ultimately, the server was designed to control a physical robot, so an abstraction layer was developed to allow generic information from the simulation to be translated into hardware specific instructions. Support was also implemented between client and server to allow many clients to safely control a single robot. Finally, all the simulation data (descriptions of the kinematic bodies that comprise a robot, the location and contents of the simulation environment, etc) was kept separate to increase flexibility and portability of the software.
 

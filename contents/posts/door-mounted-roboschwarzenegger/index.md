@@ -4,9 +4,11 @@ date: 2010-11-12
 template: article.jade
 ---
 
-<center>
-<img src="/img/posts/downsize_4-225x300.jpg" width="50%">
-</center>
+<div class="img-container">
+
+<img src="/img/posts/downsize_4-225x300.jpg">
+
+</div>
 
 I don't get to fool around with my own projects nearly as much as I would like, but this weekend I did devote a few hours to finishing up a robotic internet controlled camera on our apartment door, and I made it look like Arnold Schwarzenegger.
 
@@ -20,13 +22,13 @@ Basically I thought it could be like a less hardcore version of [ROS](http://www
 
 Needless to say it was an extremely ambitious for a project for the middle of a busy summer internship. While I wish I had the time to pour into making it a reality, I had more than enough on my plate at the Harvard-Smithsonain Center for Astrophysics. Therefore I only started writing the interface and just finished writing some basic camera / telemetry code this weekend. The end result is what you see here:
 
-<center>
+<div class="img-container">
 
 <img width="50%" src="/img/posts/downsize_2-150x150.jpg">
 <img width="50%" src="/img/posts/downsize-150x150.jpg">
 <img width="50%" src="/img/posts/downsize_3-150x150.jpg">
 <img width="50%" src="/img/posts/Screenshot-150x150.png">
 
-</center>
+</div>
 
 The best part about it? Nobody even knows it's there because it is disguised as Arnold Schwarzenegger.

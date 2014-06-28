@@ -4,19 +4,20 @@ date: 2012-04-22
 template: article.jade
 ---
 
-<div class="text-center"><iframe width="500px" height="400px" src="http://www.youtube.com/embed/3jVKegQwZ24" frameborder="0" allowfullscreen></iframe></div>
+<div class="img-container">
 
+<iframe src="http://www.youtube.com/embed/3jVKegQwZ24" frameborder="0" allowfullscreen></iframe>
+
+</div>
 
 Good news and bad news! The good news is that in the last month or so at RPI, my friend Drew and I were able to cobble together some electronics with my airplane and squeeze in some successful flights of an RC drone! In the video above you can see one of our voyages. I successfully piloted the plane over RPI's campus for about a half hour until the winds started to pick up and things got messy.
 
+<div class="img-container">
 
-<div class="text-center">
+<img src="/img/posts/drone.jpg">
 
-<img src="/img/posts/drone.jpg" width="80%">
-
-Early mock up of the drone with the wings removed.
-
-The camera has since been mounted to a custom pan/tilt module under the engine.
+<p>Early mock up of the drone with the wings removed.</p>
+<p>The camera has since been mounted to a custom pan/tilt module under the engine.</p>
 
 </div>
 
