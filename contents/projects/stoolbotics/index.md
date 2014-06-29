@@ -51,6 +51,4 @@ Stoolbotics has many features that make it attractive to the aspiring roboticst 
 
 ##Code
 
-Stoolbotics is open source! See the code that runs Stoolbotics on github!
-####[https://github.com/Stonelinks/Stoolbotics](https://github.com/Stonelinks/Stoolbotics)
-
+Check out the source code on [github](https://github.com/Stonelinks/Stoolbotics)

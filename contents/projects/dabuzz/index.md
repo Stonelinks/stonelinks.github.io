@@ -30,6 +30,4 @@ DaBuzz is a [Rensselaer Center for Open Source (RCOS)](http://rcos.rpi.edu/) pro
 
 ##Code
 
-DaBuzz is open source! See the code that runs DaBuzz on github!
-###[https://github.com/Stonelinks/DaBuzz](https://github.com/Stonelinks/DaBuzz)
-
+Check out the source code on [github](https://github.com/Stonelinks/DaBuzz)

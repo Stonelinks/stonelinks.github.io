@@ -36,6 +36,5 @@ The The Awesome Backup System (ABS) is a cross platform file backup solution. It
 
 ##Code
 
-ABS is open source! See the code that runs ABS on github!
-###[https://github.com/Lorem/ABS](https://github.com/Lorem/ABS)
+Check out the source code on [github](https://github.com/Lorem/ABS)
 

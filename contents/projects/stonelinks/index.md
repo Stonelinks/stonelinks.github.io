@@ -67,8 +67,7 @@ In hindsight, static HTML generators like this have been done a zillion times be
 
 ##Code
 
-The code that runs Stonelinks is open source! See the code on github!
-####[https://github.com/Stonelinks/stonelinks.org](https://github.com/Stonelinks/stonelinks.org)
+Check out the source code on [github](https://github.com/Stonelinks/stonelinks.org)
 
 <br>
 
