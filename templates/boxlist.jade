@@ -8,7 +8,10 @@ block append content
           hr
           h1.intro-text.text-center= thing.name
           hr
-          .text-center.img-container
-            img(src='/img/' + thing.image)
+          .img-container
+            if thing.image
+              img(src='/img/' + thing.image)
+            else if thing.youtube
+              iframe(src=thing.youtube, frameborder="0", allowfullscreen)
           p
             | !{ typogr(thing.desc).typogrify() }
