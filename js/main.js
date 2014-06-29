@@ -22,8 +22,8 @@ var pages = {
     $('body').bind('touchmove', function(e) {e.preventDefault()});
     $('body').css('overflow', 'hidden');
 
-    // vertical center (pity this isn't elegant with css)
-    var verticalCenter = function() {
+    // vertical center (pity this still isn't elegant with css)
+    var _verticalCenter = function() {
       var windowHeight = $(window).height();
       var landingHeight = $('.landing-navbar-wrapper').height();
 
@@ -33,11 +33,11 @@ var pages = {
       $('.top-padding').height(ratio * paddingHeight);
       $('.bottom-padding').height((1.0 + (1.0 - ratio)) * paddingHeight);
     };
-    verticalCenter();
-    $(window).resize(verticalCenter);
+    _verticalCenter();
+    $(window).resize(_verticalCenter);
 
-    // requestAnimFrame shim
-    var requestAnimFrame = (function() {
+    // requestAnimationFrame shim
+    var _requestAnimationFrame = (function() {
       return window.requestAnimationFrame ||
         window.webkitRequestAnimationFrame ||
         window.mozRequestAnimationFrame ||
@@ -56,12 +56,31 @@ var pages = {
     var ctx = canvas.getContext('2d');
     var img = new Image();
     var bgImg = new Image();
+    var imagesShown = {};
+    bgImgNotSet = true;
     var alpha = 0.0;
     var speed = 0.05;
     var delta = speed;
 
+    // choose a random image (but avoid repeats)
+    var _chooseImage = function() {
+      var candidate = chooseRandomImage();
+
+      window.imagesShown = imagesShown;
+
+      if (_.isEqual(_.keys(imagesShown).sort(), window.BG_IMAGES)) {
+        imagesShown = {};
+      }
+
+      while (imagesShown.hasOwnProperty(candidate)) {
+        candidate = chooseRandomImage();
+      }
+      imagesShown[candidate] = true;
+      return candidate;
+    };
+
     // draw the canvas
-    var drawStuff = function() {
+    var _drawStuff = function() {
 
       // compute new alpha
       alpha += delta;
@@ -80,17 +99,19 @@ var pages = {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // background at full opacity
-      ctx.save();
-      ctx.globalAlpha = 1.0;
-      ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
-      ctx.restore();
+      if (!bgImgNotSet) {
+        ctx.save();
+        ctx.globalAlpha = 1.0;
+        ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
+        ctx.restore();
+      }
 
       // faded image
       ctx.globalAlpha = alpha;
       ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
       // repeat forever
-      requestAnimFrame(drawStuff);
+      _requestAnimationFrame(_drawStuff);
     };
 
     // fade images back and fourth
@@ -102,8 +123,9 @@ var pages = {
 
       // switch every six seconds
       setTimeout(function() {
+        bgImgNotSet = false;
         bgImg.src = img.src;
-      }, 6000);
+      }, 4000);
     };
 
     bgImg.onload = function() {
@@ -112,39 +134,89 @@ var pages = {
       alpha = 1.0;
       delta = -speed;
 
-      img.src = chooseRandomImage();
+      img.src = _chooseImage();
     };
 
-    img.src = bgImg.src = chooseRandomImage();
+    img.src = _chooseImage();
 
     // update canvas size
-    var resizeCanvas = function() {
+    var _resizeCanvas = function() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
-    resizeCanvas();
-    $(window).resize(resizeCanvas);
+    _resizeCanvas();
+    $(window).resize(_resizeCanvas);
 
     // start
-    drawStuff();
+    _drawStuff();
   },
 
   blox: pass,
-  
+
   luke: function() {
     setBGImage(chooseRandomImage());
     var jumbotron = $('.about-jumbotron');
     if (jumbotron.get(0) !== undefined) {
-      $(document).mousemove(function(e) {
+      var _origPosition = jumbotron.css('background-position').split('% ');
+      var _origX = parseInt(_origPosition[0]);
+      var _origY = parseInt(_origPosition[1].replace('%', ''));
+      var _moveBackground = function(e) {
+        var scale = 25;
         jumbotron.css({
-          'background-position': (50 / ($(window).width() / e.pageX)) + '% ' + (50 / ($(window).height() / e.pageY)) + '%'
+          'background-position': (_origX + (scale / ($(window).width() / e.pageX))) + '% ' + (_origY + (scale / ($(window).height() / e.pageY))) + '%'
         });
-      });
+      };
+
+      $(document).mousemove(_moveBackground);
+
+      // TODO
+      // document.ontouchmove = function(e) {
+        // _moveBackground(e);
+      // }
     }
+  },
+
+  projects: function() {
+    setBGImage(chooseRandomImage());
+
+    var _setMaxHeight = function(s) {
+      var $s = $(s);
+
+      var heights = [];
+      $s.each(function() {
+        $(this).css('height', '');
+        heights.push($(this).height());
+      });
+      $s.each(function() {
+        $(this).height(_.max(heights));
+      });
+    };
+
+    var _setProjectPageHeights = function() {
+      var s = '.project-box-outer';
+      if ($(window).width() < 768) {
+        $(s).css('height', '');
+      }
+      else {
+        _setMaxHeight(s);
+      }
+    };
+    $('.project-row img').load(_setProjectPageHeights);
+    $(window).resize(_setProjectPageHeights);
+  },
+
+  'projects/mindshare/index': function() {
+    setBGImage(chooseRandomImage());
+    $('h3').each(function() {
+      var $this = $(this);
+      $this.css('margin-top', '200px');
+      $('#mindshare-archive-anchor').append($('<li><a href="#' + $this.attr('id') + '"><b>' + $this.text() + '</b></a></li>'));
+    });
   }
 };
 
 $(document).ready(function() {
+  window.BG_IMAGES = window.BG_IMAGES.sort();
   if (pages.hasOwnProperty(window.BASENAME)) {
     pages[window.BASENAME]();
   }

@@ -6,7 +6,6 @@
     <link></link>
     <description>Lucas Doyle's website</description>
     <pubDate>Sun, 06 Jan 2013 09:00:00 +0900</pubDate>
-    <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
     <item>
       <title>New Resume</title>
@@ -65,22 +64,22 @@
       <link>/posts/new-drone/</link>
       <pubDate>Sun, 22 Apr 2012 09:00:00 +0900</pubDate>
       <guid isPermaLink="true">/posts/new-drone/</guid>
-      <description>&lt;div class=&quot;text-center&quot;&gt;&lt;iframe width=&quot;500px&quot; height=&quot;400px&quot; src=&quot;http://www.youtube.com/embed/3jVKegQwZ24&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
+      <description>&lt;div class=&quot;img-container&quot;&gt;
 
-
-&lt;p&gt;Good news and bad news! The good news is that in the last month or so at RPI, my friend Drew and I were able to cobble together some electronics with my airplane and squeeze in some successful flights of an RC drone! In the video above you can see one of our voyages. I successfully piloted the plane over RPI’s campus for about a half hour until the winds started to pick up and things got messy.&lt;/p&gt;
-&lt;div class=&quot;text-center&quot;&gt;
-
-&lt;img src=&quot;{{ assets }}/img/posts/drone.jpg&quot; class=&quot;thumbnail&quot; width=&quot;80%&quot;&gt;
-
-Early mock up of the drone with the wings removed.
-
-The camera has since been mounted to a custom pan/tilt module under the engine.
+&lt;iframe src=&quot;http://www.youtube.com/embed/3jVKegQwZ24&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;/div&gt;
 
-&lt;p&gt;&lt;br&gt;
-&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Good news and bad news! The good news is that in the last month or so at RPI, my friend Drew and I were able to cobble together some electronics with my airplane and squeeze in some successful flights of an RC drone! In the video above you can see one of our voyages. I successfully piloted the plane over RPI’s campus for about a half hour until the winds started to pick up and things got messy.&lt;/p&gt;
+&lt;div class=&quot;img-container&quot;&gt;
+
+&lt;img src=&quot;/img/posts/drone.jpg&quot;&gt;
+
+&lt;p&gt;Early mock up of the drone with the wings removed.&lt;/p&gt;
+&lt;p&gt;The camera has since been mounted to a custom pan/tilt module under the engine.&lt;/p&gt;
+
+&lt;/div&gt;
+
 &lt;p&gt;Which leads to the bad news. The bad news is that it crashed! Or rather I crashed it. Basically the wind was really strong and blew it out of range. We think it took a nose dive several hundred feet into the ground and crashed near Troy Highschool, which was very far away from us. It was lost for two days before we recovered it thanks to &lt;a href=&quot;http://www.reddit.com/r/RPI/comments/tj2b2/anyone_seen_a_red_rc_plane_last_seen_doing_a_nose/&quot;&gt;Reddit&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The damage was substantial. Besides the airframe being totally trashed, I lost my camera and a brushless motor. Drew faired better, only suffering minor damage to his radio equipment.&lt;/p&gt;
 &lt;p&gt;Future plans for the drone are:&lt;/p&gt;
@@ -103,7 +102,11 @@ The camera has since been mounted to a custom pan/tilt module under the engine.
       <link>/posts/first-contribution-to-opensource/</link>
       <pubDate>Tue, 27 Mar 2012 09:00:00 +0900</pubDate>
       <guid isPermaLink="true">/posts/first-contribution-to-opensource/</guid>
-      <description>&lt;center&gt;&lt;iframe width=&quot;500px&quot; height=&quot;400px&quot; src=&quot;http://www.youtube.com/embed/gLsdHmCKoEw&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/center&gt;
+      <description>&lt;div class=&quot;img-container&quot;&gt;
+
+&lt;iframe src=&quot;http://www.youtube.com/embed/gLsdHmCKoEw&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;/div&gt;
 
 &lt;p&gt;Up until now, all my contributions to open source have been programs I have written, and as a general practice I like to make all my work open source if I can. However, its a nice feeling to have some code I wrote incorporated into someone else’s project for a change.&lt;/p&gt;
 &lt;p&gt;The program in question here is called &lt;a href=&quot;https://github.com/gnebehay/OpenTLD&quot;&gt;OpenTLD&lt;/a&gt;. Its a program for tracking objects (not just faces) in unconstrained video streams with NO training data beforehand (TLD stands for Tracking, Learning and Detection). Instead of using precomputed classifiers (like I previously have done with OpenCV), OpenTLD builds a model of what it is supposed to be detecting on the fly. To demonstrate, above is a slightly creepy demo of OpenTLD tracking my face.&lt;/p&gt;
@@ -122,25 +125,16 @@ The camera has since been mounted to a custom pan/tilt module under the engine.
 </description>
     </item>
     <item>
-      <title>Binocular Face Tracking Sneak Peek</title>
-      <link>/posts/binocular-face-tracking-sneak-peek/</link>
-      <pubDate>Mon, 14 Mar 2011 09:00:00 +0900</pubDate>
-      <guid isPermaLink="true">/posts/binocular-face-tracking-sneak-peek/</guid>
-      <description>&lt;p&gt;The code needs a little more polish before I’m happy releasing it, but here is a demo video of the latest incarnation of the ‘bot doing some binocular face detection and tracking. For added fun (and in honor of &lt;a href=&quot;http://www.thinkwithportals.com/&quot;&gt;Portal 2&lt;/a&gt; which comes out this week), I have it playing context-aware sound clips from the turrets in the game when it spots people or loses track of them.&lt;/p&gt;
-&lt;center&gt;
-&lt;iframe width=&quot;80%&quot; height=&quot;400px&quot; src=&quot;http://www.youtube.com/embed/MACHkIpAZ_w&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/center&gt;
-</description>
-    </item>
-    <item>
       <title>Active Face Tracking with Stonebot</title>
       <link>/posts/active-face-tracking-with-stonebot/</link>
       <pubDate>Mon, 14 Mar 2011 09:00:00 +0900</pubDate>
       <guid isPermaLink="true">/posts/active-face-tracking-with-stonebot/</guid>
       <description>&lt;p&gt;I finally have it working! Very excited as I write this. So glad spring break exists otherwise I’d never have the time for this. Long story short, I have face detection working on my personal robot. Check out the video after the break to see it in action.&lt;/p&gt;
-&lt;center&gt;
-&lt;iframe width=&quot;80%&quot; height=&quot;400px&quot; src=&quot;http://www.youtube.com/embed/RRwMJ8GYT7Y&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/center&gt;
+&lt;div class=&quot;img-container&quot;&gt;
+
+&lt;iframe src=&quot;http://www.youtube.com/embed/RRwMJ8GYT7Y&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;/div&gt;
 
 &lt;p&gt;This has been a goal of mine ever since I started building my personal robot (which, in keeping with the Stonelinks legacy, shall henceforth be known as “Stonebot”). This face tracking makes use of my &lt;a href=&quot;/posts/active-face-tracking-with-stonebot/a-more-accurate-coordinate-system.html&quot;&gt;new method for positioning the camera&lt;/a&gt; that I worked on a little over winter break, and is probably the most complicated piece of python I have written to date. Here are some highlights of the project:&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -162,13 +156,28 @@ $ &lt;span class=&quot;built_in&quot;&gt;sudo&lt;/span&gt; apt-get install OpenC
 </description>
     </item>
     <item>
+      <title>Binocular Face Tracking Sneak Peek</title>
+      <link>/posts/binocular-face-tracking-sneak-peek/</link>
+      <pubDate>Mon, 14 Mar 2011 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/posts/binocular-face-tracking-sneak-peek/</guid>
+      <description>&lt;p&gt;The code needs a little more polish before I’m happy releasing it, but here is a demo video of the latest incarnation of the ‘bot doing some binocular face detection and tracking. For added fun (and in honor of &lt;a href=&quot;http://www.thinkwithportals.com/&quot;&gt;Portal 2&lt;/a&gt; which comes out this week), I have it playing context-aware sound clips from the turrets in the game when it spots people or loses track of them.&lt;/p&gt;
+&lt;div class=&quot;img-container&quot;&gt;
+
+&lt;iframe src=&quot;http://www.youtube.com/embed/MACHkIpAZ_w&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;/div&gt;
+</description>
+    </item>
+    <item>
       <title>Execute, Time and Plot C++ Programs with Python</title>
       <link>/posts/execute-time-and-plot-c-programs-with-python/</link>
       <pubDate>Thu, 03 Feb 2011 09:00:00 +0900</pubDate>
       <guid isPermaLink="true">/posts/execute-time-and-plot-c-programs-with-python/</guid>
-      <description>&lt;center&gt;
-&lt;img src=&quot;{{ assets }}/img/posts/Fig.png&quot; class=&quot;thumbnail&quot; width=&quot;80%&quot;&gt;
-&lt;/center&gt;
+      <description>&lt;div class=&quot;img-container&quot;&gt;
+
+&lt;img src=&quot;/img/posts/Fig.png&quot;&gt;
+
+&lt;/div&gt;
 
 &lt;p&gt;Hate excel? Have python take all the pain away from you! This should appeal to everyone out there who needs a quick way to analyze the runtime time of a bunch of commands to a program given an arbitrary list of arguments. Hating excel/openoffice/spreadsheets in general is optional.&lt;/p&gt;
 &lt;p&gt;Just like every programmer, I am always trying to find new and interesting ways of automating myself out of a job. To that end, I wrote a pretty cool program last night to help automate my first algorithms lab.&lt;/p&gt;
@@ -267,10 +276,12 @@ if __name__ == &amp;quot;__main__&amp;quot;:
       <link>/posts/a-more-accurate-coordinate-system/</link>
       <pubDate>Fri, 07 Jan 2011 09:00:00 +0900</pubDate>
       <guid isPermaLink="true">/posts/a-more-accurate-coordinate-system/</guid>
-      <description>&lt;p&gt;&lt;center&gt;&lt;/p&gt;
-&lt;p&gt;&lt;iframe width=&quot;550&quot; height=&quot;450&quot; src=&quot;http://www.youtube.com/embed/c72tK4KTTj0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/center&gt;
-&lt;br&gt;&lt;/p&gt;
+      <description>&lt;div class=&quot;img-container&quot;&gt;
+
+&lt;iframe src=&quot;http://www.youtube.com/embed/c72tK4KTTj0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;/div&gt;
+
 &lt;p&gt;RPI health and safety inspections did not take kindly to my &lt;a href=&quot;/posts/a-more-accurate-coordinate-system/door-mounted-roboschwarzenegger.html&quot;&gt;door mounted Robo-Schwarzenegger&lt;/a&gt;. Apparently I’m not breaking any rules with an internet controlled webcam hanging from my door, but the power cord across the doorway is a tripping hazard. I took Arnold down and brought him home with me over the break with the goal of teaching myself some python and jumping into OpenCV.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;  &lt;/p&gt;
 &lt;p&gt;I played with both OpenCV and Python a few years ago when I more or less &lt;a href=&quot;http://blog.jozilla.net/2008/06/27/fun-with-python-opencv-and-face-detection/&quot;&gt;followed this tutorial&lt;/a&gt;, but ultimately could not get decent control of the camera. I figured the first step in doing this the right way was to get better control over the camera. Below I’ll describe how I accomplished this.&lt;/p&gt;
@@ -283,7 +294,6 @@ if __name__ == &amp;quot;__main__&amp;quot;:
 &lt;/ol&gt;
 &lt;p&gt;When implementing this protocol,  in that list is used to pick a servo object to apply the &lt;a href=&quot;http://arduino.cc/en/Reference/ServoWrite&quot;&gt;write()&lt;/a&gt; function that takes the angle in number three as its argument. The Arduino does the rest! There is a catch though — in order for the Arduino to properly instantiate a servo object, you need to use the attach() function. Since there are minimum and maximum pulse widths (hardware limits) we care about so the pan tilt module doesn’t rip itself apart, those minimum and maximum pulse widths need to be known. I actually used the old version of my code and a couple print statements to write a diagnostic program I could use to figure out the pulse width limits. I have that attached as well as the real code.&lt;/p&gt;
 &lt;h2 id=&quot;the-python&quot;&gt;The Python&lt;/h2&gt;
-&lt;hr&gt;
 &lt;p&gt;Now not to diss PHP or anything (which is what I have most of my experience with at this point), but python just seems like a more grown up language. There is a lot to like about it. Every time I read or hear about something cool being done, it is almost always involves python! So far with the tutorials out there it has been awesome. The python segments here are short and not very advanced. I wrote one important function - move(). It takes an angle and a servo as arguments and — you guessed it — moves the specified servo to their specified angle. One problem though — due to me being an imperfect craftsman and not mounting the servos perfectly straight, the angular position of (90, 90) does not make the camera point straight ahead as one would expect. Therefore I wrote another simple diagnostic function to allow the interactive centering of the servos. Once I had the middle for the X and Y axis, I could use this in the move function to shift the centers.&lt;/p&gt;
 &lt;p&gt;Once move() was done, I wrote some test code and it worked like a champ! I then started stacking calls to move() inside of loops and I wrote some code to make the camera move in simple rectangles. Some problems then became clear: the pan tilt module either moves too slow, too fast or just spazzes out if you issue enough commands to it. Increasing the baud rate helped to speed things up, however it would still freak out if you told it to move really fast. I determined that there needs to be some delay between move() calls. Once again, I wrote some diagnostic code to determine this. The pan tilt module would move in rectangles with increasingly longer pauses between move() calls. At some critical delay value, the pan tilt module stopped jittering and moved smoothly (but still pretty fast) around the perimeter of the rectangle (turned out to be 0.003 seconds). As a final example of what the system can do, I wrote the spiral code that appears in the video above. It is only a few lines of python, but I spaced them out and commented them for ease of understanding:&lt;/p&gt;
 &lt;pre&gt;
@@ -311,7 +321,6 @@ def spiral():
 &lt;/pre&gt;
 
 &lt;h2 id=&quot;conclusion-attachments&quot;&gt;Conclusion &amp;amp; Attachments&lt;/h2&gt;
-&lt;hr&gt;
 &lt;p&gt;So that was it! Now I have unrestricted access to use python to do (almost) whatever I want! Looking at the python bindings for OpenCV next!&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://dl.dropbox.com/u/4428042/stonelinks_public/main.cpp&quot;&gt;Arduino main code&lt;/a&gt;&lt;/li&gt;
@@ -326,9 +335,11 @@ def spiral():
       <link>/posts/electromagnets-how-do-they-work/</link>
       <pubDate>Wed, 22 Dec 2010 09:00:00 +0900</pubDate>
       <guid isPermaLink="true">/posts/electromagnets-how-do-they-work/</guid>
-      <description>&lt;center&gt;
-&lt;img src=&quot;{{ assets }}/img/posts/downsize1-225x300.jpg&quot; class=&quot;thumbnail&quot; width=&quot;50%&quot;&gt;
-&lt;/center&gt;
+      <description>&lt;div class=&quot;img-container&quot;&gt;
+
+&lt;img src=&quot;/img/posts/downsize1-225x300.jpg&quot;&gt;
+
+&lt;/div&gt;
 
 &lt;p&gt;Home for the break! My brother asked me for help making a small electromagnet to bring into Boy Scouts for electricity merit badge. I of course jumped at the opportunity, and asked what kind of power source they are going to be using to drive said magnet. He tells me they will be using a single D battery. Thinking this is kind of small, I spent a few hours making the biggest electromagnet I could from a few things around the house I could find.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -362,11 +373,13 @@ PORT    STATE SERVICE  VERSION
       <link>/posts/dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid/</link>
       <pubDate>Tue, 07 Dec 2010 09:00:00 +0900</pubDate>
       <guid isPermaLink="true">/posts/dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid/</guid>
-      <description>&lt;center&gt;
-&lt;img src=&quot;{{ assets }}/img/posts/downsize-300x225.jpg&quot; class=&quot;thumbnail&quot; width=&quot;50%&quot;&gt;
-&lt;br&gt;
-These two suckers now live on my desk and throw off a ton of heat.
-&lt;/center&gt;
+      <description>&lt;div class=&quot;img-container&quot;&gt;
+
+&lt;img src=&quot;/img/posts/downsize-300x225.jpg&quot;&gt;
+
+&lt;p&gt;These two suckers now live on my desk and throw off a ton of heat.&lt;/p&gt;
+
+&lt;/div&gt;
 
 &lt;p&gt;I recently completed some much needed upgrades to the servers (hardware and software) that run Stonelinks. This has me very excited and has been a long time in the works! Warning: long and somewhat pointless story of blood, sweat, nerdrage and glorious payoff ahead.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -396,15 +409,6 @@ These two suckers now live on my desk and throw off a ton of heat.
 </description>
     </item>
     <item>
-      <title>Latex is Fun</title>
-      <link>/posts/latex-is-fun/</link>
-      <pubDate>Mon, 22 Nov 2010 09:00:00 +0900</pubDate>
-      <guid isPermaLink="true">/posts/latex-is-fun/</guid>
-      <description>&lt;p&gt;I’m using the documentation I’m writing for work at the Harvard-Smithsonain Center for Astrophysics as an excuse to learn LaTeX. For those in my generation who have grown up with MS Office or openoffice.org, LaTeX is a typesetting language that can trace its roots back to the legendary &lt;a href=&quot;http://en.wikipedia.org/wiki/Donald_Knuth&quot;&gt;Donald Knuth&lt;/a&gt; who wrote TeX back in the ‘70s.&lt;/p&gt;
-&lt;p&gt;Long story short, it is awesome and really straightforward if you’re a programmer. Honestly the thing that upsets me the most about LaTeX is that I didn’t know it existed back when Matt and I were writing / editing that &lt;a href=&quot;/misc/IED_tech_report_final.pdf&quot;&gt;137 page paper&lt;/a&gt; for the IED border patrol robot!&lt;/p&gt;
-</description>
-    </item>
-    <item>
       <title>LabVIEW Custom Documentation Formats</title>
       <link>/posts/labview-custom-documentation-formats/</link>
       <pubDate>Mon, 22 Nov 2010 09:00:00 +0900</pubDate>
@@ -416,35 +420,39 @@ These two suckers now live on my desk and throw off a ton of heat.
 </description>
     </item>
     <item>
+      <title>Latex is Fun</title>
+      <link>/posts/latex-is-fun/</link>
+      <pubDate>Mon, 22 Nov 2010 09:00:00 +0900</pubDate>
+      <guid isPermaLink="true">/posts/latex-is-fun/</guid>
+      <description>&lt;p&gt;I’m using the documentation I’m writing for work at the Harvard-Smithsonain Center for Astrophysics as an excuse to learn LaTeX. For those in my generation who have grown up with MS Office or openoffice.org, LaTeX is a typesetting language that can trace its roots back to the legendary &lt;a href=&quot;http://en.wikipedia.org/wiki/Donald_Knuth&quot;&gt;Donald Knuth&lt;/a&gt; who wrote TeX back in the ‘70s.&lt;/p&gt;
+&lt;p&gt;Long story short, it is awesome and really straightforward if you’re a programmer. Honestly the thing that upsets me the most about LaTeX is that I didn’t know it existed back when Matt and I were writing / editing that &lt;a href=&quot;/misc/IED_tech_report_final.pdf&quot;&gt;137 page paper&lt;/a&gt; for the IED border patrol robot!&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>Door Mounted Robo Schwarzenegger</title>
       <link>/posts/door-mounted-roboschwarzenegger/</link>
       <pubDate>Fri, 12 Nov 2010 09:00:00 +0900</pubDate>
       <guid isPermaLink="true">/posts/door-mounted-roboschwarzenegger/</guid>
-      <description>&lt;center&gt;
-&lt;img src=&quot;{{ assets }}/img/posts/downsize_4-225x300.jpg&quot; class=&quot;thumbnail&quot; width=&quot;50%&quot;&gt;
-&lt;/center&gt;
-&lt;br&gt;
+      <description>&lt;div class=&quot;img-container&quot;&gt;
 
-I don’t get to fool around with my own projects nearly as much as I would like, but this weekend I did devote a few hours to finishing up a robotic internet controlled camera on our apartment door, and I made it look like Arnold Schwarzenegger.
+&lt;img src=&quot;/img/posts/downsize_4-225x300.jpg&quot;&gt;
 
-&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;
 
-The pre-existing peep hole on our door didn’t exactly work, and I’m tired of people knocking and having no idea who is there, so I felt like this was an appropriate solution. The story of exactly how and why I made this goes back to this summer.
+&lt;p&gt;I don’t get to fool around with my own projects nearly as much as I would like, but this weekend I did devote a few hours to finishing up a robotic internet controlled camera on our apartment door, and I made it look like Arnold Schwarzenegger.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The pre-existing peep hole on our door didn’t exactly work, and I’m tired of people knocking and having no idea who is there, so I felt like this was an appropriate solution. The story of exactly how and why I made this goes back to this summer.&lt;/p&gt;
+&lt;p&gt;One day in August I had this idea of creating a Generic Web Enabled Robotic Operating System (GWEROS… yeah I know it’s a pretty stupid sounding name, give me a break) that would essentially allow you to create an awesome, high functioning robot out of a wide variety of off the shelf hardware and popular web technologies so long as it had a few basic requirements: a webserver, a webcam, a serial port attached to a microcontroller (arduino, pic, whatever) and some servos, motors, wheels or whatever. The aspiring robot enthusiast would cobble together whatever hardware he or she can manage, install GWEROS (make the install/update process really simple like &lt;a href=&quot;http://codex.wordpress.org/Installing_WordPress&quot;&gt;wordpress&lt;/a&gt;) and be up and running in no time.&lt;/p&gt;
+&lt;p&gt;Basically I thought it could be like a less hardcore version of &lt;a href=&quot;http://www.ros.org/wiki/&quot;&gt;ROS&lt;/a&gt; (which is totally badass) for use exclusively in the browser. I even think if done properly and given enough time to gather community support, people much smarter than myself could write plugins that would allow GWEROS users to do powerful things with their robots &lt;a href=&quot;http://mjpg-streamer.svn.sourceforge.net/viewvc/mjpg-streamer/mjpg-streamer/www/javascript_motiondetection.html?revision=83&amp;amp;view=markup&amp;amp;pathrev=83&quot;&gt;right from their web browser&lt;/a&gt; typically reserved high end or high priced robots.&lt;/p&gt;
+&lt;p&gt;Needless to say it was an extremely ambitious for a project for the middle of a busy summer internship. While I wish I had the time to pour into making it a reality, I had more than enough on my plate at the Harvard-Smithsonain Center for Astrophysics. Therefore I only started writing the interface and just finished writing some basic camera / telemetry code this weekend. The end result is what you see here:&lt;/p&gt;
+&lt;div class=&quot;img-container&quot;&gt;
 
-One day in August I had this idea of creating a Generic Web Enabled Robotic Operating System (GWEROS… yeah I know it’s a pretty stupid sounding name, give me a break) that would essentially allow you to create an awesome, high functioning robot out of a wide variety of off the shelf hardware and popular web technologies so long as it had a few basic requirements: a webserver, a webcam, a serial port attached to a microcontroller (arduino, pic, whatever) and some servos, motors, wheels or whatever. The aspiring robot enthusiast would cobble together whatever hardware he or she can manage, install GWEROS (make the install/update process really simple like &lt;a href=&quot;http://codex.wordpress.org/Installing_WordPress&quot;&gt;wordpress&lt;/a&gt;) and be up and running in no time.
+&lt;img width=&quot;50%&quot; src=&quot;/img/posts/downsize_2-150x150.jpg&quot;&gt;
+&lt;img width=&quot;50%&quot; src=&quot;/img/posts/downsize-150x150.jpg&quot;&gt;
+&lt;img width=&quot;50%&quot; src=&quot;/img/posts/downsize_3-150x150.jpg&quot;&gt;
+&lt;img width=&quot;50%&quot; src=&quot;/img/posts/Screenshot-150x150.png&quot;&gt;
 
-Basically I thought it could be like a less hardcore version of &lt;a href=&quot;http://www.ros.org/wiki/&quot;&gt;ROS&lt;/a&gt; (which is totally badass) for use exclusively in the browser. I even think if done properly and given enough time to gather community support, people much smarter than myself could write plugins that would allow GWEROS users to do powerful things with their robots &lt;a href=&quot;http://mjpg-streamer.svn.sourceforge.net/viewvc/mjpg-streamer/mjpg-streamer/www/javascript_motiondetection.html?revision=83&amp;amp;view=markup&amp;amp;pathrev=83&quot;&gt;right from their web browser&lt;/a&gt; typically reserved high end or high priced robots.
-
-Needless to say it was an extremely ambitious for a project for the middle of a busy summer internship. While I wish I had the time to pour into making it a reality, I had more than enough on my plate at the Harvard-Smithsonain Center for Astrophysics. Therefore I only started writing the interface and just finished writing some basic camera / telemetry code this weekend. The end result is what you see here:
-
-&lt;center&gt;
-
-&lt;img class=&quot;thumbnail&quot; width=&quot;50%&quot; src=&quot;{{ assets }}/img/posts/downsize_2-150x150.jpg&quot;&gt;
-&lt;img class=&quot;thumbnail&quot; width=&quot;50%&quot; src=&quot;{{ assets }}/img/posts/downsize-150x150.jpg&quot;&gt;
-&lt;img class=&quot;thumbnail&quot; width=&quot;50%&quot; src=&quot;{{ assets }}/img/posts/downsize_3-150x150.jpg&quot;&gt;
-&lt;img class=&quot;thumbnail&quot; width=&quot;50%&quot; src=&quot;{{ assets }}/img/posts/Screenshot-150x150.png&quot;&gt;
-
-&lt;/center&gt;
+&lt;/div&gt;
 
 &lt;p&gt;The best part about it? Nobody even knows it’s there because it is disguised as Arnold Schwarzenegger.&lt;/p&gt;
 </description>
@@ -467,10 +475,9 @@ Needless to say it was an extremely ambitious for a project for the middle of a 
 &lt;p&gt;One weekend early in the semester, I found myself with some rare free time and so I chose to make my own internet-aware pan-tilt fixture for my webcam. To my room mates &lt;a href=&quot;http://en.wikipedia.org/wiki/Sarcasm&quot;&gt;delight&lt;/a&gt;, I have placed the controls to this camera on this website.&lt;/p&gt;
 &lt;p&gt;Projects such as this are just the kind of thing that I love taking time to do. They span the full stack, and involve concepts that go from very low level micro controller programming to high level web programming, using all sorts of code and hardware as inbetween. It requirees quite a lot of different skill sets and knowledge of systems integration for this to work. Anyhow enough self-aggrandizing, I’ll describe how I did it starting very low level at the and working my way up.&lt;/p&gt;
 &lt;h3 id=&quot;hardware&quot;&gt;Hardware&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;/posts/windows-based-webcam-control-software/{{%20assets%20}}/img/posts/2010-02-08-193359.jpg&quot;&gt;&lt;img src=&quot;/posts/windows-based-webcam-control-software/{{%20assets%20}}/img/posts/2010-02-08-193359-150x150.jpg&quot; alt=&quot;image&quot; title=&quot;2010-02-08-193359&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/img/posts/2010-02-08-193359.jpg&quot;&gt;&lt;img src=&quot;/img/posts/2010-02-08-193359-150x150.jpg&quot; alt=&quot;image&quot; title=&quot;2010-02-08-193359&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;This summer I came into possession of an &lt;a href=&quot;http://www.arduino.cc/&quot;&gt;Arduino&lt;/a&gt; micro controller and &lt;a href=&quot;http://www.rcuniverse.com/product_guide/servoprofile.cfm?servo_id=67&quot;&gt;some servos&lt;/a&gt;. As you can see from the pictures, I connected the servos up to the micro controller, making Y-cables for the power, ground, and signal pins of the servos. I also added a laser diode for good measure.&lt;/p&gt;
 &lt;p&gt;The servo signal pins were wired to the digital I/O ports on the arduino. I stuffed the Arduino in a metal box I had lying around and hot glued everything together. Predictably, the webcam itself didn’t require much work. It was actually given to me for free! (previous owner couldn’t find drivers for it). I just ripped the stand off of it and glued it to the servos. All in all, this was a cheap and simple that has performed very well for what it was designed to do.&lt;/p&gt;
-&lt;hr&gt;
 &lt;h3 id=&quot;microcontroller-code&quot;&gt;Microcontroller Code&lt;/h3&gt;
 &lt;p&gt;I wrote the following code to establish basic control of the Arduino over its USB serial adapter. The servos are controlled using a technique called pulse width modulation (PWM). The comments explain what is going on, but for further background reading you can check out &lt;a href=&quot;http://en.wikipedia.org/wiki/Pulse-width_modulation&quot;&gt;this&lt;/a&gt;. It also uses EEPROM to store the position of the camera between power cycles and resets. For some background about what EEPROM is check out &lt;a href=&quot;http://en.wikipedia.org/wiki/EEPROM&quot;&gt;this&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-c&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/*
@@ -667,7 +674,7 @@ Needless to say it was an extremely ambitious for a project for the middle of a 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This was not good enough for me though, as I wanted to control this through a web browser, which brings us to…&lt;/p&gt;
 &lt;h3 id=&quot;the-web-server&quot;&gt;The Web Server&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;/posts/windows-based-webcam-control-software/{{%20assets%20}}/img/posts/2010-02-08-193241.jpg&quot;&gt;&lt;img src=&quot;/posts/windows-based-webcam-control-software/{{%20assets%20}}/img/posts/2010-02-08-193241-150x150.jpg&quot; alt=&quot;image&quot; title=&quot;2010-02-08-193241&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/img/posts/2010-02-08-193241.jpg&quot;&gt;&lt;img src=&quot;/img/posts/2010-02-08-193241-150x150.jpg&quot; alt=&quot;image&quot; title=&quot;2010-02-08-193241&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The Arduino is cool and all, but since the ultimate goal of this project is to control it over the internet, having a web server is an obvious requirement. Unfortunately for me, my web server also happens to be my self-built desktop that I use for almost all my other engineering work and day to day activities. Because of this, I need access to few windows only applications (Solidworks, LabVIEW, Photoshop, Steam, etc..) which rules out any linux server platforms if I want 100% uptime. This is an unfortunate contstraint that caused me quite a lot of headaches down the line. In the future when I have another computer to spare and improve on this project, I will use the &lt;a href=&quot;http://blog.taragana.com/wp-content/uploads/2008/03/linux-logo.jpg&quot;&gt;right tool&lt;/a&gt; for the job. &lt;/p&gt;
 &lt;p&gt;After all that rambling, you’re probably wondering how I have my web server configured. The only relevant details are that I am running stock &lt;a href=&quot;http://www.wampserver.com/en/&quot;&gt;WampServer&lt;/a&gt; with PHP 5.3.0 with short tags enabled.&lt;/p&gt;
 &lt;h3 id=&quot;nightmare-in-php-land&quot;&gt;Nightmare in PHP land&lt;/h3&gt;
