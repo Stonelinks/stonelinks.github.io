@@ -203,6 +203,15 @@ var pages = {
     };
     $('.project-row img').load(_setProjectPageHeights);
     $(window).resize(_setProjectPageHeights);
+  },
+
+  'projects/mindshare/index': function() {
+    setBGImage(chooseRandomImage());
+    $('h3').each(function() {
+      var $this = $(this);
+      $this.css('margin-top', '200px');
+      $('#mindshare-archive-anchor').append($('<li><a href="#' + $this.attr('id') + '"><b>' + $this.text() + '</b></a></li>'));
+    });
   }
 };
 
