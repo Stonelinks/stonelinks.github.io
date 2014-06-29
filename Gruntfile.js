@@ -5,7 +5,6 @@ module.exports = function(grunt) {
   require('time-grunt')(grunt);
   require('load-grunt-tasks')(grunt);
 
-
   grunt.initConfig({
 
     config: {
@@ -13,6 +12,8 @@ module.exports = function(grunt) {
       templates: 'templates',
       dist: 'build'
     },
+    
+    wintersmith_config: grunt.file.readJSON('config.json'),
 
     wintersmith: {
 
@@ -67,6 +68,25 @@ module.exports = function(grunt) {
       }
     },
 
+    'link-checker': {
+      dev: {
+        site: 'localhost',
+        options: {
+          noFragment: true,
+          initialPort: '<%= wintersmith_config.port + 2 %>'
+        }
+      }
+    },
+
+    connect: {
+      test: {
+        options: {
+          port: '<%= wintersmith_config.port + 2 %>',
+          base: 'build'
+        }
+      }
+    },
+
     'gh-pages': {
       options: {
         base: '<%= config.dist %>',
@@ -99,6 +119,12 @@ module.exports = function(grunt) {
   grunt.registerTask('server-throttle', [
     'throttle',
     'server'
+  ]);
+
+  grunt.registerTask('test', [
+    'build',
+    'connect:test',
+    'link-checker'
   ]);
 
   grunt.registerTask('default', [
