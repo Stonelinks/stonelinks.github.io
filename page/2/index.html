@@ -50,6 +50,31 @@
       </div>
     </div>
     <div class="container">
+      <div class="row tag-row">
+        <div class="box">
+          <div class="col-lg-12">
+            <p><a href="/tag/robots/1/"><span class="label label-info tag">robots</span></a><a href="/tag/computer%20vision/1/"><span class="label label-info tag">computer vision</span></a><a href="/tag/python/1/"><span class="label label-info tag">python</span></a><a href="/tag/arduino/1/"><span class="label label-info tag">arduino</span></a><a href="/tag/harvard/1/"><span class="label label-info tag">harvard</span></a><a href="/tag/astrophysics/1/"><span class="label label-info tag">astrophysics</span></a><a href="/tag/documentation/1/"><span class="label label-info tag">documentation</span></a><a href="/tag/telemetry/1/"><span class="label label-info tag">telemetry</span></a><a href="/tag/web%20development/1/"><span class="label label-info tag">web development</span></a><a href="/tag/science/1/"><span class="label label-info tag">science</span></a><a href="/tag/algorithms/1/"><span class="label label-info tag">algorithms</span></a><a href="/tag/C++/1/"><span class="label label-info tag">C++</span></a><a href="/tag/labview/1/"><span class="label label-info tag">labview</span></a><a href="/tag/latex/1/"><span class="label label-info tag">latex</span></a><a href="/tag/personal/1/"><span class="label label-info tag">personal</span></a><a href="/tag/airplane/1/"><span class="label label-info tag">airplane</span></a><a href="/tag/games/1/"><span class="label label-info tag">games</span></a><a href="/tag/javascript/1/"><span class="label label-info tag">javascript</span></a><a href="/tag/systems/1/"><span class="label label-info tag">systems</span></a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/posts/rudimentary-gmailbased-print-server/">
+              <h1 class="intro-text text-center">Rudimentary Gmail-based Print Server<br><small>26. January 2011</small></h1></a>
+            <hr><p>Another example of python being super useful. I found myself today with a need to network a printer so my room mates and I could print from anywhere on campus. However, figuring out what ports to forward, trying to get <span class="caps">IPP</span> to work and just being generally unhappy with CUPS and the way RPIs network restricts printer traffic / discovery lead me to consider alternate&nbsp;solutions.</p>
+<p>Enter python and Gmail! I wanted to be able to have someone email me a message with a few keywords in the subject line that would tag any attachments for printing. I then had python log into my email and download the most recent email for printing, and if the attachment was new to it, print it. I wrote a nice little script that does just&nbsp;that:</p>
+<p><a href="https://github.com/Stonelinks/gmail-printsrv">Here it is on&nbsp;github</a></p>
+<p>All you gotta do is edit the username and password at the top of the script, and set up a cron job to call the script on the machine with the printer&nbsp;attached.</p>
+<p>A couple of other comments about this: It is dangerous! Someone could email you a file with a malformed name and escape out of the print command that gets called by the subprocess. Not good. There are probably other security risks (like the fact that your password is stored in plaintext). Thats it! have fun&nbsp;kids!</p>
+
+            <hr>
+            <p>Tags: <a href="/tag/python/1/"><span class="label label-info tag">python</span></a>
+            </p>
+          </div>
+        </div>
+      </div>
       <div class="row">
         <div class="box">
           <div class="col-lg-12">
@@ -63,7 +88,10 @@
 
 <p><span class="caps">RPI</span> health and safety inspections did not take kindly to my <a href="/posts/a-more-accurate-coordinate-system/door-mounted-roboschwarzenegger.html">door mounted Robo-Schwarzenegger</a>. Apparently I’m not breaking any rules with an internet controlled webcam hanging from my door, but the power cord across the doorway is a tripping hazard. I took Arnold down and brought him home with me over the break with the goal of teaching myself some python and jumping into&nbsp;OpenCV.</p>
 <p>
-            <p class="text-center"><a href="/posts/a-more-accurate-coordinate-system/" class="btn btn-info">Read more »</a></p>
+            <p><a href="/posts/a-more-accurate-coordinate-system/" class="btn btn-info">Read more »</a></p>
+            <hr>
+            <p>Tags: <a href="/tag/robots/1/"><span class="label label-info tag">robots</span></a><a href="/tag/computer%20vision/1/"><span class="label label-info tag">computer vision</span></a><a href="/tag/python/1/"><span class="label label-info tag">python</span></a><a href="/tag/arduino/1/"><span class="label label-info tag">arduino</span></a>
+            </p>
           </div>
         </div>
       </div>
@@ -80,7 +108,10 @@
 
 <p>Home for the break! My brother asked me for help making a small electromagnet to bring into Boy Scouts for electricity merit badge. I of course jumped at the opportunity, and asked what kind of power source they are going to be using to drive said magnet. He tells me they will be using a single D battery. Thinking this is kind of small, I spent a few hours making the biggest electromagnet I could from a few things around the house I could&nbsp;find.</p>
 <p>
-            <p class="text-center"><a href="/posts/electromagnets-how-do-they-work/" class="btn btn-info">Read more »</a></p>
+            <p><a href="/posts/electromagnets-how-do-they-work/" class="btn btn-info">Read more »</a></p>
+            <hr>
+            <p>Tags: <a href="/tag/science/1/"><span class="label label-info tag">science</span></a>
+            </p>
           </div>
         </div>
       </div>
@@ -104,6 +135,9 @@ Not shown: <span class="number">1676</span> closed ports
 </code></pre>
 <p>I have <span class="caps">VPN</span> access and control over other computers on the same network, but obviously no physical access to the machine. I have no idea what is going on here. My assumption is that the kernel is hanging on something? But I guess I’ll find out when I get back. Because of the way RPI manages IP addresses, the firewall at RPI, and the uncertainty of the other computer, I’m hesitant to just tell my desktop to take the old MAC / IP combo for Stonelinks until I get back on campus in case I lose both machines. Luckily I had a backup of Stonelinks that I moved to my house. Until I get back on campus, I am hosting off my houses internet connection! Be warned in this time Stonelinks will be operating in a pretty crippled&nbsp;capacity.</p>
 
+            <hr>
+            <p>Tags: <a href="/tag/web%20development/1/"><span class="label label-info tag">web development</span></a>
+            </p>
           </div>
         </div>
       </div>
@@ -122,7 +156,10 @@ Not shown: <span class="number">1676</span> closed ports
 
 <p>I recently completed some much needed upgrades to the servers (hardware and software) that run Stonelinks. This has me very excited and has been a long time in the works! Warning: long and somewhat pointless story of blood, sweat, nerdrage and glorious payoff&nbsp;ahead.</p>
 <p>
-            <p class="text-center"><a href="/posts/dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid/" class="btn btn-info">Read more »</a></p>
+            <p><a href="/posts/dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid/" class="btn btn-info">Read more »</a></p>
+            <hr>
+            <p>Tags: <a href="/tag/web%20development/1/"><span class="label label-info tag">web development</span></a>
+            </p>
           </div>
         </div>
       </div>
@@ -133,6 +170,9 @@ Not shown: <span class="number">1676</span> closed ports
               <h1 class="intro-text text-center">Documentation is done<br><small>25. November 2010</small></h1></a>
             <hr><p>Suzanne has told me to stop working on the current iteration of the documentation as I had been writing it for an audience unacquainted with my work, not for her and my coworker. I have provided her with what she needs, but it would be a shame for all the writing I did not to see the light of day. Maybe it will be useful to someone. After all, it was written for an unacquainted audience, so you might learn something! <a href="/misc/CfA_doc.pdf">Here it&nbsp;is</a></p>
 
+            <hr>
+            <p>Tags: <a href="/tag/harvard/1/"><span class="label label-info tag">harvard</span></a><a href="/tag/astrophysics/1/"><span class="label label-info tag">astrophysics</span></a><a href="/tag/documentation/1/"><span class="label label-info tag">documentation</span></a>
+            </p>
           </div>
         </div>
       </div>
@@ -144,6 +184,9 @@ Not shown: <span class="number">1676</span> closed ports
             <hr><p>I’m using the documentation I’m writing for work at the Harvard-Smithsonain Center for Astrophysics as an excuse to learn LaTeX. For those in my generation who have grown up with <span class="caps">MS</span> Office or openoffice.org, LaTeX is a typesetting language that can trace its roots back to the legendary <a href="http://en.wikipedia.org/wiki/Donald_Knuth">Donald Knuth</a> who wrote TeX back in the&nbsp;‘70s.</p>
 <p>Long story short, it is awesome and really straightforward if you’re a programmer. Honestly the thing that upsets me the most about LaTeX is that I didn’t know it existed back when Matt and I were writing / editing that <a href="/misc/IED_tech_report_final.pdf">137 page paper</a> for the <span class="caps">IED</span> border patrol&nbsp;robot!</p>
 
+            <hr>
+            <p>Tags: <a href="/tag/harvard/1/"><span class="label label-info tag">harvard</span></a><a href="/tag/astrophysics/1/"><span class="label label-info tag">astrophysics</span></a><a href="/tag/latex/1/"><span class="label label-info tag">latex</span></a><a href="/tag/documentation/1/"><span class="label label-info tag">documentation</span></a>
+            </p>
           </div>
         </div>
       </div>
@@ -155,7 +198,10 @@ Not shown: <span class="number">1676</span> closed ports
             <hr><p>LabVIEW is a necessary and constant evil with my work at the Harvard-Smithsonian Center for Astrophysics, but sometimes it pulls through. Earlier today I found myself with a need to extract a whole bunch of icons, block diagrams and <span class="caps">VI</span> hierarchies a bunch of LabVIEW programs. I had begun that onerous task that many programmers like to sip: documentation. In my case, I was using LaTeX and wanted to include visuals from my LabVIEW&nbsp;stuff.</p>
 <p>Up until now I thought this would mean trying to do a million screenshots over <span class="caps">VNC</span> on my work computer, and then going back and cropping what I needed. This seemed horrible though and on further research I was thrilled to find out that LabVIEW can pretty much do this on its own. See the <a href="http://zone.ni.com/reference/en-XX/help/371361B-01/lvconcepts/printing_vis/"><span class="caps">NI</span> website on printing VI documentation</a>.</p>
 <p>
-            <p class="text-center"><a href="/posts/labview-custom-documentation-formats/" class="btn btn-info">Read more »</a></p>
+            <p><a href="/posts/labview-custom-documentation-formats/" class="btn btn-info">Read more »</a></p>
+            <hr>
+            <p>Tags: <a href="/tag/harvard/1/"><span class="label label-info tag">harvard</span></a><a href="/tag/astrophysics/1/"><span class="label label-info tag">astrophysics</span></a><a href="/tag/labview/1/"><span class="label label-info tag">labview</span></a><a href="/tag/documentation/1/"><span class="label label-info tag">documentation</span></a>
+            </p>
           </div>
         </div>
       </div>
@@ -172,18 +218,10 @@ Not shown: <span class="number">1676</span> closed ports
 
 <p>I don’t get to fool around with my own projects nearly as much as I would like, but this weekend I did devote a few hours to finishing up a robotic internet controlled camera on our apartment door, and I made it look like Arnold&nbsp;Schwarzenegger.</p>
 <p>
-            <p class="text-center"><a href="/posts/door-mounted-roboschwarzenegger/" class="btn btn-info">Read more »</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="box">
-          <div class="col-lg-12">
-            <hr><a href="/posts/looking-back/">
-              <h1 class="intro-text text-center">Recursive Directory Lister<br><small>30. September 2010</small></h1></a>
-            <hr><p>This is old. Look at posts if you want to see current versions of my projects. This was like the first thing of great significance I did with Stonelinks on my own (read: I didn’t know what I was doing). Similar to the Windows based webcam thing, I thought it was a big deal at the time. Looking back it is funny how trivial this would be to implement nowadays. Oh also, there are things in here that are just plain wrong and/or bad practice (left as an exercise to the reader to&nbsp;find).</p>
-<p><strong>Edit:</strong> This is old. It is also the first implementation of my remote-controlled camera… under windows. It is really really bad and nobody should use it. However, I thougt I was pretty cool when I made it, and maybe it will be useful to somebody here, so I’ll leave it up. I put a much more improved version this software to use on <a href="/misc/IED_tech_report_final.pdf">the border patrol robot</a>. Check out page 48 of the report to see the final results and the page 118 for the code behind&nbsp;it.</p>
-
+            <p><a href="/posts/door-mounted-roboschwarzenegger/" class="btn btn-info">Read more »</a></p>
+            <hr>
+            <p>Tags: <a href="/tag/robots/1/"><span class="label label-info tag">robots</span></a><a href="/tag/computer%20vision/1/"><span class="label label-info tag">computer vision</span></a><a href="/tag/telemetry/1/"><span class="label label-info tag">telemetry</span></a><a href="/tag/python/1/"><span class="label label-info tag">python</span></a>
+            </p>
           </div>
         </div>
       </div>
@@ -196,7 +234,12 @@ Not shown: <span class="number">1676</span> closed ports
 <p>One weekend early in the semester, I found myself with some rare free time and so I chose to make my own internet-aware pan-tilt fixture for my webcam. To my room mates <a href="http://en.wikipedia.org/wiki/Sarcasm">delight</a>, I have placed the controls to this camera on this&nbsp;website.</p>
 <p>Projects such as this are just the kind of thing that I love taking time to do. They span the full stack, and involve concepts that go from very low level micro controller programming to high level web programming, using all sorts of code and hardware as inbetween. It requirees quite a lot of different skill sets and knowledge of systems integration for this to work. Anyhow enough self-aggrandizing, I’ll describe how I did it starting very low level at the and working my way&nbsp;up.</p>
 <h3 id="hardware">Hardware</h3>
-<p><a href="/img/posts/2010-02-08-193359.jpg"><img src="/img/posts/2010-02-08-193359-150x150.jpg" alt="image" title="2010-02-08-193359"></a></p>
+<div class="img-container">
+
+<img src="/img/posts/2010-02-08-193359-150x150.jpg">
+
+</div>
+
 <p>This summer I came into possession of an <a href="http://www.arduino.cc/">Arduino</a> micro controller and <a href="http://www.rcuniverse.com/product_guide/servoprofile.cfm?servo_id=67">some servos</a>. As you can see from the pictures, I connected the servos up to the micro controller, making Y-cables for the power, ground, and signal pins of the servos. I also added a laser diode for good&nbsp;measure.</p>
 <p>The servo signal pins were wired to the digital I/O ports on the arduino. I stuffed the Arduino in a metal box I had lying around and hot glued everything together. Predictably, the webcam itself didn’t require much work. It was actually given to me for free! (previous owner couldn’t find drivers for it). I just ripped the stand off of it and glued it to the servos. All in all, this was a cheap and simple that has performed very well for what it was designed to&nbsp;do.</p>
 <h3 id="microcontroller-code">Microcontroller&nbsp;Code</h3>
@@ -395,7 +438,12 @@ Not shown: <span class="number">1676</span> closed ports
 </code></pre>
 <p>This was not good enough for me though, as I wanted to control this through a web browser, which brings us&nbsp;to…</p>
 <h3 id="the-web-server">The Web&nbsp;Server</h3>
-<p><a href="/img/posts/2010-02-08-193241.jpg"><img src="/img/posts/2010-02-08-193241-150x150.jpg" alt="image" title="2010-02-08-193241"></a></p>
+<div class="img-container">
+
+<img src="/img/posts/2010-02-08-193241-150x150.jpg">
+
+</div>
+
 <p>The Arduino is cool and all, but since the ultimate goal of this project is to control it over the internet, having a web server is an obvious requirement. Unfortunately for me, my web server also happens to be my self-built desktop that I use for almost all my other engineering work and day to day activities. Because of this, I need access to few windows only applications (Solidworks, LabVIEW, Photoshop, Steam, etc..) which rules out any linux server platforms if I want 100% uptime. This is an unfortunate contstraint that caused me quite a lot of headaches down the line. In the future when I have another computer to spare and improve on this project, I will use the <a href="http://blog.taragana.com/wp-content/uploads/2008/03/linux-logo.jpg">right tool</a> for the&nbsp;job. </p>
 <p>After all that rambling, you’re probably wondering how I have my web server configured. The only relevant details are that I am running stock <a href="http://www.wampserver.com/en/">WampServer</a> with <span class="caps">PHP</span> 5.3.0 with short tags&nbsp;enabled.</p>
 <h3 id="nightmare-in-php-land">Nightmare in <span class="caps">PHP</span>&nbsp;land</h3>
@@ -422,7 +470,10 @@ fclose(<span class="variable">$fp</span>);
 <h3 id="webcam">Webcam</h3>
 <p>To manage the webcam feed, I am using a program called <a href="http://www.lundie.ca/fwink/">Fwink</a> to take a picture every second and then using <span class="caps">AJAX</span> to automatically refresh the image once the page is loaded. However, there are many ways to manage a webcam feed and the details of how you do it is out of the scope of what I’m talking about&nbsp;here.</p>
 
-            <p class="text-center"><a href="/posts/windows-based-webcam-control-software/" class="btn btn-info">Read more »</a></p>
+            <p><a href="/posts/windows-based-webcam-control-software/" class="btn btn-info">Read more »</a></p>
+            <hr>
+            <p>Tags: <a href="/tag/systems/1/"><span class="label label-info tag">systems</span></a><a href="/tag/arduino/1/"><span class="label label-info tag">arduino</span></a><a href="/tag/telemetry/1/"><span class="label label-info tag">telemetry</span></a>
+            </p>
           </div>
         </div>
       </div>

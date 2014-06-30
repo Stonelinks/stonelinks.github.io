@@ -65,81 +65,89 @@
 <p>Just like every programmer, I am always trying to find new and interesting ways of automating myself out of a job. To that end, I wrote a pretty cool program last night to help automate my first algorithms&nbsp;lab.</p>
 <p><span class="more"></span></p>
 <p>Consistent with the recent trend of mine, it is in python and makes use of the <a href="http://docs.python.org/library/subprocess.html">subprocess</a> module to spawn and time instances of my C++ program and <a href="http://matplotlib.sourceforge.net/">pylab</a> to make plotting the times super easy. The comments in my code explain things in more detail, but here is the one sentence summary: Python is being used to execute two programs written in C++ with the same set of arguments and spits out a plot of their times. In this case the two C++ programs are recursive (rfib) and iterative (ifib) implementations of the Fibonacci algorithm. The fun stuff is in the&nbsp;python:</p>
-<pre><code class="lang-pre">#!/usr/bin/env python
+<pre><code class="lang-python"><span class="comment">#!/usr/bin/env python</span>
 
-# Lucas Doyle wrote this
+<span class="comment"># Lucas Doyle wrote this</span>
 
-import subprocess
-import string
-import sys
-import pylab  # matplotlib
+<span class="keyword">import</span> subprocess
+<span class="keyword">import</span> string
+<span class="keyword">import</span> sys
+<span class="keyword">import</span> pylab  <span class="comment"># matplotlib</span>
 
-def timerun(program, args) :
-    print &#39;Starting timed execution of &#39; + program + &#39; with &#39; + str(len(args)) + &#39; arguments.&#39;
-    i = 1
+<span class="function"><span class="keyword">def</span> <span class="title">timerun</span><span class="params">(program, args)</span> :</span>
+    <span class="keyword">print</span> <span class="string">'Starting timed execution of '</span> + program + <span class="string">' with '</span> + str(len(args)) + <span class="string">' arguments.'</span>
+    i = <span class="number">1</span>
 
-    # Execute program, once for each n argument
-    for n in args :
+    <span class="comment"># Execute program, once for each n argument</span>
+    <span class="keyword">for</span> n <span class="keyword">in</span> args :
 
-        # This was really annoying. Build the arguments to the time system call to the time command.
-        # First of all, for whatever reason &#39;time&#39; didn&#39;t work correctly with any arguments other than -p, 
-        # so I used /usr/bin/time instead. Since I could not figure out why the output of &#39;time&#39; was not
-        # coming back to stdin, I use the -o (output file) and -a (append) option to just output the real
-        # execution time ( thats where &#39;-f&#39; and &#39;%e&#39; comes from ) to the file.
-        p = subprocess.Popen([&#39;/usr/bin/time&#39;, &#39;-o&#39;, &#39;runtimes.txt&#39;, &#39;-a&#39;, &#39;-f&#39;, &#39;%e&#39;, &#39;./&#39; + program, str(n)], stdout=subprocess.PIPE)
+        <span class="comment"># This was really annoying. Build the arguments to the time system call to the time command.</span>
+        <span class="comment"># First of all, for whatever reason 'time' didn't work correctly with any arguments other than -p, </span>
+        <span class="comment"># so I used /usr/bin/time instead. Since I could not figure out why the output of 'time' was not</span>
+        <span class="comment"># coming back to stdin, I use the -o (output file) and -a (append) option to just output the real</span>
+        <span class="comment"># execution time ( thats where '-f' and '%e' comes from ) to the file.</span>
+        p = subprocess.Popen([<span class="string">'/usr/bin/time'</span>, <span class="string">'-o'</span>, <span class="string">'runtimes.txt'</span>, <span class="string">'-a'</span>, <span class="string">'-f'</span>, <span class="string">'%e'</span>, <span class="string">'./'</span> + program, str(n)], stdout=subprocess.<span class="caps">PIPE</span>)
 
-        # Read back from stdin, print where we are (not required, but its nice)
-        output = p.communicate()[0]
-        sys.stdout.write( str(i) + &#39;:\tfib(&#39;+ str(n) + &#39;) = &#39; + output)
-        i += 1
-    print &#39;done&#39;
+        <span class="comment"># Read back from stdin, print where we are (not required, but its nice)</span>
+        output = p.communicate()[<span class="number">0</span>]
+        sys.stdout.write( str(i) + <span class="string">':\tfib('</span>+ str(n) + <span class="string">') = '</span> + output)
+        i += <span class="number">1</span>
+    <span class="keyword">print</span> <span class="string">'done'</span>
 
-    # Open up, read and return the times in the output file
-    f = open(&#39;runtimes.txt&#39;, &#39;r&#39;)
+    <span class="comment"># Open up, read and return the times in the output file</span>
+    f = open(<span class="string">'runtimes.txt'</span>, <span class="string">'r'</span>)
     times = f.read().splitlines()
 
-    # Clean up old runtimes
-    subprocess.Popen([&#39;rm&#39;, &#39;runtimes.txt&#39;],stdout=subprocess.PIPE)
+    <span class="comment"># Clean up old runtimes</span>
+    subprocess.Popen([<span class="string">'rm'</span>, <span class="string">'runtimes.txt'</span>],stdout=subprocess.<span class="caps">PIPE</span>)
 
-    return times
+    <span class="keyword">return</span> times
 
-def main():
+<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
 
-    # Arguments we are interested in testing runtimes for
-    # args = 1, 5, 10, 15, 20, 25, 30, 35, 40, 41, 42, 43, 44, 45, 46, 47, 48
-    args = range(1, 56)
+    <span class="comment"># Arguments we are interested in testing runtimes for</span>
+    <span class="comment"># args = 1, 5, 10, 15, 20, 25, 30, 35, 40, 41, 42, 43, 44, 45, 46, 47, 48</span>
+    args = range(<span class="number">1</span>, <span class="number">56</span>)
 
 
 
-    # Compute the runtimes of the recursive algorithm, then the iterative one
-    rtimes = timerun(&#39;rfib&#39;, args)
-    itimes = timerun(&#39;ifib&#39;, args)
+    <span class="comment"># Compute the runtimes of the recursive algorithm, then the iterative one</span>
+    rtimes = timerun(<span class="string">'rfib'</span>, args)
+    itimes = timerun(<span class="string">'ifib'</span>, args)
 
-    # Plot it with pylab
-    pylab.xlabel(&#39;N&#39;)
-    pylab.ylabel(&#39;Time to compute fib(N) (seconds)&#39;)
-    pylab.title(&#39;Recursive vs. Iterative Execution Time for Fibionacci Sequence&#39;)
-    pylab.plot(args, rtimes, &#39;ro-&#39;, label=&#39;Recursive&#39;)
-    pylab.plot(args, itimes, &#39;bo-&#39;, label=&#39;Iterative&#39;)
+    <span class="comment"># Plot it with pylab</span>
+    pylab.xlabel(<span class="string">'N'</span>)
+    pylab.ylabel(<span class="string">'Time to compute fib(N) (seconds)'</span>)
+    pylab.title(<span class="string">'Recursive vs. Iterative Execution Time for Fibionacci Sequence'</span>)
+    pylab.plot(args, rtimes, <span class="string">'ro-'</span>, label=<span class="string">'Recursive'</span>)
+    pylab.plot(args, itimes, <span class="string">'bo-'</span>, label=<span class="string">'Iterative'</span>)
     pylab.legend()
 
-    # other drawing styles for plots in pylab:
-    # &#39;r&#39; red line, &#39;g&#39; green line, &#39;y&#39; yellow line 
-    # &#39;ro&#39; red dots as markers, &#39;r.&#39; smaller red dots, &#39;r+&#39; red pluses
-    # &#39;r--&#39; red dashed line, &#39;g^&#39; green triangles, &#39;bs&#39; blue squares
-    # &#39;rp&#39; red pentagons, &#39;r1&#39;, &#39;r2&#39;, &#39;r3&#39;, &#39;r4&#39; well, check out the markers
+    <span class="comment"># other drawing styles for plots in pylab:</span>
+    <span class="comment"># 'r' red line, 'g' green line, 'y' yellow line </span>
+    <span class="comment"># 'ro' red dots as markers, 'r.' smaller red dots, 'r+' red pluses</span>
+    <span class="comment"># 'r--' red dashed line, 'g^' green triangles, 'bs' blue squares</span>
+    <span class="comment"># 'rp' red pentagons, 'r1', 'r2', 'r3', 'r4' well, check out the markers</span>
 
-    # save the plot as a PNG image
-    pylab.savefig(&#39;Fig.png&#39;)
+    <span class="comment"># save the plot as a <span class="caps">PNG</span> image</span>
+    pylab.savefig(<span class="string">'Fig.png'</span>)
 
-    # show the pylab plot window
+    <span class="comment"># show the pylab plot window</span>
     pylab.show()
 
-if __name__ == &quot;__main__&quot;:
+<span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:
     main()
 </code></pre>
 <p>I’ve also attached the whole lab <a href="/misc/lab1.zip">here</a> in case the python does not make sense by itself. Hope someone finds this&nbsp;useful!</p>
 
+          </div>
+        </div>
+      </div>
+      <div class="row tag-row">
+        <div class="box">
+          <div class="col-lg-12">
+            <p>Tags: <a href="/tag/algorithms/1/"><span class="label label-info tag">algorithms</span></a><a href="/tag/python/1/"><span class="label label-info tag">python</span></a>
+            </p>
           </div>
         </div>
       </div>

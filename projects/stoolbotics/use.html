@@ -69,32 +69,30 @@
 <p>Since the principal function of Stoolbotics is simulating robots, it is important to know how to specify them in a format that Stoolbotics can understand, load them into the simulator and command then to do&nbsp;things.</p>
 <h3 id="robot-json-file">Robot.json&nbsp;File</h3>
 <p>As covered in the quickstart, robots are specified in json files that contain sections in it for defining various aspects of a robot to be simulated. Here is an example file for the Phantom Omni and the explanation again in case you skipped over the&nbsp;quickstart:</p>
-<pre>
-<span class="dquo">"</span>N" : "3",
+<pre><code class="lang-javascript"><span class="string">"N"</span> : <span class="string">"3"</span>,
 
-"h1" : "z",
-"h2" : "x",
-"h3" : "x",
+<span class="string">"h1"</span> : <span class="string">"z"</span>,
+<span class="string">"h2"</span> : <span class="string">"x"</span>,
+<span class="string">"h3"</span> : <span class="string">"x"</span>,
 
-"q1" : ".1*t",
-"q2" : ".1*cos(t)",
-"q3" : ".001*t + .2*sin(t)",
+<span class="string">"q1"</span> : <span class="string">".1*t"</span>,
+<span class="string">"q2"</span> : <span class="string">".1*cos(t)"</span>,
+<span class="string">"q3"</span> : <span class="string">".001*t + .2*sin(t)"</span>,
 
-"l1" : "40",
-"l2" : "50",
-"l3" : "50",
+<span class="string">"l1"</span> : <span class="string">"40"</span>,
+<span class="string">"l2"</span> : <span class="string">"50"</span>,
+<span class="string">"l3"</span> : <span class="string">"50"</span>,
 
-"P01" : "[0, 0, 0]",
-"P12" : "[0, 0, l1]",
-"P23" : "[0, l2, 0]",
-"P3T" : "[0, l3, 0]",
+<span class="string">"P01"</span> : <span class="string">"[0, 0, 0]"</span>,
+<span class="string">"P12"</span> : <span class="string">"[0, 0, l1]"</span>,
+<span class="string">"P23"</span> : <span class="string">"[0, l2, 0]"</span>,
+<span class="string">"<span class="caps">P3T</span>"</span> : <span class="string">"[0, l3, 0]"</span>,
 
-"R01" : "rot(h1, q1)",
-"R12" : "rot(h2, q2)",
-"R23" : "rot(h3, q3)",
-"R3T" : "eye(3, 3)"
-</pre>
-
+<span class="string">"R01"</span> : <span class="string">"rot(h1, q1)"</span>,
+<span class="string">"R12"</span> : <span class="string">"rot(h2, q2)"</span>,
+<span class="string">"R23"</span> : <span class="string">"rot(h3, q3)"</span>,
+<span class="string">"<span class="caps">R3T</span>"</span> : <span class="string">"eye(3, 3)"</span>
+</code></pre>
 <ul>
 <li><code>N</code> is first declared to tell the simulator the number of joints to expect in this&nbsp;robot.</li>
 <li>All the joint axes are specified with an <code>h</code> and an index. In this case, shorthand is used (e.g. use of <code>z</code> instead of <code>[0, 0, 1]</code>), but if we wanted a non-standard axis vector we could have used something like <code>[-.1, .2, .4]</code>.</li>
@@ -246,30 +244,27 @@ set R12 eye(3, 3)
 <p>Stoolbotics also has the capacity to be driven by external applications like Matlab <em>without</em> the use of saved recordings. This is done through a <span class="caps">UDP</span> socket that accepts a comma separated list of joint angles and moves the arm to this&nbsp;position.</p>
 <p>Matlab can therefore compute things like inverse kinematics, and send the joint angles to the simulator to have them visualized over <span class="caps">UDP</span>. In order to accept UDP connections, the <code>server</code> command needs to be used. Specifically, running something like <code>server start 5005</code> will be run to start the server listening on port 5005. Then, from matlab you can use the included <code>judp.m</code> to send <span class="caps">UDP</span> messages to the&nbsp;simulator.</p>
 <p>A rudimentary example of this technique can be seen in the <code>matlab</code> folder by running <code>omni_invkin_example</code> in matlab. This is a drastically simple example attempts to move the phantom omni in a circle. Here it is reproduced&nbsp;below:</p>
-<pre>
+<pre><code class="lang-python">
+host = <span class="string">'127.0.0.1'</span>
+port = <span class="number">5005</span>
 
-host = '127.0.0.1'
-port = 5005
+p = zeros(<span class="number">3</span>, <span class="number">1</span>)
 
-p = zeros(3, 1)
-
-for t = .01:1:1000
-    p(1) = 40 + 15*cos(t);
-    p(2) = 30;
-    p(3) = 50 + 15*sin(t);
+<span class="keyword">for</span> t = <span class="number">.01</span>:<span class="number">1</span>:<span class="number">1000</span>
+    p(<span class="number">1</span>) = <span class="number">40</span> + <span class="number">15</span>*cos(t);
+    p(<span class="number">2</span>) = <span class="number">30</span>;
+    p(<span class="number">3</span>) = <span class="number">50</span> + <span class="number">15</span>*sin(t);
 
     q = omni_invkin(p);
 
-    msg = strcat(num2<span class="ord">st</span>r(q(1)), ',', num2<span class="ord">st</span>r(q(2)), ',', num2<span class="ord">st</span>r(q(3)));
+    msg = strcat(num2<span class="ord">st</span>r(q(<span class="number">1</span>)), <span class="string">','</span>, num2<span class="ord">st</span>r(q(<span class="number">2</span>)), <span class="string">','</span>, num2<span class="ord">st</span>r(q(<span class="number">3</span>)));
     disp(msg)
 
     % send to stoolbotics
-    judp('send', port, host, int8(msg));
-    pause(.1);
+    judp(<span class="string">'send'</span>, port, host, int8(msg));
+    pause(<span class="number">.1</span>);
 end
-
-</pre>
-
+</code></pre>
 <p>As you can see, since this is technically operating over a network we need to specify a host. If you’re running matlab and stoolbotics on the same machine, this will always be 127.0.0.1 for localhost. Technically, you could be running the simulator and matlab on two separate computers. As long as you had the <span class="caps">IP</span> address of the computer running the simulator plugged into the ‘host’ variable inside matlab, everything will still&nbsp;work.</p>
 <p>Next, the port needs to match what you entered with the <code>&gt;server start</code> command. From then on, all that needs to happen is to do some calculation, and pass off the comma separated list of joint angled to the&nbsp;simulator.</p>
 

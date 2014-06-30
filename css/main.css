@@ -7112,6 +7112,83 @@ button.close {
 .fa-plus-square-o:before {
   content: "\f196";
 }
+/* Tomorrow Night Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+.tomorrow-comment,
+pre .comment,
+pre .title {
+  color: #969896;
+}
+.tomorrow-red,
+pre .variable,
+pre .attribute,
+pre .tag,
+pre .regexp,
+pre .ruby .constant,
+pre .xml .tag .title,
+pre .xml .pi,
+pre .xml .doctype,
+pre .html .doctype,
+pre .css .id,
+pre .css .class,
+pre .css .pseudo {
+  color: #cc6666;
+}
+.tomorrow-orange,
+pre .number,
+pre .preprocessor,
+pre .built_in,
+pre .literal,
+pre .params,
+pre .constant {
+  color: #de935f;
+}
+.tomorrow-yellow,
+pre .class,
+pre .ruby .class .title,
+pre .css .rules .attribute {
+  color: #f0c674;
+}
+.tomorrow-green,
+pre .string,
+pre .value,
+pre .inheritance,
+pre .header,
+pre .ruby .symbol,
+pre .xml .cdata {
+  color: #b5bd68;
+}
+.tomorrow-aqua,
+pre .css .hexcolor {
+  color: #8abeb7;
+}
+.tomorrow-blue,
+pre .function,
+pre .python .decorator,
+pre .python .title,
+pre .ruby .function .title,
+pre .ruby .title .keyword,
+pre .perl .sub,
+pre .javascript .title,
+pre .coffeescript .title {
+  color: #81a2be;
+}
+.tomorrow-purple,
+pre .keyword,
+pre .javascript .function {
+  color: #b294bb;
+}
+pre code {
+  display: block;
+  background: #1d1f21;
+  color: #c5c8c6;
+  font-family: Menlo, Monaco, Consolas, monospace;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
 body {
   font-family: 'PT Sans', Helvetica, Arial, sans-serif;
   background: linear-gradient(#158cba, #083647) no-repeat center center / 100% 100% fixed;
@@ -7426,4 +7503,17 @@ ul {
   color: #464646;
   font-size: 95%;
   margin-bottom: 5px;
+}
+pre code {
+  border-radius: 4px;
+  box-shadow: 0px 0px 4px 16px #888888;
+  font-size: 120%;
+}
+.tag {
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 0px 5px;
+}
+.tag-row p:last-child {
+  margin-bottom: 0px;
 }
