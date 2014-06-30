@@ -3,6 +3,8 @@
 @import "../vendor/font-awesome/less/font-awesome.less";
 @fa-font-path: "../vendor/font-awesome/fonts";
 
+@import (less) "../vendor/highlightjs-themes/build/assets/css/themes/tomorrow-night.css";
+
 body {
   font-family: 'PT Sans', Helvetica, Arial, sans-serif;
 
@@ -406,4 +408,9 @@ ul {
   color: #464646;
   font-size: 95%;
   margin-bottom: 5px;
+}
+
+pre code {
+  border-radius: 4px;
+  box-shadow: 0px 0px 4px 16px #888888;
 }

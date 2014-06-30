@@ -22,7 +22,7 @@ Since the principal function of Stoolbotics is simulating robots, it is importan
 ###Robot.json File
 As covered in the quickstart, robots are specified in json files that contain sections in it for defining various aspects of a robot to be simulated. Here is an example file for the Phantom Omni and the explanation again in case you skipped over the quickstart:
 
-<pre>
+```json
 "N" : "3",
 
 "h1" : "z",
@@ -46,7 +46,7 @@ As covered in the quickstart, robots are specified in json files that contain se
 "R12" : "rot(h2, q2)",
 "R23" : "rot(h3, q3)",
 "R3T" : "eye(3, 3)"
-</pre>
+```
 
 - <code>N</code> is first declared to tell the simulator the number of joints to expect in this robot.
 - All the joint axes are specified with an <code>h</code> and an index. In this case, shorthand is used (e.g. use of <code>z</code> instead of <code>[0, 0, 1]</code>), but if we wanted a non-standard axis vector we could have used something like <code>[-.1, .2, .4]</code>.
@@ -222,7 +222,7 @@ Matlab can therefore compute things like inverse kinematics, and send the joint 
 
 A rudimentary example of this technique can be seen in the <code>matlab</code> folder by running <code>omni_invkin_example</code> in matlab. This is a drastically simple example attempts to move the phantom omni in a circle. Here it is reproduced below:
 
-<pre>
+```python
 
 host = '127.0.0.1'
 port = 5005
@@ -243,8 +243,7 @@ for t = .01:1:1000
     judp('send', port, host, int8(msg));
     pause(.1);
 end
-
-</pre>
+```
 
 As you can see, since this is technically operating over a network we need to specify a host. If you're running matlab and stoolbotics on the same machine, this will always be 127.0.0.1 for localhost. Technically, you could be running the simulator and matlab on two separate computers. As long as you had the IP address of the computer running the simulator plugged into the 'host' variable inside matlab, everything will still work.
 

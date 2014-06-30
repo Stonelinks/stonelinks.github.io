@@ -18,7 +18,7 @@ Just like every programmer, I am always trying to find new and interesting ways 
 
 Consistent with the recent trend of mine, it is in python and makes use of the [subprocess](http://docs.python.org/library/subprocess.html) module to spawn and time instances of my C++ program and [pylab](http://matplotlib.sourceforge.net/) to make plotting the times super easy. The comments in my code explain things in more detail, but here is the one sentence summary: Python is being used to execute two programs written in C++ with the same set of arguments and spits out a plot of their times. In this case the two C++ programs are recursive (rfib) and iterative (ifib) implementations of the Fibonacci algorithm. The fun stuff is in the python:
 
-```pre
+```python
 #!/usr/bin/env python
 
 # Lucas Doyle wrote this
