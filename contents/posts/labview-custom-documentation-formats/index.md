@@ -2,6 +2,7 @@
 title: LabVIEW Custom Documentation Formats
 date: 2010-11-22
 template: article.jade
+tags: harvard, astrophysics, labview, documentation
 ---
 
 LabVIEW is a necessary and constant evil with my work at the Harvard-Smithsonian Center for Astrophysics, but sometimes it pulls through. Earlier today I found myself with a need to extract a whole bunch of icons, block diagrams and VI hierarchies a bunch of LabVIEW programs. I had begun that onerous task that many programmers like to sip: documentation. In my case, I was using LaTeX and wanted to include visuals from my LabVIEW stuff.

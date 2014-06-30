@@ -2,6 +2,7 @@
 title: Windows Based Webcam Control Software
 date: 2010-09-30
 template: article.jade
+tags: systems, arduino, telemetry
 ---
 
 I love nothing more in life than creating and tinkering with the stuff around me. Over the years, this love has taken many different forms. It started out somewhere in elementary school with Legos and taking my toys apart (much to the chigrin of my loving parents). Today it has evolved over the years into weekend projects such as the I'm about to tell you about.

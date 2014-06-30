@@ -2,6 +2,7 @@
 title: How I do Word Processing
 date: 2012-04-30
 template: article.jade
+tags: documentation
 ---
 
 A few months ago I came up with a quick and dirty way to write text documents. I'm calling it [Lite Write](https://github.com/Stonelinks/Lite-Write) because it is so simple. I've been using it in place of a word processor for awhile and been very happy with it.

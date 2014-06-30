@@ -2,6 +2,7 @@
 title: New Aerial Drone
 date: 2012-04-22
 template: article.jade
+tags: airplane
 ---
 
 <div class="img-container">

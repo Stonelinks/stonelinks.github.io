@@ -2,6 +2,7 @@
 title: Latex is Fun
 date: 2010-11-22
 template: article.jade
+tags: harvard, astrophysics, latex, documentation
 ---
 
 I'm using the documentation I'm writing for work at the Harvard-Smithsonain Center for Astrophysics as an excuse to learn LaTeX. For those in my generation who have grown up with MS Office or openoffice.org, LaTeX is a typesetting language that can trace its roots back to the legendary [Donald Knuth](http://en.wikipedia.org/wiki/Donald_Knuth) who wrote TeX back in the '70s.

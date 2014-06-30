@@ -42,5 +42,8 @@
       "url": "https://github.com/stonelinks/stonelinks-github-io/blob/master/LICENSE-MIT"
     }
   ],
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "wintersmith-tag": "^1.0.2"
+  }
 }

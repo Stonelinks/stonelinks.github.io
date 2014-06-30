@@ -2,6 +2,7 @@
 title: Electromagnets, How do They Work?
 date: 2010-12-22
 template: article.jade
+tags: science
 ---
 
 <div class="img-container">

@@ -1,6 +1,26 @@
 extends layout
 
 block content
+  .row.tag-row
+    .box
+      .col-lg-12
+        - var allTags = env.helpers.getAllTags()
+        if tagName
+          p
+            span Showing all articles in
+            span.label.label-default.tag= tagName
+          p
+            | Other tags:
+            - var otherTags = allTags.filter(function(tag){ return tag !== tagName})
+            each tag in otherTags
+              a(href=env.helpers.getTagHome(tag).url)
+                span.label.label-default.tag= tag
+        else
+          p
+            each tag in allTags
+              a(href=env.helpers.getTagHome(tag).url)
+                span.label.label-default.tag= tag
+
   each article in articles
     .row
       .box

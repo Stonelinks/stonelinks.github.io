@@ -2,6 +2,7 @@
 title: Contribution to Open Source Software
 date: 2012-03-27
 template: article.jade
+tags: computer vision, C++
 ---
 
 <div class="img-container">

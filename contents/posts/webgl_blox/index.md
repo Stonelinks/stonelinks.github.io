@@ -2,6 +2,7 @@
 title: WebGL Blox
 date: 2012-07-24
 template: article.jade
+tags: games, javascript
 ---
 
 This is a quick and dirty attempt to a clone a really addicting android game called [Tap Blox](https://play.google.com/store/apps/details?id=com.entwicklerx.tapblox&hl=en). Play by eliminating groups of three or more adjacent blocks of the same color. Currently there is no timing / scoring system.

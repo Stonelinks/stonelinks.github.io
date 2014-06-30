@@ -7507,4 +7507,13 @@ ul {
 pre code {
   border-radius: 4px;
   box-shadow: 0px 0px 4px 16px #888888;
+  font-size: 120%;
+}
+.tag-row .tag {
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 0px 5px;
+}
+.tag-row p:last-child {
+  margin-bottom: 0px;
 }

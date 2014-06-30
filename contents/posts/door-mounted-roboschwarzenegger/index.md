@@ -2,6 +2,7 @@
 title: Door Mounted Robo Schwarzenegger
 date: 2010-11-12
 template: article.jade
+tags: robots, computer vision, telemetry, python
 ---
 
 <div class="img-container">

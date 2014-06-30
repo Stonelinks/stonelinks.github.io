@@ -2,6 +2,7 @@
 title: Dr. Serverlove, or How I Learned to Stop Worrying and Love the RAID
 date: 2010-12-07
 template: article.jade
+tags: web development
 ---
 
 <div class="img-container">

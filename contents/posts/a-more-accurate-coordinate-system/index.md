@@ -2,6 +2,7 @@
 title: A More Accurate Coordinate System
 date: 2011-01-07
 template: article.jade
+tags: robots, computer vision, python, arduino
 ---
 
 <div class="img-container">
@@ -27,7 +28,6 @@ The old way I had of doing things on the Arduino was very simplistic and took no
 When implementing this protocol,  in that list is used to pick a servo object to apply the [write()](http://arduino.cc/en/Reference/ServoWrite) function that takes the angle in number three as its argument. The Arduino does the rest! There is a catch though -- in order for the Arduino to properly instantiate a servo object, you need to use the attach() function. Since there are minimum and maximum pulse widths (hardware limits) we care about so the pan tilt module doesn't rip itself apart, those minimum and maximum pulse widths need to be known. I actually used the old version of my code and a couple print statements to write a diagnostic program I could use to figure out the pulse width limits. I have that attached as well as the real code.
 
 ##The Python
-
 
 Now not to diss PHP or anything (which is what I have most of my experience with at this point), but python just seems like a more grown up language. There is a lot to like about it. Every time I read or hear about something cool being done, it is almost always involves python! So far with the tutorials out there it has been awesome. The python segments here are short and not very advanced. I wrote one important function - move(). It takes an angle and a servo as arguments and -- you guessed it -- moves the specified servo to their specified angle. One problem though -- due to me being an imperfect craftsman and not mounting the servos perfectly straight, the angular position of (90, 90) does not make the camera point straight ahead as one would expect. Therefore I wrote another simple diagnostic function to allow the interactive centering of the servos. Once I had the middle for the X and Y axis, I could use this in the move function to shift the centers.
 
@@ -58,7 +58,6 @@ def spiral():
 </pre>
 
 ##Conclusion & Attachments
-
 
 So that was it! Now I have unrestricted access to use python to do (almost) whatever I want! Looking at the python bindings for OpenCV next!
 

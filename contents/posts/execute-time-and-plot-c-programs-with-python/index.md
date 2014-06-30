@@ -2,6 +2,7 @@
 title: Execute, Time and Plot C++ Programs with Python
 date: 2011-02-03
 template: article.jade
+tags: algorithms, python
 ---
 
 <div class="img-container">

@@ -2,6 +2,7 @@
 title: New Resume
 date: 2013-01-06
 template: article.jade
+tags: documentation
 ---
 
 Over the holidays I finally got around to implementing what I wish existed back when I was looking for a job: a quick, easy, flexible way to write and publish a resume in many formats. The more people who see your resume, the better your chances of getting an interview or call back from a potential employer. This means the more formats and places that your resume is viewable in, the better. When I was looking for a job, I tried to follow this strategy but quickly tired making the same change on multiple versions of my resume in different formats.

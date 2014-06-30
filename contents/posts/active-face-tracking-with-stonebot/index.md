@@ -2,6 +2,7 @@
 title: Active Face Tracking with Stonebot
 date: 2011-03-14
 template: article.jade
+tags: robots, computer vision, python
 ---
 
 I finally have it working! Very excited as I write this. So glad spring break exists otherwise I'd never have the time for this. Long story short, I have face detection working on my personal robot. Check out the video after the break to see it in action.
