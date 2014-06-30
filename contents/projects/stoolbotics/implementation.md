@@ -30,17 +30,17 @@ Links are then constructed from all these variables as a convenient way to group
 
 Once all symbolics for the robot are evaluated, it is actually pretty easy to solve for the forward kinematics of the arm. We use the product of exponentials approach to solve this. First, computing <code>R0T</code> is as simple as this:
 
-<pre>
+```python
 robot.R0T = eye(3, 3)
 for link in robot.links:
     robot.R0T = dot(robot.R0T, link.R)
-</pre>
+```
 
 As you can see, <code>R0T</code> starts out as the identity matrix. The links of the robot then are traversed in order from the base to the end, and along the way the current <code>R0T</code> is multiplied by the link's individual rotation matrix (which comes from <code>\_d</code>). When this is all done, the resulting matrix is the correct <code>R0T</code>.
 
 For positions, the algorithm is a bit more involved:
 
-<pre>
+```python
 tmp = eye(3,3)
 robot.P0T = zeros((3, 1))
 p = None
@@ -50,7 +50,7 @@ for link in robot.links:
     
     p = (robot.P0T[0][0], robot.P0T[1][0], robot.P0T[2][0])
     self.verts.append(p)
-</pre>
+```
 
 First, a few variables are initialized. <code>tmp</code> is the temporary rotation matrix for all links up until the current iteration. It starts off as the identity matrix. Second, the overall position vector, <code>P0T</code>, starts out as a three by one zero vectors. Next, for each link in the robot arm, the representation of the link's position vector in terms of the base frame is added to the current position vector. This is done by using the dot product of the <code>tmp</code> rotation matrix and the link's position vector. The temporary rotation matrix is then updated, and the current position vector is appended to the <code>verts</code> list, which contains all the robot's vertices for the current time-step. This list is later used to draw things like the arm ghosts and trace.
 

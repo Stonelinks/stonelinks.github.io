@@ -22,7 +22,7 @@ Since the principal function of Stoolbotics is simulating robots, it is importan
 ###Robot.json File
 As covered in the quickstart, robots are specified in json files that contain sections in it for defining various aspects of a robot to be simulated. Here is an example file for the Phantom Omni and the explanation again in case you skipped over the quickstart:
 
-```json
+```javascript
 "N" : "3",
 
 "h1" : "z",

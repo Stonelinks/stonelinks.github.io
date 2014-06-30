@@ -33,7 +33,7 @@ Now not to diss PHP or anything (which is what I have most of my experience with
 
 Once move() was done, I wrote some test code and it worked like a champ! I then started stacking calls to move() inside of loops and I wrote some code to make the camera move in simple rectangles. Some problems then became clear: the pan tilt module either moves too slow, too fast or just spazzes out if you issue enough commands to it. Increasing the baud rate helped to speed things up, however it would still freak out if you told it to move really fast. I determined that there needs to be some delay between move() calls. Once again, I wrote some diagnostic code to determine this. The pan tilt module would move in rectangles with increasingly longer pauses between move() calls. At some critical delay value, the pan tilt module stopped jittering and moved smoothly (but still pretty fast) around the perimeter of the rectangle (turned out to be 0.003 seconds). As a final example of what the system can do, I wrote the spiral code that appears in the video above. It is only a few lines of python, but I spaced them out and commented them for ease of understanding:
 
-<pre>
+```python
 def spiral():
     a = .01;  # "stretch" factor for sin and cosine
     t = 0;    # time value
@@ -55,7 +55,7 @@ def spiral():
         
         # delay between the move calls
         time.sleep(.0045)
-</pre>
+```
 
 ##Conclusion & Attachments
 

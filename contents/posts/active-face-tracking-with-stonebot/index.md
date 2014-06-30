@@ -35,7 +35,11 @@ and OpenCV is yours for the taking! Install the documentation and run the exampl
 
 ###Classifiers are easily fooled
 
-![image](http://i.imgur.com/XPuhpl.jpg)
+<div class="img-container">
+
+<img src="http://i.imgur.com/XPuhpl.jpg">
+
+</div>
 
 This is pretty self explanatory. I drew the above face with a purple magic marker in about five seconds and it is able to fool the Haar classifier.
 

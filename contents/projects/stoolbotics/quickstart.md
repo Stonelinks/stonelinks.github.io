@@ -21,7 +21,7 @@ When you fire up the simulator for the first time, you should see something like
 
 You'll notice a robot is loaded into the simulator to start with. This simple three joint arm is called the Phantom Omni, and is defined by the <code>omni.json</code> file in the <code>robots</code> directory. All robot files that the simulator uses are described in such <code>robot.json</code> files in the <code>robots</code> directory. They are simple and easy to understand. Below we have reproduced <code>omni.json</code> as it is first loaded into the simulator:
 
-<pre>
+```javascript
 "N" : "3",
 
 "h1" : "z",
@@ -45,8 +45,7 @@ You'll notice a robot is loaded into the simulator to start with. This simple th
 "R12" : "rot(h2, q2)",
 "R23" : "rot(h3, q3)",
 "R3T" : "eye(3, 3)"
-</pre>
-
+```
 
 Let&#8217;s look at this file line by line to see how it makes a complete robot object:
 
