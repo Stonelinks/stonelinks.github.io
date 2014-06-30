@@ -7509,7 +7509,7 @@ pre code {
   box-shadow: 0px 0px 4px 16px #888888;
   font-size: 120%;
 }
-.tag-row .tag {
+.tag {
   text-transform: uppercase;
   display: inline-block;
   margin: 0px 5px;

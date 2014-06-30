@@ -7,19 +7,19 @@ block content
         - var allTags = env.helpers.getAllTags()
         if tagName
           p
-            span Showing all articles in
-            span.label.label-default.tag= tagName
+            span Showing all posts tagged
+            span.label.label-info.tag= tagName
           p
             | Other tags:
             - var otherTags = allTags.filter(function(tag){ return tag !== tagName})
             each tag in otherTags
               a(href=env.helpers.getTagHome(tag).url)
-                span.label.label-default.tag= tag
+                span.label.label-info.tag= tag
         else
           p
             each tag in allTags
               a(href=env.helpers.getTagHome(tag).url)
-                span.label.label-default.tag= tag
+                span.label.label-info.tag= tag
 
   each article in articles
     .row
@@ -33,8 +33,17 @@ block content
           hr
           | !{ typogr(article.intro).typogrify() }
           if article.hasMore
-            p.text-center
+            p
               a.btn.btn-info(href=article.url) Read more »
+          - var tags = env.helpers.getTagsFromArticle(article)
+          if tags.length
+            hr
+            p
+              | Tags: 
+              each tag in tags
+                a(href=env.helpers.getTagHome(tag).url)
+                  span.label.label-info.tag= tag
+
 
 block prepend footer
   .row(style='width: 100%; margin:0px;')
