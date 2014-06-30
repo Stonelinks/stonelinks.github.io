@@ -44,6 +44,8 @@ module.exports = function(grunt) {
         downstream: 100 * 1024
       }
     },
+    
+    clean: ['<%= config.dist %>'],
 
     less: {
 
@@ -97,6 +99,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('pre', [
+    'clean',
     'less'
   ]);
 

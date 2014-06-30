@@ -1,6 +1,6 @@
 ---
 title: Looking back
-date: 2013-06-3
+date: 2012-06-3
 template: article.jade
 tags: personal
 ---
