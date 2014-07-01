@@ -3,7 +3,7 @@ title: Stonelinks web framework
 template: page.jade
 ---
 
-<div class="img-container">
+<div class="media-container">
 
 <img src="/img/projects/stonelinks-web-framework.png">
 

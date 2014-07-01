@@ -3,7 +3,7 @@ title: Harvard - Smithsonian Center for Astrophysics
 template: page.jade
 ---
 
-<div class="img-container">
+<div class="media-container">
 
 <img src="/img/projects/amf/chamber-logo.png">
 
@@ -21,7 +21,7 @@ My time at Harvard-CFA has been tremendously valuable to me. While there, I have
 
 My major accomplishment at Harvard has been writing a software suite to automate the complex task of creating an optic given specific geometry, thicknesses, and various other parameters. Along the journey of implementing this software, I have had to develop a fairly complex UI, control sequences, hardware monitors, error checkers and motion control algorithms. One of the most challenging parts has been the program's organization. As the complexity of the programs have increased, I've had to rework the architecture several times to increase efficiency, eliminate redundant code, and ultimately make the whole application much tighter, portable and friendly to use and develop. The utilities I wrote also allow me to monitor and control chamber hardware without being physically present in the lab (extremely valuable for troubleshooting from home or out of state).
 
-<div class="img-container">
+<div class="media-container">
 
 <img src="/img/projects/amf/screen.jpg">
 

@@ -94,7 +94,7 @@ The cosmetics of the simulation environment are highly configurable. Here are so
 
 Here is an example of some simulation environment manipulation with the above commands and the result:
 
-<div class="img-container">
+<div class="media-container">
 
 <img src="/img/projects/stoolbotics/8.png">
 

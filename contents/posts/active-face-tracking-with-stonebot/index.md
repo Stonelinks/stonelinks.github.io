@@ -7,7 +7,7 @@ tags: robots, computer vision, python
 
 I finally have it working! Very excited as I write this. So glad spring break exists otherwise I'd never have the time for this. Long story short, I have face detection working on my personal robot. Check out the video after the break to see it in action.
 
-<div class="img-container">
+<div class="media-container">
 
 <iframe src="http://www.youtube.com/embed/RRwMJ8GYT7Y" frameborder="0" allowfullscreen></iframe>
 
@@ -35,7 +35,7 @@ and OpenCV is yours for the taking! Install the documentation and run the exampl
 
 ###Classifiers are easily fooled
 
-<div class="img-container">
+<div class="media-container">
 
 <img src="http://i.imgur.com/XPuhpl.jpg">
 

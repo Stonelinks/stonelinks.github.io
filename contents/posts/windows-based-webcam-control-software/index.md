@@ -13,7 +13,7 @@ Projects such as this are just the kind of thing that I love taking time to do. 
 
 ###Hardware
 
-<div class="img-container">
+<div class="media-container">
 
 <img src="/img/posts/2010-02-08-193359-150x150.jpg">
 
@@ -232,7 +232,7 @@ This was not good enough for me though, as I wanted to control this through a we
 ###The Web Server
 
 
-<div class="img-container">
+<div class="media-container">
 
 <img src="/img/posts/2010-02-08-193241-150x150.jpg">
 

@@ -3,7 +3,7 @@ title: Awesome Backup System
 template: page.jade
 ---
 
-<div class="img-container">
+<div class="media-container">
 
 <img src="/img/projects/abs.png">
 

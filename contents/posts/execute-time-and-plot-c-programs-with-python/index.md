@@ -5,7 +5,7 @@ template: article.jade
 tags: algorithms, python
 ---
 
-<div class="img-container">
+<div class="media-container">
 
 <img src="/img/posts/Fig.png">
 

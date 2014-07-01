@@ -3,7 +3,7 @@ title: Boeing Robotic Wingbox
 template: page.jade
 ---
 
-<div class="img-container">
+<div class="media-container">
 
 <iframe src="http://www.youtube.com/embed/slJodwZfds0" frameborder="0" allowfullscreen></iframe>
 
@@ -19,7 +19,7 @@ Boeing is therefore very interested in developing a robotic system that could op
 
 My capstone team was tasked to develop a simulation and control system for a robot designed to operate inside an aircraft wing. In addition to being the the team leader, I also wrote all the code for the simulator and the control system as other members of the team were not familiar with programming. The general architecture of the system was split into three parts: a client, server and the simulation data.
 
-<div class="img-container">
+<div class="media-container">
 
 <img src="/img/projects/boeing/sc14.png">
 

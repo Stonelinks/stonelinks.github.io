@@ -5,7 +5,7 @@ template: article.jade
 tags: computer vision, C++
 ---
 
-<div class="img-container">
+<div class="media-container">
 
 <iframe src="http://www.youtube.com/embed/gLsdHmCKoEw" frameborder="0" allowfullscreen></iframe>
 

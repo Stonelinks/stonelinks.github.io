@@ -5,7 +5,7 @@ template: article.jade
 tags: science
 ---
 
-<div class="img-container">
+<div class="media-container">
 
 <img src="/img/posts/downsize1-225x300.jpg">
 

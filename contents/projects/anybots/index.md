@@ -3,7 +3,7 @@ title: Super_robert / Anystats
 template: page.jade
 ---
 
-<div class="img-container">
+<div class="media-container">
 
 <img src="/img/projects/anybots/qb-tall.jpg">
 
@@ -15,7 +15,7 @@ I spent the summer of 2011 at an internship with [Anybots](http://anybots.com), 
 
 During my short time at Anybots, I noticed a severe lack of infrastructure for monitoring the fleet of about 130 robots out in the world (several million dollars' worth of robots). A friend and coworker was spending a tremendous amount of time every day manually checking what robots were online by SSHing into each one and reading the logs, which were often thousands of lines long. Because scalability is one of the things that can kill a startup fast and because I wanted to free up his valuable time, I wrote Super_robert and Anystats to help him out by automatically gathering logs from robots and computing information and statistics about global robot fleet status.
 
-<div class="img-container">
+<div class="media-container">
 
 <img src="/img/projects/anybots/montydexter.jpg">
 

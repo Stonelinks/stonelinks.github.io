@@ -5,7 +5,7 @@ template: article.jade
 tags: airplane
 ---
 
-<div class="img-container">
+<div class="media-container">
 
 <iframe src="http://www.youtube.com/embed/3jVKegQwZ24" frameborder="0" allowfullscreen></iframe>
 
@@ -13,7 +13,7 @@ tags: airplane
 
 Good news and bad news! The good news is that in the last month or so at RPI, my friend Drew and I were able to cobble together some electronics with my airplane and squeeze in some successful flights of an RC drone! In the video above you can see one of our voyages. I successfully piloted the plane over RPI's campus for about a half hour until the winds started to pick up and things got messy.
 
-<div class="img-container">
+<div class="media-container">
 
 <img src="/img/posts/drone.jpg">
 

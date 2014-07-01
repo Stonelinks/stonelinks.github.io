@@ -11,7 +11,7 @@ template: page.jade
   <li>[About](/projects/stoolbotics/implementation.html)</li>
 </ul>
 
-<div class="img-container">
+<div class="media-container">
 
 <iframe src="http://www.youtube.com/embed/h3Rus5mUkzY" frameborder="0" allowfullscreen></iframe>
 
@@ -19,7 +19,7 @@ template: page.jade
 
 Stoolbotics is a general purpose robotic arm and kinematics simulator aimed at being a teaching tool for aspiring roboticists. The motivation for this project was simple: the linear algebra and mathematical concepts behind robotics is difficult for a beginner to understand without any visual context. This is especially true for people who are primarily visual learners.
 
-<div class="img-container">
+<div class="media-container">
 
 <img src="/img/projects/stoolbotics/omni.jpg">
 

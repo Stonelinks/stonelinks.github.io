@@ -3,7 +3,7 @@ title: DaBuzz
 template: page.jade
 ---
 
-<div class="img-container">
+<div class="media-container">
 
 <img src="/img/projects/dabuzz.png">
 

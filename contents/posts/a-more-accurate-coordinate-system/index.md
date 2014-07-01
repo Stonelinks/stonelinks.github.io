@@ -5,7 +5,7 @@ template: article.jade
 tags: robots, computer vision, python, arduino
 ---
 
-<div class="img-container">
+<div class="media-container">
 
 <iframe src="http://www.youtube.com/embed/c72tK4KTTj0" frameborder="0" allowfullscreen></iframe>
 

@@ -5,7 +5,7 @@ template: article.jade
 tags: web development
 ---
 
-<div class="img-container">
+<div class="media-container">
 
 <img src="/img/posts/downsize-300x225.jpg">
 

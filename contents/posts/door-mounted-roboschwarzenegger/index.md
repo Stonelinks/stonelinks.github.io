@@ -5,7 +5,7 @@ template: article.jade
 tags: robots, computer vision, telemetry, python
 ---
 
-<div class="img-container">
+<div class="media-container">
 
 <img src="/img/posts/downsize_4-225x300.jpg">
 
@@ -23,7 +23,7 @@ Basically I thought it could be like a less hardcore version of [ROS](http://www
 
 Needless to say it was an extremely ambitious for a project for the middle of a busy summer internship. While I wish I had the time to pour into making it a reality, I had more than enough on my plate at the Harvard-Smithsonain Center for Astrophysics. Therefore I only started writing the interface and just finished writing some basic camera / telemetry code this weekend. The end result is what you see here:
 
-<div class="img-container">
+<div class="media-container">
 
 <img width="50%" src="/img/posts/downsize_2-150x150.jpg">
 <img width="50%" src="/img/posts/downsize-150x150.jpg">
