@@ -5,7 +5,7 @@ template: page.jade
 
 <div class="img-container">
 
-<img src="/img/projects/boeing/screenshot.png">
+<iframe src="http://www.youtube.com/embed/slJodwZfds0" frameborder="0" allowfullscreen></iframe>
 
 </div>
 
