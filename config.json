@@ -6,7 +6,8 @@
     "site": {
       "title": "Stonelinks",
       "tagline": "Lucas Doyle's website",
-      "logo": "logos/big-logo.png"
+      "logo": "logos/big-logo.png",
+      "email": "lucas.p.doyle@gmail.com"
     },
 
     "social_networks": [
