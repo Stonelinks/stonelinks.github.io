@@ -179,30 +179,13 @@ var pages = {
   projects: function() {
     setBGImage(chooseRandomImage());
 
-    var _setMaxHeight = function(s) {
-      var $s = $(s);
-
-      var heights = [];
-      $s.each(function() {
-        $(this).css('height', '');
-        heights.push($(this).height());
-      });
-      $s.each(function() {
-        $(this).height(_.max(heights));
-      });
-    };
-
-    var _setProjectPageHeights = function() {
-      var s = '.project-box-outer';
-      if ($(window).width() < 768) {
-        $(s).css('height', '');
+    $('#projects').isotope({
+      itemSelector: '.project-box',
+      layoutMode: 'masonry',
+      masonry: {
+        gutter: 10
       }
-      else {
-        _setMaxHeight(s);
-      }
-    };
-    $('.project-row img').load(_setProjectPageHeights);
-    $(window).resize(_setProjectPageHeights);
+    });
   },
 
   'projects/mindshare/index': function() {

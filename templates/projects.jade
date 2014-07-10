@@ -1,17 +1,18 @@
 extends layout
 
+block append head
+  script(src='/vendor/isotope/jquery.isotope.min.js')
+
 block content
-  .row.project-row
+  #projects.row
     each project in page.metadata.projects
-      .col-xs-12.col-sm-6.col-md-4.project-box-outer
-        .project-box
-          hr
-          a(href='/projects/' + project.id + '/index.html')
-            h3.intro-text.text-center
-              | !{ typogr(project.name).typogrify() }
-          hr
-          a.img-link(href='/projects/' + project.id + '/index.html')
-            img(src='/img/' + project.image)
-          a(href='/projects/' + project.id + '/index.html')
-            p
-              | !{ typogr(project.desc).typogrify() }
+      .project-box
+        hr
+        a(href='/projects/' + project.id + '/index.html')
+          h3.intro-text.text-center
+            | !{ typogr(project.name).typogrify() }
+        hr
+        a(href='/projects/' + project.id + '/index.html')
+          img(src='/img/' + project.image)
+        p
+          | !{ typogr(project.desc).typogrify() }
