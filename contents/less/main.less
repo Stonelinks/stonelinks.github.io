@@ -101,6 +101,11 @@ hr {
   margin: 0 auto 0;
 }
 
+.project-row {
+  width: 100%;
+  margin: 0px;
+}
+
 footer {
   background: #fff;
   background: rgba(255,255,255,0.9);
@@ -395,7 +400,7 @@ pre code {
 
   margin-left: 0px;
   margin-right: 0px;
-
+  
   opacity: 1;
   
   -webkit-transition: all .2s ease;
@@ -422,19 +427,42 @@ pre code {
   opacity: 0.4;
 }
 
+.project-row .grid-sizer,
+.project-row .project-box {
+  width: 100%;
+}
+
+.project-row .gutter-sizer {
+  width: 0%;
+}
+
+@media screen and (min-width: @screen-sm) {
+
+.project-row .grid-sizer,
+.project-row .project-box {
+  width: 48%;
+}
+
+.project-row .gutter-sizer {
+  width: 4%;
+}
+
+}
+
 @media screen and (min-width: @screen-md) {
 
-.project-box {
-  width: 20%;
+.project-row .grid-sizer,
+.project-row .project-box {
+  width: 30.66666666%;
 }
 
 }
 
 @media screen and (min-width: @screen-lg) {
 
-.project-box {
-  width: 20%;
+.project-row .grid-sizer,
+.project-row .project-box {
+  width: 22%;
 }
 
 }
-

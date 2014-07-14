@@ -1,10 +1,11 @@
 extends layout
 
 block append head
-  script(src='/vendor/isotope/jquery.isotope.min.js')
+  script(src='/vendor/isotope/dist/isotope.pkgd.js')
+  script(src='/vendor/isotope-packery/packery-mode.pkgd.js')
 
 block content
-  #projects.row
+  #projects.project-row
     each project in page.metadata.projects
       .project-box
         hr
@@ -16,3 +17,5 @@ block content
           img(src='/img/' + project.image)
         p
           | !{ typogr(project.desc).typogrify() }
+    .grid-sizer
+    .gutter-sizer

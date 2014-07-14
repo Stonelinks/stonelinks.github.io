@@ -179,13 +179,15 @@ var pages = {
   projects: function() {
     setBGImage(chooseRandomImage());
 
-    $('#projects').isotope({
-      itemSelector: '.project-box',
-      layoutMode: 'masonry',
-      masonry: {
-        gutter: 10
-      }
-    });
+    setTimeout(function() {
+      $('#projects').isotope({
+        layoutMode: 'packery',
+        packery: {
+          columnWidth: '.grid-sizer',
+          gutter: '.gutter-sizer'
+        }
+      });
+    }, 1300);
   },
 
   'projects/mindshare/index': function() {

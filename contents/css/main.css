@@ -7273,6 +7273,10 @@ hr {
   float: none;
   margin: 0 auto 0;
 }
+.project-row {
+  width: 100%;
+  margin: 0px;
+}
 footer {
   background: #fff;
   background: rgba(255, 255, 255, 0.9);
@@ -7510,13 +7514,31 @@ pre code {
 #projects:hover .project-box:not(:hover) {
   opacity: 0.4;
 }
+.project-row .grid-sizer,
+.project-row .project-box {
+  width: 100%;
+}
+.project-row .gutter-sizer {
+  width: 0%;
+}
+@media screen and (min-width: 768px) {
+  .project-row .grid-sizer,
+  .project-row .project-box {
+    width: 48%;
+  }
+  .project-row .gutter-sizer {
+    width: 4%;
+  }
+}
 @media screen and (min-width: 992px) {
-  .project-box {
-    width: 20%;
+  .project-row .grid-sizer,
+  .project-row .project-box {
+    width: 30.66666666%;
   }
 }
 @media screen and (min-width: 1200px) {
-  .project-box {
-    width: 20%;
+  .project-row .grid-sizer,
+  .project-row .project-box {
+    width: 22%;
   }
 }
