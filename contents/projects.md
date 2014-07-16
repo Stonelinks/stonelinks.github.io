@@ -47,7 +47,7 @@ projects:
   -
     id: robots
     name: Robots
-    image: projects/ied-robot.jpg,
+    image: projects/ied-robot.jpg
     tags: robotics
     desc: All robots I\'ve ever been involved with (unless otherwise mentioned on this page).
   -
