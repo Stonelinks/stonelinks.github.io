@@ -180,12 +180,23 @@ var pages = {
     setBGImage(chooseRandomImage());
 
     setTimeout(function() {
-      $('#projects').isotope({
+      var $container = $('#projects')
+      
+      $container.isotope({
         layoutMode: 'packery',
         packery: {
           columnWidth: '.grid-sizer',
           gutter: '.gutter-sizer'
         }
+      });
+      $('#filters').on( 'click', '.tag', function() {
+        var filterValue = $(this).attr('data-filter');
+        filterValue = filterValue == '*' ? filterValue : '.' + filterValue
+        $container.isotope({
+          filter: '*'
+        }).isotope({
+          filter: filterValue
+        });
       });
     }, 1300);
   },
