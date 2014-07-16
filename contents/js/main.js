@@ -187,6 +187,7 @@ var pages = {
           gutter: '.gutter-sizer'
         }
       });
+      $('.grid-sizer .gutter-sizer').hide();
     }, 1300);
   },
 

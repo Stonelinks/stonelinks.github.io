@@ -7512,7 +7512,7 @@ pre code {
   margin: 0;
 }
 #projects:hover .project-box:not(:hover) {
-  opacity: 0.4;
+  opacity: 0.8;
 }
 .project-row .grid-sizer,
 .project-row .project-box {
