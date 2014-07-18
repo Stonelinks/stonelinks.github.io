@@ -179,9 +179,10 @@ var pages = {
   projects: function() {
     setBGImage(chooseRandomImage());
 
-    setTimeout(function() {
-      var $container = $('#projects')
-      
+    var $container = $('#projects');
+
+    $container.imagesLoaded(function() {
+
       $container.isotope({
         layoutMode: 'packery',
         packery: {
@@ -189,16 +190,17 @@ var pages = {
           gutter: '.gutter-sizer'
         }
       });
-      $('#filters').on( 'click', '.tag', function() {
+      $('#filters').on('click', '.tag', function() {
         var filterValue = $(this).attr('data-filter');
-        filterValue = filterValue == '*' ? filterValue : '.' + filterValue
+        filterValue = filterValue == '*' ? filterValue : '.' + filterValue;
         $container.isotope({
           filter: '*'
         }).isotope({
           filter: filterValue
         });
       });
-    }, 1300);
+      $('.grid-sizer .gutter-sizer').hide();
+    });
   },
 
   'projects/mindshare/index': function() {

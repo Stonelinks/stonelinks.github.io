@@ -55,17 +55,7 @@
           <div class="col-lg-12">
             <hr><a href="/projects/boeing/">
               <h1 class="intro-text text-center">Boeing Robotic Wingbox</h1></a>
-            <hr><div class="media-container">
-
-<iframe src="http://www.youtube.com/embed/slJodwZfds0" frameborder="0" allowfullscreen></iframe>
-
-</div>
-
-<h2 id="introduction">Introduction</h2>
-<p>The wings of a modern commercial aircraft are one of the most sophisticated, complex and precisely manufactured feats of engineering that mankind has ever produced. Wings not only provide the lift and structural support that allow the aircraft to fly, but also have the important function of housing many critical pieces if equipment. Interior spaces between the ribs and spars inside the wing, called wingboxes, house things like fuel lines, hydraulic pumps, electrical wires, hoses, etc. Above all other things, the structure and aerodynamics of the wings are crucial for safe and efficient operation of the aircraft. Unfortunately, there are ergonomic constraints introduced by the need for humans to access the inside of the wingboxes in order for assembly and maintenance to occur. To meet these ergonomic constraints, Boeing has had to cut access holes in the outside skin of the wing, as well as modify the interior spaces to be more human accessible. These two things both compromise the structural integrity and decrease the aerodynamic efficiency of the&nbsp;wings.</p>
-<p>Boeing is therefore very interested in developing a robotic system that could operate inside the wing to assist with assembly and maintenance tasks. This system would remove the ergonomic constraints, as it could operate in much smaller spaces. It would also carry with it the benefits inherent to robotics: increased speed, repeatability and accuracy during assembly and&nbsp;maintenance.</p>
-<h2 id="simulation-and-control">Simulation and&nbsp;Control</h2>
-<p>My capstone team was tasked to develop a simulation and control system for a robot designed to operate inside an aircraft wing. In addition to being the the team leader, I also wrote all the code for the simulator and the control system as other members of the team were not familiar with programming. The general architecture of the system was split into three parts: a client, server and the simulation&nbsp;data.</p>
+            <hr><p>My capstone team was tasked to develop a simulation and control system for a robot designed to operate inside an aircraft wing. If you’re wondering why Boeing would want this, check out <a href="/projects/boeing/#why">this</a>. In addition to being the the team leader and coordinating with Boeing, I also wrote all the code for the simulator and the control system as other members of the team were not familiar with programming. The general architecture of the system was split into three parts: a client, server and simulation&nbsp;data.</p>
 <div class="media-container">
 
 <img src="/img/projects/boeing/sc14.png">
@@ -74,10 +64,27 @@
 
 </div>
 
-<p>General operation started out with the client to coordinate and control the robot. Using joysticks, renderings of the robot in its environment and a video feed, the operator could modify the client’s simulation environment to be in some desired state. This state could then be sent to the server, which would do all the heavy computations necessary to smoothly and safely transition the robot from current state to the desired state. The server also did other computationally intensive tasks, such as object recognition of things like bolt holes, physics calculations, etc. Ultimately, the server was designed to control a physical robot, so an abstraction layer was developed to allow generic information from the simulation to be translated into hardware specific instructions. Support was also implemented between client and server to allow many clients to safely control a single robot. Finally, all the simulation data (descriptions of the kinematic bodies that comprise a robot, the location and contents of the simulation environment, etc) was kept separate to increase flexibility and portability of the&nbsp;software.</p>
-<h2 id="conclusions">Conclusions</h2>
-<p>I am immensely proud of how the final product turned out and had a ton of fun working with <span class="caps">RPI</span> and Boeing on the project. There are two things I wish I could change though with this&nbsp;project.</p>
-<p>First, I either wish that I wasn’t team leader so I could spend more time coding, or someone else on the team also could have also coded along side me. I just felt spread too thin between coding this massive application and also being a manager. I would rather do one thing and do it well as opposed to do two or more things and not be able to give each my&nbsp;best.</p>
+<h3 id="client">Client</h3>
+<p>General operation started out with the client to coordinate and control the robot. Using joysticks, renderings of the robot in its environment and a video feed, the operator could modify the client’s simulation environment to be in some desired&nbsp;state.</p>
+<h3 id="server">Server</h3>
+<p>Modified state from the client could then be sent to the server, which would do all the heavy computations necessary to smoothly and safely transition the robot from current state to the desired state. The server also did other computationally intensive tasks, such as object recognition of things like bolt holes, physics calculations, etc. Ultimately, the server was designed to control a physical robot, so an abstraction layer was developed to allow generic information from the simulation to be translated into hardware specific instructions. Support was also implemented between client and server to allow many clients to safely control a single&nbsp;robot.</p>
+<h3 id="simulation-data">Simulation&nbsp;Data</h3>
+<p>Finally, all the simulation data (descriptions of the kinematic bodies that comprise a robot, the location and contents of the simulation environment, etc) was kept separate to increase flexibility and portability of the software as it was used in both the client and the&nbsp;server.</p>
+<div class="media-container">
+
+<iframe src="http://www.youtube.com/embed/slJodwZfds0" frameborder="0" allowfullscreen></iframe>
+
+<p>Demonstration of the whole system in&nbsp;operation.</p>
+
+</div>
+
+<h2 id="why">Why</h2>
+<p>So why do any of this? The wings of a modern commercial aircraft are one of the most sophisticated, complex and precisely manufactured feats of engineering that mankind has ever produced. They not only provide the lift and structural support that allow the aircraft to fly, but also house many critical pieces of equipment such as fuel lines, hydraulic pumps, electrical wires, hoses,&nbsp;etc.</p>
+<p>This equipment is kept in interior spaces inside the wing called wingboxes. Unfortunately these wingboxes need to be human accessable durng assembly and mantinence, which introduces a signifigant ergonomic constraint into the design of the wing. Boeing has to cut big access holes in the outside skin of the wing, as well as modify the interior spaces to be more human accessible. Both of these things compromise the structural integrity and decrease the aerodynamic efficiency of the&nbsp;wings.</p>
+<p>Boeing is very interested in developing a robotic system that could operate inside the wing to assist with assembly and maintenance tasks. Removing the need for a human accessable wingbox would have massive implications in the design of the wing and the efficiency of the aircraft. The cost savings from decreased fuel usage over the lifetime of the aircraft alone would be huge. This solution would also carry with it the benefits inherent to robotics: increased speed, repeatability and accuracy during assembly and&nbsp;maintenance.</p>
+<h2 id="what-i-learned">What I&nbsp;learned</h2>
+<p>This was a big project for me, and I am immensely proud of how the final product turned out and had a ton of fun working with <span class="caps">RPI</span> and Boeing on the project. I learned too many things to reasonbly articulate, but there are two things I wish I could change with this&nbsp;project.</p>
+<p>First, I either wish that I wasn’t team leader so I could spend more time coding, or someone else on the team also could have also coded along side me so I could be a better leader. I felt spread too thin between coding this massive application and also being a manager. I would rather do one thing and do it well as opposed to do two or more things and not be able to give each my&nbsp;best.</p>
 <p>Second, I can’t show any of my work off! This is probably the biggest and best engineered piece software I’ve written. All the intellectual property is technically owned by <span class="caps">RPI</span> / Boeing, so I can’t release any of it. In the future I’d like to get permission to gut out any proprietary information, polish a few things up and release it as a collaborative robot planning&nbsp;tool.</p>
 <h2 id="shout-outs">Shout&nbsp;outs</h2>
 <p>My capstone&nbsp;team:</p>
