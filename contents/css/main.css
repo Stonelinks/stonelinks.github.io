@@ -7258,11 +7258,18 @@ hr {
   margin-bottom: 20px;
   padding: 10px;
 }
-.intro-text {
+.box h1,
+.box h2,
+.box h3,
+.box h4,
+.box h5 {
+  margin-top: 40px;
+}
+.box .intro-text {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 400;
-  word-wrap: break-word;
+  margin-top: 20px;
 }
 .img-border {
   float: none;
@@ -7494,7 +7501,6 @@ pre code {
   padding-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  opacity: 1;
   -webkit-transition: all .2s ease;
   -moz-transition: all .2s ease;
   -o-transition: all .2s ease;
@@ -7510,9 +7516,6 @@ pre code {
 }
 .project-box p {
   margin: 0;
-}
-#projects:hover .project-box:not(:hover) {
-  opacity: 0.8;
 }
 .project-row .grid-sizer,
 .project-row .project-box {

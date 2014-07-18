@@ -46,7 +46,8 @@
     "moment": "moment",
     "_": "underscore",
     "typogr": "typogr",
-    "grunt": "grunt"
+    "grunt": "grunt",
+    "markdown": "markdown"
   },
   "jade": {
     "pretty": true
