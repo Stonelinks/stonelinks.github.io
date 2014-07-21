@@ -29,8 +29,7 @@ Stoolbotics is a general purpose robotic arm and kinematics simulator aimed at b
 
 This tool will hopefully fill a gap in many higher education robotics classrooms. It was designed to be easy to use and compatible with other technologies (like MATLAB). The project itself was conceived and implemented halfway through the Fall 2011 semester at RPI by Lucas Doyle with some help from Scott Peck.
 
-For information on how to get Stoolbotics, check out the [download page](/projects/stoolbotics/download.html). To get a quick idea of how to use Stoolbotics, check out the video below or read the [quickstart](/projects/stoolbotics/quickstart.html). To find out more about Stoolbotics, such as how it was implemented, or more detailed uses of the simulator, see the sidebar on the right.
-
+For information on how to get Stoolbotics, check out the [download page](/projects/stoolbotics/download.html). To get a quick idea of how to use Stoolbotics, check out the video below or read the [quickstart](/projects/stoolbotics/quickstart.html). To find out more about Stoolbotics, such as how it was implemented, or more detailed uses of the simulator, see the [full docs](/projects/stoolbotics/use.html).
 
 ##Features
 

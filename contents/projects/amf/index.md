@@ -9,9 +9,9 @@ template: page.jade
 
 </div>
 
-For the past two and a half years I have worked at the [Harvard-Smithsonian Center for Astrophysics](http://www.cfa.harvard.edu/hea/). I have had the distinct pleasure of working with Dr. Suzanne Romaine and Ricardo Bruni integrating hardware and writing software that automates the fabrication of multilayer (and sometimes non-multilayer) coatings on the surfaces of optics to be used for X-ray imaging (mostly in astronomy).
+Since 2009 I have worked at the [Harvard-Smithsonian Center for Astrophysics](http://www.cfa.harvard.edu/hea/) on a wide array of projects for Dr. Suzanne Romaine and Ricardo Bruni. Mainly I've been desinging hardware and software that automates the fabrication of multilayer (and sometimes non-multilayer) coatings on the surfaces of optics to be used for X-ray imaging (mostly in astronomy).
 
-For astronomy, these multilayer coatings are designed to capture, focus and reflect the X-ray photons from deep space back on to an array of detectors inside of the telescope to form an image. The coatings are called "multilayers" because they consist of very thin (sometimes only a couple of angstroms) alternating layers of different materials (They are essentially man-made bragg crystals).
+These multilayer coatings are designed to capture, focus and reflect the X-ray photons from deep space back on to an array of detectors inside of the telescope to form an image. The coatings are called "multilayers" because they consist of very thin (sometimes only a couple of angstroms) alternating layers of different materials (they are essentially highly specialized man-made [bragg crystals](http://en.wikipedia.org/wiki/Bragg's_law)).
 
 My time at Harvard-CFA has been tremendously valuable to me. While there, I have:
 
@@ -19,7 +19,13 @@ My time at Harvard-CFA has been tremendously valuable to me. While there, I have
 - Developed strong communication skills by working with astrophysicists, engineers, hardware vendors, etc.
 - Gained valuable technical experience with automation, programming, engineering, astrophysics, materials science and more
 
-My major accomplishment at Harvard has been writing a software suite to automate the complex task of creating an optic given specific geometry, thicknesses, and various other parameters. Along the journey of implementing this software, I have had to develop a fairly complex UI, control sequences, hardware monitors, error checkers and motion control algorithms. One of the most challenging parts has been the program's organization. As the complexity of the programs have increased, I've had to rework the architecture several times to increase efficiency, eliminate redundant code, and ultimately make the whole application much tighter, portable and friendly to use and develop. The utilities I wrote also allow me to monitor and control chamber hardware without being physically present in the lab (extremely valuable for troubleshooting from home or out of state).
+##The Software
+
+My major accomplishment at Harvard has been writing a software suite to automate the task of creating an optic given a set of parameters. Along the journey of implementing this software, I have had to develop a complex UI, control sequences, hardware monitors, error checkers and motion control algorithms.
+
+One of the most challenging parts has been the program's organization. As the complexity of the programs have increased, I've had to rework the architecture several times to increase run efficiency (these things take hours sometimes), eliminate redundant code, and ultimately make the whole application much tighter, portable and friendly both for users and me, the developer. The utilities I wrote also allow me to monitor and control chamber hardware without being physically present in the lab (extremely valuable for troubleshooting remotely).
+
+The current incarnation of the software has actually split into two major parts. At the lowest level, there is a __LabVIEW hardware interpreter__ and simple tools for manually controlling the chambers. Fundamentally, there a simple instruction set (with things in it like `MOVE_AXIS`, `OPEN_SHUTTER`, etc.) that it implements. Lists of these instructions are fed into it and it executes them sequentially and moves chamber hardware. The other program, a __simple [webpy](http://webpy.org/) application__, actually generates and keeps track of these instructions and the parameters used to generate them. The source code for this web ui is [available on github](https://github.com/Stonelinks/amf). This decoupling is really nice since there are so many different types of coatings, optic geometries and chamber hardware configurations. LabVIEW requires an extraordinary amount of work for developing large scale applications such as this, so keeping the LabVIEW components simple has turned out to be a fantastic choice.
 
 <div class="media-container">
 
@@ -29,40 +35,32 @@ My major accomplishment at Harvard has been writing a software suite to automate
 
 </div>
 
-Ultimately the end result has been the creation of a robust and easy to use system that makes the daunting task of producing any kind of X-ray optic as easy and stress free as possible for someone not intimately familiar with the details. Hopefully if NASA ever gets enough funding, my tools will end up creating something that ends up in space!
+##The Hardware
 
-##About Multilayer Fabrication
+The technique used to actually coat the optic is called DC magnetron sputtering. A good explanation of the basic technique can be found [here](http://www.ajaint.com/whatis.htm). Some quick facts about the coating process:
 
-The software I have written works off a list of desired layer thicknesses. The user can either use the program to generate constant thicknesses itself, or alternatively can choose to import a list of thicknesses generated by another program (such as thicknesses generated from a program in [IDL](http://www.ittvis.com/ProductServices/IDL.aspx), Matlab, etc). The user then inputs a few other parameters, such as the number of layers and the material deposition rates. Once all the pre-run parameters are entered, the program generates a set of instructions for itself to follow during the run. All input and instructions are checked for potential errors, and if everything checks out the user can start the run.
+- The coating is done in a vacuum chamber
+- Deposition rates of materials are held constant within a fixed cross section of flux
+- Since sputter cross section and optic substrate are different sizes, the position of the substrate needs to move around inside the chamber in order to get an even deposition
+- The substrate also needs to be able to move between two sputtering sources to form a multilayer
 
-The technique used to actually coat the optic is called DC magnetron sputtering. A really good explainaion of the basics can be found [here](http://www.ajaint.com/whatis.htm). This technique, in combination with other constraints for the multilayer dictate the following basic requirements:
+The deposition sources (magnetrons, also called the cathodes) are always on during a run. They can only deposit one material and only cover a small portion of the total surface on the optic to be coated. Therefore, my control algorithms had to determine how to move equipment inside the chamber to properly and accurately coat the optic evenly. Things that I had to design and build to achieve this are:
 
-- The coating is conducted in a vacuum chamber
-- Deposition rates of materials are held constant within a fixed cross section
-- Since sputter cross section and optic substrate are different sizes, the position of the substrate needs to move around inside the chamber in order to get an even deposition.
-- Substrate also needs to be able to move between two sources to form a multilayer
-
-The deposition sources (magnetrons, also called the cathodes) are always on during a run, can only deposit one material at a fixed rate, and only cover a small portion of the total surface on the optic to be coated. Therefore, I hat to write control algorithms to determine how to move equipment inside the chamber to properly and accurately coat the optic evenly. The basic equipment I had at my disposal to achieve this level of control are:
-
-- A four axis stepper motor controller in the PC (instructions are issued to it by software)
-- A stepper motor attached to the platen, used for angular positioning of the optic about the center of the chamber
-- Two shutters to block or allow sputter to flow from a source's magnetron
-- An optional mandrel (also controlled VIA a vacuum rated stepper) to add an extra dimension to coatings (IE coat a cylindrical optic as opposed to a flat wafer)
-- Stepper motor drivers to actually power and actuate stepper motors based on commands from the controller in the PC
+- Spec out and buy many stepper controller / driver / power supply / motors, including vacuum compatible steppers and drivers that do fancy things like holding current cutoff (for heat reduction) and microstepping
+- Design and build a completely new chamber (pictured above) with CAD, including all internal optic manipulation hardware, ferrofluidic feedthroughs, chamber stand/dolly, lid hoists, etc.
+- Made a mandrel (controlled VIA a vacuum rated stepper) to add an extra dimension to coatings (coat cylindrical shell optics in addition to flat wafers)
 - Assorted power supplies and instruments to monitor temperature, flow rate, etc.
-
-Once a run is started, the user sits back and monitors the chamber and magnetron conditions while the coating is executed. Multilayers can be several hundred angstroms thick and deposition rates are small, so its not rare that a run lasts several hours. In the event of an emergency or if something needs to be re-adjusted, the user can choose to abort or pause a run. While paused or not in a run, a full suite of tools to manually control and re-align the chamber are available. At all times, the user has graphical feedback as to the current status of the chamber, as well as how far along the run has progressed.
 
 ##Other Work
 
-Further work I've done at Harvard includes:
+Other odd jobs I've done at the CFA include:
 
-- Unifying all versions of the software for all the different chambers and optic geometries (there used to be a separate version for each, made maintenance a nightmare)
-- Designing chamber hardware from CAD (including a portable stand for a vacuum chamber that weighed several hundred pounds)
-- Ordering the fabrication of parts through machinists
-- Chamber assembly
 - Supervising a high school student for a summer
-- Fixing a $70,000 profile-meter used for substrate characterizations
-- Decreased shutter latency and saved money by designing a cheap solenoid controller
+- Fixing a $70,000 profile-meter used for optic substrate characterizations
+- Decreased chamber shutter latency and saved money by designing a cheap solenoid controller with an arduino
 - Helped with data distribution for an experiment run at Brookhaven National Laboratory
-- Probably more things that I am forgetting about.
+- Probably more things that I am forgetting about
+
+##Conclusions
+
+Ultimately the end result has been the creation of a robust and easy to use platform that makes the daunting task of producing any kind of X-ray optic safe, easy and as stress free as possible for someone not intimately familiar with the details. Hopefully if NASA ever gets enough funding, my tools will end up creating something that ends up in space!
