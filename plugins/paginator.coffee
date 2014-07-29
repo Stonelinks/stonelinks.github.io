@@ -1,4 +1,3 @@
-
 module.exports = (env, callback) ->
   ### Paginator plugin. Defaults can be overridden in config.json
       e.g. "paginator": {"perPage": 10} ###

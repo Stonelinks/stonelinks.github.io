@@ -3,6 +3,9 @@ title: Door Mounted Robo Schwarzenegger
 date: 2010-11-12
 template: article.jade
 tags: robots, computer vision, telemetry, python
+gallery: 
+  anchor: '#gallery'
+  images: [/img/projects/personal-robot-gallery/2010-02-08-193124.jpg, /img/projects/personal-robot-gallery/2010-02-08-193147.jpg, /img/projects/personal-robot-gallery/2010-02-08-193241.jpg, /img/projects/personal-robot-gallery/2010-02-08-193359.jpg, /img/projects/personal-robot-gallery/downsize_2.jpg, /img/projects/personal-robot-gallery/downsize_3.jpg, /img/projects/personal-robot-gallery/downsize_4.jpg, /img/projects/personal-robot-gallery/downsize.jpg]
 ---
 
 <div class="media-container">
@@ -23,13 +26,6 @@ Basically I thought it could be like a less hardcore version of [ROS](http://www
 
 Needless to say it was an extremely ambitious for a project for the middle of a busy summer internship. While I wish I had the time to pour into making it a reality, I had more than enough on my plate at the Harvard-Smithsonain Center for Astrophysics. Therefore I only started writing the interface and just finished writing some basic camera / telemetry code this weekend. The end result is what you see here:
 
-<div class="media-container">
-
-<img width="50%" src="/img/posts/downsize_2-150x150.jpg">
-<img width="50%" src="/img/posts/downsize-150x150.jpg">
-<img width="50%" src="/img/posts/downsize_3-150x150.jpg">
-<img width="50%" src="/img/posts/Screenshot-150x150.png">
-
-</div>
-
 The best part about it? Nobody even knows it's there because it is disguised as Arnold Schwarzenegger.
+
+<div id="gallery"></div>

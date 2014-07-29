@@ -46,3 +46,23 @@ block body
                 i(class='fa fa-'+ network.name)
             a.footer-link(href='mailto:' + locals.site.email + '?Subject=Hello', target='_top') 
               | contact
+
+  if page && page.metadata && page.metadata.gallery
+    #blueimp-gallery.blueimp-gallery(data-use-bootstrap-modal="false")
+      .slides
+        h3.title
+        a.prev ‹
+        a.next ›
+        a.close ×
+        a.play-pause
+        ol.indicator
+
+block append js
+  if page && page.metadata && page.metadata.gallery
+    script(src='/vendor/blueimp-gallery/js/jquery.blueimp-gallery.min.js')
+    script(src='/vendor/blueimp-bootstrap-image-gallery/js/bootstrap-image-gallery.min.js')
+    script(type='text/javascript')
+      | var GALLERY = {
+      |   anchor: "!{ page.metadata.gallery.anchor }",
+      |   images: ["!{page.metadata.gallery.images.join('","')}"]
+      | }

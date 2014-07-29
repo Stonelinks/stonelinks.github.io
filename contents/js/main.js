@@ -221,4 +221,9 @@ $(document).ready(function() {
   else {
     setBGImage(chooseRandomImage());
   }
+  if (window.hasOwnProperty('GALLERY')) {
+    $(window.GALLERY.anchor).attr('id', 'links').html(_.map(window.GALLERY.images, function(image, index) {
+      return '<a class="gallery-link" href="' + image + '" data-gallery><img src="' + image + '"></a>'
+    }))
+  }
 });
