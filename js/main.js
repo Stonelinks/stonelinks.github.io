@@ -190,7 +190,7 @@ var pages = {
           gutter: '.gutter-sizer'
         }
       });
-      $('#filters').on('click', '.tag', function() {
+      $('#project-filters').on('click', '.tag', function() {
         var filterValue = $(this).attr('data-filter');
         filterValue = filterValue == '*' ? filterValue : '.' + filterValue;
         $container.isotope({
@@ -210,6 +210,11 @@ var pages = {
       $this.css('margin-top', '200px');
       $('#mindshare-archive-anchor').append($('<li><a href="#' + $this.attr('id') + '"><b>' + $this.text() + '</b></a></li>'));
     });
+  },
+
+  'projects/robots/index': function() {
+    setBGImage(chooseRandomImage());
+    $('<div id="ied-gallery"></div>').insertAfter($('.box .media-container:first'));
   }
 };
 
@@ -220,5 +225,11 @@ $(document).ready(function() {
   }
   else {
     setBGImage(chooseRandomImage());
+  }
+
+  if (window.hasOwnProperty('GALLERY')) {
+    $(window.GALLERY.anchor).attr('id', 'links').html(_.map(window.GALLERY.images, function(image, index) {
+      return '<a class="gallery-link" href="' + image + '" data-gallery><img src="' + image + '"></a>';
+    }));
   }
 });
