@@ -27,7 +27,7 @@ list:
         - Present things to a non-technical audience (that one was fun! I couldn't talk about programming at all in the final presentation)
         - Make solid technical decisions with a deadline in mind
       
-      Probably the most frustrating thing about this robot was that despite having five of our seven team members on the mechanical side of things, the only thing that didn't work were the mechanics. The other two of us (Matt and I) ended up carrying the project. We ended up writing most of the 137 page [technical report](/misc/IED_tech_report_final.pdf). Overall I had a blast, and it remains a robot I am very proud of. You can see a gallery of pictures of this robot [here](todo.html).
+      Probably the most frustrating thing about this robot was that despite having five of our seven team members on the mechanical side of things, the only thing that didn't work were the mechanics. The other two of us (Matt and I) ended up carrying the project. We ended up writing most of the 137 page [technical report](/misc/IED_tech_report_final.pdf). Overall I had a blast, and it remains a robot I am very proud of.
   -
     name: Litec Blimp - (2010)
     image: misc/IMG_0184-1024x682.jpg
@@ -68,6 +68,9 @@ list:
       I may or may not owe approximately all of my engineering and mechanical intuition to Legos. I used to love playing with these things. The pinnacle of any Lego set I have ever gotten or probably will ever get has to be the Robotics Invention System. Thank god for my generous and understanding parents for not laughing me out of the room when 4th grader me wanted this $200 kit (they made me work for it).
       
       Just writing about it makes me want to jump out of this chair, run down to the basement and start tinkering around like old times. I cannot tell you the hours I spent building and programming this thing. More than any other robot on this page, the RCX played a pivotal role in who I am now. It is endlessly configurable by curious youngsters, and I hope LEGO keeps at it to inspire the next generation of roboticists.
+gallery:
+  anchor: '#ied-gallery'
+  images: [/img/projects/ied-gallery/100_0376.jpg, /img/projects/ied-gallery/100_0377.jpg, /img/projects/ied-gallery/100_0378.jpg, /img/projects/ied-gallery/100_0379.jpg, /img/projects/ied-gallery/100_0380.jpg, /img/projects/ied-gallery/100_0381.jpg, /img/projects/ied-gallery/100_0382.jpg, /img/projects/ied-gallery/100_0386.jpg, /img/projects/ied-gallery/100_03881.jpg, /img/projects/ied-gallery/100_0388.jpg, /img/projects/ied-gallery/100_0389.jpg, /img/projects/ied-gallery/100_0404.jpg, /img/projects/ied-gallery/100_0405.jpg, /img/projects/ied-gallery/100_0406.jpg, /img/projects/ied-gallery/100_0407.jpg, /img/projects/ied-gallery/DSC02272.jpg, /img/projects/ied-gallery/DSC02273.jpg, /img/projects/ied-gallery/front-axle-pic.png, /img/projects/ied-gallery/rear-hub-axle-assem.png]
 ---
 
 Robotics has been a long standing passion of mine. This page is to showcase robots I have designed, programmed, built or had anything to do with over the years. Other robots such as FIRST or Battlebots can be seen elsewhere on the site (like the [projects](/projects/index.html) page).

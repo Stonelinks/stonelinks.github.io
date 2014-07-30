@@ -12,7 +12,7 @@ module.exports = function(grunt) {
       templates: 'templates',
       dist: 'build'
     },
-    
+
     wintersmith_config: grunt.file.readJSON('config.json'),
 
     wintersmith: {
@@ -44,7 +44,7 @@ module.exports = function(grunt) {
         downstream: 100 * 1024
       }
     },
-    
+
     clean: ['<%= config.dist %>'],
 
     less: {
