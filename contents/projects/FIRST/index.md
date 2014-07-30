@@ -9,7 +9,7 @@ list:
   -
     name: Rack 'n Roll - (2007)
     youtube: http://www.youtube.com/embed/419zf3rytvU
-    desc: As is evident from that video, this robot represented our team's first foray into the world of [mechanum wheels](http://en.wikipedia.org/wiki/Mecanum_wheel). These wheels are a variation on a theme of omni wheels that let the robot move in any direction unconstrained. For the next two years, I would help design mechanum drive trains for our team (CAD mostly). While really cool, our teams obsession over these wheels would cause us to lose sight of the arm attachment that would need to perform the robot's function of removing tubes from the rack for 2007's [Rack 'n Roll](http://en.wikipedia.org/wiki/Rack_'n_Roll) competition.
+    desc: As is evident from that video, this robot represented our team's first foray into the world of [mechanum wheels](http://en.wikipedia.org/wiki/Mecanum_wheel). These wheels are a variation on a theme of omni wheels that let the robot move in any direction unconstrained. For the next two years, I would help design mechanum drive trains for our team (CAD mostly). While really cool, our teams obsession over these wheels would cause us to lose sight of the arm attachment that would need to perform the robot's function of removing tubes from the rack for 2007's [Rack 'n Roll](http://goo.gl/qhaI1X) competition.
   -
     name: Overdrive - (2008)
     image: misc/2008.jpg

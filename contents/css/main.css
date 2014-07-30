@@ -7719,10 +7719,10 @@ ul {
 @media screen and (min-width: 0px) and (max-width: 480px) {
   .about-jumbotron {
     background-position: 55% 11%;
-    -webkit-background-size: 230% 280%;
-    -moz-background-size: 230% 280%;
-    -o-background-size: 230% 280%;
-    background-size: 230% 280%;
+    -webkit-background-size: 280% 280%;
+    -moz-background-size: 280% 280%;
+    -o-background-size: 280% 280%;
+    background-size: 280% 280%;
     height: 200px;
   }
 }
@@ -7801,6 +7801,9 @@ pre code {
 }
 .tag-row p:last-child {
   margin-bottom: 0px;
+}
+.project-tag-row {
+  margin: 0px;
 }
 .project-box {
   width: 100%;

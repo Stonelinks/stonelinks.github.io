@@ -190,7 +190,7 @@ var pages = {
           gutter: '.gutter-sizer'
         }
       });
-      $('#filters').on('click', '.tag', function() {
+      $('#project-filters').on('click', '.tag', function() {
         var filterValue = $(this).attr('data-filter');
         filterValue = filterValue == '*' ? filterValue : '.' + filterValue;
         $container.isotope({
