@@ -35,9 +35,9 @@ For information on how to get Stoolbotics, check out the [download page](/projec
 
 Stoolbotics has many features that make it attractive to the aspiring roboticst and the higer education robotics classrom. To name a few, Stoolbotics features:
 
-- Low barrier to entry eith an easy to use file format for specifying a robot arm
+- Low barrier to entry with an easy to use file format for specifying a robot arm
 - Ability to visualize any robot that can be specified in such a file
-- Compute the forward kinematics of any robot
+- Compute the forward kinematics of any robot with DH parameters
 - Animate and draw paths for arms
 - Command line interface within simulator with many useful commands
 - Completely customizable simulation environment (time-stepping, etc)

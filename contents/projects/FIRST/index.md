@@ -20,6 +20,11 @@ list:
       
       Another interesting side effect of the box wheel module design -- I learned how to properly weld aluminum (there were a TON of joints), which is quite tricky (but fun!). 
       All in all our team had really perfected the mechanum drive train, so it was not a total loss. We drove around that track like a boss. Also, this particular year I did not do any nordic skiing for the school team (which I usually did), so I contributed much of the programming and electrical system on top of the CAD and machining for the drive train.
+  -
+    name: Future - (????)
+    image: misc/question-mark.png
+    desc: |
+      Something awesome about FIRST is the role of mentors. They arn't there to design or build things for you, but to be a resource that can enable, advise and empower students to accomplish and learn amazing things. At some point in my life, I'd really like to be a FIRST mentor so that I can get a taste of what this is like and inspire the next generation of young roboticists just like the mentors at Gilford inspired me.
 ---
 
 I had the great fortune of participating and captaining [FIRST robotics](http://www.usfirst.org/) team 1831 throughout my time at Gilford High School. Here are the robots we built in chronological order.

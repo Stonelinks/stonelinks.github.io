@@ -25,11 +25,11 @@ During my short time at Anybots, I noticed a severe lack of infrastructure for m
 
 ##Super_robert and Anystats
 
-Super_robert is a program that attempted to procedurally log into robots out in the field, pull down their logs and compute some information about them. This information was then passed over to Anystats, which statistically tracked, analyzed and prioritized the different events that appeared in the logs. 
+Super_robert is a program that attempted to procedurally log into robots out in the field, pull down their logs and compute some information about them. This information was then passed over to Anystats, which statistically tracked, analyzed and prioritized the different events that appeared in the logs.
 
 Depending on what state a robot was in, how long it had been that way, what the logs showed, etc., bugs and other faults could be automatically tracked and diagnosed (like [sentry](https://getsentry.com/welcome/) but for robots).
 
-There were several cases where a bug would be affecting robots in our office, and it was useful to see if the same bug was affecting robots worldwide. Additionally, if the robot in question was in the hands of a customer and we did discover something wrong with it, we could be proactive and contact that customer to let them know we were aware of the problem and working to fix it. Another useful feature is the ability to keep ranks of healthiest robots, sickest robots, etc. that could be broken down into sub-groups like hardware revision, location, etc. 
+There were several cases where a bug would be affecting robots in our office, and it was useful to see if the same bug was affecting robots worldwide. Additionally, if the robot in question was in the hands of a customer and we did discover something wrong with it, we could be proactive and contact that customer to let them know we were aware of the problem and working to fix it. Another useful feature is the ability to keep ranks of healthiest robots, sickest robots, etc. that could be broken down into sub-groups like hardware revision, location, etc.
 
 ##Features
 
@@ -44,4 +44,3 @@ Some highlights of the system are:
 ##Other Work at Anybots
 
 Working with the actual codebase for the robot was tough because it was very large, several years old and I only had a few months there. However, I did developed some UI features for the touchscreen on the forehead of the robot, including a "dashboard" to display internal robot device health and connectivity. I also wrote call screen to allow users to answer or deny calls made to their robot.
-

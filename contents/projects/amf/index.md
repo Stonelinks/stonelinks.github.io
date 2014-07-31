@@ -9,7 +9,7 @@ template: page.jade
 
 </div>
 
-Since 2009 I have worked at the [Harvard-Smithsonian Center for Astrophysics](http://www.cfa.harvard.edu/hea/) on a wide array of projects for Dr. Suzanne Romaine and Ricardo Bruni. Mainly I've been desinging hardware and software that automates the fabrication of multilayer (and sometimes non-multilayer) coatings on the surfaces of optics to be used for X-ray imaging (mostly in astronomy).
+Since 2009 I have worked at the [Harvard-Smithsonian Center for Astrophysics](http://www.cfa.harvard.edu/hea/) on a wide array of projects for Dr. Suzanne Romaine and Ricardo Bruni. Mainly I've been designing hardware and software that automates the fabrication of multilayer (and sometimes non-multilayer) coatings on the surfaces of optics to be used for X-ray imaging (mostly in astronomy).
 
 These multilayer coatings are designed to capture, focus and reflect the X-ray photons from deep space back on to an array of detectors inside of the telescope to form an image. The coatings are called "multilayers" because they consist of very thin (sometimes only a couple of angstroms) alternating layers of different materials (they are essentially highly specialized man-made [bragg crystals](http://en.wikipedia.org/wiki/Bragg's_law)).
 

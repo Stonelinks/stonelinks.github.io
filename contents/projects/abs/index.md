@@ -18,7 +18,7 @@ The The Awesome Backup System (ABS) is a cross platform file backup solution. It
 - ***Minimal bandwidth usage:*** The API was also designed so that clients would only have to transfer the minimal amount of file contents to the server. During a backup cycle, the client downloads a list of hashes from the server that correspond to files that have already been backed up. The client starts generating hashes for all the files it is currently trying to back up, and if any of them match the old hashes downloaded from the server, then that particular file is already backed up and the upload is skipped.
 
 
-##Possible Future Improvements:
+##Possible Future Improvements
 
 ***Security:*** ABS is lacking is in the security department. It being a prototype we wrote for a class, security wasn't one of our goals. Still, we are using HTTPS (though we feel like that alone isn't a very good security measure) and never store or transfer passwords in plaintext. In fact, because the clients (and HTTPS technically) are stateless entities, every API request needs to be authenticated for it to do anything. This means no cookies or any artifact of your authentication other than a hashed password remains on the client.
 

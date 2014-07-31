@@ -5,11 +5,11 @@ template: article.jade
 tags: systems, arduino, telemetry
 ---
 
-I love nothing more in life than creating and tinkering with the stuff around me. Over the years, this love has taken many different forms. It started out somewhere in elementary school with Legos and taking my toys apart (much to the chigrin of my loving parents). Today it has evolved over the years into weekend projects such as the I'm about to tell you about.
+I love nothing more in life than creating and tinkering with the stuff around me. Over the years, this love has taken many different forms. It started out somewhere in elementary school with Legos and taking my toys apart (much to the chagrin of my loving parents). Today it has evolved over the years into weekend projects such as the I'm about to tell you about.
 
 One weekend early in the semester, I found myself with some rare free time and so I chose to make my own internet-aware pan-tilt fixture for my webcam. To my room mates [delight](http://en.wikipedia.org/wiki/Sarcasm), I have placed the controls to this camera on this website.
 
-Projects such as this are just the kind of thing that I love taking time to do. They span the full stack, and involve concepts that go from very low level micro controller programming to high level web programming, using all sorts of code and hardware as inbetween. It requirees quite a lot of different skill sets and knowledge of systems integration for this to work. Anyhow enough self-aggrandizing, I'll describe how I did it starting very low level at the and working my way up.
+Projects such as this are just the kind of thing that I love taking time to do. They span the full stack, and involve concepts that go from very low level micro controller programming to high level web programming, using all sorts of code and hardware as in between. It requires quite a lot of different skill sets and knowledge of systems integration for this to work. Anyhow enough self-aggrandizing, I'll describe how I did it starting very low level at the and working my way up.
 
 ###Hardware
 
@@ -22,7 +22,6 @@ Projects such as this are just the kind of thing that I love taking time to do. 
 This summer I came into possession of an [Arduino](http://www.arduino.cc/) micro controller and [some servos](http://www.rcuniverse.com/product_guide/servoprofile.cfm?servo_id=67). As you can see from the pictures, I connected the servos up to the micro controller, making Y-cables for the power, ground, and signal pins of the servos. I also added a laser diode for good measure.
 
 The servo signal pins were wired to the digital I/O ports on the arduino. I stuffed the Arduino in a metal box I had lying around and hot glued everything together. Predictably, the webcam itself didn't require much work. It was actually given to me for free! (previous owner couldn't find drivers for it). I just ripped the stand off of it and glued it to the servos. All in all, this was a cheap and simple that has performed very well for what it was designed to do.
-
 
 ###Microcontroller Code
 
@@ -228,9 +227,7 @@ If you load the above code into the Arduino's IDE and flash it to your microcont
 
 This was not good enough for me though, as I wanted to control this through a web browser, which brings us to...
 
-
 ###The Web Server
-
 
 <div class="media-container">
 
@@ -238,7 +235,7 @@ This was not good enough for me though, as I wanted to control this through a we
 
 </div>
 
-The Arduino is cool and all, but since the ultimate goal of this project is to control it over the internet, having a web server is an obvious requirement. Unfortunately for me, my web server also happens to be my self-built desktop that I use for almost all my other engineering work and day to day activities. Because of this, I need access to few windows only applications (Solidworks, LabVIEW, Photoshop, Steam, etc..) which rules out any linux server platforms if I want 100% uptime. This is an unfortunate contstraint that caused me quite a lot of headaches down the line. In the future when I have another computer to spare and improve on this project, I will use the [right tool](http://blog.taragana.com/wp-content/uploads/2008/03/linux-logo.jpg) for the job. 
+The Arduino is cool and all, but since the ultimate goal of this project is to control it over the internet, having a web server is an obvious requirement. Unfortunately for me, my web server also happens to be my self-built desktop that I use for almost all my other engineering work and day to day activities. Because of this, I need access to few windows only applications (Solidworks, LabVIEW, Photoshop, Steam, etc..) which rules out any linux server platforms if I want 100% uptime. This is an unfortunate constraint that caused me quite a lot of headaches down the line. In the future when I have another computer to spare and improve on this project, I will use the [right tool](http://blog.taragana.com/wp-content/uploads/2008/03/linux-logo.jpg) for the job. 
 
 After all that rambling, you're probably wondering how I have my web server configured. The only relevant details are that I am running stock [WampServer](http://www.wampserver.com/en/) with PHP 5.3.0 with short tags enabled.
 
@@ -272,7 +269,7 @@ if (isset($_GET['action']))
 }
 ```
 
-And the HTML for the rest of the page is simply a 3x3 table with some hyperlinks to the right URLs with things like ?action=up, ?action=down, ect. placed in the right spot.
+And the HTML for the rest of the page is simply a 3x3 table with some hyperlinks to the right URLs with things like `?action=up`, `?action=down`, ect. placed in the right spot.
 
 ###Webcam
 
@@ -280,6 +277,6 @@ To manage the webcam feed, I am using a program called [Fwink](http://www.lundie
 
 ##Conclusions and Future Improvements
 
-As expected, performance with this setup is less than impressive, but this was more a learning excersize than it was a perfect execution. I have no doubts in my mind that the low performance is due to the wonky way in which I have to execute system calls to run the Processing exes. For the future, as this is a rough prototype, a lot can be improved / simplified by moving to Linux.
+As expected, performance with this setup is less than impressive, but this was more a learning exercise than it was a perfect execution. I have no doubts in my mind that the low performance is due to the wonky way in which I have to execute system calls to run the Processing exes. For the future, as this is a rough prototype, a lot can be improved / simplified by moving to Linux.
 
 Additionally, this is the vision component to my yet-to-be-completed personal robot, and its brains (a first generation ASUS eeepc netbook) are currently on loan to a friend of mine. Next time I see him I'll get the machine back and we'll start cooking with gas! (and by gas I mean Linux).
