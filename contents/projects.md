@@ -43,7 +43,7 @@ projects:
     name: Stonelinks
     image: projects/stonelinks-web-framework.png
     tags: webapps
-    desc: A static website framework.
+    desc: The website you're looking at.
   -
     id: robots
     name: Robots

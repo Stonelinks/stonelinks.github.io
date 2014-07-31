@@ -18,7 +18,8 @@ list:
       
       The team went with mechanum wheels, and again we lost sight of what we were originally trying to do (heard the ball) and probably could have made a better robot. Still, I tried to make the best of it and designed a completely modular chassis for the wheels. I made one standard "box" design that self-contained a speed controller, the wheel, bearings, pillow blocks, etc. This box could be iterated four times and bolted together to make a robot. This saved design time, simplified troubleshooting and made it a breeze to replace parts.
       
-      Another interesting side effect of the box wheel module design -- I learned how to properly weld aluminum (there were a TON of joints), which is quite tricky (but fun!). 
+      Another interesting side effect of the box wheel module design -- I learned how to properly weld aluminum (there were a TON of joints), which is quite tricky (but fun!).
+      
       All in all our team had really perfected the mechanum drive train, so it was not a total loss. We drove around that track like a boss. Also, this particular year I did not do any nordic skiing for the school team (which I usually did), so I contributed much of the programming and electrical system on top of the CAD and machining for the drive train.
   -
     name: Future - (????)

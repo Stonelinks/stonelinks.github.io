@@ -1,12 +1,14 @@
 ---
-title: Looking back
-date: 2012-06-3
+title: The Phoenix
+date: 2014-06-3
 template: article.jade
-tags: personal
+tags: 
 ---
 
-TODO
+Stonelinks has been around since 2008. It is six years old as of this writing. I feel like that is a long time in internet years. It seems like a long time in real world years -- I started it when I was 18 and I just turned 24 a few weeks ago.
 
-This is old. Look at posts if you want to see current versions of my projects. This was like the first thing of great significance I did with Stonelinks on my own (read: I didn't know what I was doing). Similar to the Windows based webcam thing, I thought it was a big deal at the time. Looking back it is funny how trivial this would be to implement nowadays. Oh also, there are things in here that are just plain wrong and/or bad practice (left as an exercise to the reader to find).
+When I started Stonelinks I was curious how the internet and websites in general worked (more about Stonelinks' history [here](/projects/stonelinks/index.html)). I was ignorant about everything (as most of the old posts here demonstrate), but slowly I built up my knowledge from scratch. Six years later, I'm the lead web developer at [MUJIN](http://mujin.co.jp/). I'm responsible for creating the web interface for our flagship industrial robotics programming platform. That is just an example, but my understanding and relationship with the internet and the technologies that surround it couldn't be any more different than it was six years ago.
 
-**Edit:** This is old. It is also the first implementation of my remote-controlled camera... under windows. It is really really bad and nobody should use it. However, I thought I was pretty cool when I made it, and maybe it will be useful to somebody here, so I'll leave it up. I put a much more improved version this software to use on [the border patrol robot](/misc/IED_tech_report_final.pdf). Check out page 48 of the report to see the final results and the page 118 for the code behind it.
+During that time Stonelinks has sat around in various states of neglect and disrepair. In particular, I haven't written anything in this blog in almost two years! So many things have changed since then. I graduated college, got a job and moved to Japan for pete's sake (酒?). Even if nobody reads this blog, I don't feel good about that. Something must change!
+
+Enter the reincarnated Stonelinks (which you're looking at right now). I've spent a bunch of time over the past month making it awesome. Over the coming weeks I'm going to be releasing some old blog entries and writing more in the future. Some of it may get backdated, but that is okay. From the ashes of neglect and disrepair the new Stonelinks will rise!
