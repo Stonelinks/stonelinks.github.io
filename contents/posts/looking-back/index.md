@@ -11,4 +11,4 @@ When I started Stonelinks I was curious how the internet and websites in general
 
 During that time Stonelinks has sat around in various states of neglect and disrepair. In particular, I haven't written anything in this blog in almost two years! So many things have changed since then. I graduated college, got a job and moved to Japan for pete's sake (酒?). Even if nobody reads this blog, I don't feel good about that. Something must change!
 
-Enter the reincarnated Stonelinks (which you're looking at right now). I've spent a bunch of time over the past month making it awesome. Over the coming weeks I'm going to be releasing some old blog entries and writing more in the future. Some of it may get backdated, but that is okay. From the ashes of neglect and disrepair the new Stonelinks will rise!
+Enter the reincarnated Stonelinks (which you're looking at right now). I've spent a bunch of time over the past month making it awesome. Over the coming weeks I'm going to be releasing some old blog entries and writing more in the future. Some of it may get backdated, but that is okay. From the ashes of neglect and disrepair the new Stonelinks will rise! 
