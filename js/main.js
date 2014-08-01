@@ -215,6 +215,36 @@ var pages = {
   'projects/robots/index': function() {
     setBGImage(chooseRandomImage());
     $('<div id="ied-gallery"></div>').insertAfter($('.box .media-container:first'));
+  },
+
+  'posts/interview/index': function() {
+    setBGImage(chooseRandomImage());
+
+    var showButton = '<button type="button" class="btn btn-default show-answer">Click for answer</a>';
+
+    $('.interview-answer').each(function() {
+      $(showButton).insertAfter($(this));
+    });
+
+    $('.show-answer').each(function() {
+      $(this).click(function() {
+        $(this).hide().prev('.interview-answer').show();
+      });
+    });
+
+    var _hideAll = function() {
+      $('.interview-answer').hide();
+      $('.show-answer').show();
+    };
+    $('.btn.hide-all').click(_hideAll);
+
+    var _showAll = function() {
+      $('.interview-answer').show();
+      $('.show-answer').hide();
+    };
+    $('.btn.show-all').click(_showAll);
+
+    _hideAll();
   }
 };
 

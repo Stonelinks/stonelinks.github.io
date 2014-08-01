@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Web Developer Interview Questions - Stonelinks
+    </title>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400italic,400,700">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <div class="landing"><a href="/" class="brand"><img src="/img/logos/big-logo.png">Stonelinks</a>
+      <div class="tagline-bar">Lucas Doyle's website
+      </div>
+    </div>
+    <div role="navigation" class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><img src="/img/logos/big-logo.png">Stonelinks</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/luke.html">About</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr><a href="/posts/interview/">
+              <h1 class="intro-text text-center">Web Developer Interview Questions<br><small>31. July 2014</small></h1></a>
+            <hr><p>We’re constantly looking for talented people to join our small team where I work. When talking to candidates, I felt like I needed a set of questions I could use to guide the conversation and see where they’re&nbsp;at.</p>
+<p>Most of the topics have something to do with web development (particularly with javascript), but they start out pretty general and get more specific. Here is what I came up&nbsp;with.</p>
+<p><span class="more"></span></p>
+<p>You can click along and reveal the answers one by one or show them all at&nbsp;once.</p>
+<div id="controls" class="btn-group">
+  <button type="button" class="btn btn-default btn-lg show-all">
+    <span class="glyphicon glyphicon-plus"></span> Expand all
+  </button>
+  <button type="button" class="btn btn-default btn-lg hide-all">
+    <span class="glyphicon glyphicon-minus"></span> Hide all
+  </button>
+</div>
+
+<p><br/></p>
+<div class="well">
+<p class="interview-question">
+
+What are some of the pros / cons of a language that uses an interpreter versus a statically compiled&nbsp;one?
+
+</p>
+<p class="interview-answer">
+
+Answers at the very least should say something addressing performance, debugging and security&nbsp;concerns.
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+Why are module loaders and dependency management&nbsp;important?
+
+</p>
+<p class="interview-answer">
+
+Modules separate functionality into logical pieces that are easy to isolate, test and debug. Dependency management allows an application to easily declare what it needs to run, which makes it easy to create a new runtime (and go back in time and replicate an old runtime). All of these are super important in large&nbsp;applications.
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+You have two identical libraries that do the exact same thing from a feature standpoint. How do you decide which one to&nbsp;use?
+
+</p>
+<p class="interview-answer">
+
+I really like this question. It throws some people off, but insightful developers will look at the communities around each library and decide. Does one have an awesome mailing list? A ton of stars and issues being resolved on github? Frequent releases with meaningful changelogs? Those might be good signs. Has it been forked a million times? Does it have terrible, out of date or non-existent documentation? Was the last release or commit from the maintainer back in 2006? Those might be bad&nbsp;signs.
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+Do you write tests? Can you list tools/techniques you use for&nbsp;testing?
+
+</p>
+<p class="interview-answer">
+
+Expect to talk about unit test, code coverage, <span class="caps">CI</span> solutions, mocking,&nbsp;etc.
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+What is the functional role of deployment in an application’s life cycle? How would you ideally deploy an&nbsp;application?
+
+</p>
+<p class="interview-answer">
+
+Deployment is where you actually “ship” your code and get it running on a customer-facing machine. Lots of potential answers for ideally deploying an application. I’m personally against using git to deploy, and would instead prefer something like rsync. There are many other purpose built deployment tools out there like capistrano (if they’re a ruby person), salt, ansible&nbsp;etc.
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+What is the point of virtualization? Does every application have something to gain by being&nbsp;virtualized?
+
+</p>
+<p class="interview-answer">
+
+Tricky question to answer. Visualization abstracts hardware away from your application’s runtime at the cost of some performance on a per-host level. In aggregate, good visualization solutions allow for easy scaling of complex application architecture. Really awesome developers will say something about <a href="https://www.docker.com/">Docker</a>&nbsp;here.
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+Talk to me about the functional roles <span class="caps">HTML</span>, javascript and CSS play in a web&nbsp;browser
+
+</p>
+<p class="interview-answer">
+
+This is an extremely basic question, but you want to make sure people have a solid foundation. <span class="caps">HTML</span> is the structure and layout of the page, CSS is the styling, presentation and (to an extent) animation and javascript is program logic that can be used to create complex applications and&nbsp;UI.
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+Give me an example of something in <span class="caps">HTML5</span> that we use or might use in the MUJIN Controller&nbsp;interface
+
+</p>
+<p class="interview-answer">
+
+WebGL is the extremely obvious answer here, if they’ve seen our <span class="caps">UI</span>, but we also use the video element, local storage and the history API. Websockets and the audio API are also used for&nbsp;development.
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+In <span class="caps">CSS</span>, what is the point of media queries? Why might they be&nbsp;useful?
+
+</p>
+<p class="interview-answer">
+
+Media queries allow different <span class="caps">CSS</span> rules to be applied depending on different viewing device parameters. They can be used to make web pages look good on a desktop or a cell phone without changing the content (HTML) of a&nbsp;page.
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+What does jQuery do? Is it necessary? Why might you not use&nbsp;jQuery?
+
+</p>
+<p class="interview-answer">
+
+Another favorite question of mine. jQuery is primarily a <span class="caps">DOM</span> manipulation, AJAX library and cross browser friendly event library. It makes the native DOM, networking and event APIs exposed by the browser easier to use. jQuery is a huge library, so if you’re only using it to call one function consider implementing something&nbsp;natively.
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+What are data attributes on <span class="caps">HTML</span> elements used for? Why is it important not to abuse or overuse&nbsp;them?
+
+</p>
+<p class="interview-answer">
+
+They store small bits of relevant application data stored in the <span class="caps">DOM</span>. Using them too much can make the DOM super messy (pollution) and hard to debug. Improper use may also lead to bad synchronization issues between DOM state and application state. Frameworks like Knockout have two way DOM-data bindings in them to get past&nbsp;this.
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+What is the point of minifying code? If there was a bug with some minified code how would you go about debugging&nbsp;it?
+
+</p>
+<p class="interview-answer">
+
+Minifying code can be used to speed up large webapps. It is less total bandwidth and code is usually run through an optimizer so it executes faster. It <span class="caps">DOES</span> NOT make your application secure — people can still read your source and look at the DOM. It offers weak security at best. Generally you debug minified code by having source maps or a debug version of your app where you can clearly reproduce and figure out where the error is&nbsp;happening.
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+What would the best way to store a large list of numbers in javascript (like the 3d coordinates for all the vertices in our WebGL viewer for&nbsp;instance)?
+
+</p>
+<p class="interview-answer">
+
+This question is to test their knowledge of data types. For a large list of numbers, there are native implementations of things like a Float32Array that are higher performance than the native array&nbsp;implementation.
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+Is javascript object oriented? Talk about how inheritance is implemented in&nbsp;javascript.
+
+</p>
+<p class="interview-answer">
+
+Javascript is object oriented, meaning everything not a native type (like an int or whatever) is an object. Inheritance is implemented with prototyping. Every object has a prototype, and if you access an attribute on an object that isn’t there, the runtime will check up the prototype chain until it finds something. If it reaches all the way to the root object, then the attribute returns as undefined. Inheritance is implemented with the prototype chain where different objects “extend” off of&nbsp;others.
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+How do you safely check if something is&nbsp;undefined?
+
+</p>
+<p class="interview-answer">
+
+Use the triple equals (blah === undefined). Double equals will cast them to strings and compare the&nbsp;strings.
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+How does scoping work in javascript? How do you prevent global namespace pollution? What is the window object&nbsp;for?
+
+</p>
+<p class="interview-answer">
+
+Javascript has function (as opposed to block) level scoping. Namespace pollution can be prevented by wrapping in a closure like so: (function() { safe code here… })(). The window object is a special global object representing the browser window that is always in&nbsp;scope.
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+What is a websocket? Describe a situation where they’d be better than&nbsp;<span class="caps">HTTP</span>.
+
+</p>
+<p class="interview-answer">
+
+A websocket is a raw <span class="caps">TCP</span> socket connected to the browser via javascript. It is useful when the server needs to push data to the browser without the browser periodically polling. They are also well suited to applications where a lot of IO and near-real time communication is necessary. A situation where they’d be useful would be pushing robot position updates to the browser while it is moving in the real&nbsp;world.
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+Why is templating useful? Is it faster to render templates on the server or browser? Are you familiar with client side templates? Why might you choose to render templates on the&nbsp;client?
+
+</p>
+<p class="interview-answer">
+
+Templating is useful because it allows a separation between model data and view layout. It is essentially bulk manipulation of the <span class="caps">DOM</span>. Server side templating is almost always faster, but client side templates are awesome for javascript-heavy apps. They are easier to re-render if data changes and are usually smaller and easier to maintain than their server side&nbsp;equivalent.
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+Discuss how a client side <span class="caps">MVC</span> framework like Backbone.js are useful in the browser. How does it differ from a server side MVC framework like django or&nbsp;rails?
+
+</p>
+<p class="interview-answer">
+
+Lots of ways to answer this, but generally M = data coming to or from a server, V = a form or section of the <span class="caps">DOM</span> manipulating that data, and C = a router that uses the URL to map to a specific application state. It is different from server side MVC since the pattern is essentially applied recursively for a particular page, meaning that pieces of the MV part of the application can be contain or be contained by other views. Django applies the whole MVC paradigm once on a per-page&nbsp;basis.
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+Discuss how the <span class="caps">MVVM</span> pattern could be useful, especially if a view gets really&nbsp;complicated.
+
+</p>
+<p class="interview-answer">
+
+<span class="caps">MVVM</span> is useful when a view (or set of views) get complicated enough where it makes sense to create another model (the ViewModel) just to encapsulate view&nbsp;state.
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+What is a RESTful <span class="caps">API</span>? What are they good at? What are they bad&nbsp;at?
+
+</p>
+<p class="interview-answer">
+
+REpresentational STate transfer refers to an <span class="caps">API</span> designed to make it easy to manage groups of resources. Typical operations supported are fetch, modify, create and delete through HTTP methods (GET, PUT, POST and DELETE respectively). Resources are uniquely identified through their URLs. They’re awesome at managing groups of resources, but they’re bad at RPC type things since servers are ideally stateless. Also, there is no standard when it comes to REST, it is a convention that every library and framework follows slightly&nbsp;differently.
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+What is node.js? Have you used it for anything? What is it good at? Bad&nbsp;at?
+
+</p>
+<p class="interview-answer">
+
+Node is a browserless javascript runtime. Like its browser counterpart it is simple, powerful and incredibly versatile. You can use it to write command line or <span class="caps">GUI</span> programs, utilites, or even your own webapps. It is particularly good at asynchronous and I/O heavy applications. Since javascript is single threaded, it is bad for multiprocessing and other CPU intensive&nbsp;tasks. 
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+Have you ever used a javascript module&nbsp;loader?
+
+</p>
+<p class="interview-answer">
+
+Good answers here will talk about commonjs and/or <span class="caps">AMD</span> and their implementations such as&nbsp;requirejs.
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+What are some tools you use when building a&nbsp;webapp?
+
+</p>
+<p class="interview-answer">
+
+Really no wrong answer here, but some of the tools we use at <span class="caps">MUJIN</span>: Grunt, Bower, NPM, Webkit inspector. Some other javascript-specific tools that are quite good: gulp,&nbsp;component, 
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+What browser do you use when building a webapp and&nbsp;why?
+
+</p>
+<p class="interview-answer">
+
+Bad answers here are <span class="caps">IE</span> or Firefox (unless they are a firebug wizard). Good answers chrome with some mention of the webkit&nbsp;inspector.
+
+</p>
+</div>
+
+<div class="well">
+<p class="interview-question">
+
+Why is chrome&nbsp;fast?
+
+</p>
+<p class="interview-answer">
+
+A perfectly acceptable answer might be that it has the best engineers and billions of dollars behind it. Technical reasons are that it uses V8, which is an extremely fast javascript engine. V8 is fast because of its <span class="caps">JIT</span> and that it directly emits executable machine code and doesn’t screw around with bytecode like most VM-based interpreters (like python for instance). Chrome’s architecture also makes heavy use of multiprocessing. For instance, each tab is its own process. This allows for more parallel execution and better use of a computer’s&nbsp;hardware.
+
+</p>
+</div>
+
+          </div>
+        </div>
+      </div>
+      <div class="row tag-row">
+        <div class="box">
+          <div class="col-lg-12">
+            <p>Tags: <a href="/tag/javascript/1/"><span class="label label-info tag">javascript</span></a><a href="/tag/web%20development/1/"><span class="label label-info tag">web development</span></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row footer-row">
+      <div class="box">
+        <div class="col-lg-12"><a href="/blog.html">
+            <h4>« Back</h4></a></div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center"><a href="https://www.facebook.com/stonelinks" target="_blank" class="social"><i class="fa fa-facebook"></i></a><a href="https://github.com/Stonelinks" target="_blank" class="social"><i class="fa fa-github"></i></a><a href="https://twitter.com/#!/Stonelinks" target="_blank" class="social"><i class="fa fa-twitter"></i></a><a href="https://plus.google.com/116178490514652721625/posts" target="_blank" class="social"><i class="fa fa-google-plus"></i></a><a href="http://www.linkedin.com/pub/lucas-doyle/25/550/169" target="_blank" class="social"><i class="fa fa-linkedin"></i></a><a href="http://www.youtube.com/user/RealStonelinks" target="_blank" class="social"><i class="fa fa-youtube"></i></a><a href="mailto:lucas.p.doyle@gmail.com?Subject=Hello" target="_top" class="footer-link">contact</a>
+          </div>
+        </div>
+      </div>
+    </footer><!--[if lt IE 9]>
+    <script src="/vendor/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="/vendor/respond/dest/respond.min.js"></script><![endif]-->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/underscore/underscore.js"></script>
+    <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript">var BG_IMAGES = ["/img/backgrounds/06uh37r.jpg","/img/backgrounds/121027_162023_000.jpg","/img/backgrounds/14206376348_fca4af4ba5_o.jpg","/img/backgrounds/1979230_10152035339809685_1025831531_o.jpg","/img/backgrounds/2000-01-01 08.30.12.jpg","/img/backgrounds/2012-12-02 00.41.05.jpg","/img/backgrounds/2012-12-06 15.09.02.jpg","/img/backgrounds/2013-03-03 17.53.11.jpg","/img/backgrounds/2013-05-01 08.31.27.jpg","/img/backgrounds/2013-05-18 13.07.32.jpg","/img/backgrounds/2013-08-30 18.41.41.jpg","/img/backgrounds/2013-09-20 05.26.41.jpg","/img/backgrounds/2013-09-20 05.30.41.jpg","/img/backgrounds/2013-11-24 18.07.08.jpg","/img/backgrounds/2013-12-20 14.27.13.jpg","/img/backgrounds/2013-12-28 19.16.24.jpg","/img/backgrounds/2700262886_6b0fd48dc8_b.jpg","/img/backgrounds/287299main_dextre_iss017_big_full.jpg","/img/backgrounds/300V_20A_floating_Kr.jpg","/img/backgrounds/34DnPmX.jpg","/img/backgrounds/5bml6q6.jpg","/img/backgrounds/7jWBoem.jpg","/img/backgrounds/A52It0Q.jpg","/img/backgrounds/Boeing_747-8_Test_Planes_in_Assembly.jpg","/img/backgrounds/Dtd8OaS.jpg","/img/backgrounds/EWwV235.jpg","/img/backgrounds/Eourq.jpg","/img/backgrounds/Eso-paranal-16.jpg","/img/backgrounds/GkWIkzl.jpg","/img/backgrounds/GpCUV.jpg","/img/backgrounds/IMG_1142 copy-X2.jpg","/img/backgrounds/IMG_20120721_181258.jpg","/img/backgrounds/IZyTICW.jpg","/img/backgrounds/IijALtC.jpg","/img/backgrounds/J8Oqyyd.jpg","/img/backgrounds/KBMGZnm.jpg","/img/backgrounds/MbN1OhC.jpg","/img/backgrounds/ONn4OVE.jpg","/img/backgrounds/Preamplifier_at_the_National_Ignition_Facility.jpg","/img/backgrounds/Red, White and Enterprise-X3.jpg","/img/backgrounds/STS-134_International_Space_Station_after_undocking.jpg","/img/backgrounds/Su0YWko.jpg","/img/backgrounds/TUZyh.jpg","/img/backgrounds/TuBipfq.jpg","/img/backgrounds/UP_EMD_SD9043AC_Joso_Bridge_USA.jpg","/img/backgrounds/Wsvb8tw.jpg","/img/backgrounds/XvkHfUA.jpg","/img/backgrounds/YseOPg6.jpg","/img/backgrounds/ZhWyntZ.jpg","/img/backgrounds/d7t5BrZ.jpg","/img/backgrounds/enukwns.jpg","/img/backgrounds/fr42b.jpg","/img/backgrounds/g8yF11T.jpg","/img/backgrounds/godD0Nj.jpg","/img/backgrounds/heic0504b.jpg","/img/backgrounds/highflight-operationa-go8.jpg","/img/backgrounds/k9JWU9N.jpg","/img/backgrounds/kkhlkasdhjl3.png","/img/backgrounds/m1gD1NC.jpg","/img/backgrounds/m95qL89.jpg","/img/backgrounds/mooCZ.jpg","/img/backgrounds/nBEcpIY.jpg","/img/backgrounds/nLpQ2G3.jpg","/img/backgrounds/nUje1Xs.jpg","/img/backgrounds/ozjI2XF.jpg","/img/backgrounds/p0QNNrI.jpg","/img/backgrounds/raddmHE.jpg","/img/backgrounds/rhvP0wn.jpg","/img/backgrounds/s_f02_RTR3FJM0.jpg","/img/backgrounds/tCGzzS2.jpg","/img/backgrounds/tmEkJ7Q.jpg","/img/backgrounds/uMrsMXh.jpg","/img/backgrounds/w0Pgof8.jpg","/img/backgrounds/wallpaper-1312831.jpg","/img/backgrounds/wallpaper-1441536.jpg","/img/backgrounds/wjZsmhr.jpg","/img/backgrounds/x2bkKQS.jpg","/img/backgrounds/xKTWtJC.jpg","/img/backgrounds/xkl9FoE.jpg","/img/backgrounds/xrH9T22.jpg","/img/backgrounds/y4WGD7I.jpg","/img/backgrounds/yrZCDd1.jpg","/img/backgrounds/znfvr.jpg"];
+      var BASENAME = 'posts/interview/index';
+       
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-18750328-2']);
+      _gaq.push(['_trackPageview']);
+       
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
