@@ -2,7 +2,7 @@
 title: Butt Soup
 date: 2014-08-01
 template: article.jade
-tags: javascript, web development, websockets, paas
+tags: javascript, web development
 ---
 
 <div class="well" style="max-width: 400px; margin: 0 auto 10px;">
