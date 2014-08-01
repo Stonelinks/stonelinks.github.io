@@ -1,8 +1,8 @@
 ---
-title: Jekyll i18n
+title: Jekyll Internationalization
 date: 2014-08-01
 template: article.jade
-tags: web development, ruby
+tags: web development, ruby, jekyll, i18n
 ---
 
 <div class="well" style="max-width: 400px; margin: 0 auto 10px;">
