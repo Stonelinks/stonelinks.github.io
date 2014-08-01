@@ -13,4 +13,5 @@ block append content
               img(src='/img/' + thing.image)
             else if thing.youtube
               iframe(src=thing.youtube, frameborder="0", allowfullscreen)
-          | !{ typogr(markdown.markdown.toHTML(thing.desc)).typogrify() }
+          .external-links
+            | !{ typogr(markdown.markdown.toHTML(thing.desc)).typogrify() }

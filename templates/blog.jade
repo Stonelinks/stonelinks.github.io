@@ -31,7 +31,8 @@ block content
               br
               small= moment.utc(article.date).format('DD. MMMM YYYY')
           hr
-          | !{ typogr(article.intro).typogrify() }
+          .external-links
+            | !{ typogr(article.intro).typogrify() }
           if article.hasMore
             p
               a.btn.btn-info(href=article.url) Read more »
