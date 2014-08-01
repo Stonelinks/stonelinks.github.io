@@ -262,4 +262,8 @@ $(document).ready(function() {
       return '<a class="gallery-link" href="' + image + '" data-gallery><img src="' + image + '"></a>';
     }));
   }
+
+  $('.external-links a').each(function() {
+    $(this).attr('target', '_blank');
+  });
 });
