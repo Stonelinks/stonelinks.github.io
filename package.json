@@ -47,6 +47,7 @@
   ],
   "keywords": [],
   "dependencies": {
-    "slug": "~0.5.0"
+    "slug": "~0.5.0",
+    "grunt-rsync": "~0.6.2"
   }
 }

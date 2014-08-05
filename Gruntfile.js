@@ -95,6 +95,21 @@ module.exports = function(grunt) {
         branch: 'master'
       },
       src: ['**', '.*']
+    },
+
+    rsync: {
+      options: {
+        args: ['--verbose'],
+        recursive: true
+      },
+      dist: {
+        options: {
+          src: '<%= config.dist %>/',
+          dest: 'www-data@stonelinks.org:/var/www',
+          ssh: true,
+          delete: true
+        }
+      }
     }
   });
 
@@ -111,6 +126,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('publish', [
     'build',
+    'rsync',
     'gh-pages'
   ]);
 
