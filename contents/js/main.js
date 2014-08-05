@@ -213,10 +213,10 @@ var pages = {
         title: 'Anybots Telepresence'
       },
       {
-        selector: '.stoolbotics',
-        image: '/img/projects/stoolbotics.png',
-        link: '/projects/stoolbotics/index.html',
-        title: 'Stoolbotics, a classroom friendly robotics simulator'
+        selector: '.wingbox',
+        image: '/img/projects/boeing/screenshot.png',
+        link: '/projects/boeing/index.html',
+        title: 'Boeing Robotic Wingbox'
       },
       {
         selector: '.camera',

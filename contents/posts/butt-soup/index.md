@@ -5,7 +5,7 @@ template: article.jade
 tags: javascript, web development
 ---
 
-<div class="well" style="max-width: 400px; margin: 0 auto 10px;">
+<div style="max-width: 100%; margin: 0 auto 10px;">
   <a href="http://buttsoup.herokuapp.com/" class="btn btn-primary btn-lg btn-block">buttsoup.herokuapp.com</a>
   <a href="https://github.com/Stonelinks/buttsoup" class="btn btn-default btn-lg btn-block">github.com/Stonelinks/buttsoup</a>
 </div>
