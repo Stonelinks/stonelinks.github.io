@@ -47,7 +47,8 @@
     "_": "underscore",
     "typogr": "typogr",
     "grunt": "grunt",
-    "markdown": "markdown"
+    "markdown": "markdown",
+    "slug": "slug"
   },
   "jade": {
     "pretty": true

@@ -125,7 +125,7 @@ var pages = {
       setTimeout(function() {
         bgImgNotSet = false;
         bgImg.src = img.src;
-      }, 4000);
+      }, 3000);
     };
 
     bgImg.onload = function() {
@@ -174,6 +174,98 @@ var pages = {
         // _moveBackground(e);
       // }
     }
+
+    var popovers = [
+      {
+        selector: '.microcontrollers',
+        image: '/img/misc/IMG_0184-1024x682.jpg',
+        link: '/projects/robots/index.html#Litec-Blimp-2010',
+        title: 'Intel 8051 and PID loops on a blimp'
+      },
+      {
+        selector: '.battlebot',
+        image: '/img/projects/battlebot-gallery/101.jpg',
+        link: '/projects/battlebots/index.html',
+        title: 'Battlebot concept'
+      },
+      {
+        selector: '.harvard',
+        image: '/img/projects/amf/chamber.png',
+        link: '/projects/amf/index.html',
+        title: 'Automated Multilayer Fabrication at Harvard'
+      },
+      {
+        selector: '.boat',
+        image: '/img/misc/AIboat.jpg',
+        link: '/projects/robots/index.html#AI-Autonomous-Boat-2007',
+        title: 'ASP Autonomous Boat'
+      },
+      {
+        selector: '.ied',
+        image: '/img/projects/ied-robot.jpg',
+        link: '/projects/robots/index.html#IED-Border-Patrol-Robot-2010',
+        title: 'IED Border Patrol Robot'
+      },
+      {
+        selector: '.anybots',
+        image: '/img/projects/anybots/qb.jpg',
+        link: '/projects/anybots/index.html',
+        title: 'Anybots Telepresence'
+      },
+      {
+        selector: '.stoolbotics',
+        image: '/img/projects/stoolbotics.png',
+        link: '/projects/stoolbotics/index.html',
+        title: 'Stoolbotics, a classroom friendly robotics simulator'
+      },
+      {
+        selector: '.camera',
+        image: '/img/misc/tld.png',
+        link: '/tag/computer%20vision/1/',
+        title: 'Tag: Computer vision'
+      },
+      {
+        selector: '.web',
+        image: '/img/projects/stonelinks-web-framework.png',
+        link: '/tag/web%20development/1/',
+        title: 'Tag: Web development'
+      },
+      {
+        selector: '.plane',
+        image: '/img/posts/IMG_20140623_145234.jpg',
+        link: '/tag/airplane/1/',
+        title: 'Tag: Airplane'
+      }
+    ];
+
+    $('body').append($('<div id="#preloaded-images"></div>'));
+
+    $('#preloaded-images').imagesLoaded(function() {
+      $('#preloaded-images').hide();
+
+      _.forEach(popovers, function(popover) {
+        var _popoverOptions = {
+          container: 'body',
+          placement: 'top',
+          title: popover.title,
+          content: _.template('<a href="<%= link %>" target="_blank"><img class="img-responsive" src="<%= image %>"></a>', {
+            image: popover.image,
+            link: popover.link
+          }),
+          delay: {
+            show: 100,
+            hide: 600
+          },
+          trigger: 'hover',
+          html: true
+        };
+        $(popover.selector).attr('href', popover.link).popover(_popoverOptions);
+      });
+    });
+
+    $('#preloaded-images').html(_.map(popovers, function(popover) {
+      return '<img width="1" height="1" src="' + popover.image + '">';
+    }).join(''));
   },
 
   projects: function() {

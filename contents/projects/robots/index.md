@@ -38,7 +38,7 @@ list:
   -
     name: Battlebot - (2009 - 2010)
     image: misc/101.jpg
-    desc: I designed most of this robot on my own for a now dissolved group of students at RPI interested in starting a Battlebot team. It never made it into the real world but still remains a viable design as far as I am concerned. More written about it [here](/projects/battlebot.html).
+    desc: I designed most of this robot on my own for a now dissolved group of students at RPI interested in starting a Battlebot team. It never made it into the real world but still remains a viable design as far as I am concerned. More written about it [here](/projects/battlebots/index.html).
   -
     name: Personal robot - (2008 - onwards)
     youtube: http://www.youtube.com/embed/RRwMJ8GYT7Y

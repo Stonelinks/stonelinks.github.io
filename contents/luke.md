@@ -11,6 +11,12 @@ I'm a programmer, roboticist, engineer and web developer. I live in Tokyo and wo
 
 I'm passionate about my work and love learning new things! These days I do a lot of high-level, user focused work with an emphasis on making complicated robotics technology accessible for users and developers alike.
 
-In the past I've worked with microcontrollers, embedded [control systems](http://litec.rpi.edu/), CAD / CAM, automated manufacturing, autonomous and semi-autonomous vehicles, robotic telepresence, locomotion, simulation and machine vision. I've helped develop systems that fabricate experimental X-ray optics for space observatories at the Harvard-Smithsonian Center for Astrophysics. I've also been programming for the web since day zero of my career. Check out a full list of projects I've worked on here.
+This website is chock full of things that I'm interested in. A good place to start would be [here](/projects.html). In the past I've worked with <a class="microcontrollers">microcontrollers, embedded control systems</a>, <a class="battlebot">CAD / CAM</a>, <a class="harvard">automated manufacturing</a>, <a class="boat">autonomous</a> and <a class="ied">semi-autonomous</a> vehicles, <a class="anybots">robotic telepresence</a>, locomotion, <a class="stoolbotics">simulation</a> and <a class="camera">machine vision</a>. I've helped develop systems that <a class="harvard">fabricate experimental X-ray optics for space observatories</a> at the Harvard-Smithsonian Center for Astrophysics. I've also been <a class="web">programming for the web</a> since day zero of my career. Again, check out a full list of projects I've worked on [here](/projects.html).
 
-Outside of robotics I also have a keen interest in aviation, astronomy, economics, making things with my hands and running. I'm a naturally curious individual and constantly have side projects going on. Oh and I love the outdoors!
+Outside of robotics I also have a keen interest in <a class="plane">aviation</a>, astronomy, economics, making things with my hands, the outdoors and running. I'm a naturally curious individual and constantly have side projects going on. Enjoy my site!
+
+<div class="resume-badge">
+  <a href="http://stonelinks.github.io/resume/" class="btn btn-info btn-lg btn-block">
+    <h1>Résumé</h1>
+  </a>
+</div>

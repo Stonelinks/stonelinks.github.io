@@ -45,5 +45,8 @@
       "url": "https://github.com/stonelinks/stonelinks-github-io/blob/master/LICENSE-MIT"
     }
   ],
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "slug": "~0.5.0"
+  }
 }

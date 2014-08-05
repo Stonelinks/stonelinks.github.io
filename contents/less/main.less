@@ -25,9 +25,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
-p {
+p, ul {
   font-size: 1.25em;
-  line-height: 1.6;
+  line-height: 1.6em;
   color: #000;
   margin: 0 0 15px;
 }
@@ -249,12 +249,6 @@ footer p {
 
 .landing-navbar-wrapper footer {
   padding-bottom: 25px;
-}
-
-ul {
-  font-size: 15px;
-  line-height: 25px;
-  color: rgb(0, 0, 0);
 }
 
 /* archive */
@@ -509,4 +503,23 @@ pre code {
 
 .interview-answer::before {
   content: "A: ";
+}
+
+.resume-badge {
+  max-width: 400px;
+  margin: 0 auto 10px;
+  font-weight: 400;
+}
+
+.resume-badge h1 {
+  margin-top: 10px;
+}
+
+#preloaded-images {
+  position: absolute;
+  overflow: hidden;
+  left: -9999px; 
+  top: -9999px;
+  height: 1px;
+  width: 1px;
 }
