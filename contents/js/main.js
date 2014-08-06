@@ -260,6 +260,11 @@ var pages = {
           html: true
         };
         $(popover.selector).attr('href', popover.link).popover(_popoverOptions);
+        $(document).click(function() {
+          _.forEach(popovers, function(popover) {
+            $(popover.selector).popover('hide');
+          });
+        });
       });
     });
 
