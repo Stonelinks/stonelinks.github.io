@@ -168,11 +168,6 @@ var pages = {
       };
 
       $(document).mousemove(_moveBackground);
-
-      // TODO
-      // document.ontouchmove = function(e) {
-        // _moveBackground(e);
-      // }
     }
 
     var popovers = [

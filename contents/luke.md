@@ -20,3 +20,11 @@ Outside of robotics I also have a keen interest in <a class="plane">aviation</a>
     <h1>Résumé</h1>
   </a>
 </div>
+
+<iframe src="http://githubbadge.appspot.com/stonelinks" style="border: 0; height: 142px; width: 200px; overflow: hidden; display: block; margin: 0 auto;" align="middle" frameBorder="0"></iframe>
+
+<div class="resume-badge">
+    <a class="btn btn-default btn-block" href="http://osrc.dfm.io/stonelinks/">
+      Open source report card
+    </a>
+</div>
