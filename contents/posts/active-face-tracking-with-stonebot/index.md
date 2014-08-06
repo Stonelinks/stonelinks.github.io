@@ -13,7 +13,7 @@ I finally have it working! Very excited as I write this. So glad spring break ex
 
 </div>
 
-This has been a goal of mine ever since I started building my personal robot (which, in keeping with the Stonelinks legacy, shall henceforth be known as "Stonebot"). This face tracking makes use of my [new method for positioning the camera](a-more-accurate-coordinate-system.html) that I worked on a little over winter break, and is probably the most complicated piece of python I have written to date. Here are some highlights of the project:
+This has been a goal of mine ever since I started building my personal robot (which, in keeping with the Stonelinks legacy, shall henceforth be known as "Stonebot"). This face tracking makes use of my [new method for positioning the camera](/posts/a-more-accurate-coordinate-system/) that I worked on a little over winter break, and is probably the most complicated piece of python I have written to date. Here are some highlights of the project:
 
 <span class="more"></span>
 

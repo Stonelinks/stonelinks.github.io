@@ -5,7 +5,7 @@ template: article.jade
 tags: web development
 ---
 
-Looks like the kinks of my new [two-server](dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid.html) setup are not ironed out. I just got home from RPI and the old Dell is acting wacky at school. I thoroughly checked both machines before I left for home, and I thought everything was okay. However, upon arriving home, I checked the web server to find that it doesn't work -- not even a 404 page or a time out error, the browser just hangs.
+Looks like the kinks of my new [two-server](/posts/dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid/) setup are not ironed out. I just got home from RPI and the old Dell is acting wacky at school. I thoroughly checked both machines before I left for home, and I thought everything was okay. However, upon arriving home, I checked the web server to find that it doesn't work -- not even a 404 page or a time out error, the browser just hangs.
 
 To use anything other than HTTP on port 80, I need to be on RIP's VPN. I log into the VPN and start with the basics. The machine (which is not behind a NAT router) responds to ping, however ssh shows the same symptoms as apache and the connection just hangs. I don't even get a connection refused, path not found or timeout error.
 
