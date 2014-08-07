@@ -5,6 +5,8 @@ template: article.jade
 tags: documentation
 ---
 
+__Update 07-07-2013__: I've come up with an even newer iteration of my resume, see it [here](http://stonelinks.github.io/resume/) and the actual code that powers it on github [here](https://github.com/Stonelinks/resume).
+
 Over the holidays I finally got around to implementing what I wish existed back when I was looking for a job: a quick, easy, flexible way to write and publish a resume in many formats. The more people who see your resume, the better your chances of getting an interview or call back from a potential employer. This means the more formats and places that your resume is viewable in, the better. When I was looking for a job, I tried to follow this strategy but quickly tired making the same change on multiple versions of my resume in different formats.
 
 Like any programmer that has to do anything more than once, I wanted to automate this tedious editing. So I endeavored create a better resume authoring solution. Specifically, I wanted these features:
