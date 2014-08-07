@@ -8514,3 +8514,7 @@ pre code {
   height: 1px;
   width: 1px;
 }
+.gh-container {
+  max-width: 100%;
+  margin: 0 auto 10px;
+}
