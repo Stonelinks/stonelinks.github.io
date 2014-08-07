@@ -5,9 +5,9 @@ template: article.jade
 tags: javascript, web development
 ---
 
-<div style="max-width: 100%; margin: 0 auto 10px;">
+<div class="gh-container">
   <a href="http://buttsoup.herokuapp.com/" class="btn btn-primary btn-lg btn-block">buttsoup.herokuapp.com</a>
-  <a href="https://github.com/Stonelinks/buttsoup" class="btn btn-default btn-lg btn-block">github.com/Stonelinks/buttsoup</a>
+  <a href="https://github.com/Stonelinks/buttsoup" class="btn btn-primary btn-lg btn-block">github.com/Stonelinks/buttsoup</a>
 </div>
 
 This is a silly little text to speech web chat thing I made a few months ago. It allowed me to acquaint myself with a few technologies I'd been meaning to try out. There are also a few easter eggs built in (try typing "cage mode" in and see what happens)

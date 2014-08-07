@@ -5,6 +5,10 @@ template: article.jade
 tags: documentation
 ---
 
+<div class="gh-container">
+  <a href="https://github.com/Stonelinks/Lite-Write" class="btn btn-primary btn-lg btn-block">github.com/Stonelinks/Lite-Write</a>
+</div>
+
 A few months ago I came up with a quick and dirty way to write text documents. I'm calling it [Lite Write](https://github.com/Stonelinks/Lite-Write) because it is so simple. I've been using it in place of a word processor for awhile and been very happy with it.
 
 Like most people who write a lot of code, I'm most comfortable manipulating text in my editor of choice. However, I do a fair amount of writing that needs to be accessible to non programmers, which means my work really can't stay in plain text forever. Lite write is a simple setup (basically a Makefile and some bits of HTML/CSS) that allows you to:

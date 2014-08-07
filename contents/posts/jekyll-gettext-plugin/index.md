@@ -5,8 +5,8 @@ template: article.jade
 tags: web development, ruby, jekyll, i18n
 ---
 
-<div style="max-width: 100%; margin: 0 auto 10px;">
-  <a href="https://github.com/Stonelinks/jekyll-gettext-plugin" class="btn btn-default btn-lg btn-block">github.com/Stonelinks/jekyll-gettext</a>
+<div class="gh-container">
+  <a href="https://github.com/Stonelinks/jekyll-gettext-plugin" class="btn btn-primary btn-lg btn-block">github.com/Stonelinks/jekyll-gettext</a>
 </div>
 
 As the friendly neighborhood web developer at MUJIN, one of my responsibilities is [our company's website](http://mujin.co.jp/). I made this site mostly by myself using [jekyll](http://jekyllrb.com/), the static website generator that github uses for github pages by default.

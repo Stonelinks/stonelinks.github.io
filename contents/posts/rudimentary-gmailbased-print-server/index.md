@@ -5,6 +5,10 @@ template: article.jade
 tags: python
 ---
 
+<div class="gh-container">
+  <a href="https://github.com/Stonelinks/gmail-printsrv" class="btn btn-primary btn-lg btn-block">github.com/Stonelinks/gmail-printsrv</a>
+</div>
+
 Another example of python being super useful. I found myself today with a need to network a printer so my room mates and I could print from anywhere on campus. However, figuring out what ports to forward, trying to get IPP to work and just being generally unhappy with CUPS and the way RPIs network restricts printer traffic / discovery lead me to consider alternate solutions
 
 Enter python and Gmail! I wanted to be able to have someone email me a message with a few keywords in the subject line that would tag any attachments for printing. I then had python log into my email and download the most recent email for printing, and if the attachment was new to it, print it. I wrote a nice little script that does just that:
