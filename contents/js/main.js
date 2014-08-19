@@ -234,7 +234,7 @@ var pages = {
     ];
 
     $('body').append($('<div id="#preloaded-images"></div>'));
-
+    
     $('#preloaded-images').imagesLoaded(function() {
       $('#preloaded-images').hide();
 
