@@ -3,6 +3,7 @@ title: Thoughts on manufacturing
 date: 2014-08-10
 template: article.jade
 tags: essay, manufacturing, robotics
+draft: yes
 ---
 
 I've been in the Japanese industrial robotics scene for almost two years now. Part of me wishes I was writing some sort of exposé on the dark underbelly of the manufacturing world. A world full of drama, scandal and secrets. If this underbelly exists I havn't found it yet -- but what the manufacturing world lacks in sexiness it makes up for in importance.
@@ -61,7 +62,7 @@ Therein lies why I see factories as bottlenecks -- waiting for factories costs a
 
 Regardless, as I said opportunity cost is much harder to quantify than capital cost. but by looking at factories as black boxes and analyzing the bottlenecks on the time dimension, we can deconstruct specific problems and make smart decisions on how to optimize them. I think this is the approach we should take. Some may balk at the extreme capital costs associated with even a minor time saving measures. Remember that cost and time are inexorably tied to one another. If targeting the right bottleneck, even a tiny but expensive improvement in the time dimension can pay for itself big time in the cost dimension given the increased volume. Everybody knows the old aphorisim "time is money". Nowhere is that more true than the world of manufacturing.
 
-###The Plight of conservatism
+###The Plight of Conservatism
 
 So all this is great, we know time is the issue that needs attention. What happens when we actually try to make factories faster? Once we start peering under the lid of the black boxes of factories (and how to peer under that lid is a different conversation entirely -- factories are notoriously secretive and earning their trust is hard work), they go from being one big bottleneck / black box to a complicated web of intermediate steps and black boxes. Basically a big directed graph of smaller black boxes with their own bottlenecks.
 
@@ -72,7 +73,7 @@ Transferred from <a class="external text" href="http://en.wikipedia.org">en.wiki
 
 </div>
 
-This is going to seem like switching topics, but I want to consider 3D printing for a second. Besides being a buzzword, part of me feels like the reason there is a lot of hype around 3D printing the lack of logistical / implementation complexity that "classic" factories suffer from. A 3D printer is one machine that potentially replaces a workshop full of much more expensive machines. It can make a nearly endless objects and shapes with one simple extrusion tool. In essence what is happening is they combine all of numerous intermediate steps required in a "classic" factory and replace them with one big printing step. It makes the barrier between design and physical product much lower, something immediately recognizable by many people. Of course current generation 3D printing comes with a million downsides which are out of this document's scope. But still, they show off many of the weak spots of a "classic" factory in a very effective manner.
+This is going to seem like switching topics, but I want to consider 3D printing for a second. Besides being a buzzword, part of me feels like there is a lot of hype around 3D printing due to the lack of logistical / implementation complexity that "classic" factories suffer from. A 3D printer is one machine that potentially replaces a workshop full of much more expensive machines. They can make nearly endless objects and shapes with one simple extrusion tool. In essence they combine the numerous intermediate steps required in a "classic" factory and replace them with one big printing step. It makes the barrier between design and physical product much lower, something immediately recognizable by many people. Of course current generation 3D printing comes with a million downsides which are out of this document's scope. But still, they show off many of the weak spots of a "classic" factory in a very effective manner.
 
 We all know that people want the things factories produce as soon as possible. Whoever designed and sells the product is losing an astronomical amount of money every second that factory isn't producing. There is ferocious demand, high pressure and stiff competition that all converge upon factories. Set up time, maintenance, failures and downtime of any kind cost millions. Add to the mix that while they are ideally static, factories are always undergoing some kind of change. A new line is being built, an old line is being deprecated, a machine reached the end of it's service lifetime, a supplier changed or went out of business, etc.
 
@@ -86,7 +87,7 @@ The result of all this is what I call the "plight of conservatism". Given that a
 
 Those consequences of largely ignoring modernization are about to come to fruition with the maturity of factory automation technology. The plight of conservatism has made innovation and advancement in manufacturing agonizingly slow and frustrating for almost everyone in the sector. The higher-ups and decision makers finally see the that higher and higher degrees of factory automation are the way forward. So they're trying to learn and use them or else get left in the dust. As I said this industry is incredibly competitive. Unfortunately most factories are in the proverbial stone age thanks to the enduring conservatism and never ending pressure to keep producing. So they are ill-equipped and can't exactly stop what they are doing to learn a bunch of stuff about factory automation and change the millions of little black boxes that need to be changed.
 
-###Where this is going
+###Where this is Going
 
 The state of the manufacturing world is pretty much this: everybody knows they need to modernize on some level but has no clue how to actually do it in a comprehensive way. They know bits and pieces of the puzzle but the gestalt is missing. Software in particular, which is my opinion is the key to the puzzle, is generally not well understood. Software can enable speedups on all those black boxes, and that maybe some of those black boxes can be reused and take the place of many other slower black boxes.
 
@@ -100,11 +101,11 @@ I'd also be remiss if I didn't mention robotics. Great robot hardware is already
 
 Programming is a relatively new and (as most of us know) fantastically powerful tool in the factory automator's arsenal. Problem is that it is a moving target -- most factory types can't be bothered to stop their incredibly time sensitive jobs and learn about something that is constantly changing. As such, most look at programming as arcane computer wizardry that you need to make machines move and do things.
 
-This document is all over the place in terms of topics (and we've covered a lot). I'll no doubt come back and tighten some of it up. For now I want to wrap things up by talking about the way forward. As I said, factories rarely (if ever) stop to learn the latest and greatest technology and apply it themselves. Instead, they pay other companies to do this for them. These are called system integrators and they're incredibly important since they provide a vector for creating and manipulating the black boxes in factories. There are TONS of system integrators in Japan (actually they're all over the place). Some are huge, some are tiny, some have different specializations that they're really good at like robotics, milling, glass extrusion, painting, etc. They come up with applications of tools and equipment to put in a factory so it can make part of the product.
+I want to wrap things up by talking about the way forward. As I said, factories rarely (if ever) stop to learn the latest and greatest technology and apply it themselves. Instead, they pay other companies to do this for them. These are called system integrators and they're incredibly important since they provide a vector for creating and manipulating the black boxes in factories. There are TONS of system integrators in Japan (actually they're all over the place). Some are huge, some are tiny, some have different specializations that they're really good at like robotics, milling, glass extrusion, painting, etc. They come up with applications of tools and equipment to put in a factory so it can make part of the product.
 
 The tools and equipment that the system integrators use generally come from somewhere else. That is where the companies that make the tools (robot companies, CNC and milling machine makers, PLCs makers, etc.) come in. If a tool is complicated enough maybe the company that makes it has its own network of suppliers and means of production! So this can be a recursive pattern.
 
-Anyways it is this interface between the tool makers and system integrators that tremendous opportunity exists for new innovation. If you come up with some awesome tool, a system integrator will give proper feedback and eventually get it deployed to a real factory. It is this kind of ground up approach that may seem small now but I feel will pay big dividends down the line.
+It is this interface between the tool makers and system integrators that tremendous opportunity exists for new innovation. If you come up with some awesome tool, a system integrator will give proper feedback and eventually get it deployed to a real factory. It is this kind of ground up approach that may seem small now but I feel will pay big dividends down the line.
 
 <!--
 
