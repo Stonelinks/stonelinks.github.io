@@ -16,7 +16,7 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=72
+current_page=21
 FILE_NAME_0=782;None;0;EUTF-8;0;1;1;%2Fhome%2Fld%2Fstonelinks.github.io%2Fbower.json;0;2
 FILE_NAME_1=1034;None;0;EUTF-8;0;1;1;%2Fhome%2Fld%2Fstonelinks.github.io%2Fpackage.json;0;2
 FILE_NAME_2=0;Markdown;0;EUTF-8;0;1;1;%2Fhome%2Fld%2Fstonelinks.github.io%2FREADME.md;0;2
@@ -31,7 +31,7 @@ FILE_NAME_10=933;None;0;EUTF-8;0;1;1;%2Fhome%2Fld%2Fstonelinks.github.io%2Ftempl
 FILE_NAME_11=1126;None;0;EUTF-8;0;1;1;%2Fhome%2Fld%2Fstonelinks.github.io%2Ftemplates%2Farchive.jade;0;2
 FILE_NAME_12=300;None;0;EUTF-8;0;1;1;%2Fhome%2Fld%2Fstonelinks.github.io%2Ftemplates%2Farticle.jade;0;2
 FILE_NAME_13=1127;None;0;EUTF-8;0;1;1;%2Fhome%2Fld%2Fstonelinks.github.io%2Fconfig.json;0;2
-FILE_NAME_14=1948;Javascript;0;EUTF-8;0;1;1;%2Fhome%2Fld%2Fstonelinks.github.io%2FGruntfile.js;0;2
+FILE_NAME_14=2211;Javascript;0;EUTF-8;0;1;1;%2Fhome%2Fld%2Fstonelinks.github.io%2FGruntfile.js;0;2
 FILE_NAME_15=12;None;0;EUTF-8;0;1;1;%2Fhome%2Fld%2Fstonelinks.github.io%2F.gitattributes;0;2
 FILE_NAME_16=957;None;0;EUTF-8;0;1;1;%2Fhome%2Fld%2Fstonelinks.github.io%2Ftemplates%2Fblog.jade;0;2
 FILE_NAME_17=336;Python;0;EUTF-8;0;1;1;%2Fhome%2Fld%2Fstonelinks.github.io%2Fplugins%2Fpaginator.coffee;0;2
@@ -89,8 +89,8 @@ FILE_NAME_68=105;Markdown;0;EUTF-8;0;1;1;%2Fhome%2Fld%2Fstonelinks.github.io%2Fc
 FILE_NAME_69=303;Markdown;0;EUTF-8;0;1;1;%2Fhome%2Fld%2Fstonelinks.github.io%2Fcontents%2Fposts%2Fjekyll-gettext-plugin%2Findex.md;0;2
 FILE_NAME_70=1272;Markdown;0;EUTF-8;0;1;1;%2Fhome%2Fld%2Fstonelinks.github.io%2Fcontents%2Fposts%2F2013-irex-binpicking%2Findex.md;0;2
 FILE_NAME_71=428;Markdown;0;EUTF-8;0;1;1;%2Fhome%2Fld%2Fstonelinks.github.io%2Fcontents%2Fposts%2Fmt-major-drone%2Findex.md;0;2
-FILE_NAME_72=2646;Markdown;0;EUTF-8;0;1;1;%2Fhome%2Fld%2Fstonelinks.github.io%2Fcontents%2Fposts%2Fmanufacturing-in-japan%2Findex.md;0;2
-FILE_NAME_73=0;Markdown;0;EUTF-8;0;1;1;%2Fhome%2Fld%2Fstonelinks.github.io%2Fcontents%2Fposts%2Finterview%2Findex.md;0;2
+FILE_NAME_72=1606;Markdown;0;EUTF-8;0;1;1;%2Fhome%2Fld%2Fstonelinks.github.io%2Fcontents%2Fposts%2Finterview%2Findex.md;0;2
+FILE_NAME_73=3245;Markdown;0;EUTF-8;0;1;1;%2Fhome%2Fld%2Fstonelinks.github.io%2Fcontents%2Fposts%2Fthoughts-on-manufacturing%2Findex.md;0;2
 
 [gproject]
 source_patterns=*.c;*.C;*.cpp;*.cxx;*.c++;*.cc;

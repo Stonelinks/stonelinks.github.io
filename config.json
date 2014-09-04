@@ -37,11 +37,13 @@
       }
     ]
   },
+  
   "plugins": [
     "./plugins/paginator.coffee",
     "wintersmith-livereload",
     "wintersmith-tag"
   ],
+  
   "require": {
     "moment": "moment",
     "_": "underscore",
@@ -50,24 +52,29 @@
     "markdown": "markdown",
     "slug": "slug"
   },
+  
   "jade": {
     "pretty": true
   },
+  
   "markdown": {
     "smartLists": true,
     "smartypants": true
   },
+  
   "ignore":  [
     "less",
     "**/config.json",
     "**/.DS_Store"
   ],
+  
   "paginator": {
     "template": "blog.jade",
     "articles": "posts",
     "first": "blog.html",
     "perPage": 10
   },
+  
   "tag": {
     "template": "blog.jade",
     "perPage": 5

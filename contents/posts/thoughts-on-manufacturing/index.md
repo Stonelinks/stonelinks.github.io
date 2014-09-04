@@ -24,6 +24,9 @@ Whenever we get a shiny new iPhone or Nexus, we neither know nor care about the 
 
 ###Black Boxes and Bottlenecks
 
+<blockquote class="twitter-tweet" lang="en"><p>The SpaceX rocket factory: metal comes in one door, and rockets go out another. <a href="http://t.co/sJJs37axdD">http://t.co/sJJs37axdD</a> <a href="https://twitter.com/SpaceXJobs">@SpaceXJobs</a> <a href="http://t.co/UatHqC3LJN">pic.twitter.com/UatHqC3LJN</a></p>&mdash; SpaceX (@SpaceX) <a href="https://twitter.com/SpaceX/statuses/502505703974531072">August 21, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 Think about what a factory is. To me, a factory is a great vehicle that takes a design and turns it into a physical product. In a sense they're great big black boxes -- raw materials go in one end, and products come out the other. But they are something else: bottenecks. Very necessary and important bottlenecks, but bottlenecks nonetheless.
 
 <div class="media-container">

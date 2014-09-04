@@ -99,7 +99,6 @@ module.exports = function(grunt) {
 
     rsync: {
       options: {
-        args: ['--verbose'],
         recursive: true
       },
       dist: {
