@@ -1,6 +1,7 @@
 ---
 title: Laser Altimeter integration on Pixhawk
 template: page.jade
+external-links: true
 ---
 
 Hey Bret! So here is how I'd go about integrating a laser altimeter on to the 3DR Pixhawk. This took me a couple hours. While not exhaustive, this is more of a general technical overview to what my approach would be. Also while this page is public on the internet, I've only shared the link with you.
