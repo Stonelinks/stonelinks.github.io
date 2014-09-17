@@ -3,10 +3,21 @@ extends layout
 block content
   .row
     .box
-      .col-lg-12
-        if page.title != 'Untitled'
-          hr
-          a(href=page.url)
-            h1.intro-text.text-center= page.title
-          hr
-        | !{ typogr(page.html).typogrify() }
+      //
+        there has got to be a more elegant way of doing this
+      if page.metadata.hasOwnProperty('external-links')
+        .col-lg-12.external-links
+          if page.title != 'Untitled'
+            hr
+            a(href=page.url)
+              h1.intro-text.text-center= page.title
+            hr
+          | !{ typogr(page.html).typogrify() }
+      else
+        .col-lg-12
+          if page.title != 'Untitled'
+            hr
+            a(href=page.url)
+              h1.intro-text.text-center= page.title
+            hr
+          | !{ typogr(page.html).typogrify() }
