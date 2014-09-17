@@ -39,7 +39,7 @@
           <div class="col-lg-12 external-links">
             <hr><a href="/bret.html">
               <h1 class="intro-text text-center">Laser Altimeter integration on Pixhawk</h1></a>
-            <hr><p>Hey Bret! So here is how I’d go about integrating a laser altimeter on to the <span class="caps">3DR</span> Pixhawk. This took me a couple hours. While not exhaustive, this is more of a general technical overview to what my approach would be. Also while this page is public on the internet, I’ve only shared the link with&nbsp;you.</p>
+            <hr><p>Hey Bret! Here is how I’d go about integrating a laser altimeter on to the <span class="caps">3DR</span> Pixhawk. This took me a couple hours. While not exhaustive, this is more of a general technical overview to what my approach would&nbsp;be.</p>
 <h2 id="step-0-source-a-sensor">Step 0: Source a&nbsp;sensor</h2>
 <p>All signs of googling point to the <a href="http://www.lightware.co.za/shop/en/lrf-modules/7-sf02f.html"><span class="caps">SF02</span>/F laser altimeter</a> as the quickest option to get something&nbsp;working.</p>
 <div class="media-container">
@@ -50,7 +50,7 @@
 
 <p><strong>Specs</strong>:</p>
 <ul>
-<li><strong>Manufacturer</strong> A South African company called <a href="http://www.lightware.co.za/shop/en/">lightware</a></li>
+<li><strong>Manufacturer</strong>: A South African company called <a href="http://www.lightware.co.za/shop/en/">lightware</a></li>
 <li><strong>Weight</strong>: 69&nbsp;g</li>
 <li><strong>Range</strong>: 0-40&nbsp;m</li>
 <li><strong>Resolution</strong>: 1&nbsp;cm</li>
@@ -64,21 +64,21 @@
 </ul>
 <p><strong>Pros</strong>:</p>
 <ul>
-<li>Good <a href="https://pixhawk.org/platforms/planes/phantom_fpv_flying_wing#px4_fmu_build_log">example applications</a> on Pixhawk UAVs already out&nbsp;there</li>
+<li>Good <a href="https://pixhawk.org/platforms/planes/phantom_fpv_flying_wing#px4_fmu_build_log">example applications</a> on UAVs using Pixhawk already out&nbsp;there</li>
 <li><a href="https://pixhawk.org/peripherals/rangefinder">Documentation</a> on how to interface and a <a href="https://github.com/PX4/Firmware/tree/master/src/drivers/sf0x">Pixhawk driver</a> already&nbsp;exists.</li>
 <li>It is a high quality piece of equipment. This guy gave it <a href="http://diydrones.com/profiles/blogs/sf02-laser-altimeter-review">a unbiased, positive review</a>.</li>
-<li>Manufacturer includes <a href="http://www.lightware.co.za/shop/en/content/8-software">software</a> that can be used to independently test&nbsp;sensor.</li>
-<li>Lots of good activity and info from the <a href="http://diydrones.com/profile/LaserDeveloper">manufacturer’s <span class="caps">DIY</span> drones account</a>. They try to help people with problems and provide good&nbsp;feedback.</li>
+<li>Manufacturer includes <a href="http://www.lightware.co.za/shop/en/content/8-software">software</a> that can be used to test the sensor independently from the&nbsp;Pixhawk.</li>
+<li>Good activity and info from the <a href="http://diydrones.com/profile/LaserDeveloper">manufacturer’s <span class="caps">DIY</span> drones account</a>. Seem to help people with their problems and provide good&nbsp;feedback.</li>
 </ul>
 <p><strong>Cons</strong>:</p>
 <ul>
-<li>The 40 m range is too short depending on the intended application. For automated landings, 40m is fine since those obviously occur close to the ground. However if you’re using the rangefinder for data acquisition the entire flight, then 40m is too short. <a href="http://diydrones.com/forum/topics/looking-for-new-technology-1?commentId=705844%3AComment%3A1761627&amp;xg_source=activity">Supposedly the company is developing another similar sensor</a> with a more appropriate&nbsp;range.</li>
+<li>The 40 m range is likely too short for any application other than automated landings. 40 m is fine for landings since those obviously occur close to the ground. However if you’re using the rangefinder for data acquisition the entire flight, then 40 m is too short. <a href="http://diydrones.com/forum/topics/looking-for-new-technology-1?commentId=705844%3AComment%3A1761627&amp;xg_source=activity">Supposedly the company is developing another similar sensor</a> with a longer&nbsp;range.</li>
 <li>Expensive! At $300 a pop, equipping a fleet of drones with these will be&nbsp;pricey.</li>
-<li>Manufacturer is making these for the <span class="caps">UAV</span> hobbyist market. This means that they may not produce these in bulk, they might not be made to high industrial standards or that there it could be suddenly discontinued if they decide the hobbyist market isn’t worth&nbsp;it.</li>
+<li>Looks like the manufacturer is making these only for the hobbyist market. This means that they may make them in bulk, they might not be made to high industrial standards or that there it could be suddenly discontinued if they decide the hobbyist market isn’t worth&nbsp;it.</li>
 </ul>
 <p><strong>Alternatives</strong>:</p>
-<p>To address some of the <span class="caps">SF02</span>’s cons (and given that we’re equipping a fleet), I looked for an alternate sensor on <a href="http://www.alibaba.com/">Alibaba</a>. If you’re not familiar with Alibaba, it is basically a way to buy wholesale electronics / components / sub-assemblies directly from Chinese suppliers. The best option I found for a laser rangefinder module is <a href="http://www.alibaba.com/product-detail/rangefinder-module_713054756.html">this sensor</a>. It is $100 - $300, so potentially a third of the cost per unit compared to the <span class="caps">SF02</span>. The range is also much better. Details on power consumption and how to interface with it are not clear, but I’m sure talking with the manufacturer (which is easy on Alibaba) would clear that up. Finally, the stated accuracy (1 m) is pretty bad and won’t be useful for&nbsp;landings.</p>
-<p><a href="http://www.dragoninnovation.com/projects/32-lidar-lite-by-pulsedlight">This sensor is intriguing</a> but not yet available. Good to keep an eye on, especially since <a href="https://store.3drobotics.com/products/lidar-lite/"><span class="caps">3DR</span> seems to be supporting it</a>. Far cheaper and smaller but still only a 40m&nbsp;range.</p>
+<p>To address some of the <span class="caps">SF02</span>’s cons (and given that we’re equipping a fleet), I looked for an alternate sensor on <a href="http://www.alibaba.com/">Alibaba</a>. If you’re not familiar with Alibaba, it is basically a way to buy wholesale electronics / components / sub-assemblies directly from Chinese suppliers. The best option I found for a laser rangefinder module is <a href="http://www.alibaba.com/product-detail/rangefinder-module_713054756.html">this sensor</a>. It is $100 - $300, so potentially a third of the cost per unit compared to the <span class="caps">SF02</span>, which is a massive savings. The range is also much better (says 10 - 800 m). Details on power consumption and how to interface with it are not clear, but I’m sure talking with the manufacturer (which is easy on Alibaba) would clear that up. Finally, the stated minimum distance (10 m) and accuracy (1 m) is pretty bad and won’t be useful for&nbsp;landings.</p>
+<p><a href="http://www.dragoninnovation.com/projects/32-lidar-lite-by-pulsedlight">This sensor is intriguing</a> but not yet available. Good to keep an eye on, especially since <a href="https://store.3drobotics.com/products/lidar-lite/"><span class="caps">3DR</span> seems to be supporting it</a>. Far cheaper and smaller but still only a 40 m&nbsp;range.</p>
 <p>So while these other sensors may potentially work, for the sake of this analysis I’m going to with the&nbsp;<span class="caps">SF02</span>.</p>
 <h2 id="step-1-connect-to-the-pixhawk">Step 1: Connect to the&nbsp;Pixhawk</h2>
 <p>The wiring from the <span class="caps">SF02</span> to the Pixhawk goes like&nbsp;this:</p>
@@ -118,9 +118,9 @@
   </tbody>
 </table>
 
-<p>Since the <span class="caps">SF02</span> uses screw terminals, depending on how much the aircraft vibrates it may be a good idea to soldier up the connector. This is the <a href="https://store.3drobotics.com/products/df13-6-position-connector-45-cm">cable / connector</a> you’d use. Plug the <span class="caps">SF02</span> into TELEM2 of the&nbsp;Pixhawk.</p>
+<p>Since the <span class="caps">SF02</span> uses screw terminals, depending on how much the aircraft vibrates it may be a good idea to soldier up the leads to the screw terminal. This is the <a href="https://store.3drobotics.com/products/df13-6-position-connector-45-cm">cable / connector</a> you’d use. Plug the <span class="caps">SF02</span> into TELEM2 of the&nbsp;Pixhawk.</p>
 <h2 id="step-2-install-on-the-aircraft">Step 2: Install on the&nbsp;aircraft</h2>
-<p>You’ll want to put the sensor pointing at the ground obviously, keeping it perpendicular to the aircraft. The sensor should also be mounted in a recessed position so that the optics arn’t scratched during a rough landing. Also, it should be positioned such that it doesn’t mess with the center of gravity for the aircraft otherwise it will screw with glide&nbsp;characteristics.</p>
+<p>You’ll want to put the sensor pointing at the ground obviously, keeping it perpendicular to the aircraft. The sensor should also be mounted in a recessed position so that the optics arn’t scratched during a rough landing. Also, it should be positioned such that it doesn’t mess with the center of gravity for the aircraft otherwise it will affect glide&nbsp;characteristics.</p>
 <h2 id="step-3-software-integration">Step 3: Software&nbsp;integration</h2>
 <p><strong>Drivers</strong></p>
 <p>The <a href="https://github.com/PX4/Firmware/tree/master/src/drivers/sf0x">sf0x driver</a> needed for the Pixhawk is already part of the firmware. To start the&nbsp;driver:</p>
@@ -133,12 +133,12 @@
 <pre><code class="lang-bash">sf0x start
 </code></pre>
 <p><strong>Receiving sensor data in your <span class="caps">PX4</span>&nbsp;application</strong></p>
-<p><span class="caps">PX4</span> has some sweet hardware abstraction, so we don’t have to directly interact with the driver at all. Instead, we <a href="http://pixhawk.org/dev/px4_simple_app#step_5subscribing_sensor_data">subscribe to inter-process messages</a> published by the sensor driver. In order to get data from the laser rangefinder, we need to subscribe to the topic that it publishes on. <a href="http://pixhawk.org/dev/shared_object_communication">This</a> is a good resource on how to do that. Looking at the source for the <code>sf0x</code> driver, we need to subscribe to the <code>sensor_range_finder</code> topic which comes from <code>[drv_range_finder.h](https://github.com/PX4/Firmware/blob/master/src/drivers/c)</code>. So in our application we’d subscribe like&nbsp;this:</p>
+<p><span class="caps">PX4</span> has some great hardware abstraction, so we don’t have to directly interact with the driver at all. Instead, we <a href="http://pixhawk.org/dev/px4_simple_app#step_5subscribing_sensor_data">subscribe to inter-process messages</a> published by the sensor driver. In order to get data from the laser rangefinder, we need to subscribe to the topic that it publishes on. <a href="http://pixhawk.org/dev/shared_object_communication">This</a> is a good resource on how to do that. Looking at the source for the <code>sf0x</code> driver, we need to subscribe to the <code>sensor_range_finder</code> topic which comes from <a href="https://github.com/PX4/Firmware/blob/master/src/drivers/drv_range_finder.h"><code>drivers/drv_range_finder.h</code></a>. So in our application we’d subscribe like&nbsp;this:</p>
 <pre><code class="lang-c"><span class="preprocessor">#include &lt;drivers/drv_range_finder.h&gt;</span>
 ..
 <span class="keyword">int</span> rangefinder_sub_fd = orb_subscribe(ORB_ID(sensor_range_finder));
 </code></pre>
-<p>To actually get data out of the subscriber, we need to use the <code>poll()</code> <span class="caps">POSIX</span> system call. This approach will sleep (consuming no CPU cycles) until data from the sensor actually gets published. We acheive this like&nbsp;so:</p>
+<p>To actually get data out of the subscriber, we need to use the <code>poll()</code> <span class="caps">POSIX</span> system call. This approach will sleep the thread (consuming no CPU cycles) until data from the sensor actually gets published. We achieve this like&nbsp;so:</p>
 <pre><code class="lang-c"><span class="preprocessor">#include &lt;poll.h&gt;</span>
 <span class="preprocessor">#include &lt;drivers/drv_range_finder.h&gt;</span>
 ..
