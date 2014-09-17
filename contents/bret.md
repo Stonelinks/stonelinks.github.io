@@ -92,15 +92,15 @@ The wiring from the SF02 to the Pixhawk goes like this:
   </tbody>
 </table>
 
-Since the SF02 uses screw terminals, depending on how much the host aircraft vibrates it may be a good idea to soldier up the connector. This is the [cable / connector](https://store.3drobotics.com/products/df13-6-position-connector-45-cm) you'd use. Plug the SF02 into TELEM2 of the Pixhawk.
+Since the SF02 uses screw terminals, depending on how much the aircraft vibrates it may be a good idea to soldier up the connector. This is the [cable / connector](https://store.3drobotics.com/products/df13-6-position-connector-45-cm) you'd use. Plug the SF02 into TELEM2 of the Pixhawk.
 
 ##Step 2: Install on the aircraft
 
-You'll want to put the sensor pointing at the ground obviously perpendicular to the aircraft obviously. The sensor should also be recessed so that the optics arn't scratched during a rough landing. Also, it should be positioned such that it doesn't mess with the center of gravity for the aircraft otherwise it could poorly affect glide characteristics.
+You'll want to put the sensor pointing at the ground obviously, keeping it perpendicular to the aircraft. The sensor should also be mounted in a recessed position so that the optics arn't scratched during a rough landing. Also, it should be positioned such that it doesn't mess with the center of gravity for the aircraft otherwise it will screw with glide characteristics.
 
 ##Step 3: Software integration
 
-**Driver stuff**
+**Drivers**
 
 The [sf0x driver](https://github.com/PX4/Firmware/tree/master/src/drivers/sf0x) needed for the Pixhawk is already part of the firmware. To start the driver:
 
@@ -122,7 +122,7 @@ sf0x start
 
 **Receiving sensor data in your PX4 application**
 
-PX4 has some sweet hardware abstraction, so we don't have to directly interact with the driver at all. Instead, we [subscribe to inter-process messages](http://pixhawk.org/dev/px4_simple_app#step_5subscribing_sensor_data) published by the sensor driver. In order to get data from the laser rangefinder, we need to subscribe to the topic that it publishes on. [This](http://pixhawk.org/dev/shared_object_communication) is a good resource on how to do this. Looking at the source for the `sf0x` driver, we need to subscribe to the `sensor_range_finder` topic which comes from [here](https://github.com/PX4/Firmware/blob/master/src/drivers/drv_range_finder.h). So in our application we'd subscribe like this:
+PX4 has some sweet hardware abstraction, so we don't have to directly interact with the driver at all. Instead, we [subscribe to inter-process messages](http://pixhawk.org/dev/px4_simple_app#step_5subscribing_sensor_data) published by the sensor driver. In order to get data from the laser rangefinder, we need to subscribe to the topic that it publishes on. [This](http://pixhawk.org/dev/shared_object_communication) is a good resource on how to do that. Looking at the source for the `sf0x` driver, we need to subscribe to the `sensor_range_finder` topic which comes from `[drv_range_finder.h](https://github.com/PX4/Firmware/blob/master/src/drivers/c)`. So in our application we'd subscribe like this:
 
 ```c
 #include <drivers/drv_range_finder.h>
@@ -139,18 +139,25 @@ To actually get data out of the subscriber, we need to use the `poll()` POSIX sy
 int rangefinder_sub_fd = orb_subscribe(ORB_ID(sensor_range_finder));
  
 /* one could wait for multiple topics with this technique, just using one here */
+
 struct pollfd fds[] = {
   { .fd = rangefinder_sub_fd,   .events = POLLIN },
 };
  
 while (true) {
+
   /* wait for sensor update of 1 file descriptor for 1000 ms (1 second) */
+
   int poll_ret = poll(fds, 1, 1000);
 ..
   if (fds[0].revents & POLLIN) {
+
     /* obtained data for the first file descriptor */
+
     struct range_finder_report rangefinder_data;
+
     /* copy rangefinder data into local buffer */
+
     orb_copy(ORB_ID(sensor_range_finder), rangefinder_sub_fd, &rangefinder_data);
     printf("Rangefinder distance:\t%8.4f\t%8.4f\t%8.4f\n", (double)rangefinder_data.distance[0]);
   }
