@@ -118,11 +118,11 @@
   </tbody>
 </table>
 
-<p>Since the <span class="caps">SF02</span> uses screw terminals, depending on how much the host aircraft vibrates it may be a good idea to soldier up the connector. This is the <a href="https://store.3drobotics.com/products/df13-6-position-connector-45-cm">cable / connector</a> you’d use. Plug the <span class="caps">SF02</span> into TELEM2 of the&nbsp;Pixhawk.</p>
+<p>Since the <span class="caps">SF02</span> uses screw terminals, depending on how much the aircraft vibrates it may be a good idea to soldier up the connector. This is the <a href="https://store.3drobotics.com/products/df13-6-position-connector-45-cm">cable / connector</a> you’d use. Plug the <span class="caps">SF02</span> into TELEM2 of the&nbsp;Pixhawk.</p>
 <h2 id="step-2-install-on-the-aircraft">Step 2: Install on the&nbsp;aircraft</h2>
-<p>You’ll want to put the sensor pointing at the ground obviously perpendicular to the aircraft obviously. The sensor should also be recessed so that the optics arn’t scratched during a rough landing. Also, it should be positioned such that it doesn’t mess with the center of gravity for the aircraft otherwise it could poorly affect glide&nbsp;characteristics.</p>
+<p>You’ll want to put the sensor pointing at the ground obviously, keeping it perpendicular to the aircraft. The sensor should also be mounted in a recessed position so that the optics arn’t scratched during a rough landing. Also, it should be positioned such that it doesn’t mess with the center of gravity for the aircraft otherwise it will screw with glide&nbsp;characteristics.</p>
 <h2 id="step-3-software-integration">Step 3: Software&nbsp;integration</h2>
-<p><strong>Driver&nbsp;stuff</strong></p>
+<p><strong>Drivers</strong></p>
 <p>The <a href="https://github.com/PX4/Firmware/tree/master/src/drivers/sf0x">sf0x driver</a> needed for the Pixhawk is already part of the firmware. To start the&nbsp;driver:</p>
 <pre><code class="lang-bash">sf0x start
 </code></pre>
@@ -133,7 +133,7 @@
 <pre><code class="lang-bash">sf0x start
 </code></pre>
 <p><strong>Receiving sensor data in your <span class="caps">PX4</span>&nbsp;application</strong></p>
-<p><span class="caps">PX4</span> has some sweet hardware abstraction, so we don’t have to directly interact with the driver at all. Instead, we <a href="http://pixhawk.org/dev/px4_simple_app#step_5subscribing_sensor_data">subscribe to inter-process messages</a> published by the sensor driver. In order to get data from the laser rangefinder, we need to subscribe to the topic that it publishes on. <a href="http://pixhawk.org/dev/shared_object_communication">This</a> is a good resource on how to do this. Looking at the source for the <code>sf0x</code> driver, we need to subscribe to the <code>sensor_range_finder</code> topic which comes from <a href="https://github.com/PX4/Firmware/blob/master/src/drivers/drv_range_finder.h">here</a>. So in our application we’d subscribe like&nbsp;this:</p>
+<p><span class="caps">PX4</span> has some sweet hardware abstraction, so we don’t have to directly interact with the driver at all. Instead, we <a href="http://pixhawk.org/dev/px4_simple_app#step_5subscribing_sensor_data">subscribe to inter-process messages</a> published by the sensor driver. In order to get data from the laser rangefinder, we need to subscribe to the topic that it publishes on. <a href="http://pixhawk.org/dev/shared_object_communication">This</a> is a good resource on how to do that. Looking at the source for the <code>sf0x</code> driver, we need to subscribe to the <code>sensor_range_finder</code> topic which comes from <code>[drv_range_finder.h](https://github.com/PX4/Firmware/blob/master/src/drivers/c)</code>. So in our application we’d subscribe like&nbsp;this:</p>
 <pre><code class="lang-c"><span class="preprocessor">#include &lt;drivers/drv_range_finder.h&gt;</span>
 ..
 <span class="keyword">int</span> rangefinder_sub_fd = orb_subscribe(ORB_ID(sensor_range_finder));
@@ -145,18 +145,25 @@
 <span class="keyword">int</span> rangefinder_sub_fd = orb_subscribe(ORB_ID(sensor_range_finder));
 
 <span class="comment">/* one could wait for multiple topics with this technique, just using one here */</span>
+
 <span class="keyword">struct</span> pollfd fds[] = {
   { .fd = rangefinder_sub_fd,   .events = <span class="caps">POLLIN</span> },
 };
 
 <span class="keyword">while</span> (<span class="keyword">true</span>) {
+
   <span class="comment">/* wait for sensor update of 1 file descriptor for 1000 ms (1 second) */</span>
+
   <span class="keyword">int</span> poll_ret = poll(fds, <span class="number">1</span>, <span class="number">1000</span>);
 ..
   <span class="keyword">if</span> (fds[<span class="number">0</span>].revents <span class="amp">&amp;</span> <span class="caps">POLLIN</span>) {
+
     <span class="comment">/* obtained data for the first file descriptor */</span>
+
     <span class="keyword">struct</span> range_finder_report rangefinder_data;
+
     <span class="comment">/* copy rangefinder data into local buffer */</span>
+
     orb_copy(ORB_ID(sensor_range_finder), rangefinder_sub_fd, &amp;rangefinder_data);
     <span class="built_in">printf</span>(<span class="string">"Rangefinder distance:\t%8.4f\t%8.4f\t%8.4f\n"</span>, (<span class="keyword">double</span>)rangefinder_data.distance[<span class="number">0</span>]);
   }
