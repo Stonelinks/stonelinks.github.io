@@ -24,7 +24,6 @@ All signs of googling point to the [SF02/F laser altimeter](http://www.lightware
 - **Resolution**: 1 cm
 - **Price and availability**: $300 each, currently on backorder!
 - **Update rate**: 12 hz
-- **Accuracy**: ±(0.1 + 1%) m
 - **Outputs & interfaces**: Analog, serial and digital
 - **Power supply voltage**: 6.5-9.0 V or 5.0 V ± 0.5 V DC
 - **Power supply current**: 150 mA (maximum)
@@ -32,7 +31,7 @@ All signs of googling point to the [SF02/F laser altimeter](http://www.lightware
 
 **Pros**:
 
-- Good [example applications](https://pixhawk.org/platforms/planes/phantom_fpv_flying_wing#px4_fmu_build_log) on UAVs using Pixhawk already out there
+- Good [example applications](https://pixhawk.org/platforms/planes/phantom_fpv_flying_wing#px4_fmu_build_log) on UAVs using Pixhawk already out there.
 - [Documentation](https://pixhawk.org/peripherals/rangefinder) on how to interface and a [Pixhawk driver](https://github.com/PX4/Firmware/tree/master/src/drivers/sf0x) already exists.
 - It is a high quality piece of equipment. This guy gave it [a unbiased, positive review](http://diydrones.com/profiles/blogs/sf02-laser-altimeter-review).
 - Manufacturer includes [software](http://www.lightware.co.za/shop/en/content/8-software) that can be used to test the sensor independently from the Pixhawk.
@@ -46,7 +45,7 @@ All signs of googling point to the [SF02/F laser altimeter](http://www.lightware
 
 **Alternatives**:
 
-To address some of the SF02's cons (and given that we're equipping a fleet), I looked for an alternate sensor on [Alibaba](http://www.alibaba.com/). If you're not familiar with Alibaba, it is basically a way to buy wholesale electronics / components / sub-assemblies directly from Chinese suppliers. The best option I found for a laser rangefinder module is [this sensor](http://www.alibaba.com/product-detail/rangefinder-module_713054756.html). It is $100 - $300, so potentially a third of the cost per unit compared to the SF02, which is a massive savings. The range is also much better (says 10 - 800 m). Details on power consumption and how to interface with it are not clear, but I'm sure talking with the manufacturer (which is easy on Alibaba) would clear that up. Finally, the stated minimum distance (10 m) and accuracy (1 m) is pretty bad and won't be useful for landings.
+To address some of the SF02's cons (and given that we're equipping a fleet), I looked for an alternate sensor on [Alibaba](http://www.alibaba.com/). If you're not familiar with Alibaba, it is basically a way to buy wholesale electronics / components / sub-assemblies directly from Chinese suppliers. The best option I found for a laser rangefinder module is [this sensor](http://www.alibaba.com/product-detail/rangefinder-module_713054756.html). It is $100 - $300, so potentially a third of the cost per unit compared to the SF02, which is a massive savings. The range is also much better (says 10 - 800 m). Details on power consumption and how to interface with it are not clear, but I'm sure talking with the manufacturer (which is easy on Alibaba) would clear that up. Finally, the stated minimum distance (10 m) and accuracy (1 m vs. the SF02's 1 cm) is pretty bad and won't be useful for landings.
 
 [This sensor is intriguing](http://www.dragoninnovation.com/projects/32-lidar-lite-by-pulsedlight) but not yet available. Good to keep an eye on, especially since [3DR seems to be supporting it](https://store.3drobotics.com/products/lidar-lite/). Far cheaper and smaller but still only a 40 m range.
 

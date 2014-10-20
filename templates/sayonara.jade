@@ -1,0 +1,24 @@
+extends page
+
+block append content
+  .row
+    each thing in page.metadata.list
+      .box(id=slug(thing.name))
+        .col-lg-12
+          hr
+          h1.intro-text.text-center= thing.name
+          hr
+          .media-container
+            if thing.image
+              img(src='/img/' + thing.image)
+          .external-links
+            .gh-container
+              if thing.available == true
+                a.btn.btn-success.btn-lg.btn-block(href='mailto:lucas.p.doyle@gmail.com?subject=' + encodeURIComponent('[Lucas Doyle Sayonara] ' + thing.name) + '&body=' + encodeURIComponent('Hey,\n\nI\'m interested in your ' + thing.name + '.'))
+                  | #{thing.name} is available!
+                  br
+                  | Click to ask a question / claim it.
+              else
+                a.btn.btn-danger.btn-lg.btn-block(href='javascript:void(0)', disabled='disabled') #{thing.name} is claimed, sorry!
+            hr
+            | !{ typogr(markdown.markdown.toHTML(thing.desc)).typogrify() }
