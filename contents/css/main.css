@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -7808,7 +7809,6 @@ pre code {
   border: 1px solid #ccc;
   padding: 10px;
 }
-@charset "UTF-8";
 /*
  * blueimp Gallery CSS 2.11.1
  * https://github.com/blueimp/Gallery

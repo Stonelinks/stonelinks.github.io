@@ -3,10 +3,11 @@
   "homepage": "https://github.com/jmblog/color-themes-for-highlightjs",
   "_release": "81798648d5",
   "_resolution": {
-    "type": "commit",
+    "type": "branch",
+    "branch": "master",
     "commit": "81798648d5fc425d047a53bb03eb81dad387a396"
   },
   "_source": "https://github.com/jmblog/color-themes-for-highlightjs.git",
-  "_target": "81798648d5fc425d047a53bb03eb81dad387a396",
+  "_target": "*",
   "_originalSource": "https://github.com/jmblog/color-themes-for-highlightjs.git"
 }
