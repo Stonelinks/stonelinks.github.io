@@ -32,14 +32,13 @@
     </div>
     <div id="preloaded-images"></div>
     <div class="container">
-      <div class="row">
+      <div class="row post">
         <div class="box">
-          <!--there has got to be a more elegant way of doing this
-          -->
           <div class="col-lg-12 external-links">
-            <hr><a href="/bret.html">
-              <h1 class="intro-text text-center">Laser Altimeter integration on Pixhawk</h1></a>
-            <hr><p>Hey Bret! Here is how I’d go about integrating a laser altimeter on to the <span class="caps">3DR</span> Pixhawk. This took me a couple hours. While not exhaustive, this is more of a general technical overview to what my approach would&nbsp;be.</p>
+            <hr><a href="/posts/laser-altimeter-integration/">
+              <h1 class="intro-text text-center">Laser Altimeter integration on Pixhawk<br><small>11. December 2014</small></h1></a>
+            <hr><p>As some of you may know, I have left Tokyo and the world of industrial robotics and am now in the midst of immirsing myself in the world of drones in San Francisco. Its a very exciting time in my life! Among other things, I did some research into the different drone platforms out&nbsp;there.</p>
+<p>As a sample excercise, I took an in-depth look at how I’d go about integrating a laser altimeter on to the <span class="caps">3DR</span>&nbsp;Pixhawk.</p>
 <h2 id="step-0-source-a-sensor">Step 0: Source a&nbsp;sensor</h2>
 <p>All signs of googling point to the <a href="http://www.lightware.co.za/shop/en/lrf-modules/7-sf02f.html"><span class="caps">SF02</span>/F laser altimeter</a> as the quickest option to get something&nbsp;working.</p>
 <div class="media-container">
@@ -175,10 +174,24 @@
 <li>Transmit data to a ground station for similar logging purposes. The ground station could be the central data aggregation point for the fleet. If the ground station has an internet connection, it could run a webserver for others to monitor aircraft data in real time from&nbsp;off-site. </li>
 <li>Implement an automated landing routine. Would need to figure out at what speed / altitude you’d need to flare the aircraft right before&nbsp;touchdown.</li>
 </ul>
-<p>Without knowing any more details about what the exact application is, I think this is where I’ll stop. Thanks for the time Bret! It was actually really fun to learn how to do all this&nbsp;stuff.</p>
+<p>Without knowing any more details about the exact application, I think this is where I’ll&nbsp;stop.</p>
 
           </div>
         </div>
+      </div>
+      <div class="row tag-row">
+        <div class="box">
+          <div class="col-lg-12">
+            <p>Tags: <a href="/tag/airplane/1/"><span class="label label-info tag">airplane</span></a><a href="/tag/drones/1/"><span class="label label-info tag">drones</span></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row footer-row">
+      <div class="box">
+        <div class="col-lg-12"><a href="/blog.html">
+            <h4>« Back</h4></a></div>
       </div>
     </div>
     <footer>
@@ -194,8 +207,8 @@
     <script src="/vendor/jquery/jquery.min.js"></script>
     <script src="/vendor/underscore/underscore.js"></script>
     <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript">var BG_IMAGES = ["/img/backgrounds/06uh37r.jpg","/img/backgrounds/14206376348_fca4af4ba5_o.jpg","/img/backgrounds/1979230_10152035339809685_1025831531_o.jpg","/img/backgrounds/2000-01-01 08.30.12.jpg","/img/backgrounds/2012-12-02 00.41.05.jpg","/img/backgrounds/2012-12-06 15.09.02.jpg","/img/backgrounds/2013-05-01 08.31.27.jpg","/img/backgrounds/2013-05-18 13.07.32.jpg","/img/backgrounds/2013-09-20 05.26.41.jpg","/img/backgrounds/2013-09-20 05.30.41.jpg","/img/backgrounds/2013-11-24 18.07.08.jpg","/img/backgrounds/2013-12-20 14.27.13.jpg","/img/backgrounds/2013-12-28 19.16.24.jpg","/img/backgrounds/287299main_dextre_iss017_big_full.jpg","/img/backgrounds/34DnPmX.jpg","/img/backgrounds/5bml6q6.jpg","/img/backgrounds/7jWBoem.jpg","/img/backgrounds/A52It0Q.jpg","/img/backgrounds/Boeing_747-8_Test_Planes_in_Assembly.jpg","/img/backgrounds/CkGmW8I.png","/img/backgrounds/Dtd8OaS.jpg","/img/backgrounds/EWwV235.jpg","/img/backgrounds/Eourq.jpg","/img/backgrounds/GkWIkzl.jpg","/img/backgrounds/GpCUV.jpg","/img/backgrounds/HsiDzD2.jpg","/img/backgrounds/IMG_1142 copy-X2.jpg","/img/backgrounds/IMG_20120721_181258.jpg","/img/backgrounds/IZyTICW.jpg","/img/backgrounds/IijALtC.jpg","/img/backgrounds/J8Oqyyd.jpg","/img/backgrounds/KBMGZnm.jpg","/img/backgrounds/MbN1OhC.jpg","/img/backgrounds/ONn4OVE.jpg","/img/backgrounds/P0UhJaz.jpg","/img/backgrounds/Red, White and Enterprise-X3.jpg","/img/backgrounds/STS-134_International_Space_Station_after_undocking.jpg","/img/backgrounds/Su0YWko.jpg","/img/backgrounds/TUZyh.jpg","/img/backgrounds/TuBipfq.jpg","/img/backgrounds/Wsvb8tw.jpg","/img/backgrounds/XvkHfUA.jpg","/img/backgrounds/YseOPg6.jpg","/img/backgrounds/ZhWyntZ.jpg","/img/backgrounds/d7t5BrZ.jpg","/img/backgrounds/enukwns.jpg","/img/backgrounds/fr42b.jpg","/img/backgrounds/g8yF11T.jpg","/img/backgrounds/godD0Nj.jpg","/img/backgrounds/k9JWU9N.jpg","/img/backgrounds/kkhlkasdhjl3.png","/img/backgrounds/m1gD1NC.jpg","/img/backgrounds/m95qL89.jpg","/img/backgrounds/mooCZ.jpg","/img/backgrounds/nBEcpIY.jpg","/img/backgrounds/nLpQ2G3.jpg","/img/backgrounds/nUje1Xs.jpg","/img/backgrounds/ozjI2XF.jpg","/img/backgrounds/p0QNNrI.jpg","/img/backgrounds/raddmHE.jpg","/img/backgrounds/rhvP0wn.jpg","/img/backgrounds/s_f02_RTR3FJM0.jpg","/img/backgrounds/tmEkJ7Q.jpg","/img/backgrounds/uMrsMXh.jpg","/img/backgrounds/w0Pgof8.jpg","/img/backgrounds/wallpaper-1312831.jpg","/img/backgrounds/wallpaper-1441536.jpg","/img/backgrounds/wjZsmhr.jpg","/img/backgrounds/x2bkKQS.jpg","/img/backgrounds/xKTWtJC.jpg","/img/backgrounds/xkl9FoE.jpg","/img/backgrounds/y4WGD7I.jpg","/img/backgrounds/yrZCDd1.jpg"];
-      var BASENAME = 'bret';
+    <script type="text/javascript">var BG_IMAGES = ["/img/backgrounds/06uh37r.jpg","/img/backgrounds/14206376348_fca4af4ba5_o.jpg","/img/backgrounds/1979230_10152035339809685_1025831531_o.jpg","/img/backgrounds/2000-01-01 08.30.12.jpg","/img/backgrounds/2012-12-02 00.41.05.jpg","/img/backgrounds/2012-12-06 15.09.02.jpg","/img/backgrounds/2013-05-01 08.31.27.jpg","/img/backgrounds/2013-05-18 13.07.32.jpg","/img/backgrounds/2013-09-20 05.26.41.jpg","/img/backgrounds/2013-09-20 05.30.41.jpg","/img/backgrounds/2013-11-24 18.07.08.jpg","/img/backgrounds/2013-12-20 14.27.13.jpg","/img/backgrounds/2013-12-28 19.16.24.jpg","/img/backgrounds/287299main_dextre_iss017_big_full.jpg","/img/backgrounds/34DnPmX.jpg","/img/backgrounds/5bml6q6.jpg","/img/backgrounds/7jWBoem.jpg","/img/backgrounds/A52It0Q.jpg","/img/backgrounds/Boeing_747-8_Test_Planes_in_Assembly.jpg","/img/backgrounds/CkGmW8I.png","/img/backgrounds/Dtd8OaS.jpg","/img/backgrounds/EWwV235.jpg","/img/backgrounds/Eourq.jpg","/img/backgrounds/GkWIkzl.jpg","/img/backgrounds/GpCUV.jpg","/img/backgrounds/HsiDzD2.jpg","/img/backgrounds/IMG_1142 copy-X2.jpg","/img/backgrounds/IMG_20120721_181258.jpg","/img/backgrounds/IZyTICW.jpg","/img/backgrounds/IijALtC.jpg","/img/backgrounds/J8Oqyyd.jpg","/img/backgrounds/KBMGZnm.jpg","/img/backgrounds/MbN1OhC.jpg","/img/backgrounds/ONn4OVE.jpg","/img/backgrounds/P0UhJaz.jpg","/img/backgrounds/Red, White and Enterprise-X3.jpg","/img/backgrounds/STS-134_International_Space_Station_after_undocking.jpg","/img/backgrounds/Su0YWko.jpg","/img/backgrounds/TUZyh.jpg","/img/backgrounds/TuBipfq.jpg","/img/backgrounds/Wsvb8tw.jpg","/img/backgrounds/XvkHfUA.jpg","/img/backgrounds/YseOPg6.jpg","/img/backgrounds/ZhWyntZ.jpg","/img/backgrounds/d7t5BrZ.jpg","/img/backgrounds/enukwns.jpg","/img/backgrounds/fr42b.jpg","/img/backgrounds/g8yF11T.jpg","/img/backgrounds/godD0Nj.jpg","/img/backgrounds/isu4ciW.jpg","/img/backgrounds/k9JWU9N.jpg","/img/backgrounds/kkhlkasdhjl3.png","/img/backgrounds/m1gD1NC.jpg","/img/backgrounds/m95qL89.jpg","/img/backgrounds/mooCZ.jpg","/img/backgrounds/nBEcpIY.jpg","/img/backgrounds/nLpQ2G3.jpg","/img/backgrounds/nUje1Xs.jpg","/img/backgrounds/ozjI2XF.jpg","/img/backgrounds/p0QNNrI.jpg","/img/backgrounds/raddmHE.jpg","/img/backgrounds/rhvP0wn.jpg","/img/backgrounds/s_f02_RTR3FJM0.jpg","/img/backgrounds/tmEkJ7Q.jpg","/img/backgrounds/uCr3S.jpg","/img/backgrounds/uMrsMXh.jpg","/img/backgrounds/w0Pgof8.jpg","/img/backgrounds/wallpaper-1312831.jpg","/img/backgrounds/wallpaper-1441536.jpg","/img/backgrounds/wjZsmhr.jpg","/img/backgrounds/wvgRzh6.jpg","/img/backgrounds/x2bkKQS.jpg","/img/backgrounds/xKTWtJC.jpg","/img/backgrounds/xkl9FoE.jpg","/img/backgrounds/y4WGD7I.jpg","/img/backgrounds/yrZCDd1.jpg"];
+      var BASENAME = 'posts/laser-altimeter-integration/index';
        
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

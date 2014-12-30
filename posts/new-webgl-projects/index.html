@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>New WebGL Projects - Stonelinks
+    </title>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400italic,400,700">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <div class="landing"><a href="/" class="brand"><img src="/img/logos/big-logo.png">Stonelinks</a>
+      <div class="tagline-bar">Lucas Doyle's website
+      </div>
+    </div>
+    <div role="navigation" class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><img src="/img/logos/big-logo.png">Stonelinks</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/luke.html">About</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="preloaded-images"></div>
+    <div class="container">
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12 external-links">
+            <hr><a href="/posts/new-webgl-projects/">
+              <h1 class="intro-text text-center">New WebGL Projects<br><small>11. October 2014</small></h1></a>
+            <hr><p>I’ve been working on some new WebGL related projects for a 3d viewer and editor that targets robotics&nbsp;applications.</p>
+<h3 id="-three-js-https-github-com-stonelinks-three-js-"><a href="https://github.com/Stonelinks/three.js">three.js</a></h3>
+<p>All these projects are built on top of three.js. My fork added kinematics support to the collada loader. <a href="/posts/new-webgl-projects/stonelinks.github.io/three.js/examples/#webgl_loader_collada_kinematics">Check it&nbsp;out!</a></p>
+<h3 id="-marionette-three-js-https-github-com-stonelinks-marionette-three-js-"><a href="https://github.com/Stonelinks/marionette-three.js">Marionette-three.js</a></h3>
+<p>This is a library that wraps three.js components for Marionette. Provides a comfortable, event driven interface that abstracts away a lot of three.js things in an <span class="caps">MVC</span> friendly way. For example, a <code>Drawable</code> is a <code>Backbone.Model</code> instance that maintains its own <code>three.js</code> scenegraph node. Pass a <code>Backbone.Collection</code> of drawables to a <code>three.jsRenderer</code> view and you’re off to the races! The library also includes support for controls and loading different types of meshes inside <code>Drawable</code> instances. Check out an example <a href="http://stonelinks.github.io/marionette-three.js/example/index.html">here</a> and code for it <a href="https://github.com/Stonelinks/marionette-three.js/tree/master/example">here</a>. </p>
+<h3 id="-xaphoon-http-xaphoon-herokuapp-com-"><a href="http://xaphoon.herokuapp.com/">Xaphoon</a></h3>
+<p>This is a small heroku app that explores collaborative editing of a 3D environment. It incoporates the previous two projects plus <a href="https://github.com/Stonelinks/backbone.io">Backbone.<span class="caps">IO</span></a> (which I forked and added socket.io 1.0&nbsp;support).</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="row tag-row">
+        <div class="box">
+          <div class="col-lg-12">
+            <p>Tags: <a href="/tag/webgl/1/"><span class="label label-info tag">webgl</span></a><a href="/tag/javascript/1/"><span class="label label-info tag">javascript</span></a><a href="/tag/web%20development/1/"><span class="label label-info tag">web development</span></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row footer-row">
+      <div class="box">
+        <div class="col-lg-12"><a href="/blog.html">
+            <h4>« Back</h4></a></div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center"><a href="https://www.facebook.com/stonelinks" target="_blank" class="social"><i class="fa fa-facebook"></i></a><a href="https://github.com/Stonelinks" target="_blank" class="social"><i class="fa fa-github"></i></a><a href="https://twitter.com/#!/Stonelinks" target="_blank" class="social"><i class="fa fa-twitter"></i></a><a href="https://plus.google.com/116178490514652721625/posts" target="_blank" class="social"><i class="fa fa-google-plus"></i></a><a href="http://www.linkedin.com/pub/lucas-doyle/25/550/169" target="_blank" class="social"><i class="fa fa-linkedin"></i></a><a href="http://www.youtube.com/user/RealStonelinks" target="_blank" class="social"><i class="fa fa-youtube"></i></a><a href="mailto:lucas.p.doyle@gmail.com?Subject=Hello" target="_top" class="footer-link">contact</a>
+          </div>
+        </div>
+      </div>
+    </footer><!--[if lt IE 9]>
+    <script src="/vendor/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="/vendor/respond/dest/respond.min.js"></script><![endif]-->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/underscore/underscore.js"></script>
+    <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript">var BG_IMAGES = ["/img/backgrounds/06uh37r.jpg","/img/backgrounds/14206376348_fca4af4ba5_o.jpg","/img/backgrounds/1979230_10152035339809685_1025831531_o.jpg","/img/backgrounds/2000-01-01 08.30.12.jpg","/img/backgrounds/2012-12-02 00.41.05.jpg","/img/backgrounds/2012-12-06 15.09.02.jpg","/img/backgrounds/2013-05-01 08.31.27.jpg","/img/backgrounds/2013-05-18 13.07.32.jpg","/img/backgrounds/2013-09-20 05.26.41.jpg","/img/backgrounds/2013-09-20 05.30.41.jpg","/img/backgrounds/2013-11-24 18.07.08.jpg","/img/backgrounds/2013-12-20 14.27.13.jpg","/img/backgrounds/2013-12-28 19.16.24.jpg","/img/backgrounds/287299main_dextre_iss017_big_full.jpg","/img/backgrounds/34DnPmX.jpg","/img/backgrounds/5bml6q6.jpg","/img/backgrounds/7jWBoem.jpg","/img/backgrounds/A52It0Q.jpg","/img/backgrounds/Boeing_747-8_Test_Planes_in_Assembly.jpg","/img/backgrounds/CkGmW8I.png","/img/backgrounds/Dtd8OaS.jpg","/img/backgrounds/EWwV235.jpg","/img/backgrounds/Eourq.jpg","/img/backgrounds/GkWIkzl.jpg","/img/backgrounds/GpCUV.jpg","/img/backgrounds/HsiDzD2.jpg","/img/backgrounds/IMG_1142 copy-X2.jpg","/img/backgrounds/IMG_20120721_181258.jpg","/img/backgrounds/IZyTICW.jpg","/img/backgrounds/IijALtC.jpg","/img/backgrounds/J8Oqyyd.jpg","/img/backgrounds/KBMGZnm.jpg","/img/backgrounds/MbN1OhC.jpg","/img/backgrounds/ONn4OVE.jpg","/img/backgrounds/P0UhJaz.jpg","/img/backgrounds/Red, White and Enterprise-X3.jpg","/img/backgrounds/STS-134_International_Space_Station_after_undocking.jpg","/img/backgrounds/Su0YWko.jpg","/img/backgrounds/TUZyh.jpg","/img/backgrounds/TuBipfq.jpg","/img/backgrounds/Wsvb8tw.jpg","/img/backgrounds/XvkHfUA.jpg","/img/backgrounds/YseOPg6.jpg","/img/backgrounds/ZhWyntZ.jpg","/img/backgrounds/d7t5BrZ.jpg","/img/backgrounds/enukwns.jpg","/img/backgrounds/fr42b.jpg","/img/backgrounds/g8yF11T.jpg","/img/backgrounds/godD0Nj.jpg","/img/backgrounds/isu4ciW.jpg","/img/backgrounds/k9JWU9N.jpg","/img/backgrounds/kkhlkasdhjl3.png","/img/backgrounds/m1gD1NC.jpg","/img/backgrounds/m95qL89.jpg","/img/backgrounds/mooCZ.jpg","/img/backgrounds/nBEcpIY.jpg","/img/backgrounds/nLpQ2G3.jpg","/img/backgrounds/nUje1Xs.jpg","/img/backgrounds/ozjI2XF.jpg","/img/backgrounds/p0QNNrI.jpg","/img/backgrounds/raddmHE.jpg","/img/backgrounds/rhvP0wn.jpg","/img/backgrounds/s_f02_RTR3FJM0.jpg","/img/backgrounds/tmEkJ7Q.jpg","/img/backgrounds/uCr3S.jpg","/img/backgrounds/uMrsMXh.jpg","/img/backgrounds/w0Pgof8.jpg","/img/backgrounds/wallpaper-1312831.jpg","/img/backgrounds/wallpaper-1441536.jpg","/img/backgrounds/wjZsmhr.jpg","/img/backgrounds/wvgRzh6.jpg","/img/backgrounds/x2bkKQS.jpg","/img/backgrounds/xKTWtJC.jpg","/img/backgrounds/xkl9FoE.jpg","/img/backgrounds/y4WGD7I.jpg","/img/backgrounds/yrZCDd1.jpg"];
+      var BASENAME = 'posts/new-webgl-projects/index';
+       
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-18750328-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
