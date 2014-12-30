@@ -13,4 +13,4 @@ tags: airplane
 
 </div>
 
-A month ago my friend Rhys and I hiked up Mt. Major with my plane and his camera and managed to get a pretty great flight recording from the summit!
+A month ago my friend Rhys and I hiked up Mt. Major with my plane and his gopro and managed to get a pretty decent flight recording from the summit!

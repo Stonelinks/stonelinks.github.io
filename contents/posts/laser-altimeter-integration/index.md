@@ -1,10 +1,13 @@
 ---
 title: Laser Altimeter integration on Pixhawk
-template: page.jade
-external-links: true
+date: 2014-12-11
+template: article.jade
+tags: airplane, drones
 ---
 
-Hey Bret! Here is how I'd go about integrating a laser altimeter on to the 3DR Pixhawk. This took me a couple hours. While not exhaustive, this is more of a general technical overview to what my approach would be.
+As some of you may know, I have left Tokyo and the world of industrial robotics and am now in the midst of immirsing myself in the world of drones in San Francisco. Its a very exciting time in my life! Among other things, I did some research into the different drone platforms out there.
+
+As a sample excercise, I took an in-depth look at how I'd go about integrating a laser altimeter on to the 3DR Pixhawk.
 
 ##Step 0: Source a sensor
 
@@ -171,4 +174,4 @@ The code snippet above isn't a complete application, but you get the idea. Once 
 - Transmit data to a ground station for similar logging purposes. The ground station could be the central data aggregation point for the fleet. If the ground station has an internet connection, it could run a webserver for others to monitor aircraft data in real time from off-site. 
 - Implement an automated landing routine. Would need to figure out at what speed / altitude you'd need to flare the aircraft right before touchdown.
 
-Without knowing any more details about what the exact application is, I think this is where I'll stop. Thanks for the time Bret! It was actually really fun to learn how to do all this stuff.
+Without knowing any more details about the exact application, I think this is where I'll stop.
