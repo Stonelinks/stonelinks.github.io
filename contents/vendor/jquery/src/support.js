@@ -13,23 +13,24 @@ jQuery.support = (function() {
 		clickFn,
 		div = document.createElement("div");
 
-	// Setup
+	// Preliminary tests
 	div.setAttribute( "className", "t" );
 	div.innerHTML = "  <link/><table></table><a href='/a'>a</a><input type='checkbox'/>";
 
-	// Support tests won't run in some limited or non-browser environments
 	all = div.getElementsByTagName("*");
 	a = div.getElementsByTagName("a")[ 0 ];
-	if ( !all || !a || !all.length ) {
+	a.style.cssText = "top:1px;float:left;opacity:.5";
+
+	// Can't get basic test support
+	if ( !all || !all.length ) {
 		return {};
 	}
 
-	// First batch of tests
+	// First batch of supports tests
 	select = document.createElement("select");
 	opt = select.appendChild( document.createElement("option") );
 	input = div.getElementsByTagName("input")[ 0 ];
 
-	a.style.cssText = "top:1px;float:left;opacity:.5";
 	support = {
 		// IE strips leading whitespace when .innerHTML is used
 		leadingWhitespace: ( div.firstChild.nodeType === 3 ),
@@ -71,7 +72,7 @@ jQuery.support = (function() {
 		// Test setAttribute on camelCase class. If it works, we need attrFixes when doing get/setAttribute (ie6/7)
 		getSetAttribute: div.className !== "t",
 
-		// Tests for enctype support on a form (#6743)
+		// Tests for enctype support on a form(#6743)
 		enctype: !!document.createElement("form").enctype,
 
 		// Makes sure cloning an html5 element does not cause problems

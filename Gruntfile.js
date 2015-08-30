@@ -29,7 +29,7 @@ module.exports = function(grunt) {
     watch: {
 
       less: {
-        files: ['<%= config.src %>/less/**/*.less'],
+        files: ['<%= config.src %>/style/**/*.less'],
         tasks: ['less']
       }
     },
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
 
       main: {
         files: {
-          '<%= config.src %>/css/main.css': '<%= config.src %>/less/main.less'
+          '<%= config.src %>/css/main.css': '<%= config.src %>/style/main.less'
         }
       }
     },

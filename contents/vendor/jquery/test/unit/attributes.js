@@ -654,46 +654,41 @@ test("prop('tabindex')", function() {
 	equal(jQuery("#linkWithNoHrefWithNegativeTabIndex").prop("tabindex"), -1, "anchor without href, no tabindex set");
 });
 
-test("prop('tabindex', value)", 10, function() {
+test("prop('tabindex', value)", function() {
+	expect(9);
 
-	var element = jQuery("#divWithNoTabIndex"),
-		clone;
-
+	var element = jQuery("#divWithNoTabIndex");
 	equal(element.prop("tabindex"), undefined, "start with no tabindex");
 
 	// set a positive string
-	element.prop( "tabindex", "1" );
-	equal( element.prop("tabindex"), 1, "set tabindex to 1 (string)" );
+	element.prop("tabindex", "1");
+	equal(element.prop("tabindex"), 1, "set tabindex to 1 (string)");
 
 	// set a zero string
-	element.prop( "tabindex", "0" );
-	equal( element.prop("tabindex"), 0, "set tabindex to 0 (string)" );
+	element.prop("tabindex", "0");
+	equal(element.prop("tabindex"), 0, "set tabindex to 0 (string)");
 
 	// set a negative string
-	element.prop( "tabindex", "-1" );
-	equal( element.prop("tabindex"), -1, "set tabindex to -1 (string)" );
+	element.prop("tabindex", "-1");
+	equal(element.prop("tabindex"), -1, "set tabindex to -1 (string)");
 
 	// set a positive number
-	element.prop( "tabindex", 1 );
-	equal( element.prop("tabindex"), 1, "set tabindex to 1 (number)" );
+	element.prop("tabindex", 1);
+	equal(element.prop("tabindex"), 1, "set tabindex to 1 (number)");
 
 	// set a zero number
-	element.prop( "tabindex", 0 );
-	equal( element.prop("tabindex"), 0, "set tabindex to 0 (number)" );
+	element.prop("tabindex", 0);
+	equal(element.prop("tabindex"), 0, "set tabindex to 0 (number)");
 
 	// set a negative number
-	element.prop( "tabindex", -1 );
-	equal( element.prop("tabindex"), -1, "set tabindex to -1 (number)" );
+	element.prop("tabindex", -1);
+	equal(element.prop("tabindex"), -1, "set tabindex to -1 (number)");
 
 	element = jQuery("#linkWithTabIndex");
-	equal( element.prop("tabindex"), 2, "start with tabindex 2" );
+	equal(element.prop("tabindex"), 2, "start with tabindex 2");
 
-	element.prop( "tabindex", -1 );
-	equal( element.prop("tabindex"), -1, "set negative tabindex" );
-
-	clone = element.clone();
-	clone.prop( "tabindex", 1 );
-	equal( clone[ 0 ].getAttribute("tabindex"), "1", "set tabindex on cloned element" );
+	element.prop("tabindex", -1);
+	equal(element.prop("tabindex"), -1, "set negative tabindex");
 });
 
 test("removeProp(String)", function() {
@@ -718,7 +713,7 @@ test("removeProp(String)", function() {
 });
 
 test("val()", function() {
-	expect( 21 + ( jQuery.fn.serialize ? 6 : 0 ) );
+	expect( 20 + ( jQuery.fn.serialize ? 6 : 0 ) );
 
 	document.getElementById("text1").value = "bla";
 	equal( jQuery("#text1").val(), "bla", "Check for modified value of input element" );
@@ -760,12 +755,6 @@ test("val()", function() {
 
 	jQuery("#select5").val(3);
 	equal( jQuery("#select5").val(), "3", "Check value on ambiguous select." );
-
-	strictEqual(
-		jQuery("<select name='select12584' id='select12584'><option value='1' disabled='disabled'>1</option></select>").val(),
-		null,
-		"Select-one with only option disabled (#12584)"
-	);
 
 	if ( jQuery.fn.serialize ) {
 		var checks = jQuery("<input type='checkbox' name='test' value='1'/><input type='checkbox' name='test' value='2'/><input type='checkbox' name='test' value=''/><input type='checkbox' name='test'/>").appendTo("#form");

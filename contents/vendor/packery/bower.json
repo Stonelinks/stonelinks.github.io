@@ -1,25 +1,21 @@
 {
   "name": "packery",
-  "version": "1.2.3",
-  "author": "David DeSandro / Metafizzy",
+  "version": "1.4.3",
+  "author": "Metafizzy",
   "description": "bin-packing layout library",
-  "main": [
-    "js/rect.js",
-    "js/packer.js",
-    "js/item.js",
-    "js/packery.js"
-  ],
+  "main": "js/packery.js",
   "dependencies": {
-    "classie": "#>=1 <2",
-    "get-style-property": "desandro/get-style-property#>=1 <2",
-    "get-size": "desandro/get-size#>=1.1 <2",
-    "outlayer": ">=1.1.10 <2"
+    "classie": "1.x",
+    "get-style-property": "1.x",
+    "get-size": "1.2.x",
+    "outlayer": "~1.4.1"
   },
   "devDependencies": {
-    "draggabilly": "desandro/draggabilly#>=1.0.0",
+    "draggabilly": "1.x",
     "jquery": "~1",
     "jquery-ui-draggable": "https://gist.github.com/4985610.git",
-    "qunit": "1.12"
+    "jquery-bridget": "1.1.x",
+    "qunit": "^1.15"
   },
   "ignore": [
     "**/.*",

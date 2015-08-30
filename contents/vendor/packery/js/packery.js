@@ -1,24 +1,61 @@
 /*!
- * Packery v1.2.3
+ * Packery v1.4.3
  * bin-packing layout library
+ *
+ * Licensed GPLv3 for open source use
+ * or Flickity Commercial License for commercial use
+ *
  * http://packery.metafizzy.co
- *
- * Commercial use requires one-time purchase of a commercial license
- * http://packery.metafizzy.co/license.html
- *
- * Non-commercial use is licensed under the GPL v3 License
- *
- * Copyright 2014 Metafizzy
+ * Copyright 2015 Metafizzy
  */
 
-( function( window ) {
+( function( window, factory ) {
+  'use strict';
+  // universal module definition
+  if ( typeof define == 'function' && define.amd ) {
+    // AMD
+    define( [
+        'classie/classie',
+        'get-size/get-size',
+        'outlayer/outlayer',
+        './rect',
+        './packer',
+        './item'
+      ],
+      factory );
+  } else if ( typeof exports == 'object' ) {
+    // CommonJS
+    module.exports = factory(
+      require('desandro-classie'),
+      require('get-size'),
+      require('outlayer'),
+      require('./rect'),
+      require('./packer'),
+      require('./item')
+    );
+  } else {
+    // browser global
+    window.Packery = factory(
+      window.classie,
+      window.getSize,
+      window.Outlayer,
+      window.Packery.Rect,
+      window.Packery.Packer,
+      window.Packery.Item
+    );
+  }
 
+}( window, function factory( classie, getSize, Outlayer, Rect, Packer, Item ) {
 'use strict';
 
-// -------------------------- Packery -------------------------- //
+// ----- Rect ----- //
 
-// used for AMD definition and requires
-function packeryDefinition( classie, getSize, Outlayer, Rect, Packer, Item ) {
+// allow for pixel rounding errors IE8-IE11 & Firefox; #227
+Rect.prototype.canFit = function( rect ) {
+  return this.width >= rect.width - 1 && this.height >= rect.height - 1;
+};
+
+// -------------------------- Packery -------------------------- //
 
 // create an Outlayer layout class
 var Packery = Outlayer.create('packery');
@@ -37,25 +74,35 @@ Packery.prototype._create = function() {
   // create drag handlers
   var _this = this;
   this.handleDraggabilly = {
-    dragStart: function( draggie ) {
-      _this.itemDragStart( draggie.element );
+    dragStart: function() {
+      _this.itemDragStart( this.element );
     },
-    dragMove: function( draggie ) {
-      _this.itemDragMove( draggie.element, draggie.position.x, draggie.position.y );
+    dragMove: function() {
+      _this.itemDragMove( this.element, this.position.x, this.position.y );
     },
-    dragEnd: function( draggie ) {
-      _this.itemDragEnd( draggie.element );
+    dragEnd: function() {
+      _this.itemDragEnd( this.element );
     }
   };
 
   this.handleUIDraggable = {
-    start: function handleUIDraggableStart( event ) {
+    start: function handleUIDraggableStart( event, ui ) {
+      // HTML5 may trigger dragstart, dismiss HTML5 dragging
+      if ( !ui ) {
+        return;
+      }
       _this.itemDragStart( event.currentTarget );
     },
     drag: function handleUIDraggableDrag( event, ui ) {
+      if ( !ui ) {
+        return;
+      }
       _this.itemDragMove( event.currentTarget, ui.position.left, ui.position.top );
     },
-    stop: function handleUIDraggableStop( event ) {
+    stop: function handleUIDraggableStop( event, ui ) {
+      if ( !ui ) {
+        return;
+      }
       _this.itemDragEnd( event.currentTarget );
     }
   };
@@ -142,14 +189,31 @@ Packery.prototype._setRectSize = function( elem, rect ) {
   // size for columnWidth and rowHeight, if available
   // only check if size is non-zero, #177
   if ( w || h ) {
-    var colW = this.columnWidth + this.gutter;
-    var rowH = this.rowHeight + this.gutter;
-    w = this.columnWidth ? Math.ceil( w / colW ) * colW : w + this.gutter;
-    h = this.rowHeight ? Math.ceil( h / rowH ) * rowH : h + this.gutter;
+    w = this._applyGridGutter( w, this.columnWidth );
+    h = this._applyGridGutter( h, this.rowHeight );
   }
   // rect must fit in packer
   rect.width = Math.min( w, this.packer.width );
   rect.height = Math.min( h, this.packer.height );
+};
+
+/**
+ * fits item to columnWidth/rowHeight and adds gutter
+ * @param {Number} measurement - item width or height
+ * @param {Number} gridSize - columnWidth or rowHeight
+ * @returns measurement
+ */
+Packery.prototype._applyGridGutter = function( measurement, gridSize ) {
+  // just add gutter if no gridSize
+  if ( !gridSize ) {
+    return measurement + this.gutter;
+  }
+  gridSize += this.gutter;
+  // fit item to columnWidth/rowHeight
+  var remainder = measurement % gridSize;
+  var mathMethod = remainder && remainder < 1 ? 'round' : 'ceil';
+  measurement = Math[ mathMethod ]( measurement / gridSize ) * gridSize;
+  return measurement;
 };
 
 Packery.prototype._getContainerSize = function() {
@@ -261,10 +325,10 @@ Packery.prototype._bindFitEvents = function( item ) {
   var ticks = 0;
   function tick() {
     ticks++;
-    if ( ticks !== 2 ) {
+    if ( ticks != 2 ) {
       return;
     }
-    _this.emitEvent( 'fitComplete', [ _this, item ] );
+    _this.dispatchEvent( 'fitComplete', null, [ item ] );
   }
   // when item is laid out
   item.on( 'layout', function() {
@@ -288,7 +352,7 @@ Packery.prototype.resize = function() {
   // IE8 triggers resize on body size change, so they might not be
   var hasSizes = this.size && size;
   var innerSize = this.options.isHorizontal ? 'innerHeight' : 'innerWidth';
-  if ( hasSizes && size[ innerSize ] === this.size[ innerSize ] ) {
+  if ( hasSizes && size[ innerSize ] == this.size[ innerSize ] ) {
     return;
   }
 
@@ -393,7 +457,7 @@ Packery.prototype._getDragEndLayoutComplete = function( elem, item ) {
   return function onLayoutComplete() {
     completeCount++;
     // don't proceed if not complete
-    if ( completeCount !== asyncCount ) {
+    if ( completeCount != asyncCount ) {
       return true;
     }
     // reset item
@@ -409,7 +473,7 @@ Packery.prototype._getDragEndLayoutComplete = function( elem, item ) {
 
     // emit item drag event now that everything is done
     if ( itemNeedsPositioning ) {
-      _this.emitEvent( 'dragItemPositioned', [ _this, item ] );
+      _this.dispatchEvent( 'dragItemPositioned', null, [ item ] );
     }
     // listen once
     return true;
@@ -442,31 +506,4 @@ Packery.Packer = Packer;
 
 return Packery;
 
-}
-
-// -------------------------- transport -------------------------- //
-
-if ( typeof define === 'function' && define.amd ) {
-  // AMD
-  define( [
-      'classie/classie',
-      'get-size/get-size',
-      'outlayer/outlayer',
-      './rect',
-      './packer',
-      './item'
-    ],
-    packeryDefinition );
-} else {
-  // browser global
-  window.Packery = packeryDefinition(
-    window.classie,
-    window.getSize,
-    window.Outlayer,
-    window.Packery.Rect,
-    window.Packery.Packer,
-    window.Packery.Item
-  );
-}
-
-})( window );
+}));

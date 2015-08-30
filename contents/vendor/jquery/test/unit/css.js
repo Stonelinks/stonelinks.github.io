@@ -560,24 +560,6 @@ test( "show() resolves correct default display, detached nodes (#10006)", functi
 	div.remove();
 });
 
-test("show() resolves correct default display #10227", function() {
-	expect(2);
-
-	jQuery("html").append(
-		"<p id='ddisplay'>a<style>body{display:none}</style></p>"
-	);
-
-	equal( jQuery("body").css("display"), "none", "Initial display: none" );
-
-	jQuery("body").show();
-
-	equal( jQuery("body").css("display"), "block", "Correct display: block" );
-
-	jQuery("#ddisplay").remove();
-
-	jQuery.cache = {};
-});
-
 test("toggle()", function() {
 	expect(9);
 	var div,
@@ -799,13 +781,6 @@ test("certain css values of 'normal' should be convertable to a number, see #862
 	ok( jQuery.isNumeric( parseFloat( el.css("letterSpacing") ) ), "css('letterSpacing') not convertable to number, see #8627" );
 	ok( jQuery.isNumeric( parseFloat( el.css("fontWeight") ) ), "css('fontWeight') not convertable to number, see #8627" );
 });
-
-// only run this test in IE9
-if ( document.documentMode === 9 ) {
-	test( ".css('filter') returns a string in IE9, see #12537", 1, function() {
-		equal( jQuery("<div style='-ms-filter:\"progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFF, endColorstr=#ECECEC)\";'></div>").css("filter"), "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFF, endColorstr=#ECECEC)", "IE9 returns the correct value from css('filter')." );
-	});
-}
 
 test( "cssHooks - expand", function() {
 	expect( 15 );

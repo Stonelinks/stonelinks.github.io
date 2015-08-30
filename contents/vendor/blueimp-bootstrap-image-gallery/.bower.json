@@ -61,7 +61,6 @@
     "commit": "281af5b855a03c9d862e73ded7a61a309ca1a586"
   },
   "_source": "git://github.com/blueimp/Bootstrap-Image-Gallery.git",
-  "_target": "~3.1.1",
-  "_originalSource": "blueimp-bootstrap-image-gallery",
-  "_direct": true
+  "_target": "3.1.1",
+  "_originalSource": "blueimp-bootstrap-image-gallery"
 }

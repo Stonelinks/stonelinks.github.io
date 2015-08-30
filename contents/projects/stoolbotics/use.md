@@ -96,7 +96,7 @@ Here is an example of some simulation environment manipulation with the above co
 
 <div class="media-container">
 
-<img src="/img/projects/stoolbotics/8.png">
+<img src="/images/projects/stoolbotics/8.png">
 
 </div>
 

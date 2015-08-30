@@ -7,7 +7,7 @@ tags: algorithms, python
 
 <div class="media-container">
 
-<img src="/img/posts/Fig.png">
+<img src="/images/posts/Fig.png">
 
 </div>
 

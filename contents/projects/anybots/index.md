@@ -5,7 +5,7 @@ template: page.jade
 
 <div class="media-container">
 
-<img src="/img/projects/anybots/qb.jpg">
+<img src="/images/projects/anybots/qb.jpg">
 
 <p>Anybots QB</p>
 
@@ -17,7 +17,7 @@ During my short time at Anybots, I noticed a severe lack of infrastructure for m
 
 <div class="media-container">
 
-<img src="/img/projects/anybots/montydexter.jpg">
+<img src="/images/projects/anybots/montydexter.jpg">
 
 <p>Anybots research robots Monty (left) and Dexter (right)</p>
 

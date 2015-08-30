@@ -7,7 +7,7 @@ tags: web development
 
 <div class="media-container">
 
-<img src="/img/posts/downsize-300x225.jpg">
+<img src="/images/posts/downsize-300x225.jpg">
 
 <p>These two suckers now live on my desk and throw off a ton of heat.</p>
 

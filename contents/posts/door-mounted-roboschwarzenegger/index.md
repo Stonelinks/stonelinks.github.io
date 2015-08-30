@@ -5,12 +5,12 @@ template: article.jade
 tags: robots, computer vision, telemetry, python
 gallery: 
   anchor: '#gallery'
-  images: [/img/projects/personal-robot-gallery/2010-02-08-193124.jpg, /img/projects/personal-robot-gallery/2010-02-08-193147.jpg, /img/projects/personal-robot-gallery/2010-02-08-193241.jpg, /img/projects/personal-robot-gallery/2010-02-08-193359.jpg, /img/projects/personal-robot-gallery/downsize_2.jpg, /img/projects/personal-robot-gallery/downsize_3.jpg, /img/projects/personal-robot-gallery/downsize_4.jpg, /img/projects/personal-robot-gallery/downsize.jpg]
+  images: [/images/projects/personal-robot-gallery/2010-02-08-193124.jpg, /images/projects/personal-robot-gallery/2010-02-08-193147.jpg, /images/projects/personal-robot-gallery/2010-02-08-193241.jpg, /images/projects/personal-robot-gallery/2010-02-08-193359.jpg, /images/projects/personal-robot-gallery/downsize_2.jpg, /images/projects/personal-robot-gallery/downsize_3.jpg, /images/projects/personal-robot-gallery/downsize_4.jpg, /images/projects/personal-robot-gallery/downsize.jpg]
 ---
 
 <div class="media-container">
 
-<img src="/img/posts/downsize_4-225x300.jpg">
+<img src="/images/posts/downsize_4-225x300.jpg">
 
 </div>
 

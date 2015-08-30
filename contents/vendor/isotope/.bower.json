@@ -42,7 +42,6 @@
     "commit": "61ec983c186d634611a7f9397e06439ca06580f1"
   },
   "_source": "git://github.com/metafizzy/isotope.git",
-  "_target": "~2.0.0",
-  "_originalSource": "isotope",
-  "_direct": true
+  "_target": "2.0.0",
+  "_originalSource": "isotope"
 }

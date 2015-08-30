@@ -32,6 +32,5 @@
   },
   "_source": "git://github.com/metafizzy/isotope-packery.git",
   "_target": "~1.0.0",
-  "_originalSource": "metafizzy/isotope-packery",
-  "_direct": true
+  "_originalSource": "metafizzy/isotope-packery"
 }

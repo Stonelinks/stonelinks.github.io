@@ -7,7 +7,7 @@ tags: science
 
 <div class="media-container">
 
-<img src="/img/posts/downsize1-225x300.jpg">
+<img src="/images/posts/downsize1-225x300.jpg">
 
 </div>
 

@@ -15,7 +15,7 @@ Good news and bad news! The good news is that in the last month or so at RPI, my
 
 <div class="media-container">
 
-<img src="/img/posts/drone.jpg">
+<img src="/images/posts/drone.jpg">
 
 <p>Early mock up of the drone with the wings removed.</p>
 <p>The camera has since been mounted to a custom pan/tilt module under the engine.</p>

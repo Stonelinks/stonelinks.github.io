@@ -5,7 +5,7 @@ template: page.jade
 
 <div class="media-container">
 
-<img src="/img/projects/dabuzz.png">
+<img src="/images/projects/dabuzz.png">
 
 </div>
 

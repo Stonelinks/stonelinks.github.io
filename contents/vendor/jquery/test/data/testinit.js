@@ -1,13 +1,10 @@
-/*jshint multistr:true */
+/*jshint multistr:true*/
 
 var jQuery = this.jQuery || "jQuery", // For testing .noConflict()
 	$ = this.$ || "$",
 	originaljQuery = jQuery,
 	original$ = $,
 	hasPHP = true,
-	// Disable Ajax tests to reduce network strain
-	// Re-enabled (at least the variable should be declared)
-	isLocal = window.location.protocol === "file:",
 	amdDefined;
 
 /**
@@ -126,7 +123,7 @@ if ( document.createEvent ) {
  * @result "data/test.php?foo=bar&10538358345554"
  */
 function url( value ) {
-	return value + (/\?/.test(value) ? "&" : "?") + new Date().getTime() + "" + parseInt(Math.random() * 100000, 10);
+	return value + (/\?/.test(value) ? "&" : "?") + new Date().getTime() + "" + parseInt(Math.random()*100000);
 }
 
 (function () {
@@ -229,7 +226,7 @@ function url( value ) {
 				jQuery( "<iframe/>" ).attr( "src", url( "./data/" + fileName ) )
 			).appendTo( "body" );
 		});
-	};
+	}
 }());
 
 // Sandbox start for great justice

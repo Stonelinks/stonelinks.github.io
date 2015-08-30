@@ -5,7 +5,7 @@ template: page.jade
 
 <div class="media-container">
 
-<img src="/img/projects/amf/chamber-logo.png">
+<img src="/images/projects/amf/chamber-logo.png">
 
 </div>
 
@@ -29,7 +29,7 @@ The current incarnation of the software has actually split into two major parts.
 
 <div class="media-container">
 
-<img src="/img/projects/amf/screen.jpg">
+<img src="/images/projects/amf/screen.jpg">
 
 <p>**Multilayer Fabrication Software**: The gray window is for production runs, the blue window is for manually controlling chamber hardware, and the yellow window displays the state of the chamber.</p>
 

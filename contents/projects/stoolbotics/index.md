@@ -21,7 +21,7 @@ Stoolbotics is a general purpose robotic arm and kinematics simulator aimed at b
 
 <div class="media-container">
 
-<img src="/img/projects/stoolbotics/omni.jpg">
+<img src="/images/projects/stoolbotics/omni.jpg">
 
 <p>Stoolbotics (right) simulating a phantom omni (left).</p>
 

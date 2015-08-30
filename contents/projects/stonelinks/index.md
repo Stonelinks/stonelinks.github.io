@@ -5,7 +5,7 @@ template: page.jade
 
 <div class="media-container">
 
-<img src="/img/projects/stonelinks-web-framework.png">
+<img src="/images/projects/stonelinks-web-framework.png">
 
 </div>
 

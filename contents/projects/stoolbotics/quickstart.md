@@ -15,7 +15,7 @@ When you fire up the simulator for the first time, you should see something like
 
 <div class="media-container">
 
-<img src="/img/projects/stoolbotics/1.png">
+<img src="/images/projects/stoolbotics/1.png">
 
 </div>
 
@@ -61,7 +61,7 @@ All these variables can be changed once the simulator has started using the <cod
 
 <div class="media-container">
 
-<img src="/img/projects/stoolbotics/3.png">
+<img src="/images/projects/stoolbotics/3.png">
 
 </div>
 
@@ -70,7 +70,7 @@ In the above case, we looked at the help for the <code>axis</code> command. Let&
 
 <div class="media-container">
 
-<img src="/img/projects/stoolbotics/4.png">
+<img src="/images/projects/stoolbotics/4.png">
 
 </div>
 
@@ -78,7 +78,7 @@ It is clear then that the axis command can be used to turn on and off the the ax
 
 <div class="media-container">
 
-<img src="/img/projects/stoolbotics/5.png">
+<img src="/images/projects/stoolbotics/5.png">
 
 </div>
 
@@ -87,7 +87,7 @@ To stop the simulator, just type <code>stop</code>. All the variables we set ear
 
 <div class="media-container">
 
-<img src="/img/projects/stoolbotics/6.png">
+<img src="/images/projects/stoolbotics/6.png">
 
 </div>
 
@@ -96,7 +96,7 @@ Though you can't see it in a static picture, that joint is now moving pretty fas
 
 <div class="media-container">
 
-<img src="/img/projects/stoolbotics/7.png">
+<img src="/images/projects/stoolbotics/7.png">
 
 </div>
 

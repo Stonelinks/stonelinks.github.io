@@ -9,7 +9,7 @@ tags: airplane
 
 <iframe src="http://www.youtube.com/embed/Ak_TNK0fq_M" frameborder="0" allowfullscreen></iframe>
 
-<img src="/img/posts/IMG_20140623_145234.jpg">
+<img src="/images/posts/IMG_20140623_145234.jpg">
 
 </div>
 

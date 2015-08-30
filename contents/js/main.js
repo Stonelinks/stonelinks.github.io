@@ -173,61 +173,61 @@ var pages = {
     var popovers = [
       {
         selector: '.microcontrollers',
-        image: '/img/misc/IMG_0184-1024x682.jpg',
+        image: '/images/misc/IMG_0184-1024x682.jpg',
         link: '/projects/robots/index.html#Litec-Blimp-2010',
         title: 'Intel 8051 and PID loops on a blimp'
       },
       {
         selector: '.battlebot',
-        image: '/img/projects/battlebot-gallery/101.jpg',
+        image: '/images/projects/battlebot-gallery/101.jpg',
         link: '/projects/battlebots/index.html',
         title: 'Battlebot concept'
       },
       {
         selector: '.harvard',
-        image: '/img/projects/amf/chamber.png',
+        image: '/images/projects/amf/chamber.png',
         link: '/projects/amf/index.html',
         title: 'Automated Multilayer Fabrication at Harvard'
       },
       {
         selector: '.boat',
-        image: '/img/misc/AIboat.jpg',
+        image: '/images/misc/AIboat.jpg',
         link: '/projects/robots/index.html#AI-Autonomous-Boat-2007',
         title: 'ASP Autonomous Boat'
       },
       {
         selector: '.ied',
-        image: '/img/projects/ied-robot.jpg',
+        image: '/images/projects/ied-robot.jpg',
         link: '/projects/robots/index.html#IED-Border-Patrol-Robot-2010',
         title: 'IED Border Patrol Robot'
       },
       {
         selector: '.anybots',
-        image: '/img/projects/anybots/qb.jpg',
+        image: '/images/projects/anybots/qb.jpg',
         link: '/projects/anybots/index.html',
         title: 'Anybots Telepresence'
       },
       {
         selector: '.wingbox',
-        image: '/img/projects/boeing/screenshot.png',
+        image: '/images/projects/boeing/screenshot.png',
         link: '/projects/boeing/index.html',
         title: 'Boeing Robotic Wingbox'
       },
       {
         selector: '.camera',
-        image: '/img/misc/tld.png',
+        image: '/images/misc/tld.png',
         link: '/tag/computer%20vision/1/',
         title: 'Tag: Computer vision'
       },
       {
         selector: '.web',
-        image: '/img/projects/stonelinks-web-framework.png',
+        image: '/images/projects/stonelinks-web-framework.png',
         link: '/tag/web%20development/1/',
         title: 'Tag: Web development'
       },
       {
         selector: '.plane',
-        image: '/img/posts/IMG_20140623_145234.jpg',
+        image: '/images/posts/IMG_20140623_145234.jpg',
         link: '/tag/airplane/1/',
         title: 'Tag: Airplane'
       }

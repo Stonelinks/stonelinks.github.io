@@ -9,7 +9,7 @@ var curCSS, iframe, iframeDoc,
 	rnumsplit = new RegExp( "^(" + core_pnum + ")(.*)$", "i" ),
 	rnumnonpx = new RegExp( "^(" + core_pnum + ")(?!px)[a-z%]+$", "i" ),
 	rrelNum = new RegExp( "^([-+])=(" + core_pnum + ")", "i" ),
-	elemdisplay = { BODY: "block" },
+	elemdisplay = {},
 
 	cssShow = { position: "absolute", visibility: "hidden", display: "block" },
 	cssNormalTransform = {
@@ -290,9 +290,7 @@ if ( window.getComputedStyle ) {
 
 		if ( computed ) {
 
-			// getPropertyValue is only needed for .css('filter') in IE9, see #12537
-			ret = computed.getPropertyValue( name ) || computed[ name ];
-
+			ret = computed[ name ];
 			if ( ret === "" && !jQuery.contains( elem.ownerDocument, elem ) ) {
 				ret = jQuery.style( elem, name );
 			}

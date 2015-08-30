@@ -10,11 +10,11 @@ html(lang='en')
         block title
           = locals.site.title
       
-      link(rel='icon', href='/img/favicon.ico', type='image/x-icon')
-      link(rel='shortcut icon', href='/img/favicon.ico', type='image/x-icon')
+      link(rel='icon', href='/images/favicon.ico', type='image/x-icon')
+      link(rel='shortcut icon', href='/images/favicon.ico', type='image/x-icon')
 
       link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=PT+Sans:400italic,400,700')
-      link(rel='stylesheet', href='/css/main.css')
+      link(rel='stylesheet', href='/style/main.css')
 
   body
     block body
@@ -24,11 +24,11 @@ html(lang='en')
       script(src='/vendor/respond/dest/respond.min.js')
       | <![endif]-->
 
-      script(src='/vendor/jquery/jquery.min.js')
+      script(src='/vendor/jquery/jquery.js')
       script(src='/vendor/underscore/underscore.js')
       script(src='/vendor/bootstrap/dist/js/bootstrap.min.js')
       script(type='text/javascript')
-        - var images = _.map(grunt.file.expand('./contents/img/backgrounds/*.{png,jpg,JPG}'), function(i) {
+        - var images = _.map(grunt.file.expand('./contents/images/backgrounds/*.{png,jpg,JPG}'), function(i) {
         -   return i.replace('./contents', '');
         - });
         | var BG_IMAGES = ["!{images.join('","')}"];

@@ -7,7 +7,7 @@ My capstone team was tasked to develop a simulation and control system for a rob
 
 <div class="media-container">
 
-<img src="/img/projects/boeing/sc14.png">
+<img src="/images/projects/boeing/sc14.png">
 
 <p>Screenshot of the client aligning to bolt holes.</p>
 
