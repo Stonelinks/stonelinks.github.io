@@ -1,115 +1,3 @@
-var chooseRandomImage = function () {
-    return window.BG_IMAGES[Math.floor(Math.random() * window.BG_IMAGES.length)];
-};
-
-var setBGImage = function (imageURL) {
-
-    // specifically DON'T use jquery here since the image doesn't always load smoothly
-    document.body.style.backgroundImage = 'url(\'' + imageURL + '\')';
-};
-
-var startCrossfadeImageSwitcher = function () {
-    // a nice canvas based crossfading image switcher
-    var canvas = $('#canvas').get(0);
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    var ctx = canvas.getContext('2d');
-    var img = new Image();
-    var bgImg = new Image();
-    var imagesShown = {};
-    var bgImgNotSet = true;
-    var alpha = 0.0;
-    var speed = 0.05;
-    var delta = speed;
-
-    // choose a random image (but avoid repeats)
-    var _chooseImage = function () {
-        var candidate = chooseRandomImage();
-
-        if (_.isEqual(_.keys(imagesShown).sort(), window.BG_IMAGES.sort())) {
-            imagesShown = {};
-        }
-
-        while (imagesShown.hasOwnProperty(candidate)) {
-            candidate = chooseRandomImage();
-        }
-        imagesShown[candidate] = true;
-        return candidate;
-    };
-
-    // draw the canvas
-    var _drawStuff = function () {
-
-        // compute new alpha
-        alpha += delta;
-
-        // clip alpha and stop fading if all the way faded in or out
-        if (alpha >= 1.0) {
-            alpha = 1.0;
-            delta = 0.0;
-        }
-        else if (alpha < 0) {
-            alpha = 0.0;
-            delta = 0.0;
-        }
-
-        // clear everything
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        // background at full opacity
-        if (!bgImgNotSet) {
-            ctx.save();
-            ctx.globalAlpha = 1.0;
-            ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
-            ctx.restore();
-        }
-
-        // faded image
-        ctx.globalAlpha = alpha;
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-        // repeat forever
-        requestAnimationFrame(_drawStuff);
-    };
-
-    // fade images back and fourth
-    img.onload = function () {
-
-        // fade image in
-        alpha = 0.0;
-        delta = speed;
-
-        // switch every three seconds
-        setTimeout(function () {
-            bgImgNotSet = false;
-            bgImg.src = img.src;
-        }, 3000);
-    };
-
-    bgImg.onload = function () {
-
-        // fade image out
-        alpha = 1.0;
-        delta = -speed;
-
-        img.src = _chooseImage();
-    };
-
-    img.src = _chooseImage();
-
-    // update canvas size
-    var _resizeCanvas = function () {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    };
-    _resizeCanvas();
-    $(window).resize(_resizeCanvas);
-
-    // start
-    _drawStuff();
-}
-
 $(document).ready(function () {
 
     // INTRODUCING THE WORLDS MOST COMPLEX ROUTER... a switch statement
@@ -342,3 +230,116 @@ $(document).ready(function () {
         $(this).attr('target', '_blank');
     });
 });
+
+function chooseRandomImage() {
+    return window.BG_IMAGES[Math.floor(Math.random() * window.BG_IMAGES.length)];
+}
+
+function setBGImage(imageURL) {
+
+    // specifically DON'T use jquery here since the image doesn't always load smoothly
+    document.body.style.backgroundImage = 'url(\'' + imageURL + '\')';
+}
+
+function startCrossfadeImageSwitcher() {
+
+    // a nice canvas based crossfading image switcher
+    var canvas = $('#canvas').get(0);
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    var ctx = canvas.getContext('2d');
+    var img = new Image();
+    var bgImg = new Image();
+    var imagesShown = {};
+    var bgImgNotSet = true;
+    var alpha = 0.0;
+    var speed = 0.05;
+    var delta = speed;
+
+    // choose a random image (but avoid repeats)
+    var _chooseImage = function () {
+        var candidate = chooseRandomImage();
+
+        if (_.isEqual(_.keys(imagesShown).sort(), window.BG_IMAGES.sort())) {
+            imagesShown = {};
+        }
+
+        while (imagesShown.hasOwnProperty(candidate)) {
+            candidate = chooseRandomImage();
+        }
+        imagesShown[candidate] = true;
+        return candidate;
+    };
+
+    // draw the canvas
+    var _drawStuff = function () {
+
+        // compute new alpha
+        alpha += delta;
+
+        // clip alpha and stop fading if all the way faded in or out
+        if (alpha >= 1.0) {
+            alpha = 1.0;
+            delta = 0.0;
+        }
+        else if (alpha < 0) {
+            alpha = 0.0;
+            delta = 0.0;
+        }
+
+        // clear everything
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // background at full opacity
+        if (!bgImgNotSet) {
+            ctx.save();
+            ctx.globalAlpha = 1.0;
+            ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
+            ctx.restore();
+        }
+
+        // faded image
+        ctx.globalAlpha = alpha;
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+        // repeat forever
+        requestAnimationFrame(_drawStuff);
+    };
+
+    // fade images back and fourth
+    img.onload = function () {
+
+        // fade image in
+        alpha = 0.0;
+        delta = speed;
+
+        // switch every three seconds
+        setTimeout(function () {
+            bgImgNotSet = false;
+            bgImg.src = img.src;
+        }, 3000);
+    };
+
+    bgImg.onload = function () {
+
+        // fade image out
+        alpha = 1.0;
+        delta = -speed;
+
+        img.src = _chooseImage();
+    };
+
+    img.src = _chooseImage();
+
+    // update canvas size
+    var _resizeCanvas = function () {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    };
+    _resizeCanvas();
+    $(window).resize(_resizeCanvas);
+
+    // start
+    _drawStuff();
+}

@@ -6,6 +6,7 @@ var gulp = require('gulp');
 var webserver = require('gulp-webserver');
 var clean = require('gulp-clean');
 var less = require('gulp-less');
+var sourcemaps = require('gulp-sourcemaps');
 var wintersmith = require('wintersmith')('./config.json');
 
 var path = {
@@ -40,10 +41,12 @@ gulp.task('site', function (done) {
 });
 
 gulp.task('style', function () {
-    return gulp.src(path.style)
+    return gulp.src('./contents/style/main.less')
+        .pipe(sourcemaps.init())
         .pipe(less({
             paths: ['./contents/']
         }))
+        .pipe(sourcemaps.write('../maps'))
         .pipe(gulp.dest('./build/style'));
 });
 
