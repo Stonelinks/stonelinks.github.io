@@ -8,6 +8,9 @@ var clean = require('gulp-clean');
 var less = require('gulp-less');
 var sourcemaps = require('gulp-sourcemaps');
 var wintersmith = require('wintersmith')('./config.json');
+var rsync = require('gulp-rsync');
+var ghPages = require('gulp-gh-pages');
+var gulpSequence = require('gulp-sequence');
 
 var path = {
     site: [
@@ -36,6 +39,11 @@ gulp.task('vendor', function () {
         .pipe(gulp.dest('./build/vendor'));
 });
 
+gulp.task('nojekyll', function () {
+    return gulp.src('.nojekyll')
+        .pipe(gulp.dest('./build'));
+});
+
 gulp.task('site', function (done) {
     wintersmith.build(done);
 });
@@ -56,7 +64,6 @@ gulp.task('webserver', function () {
             host: '0.0.0.0',
             livereload: true,
             path: 'build'
-            //directoryListing: true
         }));
 });
 
@@ -65,7 +72,7 @@ gulp.task('clean', function () {
         .pipe(clean());
 });
 
-gulp.task('build', ['js', 'style', 'site', 'images', 'vendor']);
+gulp.task('build', gulpSequence('clean', ['nojekyll', 'js', 'style', 'site', 'images', 'vendor']));
 
 gulp.task('watch', ['build'], function () {
     gulp.watch(path.site, ['site']);
@@ -74,6 +81,27 @@ gulp.task('watch', ['build'], function () {
     gulp.watch(path.images, ['images']);
     gulp.watch(path.vendor, ['vendor']);
 });
+
+gulp.task('gh-pages', function() {
+    return gulp.src('build/**/*')
+        .pipe(ghPages({
+            branch: 'master'
+        }));
+});
+
+gulp.task('rsync', function() {
+    return gulp.src('build')
+        .pipe(rsync({
+            root: 'build',
+            username: 'www-data',
+            hostname: 'stonelinks.org',
+            clean: true,
+            recursive: true,
+            destination: '/var/www'
+        }));
+});
+
+gulp.task('deploy', gulpSequence('build', 'rsync', 'gh-pages'));
 
 gulp.task('develop', ['watch', 'webserver']);
 
