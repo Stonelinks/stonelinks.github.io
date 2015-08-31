@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width">
     <title>Execute, Time and Plot C++ Programs with Python - Stonelinks
     </title>
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400italic,400,700">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/style/main.css">
   </head>
   <body>
-    <div class="landing"><a href="/" class="brand"><img src="/img/logos/big-logo.png">Stonelinks</a>
+    <div class="landing"><a href="/" class="brand"><img src="/images/logos/big-logo.png">Stonelinks</a>
       <div class="tagline-bar">Lucas Doyle's website
       </div>
     </div>
     <div role="navigation" class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><img src="/img/logos/big-logo.png">Stonelinks</a>
+          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><img src="/images/logos/big-logo.png">Stonelinks</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -39,7 +39,7 @@
               <h1 class="intro-text text-center">Execute, Time and Plot C++ Programs with Python<br><small>03. February 2011</small></h1></a>
             <hr><div class="media-container">
 
-<img src="/img/posts/Fig.png">
+<img src="/images/posts/Fig.png">
 
 </div>
 
@@ -47,79 +47,72 @@
 <p>Just like every programmer, I am always trying to find new and interesting ways of automating myself out of a job. To that end, I wrote a pretty cool program last night to help automate my first algorithms&nbsp;lab.</p>
 <p><span class="more"></span></p>
 <p>Consistent with the recent trend of mine, it is in python and makes use of the <a href="http://docs.python.org/library/subprocess.html">subprocess</a> module to spawn and time instances of my C++ program and <a href="http://matplotlib.sourceforge.net/">pylab</a> to make plotting the times super easy. The comments in my code explain things in more detail, but here is the one sentence summary: Python is being used to execute two programs written in C++ with the same set of arguments and spits out a plot of their times. In this case the two C++ programs are recursive (rfib) and iterative (ifib) implementations of the Fibonacci algorithm. The fun stuff is in the&nbsp;python:</p>
-<pre><code class="lang-python"><span class="comment">#!/usr/bin/env python</span>
+<p><span class="dquo">&#8220;</span>`python</p>
+<h1 id="-usr-bin-env-python">!/usr/bin/env&nbsp;python</h1>
+<h1 id="lucas-doyle-wrote-this">Lucas Doyle wrote&nbsp;this</h1>
+<p>import subprocess
+import string
+import sys
+import pylab  #&nbsp;matplotlib</p>
+<p>def timerun(program, args) :
+    print ‘Starting timed execution of ‘ + program + ‘ with ‘ + str(len(args)) + ‘ arguments.’
+    i =&nbsp;1</p>
+<pre><code># Execute program, once for each n argument
+for n in args :
 
-<span class="comment"># Lucas Doyle wrote this</span>
+    # This was really annoying. Build the arguments to the time system call to the time command.
+    # First of all, for whatever reason &#39;time&#39; didn&#39;t work correctly with any arguments other than -p, 
+    # so I used /usr/bin/time instead. Since I could not figure out why the output of &#39;time&#39; was not
+    # coming back to stdin, I use the -o (output file) and -a (append) option to just output the real
+    # execution time ( thats where &#39;-f&#39; and &#39;%e&#39; comes from ) to the file.
+    p = subprocess.Popen([&#39;/usr/bin/time&#39;, &#39;-o&#39;, &#39;runtimes.txt&#39;, &#39;-a&#39;, &#39;-f&#39;, &#39;%e&#39;, &#39;./&#39; + program, str(n)], stdout=subprocess.PIPE)
 
-<span class="keyword">import</span> subprocess
-<span class="keyword">import</span> string
-<span class="keyword">import</span> sys
-<span class="keyword">import</span> pylab  <span class="comment"># matplotlib</span>
+    # Read back from stdin, print where we are (not required, but its nice)
+    output = p.communicate()[0]
+    sys.stdout.write( str(i) + &#39;:\tfib(&#39;+ str(n) + &#39;) = &#39; + output)
+    i += 1
+print &#39;done&#39;
 
-<span class="function"><span class="keyword">def</span> <span class="title">timerun</span><span class="params">(program, args)</span> :</span>
-    <span class="keyword">print</span> <span class="string">'Starting timed execution of '</span> + program + <span class="string">' with '</span> + str(len(args)) + <span class="string">' arguments.'</span>
-    i = <span class="number">1</span>
+# Open up, read and return the times in the output file
+f = open(&#39;runtimes.txt&#39;, &#39;r&#39;)
+times = f.read().splitlines()
 
-    <span class="comment"># Execute program, once for each n argument</span>
-    <span class="keyword">for</span> n <span class="keyword">in</span> args :
+# Clean up old runtimes
+subprocess.Popen([&#39;rm&#39;, &#39;runtimes.txt&#39;],stdout=subprocess.PIPE)
 
-        <span class="comment"># This was really annoying. Build the arguments to the time system call to the time command.</span>
-        <span class="comment"># First of all, for whatever reason 'time' didn't work correctly with any arguments other than -p, </span>
-        <span class="comment"># so I used /usr/bin/time instead. Since I could not figure out why the output of 'time' was not</span>
-        <span class="comment"># coming back to stdin, I use the -o (output file) and -a (append) option to just output the real</span>
-        <span class="comment"># execution time ( thats where '-f' and '%e' comes from ) to the file.</span>
-        p = subprocess.Popen([<span class="string">'/usr/bin/time'</span>, <span class="string">'-o'</span>, <span class="string">'runtimes.txt'</span>, <span class="string">'-a'</span>, <span class="string">'-f'</span>, <span class="string">'%e'</span>, <span class="string">'./'</span> + program, str(n)], stdout=subprocess.<span class="caps">PIPE</span>)
-
-        <span class="comment"># Read back from stdin, print where we are (not required, but its nice)</span>
-        output = p.communicate()[<span class="number">0</span>]
-        sys.stdout.write( str(i) + <span class="string">':\tfib('</span>+ str(n) + <span class="string">') = '</span> + output)
-        i += <span class="number">1</span>
-    <span class="keyword">print</span> <span class="string">'done'</span>
-
-    <span class="comment"># Open up, read and return the times in the output file</span>
-    f = open(<span class="string">'runtimes.txt'</span>, <span class="string">'r'</span>)
-    times = f.read().splitlines()
-
-    <span class="comment"># Clean up old runtimes</span>
-    subprocess.Popen([<span class="string">'rm'</span>, <span class="string">'runtimes.txt'</span>],stdout=subprocess.<span class="caps">PIPE</span>)
-
-    <span class="keyword">return</span> times
-
-<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>
-
-    <span class="comment"># Arguments we are interested in testing runtimes for</span>
-    <span class="comment"># args = 1, 5, 10, 15, 20, 25, 30, 35, 40, 41, 42, 43, 44, 45, 46, 47, 48</span>
-    args = range(<span class="number">1</span>, <span class="number">56</span>)
+return times
+</code></pre><p>def&nbsp;main():</p>
+<pre><code># Arguments we are interested in testing runtimes for
+# args = 1, 5, 10, 15, 20, 25, 30, 35, 40, 41, 42, 43, 44, 45, 46, 47, 48
+args = range(1, 56)
 
 
 
-    <span class="comment"># Compute the runtimes of the recursive algorithm, then the iterative one</span>
-    rtimes = timerun(<span class="string">'rfib'</span>, args)
-    itimes = timerun(<span class="string">'ifib'</span>, args)
+# Compute the runtimes of the recursive algorithm, then the iterative one
+rtimes = timerun(&#39;rfib&#39;, args)
+itimes = timerun(&#39;ifib&#39;, args)
 
-    <span class="comment"># Plot it with pylab</span>
-    pylab.xlabel(<span class="string">'N'</span>)
-    pylab.ylabel(<span class="string">'Time to compute fib(N) (seconds)'</span>)
-    pylab.title(<span class="string">'Recursive vs. Iterative Execution Time for Fibionacci Sequence'</span>)
-    pylab.plot(args, rtimes, <span class="string">'ro-'</span>, label=<span class="string">'Recursive'</span>)
-    pylab.plot(args, itimes, <span class="string">'bo-'</span>, label=<span class="string">'Iterative'</span>)
-    pylab.legend()
+# Plot it with pylab
+pylab.xlabel(&#39;N&#39;)
+pylab.ylabel(&#39;Time to compute fib(N) (seconds)&#39;)
+pylab.title(&#39;Recursive vs. Iterative Execution Time for Fibionacci Sequence&#39;)
+pylab.plot(args, rtimes, &#39;ro-&#39;, label=&#39;Recursive&#39;)
+pylab.plot(args, itimes, &#39;bo-&#39;, label=&#39;Iterative&#39;)
+pylab.legend()
 
-    <span class="comment"># other drawing styles for plots in pylab:</span>
-    <span class="comment"># 'r' red line, 'g' green line, 'y' yellow line </span>
-    <span class="comment"># 'ro' red dots as markers, 'r.' smaller red dots, 'r+' red pluses</span>
-    <span class="comment"># 'r--' red dashed line, 'g^' green triangles, 'bs' blue squares</span>
-    <span class="comment"># 'rp' red pentagons, 'r1', 'r2', 'r3', 'r4' well, check out the markers</span>
+# other drawing styles for plots in pylab:
+# &#39;r&#39; red line, &#39;g&#39; green line, &#39;y&#39; yellow line 
+# &#39;ro&#39; red dots as markers, &#39;r.&#39; smaller red dots, &#39;r+&#39; red pluses
+# &#39;r--&#39; red dashed line, &#39;g^&#39; green triangles, &#39;bs&#39; blue squares
+# &#39;rp&#39; red pentagons, &#39;r1&#39;, &#39;r2&#39;, &#39;r3&#39;, &#39;r4&#39; well, check out the markers
 
-    <span class="comment"># save the plot as a <span class="caps">PNG</span> image</span>
-    pylab.savefig(<span class="string">'Fig.png'</span>)
+# save the plot as a PNG image
+pylab.savefig(&#39;Fig.png&#39;)
 
-    <span class="comment"># show the pylab plot window</span>
-    pylab.show()
-
-<span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:
-    main()
-</code></pre>
+# show the pylab plot window
+pylab.show()
+</code></pre><p>if <strong>name</strong> == “<strong>main</strong>“:
+    main()&nbsp;```</p>
 <p>I’ve also attached the whole lab <a href="/misc/lab1.zip">here</a> in case the python does not make sense by itself. Hope someone finds this&nbsp;useful!</p>
 
           </div>
@@ -143,17 +136,19 @@
     <footer>
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 text-center"><a href="https://www.facebook.com/stonelinks" target="_blank" class="social"><i class="fa fa-facebook"></i></a><a href="https://github.com/Stonelinks" target="_blank" class="social"><i class="fa fa-github"></i></a><a href="https://twitter.com/#!/Stonelinks" target="_blank" class="social"><i class="fa fa-twitter"></i></a><a href="https://plus.google.com/116178490514652721625/posts" target="_blank" class="social"><i class="fa fa-google-plus"></i></a><a href="http://www.linkedin.com/pub/lucas-doyle/25/550/169" target="_blank" class="social"><i class="fa fa-linkedin"></i></a><a href="http://www.youtube.com/user/RealStonelinks" target="_blank" class="social"><i class="fa fa-youtube"></i></a><a href="mailto:lucas.p.doyle@gmail.com?Subject=Hello" target="_top" class="footer-link">contact</a>
+          <div class="col-lg-12 text-center"><a href="https://www.facebook.com/stonelinks" target="_blank" class="social"><i class="fa fa-facebook"></i></a><a href="https://github.com/Stonelinks" target="_blank" class="social"><i class="fa fa-github"></i></a><a href="https://twitter.com/#!/Stonelinks" target="_blank" class="social"><i class="fa fa-twitter"></i></a><a href="https://plus.google.com/116178490514652721625/posts" target="_blank" class="social"><i class="fa fa-google-plus"></i></a><a href="http://www.linkedin.com/pub/lucas-doyle/25/550/169" target="_blank" class="social"><i class="fa fa-linkedin"></i></a><a href="http://www.youtube.com/user/RealStonelinks" target="_blank" class="social"><i class="fa fa-youtube"></i></a><a href="mailto:lucas.p.doyle@gmail.com?Subject=Hello" target="_top" class="footer-link">
+               
+              contact</a>
           </div>
         </div>
       </div>
     </footer><!--[if lt IE 9]>
     <script src="/vendor/html5shiv/dist/html5shiv.min.js"></script>
     <script src="/vendor/respond/dest/respond.min.js"></script><![endif]-->
-    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/jquery/jquery.js"></script>
     <script src="/vendor/underscore/underscore.js"></script>
     <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript">var BG_IMAGES = ["/img/backgrounds/06uh37r.jpg","/img/backgrounds/14206376348_fca4af4ba5_o.jpg","/img/backgrounds/1979230_10152035339809685_1025831531_o.jpg","/img/backgrounds/2000-01-01 08.30.12.jpg","/img/backgrounds/2012-12-02 00.41.05.jpg","/img/backgrounds/2012-12-06 15.09.02.jpg","/img/backgrounds/2013-05-01 08.31.27.jpg","/img/backgrounds/2013-05-18 13.07.32.jpg","/img/backgrounds/2013-09-20 05.26.41.jpg","/img/backgrounds/2013-09-20 05.30.41.jpg","/img/backgrounds/2013-11-24 18.07.08.jpg","/img/backgrounds/2013-12-20 14.27.13.jpg","/img/backgrounds/2013-12-28 19.16.24.jpg","/img/backgrounds/287299main_dextre_iss017_big_full.jpg","/img/backgrounds/34DnPmX.jpg","/img/backgrounds/5bml6q6.jpg","/img/backgrounds/7jWBoem.jpg","/img/backgrounds/A52It0Q.jpg","/img/backgrounds/Boeing_747-8_Test_Planes_in_Assembly.jpg","/img/backgrounds/CkGmW8I.png","/img/backgrounds/Dtd8OaS.jpg","/img/backgrounds/EWwV235.jpg","/img/backgrounds/Eourq.jpg","/img/backgrounds/GkWIkzl.jpg","/img/backgrounds/GpCUV.jpg","/img/backgrounds/HsiDzD2.jpg","/img/backgrounds/IMG_1142 copy-X2.jpg","/img/backgrounds/IMG_20120721_181258.jpg","/img/backgrounds/IZyTICW.jpg","/img/backgrounds/IijALtC.jpg","/img/backgrounds/J8Oqyyd.jpg","/img/backgrounds/KBMGZnm.jpg","/img/backgrounds/MbN1OhC.jpg","/img/backgrounds/ONn4OVE.jpg","/img/backgrounds/P0UhJaz.jpg","/img/backgrounds/Red, White and Enterprise-X3.jpg","/img/backgrounds/STS-134_International_Space_Station_after_undocking.jpg","/img/backgrounds/Su0YWko.jpg","/img/backgrounds/TUZyh.jpg","/img/backgrounds/TuBipfq.jpg","/img/backgrounds/Wsvb8tw.jpg","/img/backgrounds/XvkHfUA.jpg","/img/backgrounds/YseOPg6.jpg","/img/backgrounds/ZhWyntZ.jpg","/img/backgrounds/d7t5BrZ.jpg","/img/backgrounds/enukwns.jpg","/img/backgrounds/fr42b.jpg","/img/backgrounds/g8yF11T.jpg","/img/backgrounds/godD0Nj.jpg","/img/backgrounds/isu4ciW.jpg","/img/backgrounds/k9JWU9N.jpg","/img/backgrounds/kkhlkasdhjl3.png","/img/backgrounds/m1gD1NC.jpg","/img/backgrounds/m95qL89.jpg","/img/backgrounds/mooCZ.jpg","/img/backgrounds/nBEcpIY.jpg","/img/backgrounds/nLpQ2G3.jpg","/img/backgrounds/nUje1Xs.jpg","/img/backgrounds/ozjI2XF.jpg","/img/backgrounds/p0QNNrI.jpg","/img/backgrounds/raddmHE.jpg","/img/backgrounds/rhvP0wn.jpg","/img/backgrounds/s_f02_RTR3FJM0.jpg","/img/backgrounds/tmEkJ7Q.jpg","/img/backgrounds/uCr3S.jpg","/img/backgrounds/uMrsMXh.jpg","/img/backgrounds/w0Pgof8.jpg","/img/backgrounds/wallpaper-1312831.jpg","/img/backgrounds/wallpaper-1441536.jpg","/img/backgrounds/wjZsmhr.jpg","/img/backgrounds/wvgRzh6.jpg","/img/backgrounds/x2bkKQS.jpg","/img/backgrounds/xKTWtJC.jpg","/img/backgrounds/xkl9FoE.jpg","/img/backgrounds/y4WGD7I.jpg","/img/backgrounds/yrZCDd1.jpg"];
+    <script type="text/javascript">var BG_IMAGES = ["/images/backgrounds/06uh37r.jpg","/images/backgrounds/14206376348_fca4af4ba5_o.jpg","/images/backgrounds/1979230_10152035339809685_1025831531_o.jpg","/images/backgrounds/2000-01-01 08.30.12.jpg","/images/backgrounds/2012-12-02 00.41.05.jpg","/images/backgrounds/2012-12-06 15.09.02.jpg","/images/backgrounds/2013-05-01 08.31.27.jpg","/images/backgrounds/2013-05-18 13.07.32.jpg","/images/backgrounds/2013-09-20 05.26.41.jpg","/images/backgrounds/2013-09-20 05.30.41.jpg","/images/backgrounds/2013-11-24 18.07.08.jpg","/images/backgrounds/2013-12-20 14.27.13.jpg","/images/backgrounds/2013-12-28 19.16.24.jpg","/images/backgrounds/287299main_dextre_iss017_big_full.jpg","/images/backgrounds/34DnPmX.jpg","/images/backgrounds/5bml6q6.jpg","/images/backgrounds/7jWBoem.jpg","/images/backgrounds/A52It0Q.jpg","/images/backgrounds/Boeing_747-8_Test_Planes_in_Assembly.jpg","/images/backgrounds/CkGmW8I.png","/images/backgrounds/Dtd8OaS.jpg","/images/backgrounds/EWwV235.jpg","/images/backgrounds/Eourq.jpg","/images/backgrounds/GkWIkzl.jpg","/images/backgrounds/GpCUV.jpg","/images/backgrounds/HsiDzD2.jpg","/images/backgrounds/IMG_1142 copy-X2.jpg","/images/backgrounds/IMG_20120721_181258.jpg","/images/backgrounds/IZyTICW.jpg","/images/backgrounds/IijALtC.jpg","/images/backgrounds/J8Oqyyd.jpg","/images/backgrounds/KBMGZnm.jpg","/images/backgrounds/MbN1OhC.jpg","/images/backgrounds/ONn4OVE.jpg","/images/backgrounds/P0UhJaz.jpg","/images/backgrounds/Red, White and Enterprise-X3.jpg","/images/backgrounds/STS-134_International_Space_Station_after_undocking.jpg","/images/backgrounds/Su0YWko.jpg","/images/backgrounds/TUZyh.jpg","/images/backgrounds/TuBipfq.jpg","/images/backgrounds/Wsvb8tw.jpg","/images/backgrounds/XvkHfUA.jpg","/images/backgrounds/YseOPg6.jpg","/images/backgrounds/ZhWyntZ.jpg","/images/backgrounds/d7t5BrZ.jpg","/images/backgrounds/enukwns.jpg","/images/backgrounds/fr42b.jpg","/images/backgrounds/g8yF11T.jpg","/images/backgrounds/godD0Nj.jpg","/images/backgrounds/isu4ciW.jpg","/images/backgrounds/k9JWU9N.jpg","/images/backgrounds/kkhlkasdhjl3.png","/images/backgrounds/m1gD1NC.jpg","/images/backgrounds/m95qL89.jpg","/images/backgrounds/mooCZ.jpg","/images/backgrounds/nBEcpIY.jpg","/images/backgrounds/nLpQ2G3.jpg","/images/backgrounds/nUje1Xs.jpg","/images/backgrounds/ozjI2XF.jpg","/images/backgrounds/p0QNNrI.jpg","/images/backgrounds/raddmHE.jpg","/images/backgrounds/rhvP0wn.jpg","/images/backgrounds/s_f02_RTR3FJM0.jpg","/images/backgrounds/tmEkJ7Q.jpg","/images/backgrounds/uCr3S.jpg","/images/backgrounds/uMrsMXh.jpg","/images/backgrounds/w0Pgof8.jpg","/images/backgrounds/wallpaper-1312831.jpg","/images/backgrounds/wallpaper-1441536.jpg","/images/backgrounds/wjZsmhr.jpg","/images/backgrounds/wvgRzh6.jpg","/images/backgrounds/x2bkKQS.jpg","/images/backgrounds/xKTWtJC.jpg","/images/backgrounds/xkl9FoE.jpg","/images/backgrounds/y4WGD7I.jpg","/images/backgrounds/yrZCDd1.jpg"];
       var BASENAME = 'posts/execute-time-and-plot-c-programs-with-python/index';
        
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

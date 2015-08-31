@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width">
     <title>Implementation - Stoolbotics - Stonelinks
     </title>
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400italic,400,700">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/style/main.css">
   </head>
   <body>
-    <div class="landing"><a href="/" class="brand"><img src="/img/logos/big-logo.png">Stonelinks</a>
+    <div class="landing"><a href="/" class="brand"><img src="/images/logos/big-logo.png">Stonelinks</a>
       <div class="tagline-bar">Lucas Doyle's website
       </div>
     </div>
     <div role="navigation" class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><img src="/img/logos/big-logo.png">Stonelinks</a>
+          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><img src="/images/logos/big-logo.png">Stonelinks</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -56,22 +56,22 @@
 <p>Links are then constructed from all these variables as a convenient way to group related variables together. These links contain things like a joint’s rotation matrix, position vector, joint parameter and joint axis. As we’ll see later on, links are used mostly for accessing information about a robot&nbsp;arm.</p>
 <h2 id="kinematics">Kinematics</h2>
 <p>Once all symbolics for the robot are evaluated, it is actually pretty easy to solve for the forward kinematics of the arm. We use the product of exponentials approach to solve this. First, computing <code>R0T</code> is as simple as&nbsp;this:</p>
-<pre><code class="lang-python">robot.R0T = eye(<span class="number">3</span>, <span class="number">3</span>)
-<span class="keyword">for</span> link <span class="keyword">in</span> robot.links:
-    robot.<span class="caps">R0T</span> = dot(robot.R0T, link.R)
-</code></pre>
+<p><code>python
+robot.R0T = eye(3, 3)
+for link in robot.links:
+    robot.R0T = dot(robot.R0T, link.R)</code></p>
 <p>As you can see, <code>R0T</code> starts out as the identity matrix. The links of the robot then are traversed in order from the base to the end, and along the way the current <code>R0T</code> is multiplied by the link’s individual rotation matrix (which comes from <code>_d</code>). When this is all done, the resulting matrix is the correct <code>R0T</code>.</p>
 <p>For positions, the algorithm is a bit more&nbsp;involved:</p>
-<pre><code class="lang-python">tmp = eye(<span class="number">3</span>,<span class="number">3</span>)
-robot.<span class="caps">P0T</span> = zeros((<span class="number">3</span>, <span class="number">1</span>))
-p = <span class="keyword">None</span>
-<span class="keyword">for</span> link <span class="keyword">in</span> robot.links:
-    robot.<span class="caps">P0T</span> += dot(tmp, link.P)
-    tmp = dot(tmp, link.R)
-
-    p = (robot.P0T[<span class="number">0</span>][<span class="number">0</span>], robot.<span class="caps">P0T</span>[<span class="number">1</span>][<span class="number">0</span>], robot.<span class="caps">P0T</span>[<span class="number">2</span>][<span class="number">0</span>])
-    self.verts.append(p)
-</code></pre>
+<p>```python
+tmp = eye(3,3)
+robot.<span class="caps">P0T</span> = zeros((3, 1))
+p = None
+for link in robot.links:
+    robot.P0T += dot(tmp, link.P)
+    tmp = dot(tmp,&nbsp;link.R)</p>
+<pre><code>p = (robot.P0T[0][0], robot.P0T[1][0], robot.P0T[2][0])
+self.verts.append(p)
+</code></pre><p>```</p>
 <p>First, a few variables are initialized. <code>tmp</code> is the temporary rotation matrix for all links up until the current iteration. It starts off as the identity matrix. Second, the overall position vector, <code>P0T</code>, starts out as a three by one zero vectors. Next, for each link in the robot arm, the representation of the link’s position vector in terms of the base frame is added to the current position vector. This is done by using the dot product of the <code>tmp</code> rotation matrix and the link’s position vector. The temporary rotation matrix is then updated, and the current position vector is appended to the <code>verts</code> list, which contains all the robot’s vertices for the current time-step. This list is later used to draw things like the arm ghosts and&nbsp;trace.</p>
 <h2 id="drawing-the-robot">Drawing the&nbsp;Robot</h2>
 <h3 id="joints">Joints</h3>
@@ -80,11 +80,11 @@ p = <span class="keyword">None</span>
 <p>For prismatic joints, a method was developed to draw a rectangular prism along an arbitrary axis. This was done using a length and width/height (square area) as well as a start and end point. From there, a matrix is pushed onto the model view which is the rotation from the vector (end-start, same as shown above) to the Z axis. Then, a simple <code>gl_quads</code> was used to draw the 6 faces of the rectangular prism of the size provided and the matrix popped off. After the joint is drawn, the frame is rotated along the axis of rotation by the amount specified using <code>glRotate</code>. Then it is translated using <code>glTranslate</code> along the link which is representative in the rotated frame so no additional calculations are&nbsp;needed.</p>
 <p>Now that the frame is at the next joint, the process is repeated till all joints are displayed. This process works off of the stack pushing and popping matrices. Joint 3 is related to Joint 2 which is a rotation and translation from Joint 1. Problems encountered while drawing the robot include the drawing of the <code>gluCylinder</code> along the axis or rotation as the rotation matrix needed to draw along the Z axis was causing issues due math errors in the passing of parameters to the cross and dot product. Another issue was trying to draw the entire robot in one frame as python was already calculating all the necessary information. This led to complexity issues that were troublesome to debug and even harder to comment and follow. The last troublesome part was using <code>glLoadMatrix</code> to force OpenGL to load a matrix that python had already calculated for internal purposes. The problem became known when rounding errors in python of the rotation matrix caused the determinate not to be 1.000 in all cases which would cause OpenGL to clip triangles of the screen and paint the pixels&nbsp;white.</p>
 <h3 id="links">Links</h3>
-<p>Links are drawn from the current frame after being rotated by the rotation matrix associated with the joint and the next joint location. This works due to links being relative to the current joint. A simple <code>gl_lines</code> from [0,0,0] to P(N-1)(N) where N is the next frame is drawn to symbolize a link. The existence of prismatic joints also play a role in how this line&nbsp;looks.</p>
+<p>Links are drawn from the current frame after being rotated by the rotation matrix associated with the joint and the next joint location. This works due to links being relative to the current joint. A simple <code>gl_lines</code> from [0,0,0] to <span class="caps">P(N-</span>1)(N) where N is the next frame is drawn to symbolize a link. The existence of prismatic joints also play a role in how this line&nbsp;looks.</p>
 <h2 id="terminal-implementation">Terminal&nbsp;Implementation</h2>
 <p>The implementation of the OpenGL terminal was entirely non-trivial. However the algorithms that go into it will not be featured here, as they have nothing to do with robotics or graphics. Instead, what will be mentioned is the reasons behind implementing the&nbsp;terminal.</p>
 <p>It was a carefully calculated design decision. The end goal was to have an easy way for users to enter commands to the simulator. Since OpenGL works by registering callback functions whenever an event occurs, the simulator has to ultimately submit control flow to the main OpenGL loop. This means that keyboard interrupts and stdin can never reach the&nbsp;program.</p>
-<p>To get around this, we could have used a windowing toolkit. There are many windowing toolkits for python that we could have used: PyQT, wxPython, Tkinter, etc. However, not all of them support OpenGL widgets and they introduce portability issues when considering the cross platform nature of our simulator (yet another dependency). Finally, windowing toolkits are complex beasts and there simply wasn’t enough time to learn how to use them before the simulator needed to be&nbsp;completed.</p>
+<p>To get around this, we could have used a windowing toolkit. There are many windowing toolkits for python that we could have used: <span class="caps">PyQT,</span> wxPython, Tkinter, etc. However, not all of them support OpenGL widgets and they introduce portability issues when considering the cross platform nature of our simulator (yet another dependency). Finally, windowing toolkits are complex beasts and there simply wasn’t enough time to learn how to use them before the simulator needed to be&nbsp;completed.</p>
 <p>Therefore, the decision was made to implement a simple terminal window inside OpenGL. This gave us the most control with regards to commands entered to the command prompt. Additionally, it makes the application more portable because no additional library dependencies are&nbsp;introduced.</p>
 
           </div>
@@ -94,17 +94,19 @@ p = <span class="keyword">None</span>
     <footer>
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 text-center"><a href="https://www.facebook.com/stonelinks" target="_blank" class="social"><i class="fa fa-facebook"></i></a><a href="https://github.com/Stonelinks" target="_blank" class="social"><i class="fa fa-github"></i></a><a href="https://twitter.com/#!/Stonelinks" target="_blank" class="social"><i class="fa fa-twitter"></i></a><a href="https://plus.google.com/116178490514652721625/posts" target="_blank" class="social"><i class="fa fa-google-plus"></i></a><a href="http://www.linkedin.com/pub/lucas-doyle/25/550/169" target="_blank" class="social"><i class="fa fa-linkedin"></i></a><a href="http://www.youtube.com/user/RealStonelinks" target="_blank" class="social"><i class="fa fa-youtube"></i></a><a href="mailto:lucas.p.doyle@gmail.com?Subject=Hello" target="_top" class="footer-link">contact</a>
+          <div class="col-lg-12 text-center"><a href="https://www.facebook.com/stonelinks" target="_blank" class="social"><i class="fa fa-facebook"></i></a><a href="https://github.com/Stonelinks" target="_blank" class="social"><i class="fa fa-github"></i></a><a href="https://twitter.com/#!/Stonelinks" target="_blank" class="social"><i class="fa fa-twitter"></i></a><a href="https://plus.google.com/116178490514652721625/posts" target="_blank" class="social"><i class="fa fa-google-plus"></i></a><a href="http://www.linkedin.com/pub/lucas-doyle/25/550/169" target="_blank" class="social"><i class="fa fa-linkedin"></i></a><a href="http://www.youtube.com/user/RealStonelinks" target="_blank" class="social"><i class="fa fa-youtube"></i></a><a href="mailto:lucas.p.doyle@gmail.com?Subject=Hello" target="_top" class="footer-link">
+               
+              contact</a>
           </div>
         </div>
       </div>
     </footer><!--[if lt IE 9]>
     <script src="/vendor/html5shiv/dist/html5shiv.min.js"></script>
     <script src="/vendor/respond/dest/respond.min.js"></script><![endif]-->
-    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/jquery/jquery.js"></script>
     <script src="/vendor/underscore/underscore.js"></script>
     <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript">var BG_IMAGES = ["/img/backgrounds/06uh37r.jpg","/img/backgrounds/14206376348_fca4af4ba5_o.jpg","/img/backgrounds/1979230_10152035339809685_1025831531_o.jpg","/img/backgrounds/2000-01-01 08.30.12.jpg","/img/backgrounds/2012-12-02 00.41.05.jpg","/img/backgrounds/2012-12-06 15.09.02.jpg","/img/backgrounds/2013-05-01 08.31.27.jpg","/img/backgrounds/2013-05-18 13.07.32.jpg","/img/backgrounds/2013-09-20 05.26.41.jpg","/img/backgrounds/2013-09-20 05.30.41.jpg","/img/backgrounds/2013-11-24 18.07.08.jpg","/img/backgrounds/2013-12-20 14.27.13.jpg","/img/backgrounds/2013-12-28 19.16.24.jpg","/img/backgrounds/287299main_dextre_iss017_big_full.jpg","/img/backgrounds/34DnPmX.jpg","/img/backgrounds/5bml6q6.jpg","/img/backgrounds/7jWBoem.jpg","/img/backgrounds/A52It0Q.jpg","/img/backgrounds/Boeing_747-8_Test_Planes_in_Assembly.jpg","/img/backgrounds/CkGmW8I.png","/img/backgrounds/Dtd8OaS.jpg","/img/backgrounds/EWwV235.jpg","/img/backgrounds/Eourq.jpg","/img/backgrounds/GkWIkzl.jpg","/img/backgrounds/GpCUV.jpg","/img/backgrounds/HsiDzD2.jpg","/img/backgrounds/IMG_1142 copy-X2.jpg","/img/backgrounds/IMG_20120721_181258.jpg","/img/backgrounds/IZyTICW.jpg","/img/backgrounds/IijALtC.jpg","/img/backgrounds/J8Oqyyd.jpg","/img/backgrounds/KBMGZnm.jpg","/img/backgrounds/MbN1OhC.jpg","/img/backgrounds/ONn4OVE.jpg","/img/backgrounds/P0UhJaz.jpg","/img/backgrounds/Red, White and Enterprise-X3.jpg","/img/backgrounds/STS-134_International_Space_Station_after_undocking.jpg","/img/backgrounds/Su0YWko.jpg","/img/backgrounds/TUZyh.jpg","/img/backgrounds/TuBipfq.jpg","/img/backgrounds/Wsvb8tw.jpg","/img/backgrounds/XvkHfUA.jpg","/img/backgrounds/YseOPg6.jpg","/img/backgrounds/ZhWyntZ.jpg","/img/backgrounds/d7t5BrZ.jpg","/img/backgrounds/enukwns.jpg","/img/backgrounds/fr42b.jpg","/img/backgrounds/g8yF11T.jpg","/img/backgrounds/godD0Nj.jpg","/img/backgrounds/isu4ciW.jpg","/img/backgrounds/k9JWU9N.jpg","/img/backgrounds/kkhlkasdhjl3.png","/img/backgrounds/m1gD1NC.jpg","/img/backgrounds/m95qL89.jpg","/img/backgrounds/mooCZ.jpg","/img/backgrounds/nBEcpIY.jpg","/img/backgrounds/nLpQ2G3.jpg","/img/backgrounds/nUje1Xs.jpg","/img/backgrounds/ozjI2XF.jpg","/img/backgrounds/p0QNNrI.jpg","/img/backgrounds/raddmHE.jpg","/img/backgrounds/rhvP0wn.jpg","/img/backgrounds/s_f02_RTR3FJM0.jpg","/img/backgrounds/tmEkJ7Q.jpg","/img/backgrounds/uCr3S.jpg","/img/backgrounds/uMrsMXh.jpg","/img/backgrounds/w0Pgof8.jpg","/img/backgrounds/wallpaper-1312831.jpg","/img/backgrounds/wallpaper-1441536.jpg","/img/backgrounds/wjZsmhr.jpg","/img/backgrounds/wvgRzh6.jpg","/img/backgrounds/x2bkKQS.jpg","/img/backgrounds/xKTWtJC.jpg","/img/backgrounds/xkl9FoE.jpg","/img/backgrounds/y4WGD7I.jpg","/img/backgrounds/yrZCDd1.jpg"];
+    <script type="text/javascript">var BG_IMAGES = ["/images/backgrounds/06uh37r.jpg","/images/backgrounds/14206376348_fca4af4ba5_o.jpg","/images/backgrounds/1979230_10152035339809685_1025831531_o.jpg","/images/backgrounds/2000-01-01 08.30.12.jpg","/images/backgrounds/2012-12-02 00.41.05.jpg","/images/backgrounds/2012-12-06 15.09.02.jpg","/images/backgrounds/2013-05-01 08.31.27.jpg","/images/backgrounds/2013-05-18 13.07.32.jpg","/images/backgrounds/2013-09-20 05.26.41.jpg","/images/backgrounds/2013-09-20 05.30.41.jpg","/images/backgrounds/2013-11-24 18.07.08.jpg","/images/backgrounds/2013-12-20 14.27.13.jpg","/images/backgrounds/2013-12-28 19.16.24.jpg","/images/backgrounds/287299main_dextre_iss017_big_full.jpg","/images/backgrounds/34DnPmX.jpg","/images/backgrounds/5bml6q6.jpg","/images/backgrounds/7jWBoem.jpg","/images/backgrounds/A52It0Q.jpg","/images/backgrounds/Boeing_747-8_Test_Planes_in_Assembly.jpg","/images/backgrounds/CkGmW8I.png","/images/backgrounds/Dtd8OaS.jpg","/images/backgrounds/EWwV235.jpg","/images/backgrounds/Eourq.jpg","/images/backgrounds/GkWIkzl.jpg","/images/backgrounds/GpCUV.jpg","/images/backgrounds/HsiDzD2.jpg","/images/backgrounds/IMG_1142 copy-X2.jpg","/images/backgrounds/IMG_20120721_181258.jpg","/images/backgrounds/IZyTICW.jpg","/images/backgrounds/IijALtC.jpg","/images/backgrounds/J8Oqyyd.jpg","/images/backgrounds/KBMGZnm.jpg","/images/backgrounds/MbN1OhC.jpg","/images/backgrounds/ONn4OVE.jpg","/images/backgrounds/P0UhJaz.jpg","/images/backgrounds/Red, White and Enterprise-X3.jpg","/images/backgrounds/STS-134_International_Space_Station_after_undocking.jpg","/images/backgrounds/Su0YWko.jpg","/images/backgrounds/TUZyh.jpg","/images/backgrounds/TuBipfq.jpg","/images/backgrounds/Wsvb8tw.jpg","/images/backgrounds/XvkHfUA.jpg","/images/backgrounds/YseOPg6.jpg","/images/backgrounds/ZhWyntZ.jpg","/images/backgrounds/d7t5BrZ.jpg","/images/backgrounds/enukwns.jpg","/images/backgrounds/fr42b.jpg","/images/backgrounds/g8yF11T.jpg","/images/backgrounds/godD0Nj.jpg","/images/backgrounds/isu4ciW.jpg","/images/backgrounds/k9JWU9N.jpg","/images/backgrounds/kkhlkasdhjl3.png","/images/backgrounds/m1gD1NC.jpg","/images/backgrounds/m95qL89.jpg","/images/backgrounds/mooCZ.jpg","/images/backgrounds/nBEcpIY.jpg","/images/backgrounds/nLpQ2G3.jpg","/images/backgrounds/nUje1Xs.jpg","/images/backgrounds/ozjI2XF.jpg","/images/backgrounds/p0QNNrI.jpg","/images/backgrounds/raddmHE.jpg","/images/backgrounds/rhvP0wn.jpg","/images/backgrounds/s_f02_RTR3FJM0.jpg","/images/backgrounds/tmEkJ7Q.jpg","/images/backgrounds/uCr3S.jpg","/images/backgrounds/uMrsMXh.jpg","/images/backgrounds/w0Pgof8.jpg","/images/backgrounds/wallpaper-1312831.jpg","/images/backgrounds/wallpaper-1441536.jpg","/images/backgrounds/wjZsmhr.jpg","/images/backgrounds/wvgRzh6.jpg","/images/backgrounds/x2bkKQS.jpg","/images/backgrounds/xKTWtJC.jpg","/images/backgrounds/xkl9FoE.jpg","/images/backgrounds/y4WGD7I.jpg","/images/backgrounds/yrZCDd1.jpg"];
       var BASENAME = 'projects/stoolbotics/implementation';
        
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

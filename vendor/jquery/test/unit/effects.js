@@ -597,37 +597,28 @@ test("stop()", function() {
 });
 
 test("stop() - several in queue", function() {
-	expect( 5 );
+	expect(3);
+	stop();
 
-	var nw, time,
-		$foo = jQuery( "#foo" ),
-		w = 0;
+	var $foo = jQuery("#foo");
+	var w = 0;
+	$foo.hide().css( "width", 200 ).css("width");
 
-	// default duration is 400ms, so 800px ensures we aren't 0 or 1 after 1ms
-	$foo.hide().css( "width", 800 );
+	$foo.animate({ "width": "show" }, 1500);
+	$foo.animate({ "width": "hide" }, 1000);
+	$foo.animate({ "width": "show" }, 1000);
+	setTimeout(function(){
+		equal( $foo.queue().length, 3, "All 3 still in the queue" );
+		var nw = $foo.css("width");
+		notEqual( parseFloat( nw ), w, "An animation occurred " + nw + " " + w + "px");
+		$foo.stop();
 
-	$foo.animate({ "width": "show" }, 400, "linear");
-	$foo.animate({ "width": "hide" });
-	$foo.animate({ "width": "show" });
+		nw = $foo.css("width");
+		notEqual( parseFloat( nw ), w, "Stop didn't reset the animation " + nw + " " + w + "px");
 
-	// could be replaced by something nicer using sinon.
-	time = jQuery.now();
-	while( time === jQuery.now() ) {}
-
-	jQuery.fx.tick();
-	equal( $foo.queue().length, 3, "3 in the queue" );
-
-	nw = $foo.css( "width" );
-	notEqual( parseFloat( nw ), 1, "An animation occurred " + nw );
-	$foo.stop();
-
-	equal( $foo.queue().length, 2, "2 in the queue" );
-	nw = $foo.css( "width" );
-	notEqual( parseFloat( nw ), 1, "Stop didn't reset the animation " + nw );
-
-	$foo.stop( true );
-
-	equal( $foo.queue().length, 0, "0 in the queue" );
+		$foo.stop(true);
+		start();
+	}, 200);
 });
 
 test("stop(clearQueue)", function() {
@@ -1698,7 +1689,7 @@ asyncTest( "non-px animation handles non-numeric start (#11971)", 2, function() 
 	var foo = jQuery("#foo"),
 		initial = foo.css("backgroundPositionX");
 
-	if ( !initial ) {
+	if ( initial == null ) {
 		expect(1);
 		ok( true, "Style property not understood" );
 		start();
@@ -1820,35 +1811,6 @@ test( "Animate properly sets overflow hidden when animating width/height (#12117
 	});
 });
 
-test( "Each tick of the timer loop uses a fresh time (#12837)", function() {
-	var lastVal, current,
-		tmp = jQuery({
-			test: 0
-		});
-	expect( 3 );
-	tmp.animate({
-		test: 100
-	}, {
-		step: function( p, fx ) {
-			ok( fx.now !== lastVal, "Current value is not the last value: " + lastVal + " - " + fx.now );
-			lastVal = fx.now;
-		}
-	});
-	current = jQuery.now();
-	// intentionally empty, we want to spin wheels until the time changes.
-	while ( current === jQuery.now() ) { }
-
-	// now that we have a new time, run another tick
-	jQuery.fx.tick();
-
-	current = jQuery.now();
-	// intentionally empty, we want to spin wheels until the time changes.
-	while ( current === jQuery.now() ) { }
-
-	jQuery.fx.tick();
-	tmp.stop();
-});
-
 test( "Animations with 0 duration don't ease (#12273)", 1, function() {
 	jQuery.easing.test = function() {
 		ok( false, "Called easing" );
@@ -1865,50 +1827,6 @@ test( "Animations with 0 duration don't ease (#12273)", 1, function() {
 	});
 
 	delete jQuery.easing.test;
-});
-
-jQuery.map([ "toggle", "slideToggle", "fadeToggle" ], function ( method ) {
-	// this test would look a lot better if we were using something to override
-	// the default timers
-	asyncTest( "toggle state tests: " + method + " (#8685)", function() {
-		function secondToggle() {
-			var stopped = parseFloat( element.css( check ) );
-			tested = false;
-			element[ method ]({
-				duration: 5000,
-				step: function( p, fx ) {
-					if ( fx.pos > 0.1 && fx.prop === check && !tested ) {
-						tested = true;
-						equal( fx.start, stopped, check + " starts at " + stopped + " where it stopped" );
-						equal( fx.end, original, check + " ending value is " + original );
-						element.stop();
-					}
-				},
-				always: start
-			});
-		}
-
-		var tested,
-			original,
-			check = method === "slideToggle" ? "height" : "opacity",
-			element = jQuery( "#foo" ).height( 200 );
-
-		expect( 4 );
-
-		element[ method ]({
-			duration: 5000,
-			step: function( p, fx ) {
-				if ( fx.pos > 0.1 && fx.prop === check && !tested ) {
-					tested = true;
-					original = fx.start;
-					ok( fx.start !== 0, check + " is starting at " + original + " on first toggle (non-zero)" );
-					equal( fx.end, 0, check + " is ending at 0 on first toggle" );
-					element.stop();
-				}
-			},
-			always: secondToggle
-		});
-	});
 });
 
 } // if ( jQuery.fx )

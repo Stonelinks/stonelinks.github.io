@@ -3,13 +3,27 @@
  * bin-packing algorithm
  */
 
-( function( window ) {
+( function( window, factory ) {
+  'use strict';
+  // universal module definition
+  if ( typeof define == 'function' && define.amd ) {
+    // AMD
+    define( [ './rect' ], factory );
+  } else if ( typeof exports == 'object' ) {
+    // CommonJS
+    module.exports = factory(
+      require('./rect')
+    );
+  } else {
+    // browser global
+    var Packery = window.Packery = window.Packery || {};
+    Packery.Packer = factory( Packery.Rect );
+  }
 
+}( window, function factory( Rect ) {
 'use strict';
 
 // -------------------------- Packer -------------------------- //
-
-function packerDefinition( Rect ) {
 
 /**
  * @param {Number} width
@@ -77,10 +91,19 @@ Packer.prototype.placed = function( rect ) {
 
   this.spaces = revisedSpaces;
 
+  this.mergeSortSpaces();
+};
+
+Packer.prototype.mergeSortSpaces = function() {
   // remove redundant spaces
   Packer.mergeRects( this.spaces );
-
   this.spaces.sort( this.sorter );
+};
+
+// add a space back
+Packer.prototype.addSpace = function( rect ) {
+  this.spaces.push( rect );
+  this.mergeSortSpaces();
 };
 
 // -------------------------- utility functions -------------------------- //
@@ -140,17 +163,4 @@ var sorters = {
 
 return Packer;
 
-}
-
-// -------------------------- transport -------------------------- //
-
-if ( typeof define === 'function' && define.amd ) {
-  // AMD
-  define( [ './rect' ], packerDefinition );
-} else {
-  // browser global
-  var Packery = window.Packery = window.Packery || {};
-  Packery.Packer = packerDefinition( Packery.Rect );
-}
-
-})( window );
+}));

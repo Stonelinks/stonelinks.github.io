@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width">
     <title>A More Accurate Coordinate System - Stonelinks
     </title>
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400italic,400,700">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/style/main.css">
   </head>
   <body>
-    <div class="landing"><a href="/" class="brand"><img src="/img/logos/big-logo.png">Stonelinks</a>
+    <div class="landing"><a href="/" class="brand"><img src="/images/logos/big-logo.png">Stonelinks</a>
       <div class="tagline-bar">Lucas Doyle's website
       </div>
     </div>
     <div role="navigation" class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><img src="/img/logos/big-logo.png">Stonelinks</a>
+          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><img src="/images/logos/big-logo.png">Stonelinks</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -53,32 +53,32 @@
 <li>The <span class="caps">PC</span> sends a number corresponding to the index of a servo on the Arduino it wants to move. In my setup, 1 means the X axis and 2-means the Y&nbsp;axis.</li>
 <li>Last, an angle between 0 and 180 is sent telling the Arduino where to move the&nbsp;servo.</li>
 </ol>
-<p>When implementing this protocol,  in that list is used to pick a servo object to apply the <a href="http://arduino.cc/en/Reference/ServoWrite">write()</a> function that takes the angle in number three as its argument. The Arduino does the rest! There is a catch though — in order for the Arduino to properly instantiate a servo object, you need to use the attach() function. Since there are minimum and maximum pulse widths (hardware limits) we care about so the pan tilt module doesn’t rip itself apart, those minimum and maximum pulse widths need to be known. I actually used the old version of my code and a couple print statements to write a diagnostic program I could use to figure out the pulse width limits. I have that attached as well as the real&nbsp;code.</p>
+<p>When implementing this protocol,  in that list is used to pick a servo object to apply the <a href="http://arduino.cc/en/Reference/ServoWrite">write()</a> function that takes the angle in number three as its argument. The Arduino does the rest! There is a catch though – in order for the Arduino to properly instantiate a servo object, you need to use the attach() function. Since there are minimum and maximum pulse widths (hardware limits) we care about so the pan tilt module doesn’t rip itself apart, those minimum and maximum pulse widths need to be known. I actually used the old version of my code and a couple print statements to write a diagnostic program I could use to figure out the pulse width limits. I have that attached as well as the real&nbsp;code.</p>
 <h2 id="the-python">The&nbsp;Python</h2>
-<p>Now not to diss <span class="caps">PHP</span> or anything (which is what I have most of my experience with at this point), but python just seems like a more grown up language. There is a lot to like about it. Every time I read or hear about something cool being done, it is almost always involves python! So far with the tutorials out there it has been awesome. The python segments here are short and not very advanced. I wrote one important function - move(). It takes an angle and a servo as arguments and — you guessed it — moves the specified servo to their specified angle. One problem though — due to me being an imperfect craftsman and not mounting the servos perfectly straight, the angular position of (90, 90) does not make the camera point straight ahead as one would expect. Therefore I wrote another simple diagnostic function to allow the interactive centering of the servos. Once I had the middle for the X and Y axis, I could use this in the move function to shift the&nbsp;centers.</p>
+<p>Now not to diss <span class="caps">PHP</span> or anything (which is what I have most of my experience with at this point), but python just seems like a more grown up language. There is a lot to like about it. Every time I read or hear about something cool being done, it is almost always involves python! So far with the tutorials out there it has been awesome. The python segments here are short and not very advanced. I wrote one important function - move(). It takes an angle and a servo as arguments and – you guessed it – moves the specified servo to their specified angle. One problem though – due to me being an imperfect craftsman and not mounting the servos perfectly straight, the angular position of (90, 90) does not make the camera point straight ahead as one would expect. Therefore I wrote another simple diagnostic function to allow the interactive centering of the servos. Once I had the middle for the X and Y axis, I could use this in the move function to shift the&nbsp;centers.</p>
 <p>Once move() was done, I wrote some test code and it worked like a champ! I then started stacking calls to move() inside of loops and I wrote some code to make the camera move in simple rectangles. Some problems then became clear: the pan tilt module either moves too slow, too fast or just spazzes out if you issue enough commands to it. Increasing the baud rate helped to speed things up, however it would still freak out if you told it to move really fast. I determined that there needs to be some delay between move() calls. Once again, I wrote some diagnostic code to determine this. The pan tilt module would move in rectangles with increasingly longer pauses between move() calls. At some critical delay value, the pan tilt module stopped jittering and moved smoothly (but still pretty fast) around the perimeter of the rectangle (turned out to be 0.003 seconds). As a final example of what the system can do, I wrote the spiral code that appears in the video above. It is only a few lines of python, but I spaced them out and commented them for ease of&nbsp;understanding:</p>
-<pre><code class="lang-python"><span class="function"><span class="keyword">def</span> <span class="title">spiral</span><span class="params">()</span>:</span>
-    a = <span class="number">.01</span>;  <span class="comment"># "stretch" factor for sin and cosine</span>
-    t = <span class="number">0</span>;    <span class="comment"># time value</span>
+<p><span class="dquo">&#8220;</span>`python
+def spiral():
+    a = .01;  # “stretch” factor for sin and cosine
+    t = 0;    # time&nbsp;value</p>
+<pre><code># time loop that stops when the stretch factor is 1
+while (a &lt; 1) :
 
-    <span class="comment"># time loop that stops when the stretch factor is 1</span>
-    <span class="keyword">while</span> (a &lt; <span class="number">1</span>) :
+    # increase the time step
+    t+=1
 
-        <span class="comment"># increase the time step</span>
-        t+=<span class="number">1</span>
+    # if 50 time steps have gone by, increment a
+    if (t % 50 == 0) : a+=.01
 
-        <span class="comment"># if 50 time steps have gone by, increment a</span>
-        <span class="keyword">if</span> (t % <span class="number">50</span> == <span class="number">0</span>) : a+=<span class="number">.01</span>
+    # move the servos to middle, plus or minus some scaled
+    # value of sin or cosine. Change &#39;a&#39; to something fixed
+    # between 0 and 1 and the spiral is now a circle
+    servo.move(1, 90 + a * math.degrees(math.cos(math.radians(t))))
+    servo.move(2, 90 + a * math.degrees(math.sin(math.radians(t))))
 
-        <span class="comment"># move the servos to middle, plus or minus some scaled</span>
-        <span class="comment"># value of sin or cosine. Change 'a' to something fixed</span>
-        <span class="comment"># between 0 and 1 and the spiral is now a circle</span>
-        servo.move(<span class="number">1</span>, <span class="number">90</span> + a * math.degrees(math.cos(math.radians(t))))
-        servo.move(<span class="number">2</span>, <span class="number">90</span> + a * math.degrees(math.sin(math.radians(t))))
-
-        <span class="comment"># delay between the move calls</span>
-        time.sleep(<span class="number">.0045</span>)
-</code></pre>
+    # delay between the move calls
+    time.sleep(.0045)
+</code></pre><p>```</p>
 <h2 id="conclusion-attachments">Conclusion <span class="amp">&amp;</span>&nbsp;Attachments</h2>
 <p>So that was it! Now I have unrestricted access to use python to do (almost) whatever I want! Looking at the python bindings for OpenCV&nbsp;next!</p>
 <ul>
@@ -109,17 +109,19 @@
     <footer>
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 text-center"><a href="https://www.facebook.com/stonelinks" target="_blank" class="social"><i class="fa fa-facebook"></i></a><a href="https://github.com/Stonelinks" target="_blank" class="social"><i class="fa fa-github"></i></a><a href="https://twitter.com/#!/Stonelinks" target="_blank" class="social"><i class="fa fa-twitter"></i></a><a href="https://plus.google.com/116178490514652721625/posts" target="_blank" class="social"><i class="fa fa-google-plus"></i></a><a href="http://www.linkedin.com/pub/lucas-doyle/25/550/169" target="_blank" class="social"><i class="fa fa-linkedin"></i></a><a href="http://www.youtube.com/user/RealStonelinks" target="_blank" class="social"><i class="fa fa-youtube"></i></a><a href="mailto:lucas.p.doyle@gmail.com?Subject=Hello" target="_top" class="footer-link">contact</a>
+          <div class="col-lg-12 text-center"><a href="https://www.facebook.com/stonelinks" target="_blank" class="social"><i class="fa fa-facebook"></i></a><a href="https://github.com/Stonelinks" target="_blank" class="social"><i class="fa fa-github"></i></a><a href="https://twitter.com/#!/Stonelinks" target="_blank" class="social"><i class="fa fa-twitter"></i></a><a href="https://plus.google.com/116178490514652721625/posts" target="_blank" class="social"><i class="fa fa-google-plus"></i></a><a href="http://www.linkedin.com/pub/lucas-doyle/25/550/169" target="_blank" class="social"><i class="fa fa-linkedin"></i></a><a href="http://www.youtube.com/user/RealStonelinks" target="_blank" class="social"><i class="fa fa-youtube"></i></a><a href="mailto:lucas.p.doyle@gmail.com?Subject=Hello" target="_top" class="footer-link">
+               
+              contact</a>
           </div>
         </div>
       </div>
     </footer><!--[if lt IE 9]>
     <script src="/vendor/html5shiv/dist/html5shiv.min.js"></script>
     <script src="/vendor/respond/dest/respond.min.js"></script><![endif]-->
-    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/jquery/jquery.js"></script>
     <script src="/vendor/underscore/underscore.js"></script>
     <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript">var BG_IMAGES = ["/img/backgrounds/06uh37r.jpg","/img/backgrounds/14206376348_fca4af4ba5_o.jpg","/img/backgrounds/1979230_10152035339809685_1025831531_o.jpg","/img/backgrounds/2000-01-01 08.30.12.jpg","/img/backgrounds/2012-12-02 00.41.05.jpg","/img/backgrounds/2012-12-06 15.09.02.jpg","/img/backgrounds/2013-05-01 08.31.27.jpg","/img/backgrounds/2013-05-18 13.07.32.jpg","/img/backgrounds/2013-09-20 05.26.41.jpg","/img/backgrounds/2013-09-20 05.30.41.jpg","/img/backgrounds/2013-11-24 18.07.08.jpg","/img/backgrounds/2013-12-20 14.27.13.jpg","/img/backgrounds/2013-12-28 19.16.24.jpg","/img/backgrounds/287299main_dextre_iss017_big_full.jpg","/img/backgrounds/34DnPmX.jpg","/img/backgrounds/5bml6q6.jpg","/img/backgrounds/7jWBoem.jpg","/img/backgrounds/A52It0Q.jpg","/img/backgrounds/Boeing_747-8_Test_Planes_in_Assembly.jpg","/img/backgrounds/CkGmW8I.png","/img/backgrounds/Dtd8OaS.jpg","/img/backgrounds/EWwV235.jpg","/img/backgrounds/Eourq.jpg","/img/backgrounds/GkWIkzl.jpg","/img/backgrounds/GpCUV.jpg","/img/backgrounds/HsiDzD2.jpg","/img/backgrounds/IMG_1142 copy-X2.jpg","/img/backgrounds/IMG_20120721_181258.jpg","/img/backgrounds/IZyTICW.jpg","/img/backgrounds/IijALtC.jpg","/img/backgrounds/J8Oqyyd.jpg","/img/backgrounds/KBMGZnm.jpg","/img/backgrounds/MbN1OhC.jpg","/img/backgrounds/ONn4OVE.jpg","/img/backgrounds/P0UhJaz.jpg","/img/backgrounds/Red, White and Enterprise-X3.jpg","/img/backgrounds/STS-134_International_Space_Station_after_undocking.jpg","/img/backgrounds/Su0YWko.jpg","/img/backgrounds/TUZyh.jpg","/img/backgrounds/TuBipfq.jpg","/img/backgrounds/Wsvb8tw.jpg","/img/backgrounds/XvkHfUA.jpg","/img/backgrounds/YseOPg6.jpg","/img/backgrounds/ZhWyntZ.jpg","/img/backgrounds/d7t5BrZ.jpg","/img/backgrounds/enukwns.jpg","/img/backgrounds/fr42b.jpg","/img/backgrounds/g8yF11T.jpg","/img/backgrounds/godD0Nj.jpg","/img/backgrounds/isu4ciW.jpg","/img/backgrounds/k9JWU9N.jpg","/img/backgrounds/kkhlkasdhjl3.png","/img/backgrounds/m1gD1NC.jpg","/img/backgrounds/m95qL89.jpg","/img/backgrounds/mooCZ.jpg","/img/backgrounds/nBEcpIY.jpg","/img/backgrounds/nLpQ2G3.jpg","/img/backgrounds/nUje1Xs.jpg","/img/backgrounds/ozjI2XF.jpg","/img/backgrounds/p0QNNrI.jpg","/img/backgrounds/raddmHE.jpg","/img/backgrounds/rhvP0wn.jpg","/img/backgrounds/s_f02_RTR3FJM0.jpg","/img/backgrounds/tmEkJ7Q.jpg","/img/backgrounds/uCr3S.jpg","/img/backgrounds/uMrsMXh.jpg","/img/backgrounds/w0Pgof8.jpg","/img/backgrounds/wallpaper-1312831.jpg","/img/backgrounds/wallpaper-1441536.jpg","/img/backgrounds/wjZsmhr.jpg","/img/backgrounds/wvgRzh6.jpg","/img/backgrounds/x2bkKQS.jpg","/img/backgrounds/xKTWtJC.jpg","/img/backgrounds/xkl9FoE.jpg","/img/backgrounds/y4WGD7I.jpg","/img/backgrounds/yrZCDd1.jpg"];
+    <script type="text/javascript">var BG_IMAGES = ["/images/backgrounds/06uh37r.jpg","/images/backgrounds/14206376348_fca4af4ba5_o.jpg","/images/backgrounds/1979230_10152035339809685_1025831531_o.jpg","/images/backgrounds/2000-01-01 08.30.12.jpg","/images/backgrounds/2012-12-02 00.41.05.jpg","/images/backgrounds/2012-12-06 15.09.02.jpg","/images/backgrounds/2013-05-01 08.31.27.jpg","/images/backgrounds/2013-05-18 13.07.32.jpg","/images/backgrounds/2013-09-20 05.26.41.jpg","/images/backgrounds/2013-09-20 05.30.41.jpg","/images/backgrounds/2013-11-24 18.07.08.jpg","/images/backgrounds/2013-12-20 14.27.13.jpg","/images/backgrounds/2013-12-28 19.16.24.jpg","/images/backgrounds/287299main_dextre_iss017_big_full.jpg","/images/backgrounds/34DnPmX.jpg","/images/backgrounds/5bml6q6.jpg","/images/backgrounds/7jWBoem.jpg","/images/backgrounds/A52It0Q.jpg","/images/backgrounds/Boeing_747-8_Test_Planes_in_Assembly.jpg","/images/backgrounds/CkGmW8I.png","/images/backgrounds/Dtd8OaS.jpg","/images/backgrounds/EWwV235.jpg","/images/backgrounds/Eourq.jpg","/images/backgrounds/GkWIkzl.jpg","/images/backgrounds/GpCUV.jpg","/images/backgrounds/HsiDzD2.jpg","/images/backgrounds/IMG_1142 copy-X2.jpg","/images/backgrounds/IMG_20120721_181258.jpg","/images/backgrounds/IZyTICW.jpg","/images/backgrounds/IijALtC.jpg","/images/backgrounds/J8Oqyyd.jpg","/images/backgrounds/KBMGZnm.jpg","/images/backgrounds/MbN1OhC.jpg","/images/backgrounds/ONn4OVE.jpg","/images/backgrounds/P0UhJaz.jpg","/images/backgrounds/Red, White and Enterprise-X3.jpg","/images/backgrounds/STS-134_International_Space_Station_after_undocking.jpg","/images/backgrounds/Su0YWko.jpg","/images/backgrounds/TUZyh.jpg","/images/backgrounds/TuBipfq.jpg","/images/backgrounds/Wsvb8tw.jpg","/images/backgrounds/XvkHfUA.jpg","/images/backgrounds/YseOPg6.jpg","/images/backgrounds/ZhWyntZ.jpg","/images/backgrounds/d7t5BrZ.jpg","/images/backgrounds/enukwns.jpg","/images/backgrounds/fr42b.jpg","/images/backgrounds/g8yF11T.jpg","/images/backgrounds/godD0Nj.jpg","/images/backgrounds/isu4ciW.jpg","/images/backgrounds/k9JWU9N.jpg","/images/backgrounds/kkhlkasdhjl3.png","/images/backgrounds/m1gD1NC.jpg","/images/backgrounds/m95qL89.jpg","/images/backgrounds/mooCZ.jpg","/images/backgrounds/nBEcpIY.jpg","/images/backgrounds/nLpQ2G3.jpg","/images/backgrounds/nUje1Xs.jpg","/images/backgrounds/ozjI2XF.jpg","/images/backgrounds/p0QNNrI.jpg","/images/backgrounds/raddmHE.jpg","/images/backgrounds/rhvP0wn.jpg","/images/backgrounds/s_f02_RTR3FJM0.jpg","/images/backgrounds/tmEkJ7Q.jpg","/images/backgrounds/uCr3S.jpg","/images/backgrounds/uMrsMXh.jpg","/images/backgrounds/w0Pgof8.jpg","/images/backgrounds/wallpaper-1312831.jpg","/images/backgrounds/wallpaper-1441536.jpg","/images/backgrounds/wjZsmhr.jpg","/images/backgrounds/wvgRzh6.jpg","/images/backgrounds/x2bkKQS.jpg","/images/backgrounds/xKTWtJC.jpg","/images/backgrounds/xkl9FoE.jpg","/images/backgrounds/y4WGD7I.jpg","/images/backgrounds/yrZCDd1.jpg"];
       var BASENAME = 'posts/a-more-accurate-coordinate-system/index';
        
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

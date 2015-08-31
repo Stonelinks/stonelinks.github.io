@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width">
     <title>Quickstart - Stoolbotics - Stonelinks
     </title>
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400italic,400,700">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/style/main.css">
   </head>
   <body>
-    <div class="landing"><a href="/" class="brand"><img src="/img/logos/big-logo.png">Stonelinks</a>
+    <div class="landing"><a href="/" class="brand"><img src="/images/logos/big-logo.png">Stonelinks</a>
       <div class="tagline-bar">Lucas Doyle's website
       </div>
     </div>
     <div role="navigation" class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><img src="/img/logos/big-logo.png">Stonelinks</a>
+          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><img src="/images/logos/big-logo.png">Stonelinks</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -50,35 +50,30 @@
 <p>When you fire up the simulator for the first time, you should see something like what is shown&nbsp;below.</p>
 <div class="media-container">
 
-<img src="/img/projects/stoolbotics/1.png">
+<img src="/images/projects/stoolbotics/1.png">
 
 </div>
 
 <p>You’ll notice a robot is loaded into the simulator to start with. This simple three joint arm is called the Phantom Omni, and is defined by the <code>omni.json</code> file in the <code>robots</code> directory. All robot files that the simulator uses are described in such <code>robot.json</code> files in the <code>robots</code> directory. They are simple and easy to understand. Below we have reproduced <code>omni.json</code> as it is first loaded into the&nbsp;simulator:</p>
-<pre><code class="lang-javascript"><span class="string">"N"</span> : <span class="string">"3"</span>,
-
-<span class="string">"h1"</span> : <span class="string">"z"</span>,
-<span class="string">"h2"</span> : <span class="string">"x"</span>,
-<span class="string">"h3"</span> : <span class="string">"x"</span>,
-
-<span class="string">"q1"</span> : <span class="string">".1*t"</span>,
-<span class="string">"q2"</span> : <span class="string">".1*cos(t)"</span>,
-<span class="string">"q3"</span> : <span class="string">".001*t + .2*sin(t)"</span>,
-
-<span class="string">"l1"</span> : <span class="string">"40"</span>,
-<span class="string">"l2"</span> : <span class="string">"50"</span>,
-<span class="string">"l3"</span> : <span class="string">"50"</span>,
-
-<span class="string">"P01"</span> : <span class="string">"[0, 0, 0]"</span>,
-<span class="string">"P12"</span> : <span class="string">"[0, 0, l1]"</span>,
-<span class="string">"P23"</span> : <span class="string">"[0, l2, 0]"</span>,
-<span class="string">"<span class="caps">P3T</span>"</span> : <span class="string">"[0, l3, 0]"</span>,
-
-<span class="string">"R01"</span> : <span class="string">"rot(h1, q1)"</span>,
-<span class="string">"R12"</span> : <span class="string">"rot(h2, q2)"</span>,
-<span class="string">"R23"</span> : <span class="string">"rot(h3, q3)"</span>,
-<span class="string">"<span class="caps">R3T</span>"</span> : <span class="string">"eye(3, 3)"</span>
-</code></pre>
+<p>```javascript
+“N” :&nbsp;“3”,</p>
+<p>“h1” : “z”,
+“h2” : “x”,
+“h3” :&nbsp;“x”,</p>
+<p>“q1” : “.1<em>t”,
+“q2” : “.1</em>cos(t)”,
+“q3” : “.001<em>t + .2</em>sin(t)”,</p>
+<p>“l1” : “40”,
+“l2” : “50”,
+“l3” :&nbsp;“50”,</p>
+<p>“P01” : “[0, 0, 0]”,
+“P12” : “[0, 0, l1]”,
+“P23” : “[0, l2, 0]”,
+“<span class="caps">P3T</span>” : “[0, l3,&nbsp;0]”,</p>
+<p>“R01” : “rot(h1, q1)”,
+“R12” : “rot(h2, q2)”,
+“R23” : “rot(h3, q3)”,
+“<span class="caps">R3T</span>” : “eye(3, 3)”&nbsp;```</p>
 <p>Let&#8217;s look at this file line by line to see how it makes a complete robot&nbsp;object:</p>
 <ul>
 <li><code>N</code> is first declared to tell the simulator the number of joints to expect in this&nbsp;robot.</li>
@@ -91,35 +86,35 @@
 <p>All these variables can be changed once the simulator has started using the <code>set</code> command. There are many more commands available to you in the simulator that can be accessed through the command line. To see a list of them, just type <code>help</code> into the console and you should see a list like what&#8217;s below. To view help about a specific command, just type <code>help &lt;command&gt;</code>. A table showing what all the commands are, their syntax, and what they do is also included later on in this&nbsp;documentation.</p>
 <div class="media-container">
 
-<img src="/img/projects/stoolbotics/3.png">
+<img src="/images/projects/stoolbotics/3.png">
 
 </div>
 
 <p>In the above case, we looked at the help for the <code>axis</code> command. Let&#8217;s see what it actually&nbsp;does:</p>
 <div class="media-container">
 
-<img src="/img/projects/stoolbotics/4.png">
+<img src="/images/projects/stoolbotics/4.png">
 
 </div>
 
 <p>It is clear then that the axis command can be used to turn on and off the the axis for each intermediary joint coordinate frame. There are many other commands that can be used to manipulate the cosmetics of the simulation environment. These are all covered later in an example section on manipulating the environment. For now though, let&#8217;s check out another command, the <code>play</code> command. A simulator is pretty useless unless it can actually simulate things. The <code>play</code> command starts the&nbsp;simulation:</p>
 <div class="media-container">
 
-<img src="/img/projects/stoolbotics/5.png">
+<img src="/images/projects/stoolbotics/5.png">
 
 </div>
 
 <p>To stop the simulator, just type <code>stop</code>. All the variables we set earlier are still modifiable during the runtime. To set these, we use the <code>set</code> command. For example, let&#8217;s set q3 to cos(t) by typing <code>set q3 cos(t)</code> into the command&nbsp;prompt:</p>
 <div class="media-container">
 
-<img src="/img/projects/stoolbotics/6.png">
+<img src="/images/projects/stoolbotics/6.png">
 
 </div>
 
 <p>Though you can’t see it in a static picture, that joint is now moving pretty fast. Let&#8217;s use the <code>set</code> command again to slow it down. Type <code>set tscale .05</code> command and notice that it now goes slower. The value of an appropriate timescale may vary depending on how fast your computer is. <code>skew</code> mode can be enabled to rapidly adjust timescale as well as other parameters. For now though, just use <code>set</code>: </p>
 <div class="media-container">
 
-<img src="/img/projects/stoolbotics/7.png">
+<img src="/images/projects/stoolbotics/7.png">
 
 </div>
 
@@ -132,17 +127,19 @@
     <footer>
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 text-center"><a href="https://www.facebook.com/stonelinks" target="_blank" class="social"><i class="fa fa-facebook"></i></a><a href="https://github.com/Stonelinks" target="_blank" class="social"><i class="fa fa-github"></i></a><a href="https://twitter.com/#!/Stonelinks" target="_blank" class="social"><i class="fa fa-twitter"></i></a><a href="https://plus.google.com/116178490514652721625/posts" target="_blank" class="social"><i class="fa fa-google-plus"></i></a><a href="http://www.linkedin.com/pub/lucas-doyle/25/550/169" target="_blank" class="social"><i class="fa fa-linkedin"></i></a><a href="http://www.youtube.com/user/RealStonelinks" target="_blank" class="social"><i class="fa fa-youtube"></i></a><a href="mailto:lucas.p.doyle@gmail.com?Subject=Hello" target="_top" class="footer-link">contact</a>
+          <div class="col-lg-12 text-center"><a href="https://www.facebook.com/stonelinks" target="_blank" class="social"><i class="fa fa-facebook"></i></a><a href="https://github.com/Stonelinks" target="_blank" class="social"><i class="fa fa-github"></i></a><a href="https://twitter.com/#!/Stonelinks" target="_blank" class="social"><i class="fa fa-twitter"></i></a><a href="https://plus.google.com/116178490514652721625/posts" target="_blank" class="social"><i class="fa fa-google-plus"></i></a><a href="http://www.linkedin.com/pub/lucas-doyle/25/550/169" target="_blank" class="social"><i class="fa fa-linkedin"></i></a><a href="http://www.youtube.com/user/RealStonelinks" target="_blank" class="social"><i class="fa fa-youtube"></i></a><a href="mailto:lucas.p.doyle@gmail.com?Subject=Hello" target="_top" class="footer-link">
+               
+              contact</a>
           </div>
         </div>
       </div>
     </footer><!--[if lt IE 9]>
     <script src="/vendor/html5shiv/dist/html5shiv.min.js"></script>
     <script src="/vendor/respond/dest/respond.min.js"></script><![endif]-->
-    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/jquery/jquery.js"></script>
     <script src="/vendor/underscore/underscore.js"></script>
     <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript">var BG_IMAGES = ["/img/backgrounds/06uh37r.jpg","/img/backgrounds/14206376348_fca4af4ba5_o.jpg","/img/backgrounds/1979230_10152035339809685_1025831531_o.jpg","/img/backgrounds/2000-01-01 08.30.12.jpg","/img/backgrounds/2012-12-02 00.41.05.jpg","/img/backgrounds/2012-12-06 15.09.02.jpg","/img/backgrounds/2013-05-01 08.31.27.jpg","/img/backgrounds/2013-05-18 13.07.32.jpg","/img/backgrounds/2013-09-20 05.26.41.jpg","/img/backgrounds/2013-09-20 05.30.41.jpg","/img/backgrounds/2013-11-24 18.07.08.jpg","/img/backgrounds/2013-12-20 14.27.13.jpg","/img/backgrounds/2013-12-28 19.16.24.jpg","/img/backgrounds/287299main_dextre_iss017_big_full.jpg","/img/backgrounds/34DnPmX.jpg","/img/backgrounds/5bml6q6.jpg","/img/backgrounds/7jWBoem.jpg","/img/backgrounds/A52It0Q.jpg","/img/backgrounds/Boeing_747-8_Test_Planes_in_Assembly.jpg","/img/backgrounds/CkGmW8I.png","/img/backgrounds/Dtd8OaS.jpg","/img/backgrounds/EWwV235.jpg","/img/backgrounds/Eourq.jpg","/img/backgrounds/GkWIkzl.jpg","/img/backgrounds/GpCUV.jpg","/img/backgrounds/HsiDzD2.jpg","/img/backgrounds/IMG_1142 copy-X2.jpg","/img/backgrounds/IMG_20120721_181258.jpg","/img/backgrounds/IZyTICW.jpg","/img/backgrounds/IijALtC.jpg","/img/backgrounds/J8Oqyyd.jpg","/img/backgrounds/KBMGZnm.jpg","/img/backgrounds/MbN1OhC.jpg","/img/backgrounds/ONn4OVE.jpg","/img/backgrounds/P0UhJaz.jpg","/img/backgrounds/Red, White and Enterprise-X3.jpg","/img/backgrounds/STS-134_International_Space_Station_after_undocking.jpg","/img/backgrounds/Su0YWko.jpg","/img/backgrounds/TUZyh.jpg","/img/backgrounds/TuBipfq.jpg","/img/backgrounds/Wsvb8tw.jpg","/img/backgrounds/XvkHfUA.jpg","/img/backgrounds/YseOPg6.jpg","/img/backgrounds/ZhWyntZ.jpg","/img/backgrounds/d7t5BrZ.jpg","/img/backgrounds/enukwns.jpg","/img/backgrounds/fr42b.jpg","/img/backgrounds/g8yF11T.jpg","/img/backgrounds/godD0Nj.jpg","/img/backgrounds/isu4ciW.jpg","/img/backgrounds/k9JWU9N.jpg","/img/backgrounds/kkhlkasdhjl3.png","/img/backgrounds/m1gD1NC.jpg","/img/backgrounds/m95qL89.jpg","/img/backgrounds/mooCZ.jpg","/img/backgrounds/nBEcpIY.jpg","/img/backgrounds/nLpQ2G3.jpg","/img/backgrounds/nUje1Xs.jpg","/img/backgrounds/ozjI2XF.jpg","/img/backgrounds/p0QNNrI.jpg","/img/backgrounds/raddmHE.jpg","/img/backgrounds/rhvP0wn.jpg","/img/backgrounds/s_f02_RTR3FJM0.jpg","/img/backgrounds/tmEkJ7Q.jpg","/img/backgrounds/uCr3S.jpg","/img/backgrounds/uMrsMXh.jpg","/img/backgrounds/w0Pgof8.jpg","/img/backgrounds/wallpaper-1312831.jpg","/img/backgrounds/wallpaper-1441536.jpg","/img/backgrounds/wjZsmhr.jpg","/img/backgrounds/wvgRzh6.jpg","/img/backgrounds/x2bkKQS.jpg","/img/backgrounds/xKTWtJC.jpg","/img/backgrounds/xkl9FoE.jpg","/img/backgrounds/y4WGD7I.jpg","/img/backgrounds/yrZCDd1.jpg"];
+    <script type="text/javascript">var BG_IMAGES = ["/images/backgrounds/06uh37r.jpg","/images/backgrounds/14206376348_fca4af4ba5_o.jpg","/images/backgrounds/1979230_10152035339809685_1025831531_o.jpg","/images/backgrounds/2000-01-01 08.30.12.jpg","/images/backgrounds/2012-12-02 00.41.05.jpg","/images/backgrounds/2012-12-06 15.09.02.jpg","/images/backgrounds/2013-05-01 08.31.27.jpg","/images/backgrounds/2013-05-18 13.07.32.jpg","/images/backgrounds/2013-09-20 05.26.41.jpg","/images/backgrounds/2013-09-20 05.30.41.jpg","/images/backgrounds/2013-11-24 18.07.08.jpg","/images/backgrounds/2013-12-20 14.27.13.jpg","/images/backgrounds/2013-12-28 19.16.24.jpg","/images/backgrounds/287299main_dextre_iss017_big_full.jpg","/images/backgrounds/34DnPmX.jpg","/images/backgrounds/5bml6q6.jpg","/images/backgrounds/7jWBoem.jpg","/images/backgrounds/A52It0Q.jpg","/images/backgrounds/Boeing_747-8_Test_Planes_in_Assembly.jpg","/images/backgrounds/CkGmW8I.png","/images/backgrounds/Dtd8OaS.jpg","/images/backgrounds/EWwV235.jpg","/images/backgrounds/Eourq.jpg","/images/backgrounds/GkWIkzl.jpg","/images/backgrounds/GpCUV.jpg","/images/backgrounds/HsiDzD2.jpg","/images/backgrounds/IMG_1142 copy-X2.jpg","/images/backgrounds/IMG_20120721_181258.jpg","/images/backgrounds/IZyTICW.jpg","/images/backgrounds/IijALtC.jpg","/images/backgrounds/J8Oqyyd.jpg","/images/backgrounds/KBMGZnm.jpg","/images/backgrounds/MbN1OhC.jpg","/images/backgrounds/ONn4OVE.jpg","/images/backgrounds/P0UhJaz.jpg","/images/backgrounds/Red, White and Enterprise-X3.jpg","/images/backgrounds/STS-134_International_Space_Station_after_undocking.jpg","/images/backgrounds/Su0YWko.jpg","/images/backgrounds/TUZyh.jpg","/images/backgrounds/TuBipfq.jpg","/images/backgrounds/Wsvb8tw.jpg","/images/backgrounds/XvkHfUA.jpg","/images/backgrounds/YseOPg6.jpg","/images/backgrounds/ZhWyntZ.jpg","/images/backgrounds/d7t5BrZ.jpg","/images/backgrounds/enukwns.jpg","/images/backgrounds/fr42b.jpg","/images/backgrounds/g8yF11T.jpg","/images/backgrounds/godD0Nj.jpg","/images/backgrounds/isu4ciW.jpg","/images/backgrounds/k9JWU9N.jpg","/images/backgrounds/kkhlkasdhjl3.png","/images/backgrounds/m1gD1NC.jpg","/images/backgrounds/m95qL89.jpg","/images/backgrounds/mooCZ.jpg","/images/backgrounds/nBEcpIY.jpg","/images/backgrounds/nLpQ2G3.jpg","/images/backgrounds/nUje1Xs.jpg","/images/backgrounds/ozjI2XF.jpg","/images/backgrounds/p0QNNrI.jpg","/images/backgrounds/raddmHE.jpg","/images/backgrounds/rhvP0wn.jpg","/images/backgrounds/s_f02_RTR3FJM0.jpg","/images/backgrounds/tmEkJ7Q.jpg","/images/backgrounds/uCr3S.jpg","/images/backgrounds/uMrsMXh.jpg","/images/backgrounds/w0Pgof8.jpg","/images/backgrounds/wallpaper-1312831.jpg","/images/backgrounds/wallpaper-1441536.jpg","/images/backgrounds/wjZsmhr.jpg","/images/backgrounds/wvgRzh6.jpg","/images/backgrounds/x2bkKQS.jpg","/images/backgrounds/xKTWtJC.jpg","/images/backgrounds/xkl9FoE.jpg","/images/backgrounds/y4WGD7I.jpg","/images/backgrounds/yrZCDd1.jpg"];
       var BASENAME = 'projects/stoolbotics/quickstart';
        
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
