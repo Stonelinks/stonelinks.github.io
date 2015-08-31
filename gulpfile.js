@@ -3,15 +3,13 @@
  */
 
 var gulp = require('gulp');
-var package = require('./package.json');
 var webserver = require('gulp-webserver');
 var clean = require('gulp-clean');
 var less = require('gulp-less');
-var source = require('vinyl-source-stream');
 var wintersmith = require('wintersmith')('./config.json');
 
 var path = {
-    pages: [
+    site: [
         './contents/*.{md,json}',
         './contents/posts/**/*',
         './contents/projects/**/*'

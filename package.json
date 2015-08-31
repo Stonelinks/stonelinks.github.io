@@ -48,7 +48,6 @@
     "vinyl-buffer": "1.0.0",
     "vinyl-source-stream": "1.0.0",
     "wintersmith": "2.2.1",
-    "wintersmith-livereload": "0.1.1",
     "wintersmith-tag": "1.0.2"
   },
   "licenses": [
