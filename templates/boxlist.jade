@@ -14,4 +14,4 @@ block append content
             else if thing.youtube
               iframe(src=thing.youtube, frameborder="0", allowfullscreen)
           .external-links
-            | !{ typogr(markdown.markdown.toHTML(thing.desc)).typogrify() }
+            | !{ marked(thing.desc) }

@@ -4,13 +4,11 @@
 
 var gulp = require('gulp');
 var package = require('./package.json');
-var tap = require('gulp-tap');
 var webserver = require('gulp-webserver');
 var clean = require('gulp-clean');
 var less = require('gulp-less');
-var buffer = require('vinyl-buffer');
 var source = require('vinyl-source-stream');
-var runWintersmith = require('run-wintersmith');
+var wintersmith = require('wintersmith')('./config.json');
 
 var path = {
     pages: [
@@ -40,7 +38,7 @@ gulp.task('vendor', function () {
 });
 
 gulp.task('site', function (done) {
-    runWintersmith.build(done);
+    wintersmith.build(done);
 });
 
 gulp.task('style', function () {
@@ -69,9 +67,9 @@ gulp.task('clean', function () {
 gulp.task('build', ['js', 'style', 'site', 'images', 'vendor']);
 
 gulp.task('watch', ['build'], function () {
+    gulp.watch(path.site, ['site']);
     gulp.watch(path.js, ['js']);
     gulp.watch(path.style, ['style']);
-    gulp.watch(path.tmpl, ['js']);
     gulp.watch(path.images, ['images']);
     gulp.watch(path.vendor, ['vendor']);
 });
