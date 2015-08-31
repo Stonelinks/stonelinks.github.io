@@ -63,7 +63,7 @@ gulp.task('webserver', function () {
         .pipe(webserver({
             host: '0.0.0.0',
             livereload: true,
-            path: 'build'
+            path: './build'
         }));
 });
 
@@ -82,14 +82,16 @@ gulp.task('watch', ['build'], function () {
     gulp.watch(path.vendor, ['vendor']);
 });
 
-gulp.task('gh-pages', function() {
-    return gulp.src('build/**/*')
-        .pipe(ghPages({
-            branch: 'master'
-        }));
+gulp.task('gh-pages', function () {
+    return gulp.src([
+        './build/**/*',
+        './build/.nojekyll'
+    ]).pipe(ghPages({
+        branch: 'master'
+    }));
 });
 
-gulp.task('rsync', function() {
+gulp.task('rsync', function () {
     return gulp.src('build')
         .pipe(rsync({
             root: 'build',
