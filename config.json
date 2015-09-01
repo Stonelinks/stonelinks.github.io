@@ -40,17 +40,16 @@
   
   "plugins": [
     "./plugins/paginator.coffee",
-    "wintersmith-livereload",
     "wintersmith-tag"
   ],
   
   "require": {
     "moment": "moment",
     "_": "underscore",
-    "typogr": "typogr",
-    "grunt": "grunt",
+    "expand": "glob-expand",
     "marked": "marked",
-    "slug": "slug"
+    "slug": "slug",
+    "typogr": "typogr"
   },
   
   "jade": {

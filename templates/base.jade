@@ -27,7 +27,7 @@ html(lang='en')
       script(src='/vendor/underscore/underscore.js')
       script(src='/vendor/bootstrap/dist/js/bootstrap.min.js')
       script(type='text/javascript')
-        - var images = _.map(grunt.file.expand('./contents/images/backgrounds/*.{png,jpg,JPG}'), function(i) {
+        - var images = expand('./contents/images/backgrounds/*.{png,jpg,JPG}').map(function(i) {
         -   return i.replace('./contents', '');
         - });
         | var BG_IMAGES = ["!{images.join('","')}"];

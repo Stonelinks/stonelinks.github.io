@@ -17,39 +17,21 @@
   "engines": {
     "node": ">=0.8"
   },
-  "devDependencies": {
-    "grunt": "0.4.5",
-    "grunt-concurrent": "0.5.0",
-    "grunt-contrib-clean": "0.5.0",
-    "grunt-contrib-connect": "0.8.0",
-    "grunt-contrib-copy": "0.5.0",
-    "grunt-contrib-less": "0.11.0",
-    "grunt-contrib-watch": "0.6.1",
-    "grunt-gh-pages": "0.9.1",
-    "grunt-link-checker": "0.0.5",
-    "grunt-throttle": "0.2.1",
-    "grunt-wintersmith": "0.0.2",
+  "dependencies": {
+    "glob-expand": "0.1.0",
     "gulp": "3.9.0",
     "gulp-clean": "0.3.1",
     "gulp-gh-pages": "0.5.2",
     "gulp-less": "3.0.3",
-    "gulp-rename": "1.2.0",
     "gulp-rsync": "0.0.5",
     "gulp-sequence": "0.4.1",
     "gulp-sourcemaps": "1.5.2",
-    "gulp-tap": "0.1.3",
-    "gulp-uglify": "1.1.0",
     "gulp-webserver": "0.9.0",
-    "handlebars": "2.0.0",
-    "load-grunt-tasks": "0.4.0",
-    "markdown": "0.5.0",
     "marked": "0.3.5",
     "moment": "2.5.0",
-    "time-grunt": "0.3.1",
-    "typogr": "0.5.0",
+    "slug": "0.5.0",
+    "typogr": "0.6.5",
     "underscore": "1.4.1",
-    "vinyl-buffer": "1.0.0",
-    "vinyl-source-stream": "1.0.0",
     "wintersmith": "2.2.1",
     "wintersmith-tag": "1.0.2"
   },
@@ -59,9 +41,5 @@
       "url": "https://github.com/stonelinks/stonelinks-github-io/blob/master/LICENSE-MIT"
     }
   ],
-  "keywords": [],
-  "dependencies": {
-    "slug": "0.5.0",
-    "grunt-rsync": "0.6.2"
-  }
+  "keywords": []
 }
