@@ -60,8 +60,8 @@ block body
 
 block append js
   if page && page.metadata && page.metadata.gallery
-    script(src='/vendor/blueimp-gallery/js/jquery.blueimp-gallery.min.js')
-    script(src='/vendor/blueimp-bootstrap-image-gallery/js/bootstrap-image-gallery.min.js')
+    script(src='/node_modules/blueimp-gallery/js/jquery.blueimp-gallery.min.js')
+    script(src='/node_modules/blueimp-bootstrap-image-gallery/js/bootstrap-image-gallery.min.js')
     script(type='text/javascript')
       | var GALLERY = {
       |   anchor: "!{ page.metadata.gallery.anchor }",

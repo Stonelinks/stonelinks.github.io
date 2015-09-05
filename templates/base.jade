@@ -18,14 +18,9 @@ html(lang='en')
   body
     block body
     block js
-      | <!--[if lt IE 9]>
-      script(src='/vendor/html5shiv/dist/html5shiv.min.js')
-      script(src='/vendor/respond/dest/respond.min.js')
-      | <![endif]-->
-
-      script(src='/vendor/jquery/jquery.js')
-      script(src='/vendor/underscore/underscore.js')
-      script(src='/vendor/bootstrap/dist/js/bootstrap.min.js')
+      script(src='/node_modules/jquery/dist/jquery.js')
+      script(src='/node_modules/underscore/underscore.js')
+      script(src='/node_modules/bootstrap/dist/js/bootstrap.min.js')
       script(type='text/javascript')
         - var images = expand('./contents/images/backgrounds/*.{png,jpg,JPG}').map(function(i) {
         -   return i.replace('./contents', '');
