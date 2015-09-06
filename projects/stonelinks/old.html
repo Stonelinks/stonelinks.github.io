@@ -12,14 +12,14 @@
     <link rel="stylesheet" href="/style/main.css">
   </head>
   <body>
-    <div class="landing"><a href="/" class="brand"><img src="/images/logos/big-logo.png">Stonelinks</a>
+    <div class="landing"><a href="/" class="brand"><img src="/images/logos/logo-512.png">Stonelinks</a>
       <div class="tagline-bar">Lucas Doyle's website
       </div>
     </div>
     <div role="navigation" class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><img src="/images/logos/big-logo.png">Stonelinks</a>
+          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><img src="/images/logos/logo-512.png">Stonelinks</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -53,7 +53,7 @@
 <h2 id="design">Design</h2>
 <p>My design goals for this was to have something that, from an authors perspective, was dead simple to use. Basically all I wanted authors to do is create a single <a href="http://daringfireball.net/projects/markdown/">markdown</a> file with just the body of a page and have it automatically add the rest of the website around it. This means things like contextual sidebars, navigation, comments, links,&nbsp;etc.</p>
 <p>In keeping with the goal of trying to keep this as simple as possible, this meant no server side scripting lanugages or databases. I tried to only add complexity as I need it. Therefore, all the content of this website is static <span class="caps">HTML</span> that was automatically&nbsp;generated.</p>
-<p>In hindsight, static <span class="caps">HTML</span> generators like this have been done a zillion times before. Hyde and Firmant come to mind. But as with a lot of things, its feels nice to make a tool yourself and use it for yourself. Things like this also help you appreciate the work and expertise that others have done. Too many times I have heard programmers say things like “django sucks!”. If django sucks so much, try to write something that does what django does (or better yet, submit a patch or something), then we’ll talk! <strong>tl;dr</strong>: <a href="http://en.wikipedia.org/wiki/Eating_your_own_dog_food">eat your own dog food</a>.</p>
+<p>In hindsight, static <span class="caps">HTML</span> generators like this have been done a zillion times before. Hyde and Firmant come to mind. But as with a lot of things, its feels nice to make a tool yourself and use it for yourself. Things like this also help you appreciate the work and expertise that others have done. Too many times I have heard programmers say things like “django sucks!”. If django sucks so much, try to write something that does what django does (or better yet, submit a patch or something), then we’ll talk! <strong>tl;dr</strong>: <a href="http://en.wikipedia.org/wiki/Eating_your_own_dog_food">eat your own dog&nbsp;food</a>.</p>
 <h2 id="features">Features</h2>
 <ul>
 <li>Page hierarchy<ul>
@@ -89,18 +89,18 @@
 <li>Support for a blog:<ul>
 <li>Sort entries based on&nbsp;date</li>
 <li>Indexes are paginated listings of posts (like you would expect on a&nbsp;blog)</li>
-<li>Automatic full&nbsp;archives</li>
+<li>Automatic full archives</li>
 </ul>
 </li>
 <li>Write all content in&nbsp;markdown</li>
-<li>Comments via&nbsp;disqus</li>
-<li>Page&nbsp;minification</li>
+<li>Comments via disqus</li>
+<li>Page minification</li>
 </ul>
 </li>
 </ul>
 <h2 id="code">Code</h2>
 <p>Check out the source code on <a href="https://github.com/Stonelinks/stonelinks.org">github</a></p>
-<h2 id="how-to-use">How to&nbsp;use</h2>
+<h2 id="how-to-use">How to use</h2>
 <p>The general process of how to use the Stonelinks web framework is pretty&nbsp;simple:</p>
 <ul>
 <li>Pull down the git&nbsp;repository</li>
@@ -110,19 +110,19 @@
 <li>Modify the makefile to deploy to your web server of&nbsp;choice</li>
 <li>Run <code>make site</code></li>
 </ul>
-<h2 id="how-it-works">How it&nbsp;works</h2>
+<h2 id="how-it-works">How it works</h2>
 <p>First, a website object from <code>objects.py</code> is created. It crawls the source directory (in this case it is <code>content</code>) and constructs a tree out of the filenames and directory names contained inside. In the tree, each node is actually a page object. At first glance, this makes no sense because it means directories are actually being picked up as files representing web pages. However, as we will soon see, if an <code>index.md</code> file is not present under a directory, the parent directory page object will yeild an automatically generated index similar to what apache and other webservers&nbsp;do.</p>
 <h3 id="traversal">Traversal</h3>
 <p>Once a tree has been made, whenever an operation needs to be conducted on a page by page basis (like say, generating the html for sidebar navigation on each page), there exists a utility function inside the website object called <code>traverse</code> that will visit every page in the tree breadth-first style. <code>traverse</code> accepts a functional argument that it will in turn call on every page it visits as it traverses through the&nbsp;tree.</p>
 <p>In addition to automatically generating sidebars on each page, a few other things are done using this <code>traverse</code> technique:</p>
 <ul>
-<li>Site&nbsp;map</li>
-<li>Automatic&nbsp;indexes</li>
-<li>Site&nbsp;compilation</li>
+<li>Site map</li>
+<li>Automatic indexes</li>
+<li>Site compilation</li>
 </ul>
 <h3 id="page-and-site-compilation">Page and site&nbsp;compilation</h3>
 <p>To compile a single page, take a look at <code>pages.py</code>. To see how the whole site is compiled, take a look at <code>gen_pages</code> in <code>objects.py</code>.</p>
-<h3 id="automatic-indexes">Automatic&nbsp;indexes</h3>
+<h3 id="automatic-indexes">Automatic indexes</h3>
 <p>Lets consider a website with the following&nbsp;structure:</p>
 <ul>
 <li><code>root</code> (folder)<ul>
@@ -153,13 +153,11 @@
           </div>
         </div>
       </div>
-    </footer><!--[if lt IE 9]>
-    <script src="/vendor/html5shiv/dist/html5shiv.min.js"></script>
-    <script src="/vendor/respond/dest/respond.min.js"></script><![endif]-->
-    <script src="/vendor/jquery/jquery.js"></script>
-    <script src="/vendor/underscore/underscore.js"></script>
-    <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript">var BG_IMAGES = ["/images/backgrounds/06uh37r.jpg","/images/backgrounds/14206376348_fca4af4ba5_o.jpg","/images/backgrounds/1979230_10152035339809685_1025831531_o.jpg","/images/backgrounds/2000-01-01 08.30.12.jpg","/images/backgrounds/2012-12-02 00.41.05.jpg","/images/backgrounds/2012-12-06 15.09.02.jpg","/images/backgrounds/2013-05-01 08.31.27.jpg","/images/backgrounds/2013-05-18 13.07.32.jpg","/images/backgrounds/2013-09-20 05.26.41.jpg","/images/backgrounds/2013-09-20 05.30.41.jpg","/images/backgrounds/2013-11-24 18.07.08.jpg","/images/backgrounds/2013-12-20 14.27.13.jpg","/images/backgrounds/2013-12-28 19.16.24.jpg","/images/backgrounds/287299main_dextre_iss017_big_full.jpg","/images/backgrounds/34DnPmX.jpg","/images/backgrounds/5bml6q6.jpg","/images/backgrounds/A52It0Q.jpg","/images/backgrounds/Boeing_747-8_Test_Planes_in_Assembly.jpg","/images/backgrounds/CkGmW8I.png","/images/backgrounds/Dtd8OaS.jpg","/images/backgrounds/EWwV235.jpg","/images/backgrounds/Eourq.jpg","/images/backgrounds/GkWIkzl.jpg","/images/backgrounds/GpCUV.jpg","/images/backgrounds/HsiDzD2.jpg","/images/backgrounds/IMG_1142 copy-X2.jpg","/images/backgrounds/IMG_20120721_181258.jpg","/images/backgrounds/IZyTICW.jpg","/images/backgrounds/IijALtC.jpg","/images/backgrounds/J8Oqyyd.jpg","/images/backgrounds/KBMGZnm.jpg","/images/backgrounds/MbN1OhC.jpg","/images/backgrounds/ONn4OVE.jpg","/images/backgrounds/P0UhJaz.jpg","/images/backgrounds/Red, White and Enterprise-X3.jpg","/images/backgrounds/STS-134_International_Space_Station_after_undocking.jpg","/images/backgrounds/Su0YWko.jpg","/images/backgrounds/TUZyh.jpg","/images/backgrounds/TuBipfq.jpg","/images/backgrounds/Wsvb8tw.jpg","/images/backgrounds/XvkHfUA.jpg","/images/backgrounds/YseOPg6.jpg","/images/backgrounds/ZhWyntZ.jpg","/images/backgrounds/d7t5BrZ.jpg","/images/backgrounds/enukwns.jpg","/images/backgrounds/fr42b.jpg","/images/backgrounds/g8yF11T.jpg","/images/backgrounds/godD0Nj.jpg","/images/backgrounds/isu4ciW.jpg","/images/backgrounds/k9JWU9N.jpg","/images/backgrounds/kkhlkasdhjl3.png","/images/backgrounds/m1gD1NC.jpg","/images/backgrounds/m95qL89.jpg","/images/backgrounds/mooCZ.jpg","/images/backgrounds/nBEcpIY.jpg","/images/backgrounds/nLpQ2G3.jpg","/images/backgrounds/nUje1Xs.jpg","/images/backgrounds/ozjI2XF.jpg","/images/backgrounds/p0QNNrI.jpg","/images/backgrounds/raddmHE.jpg","/images/backgrounds/rhvP0wn.jpg","/images/backgrounds/s_f02_RTR3FJM0.jpg","/images/backgrounds/tmEkJ7Q.jpg","/images/backgrounds/uCr3S.jpg","/images/backgrounds/uMrsMXh.jpg","/images/backgrounds/w0Pgof8.jpg","/images/backgrounds/wallpaper-1312831.jpg","/images/backgrounds/wallpaper-1441536.jpg","/images/backgrounds/wjZsmhr.jpg","/images/backgrounds/wvgRzh6.jpg","/images/backgrounds/x2bkKQS.jpg","/images/backgrounds/xKTWtJC.jpg","/images/backgrounds/xkl9FoE.jpg","/images/backgrounds/y4WGD7I.jpg","/images/backgrounds/yrZCDd1.jpg"];
+    </footer>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/underscore/underscore.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript">var BG_IMAGES = ["/images/backgrounds/06uh37r.jpg","/images/backgrounds/14206376348_fca4af4ba5_o.jpg","/images/backgrounds/1979230_10152035339809685_1025831531_o.jpg","/images/backgrounds/2000-01-01 08.30.12.jpg","/images/backgrounds/2012-12-02 00.41.05.jpg","/images/backgrounds/2012-12-06 15.09.02.jpg","/images/backgrounds/2013-05-01 08.31.27.jpg","/images/backgrounds/2013-05-18 13.07.32.jpg","/images/backgrounds/2013-09-20 05.26.41.jpg","/images/backgrounds/2013-09-20 05.30.41.jpg","/images/backgrounds/2013-11-24 18.07.08.jpg","/images/backgrounds/2013-12-20 14.27.13.jpg","/images/backgrounds/2013-12-28 19.16.24.jpg","/images/backgrounds/287299main_dextre_iss017_big_full.jpg","/images/backgrounds/34DnPmX.jpg","/images/backgrounds/5bml6q6.jpg","/images/backgrounds/A52It0Q.jpg","/images/backgrounds/Boeing_747-8_Test_Planes_in_Assembly.jpg","/images/backgrounds/CkGmW8I.png","/images/backgrounds/d7t5BrZ.jpg","/images/backgrounds/Dtd8OaS.jpg","/images/backgrounds/enukwns.jpg","/images/backgrounds/Eourq.jpg","/images/backgrounds/EWwV235.jpg","/images/backgrounds/fr42b.jpg","/images/backgrounds/g8yF11T.jpg","/images/backgrounds/GkWIkzl.jpg","/images/backgrounds/godD0Nj.jpg","/images/backgrounds/GpCUV.jpg","/images/backgrounds/HsiDzD2.jpg","/images/backgrounds/IijALtC.jpg","/images/backgrounds/IMG_1142 copy-X2.jpg","/images/backgrounds/IMG_20120721_181258.jpg","/images/backgrounds/isu4ciW.jpg","/images/backgrounds/IZyTICW.jpg","/images/backgrounds/J8Oqyyd.jpg","/images/backgrounds/k9JWU9N.jpg","/images/backgrounds/KBMGZnm.jpg","/images/backgrounds/kkhlkasdhjl3.png","/images/backgrounds/m1gD1NC.jpg","/images/backgrounds/m95qL89.jpg","/images/backgrounds/MbN1OhC.jpg","/images/backgrounds/mooCZ.jpg","/images/backgrounds/nBEcpIY.jpg","/images/backgrounds/nLpQ2G3.jpg","/images/backgrounds/nUje1Xs.jpg","/images/backgrounds/ONn4OVE.jpg","/images/backgrounds/ozjI2XF.jpg","/images/backgrounds/p0QNNrI.jpg","/images/backgrounds/P0UhJaz.jpg","/images/backgrounds/raddmHE.jpg","/images/backgrounds/Red, White and Enterprise-X3.jpg","/images/backgrounds/rhvP0wn.jpg","/images/backgrounds/s_f02_RTR3FJM0.jpg","/images/backgrounds/STS-134_International_Space_Station_after_undocking.jpg","/images/backgrounds/Su0YWko.jpg","/images/backgrounds/tmEkJ7Q.jpg","/images/backgrounds/TuBipfq.jpg","/images/backgrounds/TUZyh.jpg","/images/backgrounds/uCr3S.jpg","/images/backgrounds/uMrsMXh.jpg","/images/backgrounds/w0Pgof8.jpg","/images/backgrounds/wallpaper-1312831.jpg","/images/backgrounds/wallpaper-1441536.jpg","/images/backgrounds/wjZsmhr.jpg","/images/backgrounds/Wsvb8tw.jpg","/images/backgrounds/wvgRzh6.jpg","/images/backgrounds/x2bkKQS.jpg","/images/backgrounds/xkl9FoE.jpg","/images/backgrounds/xKTWtJC.jpg","/images/backgrounds/XvkHfUA.jpg","/images/backgrounds/y4WGD7I.jpg","/images/backgrounds/yrZCDd1.jpg","/images/backgrounds/YseOPg6.jpg","/images/backgrounds/ZhWyntZ.jpg"];
       var BASENAME = 'projects/stonelinks/old';
        
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
