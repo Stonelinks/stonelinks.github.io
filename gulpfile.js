@@ -27,7 +27,9 @@ var path = {
         './node_modules/blueimp-gallery/**/*',
         './node_modules/blueimp-bootstrap-image-gallery/**/*',
         './node_modules/isotope/**/*',
-        './node_modules/isotope-packery/**/*'
+        './node_modules/isotope-packery/**/*',
+        './node_modules/threejs-build/**/*',
+        './node_modules/threejs-examples/**/*'
     ],
     style: './contents/style/**/*.less',
     js: './contents/js/**/*.js',

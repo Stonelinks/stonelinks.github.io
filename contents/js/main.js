@@ -212,10 +212,6 @@ $(document).ready(function () {
             _hideAll();
             break;
 
-        // noop
-        case 'blox':
-            break;
-
         default:
             setBGImage(chooseRandomImage());
     }
