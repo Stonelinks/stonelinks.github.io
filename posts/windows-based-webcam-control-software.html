@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Windows Based Webcam Control Software - Stonelinks
+    </title>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400italic,400,700">
+    <link rel="stylesheet" href="/style/main.css">
+  </head>
+  <body>
+    <div class="landing"><a href="/" class="brand"><img src="/images/logos/logo-512.png">Stonelinks</a>
+      <div class="tagline-bar">Lucas Doyle's website
+      </div>
+    </div>
+    <div role="navigation" class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><img src="/images/logos/logo-512.png">Stonelinks</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/luke.html">About</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="preloaded-images"></div>
+    <div class="container">
+      <div class="row post">
+        <div class="box">
+          <div class="col-lg-12 external-links">
+            <hr><a href="/posts/windows-based-webcam-control-software.html">
+              <h1 class="intro-text text-center">Windows Based Webcam Control Software<br><small>30. September 2010</small></h1></a>
+            <hr><p>I love nothing more in life than creating and tinkering with the stuff around me. Over the years, this love has taken many different forms. It started out somewhere in elementary school with Legos and taking my toys apart (much to the chagrin of my loving parents). Today it has evolved over the years into weekend projects such as the I’m about to tell you&nbsp;about.</p>
+<p>One weekend early in the semester, I found myself with some rare free time and so I chose to make my own internet-aware pan-tilt fixture for my webcam. To my room mates <a href="http://en.wikipedia.org/wiki/Sarcasm">delight</a>, I have placed the controls to this camera on this&nbsp;website.</p>
+<p>Projects such as this are just the kind of thing that I love taking time to do. They span the full stack, and involve concepts that go from very low level micro controller programming to high level web programming, using all sorts of code and hardware as in between. It requires quite a lot of different skill sets and knowledge of systems integration for this to work. Anyhow enough self-aggrandizing, I’ll describe how I did it starting very low level at the and working my way&nbsp;up.</p>
+<h3 id="hardware">Hardware</h3>
+<div class="media-container">
+
+<img src="/images/posts/2010-02-08-193359-150x150.jpg">
+
+</div>
+
+<p>This summer I came into possession of an <a href="http://www.arduino.cc/">Arduino</a> micro controller and <a href="http://www.rcuniverse.com/product_guide/servoprofile.cfm?servo_id=67">some servos</a>. As you can see from the pictures, I connected the servos up to the micro controller, making Y-cables for the power, ground, and signal pins of the servos. I also added a laser diode for good&nbsp;measure.</p>
+<p>The servo signal pins were wired to the digital I/O ports on the arduino. I stuffed the Arduino in a metal box I had lying around and hot glued everything together. Predictably, the webcam itself didn’t require much work. It was actually given to me for free! (previous owner couldn’t find drivers for it). I just ripped the stand off of it and glued it to the servos. All in all, this was a cheap and simple that has performed very well for what it was designed to&nbsp;do.</p>
+<h3 id="microcontroller-code">Microcontroller Code</h3>
+<p>I wrote the following code to establish basic control of the Arduino over its <span class="caps">USB</span> serial adapter. The servos are controlled using a technique called pulse width modulation (<span class="caps">PWM</span>). The comments explain what is going on, but for further background reading you can check out <a href="http://en.wikipedia.org/wiki/Pulse-width_modulation">this</a>. It also uses <span class="caps">EEPROM</span> to store the position of the camera between power cycles and resets. For some background about what <span class="caps">EEPROM</span> is check out <a href="http://en.wikipedia.org/wiki/EEPROM">this</a>.</p>
+<p><span class="dquo">&#8220;</span>`c
+/<em>
+ </em> File:            pantilt.c
+ <em> Description:     A program for controlling
+ </em>                  servos for use on a pan / tilt
+ <em>                  module on my robot
+ </em> Author:          Lucas Doyle (lucas.p.doyle@gmail.com)
+ <em> Creation Date:   October 16, 2009
+ </em> Revision Date:   Jan 31, 2010&nbsp;*/</p>
+<p>// Since the Arduino resets itself every time a serial connection is
+// made in windows (if you’re writing characters from <span class="caps">PHP</span> or something),
+// I have chosen to use the Arduinos <span class="caps">EEPROM</span> to store the positions
+// between resets. Therefore we include the <span class="caps">EEPROM</span>&nbsp;header.</p>
+<h1 id="include-eeprom">include <span class="caps">EEPROM</span></h1>
+<p>// variables dealing with the pins
+char servoPinX    =  2;    // control pin for the first servo
+char servoPinY    =  3;    // control pin for the second
+char laserpin     = 13;    // the camera has a little laser diode on&nbsp;it</p>
+<p>// <span class="caps">PWM</span> variables
+int minPulseX    = 600;  // minimum servo position
+int maxPulseX    = 2400; // maximum servo position
+int minPulseY    = 500;   // same thing for other servo
+int maxPulseY    = 1850;
+char turnRate    = 100;  // servo turn rate increment (larger value, faster rate)
+char refreshTim  = 20;   // time (ms) between pulses&nbsp;(50Hz)</p>
+<p>// The Arduino will calculate these values
+int centerServoX;         // center servo position
+int centerServoY;
+int pulseWidthX;          // servo pulse width
+int pulseWidthY;
+char moveServo;            // raw user&nbsp;input</p>
+<p>long lastPulse   = 0;     // recorded time (ms) of the last&nbsp;pulse</p>
+<p>// mode variables
+int laseron      = 0;     // start out with the laser off by&nbsp;default</p>
+<p>// party mode, some stupid idea i had to have the camera
+// spaz out and strobe the laser, has not been written yet
+// because i have not had time
+int partymode    =&nbsp;0;</p>
+<p>// This function writes an int to eeprom at p_address
+// Adapted from Marc Cardinals work:
+// http://blog.ncode.ca/wp-content/uploads/2008/08/eeprom-int-readwrite.pde
+void EEPROMWriteInt(int p_address, int p_value)
+{
+  byte lowByte = ((p_value &gt;&gt; 0) <span class="amp">&amp;</span> 0xFF);
+  byte highByte = ((p_value &gt;&gt; 8) <span class="amp">&amp;</span>&nbsp;0xFF);</p>
+<p>  <span class="caps">EEPROM</span>.write(p_address, lowByte);
+  <span class="caps">EEPROM</span>.write(p_address + 1, highByte);&nbsp;}</p>
+<p>// This function reads the int back
+// Also adapted from Marc Cardinals work:
+// http://blog.ncode.ca/wp-content/uploads/2008/08/eeprom-int-readwrite.pde
+unsigned int EEPROMReadInt(int p_address)
+{
+  byte lowByte = <span class="caps">EEPROM</span>.read(p_address);
+  byte highByte = <span class="caps">EEPROM</span>.read(p_address + 1);
+  return ((lowByte &lt;&lt; 0) <span class="amp">&amp;</span> 0xFF) + ((highByte &lt;&lt; 8) <span class="amp">&amp;</span> 0xFF00);&nbsp;}</p>
+<p>void setup()
+{
+  // Set up servo and laser pins as an output<br>  pinMode(servoPinX, <span class="caps">OUTPUT</span>);<br>  pinMode(laserpin, <span class="caps">OUTPUT</span>);
+  pinMode(servoPinY,&nbsp;<span class="caps">OUTPUT</span>);  </p>
+<p>  // calculate center positions for both servos<br>  centerServoX = maxPulseX - ((maxPulseX - minPulseX)/2);<br>  centerServoY = maxPulseY - (((maxPulseY -&nbsp;minPulseY)/2)-280);  </p>
+<p>  // If you’re running this for the first time on your arduino,<br>  // uncomment the next two lines to initialize the <span class="caps">EEPROM</span>
+  // EEPROMWriteInt(0, centerServoX);<br>  // EEPROMWriteInt(2,&nbsp;centerServoY);  </p>
+<p>  pulseWidthX = EEPROMReadInt(0);<br>  pulseWidthY =&nbsp;EEPROMReadInt(2);  </p>
+<p>  // begin serial communication<br>  Serial.begin(9600);  </p>
+<p>  //Serial.println(“Arduino Serial Pan/tilt Control”);
+  //Serial.println(“Standard <span class="caps">WASD</span> to move, spacebar to center”);
+  //Serial.println(“L toggles the laser, <span class="caps">TFGH</span> goes to the extremes”);&nbsp;}</p>
+<p>void loop()
+{<br>  // wait for serial input
+  if (Serial.available() &gt; 0)
+  {
+    // read the incoming byte:
+    moveServo =&nbsp;Serial.read();</p>
+<pre><code>// if party mode is off, read in commands
+//if (partymode == 0)
+{
+  //if (moveServo == (char) &quot; &quot;) {/*nothing happens*/}
+
+  // move left
+  if (moveServo == &#39;a&#39;) { pulseWidthX = pulseWidthX - turnRate; }
+
+  // move right
+  else if (moveServo == &#39;d&#39;) { pulseWidthX = pulseWidthX + turnRate; }
+
+  // move up
+  else if (moveServo == &#39;w&#39;) { pulseWidthY = pulseWidthY - turnRate; }
+
+  // move down
+  else if (moveServo == &#39;s&#39;) { pulseWidthY = pulseWidthY + turnRate; }
+
+  // center
+  else if (moveServo == &#39;c&#39;) { pulseWidthX = centerServoX; pulseWidthY = centerServoY;}
+
+  // move hard left
+  else if (moveServo == &#39;f&#39;) {pulseWidthX = minPulseX; }
+
+  // move hard right
+  else if (moveServo == &#39;h&#39;) {pulseWidthX = maxPulseX; }
+
+  // move hard up
+  else if (moveServo == &#39;t&#39;) {pulseWidthY = minPulseY; }
+
+  // move hard down
+  else if (moveServo == &#39;g&#39;) {pulseWidthY = maxPulseY; }
+
+  // toggle the laser
+  else if (moveServo == &#39;l&#39;)
+  {
+    if (laseron == 0) { digitalWrite(laserpin, HIGH); laseron = 1; }
+    else if (laseron == 1) { digitalWrite(laserpin, LOW); laseron = 0; }
+  }
+}
+
+// however if party mode is enabled
+//else if (partymode == 1)
+//{
+  // do some awesome stuff (not yet implemented)
+//  Serial.print(&quot;Party!!! &quot;);
+//}
+
+// party mode
+//else if (moveServo == &#39;p&#39;)
+//{
+//  if (partymode == 0) { partymode = 1; }
+//  else if (partymode == 1) { partymode = 0; }
+//}
+</code></pre><p>  }</p>
+<p>  // stop servo pulse at min and max
+  if (pulseWidthX &gt; maxPulseX) { pulseWidthX = maxPulseX; }
+  if (pulseWidthX &lt; minPulseX) { pulseWidthX = minPulseX; }
+  if (pulseWidthY &gt; maxPulseY) { pulseWidthY = maxPulseY; }
+  if (pulseWidthY &lt; minPulseY) { pulseWidthY = minPulseY;&nbsp;}</p>
+<p>  // print pulseWidth back to the Serial Monitor (uncomment to debug)
+  // Serial.print(“Pulse Width: “);
+  // Serial.print(pulseWidth);
+  // Serial.println(“us”);   //&nbsp;microseconds</p>
+<p>  // pulse the servo every 20 ms (refreshTime) with current pulseWidth
+  // this will hold the servo’s position if unchanged, or move it if changed
+  if (millis() - lastPulse &gt;= refreshTime)
+  {
+    EEPROMWriteInt(0, pulseWidthX);
+    EEPROMWriteInt(2,&nbsp;pulseWidthY);</p>
+<pre><code>digitalWrite(servoPinX, HIGH);   // start the pulse
+delayMicroseconds(pulseWidthX);  // pulse width
+digitalWrite(servoPinX, LOW);    // end the pulse
+
+digitalWrite(servoPinY, HIGH);   // start the pulse for servo 2
+delayMicroseconds(pulseWidthY);  // pulse width
+digitalWrite(servoPinY, LOW);    // stop the pulse
+
+lastPulse = millis();            // save the time of the last pulse
+</code></pre><p>  }
+}&nbsp;&#8220;`</p>
+<h3 id="establishing-serial-communication">Establishing Serial Communication</h3>
+<p>If you load the above code into the Arduino’s <span class="caps">IDE</span> and flash it to your microcontroller, you end up with a nice, intuitive way of manually controlling your pan / tilt mechanism. You can try things out by opening the Serial Monitor in the Arduino <span class="caps">IDE</span> and moving around using <span class="caps">WASD</span>, or move to the extremes using <span class="caps">TFGH</span>. Pressing ‘C’ centers the camera back and ‘L’ <a href="http://spf.fotolog.com/photo/47/10/95/vanguardista2104/1211331863_f.jpg">fires the laser</a>. Arguably, you could stop here and technically still have a way of controlling the camera over the internet with the power of linux. All one would need to do is open up a terminal or ssh into the machine and run the following&nbsp;command:</p>
+<p><code>bash
+ ~$ screen /dev/ttyUSB0</code></p>
+<p>This was not good enough for me though, as I wanted to control this through a web browser, which brings us&nbsp;to…</p>
+<h3 id="the-web-server">The Web Server</h3>
+<div class="media-container">
+
+<img src="/images/posts/2010-02-08-193241-150x150.jpg">
+
+</div>
+
+<p>The Arduino is cool and all, but since the ultimate goal of this project is to control it over the internet, having a web server is an obvious requirement. Unfortunately for me, my web server also happens to be my self-built desktop that I use for almost all my other engineering work and day to day activities. Because of this, I need access to few windows only applications (Solidworks, LabVIEW, Photoshop, Steam, etc..) which rules out any linux server platforms if I want 100% uptime. This is an unfortunate constraint that caused me quite a lot of headaches down the line. In the future when I have another computer to spare and improve on this project, I will use the <a href="http://blog.taragana.com/wp-content/uploads/2008/03/linux-logo.jpg">right tool</a> for the&nbsp;job. </p>
+<p>After all that rambling, you’re probably wondering how I have my web server configured. The only relevant details are that I am running stock <a href="http://www.wampserver.com/en/">WampServer</a> with <span class="caps">PHP</span> 5.3.0 with short tags&nbsp;enabled.</p>
+<h3 id="nightmare-in-php-land">Nightmare in <span class="caps">PHP</span>&nbsp;land</h3>
+<p>I thought this would be easy. Since <span class="caps">PHP</span> is a server side scripting language, it has libraries that allow it to read and write to and from serial ports. So one would think that something like the following would&nbsp;work:</p>
+<p><code>php
+$fp =fopen(&quot;COM3&quot;, &quot;w&quot;);
+fwrite($fp, chr(&#39;c&#39;)); // write your character to the Arduino here
+sleep(1);
+fclose($fp);</code></p>
+<p>However, for reasons I do not completely understand, this did not work for me under Windows 7, but it did with Linux (substituting <span class="caps">COM3</span> for /dev/ttyUSB0). This problem persisted, as I also tried using the <a href="http://www.phpclasses.org/browse/package/3679.html"><span class="caps">PHP</span> serial class</a>, but it too proved to be equally as ineffective. I finally circumvented the need for <span class="caps">PHP</span> to communicate with the <span class="caps">COM</span> port entirely by compiling several very basic exe’s in <a href="http://processing.org/">processing</a> that sent individual character commands to the Arduino and then called them in <span class="caps">PHP</span> using the exec()&nbsp;function.</p>
+<p>While extremely inefficient, this was the quickest, most reliable solution to my problem. Of course, this would all have been avoided in the first place had I been using Linux, as <span class="caps">PHP</span> has no problem writing to /dev/ttyUSB0 like it would a normal file in&nbsp;Linux.</p>
+<h3 id="building-the-webpage">Building the Webpage</h3>
+<p>By accessing the <a href="http://www.w3schools.com/PHP/php_get.asp"><span class="caps">PHP</span> $_GET</a> array, I was able to map incoming <span class="caps">GET</span> requests to different <span class="caps">URLS</span> to control what commands were sent to the camera. The <span class="caps">PHP</span> included in the header of the page is shown&nbsp;here:</p>
+<p><code>php
+// check the GET action var to see if an action is to be performed
+if (isset($_GET[&#39;action&#39;]))
+{
+   // action required! build our command...
+   $basecmd = &quot;F:\\wamp\\www\\luke\\Projects\\personal_robot\\personal robot\\commands\\&quot;;
+   $cmd = $basecmd . $_GET[&#39;action&#39;] . &quot;\\application.windows\\&quot; . $_GET[&#39;action&#39;] . &quot;.exe&quot;;
+   exec($cmd);
+}</code></p>
+<p>And the <span class="caps">HTML</span> for the rest of the page is simply a 3x3 table with some hyperlinks to the right URLs with things like <code>?action=up</code>, <code>?action=down</code>, ect. placed in the right&nbsp;spot.</p>
+<h3 id="webcam">Webcam</h3>
+<p>To manage the webcam feed, I am using a program called <a href="http://www.lundie.ca/fwink/">Fwink</a> to take a picture every second and then using <span class="caps">AJAX</span> to automatically refresh the image once the page is loaded. However, there are many ways to manage a webcam feed and the details of how you do it is out of the scope of what I’m talking about&nbsp;here.</p>
+<h2 id="conclusions-and-future-improvements">Conclusions and Future&nbsp;Improvements</h2>
+<p>As expected, performance with this setup is less than impressive, but this was more a learning exercise than it was a perfect execution. I have no doubts in my mind that the low performance is due to the wonky way in which I have to execute system calls to run the Processing exes. For the future, as this is a rough prototype, a lot can be improved / simplified by moving to&nbsp;Linux.</p>
+<p>Additionally, this is the vision component to my yet-to-be-completed personal robot, and its brains (a first generation <span class="caps">ASUS</span> eeepc netbook) are currently on loan to a friend of mine. Next time I see him I’ll get the machine back and we’ll start cooking with gas! (and by gas I mean&nbsp;Linux).</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="row tag-row">
+        <div class="box">
+          <div class="col-lg-12">
+            <p>Tags: <a href="/tag/systems/1/"><span class="label label-info tag">systems</span></a><a href="/tag/arduino/1/"><span class="label label-info tag">arduino</span></a><a href="/tag/telemetry/1/"><span class="label label-info tag">telemetry</span></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row footer-row">
+      <div class="box">
+        <div class="col-lg-12"><a href="/blog.html">
+            <h4>« Back</h4></a></div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center"><a href="https://www.facebook.com/stonelinks" target="_blank" class="social"><i class="fa fa-facebook"></i></a><a href="https://github.com/Stonelinks" target="_blank" class="social"><i class="fa fa-github"></i></a><a href="https://twitter.com/#!/Stonelinks" target="_blank" class="social"><i class="fa fa-twitter"></i></a><a href="https://plus.google.com/116178490514652721625/posts" target="_blank" class="social"><i class="fa fa-google-plus"></i></a><a href="http://www.linkedin.com/pub/lucas-doyle/25/550/169" target="_blank" class="social"><i class="fa fa-linkedin"></i></a><a href="http://www.youtube.com/user/RealStonelinks" target="_blank" class="social"><i class="fa fa-youtube"></i></a><a href="mailto:lucas.p.doyle@gmail.com?Subject=Hello" target="_top" class="footer-link">
+               
+              contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/underscore/underscore.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript">var BG_IMAGES = ["/images/backgrounds/06uh37r.jpg","/images/backgrounds/14206376348_fca4af4ba5_o.jpg","/images/backgrounds/1979230_10152035339809685_1025831531_o.jpg","/images/backgrounds/2000-01-01 08.30.12.jpg","/images/backgrounds/2012-12-02 00.41.05.jpg","/images/backgrounds/2012-12-06 15.09.02.jpg","/images/backgrounds/2013-05-01 08.31.27.jpg","/images/backgrounds/2013-05-18 13.07.32.jpg","/images/backgrounds/2013-09-20 05.26.41.jpg","/images/backgrounds/2013-09-20 05.30.41.jpg","/images/backgrounds/2013-11-24 18.07.08.jpg","/images/backgrounds/2013-12-20 14.27.13.jpg","/images/backgrounds/2013-12-28 19.16.24.jpg","/images/backgrounds/287299main_dextre_iss017_big_full.jpg","/images/backgrounds/34DnPmX.jpg","/images/backgrounds/5bml6q6.jpg","/images/backgrounds/A52It0Q.jpg","/images/backgrounds/Boeing_747-8_Test_Planes_in_Assembly.jpg","/images/backgrounds/CkGmW8I.png","/images/backgrounds/d7t5BrZ.jpg","/images/backgrounds/Dtd8OaS.jpg","/images/backgrounds/enukwns.jpg","/images/backgrounds/Eourq.jpg","/images/backgrounds/EWwV235.jpg","/images/backgrounds/fr42b.jpg","/images/backgrounds/g8yF11T.jpg","/images/backgrounds/GkWIkzl.jpg","/images/backgrounds/godD0Nj.jpg","/images/backgrounds/GpCUV.jpg","/images/backgrounds/HsiDzD2.jpg","/images/backgrounds/IijALtC.jpg","/images/backgrounds/IMG_1142 copy-X2.jpg","/images/backgrounds/IMG_20120721_181258.jpg","/images/backgrounds/isu4ciW.jpg","/images/backgrounds/IZyTICW.jpg","/images/backgrounds/J8Oqyyd.jpg","/images/backgrounds/k9JWU9N.jpg","/images/backgrounds/KBMGZnm.jpg","/images/backgrounds/kkhlkasdhjl3.png","/images/backgrounds/m1gD1NC.jpg","/images/backgrounds/m95qL89.jpg","/images/backgrounds/MbN1OhC.jpg","/images/backgrounds/mooCZ.jpg","/images/backgrounds/nBEcpIY.jpg","/images/backgrounds/nLpQ2G3.jpg","/images/backgrounds/nUje1Xs.jpg","/images/backgrounds/ONn4OVE.jpg","/images/backgrounds/ozjI2XF.jpg","/images/backgrounds/p0QNNrI.jpg","/images/backgrounds/P0UhJaz.jpg","/images/backgrounds/raddmHE.jpg","/images/backgrounds/Red, White and Enterprise-X3.jpg","/images/backgrounds/rhvP0wn.jpg","/images/backgrounds/s_f02_RTR3FJM0.jpg","/images/backgrounds/STS-134_International_Space_Station_after_undocking.jpg","/images/backgrounds/Su0YWko.jpg","/images/backgrounds/tmEkJ7Q.jpg","/images/backgrounds/TuBipfq.jpg","/images/backgrounds/TUZyh.jpg","/images/backgrounds/uCr3S.jpg","/images/backgrounds/uMrsMXh.jpg","/images/backgrounds/w0Pgof8.jpg","/images/backgrounds/wallpaper-1312831.jpg","/images/backgrounds/wallpaper-1441536.jpg","/images/backgrounds/wjZsmhr.jpg","/images/backgrounds/Wsvb8tw.jpg","/images/backgrounds/wvgRzh6.jpg","/images/backgrounds/x2bkKQS.jpg","/images/backgrounds/xkl9FoE.jpg","/images/backgrounds/xKTWtJC.jpg","/images/backgrounds/XvkHfUA.jpg","/images/backgrounds/y4WGD7I.jpg","/images/backgrounds/yrZCDd1.jpg","/images/backgrounds/YseOPg6.jpg","/images/backgrounds/ZhWyntZ.jpg"];
+      var BASENAME = 'posts/windows-based-webcam-control-software';
+       
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-18750328-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
