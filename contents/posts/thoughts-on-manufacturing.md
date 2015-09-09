@@ -1,12 +1,13 @@
 ---
-title: Thoughts on manufacturing
+title: Some thoughts on manufacturing
 date: 2014-08-10
 template: article.jade
 tags: essay, manufacturing, robotics
-draft: yes
+draft: true
 ---
 
-I've been in the Japanese industrial robotics scene for almost two years now. Part of me wishes I was writing some sort of exposé on the dark underbelly of the manufacturing world. A world full of drama, scandal and secrets. If this underbelly exists I havn't found it yet -- but what the manufacturing world lacks in sexiness it makes up for in importance.
+I've been in the Japanese industrial robotics scene for almost two years now. Part of me wishes I was writing some sort of exposé on the dark underbelly of the manufacturing world, full of drama, scandal and secrets. If this underbelly exists I haven't
+found it yet. But here are some collective observations I've been able to make during my time here.
 
 <div class="media-container">
 
@@ -14,11 +15,14 @@ I've been in the Japanese industrial robotics scene for almost two years now. Pa
 
 </div>
 
-Literally every possession you own is manufactured in some capacity. The human practice of "making stuff" is ancient and an incredibly broad discipline. Adobe bricks for Pueblos, chain-mail for medieval knights, longboats for Vikings and amphora so the Romans and Greeks could transport liquids are a small cross section of manufactured goods seen throughout history. Today when we think of manufacturing, (if we think of anything) it is of large buildings in a far away place known as factories.
+Literally every possession you own is manufactured in some capacity. The human practice of "making stuff" is an ancient and incredibly broad discipline. Adobe bricks for Pueblos, chainmail for medieval knights, longboats for Vikings and amphora (like the ones above) are a small cross section of mass-produced manufactured goods seen throughout history.
+
+Today when we think of manufacturing, it is of large buildings in a far away place known as factories (if we even think
+of anything).
 
 <span class="more"></span>
 
-Factories are the beating heart at the center of industrialization in the 20th century. Thanks to globalization and a couple of world wars, factories and their supply chains have propelled us into a post-industrial proliferation of endless "stuff". Cars, laptops, phones, tablets, books, furniture, clothes. Anything you can think of, it is probably mass produced somewhere in some capacity. It ends up on a shelf or on Amazon for us to purchase and enjoy.
+Factories are the beating heart at the center of industrialization in the 20th century. Thanks to globalization and a couple of world wars, factories and their supply chains have propelled us into a post-industrial proliferation of endless Stuff. Cars, laptops, phones, tablets, books, furniture, clothes. Anything you can think of, it is probably mass produced somewhere in some capacity. It ends up on a shelf or on Amazon for our purchasing pleasure.
 
 Whenever we get a shiny new iPhone or Nexus, we neither know nor care about the factory it came from. For the crucial role they play in our daily lives, the humble factory stays out of sight and out of mind. Given the tremendous change agents they are and what changes I see for them in the future, I thought it prudent to share some of my insights and perspectives on them. This of course all my own opinion.
 
@@ -27,7 +31,7 @@ Whenever we get a shiny new iPhone or Nexus, we neither know nor care about the 
 <blockquote class="twitter-tweet" lang="en"><p>The SpaceX rocket factory: metal comes in one door, and rockets go out another. <a href="http://t.co/sJJs37axdD">http://t.co/sJJs37axdD</a> <a href="https://twitter.com/SpaceXJobs">@SpaceXJobs</a> <a href="http://t.co/UatHqC3LJN">pic.twitter.com/UatHqC3LJN</a></p>&mdash; SpaceX (@SpaceX) <a href="https://twitter.com/SpaceX/statuses/502505703974531072">August 21, 2014</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Think about what a factory is. To me, a factory is a great vehicle that takes a design and turns it into a physical product. In a sense they're great big black boxes -- raw materials go in one end, and products come out the other. But they are something else: bottenecks. Very necessary and important bottlenecks, but bottlenecks nonetheless.
+A factory is a vehicle that takes a design and turns it into a physical product. In a sense they're great big black boxes -- raw materials go in one end, and products come out the other. But they are something else: bottlenecks. Very necessary and important bottlenecks, but bottlenecks nonetheless.
 
 <div class="media-container">
 
@@ -35,9 +39,11 @@ Think about what a factory is. To me, a factory is a great vehicle that takes a 
 
 </div>
 
-The way I think about factories is rooted heavily in cost. Factories cost an astronomical amount of time and money. Purchasing and coordinating that many people, machines and material effectively is akin to writing a symphony, being a quarterback in the NFL or playing chess against a grand master. It requires immense logistical finesse and of course a tons of capital and money to keep going. This probably comes as surprise to nobody, but let us break down what really goes into the cost of a factory.
+Factories cost an astronomical amount of time and money for all parties involved. Of course they make money too, but purchasing and coordinating that
+many people, machines and material effectively is akin to writing a symphony or being a quarterback in the NFL. It requires immense logistical finesse and capital to execute effectively. This isn't a surprise to anybody, but let's break down the cost of a
+factory.
 
-In my mind there are two major categories to think about when it comes to factory cost: capital cost and opportunity cost. Capital cost is fairly obvious. These are the things needed to run the factory: real estate, electricity, engineers, line workers, technicians, supervisors, janitors, CNC machines, mills, injection machines, molds, drills, hydraulic presses, lathes, plastic, carbon fiber, aluminum, nuts, bolts, oil, etc. The list is probably endless. Basically any direct expense is a capital cost.
+Generally, the two major cost categories to think about are capital cost and opportunity cost. Capital cost are the physical things needed to run the factory: real estate, electricity, engineers, line workers, technicians, supervisors, janitors, CNC machines, mills, injection machines, molds, drills, hydraulic presses, lathes, plastic, carbon fiber, aluminum, nuts, bolts, oil, etc. The list is endless, essentially covering any direct expense.
 
 <div class="media-container">
 
@@ -45,7 +51,10 @@ In my mind there are two major categories to think about when it comes to factor
 
 </div>
 
-Invariably, the capital put towards a factory is always high. There is no "silver bullet" that is going to magically make them extremely cheap in the long term. Sure there are stopgap ways to lower the upfront capital cost by building your factory in a country with cheap labor and lax environmental laws. We've seen tons of this in Asia in the last half century. In my opinion, these cost cutting decisions are neither sustainable or very interesting. Our world is getting smaller and smaller every day. Within the next century I think we'll run out of labor markets, environmental slack and legal loopholes to exploit. Okay I'll concede that legal loopholes probably aren't going away anytime soon. Natural resources and labor are finite and will inevitably become scarce and expensive at some point. But it isn't hard to look at correlation between increased wealth / standard of living and manufacturing quality in countries like Japan and China over the last half century and extrapolate to other countries. To use an aphorism that I find apropos "a rising tide lifts all boats".
+Invariably, the capital put toward a factory is always high. There is no magical solution to make them extremely cheap in the long term. Sure there are stopgap ways to lower the upfront capital cost by building your factory in a country with cheap labor and lax environmental laws. We've seen tons of this in Asia in the last half century. These cost cutting
+decisions are neither sustainable or interesting. Within the next century we'll eventually run out of labor markets
+and environmental slack to exploit. Natural resources and labor are finite and will inevitably become scarce and expensive at some point.
+But it isn't hard to look at correlation between increased wealth / standard of living and manufacturing quality in countries like Japan and China over the last half century and extrapolate to other countries. To use an aphorism that I find apropos "a rising tide lifts all boats".
 
 <!--
 
@@ -57,17 +66,18 @@ I'm way off topic here... back to my original point: factory capital cost is hig
 
 -->
 
-What is far more interesting to me than capital cost is opportunity cost. Unlike capital which is straightforward measure, opportunity cost is a little less harder to quantify. Instead of being a direct cost, it finds its roots in *time*.
+What is far more interesting to me than capital cost is opportunity cost. Unlike capital which is straightforward measure, opportunity cost is harder to quantify. Instead of being a direct cost, it finds its roots in *time*.
 
-Lets say a company approaches a factory to get its new product produced. During the time the company needs to wait for the factory to get set up and start production, it incurs an opportunity cost. It it losing revenue that could have made had it been able to sell the product as soon as the design was finalized. Once the factory gets going, this opportunity cost doesn't completely go away. Instead the overall throughput (time per individual product) starts to factor into the opportunity cost.
+Lets say a company approaches a factory seeking manufacturing. During the time the company needs to wait for the factory to get set up and start production, it incurs an opportunity cost. It is essentially lost revenue that could have been made had the product been ready for sale as soon as the design was finalized. Once the factory gets going, opportunity cost doesn't completely go away. Instead the overall throughput (time per individual product) starts to factor into the cost.
 
-Therein lies why I see factories as bottlenecks; waiting for factories cost an enormous amount of money when you factor in the opportunity cost. Best case scenario consumers are patient and wait for the product. But in the worst case, a competitor swoops in and steals what would have been the original company's business. There are entire disciplines dedicated to this time problem with factories. Supply chain management, just in time manufacturing, industrial engineering, etc. In fact I'm sure that everything I'm writing here is probably in a textbook for these disciplines.
+Therein lies why I see factories as bottlenecks; waiting for factories cost an enormous amount of money when you factor in the opportunity cost. Best case scenario consumers are patient and wait for the product. But in the worst case, a competitor swoops in and steals what would have been the original company's business. There are entire disciplines dedicated to the logistics around this problem with factories. Supply chain management, just in time manufacturing, industrial engineering, etc.
 
 Regardless, as I said opportunity cost is much harder to quantify than capital cost. but by looking at factories as black boxes and analyzing the bottlenecks on the time dimension, we can deconstruct specific problems and make smart decisions on how to optimize them. I think this is the approach we should take. Some may balk at the extreme capital costs associated with even a minor time saving measures. Remember that cost and time are inexorably tied to one another. If targeting the right bottleneck, even a tiny but expensive improvement in the time dimension can pay for itself big time in the cost dimension given the increased volume. Everybody knows the old saying "time is money". Nowhere is that more true than the world of manufacturing.
 
 ###The Plight of Conservatism
 
-So all this is great, we know time is the issue that needs attention. What happens when we actually try to make factories faster? Once we start peering under the lid of the black boxes of factories (and how to peer under that lid is a different conversation entirely, factories are notoriously secretive and earning their trust is hard work), they go from being one big bottleneck / black box to a complicated web of intermediate steps and black boxes. Basically a big directed graph of smaller black boxes with their own bottlenecks.
+So all this is great, we know time is the issue that needs attention. What happens when we actually try to make factories faster? Once we start peering under the lid of the black boxes of factories (and how to peer under that lid is a different
+conversation entirely; factories are notoriously secretive and earning their trust is hard work), they go from being one big bottleneck / black box to a complicated web of intermediate steps and black boxes. Basically a big directed graph of smaller black boxes with their own bottlenecks.
 
 <div class="media-container">
 
@@ -76,11 +86,14 @@ Transferred from <a class="external text" href="http://en.wikipedia.org">en.wiki
 
 </div>
 
-This is going to seem like switching topics, but I want to consider 3D printing for a second. Besides being a buzzword, part of me feels like there is a lot of hype around 3D printing due to the lack of logistical / implementation complexity that "classic" factories suffer from. A 3D printer is one machine that potentially replaces a workshop full of much more expensive machines. They can make nearly endless objects and shapes with one simple extrusion tool. In essence they combine the numerous intermediate steps required in a "classic" factory and replace them with one big printing step. It makes the barrier between design and physical product much lower, something immediately recognizable by many people. Of course current generation 3D printing comes with a million downsides which are out of this document's scope. But still, they show off many of the weak spots of a "classic" factory in a very effective manner.
+Take, for example, 3D printing. Arguably, the hype around 3D printing is due in part to the lack of logistical /
+implementation
+complexity from which "classic" factories suffer from. A 3D printer is one machine that potentially replaces a workshop full of much more expensive machines. They can make nearly endless objects and shapes with one simple extrusion tool. In essence they combine the numerous intermediate steps required in a "classic" factory and replace them with one big printing step. It makes the barrier between design and physical product much lower, something immediately recognizable by many people. Of course current generation 3D printing comes with a million downsides which are out of this document's scope. But still, capitalize on the weak spots of a "classic"
+factory in a very effective manner.
 
 We all know that people want the things factories produce as soon as possible. Whoever designed and sells the product is losing an astronomical amount of money every second that factory isn't producing. There is ferocious demand, high pressure and stiff competition that all converge upon factories. Set up time, maintenance, failures and downtime of any kind cost millions. Add to the mix that while they are ideally static, factories are always undergoing some kind of change. A new line is being built, an old line is being deprecated, a machine reached the end of it's service lifetime, a supplier changed or went out of business, etc.
 
-The result of all this is what I call the "plight of conservatism". Given that a factory is represented by a series of black boxes, any time a change needs to occur usually only the most minimal set of black boxes that absolutely have to change will ever change to meet new criteria and deadlines. In other words, hyper conservatism. The people responsible for making decisions don't have the time to educate themselves enough to take advantage of new time saving technology. The kind of thing to enable them to think strategically. Even if they did know about all the latest and greatest technology to help them, they are incredibly risk averse. And can you blame them? As I said the stakes are incredibly high and even minor risks are avoided like the plague unless they are absolutely necessary. So they keep their heads in the sand and stick with what works regardless of the long term consequences.
+The result of all this is what I call the "plight of conservatism". Given that a factory is represented by a series of black boxes, any time a change needs to occur usually only the most minimal set of black boxes that absolutely have to change will ever change to meet new criteria and deadlines. In other words, hyper conservatism. The people responsible for making decisions don't have the time to educate themselves enough to take advantage of new time-saving technology. The kind of thing to enable them to think strategically. Even if they did know about all the latest and greatest technology, they are incredibly risk averse. And can you blame them? The stakes are incredibly high and even minor risks are avoided like the plague unless they are absolutely necessary. So they keep their heads in the sand and stick with what works regardless of the long term consequences.
 
 <div class="media-container">
 
@@ -88,11 +101,12 @@ The result of all this is what I call the "plight of conservatism". Given that a
 
 </div>
 
-Those consequences of largely ignoring modernization are about to come to fruition with the maturity of factory automation technology. The plight of conservatism has made innovation and advancement in manufacturing agonizingly slow and frustrating for almost everyone in the sector. The higher-ups and decision makers finally see that higher degrees of factory automation are the way forward. So they're trying to learn and use them or else get left in the dust. As I said this industry is incredibly competitive. Unfortunately most factories are in the proverbial stone age thanks to the enduring conservatism and never ending pressure to keep producing. So they are ill-equipped and can't exactly stop what they are doing to learn a bunch of stuff about factory automation and change the millions of little black boxes that need to be changed.
+Those consequences of largely ignoring modernization are about to come to fruition with the maturity of factory automation technology. The plight of conservatism has made innovation and advancement in manufacturing agonizingly slow and frustrating for almost everyone in the sector. The higher-ups and decision makers finally see that higher degrees of factory automation are the way forward. The industry is incredibly competitive. They must evolve or else get left in the dust. Unfortunately most factories are in the
+proverbial stone age thanks to the enduring conservatism and ever-present pressure to keep producing. Kind of like a chicken / egg scenario. They can't exactly stop what they are doing to learn a bunch of stuff about factory automation and change the millions of little black boxes that need to be changed.
 
 ###Where this is Going
 
-The state of the manufacturing world is pretty much this: everybody knows they need to modernize on some level but has no clue how to actually do it in a comprehensive way. They know bits and pieces of the puzzle but the gestalt is missing. Software in particular, which is my opinion is the key to the puzzle, is generally not well understood. Software can enable speedups on all those black boxes, and that maybe some of those black boxes can be reused and take the place of many other slower black boxes.
+The state of the manufacturing world is pretty much this: everybody knows they need to modernize on some level but has no clue how to actually do it in a comprehensive way. They know bits and pieces of the puzzle but the gestalt is missing. Software in particular, which is my opinion is the key to the puzzle, is generally not well understood. Software can enable speedups on all those black boxes, and then some of them can be upgraded over time.
 
 I'd also be remiss if I didn't mention robotics. Great robot hardware is already out there, but more sophisticated software to control them has to be written. They are capable of accomplishing so much if only their potential gets realized.
 
@@ -102,7 +116,8 @@ I'd also be remiss if I didn't mention robotics. Great robot hardware is already
 
 </div>
 
-Programming is a relatively new and (as most of us know) fantastically powerful tool in the factory automator's arsenal. Problem is that it is a moving target. Most factory types can't be bothered to stop their incredibly time sensitive jobs and learn about something that is constantly changing. As such, most look at programming as arcane computer wizardry that you need to make machines move and do things.
+Programming is a relatively new and (as most of us know) fantastically powerful tool in the factory automator's arsenal. Problem is that it is a moving target. Most factory-types look at programming as computer wizardry that you need to make CNC machines
+move.
 
 I want to wrap things up by talking about the way forward. As I said, factories rarely (if ever) stop to learn the latest and greatest technology and apply it themselves. Instead, they pay other companies to do this for them. These are called system integrators and they're incredibly important since they provide a vector for creating and manipulating the black boxes in factories. There are TONS of system integrators in Japan (actually they're all over the place). Some are huge, some are tiny, some have different specializations that they're really good at like robotics, milling, glass extrusion, painting, etc. They come up with applications of tools and equipment to put in a factory so it can make part of the product.
 
