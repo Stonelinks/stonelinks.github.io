@@ -18,8 +18,8 @@ module.exports = (env, callback) ->
     # helper that returns a list of articles found in *contents*
     # note that each article is assumed to have its own directory in the articles directory
     articles = []
-    contents[options.articles]._.directories.forEach (item) ->
-      articles.push item.index if item.index instanceof env.plugins.Page and not item.index.metadata.draft
+    contents[options.articles]._.pages.forEach (item) ->
+      articles.push item if item instanceof env.plugins.Page and not item.metadata.draft
     articles.sort (a, b) -> b.date - a.date
     return articles
 

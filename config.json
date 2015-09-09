@@ -40,7 +40,7 @@
   
   "plugins": [
     "./plugins/paginator.coffee",
-    "wintersmith-tag"
+    "./plugins/tag.coffee"
   ],
   
   "require": {
