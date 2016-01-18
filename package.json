@@ -23,7 +23,6 @@
     "bootstrap": "3.3.6",
     "color-themes-for-google-code-prettify": "https://github.com/jmblog/color-themes-for-highlightjs.git",
     "font-awesome": "4.1.0",
-    "glob-expand": "0.1.0",
     "gulp": "3.9.0",
     "gulp-clean": "0.3.1",
     "gulp-gh-pages": "0.5.2",

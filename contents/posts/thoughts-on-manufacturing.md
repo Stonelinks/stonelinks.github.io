@@ -2,7 +2,7 @@
 title: Some thoughts on manufacturing
 date: 2014-08-10
 template: article.jade
-tags: essay, manufacturing, robotics
+tags: manufacturing, robotics
 draft: true
 ---
 

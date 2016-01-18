@@ -1,64 +1,64 @@
 extends layout
 
 block content
-  .row.tag-row
-    .box
-      .col-lg-12
-        - var allTags = env.helpers.getAllTags()
-        if tagName
-          p
-            span Showing all posts tagged
-            span.label.label-info.tag= tagName
-          p
-            | Other tags:
-            - var otherTags = allTags.filter(function(tag){ return tag !== tagName})
-            each tag in otherTags
-              a(href=env.helpers.getTagHome(tag).url)
-                span.label.label-info.tag= tag
-        else
-          p
-            each tag in allTags
-              a(href=env.helpers.getTagHome(tag).url)
-                span.label.label-info.tag= tag
+    .box-row
+        .row.tag-row
+            .box
+                .col-lg-12
+                    - var allTags = env.helpers.getAllTags()
+                    if tagName
+                        h4
+                            span Showing all posts in
+                            span.label.label-primary.tag= tagName
+                        p
+                            - var otherTags = allTags.filter(function(tag){ return tag !== tagName})
+                            each tag in otherTags
+                                a(href=env.helpers.getTagHome(tag).url)
+                                    span.label.label-primary.tag= tag
+                    else
+                        p
+                            each tag in allTags
+                                a(href=env.helpers.getTagHome(tag).url)
+                                    span.label.label-primary.tag= tag
 
-  each article in articles
-    .row
-      .box
-        .col-lg-12
-          hr
-          a(href=article.url)
-            h1.intro-text.text-center= article.title
-              br
-              small= moment.utc(article.date).format('DD. MMMM YYYY')
-          hr
-          .external-links
-            | !{ typogr(article.intro).typogrify() }
-          if article.hasMore
-            p
-              a.btn.btn-info(href=article.url) Read more »
-          - var tags = env.helpers.getTagsFromArticle(article)
-          - debugger
-          if tags.length
-            hr
-            p
-              | Tags: 
-              each tag in tags
-                a(href=env.helpers.getTagHome(tag).url)
-                  span.label.label-info.tag= tag
+        each article in articles
+            .row
+                .box
+                    .col-lg-12
+                        a(href=article.url)
+                            h1.box-title= article.title
+                        - var tags = env.helpers.getTagsFromArticle(article)
+                        .byline
+                            if tags.length
+                                p
+                                    | Published in
+                                    each tag in tags
+                                        a(href=env.helpers.getTagHome(tag).url)
+                                            span.label.label-primary.tag= tag
 
-block prepend footer
-  .row.footer-row
-    .box
-      .col-lg-12
-        if prevPage
-          a(href=prevPage.url)
-            h4.pull-left
-              | « Newer
-        else
-          a(href='/archive.html')
-            h4.pull-left
-              | « Archives
-        if nextPage
-          a(href=nextPage.url)
-            h4.pull-right
-              | Next page »
+                            p
+                                = moment.utc(article.date).format('MMMM DD, YYYY')
+                                |  by&nbsp;
+                                a(href="/luke.html")
+                                    | Lucas Doyle
+                        .external-links
+                            | !{ typogr(article.intro).typogrify() }
+                        if article.hasMore
+                            p
+                                a(href=article.url) Read more »
+
+        .row
+            .box
+                .col-lg-12.footer-nav
+                    if prevPage
+                        a(href=prevPage.url)
+                            h4.pull-left
+                                | « Newer
+                    else
+                        a(href='/archive.html')
+                            h4.pull-left
+                                | « Archives
+                    if nextPage
+                        a(href=nextPage.url)
+                            h4.pull-right
+                                | Next page »

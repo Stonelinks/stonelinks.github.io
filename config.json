@@ -46,7 +46,6 @@
   "require": {
     "moment": "moment",
     "_": "underscore",
-    "expand": "glob-expand",
     "marked": "marked",
     "slug": "slug",
     "typogr": "typogr"

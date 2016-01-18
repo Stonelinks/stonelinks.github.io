@@ -1,5 +1,5 @@
 ---
-title: Laser Altimeter integration on Pixhawk
+title: Laser Altimeter Integration on Pixhawk
 date: 2014-12-11
 template: article.jade
 tags: airplane, drones

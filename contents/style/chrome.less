@@ -1,28 +1,26 @@
 /* Extra markup and styles for table-esque vertical and horizontal centering */
-.landing-wrapper {
-
-  //color: #fff;
-  text-align: center;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+.chrome-wrapper {
 
   display: table;
   width: 100%;
   height: 100%; /* For at least Firefox */
   min-height: 100%;
 
-  .landing-wrapper-inner {
+  .chrome-wrapper-inner {
     display: table-cell;
     vertical-align: top;
 
-    .landing-container {
+    .chrome-container {
       margin-right: auto;
       margin-left: auto;
     }
   }
 
-  @masthead-section-height: 60px;
+  @masthead-section-height: 78px;
 
   .masthead {
+    text-align: center;
+
     .masthead-logo {
       padding: @padding-large-vertical;
       img {
@@ -40,7 +38,7 @@
     .masthead-tagline {
       background-color: @color-3;
       height: @masthead-section-height;
-      padding: 20px @padding-large-vertical @padding-large-vertical;
+      padding: 30px @padding-large-vertical @padding-large-vertical;
       margin: 0;
     }
 
@@ -59,12 +57,11 @@
       }
 
       & > li > a {
-        padding-right: 0;
-        padding-left: 0;
-        font-size: 16px;
+        font-size: @font-size-h4;
         font-weight: bold;
         color: @color-1;
         border-bottom: 2px solid transparent;
+        padding: 10px 0 3px;
       }
 
       & > li > a:hover,
@@ -84,11 +81,14 @@
   }
 
   .mastfoot {
+    text-align: center;
+
     background-color: @color-5;
     height: @masthead-section-height;
-    padding: 20px @padding-large-vertical @padding-large-vertical;
+    padding: 26px @padding-large-vertical @padding-large-vertical;
 
     .social {
+      font-size: @font-size-h4;
       margin-right: @padding-base-horizontal;
     }
   }

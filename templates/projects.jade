@@ -10,11 +10,11 @@ block content
     .box
       .col-lg-12
         p#project-filters
-          span.label.label-info.tag(data-filter='*')
+          span.label.label-primary.tag(data-filter='*')
             | show all
           - var allTags = _.uniq(_.flatten(_.map(page.metadata.projects, function(p) { return p.tags.split(', ') })))
           each tag in allTags
-            span.label.label-info.tag(data-filter=tag)= tag
+            span.label.label-primary.tag(data-filter=tag)= tag
 
   #projects.project-row
     div(class='project-box external-links')

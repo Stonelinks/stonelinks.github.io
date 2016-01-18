@@ -2,7 +2,7 @@
 title: FCC ECFS Comment Dataset
 date: 2014-08-20
 template: article.jade
-tags: net neutrality, dataset
+tags: net neutrality, datasets
 ---
 
 <div class="gh-container">
