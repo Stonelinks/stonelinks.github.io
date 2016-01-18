@@ -20,7 +20,7 @@
   "dependencies": {
     "blueimp-bootstrap-image-gallery": "3.1.1",
     "blueimp-gallery": "2.16.0",
-    "bootstrap": "3.2.0",
+    "bootstrap": "3.3.6",
     "color-themes-for-google-code-prettify": "https://github.com/jmblog/color-themes-for-highlightjs.git",
     "font-awesome": "4.1.0",
     "glob-expand": "0.1.0",

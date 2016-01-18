@@ -13,6 +13,7 @@ var ghPages = require('gulp-gh-pages');
 var gulpSequence = require('gulp-sequence');
 
 var path = {
+    templates: ['./templates/**/*'],
     site: [
         './contents/*.{md,json}',
         './contents/posts/**/*',
@@ -94,6 +95,7 @@ gulp.task('clean', function () {
 gulp.task('build', gulpSequence('clean', ['nojekyll', 'js', 'style', 'site', 'images', 'fonts', 'node_modules']));
 
 gulp.task('watch', ['build'], function () {
+    gulp.watch(path.templates, ['site']);
     gulp.watch(path.site, ['site']);
     gulp.watch(path.js, ['js']);
     gulp.watch(path.style, ['style']);
