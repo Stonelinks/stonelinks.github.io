@@ -1,15 +1,23 @@
-@import "bootstrap.less";
-@import "../../node_modules/font-awesome/less/font-awesome.less";
+@import "fonts";
+@import "bootstrap";
 
+@import "../../node_modules/font-awesome/less/font-awesome";
 @fa-font-path: "../../node_modules/font-awesome/fonts";
 
 @import (less) "../../node_modules/color-themes-for-google-code-prettify/build/assets/css/themes/tomorrow-night.css";
-
 @import (less) "../../node_modules/blueimp-gallery/css/blueimp-gallery.css";
 @import (less) "../../node_modules/blueimp-bootstrap-image-gallery/css/bootstrap-image-gallery.css";
 
+
+@import "nav";
+@import "footer";
+@import "about";
+@import "media-container";
+@import "tags";
+@import "projects";
+
+
 body {
-  font-family: 'PT Sans', Helvetica, Arial, sans-serif;
 
   background: linear-gradient(darken(@brand-primary, 0%), darken(@brand-primary, 25%)) no-repeat center center / 100% 100% fixed;
 
@@ -106,10 +114,3 @@ pre code {
   max-width: 100%;
   margin: 0 auto 10px;
 }
-
-@import "nav";
-@import "footer";
-@import "about";
-@import "media-container";
-@import "tags";
-@import "projects";
