@@ -10,7 +10,7 @@ This was a design I came up with for a now-defunct Battlebots Club that used to 
 
 <div id="gallery"></div>
 
-##The Bar Spinner Design
+## The Bar Spinner Design
 
 Almost all the damage done in combat robotics is through the massive transfer of kinetic energy from one robot to another. The easiest way to accomplish this is to collide a large, fast moving mass with an enemy robot. To that end, we have decided to develop a full body spinner / bar spinner hybrid design. The weapon implementation will be similar to that of [Son of Whyachi](http://www.teamwhyachi.com/sow.htm).
 

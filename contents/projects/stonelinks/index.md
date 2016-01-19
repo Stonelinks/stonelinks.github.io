@@ -19,6 +19,6 @@ After a year and a half at MUJIN learning how to be a serious front-end develope
 
 So there you have it! From an author's and a developer's perspective, it is a dream come true. Hope you enjoy the website.
 
-##Code
+## Code
 
 Check out the source code for stonelinks on [github](https://github.com/Stonelinks/stonelinks.github.io)

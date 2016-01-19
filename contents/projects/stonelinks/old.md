@@ -11,7 +11,7 @@ template: page.jade
 
 This project is my take on how writing a mostly static website with a lot of content should work. It is what runs this very website. It requires no server side scripting or database of any kind. In fact it is all static files that are compiled from simple markdown files. It is a not well suited for web apps with an API and lots of dynamic content.
 
-##History
+## History
 
 "Stonelinks" is a moniker I use for myself all over the internet and of course the name of this website. In one form or another, Stonelinks has been online since late 2008 when I decided to figure out how the internet works (a task which is still ongoing).
 
@@ -19,7 +19,7 @@ Since 2008, Stonelinks has gone through many incarnations. For a long time it ra
 
 Fast forward to winter break 2012. I happened to have a bunch of spare time on a cruise with no internet access. Like any sensible programming addict, I really wanted a new project to occupy myself with while I sat around watching people gorge themselves on the lido deck. Hence this incarnation of Stonelinks was born!
 
-##Design
+## Design
 
 My design goals for this was to have something that, from an authors perspective, was dead simple to use. Basically all I wanted authors to do is create a single [markdown](http://daringfireball.net/projects/markdown/) file with just the body of a page and have it automatically add the rest of the website around it. This means things like contextual sidebars, navigation, comments, links, etc.
 
@@ -27,7 +27,7 @@ In keeping with the goal of trying to keep this as simple as possible, this mean
 
 In hindsight, static HTML generators like this have been done a zillion times before. Hyde and Firmant come to mind. But as with a lot of things, its feels nice to make a tool yourself and use it for yourself. Things like this also help you appreciate the work and expertise that others have done. Too many times I have heard programmers say things like "django sucks!". If django sucks so much, try to write something that does what django does (or better yet, submit a patch or something), then we'll talk! **tl;dr**: [eat your own dog food](http://en.wikipedia.org/wiki/Eating_your_own_dog_food).
 
-##Features
+## Features
 
 - Page hierarchy
     - Store all content as markdown files structured into directories to form a hierarchy
@@ -57,11 +57,11 @@ In hindsight, static HTML generators like this have been done a zillion times be
     - Comments via disqus
     - Page minification
 
-##Code
+## Code
 
 Check out the source code on [github](https://github.com/Stonelinks/stonelinks.org)
 
-##How to use
+## How to use
 The general process of how to use the Stonelinks web framework is pretty simple:
 
 - Pull down the git repository
@@ -71,11 +71,11 @@ The general process of how to use the Stonelinks web framework is pretty simple:
 - Modify the makefile to deploy to your web server of choice
 - Run `make site`
 
-##How it works
+## How it works
 
 First, a website object from `objects.py` is created. It crawls the source directory (in this case it is `content`) and constructs a tree out of the filenames and directory names contained inside. In the tree, each node is actually a page object. At first glance, this makes no sense because it means directories are actually being picked up as files representing web pages. However, as we will soon see, if an `index.md` file is not present under a directory, the parent directory page object will yeild an automatically generated index similar to what apache and other webservers do.
 
-###Traversal
+### Traversal
 
 Once a tree has been made, whenever an operation needs to be conducted on a page by page basis (like say, generating the html for sidebar navigation on each page), there exists a utility function inside the website object called `traverse` that will visit every page in the tree breadth-first style. `traverse` accepts a functional argument that it will in turn call on every page it visits as it traverses through the tree.
 
@@ -85,11 +85,11 @@ In addition to automatically generating sidebars on each page, a few other thing
 - Automatic indexes
 - Site compilation
 
-###Page and site compilation
+### Page and site compilation
 
 To compile a single page, take a look at `pages.py`. To see how the whole site is compiled, take a look at `gen_pages` in `objects.py`.
 
-###Automatic indexes
+### Automatic indexes
 
 Lets consider a website with the following structure:
 

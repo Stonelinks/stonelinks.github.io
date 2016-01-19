@@ -9,13 +9,13 @@ Oftentimes I find that some ideas are far fetched or out of a particular project
 
 Unfortunately Mindshare is no longer active. It died when I switched stonelinks off wordpress and to the current structure. If there is enough interest, maybe I'll bring it back.
 
-##Mindshare Archive
+## Mindshare Archive
 
 <ul id="mindshare-archive-anchor"></ul>
 
 <br/>
 
-###Assassins (WebApp)
+### Assassins (WebApp)
 
 * * * * *
 
@@ -35,25 +35,7 @@ DATA MODELS:
 
 see http://en.wikipedia.org/wiki/Assassin_%28game%29
 
-###Auto Index for Directories
-
-* * * * *
-
-**Guest at 2010-05-03 23:22:14:**
-
-For a number of different projects in which I reference or cite a large number of files, I wish Windows would automatically add a chronological n-digit index before the file names, simply upon saving, copying, etc. into the directory. Ex: "pic1.jpg", "anotherFile.txt" => "00 - pic1.jpg", "01 - anotherFile.txt" and so on. I'm writing a research paper with 70ish tentative sources and find it much easier to refer to them by index rather then citing them all first.
-
-What I'm picturing: right click -> properties -> indexing
-
-indexing(on/off)
-index sub-folders(continue/new/off)
-
-- if indexing==on
-    - index string (______) // where # = number
-    - ex: (## - ) or (#:) or (###)
-    - start (#) //0 by default
-
-###Better Branch Predictor?
+### Better Branch Predictor?
 
 * * * * *
 
@@ -71,7 +53,7 @@ Thought/read about this for a couple hours yesterday and today. It seems fascina
 
 I somehow started reading about genetic algorithms. Would these have any application here? Maybe you load the processors hardware / software configuration into such a program and have it "evolve" competing architectures, complete with things like "mutation", "adaptation", "inheritance" etc. If nature has shown us anything it is that it is very capable of developing things like the brain from such rules.
 
-###CallMe (WebApp)
+### CallMe (WebApp)
 
 * * * * *
 
@@ -103,7 +85,7 @@ See http://code.google.com/p/pygooglevoice/ and http://lmgtfy.com/?q=google+voic
 
 There must be a way to do this without restricting it to another program or user account, though starting with a few services might be the way to go.
 
-###Cardboard Umbrella
+### Cardboard Umbrella
 
 * * * * *
 
@@ -123,7 +105,7 @@ could be waterproofed by depositing a layer of wax on the side in contact with t
 
 If the cardboard/paper is thin or pliable enough, it will fold itself (like those paper drink umbrellas). No?
 
-###City Drone
+### City Drone
 
 * * * * *
 
@@ -190,7 +172,7 @@ Depending on how long it takes to crack WEP I might change this to prioritize ba
 
 Another thing about the port forwarding. That may end up being a pain in the ass to do correctly. Maybe doing everything through UDP traffic would be better. This would, however, require major changes in the software. Part of the reason I want to do this project is because I already have software written to control the robot over a web browser. HTTP however is a TCP protocol so I would have to rewrite EVERYTHING which would not be cool.
 
-###Explode (C)
+### Explode (C)
 
 * * * * *
 
@@ -217,7 +199,7 @@ how it works:
     - \#include extern files in [prog]_main.c
     - write makefile
 
-###Fecal Ink Printer
+### Fecal Ink Printer
 
 * * * * *
 
@@ -237,7 +219,7 @@ Now that i think of it, the problem doesn't really lie in the printer, but the i
 
 Any more ideas on how to make feces-derived ink feasible? Would a special printer head need to be designed or could the hypothetical ink be printed with a standard print head?
 
-###First date cheat code
+### First date cheat code
 
 * * * * *
 
@@ -245,7 +227,7 @@ Any more ideas on how to make feces-derived ink feasible? Would a special printe
 
 1st Date Cheat Code for MEN: Never tell a girl where you're going or how to dress. Instead, tell her to "dress for a first date with a guy she really likes". Now, pick three places you'd like to go: someplace fun and active (bowling, pool, mini golf, go-kart racing, ballgame, etc), something romantic and classy (nice restaurant, upscale lounge, art gallery opening) and something in between (nice bar, coffee shop, comedy club). Now, when you pick her up, let the way she's dressed decide which you&#8217;re going to do: If she's wearing something sexy and revealing (dress, high heels, low cut top, etc.) than she wants to go somewhere classy and romantic. If she's sporting some jeans, tennis shoes or flip-flops, and a tee, the bowling ally or pool hall may be a good bet. If she's wearing jeans, high heeled boots, and nice top or blouse, than she's not really jonesing for the super romance treatment, and she put in more effort than mini golf deserves (eighteen holes of mini golf in heels... seriously?), so a comedy club or some place with live music is a good choice. And never, EVER, do a movie on the first date! EDIT: Men: You're going to wear a pair of CLEAN, NEAT jeans, a pressed stylish LONG sleeve button down shirt, nice shoes or boots (try to avoid tennis shoes of sneakers). Works for ANY occasion!
 
-###Harvard Dining Club
+### Harvard Dining Club
 
 * * * * *
 
@@ -263,7 +245,7 @@ Harvard is only a few minutes from Boston, some of the best restaurants in the n
 - Website with restaurant of the month
 - Restaurant Week in Boston
 
-###Home Locator
+### Home Locator
 
 * * * * *
 
@@ -299,7 +281,7 @@ yeah.........
 
 That'd be cool, but if you have a GPS-capable phone and a browser then there's a far simpler way to do this that would actually be pretty sick.
 
-Take a look at Google Maps and the number of Wikipedia articles and tourist photos that have already been overlayed on common destinations (Maps>More>Photos,Wikipedia). What you should really do is use input from the phone's camera and search images tagged on Maps,etc. within a certain radius for matches. Depending on the GPS accuracy, you might not even need to go that far.
+Take a look at Google Maps and the number of Wikipedia articles and tourist photos that have already been overlaid on common destinations (Maps>More>Photos,Wikipedia). What you should really do is use input from the phone's camera and search images tagged on Maps,etc. within a certain radius for matches. Depending on the GPS accuracy, you might not even need to go that far.
 
 Regardless, I agree that we need more Augmented Reality apps. You should heck out Layar, which seems to be the current AR front-runner:
 
@@ -315,7 +297,7 @@ I also would twist this to allow tourists to download an itinerary of things the
 
 This may be a little plebeian for you but I have not seen it done  
 
-###Ice Thickness Robot
+### Ice Thickness Robot
 
 * * * * *
 
@@ -349,7 +331,7 @@ As for your suggestion, I am by no means an expert either, but I do know that ul
 
 In short, I don't know what the ideal wave-based solution would be.
 
-###In & Out Board
+### In & Out Board
 
 * * * * *
 
@@ -387,7 +369,7 @@ Don't things like this already exist? how would this be different?
 
 These probably do exist. I was just frustrated by Mandrews's inability to return anything, came up with the idea, and pictured it in the pages of Good Housekeeping. Not necessarily different, but cheap and marketable.
 
-###Porting iPhone Apps to Windows Phone API
+### Porting iPhone Apps to Windows Phone API
 
 * * * * *
 
@@ -404,7 +386,7 @@ Windows Mobile 6.5 SDK
 
 [http://www.microsoft.com/downloads/details.aspx?familyid=20686A1D-97A8-4F80-BC6A-AE010E085A6E&displaylang=en](http://www.microsoft.com/downloads/details.aspx?familyid=20686A1D-97A8-4F80-BC6A-AE010E085A6E&displaylang=en)
 
-###TenReasons (WebApp)
+### TenReasons (WebApp)
 
 * * * * *
 
@@ -433,7 +415,7 @@ look up reasons why to/not to do something
 search by topic, to/not to, grammar
 add a suggestion to a current page or create your own
 
-###Text to Image (WebApp)
+### Text to Image (WebApp)
 
 * * * * *
 
@@ -467,7 +449,7 @@ Didn't you do something similar to this with c++ raytracing?
 
 Nope, that was just basic 3D rendering.
 
-###The "Shower" Field Generator
+### The "Shower" Field Generator
 
 * * * * *
 
@@ -485,7 +467,7 @@ If such a device could actually be implemented, it would have many, many applica
 
 I don't even have the faintest idea about how one would go about implementing this. I know that for it to be viable, it must preserve the body's naturally occurring germs, which would make targeting the bad germs particularly difficult.  
 
-###Universal "Apps" IDE
+### Universal "Apps" IDE
 
 * * * * *
 
@@ -516,7 +498,7 @@ The way I see getting this done, at least for phones, is writing several separat
 
 Of course you make a very strong point that the web browser is basically the universal application nowadays, which might render the previous paragraph useless
 
-###UpperClassMan
+### UpperClassMan
 
 * * * * *
 
@@ -542,7 +524,7 @@ Logo: 3 colors ("Uppper", "Class", "Man")
     - Gold's Gym
     - Classic Tuxedo
 
-###Waste Based Plastic Moulding
+### Waste Based Plastic Moulding
 
 * * * * *
 
@@ -552,7 +534,7 @@ The idea is to build a machine that melts down the plastic commonly found in tra
 
 The incentive and best application I can think of for this is to produce solo cups and ping pong balls out of the reclaimed plastic. Such a device would cut down on wasted plastic and excess waste at many college campuses across the country and provide fraternities and sororities (or any other similar organization) with 'free' supplies to play that oh-so-popular college drinking game.
 
-###WhatShouldIGet? (WebApp)
+### WhatShouldIGet? (WebApp)
 
 * * * * *
 

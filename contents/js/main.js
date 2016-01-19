@@ -8,7 +8,6 @@ $(document).ready(function () {
             });
             break;
         case 'luke':
-            //setBGImage(chooseRandomImage());
             var jumbotron = $('.about-jumbotron');
             if (jumbotron.get(0) !== undefined) {
                 var _origPosition = jumbotron.css('background-position').split('% ');
@@ -87,8 +86,6 @@ $(document).ready(function () {
                 }
             ];
 
-            $('body').append($('<div id="#preloaded-images"></div>'));
-
             $('#preloaded-images').imagesLoaded(function () {
                 $('#preloaded-images').hide();
 
@@ -123,12 +120,8 @@ $(document).ready(function () {
             break;
 
         case 'projects':
-            //setBGImage(chooseRandomImage());
-
             var $container = $('#projects');
-
             $container.imagesLoaded(function () {
-
                 $container.isotope({
                     layoutMode: 'packery',
                     packery: {
@@ -150,7 +143,6 @@ $(document).ready(function () {
             break;
 
         case 'projects/mindshare/index':
-            //setBGImage(chooseRandomImage());
             $('h3').each(function () {
                 var $this = $(this);
                 $this.css('margin-top', '200px');
@@ -159,13 +151,10 @@ $(document).ready(function () {
             break;
 
         case 'projects/robots/index':
-            //setBGImage(chooseRandomImage());
             $('<div id="ied-gallery"></div>').insertAfter($('.box .media-container:first'));
             break;
 
         case 'posts/interview/index':
-            //setBGImage(chooseRandomImage());
-
             var showButton = '<button type="button" class="btn btn-default show-answer">Click for answer</a>';
 
             $('.interview-answer').each(function () {
@@ -192,9 +181,6 @@ $(document).ready(function () {
 
             _hideAll();
             break;
-
-        default:
-        //setBGImage(chooseRandomImage());
     }
 
     if (window.hasOwnProperty('GALLERY')) {

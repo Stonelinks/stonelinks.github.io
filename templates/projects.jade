@@ -7,7 +7,7 @@ block append js
 
 block content
   .row.tag-row.project-tag-row
-    .box
+    .box.background-color-2
       .col-lg-12
         p#project-filters
           span.label.label-primary.tag(data-filter='*')
@@ -18,10 +18,8 @@ block content
 
   #projects.project-row
     div(class='project-box external-links')
-      hr
       a(href='https://github.com/Stonelinks')
         h3.intro-text.text-center= "Github"
-      hr
       a(href='https://github.com/Stonelinks')
         img(src='/images/logos/github.png')
       a(href='https://github.com/Stonelinks')
@@ -30,10 +28,8 @@ block content
 
     each project in page.metadata.projects
       div(class='project-box ' + project.tags.split(', ').join(' '))
-        hr
         a(href='/projects/' + project.id + '/index.html')
           h3.intro-text.text-center= project.name
-        hr
         a(href='/projects/' + project.id + '/index.html')
           img(src='/images/' + project.image)
         a(href='/projects/' + project.id + '/index.html')

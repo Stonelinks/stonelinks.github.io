@@ -19,7 +19,7 @@ My time at Harvard-CFA has been tremendously valuable to me. While there, I have
 - Developed strong communication skills by working with astrophysicists, engineers, hardware vendors, etc.
 - Gained valuable technical experience with automation, programming, engineering, astrophysics, materials science and more
 
-##The Software
+## The Software
 
 My major accomplishment at Harvard has been writing a software suite to automate the task of creating an optic given a set of parameters. Along the journey of implementing this software, I have had to develop a complex UI, control sequences, hardware monitors, error checkers and motion control algorithms.
 
@@ -35,7 +35,7 @@ The current incarnation of the software has actually split into two major parts.
 
 </div>
 
-##The Hardware
+## The Hardware
 
 The technique used to actually coat the optic is called DC magnetron sputtering. A good explanation of the basic technique can be found [here](http://www.ajaint.com/whatis.htm). Some quick facts about the coating process:
 
@@ -51,7 +51,7 @@ The deposition sources (magnetrons, also called the cathodes) are always on duri
 - Made a mandrel (controlled VIA a vacuum rated stepper) to add an extra dimension to coatings (coat cylindrical shell optics in addition to flat wafers)
 - Assorted power supplies and instruments to monitor temperature, flow rate, etc.
 
-##Other Work
+## Other Work
 
 Other odd jobs I've done at the CFA include:
 
@@ -61,6 +61,6 @@ Other odd jobs I've done at the CFA include:
 - Helped with data distribution for an experiment run at Brookhaven National Laboratory
 - Probably more things that I am forgetting about
 
-##Conclusions
+## Conclusions
 
 Ultimately the end result has been the creation of a robust and easy to use platform that makes the daunting task of producing any kind of X-ray optic safe, easy and as stress free as possible for someone not intimately familiar with the details. Hopefully if NASA ever gets enough funding, my tools will end up creating something that ends up in space!

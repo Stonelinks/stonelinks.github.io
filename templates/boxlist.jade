@@ -1,17 +1,16 @@
 extends page
 
 block append content
-  .row
-    each thing in page.metadata.list
-      .box(id=slug(thing.name))
-        .col-lg-12
-          hr
-          h1.intro-text.text-center= thing.name
-          hr
-          .media-container
-            if thing.image
-              img(src='/images/' + thing.image)
-            else if thing.youtube
-              iframe(src=thing.youtube, frameborder="0", allowfullscreen)
-          .external-links
-            | !{ typogr(marked(thing.desc)).typogrify() }
+    .box-row
+        each thing in page.metadata.list
+            .row
+                .box(id=slug(thing.name))
+                    .col-lg-12
+                        h1.intro-text.text-center= thing.name
+                        .media-container
+                            if thing.image
+                                img(src='/images/' + thing.image)
+                            else if thing.youtube
+                                iframe(src=thing.youtube, frameborder="0", allowfullscreen)
+                        .external-links
+                            | !{ typogr(marked(thing.desc)).typogrify() }

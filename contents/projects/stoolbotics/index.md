@@ -31,9 +31,9 @@ This tool will hopefully fill a gap in many higher education robotics classrooms
 
 For information on how to get Stoolbotics, check out the [download page](/projects/stoolbotics/download.html). To get a quick idea of how to use Stoolbotics, check out the video below or read the [quickstart](/projects/stoolbotics/quickstart.html). To find out more about Stoolbotics, such as how it was implemented, or more detailed uses of the simulator, see the [full docs](/projects/stoolbotics/use.html).
 
-##Features
+## Features
 
-Stoolbotics has many features that make it attractive to the aspiring roboticst and the higer education robotics classrom. To name a few, Stoolbotics features:
+Stoolbotics has many features that make it attractive to the aspiring roboticist and the higher education robotics classroom. To name a few, Stoolbotics features:
 
 - Low barrier to entry with an easy to use file format for specifying a robot arm
 - Ability to visualize any robot that can be specified in such a file
@@ -48,6 +48,6 @@ Stoolbotics has many features that make it attractive to the aspiring roboticst 
 - Built in help from simulator command line, and of course this stellar and complete documentation
 - Cross platform implementation
 
-##Code
+## Code
 
 Check out the source code on [github](https://github.com/Stonelinks/Stoolbotics)

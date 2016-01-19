@@ -26,7 +26,7 @@ Factories are the beating heart at the center of industrialization in the 20th c
 
 Whenever we get a shiny new iPhone or Nexus, we neither know nor care about the factory it came from. For the crucial role they play in our daily lives, the humble factory stays out of sight and out of mind. Given the tremendous change agents they are and what changes I see for them in the future, I thought it prudent to share some of my insights and perspectives on them. This of course all my own opinion.
 
-###Black Boxes and Bottlenecks
+### Black Boxes and Bottlenecks
 
 <blockquote class="twitter-tweet" lang="en"><p>The SpaceX rocket factory: metal comes in one door, and rockets go out another. <a href="http://t.co/sJJs37axdD">http://t.co/sJJs37axdD</a> <a href="https://twitter.com/SpaceXJobs">@SpaceXJobs</a> <a href="http://t.co/UatHqC3LJN">pic.twitter.com/UatHqC3LJN</a></p>&mdash; SpaceX (@SpaceX) <a href="https://twitter.com/SpaceX/statuses/502505703974531072">August 21, 2014</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -74,7 +74,7 @@ Therein lies why I see factories as bottlenecks; waiting for factories cost an e
 
 Regardless, as I said opportunity cost is much harder to quantify than capital cost. but by looking at factories as black boxes and analyzing the bottlenecks on the time dimension, we can deconstruct specific problems and make smart decisions on how to optimize them. I think this is the approach we should take. Some may balk at the extreme capital costs associated with even a minor time saving measures. Remember that cost and time are inexorably tied to one another. If targeting the right bottleneck, even a tiny but expensive improvement in the time dimension can pay for itself big time in the cost dimension given the increased volume. Everybody knows the old saying "time is money". Nowhere is that more true than the world of manufacturing.
 
-###The Plight of Conservatism
+### The Plight of Conservatism
 
 So all this is great, we know time is the issue that needs attention. What happens when we actually try to make factories faster? Once we start peering under the lid of the black boxes of factories (and how to peer under that lid is a different
 conversation entirely; factories are notoriously secretive and earning their trust is hard work), they go from being one big bottleneck / black box to a complicated web of intermediate steps and black boxes. Basically a big directed graph of smaller black boxes with their own bottlenecks.
@@ -104,7 +104,7 @@ The result of all this is what I call the "plight of conservatism". Given that a
 Those consequences of largely ignoring modernization are about to come to fruition with the maturity of factory automation technology. The plight of conservatism has made innovation and advancement in manufacturing agonizingly slow and frustrating for almost everyone in the sector. The higher-ups and decision makers finally see that higher degrees of factory automation are the way forward. The industry is incredibly competitive. They must evolve or else get left in the dust. Unfortunately most factories are in the
 proverbial stone age thanks to the enduring conservatism and ever-present pressure to keep producing. Kind of like a chicken / egg scenario. They can't exactly stop what they are doing to learn a bunch of stuff about factory automation and change the millions of little black boxes that need to be changed.
 
-###Where this is Going
+### Where this is Going
 
 The state of the manufacturing world is pretty much this: everybody knows they need to modernize on some level but has no clue how to actually do it in a comprehensive way. They know bits and pieces of the puzzle but the gestalt is missing. Software in particular, which is my opinion is the key to the puzzle, is generally not well understood. Software can enable speedups on all those black boxes, and then some of them can be upgraded over time.
 
@@ -127,7 +127,7 @@ It is this interface between the tool makers and system integrators that tremend
 
 <!--
 
-###Blockages
+### Blockages
 
 At least in Japan, everybody in the manufacturing industry is incredibly suspicious of new, unproven technology. Trust, security, and paranoia about competitors stifle innovation. For example, I've had meetings with some of these companies where we've been led into entirely separate buildings filled with white windowless meeting rooms. There is a table, projector, power outlets, and chairs. No internet (unless we tether off our phones, which doesn't always work). All of our interaction with that company is limited to what can occur in that room with those people in the time we have, which is obviously incredibly limiting. Another good example: we were originally trying to push a cloud version of our product to companies. The benefits of cloud vs. self hosting are immense and obvious to anyone with half a clue how the internet works, but they weren't buying it. So now we sell a "black box" version to companies. This is a server with our software loaded on it. They plug it in and use it through a browser over the LAN. A huge problem is that they universally refuse to connect it to the internet for it to receive updates (conservatism is a pernicious beast). They also won't download updates manually or let us send them, and then apply the update themselves (much in the same way you'd update the firmware on your wireless router for example). Things need to be done in person or it flat out doesn't happen at all. Our product seldom has any chance to improve and the customer rarely gets new features, bugfixes or improvements. It is pretty terrible for everybody. All this mess isn't for lack of trying or negotiating finesse either. We gave up on what is right now an un-winnable argument against corporate stupidity. New paradigms in the way software works need to be around longer (or companies need to be desperate) before they triumph over the decades of inertia going the other way.
 

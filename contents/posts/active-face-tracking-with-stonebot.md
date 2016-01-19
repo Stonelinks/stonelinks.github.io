@@ -17,7 +17,7 @@ This has been a goal of mine ever since I started building my personal robot (wh
 
 <span class="more"></span>
 
-###OpenCV
+### OpenCV
 
 By far, the hardest thing about this was getting OpenCV set up correctly. Once set up, it is relatively easy to use, comes with a lot of cool examples and seems extremely powerful (if you don't believe me check out what the folks over at [Willow Garage](http://www.willowgarage.com/) do with it on a routine basis). In the future it is definitely something I want to experiment more with, and not just use for face and object detection.
 
@@ -33,7 +33,7 @@ $ sudo apt-get install OpenCV python-OpenCV
 
 and OpenCV is yours for the taking! Install the documentation and run the examples to figure out if all your V4L2 and webcam drivers will play nice with it.
 
-###Classifiers are easily fooled
+### Classifiers are easily fooled
 
 <div class="media-container">
 
@@ -45,6 +45,6 @@ This is pretty self explanatory. I drew the above face with a purple magic marke
 
 Additionally, I have found that the wrong lighting, glasses, and long hair can throw it off as well. To be fair, Haar feature detection in this case is not incredibly accurate. The advantage it possesses in this application is relatively low computational complexity which translates into a speedy detection algorithm.
 
-###CPU speed
+### CPU speed
 
 As I said in the video, performance on the eee PC was terrible. While not surprising, this is kind of upsetting as I was considering putting it to use as the brains of the robot once I add some sort of locomotion to the system. I was pleasantly surprised however when I loaded up the code on to my new laptop (which has a Core 2 duo operating at 1.3GHz) and things worked beautifully. It would seem that OpenCV, even though I thought that python couldn't be threaded, is somehow threading itself across both cores of the processor. As I'm still new to python and all of these technology, so sit tight! I'm still learning how all this stuff works. 

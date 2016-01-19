@@ -5,11 +5,11 @@ template: article.jade
 tags: airplane, drones
 ---
 
-As some of you may know, I have left Tokyo and the world of industrial robotics and am now in the midst of immirsing myself in the world of drones in San Francisco. Its a very exciting time in my life! Among other things, I did some research into the different drone platforms out there.
+As some of you may know, I have left Tokyo and the world of industrial robotics and am now in the midst of immersing myself in the world of drones in San Francisco. Its a very exciting time in my life! Among other things, I did some research into the different drone platforms out there.
 
-As a sample excercise, I took an in-depth look at how I'd go about integrating a laser altimeter on to the 3DR Pixhawk.
+As a sample exercise, I took an in-depth look at how I'd go about integrating a laser altimeter on to the 3DR Pixhawk.
 
-##Step 0: Source a sensor
+## Step 0: Source a sensor
 
 All signs of googling point to the [SF02/F laser altimeter](http://www.lightware.co.za/shop/en/lrf-modules/7-sf02f.html) as the quickest option to get something working.
 
@@ -54,53 +54,55 @@ To address some of the SF02's cons (and given that we're equipping a fleet), I l
 
 So while these other sensors may potentially work, for the sake of this analysis I'm going to with the SF02.
 
-##Step 1: Connect to the Pixhawk
+## Step 1: Connect to the Pixhawk
+
 
 The wiring from the SF02 to the Pixhawk goes like this:
 
-<table class="table table-striped table-bordered table-condensed">
-  <thead>
-    <tr>
-      <th>Pixhawk UART pin</th>
-      <th>SF02/F pin</th>
-      <th>Comment</th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <tr class="row1">
-      <td>1 / +5V</td>
-      <td>3 / +5V</td>
-      <td>Power supply</td>
-    </tr>
-
-    <tr class="row2">
-      <td>2 / TX</td>
-      <td>9 / RX</td>
-      <td>3.3V UART SF02/F receive</td>
-    </tr>
-
-    <tr class="row3">
-      <td>3 / RX</td>
-      <td>8 / TX</td>
-      <td>3.3V UART SF02/F transmit</td>
-    </tr>
-
-    <tr class="row4">
-      <td>6 / GND</td>
-      <td>2 / -</td>
-      <td>Ground</td>
-    </tr>
-  </tbody>
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>Pixhawk <span class="caps">UART</span> pin</th>
+<th><span class="caps">SF02</span>/F pin</th>
+<th>Comment </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1 / +5V</td>
+<td>3 / +5V</td>
+<td>Power supply </td>
+</tr>
+<tr>
+<td> 2 / <span class="caps">TX</span></td>
+<td>9 / <span class="caps">RX</span></td>
+<td>3.3V <span class="caps">UART</span> <span class="caps">SF02</span>/F receive </td>
+</tr>
+<tr>
+<td> 3 / <span class="caps">RX</span></td>
+<td>8 / <span class="caps">TX</span></td>
+<td>3.3V <span class="caps">UART</span> <span class="caps">SF02</span>/F transmit </td>
+</tr>
+<tr>
+<td> 6 / <span class="caps">GND</span></td>
+<td>2 / -</td>
+<td>Ground </td>
+</tr>
+</tbody>
 </table>
 
 Since the SF02 uses screw terminals, depending on how much the aircraft vibrates it may be a good idea to soldier up the leads to the screw terminal. This is the [cable / connector](https://store.3drobotics.com/products/df13-6-position-connector-45-cm) you'd use. Plug the SF02 into TELEM2 of the Pixhawk.
 
-##Step 2: Install on the aircraft
+## Step 2: Install on the aircraft
 
 You'll want to put the sensor pointing at the ground obviously, keeping it perpendicular to the aircraft. The sensor should also be mounted in a recessed position so that the optics arn't scratched during a rough landing. Also, it should be positioned such that it doesn't mess with the center of gravity for the aircraft otherwise it will affect glide characteristics.
 
-##Step 3: Software integration
+## Step 3: Software
+
+**Drivers**
+
+The [sf0x driver](https://github.com/PX4/Firmware/tree/master/src/drivers/sf0x) needed for the Pixhawk is already part of the firmware. To start the driver:
 
 **Drivers**
 
@@ -151,7 +153,6 @@ while (true) {
   /* wait for sensor update of 1 file descriptor for 1000 ms (1 second) */
 
   int poll_ret = poll(fds, 1, 1000);
-..
   if (fds[0].revents & POLLIN) {
 
     /* obtained data for the first file descriptor */
@@ -166,7 +167,7 @@ while (true) {
 }
 ```
 
-##Step 4: use it in your application
+## Step 4: use it in your application
 
 The code snippet above isn't a complete application, but you get the idea. Once the range finder data is copied into that `range_finder_report` struct instance, the sky is the limit (pun intended) for what you want to do to it. This is where higher level, application specific things get implemented. Some things I can think of to do with altimeter data:
 

@@ -17,4 +17,4 @@ Enter python and Gmail! I wanted to be able to have someone email me a message w
 
 All you gotta do is edit the username and password at the top of the script, and set up a cron job to call the script on the machine with the printer attached.
 
-A couple of other comments about this: It is dangerous! Someone could email you a file with a malformed name and escape out of the print command that gets called by the subprocess. Not good. There are probably other security risks (like the fact that your password is stored in plaintext). Thats it! have fun kids!
+A couple of other comments about this: It is dangerous! Someone could email you a file with a malformed name and escape out of the print command that gets called by the subprocess. Not good. There are probably other security risks (like the fact that your password is stored in plaintext). That is it! have fun kids!

@@ -11,7 +11,7 @@ One weekend early in the semester, I found myself with some rare free time and s
 
 Projects such as this are just the kind of thing that I love taking time to do. They span the full stack, and involve concepts that go from very low level micro controller programming to high level web programming, using all sorts of code and hardware as in between. It requires quite a lot of different skill sets and knowledge of systems integration for this to work. Anyhow enough self-aggrandizing, I'll describe how I did it starting very low level at the and working my way up.
 
-###Hardware
+### Hardware
 
 <div class="media-container">
 
@@ -23,7 +23,7 @@ This summer I came into possession of an [Arduino](http://www.arduino.cc/) micro
 
 The servo signal pins were wired to the digital I/O ports on the arduino. I stuffed the Arduino in a metal box I had lying around and hot glued everything together. Predictably, the webcam itself didn't require much work. It was actually given to me for free! (previous owner couldn't find drivers for it). I just ripped the stand off of it and glued it to the servos. All in all, this was a cheap and simple that has performed very well for what it was designed to do.
 
-###Microcontroller Code
+### Microcontroller Code
 
 I wrote the following code to establish basic control of the Arduino over its USB serial adapter. The servos are controlled using a technique called pulse width modulation (PWM). The comments explain what is going on, but for further background reading you can check out [this](http://en.wikipedia.org/wiki/Pulse-width_modulation). It also uses EEPROM to store the position of the camera between power cycles and resets. For some background about what EEPROM is check out [this](http://en.wikipedia.org/wiki/EEPROM).
 
@@ -217,7 +217,7 @@ void loop()
 }
 ```
 
-###Establishing Serial Communication
+### Establishing Serial Communication
 
 If you load the above code into the Arduino's IDE and flash it to your microcontroller, you end up with a nice, intuitive way of manually controlling your pan / tilt mechanism. You can try things out by opening the Serial Monitor in the Arduino IDE and moving around using WASD, or move to the extremes using TFGH. Pressing 'C' centers the camera back and 'L' [fires the laser](http://spf.fotolog.com/photo/47/10/95/vanguardista2104/1211331863_f.jpg). Arguably, you could stop here and technically still have a way of controlling the camera over the internet with the power of linux. All one would need to do is open up a terminal or ssh into the machine and run the following command:
 
@@ -227,7 +227,7 @@ If you load the above code into the Arduino's IDE and flash it to your microcont
 
 This was not good enough for me though, as I wanted to control this through a web browser, which brings us to...
 
-###The Web Server
+### The Web Server
 
 <div class="media-container">
 
@@ -239,7 +239,7 @@ The Arduino is cool and all, but since the ultimate goal of this project is to c
 
 After all that rambling, you're probably wondering how I have my web server configured. The only relevant details are that I am running stock [WampServer](http://www.wampserver.com/en/) with PHP 5.3.0 with short tags enabled.
 
-###Nightmare in PHP land
+### Nightmare in PHP land
 
 I thought this would be easy. Since PHP is a server side scripting language, it has libraries that allow it to read and write to and from serial ports. So one would think that something like the following would work:
 
@@ -254,7 +254,7 @@ However, for reasons I do not completely understand, this did not work for me un
 
 While extremely inefficient, this was the quickest, most reliable solution to my problem. Of course, this would all have been avoided in the first place had I been using Linux, as PHP has no problem writing to /dev/ttyUSB0 like it would a normal file in Linux.
 
-###Building the Webpage
+### Building the Webpage
 
 By accessing the [PHP $\_GET](http://www.w3schools.com/PHP/php_get.asp) array, I was able to map incoming GET requests to different URLS to control what commands were sent to the camera. The PHP included in the header of the page is shown here:
 
@@ -271,11 +271,11 @@ if (isset($_GET['action']))
 
 And the HTML for the rest of the page is simply a 3x3 table with some hyperlinks to the right URLs with things like `?action=up`, `?action=down`, ect. placed in the right spot.
 
-###Webcam
+### Webcam
 
 To manage the webcam feed, I am using a program called [Fwink](http://www.lundie.ca/fwink/) to take a picture every second and then using AJAX to automatically refresh the image once the page is loaded. However, there are many ways to manage a webcam feed and the details of how you do it is out of the scope of what I'm talking about here.
 
-##Conclusions and Future Improvements
+## Conclusions and Future Improvements
 
 As expected, performance with this setup is less than impressive, but this was more a learning exercise than it was a perfect execution. I have no doubts in my mind that the low performance is due to the wonky way in which I have to execute system calls to run the Processing exes. For the future, as this is a rough prototype, a lot can be improved / simplified by moving to Linux.
 

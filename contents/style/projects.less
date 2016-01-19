@@ -3,6 +3,22 @@
   margin: 0;
 }
 
+.project-row .project-box:nth-child(4n) {
+  background-color: @color-4;
+}
+
+.project-row .project-box:nth-child(4n + 1) {
+  background-color: @color-5;
+}
+
+.project-row .project-box:nth-child(4n + 2) {
+  background-color: @color-2;
+}
+
+.project-row .project-box:nth-child(4n + 3) {
+  background-color: @color-3;
+}
+
 .project-tag-row {
   margin: 0;
 }
@@ -11,21 +27,18 @@
 
   width: 100%;
 
-  padding: 0 20px 20px;
+  padding: 0 2 * @padding-large-vertical 2 * @padding-large-vertical;
 
   margin-left: 0;
   margin-right: 0;
 
-  -webkit-transition: all .2s ease;
-  -moz-transition: all .2s ease;
-  -o-transition: all .2s ease;
-  transition: all .2s ease;
+  .transition(all .2s ease);
 }
 
 .project-box {
   img {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: @padding-large-vertical;
   }
   p {
     margin: 0;

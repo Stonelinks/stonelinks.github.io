@@ -13,10 +13,10 @@ The modern day investor has tools such as MSN Money, Yahoo Finance and Google Fi
 
 DaBuzz was a [Rensselaer Center for Open Source (RCOS)](http://rcos.rpi.edu/) project developed by Lucas Doyle, Christian Johnson, Michael Horowitz and Dan Kimball. We made this as a group of friends in their last semester at RPI who had the idea kicking around for awhile.
 
-##Poster
+## Poster
 
 [Here is a poster](/misc/dabuzz_poster.pdf) from a presentation we gave about Dabuzz.
 
-##Code
+## Code
 
 Check out the source code on [github](https://github.com/Stonelinks/DaBuzz)
