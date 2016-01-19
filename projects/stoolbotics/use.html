@@ -3,49 +3,40 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Using the Simulator - Stoolbotics - Stonelinks
     </title>
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400italic,400,700">
     <link rel="stylesheet" href="/style/main.css">
   </head>
   <body>
-    <div class="landing"><a href="/" class="brand"><img src="/images/logos/logo-512.png">Stonelinks</a>
-      <div class="tagline-bar">Lucas Doyle's website
-      </div>
-    </div>
-    <div role="navigation" class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><img src="/images/logos/logo-512.png">Stonelinks</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="/blog.html">Blog</a></li>
-            <li><a href="/luke.html">About</a></li>
-            <li><a href="/projects.html">Projects</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div id="preloaded-images"></div>
-    <div class="container">
-      <div class="row">
-        <div class="box">
-          <!--there has got to be a more elegant way of doing this
-          -->
-          <div class="col-lg-12">
-            <hr><a href="/projects/stoolbotics/use.html">
-              <h1 class="intro-text text-center">Using the Simulator - Stoolbotics</h1></a>
-            <hr><ul class="nav navbar-nav">
-  <li><a href="/projects/stoolbotics/index.html">Home</a></li>
-  <li><a href="/projects/stoolbotics/download.html">Download</a></li>
-  <li><a href="/projects/stoolbotics/quickstart.html">Quickstart</a></li>
-  <li><a href="/projects/stoolbotics/use.html">Docs</a></li>
-  <li><a href="/projects/stoolbotics/implementation.html">About</a></li>
-</ul>
+    <div class="chrome-wrapper">
+      <div class="chrome-wrapper-inner">
+        <div class="chrome-container">
+          <div class="masthead clearfix"><a href="/">
+              <div class="masthead-logo"><img src="/images/logos/logo-200.png"></div>
+              <h1 class="masthead-brand">Stonelinks
+              </h1></a>
+            <p class="masthead-tagline">Lucas Doyle's Website
+            </p>
+            <nav>
+              <ul class="nav masthead-nav">
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/luke.html">About</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div id="preloaded-images"></div>
+          <div class="container">
+            <div class="box-row">
+              <div class="row">
+                <div class="box background-color-2">
+                  <div class="col-lg-12">
+                    <hr><a href="/projects/stoolbotics/use.html">
+                      <h1 class="intro-text text-center">Using the Simulator - Stoolbotics</h1></a>
+                    <hr><ul class="nav navbar-nav"><br>  <li><a href="/projects/stoolbotics/index.html">Home</a></li><br>  <li><a href="/projects/stoolbotics/download.html">Download</a></li><br>  <li><a href="/projects/stoolbotics/quickstart.html">Quickstart</a></li><br>  <li><a href="/projects/stoolbotics/use.html">Docs</a></li><br>  <li><a href="/projects/stoolbotics/implementation.html">About</a></li><br></ul>
 
 
 <p>This section of the documentation goes into some more detailed use cases of Stoolbotics. Before reading this you should probably check out the <a href="/projects/stoolbotics/quickstart.html">quickstart</a>.</p>
@@ -53,25 +44,30 @@
 <p>Since the principal function of Stoolbotics is simulating robots, it is important to know how to specify them in a format that Stoolbotics can understand, load them into the simulator and command then to do&nbsp;things.</p>
 <h3 id="robot-json-file">Robot.json File</h3>
 <p>As covered in the quickstart, robots are specified in json files that contain sections in it for defining various aspects of a robot to be simulated. Here is an example file for the Phantom Omni and the explanation again in case you skipped over the&nbsp;quickstart:</p>
-<p><span class="dquo">&#8220;</span>`javascript
-“N” :&nbsp;“3”,</p>
-<p>“h1” : “z”,
-“h2” : “x”,
-“h3” :&nbsp;“x”,</p>
-<p>“q1” : “.1<em>t”,
-“q2” : “.1</em>cos(t)”,
-“q3” : “.001<em>t + .2</em>sin(t)”,</p>
-<p>“l1” : “40”,
-“l2” : “50”,
-“l3” :&nbsp;“50”,</p>
-<p>“P01” : “[0, 0, 0]”,
-“P12” : “[0, 0, l1]”,
-“P23” : “[0, l2, 0]”,
-“<span class="caps">P3T</span>” : “[0, l3,&nbsp;0]”,</p>
-<p>“R01” : “rot(h1, q1)”,
-“R12” : “rot(h2, q2)”,
-“R23” : “rot(h3, q3)”,
-“<span class="caps">R3T</span>” : “eye(3, 3)”&nbsp;&#8220;`</p>
+<pre><code class="lang-javascript"><span class="string">"N"</span> : <span class="string">"3"</span>,
+
+<span class="string">"h1"</span> : <span class="string">"z"</span>,
+<span class="string">"h2"</span> : <span class="string">"x"</span>,
+<span class="string">"h3"</span> : <span class="string">"x"</span>,
+
+<span class="string">"q1"</span> : <span class="string">".1*t"</span>,
+<span class="string">"q2"</span> : <span class="string">".1*cos(t)"</span>,
+<span class="string">"q3"</span> : <span class="string">".001*t + .2*sin(t)"</span>,
+
+<span class="string">"l1"</span> : <span class="string">"40"</span>,
+<span class="string">"l2"</span> : <span class="string">"50"</span>,
+<span class="string">"l3"</span> : <span class="string">"50"</span>,
+
+<span class="string">"P01"</span> : <span class="string">"[0, 0, 0]"</span>,
+<span class="string">"P12"</span> : <span class="string">"[0, 0, l1]"</span>,
+<span class="string">"P23"</span> : <span class="string">"[0, l2, 0]"</span>,
+<span class="string">"<span class="caps">P3T</span>"</span> : <span class="string">"[0, l3, 0]"</span>,
+
+<span class="string">"R01"</span> : <span class="string">"rot(h1, q1)"</span>,
+<span class="string">"R12"</span> : <span class="string">"rot(h2, q2)"</span>,
+<span class="string">"R23"</span> : <span class="string">"rot(h3, q3)"</span>,
+<span class="string">"<span class="caps">R3T</span>"</span> : <span class="string">"eye(3, 3)"</span>
+</code></pre>
 <ul>
 <li><code>N</code> is first declared to tell the simulator the number of joints to expect in this&nbsp;robot.</li>
 <li>All the joint axes are specified with an <code>h</code> and an index. In this case, shorthand is used (e.g. use of <code>z</code> instead of <code>[0, 0, 1]</code>), but if we wanted a non-standard axis vector we could have used something like <code>[-.1, .2, .4]</code>.</li>
@@ -81,8 +77,8 @@
 <li>Finally, the rotation matrices are specified by using the <code>rot()</code> command, which calculates the rotation matrix using the Euler-Rodriguez formula. If no rotation is desired, just specify the identity matrix with the <code>eye()</code> command. Sometimes, for static links it is necessary to specify extra frames that don’t have any rotation matrix. If this is the case, you would also just use the <code>eye()</code> command here.</li>
 </ul>
 <h3 id="loading-a-robot-into-the-simulator">Loading a robot into the&nbsp;simulator</h3>
-<p>First, all robots are pulled from the <code>robots</code> directory in the root directory of the simulator. It is reccomended to actually copy an existing robot file and modify it to suit your&nbsp;needs.</p>
-<p>Writing and/or modifying one of these files is for the most part a straightforward process. The only hiccup you may encounter is in specifying extra frames in order to get the simulator to handle extra links. Additionally, another interesting way of specifying robots is by programmaticly generating a json file. An example of this can be seen with <code>snake.py</code> which generates <code>snake.json</code>.</p>
+<p>First, all robots are pulled from the <code>robots</code> directory in the root directory of the simulator. It is recommended to actually copy an existing robot file and modify it to suit your&nbsp;needs.</p>
+<p>Writing and/or modifying one of these files is for the most part a straightforward process. The only hiccup you may encounter is in specifying extra frames in order to get the simulator to handle extra links. Additionally, another interesting way of specifying robots is by programmatically generating a json file. An example of this can be seen with <code>snake.py</code> which generates <code>snake.json</code>.</p>
 <p>Once you have written a robot.json file, there are two commands that will help you out getting it into the simulator. First, use the <code>list</code> command to see all robot configuration files that the simulator believes to be properly configured and placed correctly. You should see a list containing the Omni, Puma560, etc. and whatever else you have put in the robots directory. Next, use the <code>load</code> command to load your&nbsp;robot.</p>
 <h2 id="command-overview">Command Overview</h2>
 <p>Here is a detailed list of all the commands built into&nbsp;Stoolbotics:</p>
@@ -115,78 +111,13 @@
 </li>
 </ul>
 <p>Here is an example of some simulation environment manipulation with the above commands and the&nbsp;result:</p>
-<div class="media-container">
-
-<img src="/images/projects/stoolbotics/8.png">
-
-</div>
+<div class="media-container"><br><br><img src="/images/projects/stoolbotics/8.png"><br><br></div>
 
 <h3 id="skew-mode">Skew mode</h3>
 <p>Skew mode allows you to rapidly adjust where the camera is positioned in the simulation as well as adjust the timestep. To enter skew mode, just type <code>skew</code>. From there you can use the arrow keys to translate the camera up or down, use ‘f’ and ‘d’ to speed up or slow down the simulation, and finally ‘j’ and ‘k’ to zoom in and out. While in skew mode, none of the other commands work, so to exit you need to type ‘t’. Its hard to show a picture of skew mode in&nbsp;action.</p>
 <h3 id="set">Set</h3>
 <p>As you can see from the quickstart, the set command is highly versatile. You can set any variable in the simulator or the robot with this command. Here are some examples of clever ways to use the set&nbsp;command:</p>
-<table class="table table-striped"><tr><td><h4 style="width: 300px;">Command</h4></td><td><h4>Effect</h4></td></tr>
-<tr>
-<td><pre>set t 0</pre></td>
-<td>Resets the time in the simulator back to time = 0.</td>
-</tr>
-
-<tr>
-<td><pre>set tscale 0.05</pre></td>
-<td>Manually sets the timescale in the simulator (the same effect could also be done with the skew command).</td>
-</tr>
-
-<tr>
-<td>
-<pre>
-set q1 0
-set q2 0
-set q3 0
-(etc …)
-</pre>
-</td>
-<td>Sets all joints in the robot to zero position.</td>
-</tr>
-
-<tr>
-<td>
-<pre>
-set h1 x
-set h2 [1, 1, 1]
-set h3 z
-(etc …)
-</pre>
-</td>
-<td>Sets all joints axis in the robot to arbitrary vectors. Use of shortcuts like “x” is entirely optional, you can do things like [1, 0, 0] and accomplish the same effect.</td>
-</tr>
-
-<tr>
-<td>
-<pre>
-set l1 50
-</pre>
-</td>
-<td>Set link one to be 50.</td>
-</tr>
-
-<tr>
-<td>
-<pre>
-set P12 [0, 0, l2 + q2]
-</pre>
-</td>
-<td>Make a prismatic joint in the Z direction from frame one to frame two.</td>
-</tr>
-
-<tr>
-<td>
-<pre>
-set R12 eye(3, 3)
-</pre>
-</td>
-<td>Sets R12 to be the identity matrix, effectively creating a static link.</td>
-</tr>
-</table>
+<table class="table table-striped"><tr><td><h4 style="width: 300px;">Command</h4></td><td><h4>Effect</h4></td></tr><br><tr><br><td><pre>set t 0</pre></td><br><td>Resets the time in the simulator back to time = 0.</td><br></tr><br><br><tr><br><td><pre>set tscale 0.05</pre></td><br><td>Manually sets the timescale in the simulator (the same effect could also be done with the skew command).</td><br></tr><br><br><tr><br><td><br><pre><br>set q1 0<br>set q2 0<br>set q3 0<br>(etc …)<br></pre><br></td><br><td>Sets all joints in the robot to zero position.</td><br></tr><br><br><tr><br><td><br><pre><br>set h1 x<br>set h2 [1, 1, 1]<br>set h3 z<br>(etc …)<br></pre><br></td><br><td>Sets all joints axis in the robot to arbitrary vectors. Use of shortcuts like “x” is entirely optional, you can do things like [1, 0, 0] and accomplish the same effect.</td><br></tr><br><br><tr><br><td><br><pre><br>set l1 50<br></pre><br></td><br><td>Set link one to be 50.</td><br></tr><br><br><tr><br><td><br><pre><br>set P12 [0, 0, l2 + q2]<br></pre><br></td><br><td>Make a prismatic joint in the Z direction from frame one to frame two.</td><br></tr><br><br><tr><br><td><br><pre><br>set R12 eye(3, 3)<br></pre><br></td><br><td>Sets R12 to be the identity matrix, effectively creating a static link.</td><br></tr><br></table>
 
 
 <h3 id="playback-and-recording">Playback and Recording</h3>
@@ -223,47 +154,45 @@ set R12 eye(3, 3)
 <p>Stoolbotics also has the capacity to be driven by external applications like Matlab <em>without</em> the use of saved recordings. This is done through a <span class="caps">UDP</span> socket that accepts a comma separated list of joint angles and moves the arm to this&nbsp;position.</p>
 <p>Matlab can therefore compute things like inverse kinematics, and send the joint angles to the simulator to have them visualized over <span class="caps">UDP</span>. In order to accept <span class="caps">UDP</span> connections, the <code>server</code> command needs to be used. Specifically, running something like <code>server start 5005</code> will be run to start the server listening on port 5005. Then, from matlab you can use the included <code>judp.m</code> to send <span class="caps">UDP</span> messages to the&nbsp;simulator.</p>
 <p>A rudimentary example of this technique can be seen in the <code>matlab</code> folder by running <code>omni_invkin_example</code> in matlab. This is a drastically simple example attempts to move the phantom omni in a circle. Here it is reproduced&nbsp;below:</p>
-<p>&#8220;`python</p>
-<p>host = ‘127.0.0.1’
-port =&nbsp;5005</p>
-<p>p = zeros(3,&nbsp;1)</p>
-<p>for t = .01:1:1000
-    p(1) = 40 + 15<em>cos(t);
-    p(2) = 30;
-    p(3) = 50 + 15</em>sin(t);</p>
-<pre><code>q = omni_invkin(p);
+<pre><code class="lang-python">
+host = <span class="string">'127.0.0.1'</span>
+port = <span class="number">5005</span>
 
-msg = strcat(num2str(q(1)), &#39;,&#39;, num2str(q(2)), &#39;,&#39;, num2str(q(3)));
-disp(msg)
+p = zeros(<span class="number">3</span>, <span class="number">1</span>)
 
-% send to stoolbotics
-judp(&#39;send&#39;, port, host, int8(msg));
-pause(.1);
-</code></pre><p>end
-&#8220;`</p>
+<span class="keyword">for</span> t = .<span class="number">01</span>:<span class="number">1</span>:<span class="number">1000</span>
+    p(<span class="number">1</span>) = <span class="number">40</span> + <span class="number">15</span>*cos(t);
+    p(<span class="number">2</span>) = <span class="number">30</span>;
+    p(<span class="number">3</span>) = <span class="number">50</span> + <span class="number">15</span>*sin(t);
+
+    q = omni_invkin(p);
+
+    msg = strcat(num2<span class="ord">st</span>r(q(<span class="number">1</span>)), <span class="string">','</span>, num2<span class="ord">st</span>r(q(<span class="number">2</span>)), <span class="string">','</span>, num2<span class="ord">st</span>r(q(<span class="number">3</span>)));
+    disp(msg)
+
+    % send to stoolbotics
+    judp(<span class="string">'send'</span>, port, host, int8(msg));
+    pause(.<span class="number">1</span>);
+end
+</code></pre>
 <p>As you can see, since this is technically operating over a network we need to specify a host. If you’re running matlab and stoolbotics on the same machine, this will always be 127.0.0.1 for localhost. Technically, you could be running the simulator and matlab on two separate computers. As long as you had the <span class="caps">IP</span> address of the computer running the simulator plugged into the ‘host’ variable inside matlab, everything will still&nbsp;work.</p>
 <p>Next, the port needs to match what you entered with the <code>&gt;server start</code> command. From then on, all that needs to happen is to do some calculation, and pass off the comma separated list of joint angled to the&nbsp;simulator.</p>
 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mastfoot"><a href="https://www.facebook.com/stonelinks" target="_blank" class="social"><i class="fa fa-facebook"></i></a><a href="https://github.com/Stonelinks" target="_blank" class="social"><i class="fa fa-github"></i></a><a href="https://twitter.com/#!/Stonelinks" target="_blank" class="social"><i class="fa fa-twitter"></i></a><a href="https://plus.google.com/116178490514652721625/posts" target="_blank" class="social"><i class="fa fa-google-plus"></i></a><a href="http://www.linkedin.com/pub/lucas-doyle/25/550/169" target="_blank" class="social"><i class="fa fa-linkedin"></i></a><a href="http://www.youtube.com/user/RealStonelinks" target="_blank" class="social"><i class="fa fa-youtube"></i></a><a href="mailto:lucas.p.doyle@gmail.com?Subject=Hello" target="_top">Contact me</a>
           </div>
         </div>
       </div>
     </div>
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center"><a href="https://www.facebook.com/stonelinks" target="_blank" class="social"><i class="fa fa-facebook"></i></a><a href="https://github.com/Stonelinks" target="_blank" class="social"><i class="fa fa-github"></i></a><a href="https://twitter.com/#!/Stonelinks" target="_blank" class="social"><i class="fa fa-twitter"></i></a><a href="https://plus.google.com/116178490514652721625/posts" target="_blank" class="social"><i class="fa fa-google-plus"></i></a><a href="http://www.linkedin.com/pub/lucas-doyle/25/550/169" target="_blank" class="social"><i class="fa fa-linkedin"></i></a><a href="http://www.youtube.com/user/RealStonelinks" target="_blank" class="social"><i class="fa fa-youtube"></i></a><a href="mailto:lucas.p.doyle@gmail.com?Subject=Hello" target="_top" class="footer-link">
-               
-              contact</a>
-          </div>
-        </div>
-      </div>
-    </footer>
     <script src="/node_modules/jquery/dist/jquery.js"></script>
     <script src="/node_modules/underscore/underscore.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript">var BG_IMAGES = ["/images/backgrounds/06uh37r.jpg","/images/backgrounds/14206376348_fca4af4ba5_o.jpg","/images/backgrounds/1979230_10152035339809685_1025831531_o.jpg","/images/backgrounds/2000-01-01 08.30.12.jpg","/images/backgrounds/2012-12-02 00.41.05.jpg","/images/backgrounds/2012-12-06 15.09.02.jpg","/images/backgrounds/2013-05-01 08.31.27.jpg","/images/backgrounds/2013-05-18 13.07.32.jpg","/images/backgrounds/2013-09-20 05.26.41.jpg","/images/backgrounds/2013-09-20 05.30.41.jpg","/images/backgrounds/2013-11-24 18.07.08.jpg","/images/backgrounds/2013-12-20 14.27.13.jpg","/images/backgrounds/2013-12-28 19.16.24.jpg","/images/backgrounds/287299main_dextre_iss017_big_full.jpg","/images/backgrounds/34DnPmX.jpg","/images/backgrounds/5bml6q6.jpg","/images/backgrounds/A52It0Q.jpg","/images/backgrounds/Boeing_747-8_Test_Planes_in_Assembly.jpg","/images/backgrounds/CkGmW8I.png","/images/backgrounds/d7t5BrZ.jpg","/images/backgrounds/Dtd8OaS.jpg","/images/backgrounds/enukwns.jpg","/images/backgrounds/Eourq.jpg","/images/backgrounds/EWwV235.jpg","/images/backgrounds/fr42b.jpg","/images/backgrounds/g8yF11T.jpg","/images/backgrounds/GkWIkzl.jpg","/images/backgrounds/godD0Nj.jpg","/images/backgrounds/GpCUV.jpg","/images/backgrounds/HsiDzD2.jpg","/images/backgrounds/IijALtC.jpg","/images/backgrounds/IMG_1142 copy-X2.jpg","/images/backgrounds/IMG_20120721_181258.jpg","/images/backgrounds/isu4ciW.jpg","/images/backgrounds/IZyTICW.jpg","/images/backgrounds/J8Oqyyd.jpg","/images/backgrounds/k9JWU9N.jpg","/images/backgrounds/KBMGZnm.jpg","/images/backgrounds/kkhlkasdhjl3.png","/images/backgrounds/m1gD1NC.jpg","/images/backgrounds/m95qL89.jpg","/images/backgrounds/MbN1OhC.jpg","/images/backgrounds/mooCZ.jpg","/images/backgrounds/nBEcpIY.jpg","/images/backgrounds/nLpQ2G3.jpg","/images/backgrounds/nUje1Xs.jpg","/images/backgrounds/ONn4OVE.jpg","/images/backgrounds/ozjI2XF.jpg","/images/backgrounds/p0QNNrI.jpg","/images/backgrounds/P0UhJaz.jpg","/images/backgrounds/raddmHE.jpg","/images/backgrounds/Red, White and Enterprise-X3.jpg","/images/backgrounds/rhvP0wn.jpg","/images/backgrounds/s_f02_RTR3FJM0.jpg","/images/backgrounds/STS-134_International_Space_Station_after_undocking.jpg","/images/backgrounds/Su0YWko.jpg","/images/backgrounds/tmEkJ7Q.jpg","/images/backgrounds/TuBipfq.jpg","/images/backgrounds/TUZyh.jpg","/images/backgrounds/uCr3S.jpg","/images/backgrounds/uMrsMXh.jpg","/images/backgrounds/w0Pgof8.jpg","/images/backgrounds/wallpaper-1312831.jpg","/images/backgrounds/wallpaper-1441536.jpg","/images/backgrounds/wjZsmhr.jpg","/images/backgrounds/Wsvb8tw.jpg","/images/backgrounds/wvgRzh6.jpg","/images/backgrounds/x2bkKQS.jpg","/images/backgrounds/xkl9FoE.jpg","/images/backgrounds/xKTWtJC.jpg","/images/backgrounds/XvkHfUA.jpg","/images/backgrounds/y4WGD7I.jpg","/images/backgrounds/yrZCDd1.jpg","/images/backgrounds/YseOPg6.jpg","/images/backgrounds/ZhWyntZ.jpg"];
+    <script type="text/javascript">
       var BASENAME = 'projects/stoolbotics/use';
-       
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

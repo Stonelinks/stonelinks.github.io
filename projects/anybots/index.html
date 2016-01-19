@@ -3,59 +3,44 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Super_robert / Anystats - Stonelinks
     </title>
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400italic,400,700">
     <link rel="stylesheet" href="/style/main.css">
   </head>
   <body>
-    <div class="landing"><a href="/" class="brand"><img src="/images/logos/logo-512.png">Stonelinks</a>
-      <div class="tagline-bar">Lucas Doyle's website
-      </div>
-    </div>
-    <div role="navigation" class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><img src="/images/logos/logo-512.png">Stonelinks</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="/blog.html">Blog</a></li>
-            <li><a href="/luke.html">About</a></li>
-            <li><a href="/projects.html">Projects</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div id="preloaded-images"></div>
-    <div class="container">
-      <div class="row">
-        <div class="box">
-          <!--there has got to be a more elegant way of doing this
-          -->
-          <div class="col-lg-12">
-            <hr><a href="/projects/anybots/">
-              <h1 class="intro-text text-center">Super_robert / Anystats</h1></a>
-            <hr><div class="media-container">
-
-<img src="/images/projects/anybots/qb.jpg">
-
-<p>Anybots <span class="caps">QB</span></p>
-
-</div>
+    <div class="chrome-wrapper">
+      <div class="chrome-wrapper-inner">
+        <div class="chrome-container">
+          <div class="masthead clearfix"><a href="/">
+              <div class="masthead-logo"><img src="/images/logos/logo-200.png"></div>
+              <h1 class="masthead-brand">Stonelinks
+              </h1></a>
+            <p class="masthead-tagline">Lucas Doyle's Website
+            </p>
+            <nav>
+              <ul class="nav masthead-nav">
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/luke.html">About</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div id="preloaded-images"></div>
+          <div class="container">
+            <div class="box-row">
+              <div class="row">
+                <div class="box background-color-2">
+                  <div class="col-lg-12">
+                    <hr><a href="/projects/anybots/">
+                      <h1 class="intro-text text-center">Super_robert / Anystats</h1></a>
+                    <hr><div class="media-container"><br><br><img src="/images/projects/anybots/qb.jpg"><br><br><p>Anybots <span class="caps">QB</span></p><br><br></div>
 
 <p>I spent the summer of 2011 at an internship with <a href="http://anybots.com">Anybots</a>, a small robotics startup out in Silicon Valley. For a long time Anybots was mostly a research company, producing robots like Monty and Dexter (both pictured below). However, two years ago they began to design <span class="caps">QB</span> (pictured above), a telepresence robot that aims to act as a robotic avatar to allow users to project their presence to other people from&nbsp;afar.</p>
 <p>During my short time at Anybots, I noticed a severe lack of infrastructure for monitoring the fleet of about 130 robots out in the world. We’re talking several million dollars’ worth of robots deployed over the country and in some cases outside of the country. A coworker of mine, Robert, was spending a tremendous amount of time every day manually checking what robots were online by SSHing into each one and reading the logs, which were often thousands of lines long. Because scalability is one of the things that can kill a startup and because I wanted to free up his valuable time, I wrote Super_robert and Anystats to help him out by automatically gathering logs from robots and computing information and statistics about global robot fleet&nbsp;status.</p>
-<div class="media-container">
-
-<img src="/images/projects/anybots/montydexter.jpg">
-
-<p>Anybots research robots Monty (left) and Dexter&nbsp;(right)</p>
-
-</div>
+<div class="media-container"><br><br><img src="/images/projects/anybots/montydexter.jpg"><br><br><p>Anybots research robots Monty (left) and Dexter&nbsp;(right)</p><br><br></div>
 
 <h2 id="super_robert-and-anystats">Super_robert and Anystats</h2>
 <p>Super_robert is a program that attempted to procedurally log into robots out in the field, pull down their logs and compute some information about them. This information was then passed over to Anystats, which statistically tracked, analyzed and prioritized the different events that appeared in the&nbsp;logs.</p>
@@ -73,26 +58,21 @@
 <h2 id="other-work-at-anybots">Other Work at&nbsp;Anybots</h2>
 <p>Working with the actual codebase for the robot was tough because it was very large, several years old and I only had a few months there. However, I did developed some <span class="caps">UI</span> features for the touchscreen on the forehead of the robot, including a “dashboard” to display internal robot device health and connectivity. I also wrote call screen to allow users to answer or deny calls made to their&nbsp;robot.</p>
 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mastfoot"><a href="https://www.facebook.com/stonelinks" target="_blank" class="social"><i class="fa fa-facebook"></i></a><a href="https://github.com/Stonelinks" target="_blank" class="social"><i class="fa fa-github"></i></a><a href="https://twitter.com/#!/Stonelinks" target="_blank" class="social"><i class="fa fa-twitter"></i></a><a href="https://plus.google.com/116178490514652721625/posts" target="_blank" class="social"><i class="fa fa-google-plus"></i></a><a href="http://www.linkedin.com/pub/lucas-doyle/25/550/169" target="_blank" class="social"><i class="fa fa-linkedin"></i></a><a href="http://www.youtube.com/user/RealStonelinks" target="_blank" class="social"><i class="fa fa-youtube"></i></a><a href="mailto:lucas.p.doyle@gmail.com?Subject=Hello" target="_top">Contact me</a>
           </div>
         </div>
       </div>
     </div>
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center"><a href="https://www.facebook.com/stonelinks" target="_blank" class="social"><i class="fa fa-facebook"></i></a><a href="https://github.com/Stonelinks" target="_blank" class="social"><i class="fa fa-github"></i></a><a href="https://twitter.com/#!/Stonelinks" target="_blank" class="social"><i class="fa fa-twitter"></i></a><a href="https://plus.google.com/116178490514652721625/posts" target="_blank" class="social"><i class="fa fa-google-plus"></i></a><a href="http://www.linkedin.com/pub/lucas-doyle/25/550/169" target="_blank" class="social"><i class="fa fa-linkedin"></i></a><a href="http://www.youtube.com/user/RealStonelinks" target="_blank" class="social"><i class="fa fa-youtube"></i></a><a href="mailto:lucas.p.doyle@gmail.com?Subject=Hello" target="_top" class="footer-link">
-               
-              contact</a>
-          </div>
-        </div>
-      </div>
-    </footer>
     <script src="/node_modules/jquery/dist/jquery.js"></script>
     <script src="/node_modules/underscore/underscore.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript">var BG_IMAGES = ["/images/backgrounds/06uh37r.jpg","/images/backgrounds/14206376348_fca4af4ba5_o.jpg","/images/backgrounds/1979230_10152035339809685_1025831531_o.jpg","/images/backgrounds/2000-01-01 08.30.12.jpg","/images/backgrounds/2012-12-02 00.41.05.jpg","/images/backgrounds/2012-12-06 15.09.02.jpg","/images/backgrounds/2013-05-01 08.31.27.jpg","/images/backgrounds/2013-05-18 13.07.32.jpg","/images/backgrounds/2013-09-20 05.26.41.jpg","/images/backgrounds/2013-09-20 05.30.41.jpg","/images/backgrounds/2013-11-24 18.07.08.jpg","/images/backgrounds/2013-12-20 14.27.13.jpg","/images/backgrounds/2013-12-28 19.16.24.jpg","/images/backgrounds/287299main_dextre_iss017_big_full.jpg","/images/backgrounds/34DnPmX.jpg","/images/backgrounds/5bml6q6.jpg","/images/backgrounds/A52It0Q.jpg","/images/backgrounds/Boeing_747-8_Test_Planes_in_Assembly.jpg","/images/backgrounds/CkGmW8I.png","/images/backgrounds/d7t5BrZ.jpg","/images/backgrounds/Dtd8OaS.jpg","/images/backgrounds/enukwns.jpg","/images/backgrounds/Eourq.jpg","/images/backgrounds/EWwV235.jpg","/images/backgrounds/fr42b.jpg","/images/backgrounds/g8yF11T.jpg","/images/backgrounds/GkWIkzl.jpg","/images/backgrounds/godD0Nj.jpg","/images/backgrounds/GpCUV.jpg","/images/backgrounds/HsiDzD2.jpg","/images/backgrounds/IijALtC.jpg","/images/backgrounds/IMG_1142 copy-X2.jpg","/images/backgrounds/IMG_20120721_181258.jpg","/images/backgrounds/isu4ciW.jpg","/images/backgrounds/IZyTICW.jpg","/images/backgrounds/J8Oqyyd.jpg","/images/backgrounds/k9JWU9N.jpg","/images/backgrounds/KBMGZnm.jpg","/images/backgrounds/kkhlkasdhjl3.png","/images/backgrounds/m1gD1NC.jpg","/images/backgrounds/m95qL89.jpg","/images/backgrounds/MbN1OhC.jpg","/images/backgrounds/mooCZ.jpg","/images/backgrounds/nBEcpIY.jpg","/images/backgrounds/nLpQ2G3.jpg","/images/backgrounds/nUje1Xs.jpg","/images/backgrounds/ONn4OVE.jpg","/images/backgrounds/ozjI2XF.jpg","/images/backgrounds/p0QNNrI.jpg","/images/backgrounds/P0UhJaz.jpg","/images/backgrounds/raddmHE.jpg","/images/backgrounds/Red, White and Enterprise-X3.jpg","/images/backgrounds/rhvP0wn.jpg","/images/backgrounds/s_f02_RTR3FJM0.jpg","/images/backgrounds/STS-134_International_Space_Station_after_undocking.jpg","/images/backgrounds/Su0YWko.jpg","/images/backgrounds/tmEkJ7Q.jpg","/images/backgrounds/TuBipfq.jpg","/images/backgrounds/TUZyh.jpg","/images/backgrounds/uCr3S.jpg","/images/backgrounds/uMrsMXh.jpg","/images/backgrounds/w0Pgof8.jpg","/images/backgrounds/wallpaper-1312831.jpg","/images/backgrounds/wallpaper-1441536.jpg","/images/backgrounds/wjZsmhr.jpg","/images/backgrounds/Wsvb8tw.jpg","/images/backgrounds/wvgRzh6.jpg","/images/backgrounds/x2bkKQS.jpg","/images/backgrounds/xkl9FoE.jpg","/images/backgrounds/xKTWtJC.jpg","/images/backgrounds/XvkHfUA.jpg","/images/backgrounds/y4WGD7I.jpg","/images/backgrounds/yrZCDd1.jpg","/images/backgrounds/YseOPg6.jpg","/images/backgrounds/ZhWyntZ.jpg"];
+    <script type="text/javascript">
       var BASENAME = 'projects/anybots/index';
-       
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
