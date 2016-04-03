@@ -16,7 +16,7 @@
     }
   }
 
-  @masthead-section-height: 78px;
+  @masthead-section-height: 40px;
 
   .masthead {
     text-align: center;
@@ -24,7 +24,7 @@
     .masthead-logo {
       padding: @padding-large-vertical;
       img {
-        max-height: 200px;
+        max-height: 80px;
       }
     }
 
@@ -32,20 +32,23 @@
       background-color: @color-2;
       height: @masthead-section-height;
       padding: @padding-large-vertical;
+      padding-top: 10px;
       margin: 0;
+
+      font-size: 20px;
     }
 
     .masthead-tagline {
       background-color: @color-3;
       height: @masthead-section-height;
-      padding: 30px @padding-large-vertical @padding-large-vertical;
+      padding: 10px @padding-large-vertical @padding-large-vertical;
       margin: 0;
     }
 
     .masthead-nav {
       background-color: @color-4;
       height: @masthead-section-height;
-      padding: @padding-large-vertical;
+      padding: 0;
       margin: 0;
 
       & > li {
@@ -59,7 +62,7 @@
       & > li > a {
         font-size: @font-size-h4;
         font-weight: bold;
-        color: @color-1;
+        //color: @color-1;
         border-bottom: 2px solid transparent;
         padding: 10px 0 3px;
       }
@@ -74,8 +77,8 @@
       & > .active > a,
       & > .active > a:hover,
       & > .active > a:focus {
-        color: @color-1;
-        border-bottom-color: @color-1;
+        //color: @color-1;
+        //border-bottom-color: @color-1;
       }
     }
   }
@@ -85,7 +88,7 @@
 
     background-color: @color-5;
     height: @masthead-section-height;
-    padding: 26px @padding-large-vertical @padding-large-vertical;
+    padding: 10px @padding-large-vertical @padding-large-vertical;
 
     .social {
       font-size: @font-size-h4;
