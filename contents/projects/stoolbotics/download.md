@@ -17,7 +17,7 @@ template: page.jade
 
 #### Prebuilt (recommended)
 
-Stoolbotics comes in a pre-packaged, portable build for Windows. You can download it from Lucas' Dropbox here: [http://dl.dropbox.com/u/4428042/simulator.zip](http://dl.dropbox.com/u/4428042/simulator.zip).
+Stoolbotics comes in a pre-packaged, portable build for Windows. You can download it from Lucas' Google Drive [here](https://drive.google.com/open?id=0B8M9JkcII4wdTWxQSjRHWU13WkE).
 
 Simply unzip and run <code>stoolbotics.bat</code>, and you should be up and running!
 
@@ -59,4 +59,3 @@ $(window).load(function () {
 
 #### Latest Commits to Stoolbotics:
 <div id="commits"></div>
-
