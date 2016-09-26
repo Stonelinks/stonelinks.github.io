@@ -13,15 +13,15 @@ const style = {
     margin: 0,
     fontSize: fontSizeToMS(-0.5).fontSize,
     lineHeight: fontSizeToMS(-0.5).lineHeight,
-    letterSpacing: -0.25
+    color: 'gray',
   },
   h3: {
     marginTop: 0,
-    marginBottom: rhythm(1 / 4)
+    marginBottom: rhythm(1 / 4),
   },
   hr: {
     marginTop: rhythm(1),
-    backgroundColor: 'gray'
+    backgroundColor: 'gray',
   },
 }
 
@@ -33,7 +33,7 @@ class ReadNext extends React.Component {
 
     if (readNext) {
       nextPost = find(pages, (page) => includes(page.path, readNext))
-    }else {
+    } else {
       readNext = pages
         .filter(p => p.data.tags && p.data.body !== post.body)
         .map(p => {
@@ -61,8 +61,8 @@ class ReadNext extends React.Component {
 
       return (
         <div>
-          <h6 style={style.h6}>READ THIS NEXT:</h6>
-          <h3 style={style.h3}><Link to={{  pathname: prefixLink(nextPost.path)}} > {nextPost.data.title} </Link></h3>
+          <h6 style={style.h6}>Read this next:</h6>
+          <h3 style={style.h3}><Link to={{ pathname: prefixLink(nextPost.path) }} > {nextPost.data.title} </Link></h3>
           <Summary body={nextPost.data.body} />
           <hr style={style.hr} />
         </div>
@@ -73,7 +73,7 @@ class ReadNext extends React.Component {
 
 ReadNext.propTypes = {
   post: React.PropTypes.object.isRequired,
-  pages: React.PropTypes.array
+  pages: React.PropTypes.array,
 }
 
 export default ReadNext

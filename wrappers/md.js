@@ -15,19 +15,21 @@ import 'css/zenburn.css'
 const style = {
   h1: {
     marginTop: 0,
-    
+    marginBottom: rhythm(1 / 4),
   },
   hr: {
-    backgroundColor: 'gray'
+    backgroundColor: 'gray',
   },
   Tags: {
-    marginBottom: rhythm(1)
+    marginBottom: rhythm(1),
+    fontSize: rhythm(1 / 2),
+    color: 'gray',
   },
   date: {
-    marginBottom: rhythm(1 / 2),
+    marginTop: rhythm(1 / 4),
     fontSize: rhythm(1 / 2),
-    color: 'gray'
-  }
+    color: 'gray',
+  },
 }
 
 class MarkdownWrapper extends React.Component {
@@ -47,7 +49,7 @@ class MarkdownWrapper extends React.Component {
                                {`Posted ${moment(post.date).calendar().toLowerCase()}`}
                              </div>}
         <Tags post={post} style={style.Tags} />
-        <div className="article" ref="markdown" dangerouslySetInnerHTML={{__html: post.body}} />
+        <div className="article" ref="markdown" dangerouslySetInnerHTML={{ __html: post.body }} />
         <hr style={style.hr} />
         <ReadNext post={post} pages={route.pages} />
         <Bio />
@@ -58,11 +60,11 @@ class MarkdownWrapper extends React.Component {
 }
 
 MarkdownWrapper.propTypes = {
-  route: React.PropTypes.object
+  route: React.PropTypes.object,
 }
 
 MarkdownWrapper.contextTypes = {
-  router: React.PropTypes.object.isRequired
+  router: React.PropTypes.object.isRequired,
 }
 
 export default MarkdownWrapper
