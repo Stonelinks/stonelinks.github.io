@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quickstart - Stoolbotics - Stonelinks
+    </title>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/style/main.css">
+  </head>
+  <body>
+    <div class="chrome-wrapper">
+      <div class="chrome-wrapper-inner">
+        <div class="chrome-container">
+          <div class="masthead clearfix"><a href="/">
+              <div class="masthead-logo"><img src="/images/logos/logo-200.png"></div>
+              <h1 class="masthead-brand">Stonelinks
+              </h1></a>
+            <p class="masthead-tagline">Lucas Doyle's Website
+            </p>
+            <nav>
+              <ul class="nav masthead-nav">
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/luke.html">About</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div id="preloaded-images"></div>
+          <div class="container">
+            <div class="box-row">
+              <div class="row">
+                <div class="box background-color-2">
+                  <div class="col-lg-12">
+                    <hr><a href="/projects/stoolbotics/quickstart.html">
+                      <h1 class="intro-text text-center">Quickstart - Stoolbotics</h1></a>
+                    <hr><ul class="nav navbar-nav"><br>  <li><a href="/projects/stoolbotics/index.html">Home</a></li><br>  <li><a href="/projects/stoolbotics/download.html">Download</a></li><br>  <li><a href="/projects/stoolbotics/quickstart.html">Quickstart</a></li><br>  <li><a href="/projects/stoolbotics/use.html">Docs</a></li><br>  <li><a href="/projects/stoolbotics/implementation.html">About</a></li><br></ul>
+
+<p>When you fire up the simulator for the first time, you should see something like what is shown&nbsp;below.</p>
+<div class="media-container"><br><br><img src="/images/projects/stoolbotics/1.png"><br><br></div>
+
+<p>You’ll notice a robot is loaded into the simulator to start with. This simple three joint arm is called the Phantom Omni, and is defined by the <code>omni.json</code> file in the <code>robots</code> directory. All robot files that the simulator uses are described in such <code>robot.json</code> files in the <code>robots</code> directory. They are simple and easy to understand. Below we have reproduced <code>omni.json</code> as it is first loaded into the&nbsp;simulator:</p>
+<pre><code class="lang-javascript"><span class="string">"N"</span> : <span class="string">"3"</span>,
+
+<span class="string">"h1"</span> : <span class="string">"z"</span>,
+<span class="string">"h2"</span> : <span class="string">"x"</span>,
+<span class="string">"h3"</span> : <span class="string">"x"</span>,
+
+<span class="string">"q1"</span> : <span class="string">".1*t"</span>,
+<span class="string">"q2"</span> : <span class="string">".1*cos(t)"</span>,
+<span class="string">"q3"</span> : <span class="string">".001*t + .2*sin(t)"</span>,
+
+<span class="string">"l1"</span> : <span class="string">"40"</span>,
+<span class="string">"l2"</span> : <span class="string">"50"</span>,
+<span class="string">"l3"</span> : <span class="string">"50"</span>,
+
+<span class="string">"P01"</span> : <span class="string">"[0, 0, 0]"</span>,
+<span class="string">"P12"</span> : <span class="string">"[0, 0, l1]"</span>,
+<span class="string">"P23"</span> : <span class="string">"[0, l2, 0]"</span>,
+<span class="string">"<span class="caps">P3T</span>"</span> : <span class="string">"[0, l3, 0]"</span>,
+
+<span class="string">"R01"</span> : <span class="string">"rot(h1, q1)"</span>,
+<span class="string">"R12"</span> : <span class="string">"rot(h2, q2)"</span>,
+<span class="string">"R23"</span> : <span class="string">"rot(h3, q3)"</span>,
+<span class="string">"<span class="caps">R3T</span>"</span> : <span class="string">"eye(3, 3)"</span>
+</code></pre>
+<p>Let&#8217;s look at this file line by line to see how it makes a complete robot&nbsp;object:</p>
+<ul>
+<li><code>N</code> is first declared to tell the simulator the number of joints to expect in this&nbsp;robot.</li>
+<li>All the joint axes are specified with an <code>h</code> and an index. In this case, shorthand is used (e.g. use of <code>z</code> instead of <code>[0, 0, 1]</code>), but if we wanted a non-standard axis vector we could have used something like <code>[-.1, .2, .4]</code>.</li>
+<li>Angle parameters are specified with a <code>q</code> and an index. These can be completely arbitrary functions of time, static numbers, or whatever you like. These parameters represent how much an axis has rotated or displaced along its&nbsp;axis.</li>
+<li>Link lengths are specified with an <code>l</code> and an&nbsp;index.</li>
+<li>Position vectors tell the simulator how to get from one frame to the next. Additionally, prismatic joints are specified here by including a joint axis parameter (a <code>q</code>) in the&nbsp;vector.</li>
+<li>Finally, the rotation matrices are specified by using the <code>rot()</code> command, which calculates the rotation matrix using the Euler-Rodriguez formula. If no rotation is desired, just specify the identity matrix with the <code>eye()</code> command. Sometimes, for static links it is necessary to specify extra frames that don’t have any rotation matrix. If this is the case, you would also just use the <code>eye()</code> command here.</li>
+</ul>
+<p>All these variables can be changed once the simulator has started using the <code>set</code> command. There are many more commands available to you in the simulator that can be accessed through the command line. To see a list of them, just type <code>help</code> into the console and you should see a list like what&#8217;s below. To view help about a specific command, just type <code>help &lt;command&gt;</code>. A table showing what all the commands are, their syntax, and what they do is also included later on in this&nbsp;documentation.</p>
+<div class="media-container"><br><br><img src="/images/projects/stoolbotics/3.png"><br><br></div>
+
+<p>In the above case, we looked at the help for the <code>axis</code> command. Let&#8217;s see what it actually&nbsp;does:</p>
+<div class="media-container"><br><br><img src="/images/projects/stoolbotics/4.png"><br><br></div>
+
+<p>It is clear then that the axis command can be used to turn on and off the the axis for each intermediary joint coordinate frame. There are many other commands that can be used to manipulate the cosmetics of the simulation environment. These are all covered later in an example section on manipulating the environment. For now though, let&#8217;s check out another command, the <code>play</code> command. A simulator is pretty useless unless it can actually simulate things. The <code>play</code> command starts the&nbsp;simulation:</p>
+<div class="media-container"><br><br><img src="/images/projects/stoolbotics/5.png"><br><br></div>
+
+<p>To stop the simulator, just type <code>stop</code>. All the variables we set earlier are still modifiable during the runtime. To set these, we use the <code>set</code> command. For example, let&#8217;s set q3 to cos(t) by typing <code>set q3 cos(t)</code> into the command&nbsp;prompt:</p>
+<div class="media-container"><br><br><img src="/images/projects/stoolbotics/6.png"><br><br></div>
+
+<p>Though you can’t see it in a static picture, that joint is now moving pretty fast. Let&#8217;s use the <code>set</code> command again to slow it down. Type <code>set tscale .05</code> command and notice that it now goes slower. The value of an appropriate timescale may vary depending on how fast your computer is. <code>skew</code> mode can be enabled to rapidly adjust timescale as well as other parameters. For now though, just use <code>set</code>: </p>
+<div class="media-container"><br><br><img src="/images/projects/stoolbotics/7.png"><br><br></div>
+
+<p>This concludes the quickstart. To do more advanced things like play, record, manipulate the environment, drive the simulator from matlab, etc., check out the <a href="/projects/stoolbotics/use.html">usage</a>&nbsp;section!</p>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mastfoot"><a href="https://www.facebook.com/stonelinks" target="_blank" class="social"><i class="fa fa-facebook"></i></a><a href="https://github.com/Stonelinks" target="_blank" class="social"><i class="fa fa-github"></i></a><a href="https://twitter.com/#!/Stonelinks" target="_blank" class="social"><i class="fa fa-twitter"></i></a><a href="https://plus.google.com/116178490514652721625/posts" target="_blank" class="social"><i class="fa fa-google-plus"></i></a><a href="http://www.linkedin.com/pub/lucas-doyle/25/550/169" target="_blank" class="social"><i class="fa fa-linkedin"></i></a><a href="http://www.youtube.com/user/RealStonelinks" target="_blank" class="social"><i class="fa fa-youtube"></i></a><a href="mailto:lucas.p.doyle@gmail.com?Subject=Hello" target="_top">Contact me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/underscore/underscore.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      var BASENAME = 'projects/stoolbotics/quickstart';
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-18750328-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

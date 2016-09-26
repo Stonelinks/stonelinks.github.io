@@ -1,0 +1,34 @@
+extends chrome
+
+block prepend title
+    if page && page.title
+        | #{ page.title + " - "}
+
+block append masthead
+    #preloaded-images
+
+    .container
+        block content
+
+    if page && page.metadata && page.metadata.gallery
+        #blueimp-gallery.blueimp-gallery(data-use-bootstrap-modal="false")
+            .slides
+                h3.title
+                a.prev ‹
+                a.next ›
+                a.close ×
+                a.play-pause
+                ol.indicator
+
+block prepend mastfoot
+    block footer
+
+block append js
+    if page && page.metadata && page.metadata.gallery
+        script(src='/node_modules/blueimp-gallery/js/jquery.blueimp-gallery.min.js')
+        script(src='/node_modules/blueimp-bootstrap-image-gallery/js/bootstrap-image-gallery.min.js')
+        script(type='text/javascript')
+            | var GALLERY = {
+            |   anchor: "!{ page.metadata.gallery.anchor }",
+            |   images: ["!{page.metadata.gallery.images.join('","')}"]
+            | }

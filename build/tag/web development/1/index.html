@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stonelinks
+    </title>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/style/main.css">
+  </head>
+  <body>
+    <div class="chrome-wrapper">
+      <div class="chrome-wrapper-inner">
+        <div class="chrome-container">
+          <div class="masthead clearfix"><a href="/">
+              <div class="masthead-logo"><img src="/images/logos/logo-200.png"></div>
+              <h1 class="masthead-brand">Stonelinks
+              </h1></a>
+            <p class="masthead-tagline">Lucas Doyle's Website
+            </p>
+            <nav>
+              <ul class="nav masthead-nav">
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/luke.html">About</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div id="preloaded-images"></div>
+          <div class="container">
+            <div class="box-row">
+              <div class="row tag-row">
+                <div class="box">
+                  <div class="col-lg-12">
+                    <h4><span>Showing all posts in</span><span class="label label-primary tag">web development</span></h4>
+                    <p><a href="/tag/robots/1/"><span class="label label-primary tag">robots</span></a><a href="/tag/net%20neutrality/1/"><span class="label label-primary tag">net neutrality</span></a><a href="/tag/datasets/1/"><span class="label label-primary tag">datasets</span></a><a href="/tag/computer%20vision/1/"><span class="label label-primary tag">computer vision</span></a><a href="/tag/python/1/"><span class="label label-primary tag">python</span></a><a href="/tag/arduino/1/"><span class="label label-primary tag">arduino</span></a><a href="/tag/javascript/1/"><span class="label label-primary tag">javascript</span></a><a href="/tag/harvard/1/"><span class="label label-primary tag">harvard</span></a><a href="/tag/astrophysics/1/"><span class="label label-primary tag">astrophysics</span></a><a href="/tag/documentation/1/"><span class="label label-primary tag">documentation</span></a><a href="/tag/telemetry/1/"><span class="label label-primary tag">telemetry</span></a><a href="/tag/science/1/"><span class="label label-primary tag">science</span></a><a href="/tag/algorithms/1/"><span class="label label-primary tag">algorithms</span></a><a href="/tag/C++/1/"><span class="label label-primary tag">C++</span></a><a href="/tag/ruby/1/"><span class="label label-primary tag">ruby</span></a><a href="/tag/jekyll/1/"><span class="label label-primary tag">jekyll</span></a><a href="/tag/i18n/1/"><span class="label label-primary tag">i18n</span></a><a href="/tag/labview/1/"><span class="label label-primary tag">labview</span></a><a href="/tag/airplane/1/"><span class="label label-primary tag">airplane</span></a><a href="/tag/drones/1/"><span class="label label-primary tag">drones</span></a><a href="/tag/latex/1/"><span class="label label-primary tag">latex</span></a><a href="/tag/webgl/1/"><span class="label label-primary tag">webgl</span></a><a href="/tag/hacks/1/"><span class="label label-primary tag">hacks</span></a><a href="/tag/manufacturing/1/"><span class="label label-primary tag">manufacturing</span></a><a href="/tag/robotics/1/"><span class="label label-primary tag">robotics</span></a><a href="/tag/systems/1/"><span class="label label-primary tag">systems</span></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="box">
+                  <div class="col-lg-12"><a href="/posts/new-webgl-projects.html">
+                      <h1 class="box-title">New WebGL Projects</h1></a>
+                    <div class="byline">
+                      <p>Published in<a href="/tag/webgl/1/"><span class="label label-primary tag">webgl</span></a><a href="/tag/javascript/1/"><span class="label label-primary tag">javascript</span></a><a href="/tag/web%20development/1/"><span class="label label-primary tag">web development</span></a>
+                      </p>
+                      <p>October 11, 2014 by&nbsp;<a href="/luke.html">Lucas Doyle</a>
+                      </p>
+                    </div>
+                    <div class="external-links"><p>I’ve been working on some new WebGL related projects for a 3d viewer and editor that targets robotics&nbsp;applications.</p>
+<h3 id="-three-js-https-github-com-stonelinks-three-js-"><a href="https://github.com/Stonelinks/three.js">three.js</a></h3>
+<p>All these projects are built on top of three.js. My fork added kinematics support to the collada loader. <a href="/posts/stonelinks.github.io/three.js/examples/#webgl_loader_collada_kinematics">Check it&nbsp;out!</a></p>
+<h3 id="-marionette-three-js-https-github-com-stonelinks-marionette-three-js-"><a href="https://github.com/Stonelinks/marionette-three.js">Marionette-three.js</a></h3>
+<p>This is a library that wraps three.js components for Marionette. Provides a comfortable, event driven interface that abstracts away a lot of three.js things in an <span class="caps">MVC</span> friendly way. For example, a <code>Drawable</code> is a <code>Backbone.Model</code> instance that maintains its own <code>three.js</code> scenegraph node. Pass a <code>Backbone.Collection</code> of drawables to a <code>three.jsRenderer</code> view and you’re off to the races! The library also includes support for controls and loading different types of meshes inside <code>Drawable</code> instances. Check out an example <a href="http://stonelinks.github.io/marionette-three.js/example/index.html">here</a> and code for it <a href="https://github.com/Stonelinks/marionette-three.js/tree/master/example">here</a>. </p>
+<h3 id="-xaphoon-http-xaphoon-herokuapp-com-"><a href="http://xaphoon.herokuapp.com/">Xaphoon</a></h3>
+<p>This is a small heroku app that explores collaborative editing of a 3D environment. It incoporates the previous two projects plus <a href="https://github.com/Stonelinks/backbone.io">Backbone.<span class="caps">IO</span></a> (which I forked and added socket.io 1.0&nbsp;support).</p>
+</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="box">
+                  <div class="col-lg-12"><a href="/posts/butt-soup.html">
+                      <h1 class="box-title">Butt Soup</h1></a>
+                    <div class="byline">
+                      <p>Published in<a href="/tag/javascript/1/"><span class="label label-primary tag">javascript</span></a><a href="/tag/web%20development/1/"><span class="label label-primary tag">web development</span></a>
+                      </p>
+                      <p>August 01, 2014 by&nbsp;<a href="/luke.html">Lucas Doyle</a>
+                      </p>
+                    </div>
+                    <div class="external-links"><div class="gh-container"><br>  <a href="http://buttsoup.herokuapp.com/" class="btn btn-primary btn-lg btn-block">buttsoup.herokuapp.com</a><br>  <a href="https://github.com/Stonelinks/buttsoup" class="btn btn-primary btn-lg btn-block">github.com/Stonelinks/buttsoup</a><br></div>
+
+<p>This is a silly little text to speech web chat thing I made a few months ago. It allowed me to acquaint myself with a few technologies I’d been meaning to try out. There are also a few easter eggs built in (try typing “cage mode” in and see what&nbsp;happens)</p>
+<p><strong>Web Sockets</strong></p>
+<p>Blown away by how easy they are to use. I use tools every day that leverage web sockets (the live reloading feature of <a href="https://github.com/gruntjs/grunt-contrib-watch#optionslivereload">grunt-contrib-watch</a> comes to mind), but I guess I didn’t realize how simple they were. Obviously they have pros and cons over <span class="caps">HTTP</span>, but for large real-time systems, all you need is a simple events <span class="caps">API</span> and you can get something amazing running in a few hours. I used <a href="http://socket.io/">socket.io</a> which was great but if I had to do it again I’d go with the even higher level <a href="https://github.com/primus/primus">primus</a>.</p>
+<p><strong>Web Workers</strong> and <strong>Emscripten</strong></p>
+<p>The text to speech part of the chat was done with <a href="https://github.com/kripken/speak.js/">speak.js</a> which is a javascript port of eSpeak (written in C++) made with <a href="https://github.com/kripken/emscripten">Emscripten</a>, an <span class="caps">LLVM</span> bytecode to javascript compiler. Since speech synthesis is a fairly <span class="caps">CPU</span> intensive task (and javascript runtimes are almost all single threaded), speak.js runs in a web worker, which is a javascript runtime in a separate&nbsp;thread.</p>
+<p><strong>Heroku</strong></p>
+<p>Last but not least is <a href="https://www.heroku.com/">Heroku</a>. Heroku is a PaaS (platform as a service) implementation. Companies like Amazon and Rackspace provide customers raw (virtual) servers for them to run their applications on. A PaaS goes even further by providing a platform for customers to run your applications on. You don’t have to think about operating systems, security updates, creating / provisioning <span class="caps">VM</span> images, deployment, configuring databases, web servers, proxies, load balancers, etc. You just write code and push it, and in minutes it is running in the cloud with no work from you. It is a dream for most&nbsp;developers.</p>
+<p>I’d say Heroku and <a href="https://cloud.google.com/products/app-engine/">Google App Engine</a> are the two best PaaS implementations out there, but both cost money. I’ve been keeping an eye on open source PaaS alternatives, most notably <a href="https://flynn.io/">flynn</a>. It isn’t quite ready for prime time as of this writing&nbsp;though.</p>
+<p>Heroku is great if for no other reason than it provides an amazing set of templates and guidelines for developing a web application using really sensible best practices. It does this in a way that is largely agnostic towards languages and libraries (and even Heroku itself). <a href="http://docs.heroku.com/">docs.heroku.com</a> is just amazing. If you’re newcomer (or even an old fart looking to brush up) to developing web apps, this is a&nbsp;godsend. </p>
+</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="box">
+                  <div class="col-lg-12"><a href="/posts/jekyll-gettext-plugin.html">
+                      <h1 class="box-title">Jekyll i18n</h1></a>
+                    <div class="byline">
+                      <p>Published in<a href="/tag/web%20development/1/"><span class="label label-primary tag">web development</span></a><a href="/tag/ruby/1/"><span class="label label-primary tag">ruby</span></a><a href="/tag/jekyll/1/"><span class="label label-primary tag">jekyll</span></a><a href="/tag/i18n/1/"><span class="label label-primary tag">i18n</span></a>
+                      </p>
+                      <p>August 01, 2014 by&nbsp;<a href="/luke.html">Lucas Doyle</a>
+                      </p>
+                    </div>
+                    <div class="external-links"><div class="gh-container"><br>  <a href="https://github.com/Stonelinks/jekyll-gettext-plugin" class="btn btn-primary btn-lg btn-block">github.com/Stonelinks/jekyll-gettext</a><br></div>
+
+<p>As the friendly neighborhood web developer at <span class="caps">MUJIN</span>, one of my responsibilities is <a href="http://mujin.co.jp/">our company’s website</a>. I made this site mostly by myself using <a href="http://jekyllrb.com/">jekyll</a>, the static website generator that github uses for github pages by&nbsp;default.</p>
+<p>Jekyll is pretty awesome, but doesn’t support internationalization which we obviously need as a Japanese company. I got something really simple working with <a href="https://github.com/screeninteraction/jekyll-multiple-languages-plugin">jekyll-multiple-languages-plugin</a>, I wasn’t happy with it. The translation index had to be manually kept which was a giant pain (especially since non-technical people edit content on the&nbsp;site).</p>
+<p>As a long time django user, I really like the way it handles <a href="https://docs.djangoproject.com/en/dev/topics/i18n/">internationalization</a>, namely the fact that the translation index was automatically updated as people edited content in the standard gettext <code>.po</code> file format.</p>
+<p>I endeavored to create such a solution for jekyll using ruby, something I was completely unfamiliar with. I learned some ruby basics, how <a href="https://rvm.io/">rvm</a> and <a href="https://rubygems.org/">RubyGems</a> work, and finally leveraged the existing libraries <a href="https://github.com/grosser/get_pomo">get_pomo</a> and <a href="https://github.com/grosser/fast_gettext">fast_gettext</a> which did a lot of the heavy lifting for me. You can read more about how to actually use my library over on <a href="https://github.com/Stonelinks/jekyll-gettext-plugin">github</a>.</p>
+<p>I rounded out our internationalization solution by using the <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.4">Accept-Language</a> header to redirect users to the website in their browser’s language (but still be able to override it by going to specific language endpoints). Here is the section from  <code>.htaccess</code>:</p>
+<pre><code>RewriteEngine On
+
+RewriteCond %{HTTP:Accept-Language} ^en.*$ [NC]
+RewriteCond %{REQUEST_URI} ^/$ [NC]
+RewriteCond %{QUERY_STRING} !(^q\=) [NC]
+RewriteRule ^(.*)$ /en/ [L,R=302]
+
+RewriteCond %{REQUEST_URI} ^/$ [NC]
+RewriteCond %{QUERY_STRING} !(^q\=) [NC]
+RewriteRule ^(.*)$ /ja [L,R=302]
+</code></pre></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="box">
+                  <div class="col-lg-12"><a href="/posts/stonelinks-hosted-at-my-house.html">
+                      <h1 class="box-title">Stonelinks Hosted at my House</h1></a>
+                    <div class="byline">
+                      <p>Published in<a href="/tag/web%20development/1/"><span class="label label-primary tag">web development</span></a>
+                      </p>
+                      <p>December 21, 2010 by&nbsp;<a href="/luke.html">Lucas Doyle</a>
+                      </p>
+                    </div>
+                    <div class="external-links"><p>Looks like the kinks of my new <a href="/posts/dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid/">two-server</a> setup are not ironed out. I just got home from <span class="caps">RPI</span> and the old Dell is acting wacky at school. I thoroughly checked both machines before I left for home, and I thought everything was okay. However, upon arriving home, I checked the web server to find that it doesn’t work – not even a 404 page or a time out error, the browser just&nbsp;hangs.</p>
+<p>To use anything other than <span class="caps">HTTP</span> on port 80, I need to be on <span class="caps">RIP</span>’s <span class="caps">VPN</span>. I log into the <span class="caps">VPN</span> and start with the basics. The machine (which is not behind a <span class="caps">NAT</span> router) responds to ping, however ssh shows the same symptoms as apache and the connection just hangs. I don’t even get a connection refused, path not found or timeout&nbsp;error.</p>
+<p>After being thoroughly baffled by this, I ran <span class="caps">NMAP</span> from another machine on the same&nbsp;network:</p>
+<pre><code class="lang-bash">[luke@void ~]$ nmap -A -T4 stonelinks.org
+Starting Nmap <span class="number">4.11</span> ( http://www.insecure.org/nmap/ ) at <span class="number">2010</span>-<span class="number">12</span>-<span class="number">27</span> <span class="number">03</span>:<span class="number">39</span> <span class="caps">EST</span>
+Interesting ports on doylel2.stu.rpi.edu (<span class="number">128.113</span>.<span class="number">38.125</span>):
+Not shown: <span class="number">1676</span> closed ports
+<span class="caps">PORT</span>    <span class="caps">STATE</span> <span class="caps">SERVICE</span>  <span class="caps">VERSION</span>
+<span class="number">21</span>/tcp  open  ftp?
+<span class="number">22</span>/tcp  open  ssh?
+<span class="number">80</span>/tcp  open  http?
+<span class="number">111</span>/tcp open  rpcbind?
+</code></pre>
+<p>I have <span class="caps">VPN</span> access and control over other computers on the same network, but obviously no physical access to the machine. I have no idea what is going on here. My assumption is that the kernel is hanging on something? But I guess I’ll find out when I get back. Because of the way <span class="caps">RPI</span> manages <span class="caps">IP</span> addresses, the firewall at <span class="caps">RPI</span>, and the uncertainty of the other computer, I’m hesitant to just tell my desktop to take the old <span class="caps">MAC</span> / <span class="caps">IP</span> combo for Stonelinks until I get back on campus in case I lose both machines. Luckily I had a backup of Stonelinks that I moved to my house. Until I get back on campus, I am hosting off my houses internet connection! Be warned in this time Stonelinks will be operating in a pretty crippled&nbsp;capacity.</p>
+</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="box">
+                  <div class="col-lg-12"><a href="/posts/dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid.html">
+                      <h1 class="box-title">Dr. Serverlove, or How I Learned to Stop Worrying and Love the RAID</h1></a>
+                    <div class="byline">
+                      <p>Published in<a href="/tag/web%20development/1/"><span class="label label-primary tag">web development</span></a>
+                      </p>
+                      <p>December 07, 2010 by&nbsp;<a href="/luke.html">Lucas Doyle</a>
+                      </p>
+                    </div>
+                    <div class="external-links"><div class="media-container"><br><br><img src="/images/posts/downsize-300x225.jpg"><br><br><p>These two suckers now live on my desk and throw off a ton of&nbsp;heat.</p><br><br></div>
+
+<p>I recently completed some much needed upgrades to the servers (hardware and software) that run Stonelinks. This has me very excited and has been a long time in the works! Warning: long and somewhat pointless story of blood, sweat, nerdrage and glorious payoff&nbsp;ahead.</p>
+<p></div>
+                    <p><a href="/posts/dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid.html">Read more »</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="box">
+                  <div class="col-lg-12 footer-nav"><a href="/archive.html">
+                      <h4 class="pull-left">« Archives</h4></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mastfoot"><a href="https://www.facebook.com/stonelinks" target="_blank" class="social"><i class="fa fa-facebook"></i></a><a href="https://github.com/Stonelinks" target="_blank" class="social"><i class="fa fa-github"></i></a><a href="https://twitter.com/#!/Stonelinks" target="_blank" class="social"><i class="fa fa-twitter"></i></a><a href="https://plus.google.com/116178490514652721625/posts" target="_blank" class="social"><i class="fa fa-google-plus"></i></a><a href="http://www.linkedin.com/pub/lucas-doyle/25/550/169" target="_blank" class="social"><i class="fa fa-linkedin"></i></a><a href="http://www.youtube.com/user/RealStonelinks" target="_blank" class="social"><i class="fa fa-youtube"></i></a><a href="mailto:lucas.p.doyle@gmail.com?Subject=Hello" target="_top">Contact me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/underscore/underscore.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      var BASENAME = 'none';
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-18750328-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

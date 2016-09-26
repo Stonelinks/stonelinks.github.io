@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laser Altimeter Integration on Pixhawk - Stonelinks
+    </title>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/style/main.css">
+  </head>
+  <body>
+    <div class="chrome-wrapper">
+      <div class="chrome-wrapper-inner">
+        <div class="chrome-container">
+          <div class="masthead clearfix"><a href="/">
+              <div class="masthead-logo"><img src="/images/logos/logo-200.png"></div>
+              <h1 class="masthead-brand">Stonelinks
+              </h1></a>
+            <p class="masthead-tagline">Lucas Doyle's Website
+            </p>
+            <nav>
+              <ul class="nav masthead-nav">
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/luke.html">About</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div id="preloaded-images"></div>
+          <div class="container">
+            <div class="box-row">
+              <div class="row">
+                <div class="box">
+                  <div class="col-lg-12"><a href="/posts/laser-altimeter-integration.html">
+                      <h1 class="box-title">Laser Altimeter Integration on Pixhawk</h1></a>
+                    <div class="byline">
+                      <p>Published in<a href="/tag/airplane/1/"><span class="label label-primary tag">airplane</span></a><a href="/tag/drones/1/"><span class="label label-primary tag">drones</span></a>
+                      </p>
+                      <p>December 11, 2014 by&nbsp;<a href="/luke.html">Lucas Doyle</a>
+                      </p>
+                    </div>
+                    <div class="external-links"><p>As some of you may know, I have left Tokyo and the world of industrial robotics and am now in the midst of immersing myself in the world of drones in San Francisco. Its a very exciting time in my life! Among other things, I did some research into the different drone platforms out&nbsp;there.</p>
+<p>As a sample exercise, I took an in-depth look at how I’d go about integrating a laser altimeter on to the <span class="caps">3DR</span>&nbsp;Pixhawk.</p>
+<h2 id="step-0-source-a-sensor">Step 0: Source a&nbsp;sensor</h2>
+<p>All signs of googling point to the <a href="http://www.lightware.co.za/shop/en/lrf-modules/7-sf02f.html"><span class="caps">SF02</span>/F laser altimeter</a> as the quickest option to get something&nbsp;working.</p>
+<div class="media-container"><br><br><img src="https://pixhawk.org/_media/peripherals/sf02_f_laser_rangefinder_pixhawk_wiring.jpg?w=600&tok=605f64"><br><br></div>
+
+<p><strong>Specs</strong>:</p>
+<ul>
+<li><strong>Manufacturer</strong>: A South African company called <a href="http://www.lightware.co.za/shop/en/">lightware</a></li>
+<li><strong>Weight</strong>: 69 g</li>
+<li><strong>Range</strong>: 0-40 m</li>
+<li><strong>Resolution</strong>: 1 cm</li>
+<li><strong>Price and availability</strong>: $300 each, currently on&nbsp;backorder!</li>
+<li><strong>Update rate</strong>: 12 hz</li>
+<li><strong>Outputs <span class="amp">&amp;</span> interfaces</strong>: Analog, serial and&nbsp;digital</li>
+<li><strong>Power supply voltage</strong>: 6.5-9.0 V or 5.0 V ± 0.5 V&nbsp;<span class="caps">DC</span></li>
+<li><strong>Power supply current</strong>: 150 mA&nbsp;(maximum)</li>
+<li><strong>Dimensions</strong>: 27 x 59 x 86&nbsp;mm</li>
+</ul>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>Good <a href="https://pixhawk.org/platforms/planes/phantom_fpv_flying_wing#px4_fmu_build_log">example applications</a> on UAVs using Pixhawk already out&nbsp;there.</li>
+<li><a href="https://pixhawk.org/peripherals/rangefinder">Documentation</a> on how to interface and a <a href="https://github.com/PX4/Firmware/tree/master/src/drivers/sf0x">Pixhawk driver</a> already&nbsp;exists.</li>
+<li>It is a high quality piece of equipment. This guy gave it <a href="http://diydrones.com/profiles/blogs/sf02-laser-altimeter-review">a unbiased, positive&nbsp;review</a>.</li>
+<li>Manufacturer includes <a href="http://www.lightware.co.za/shop/en/content/8-software">software</a> that can be used to test the sensor independently from the&nbsp;Pixhawk.</li>
+<li>Good activity and info from the <a href="http://diydrones.com/profile/LaserDeveloper">manufacturer’s <span class="caps">DIY</span> drones account</a>. Seem to help people with their problems and provide good&nbsp;feedback.</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li>The 40 m range is likely too short for any application other than automated landings. 40 m is fine for landings since those obviously occur close to the ground. However if you’re using the rangefinder for data acquisition the entire flight, then 40 m is too short. <a href="http://diydrones.com/forum/topics/looking-for-new-technology-1?commentId=705844%3AComment%3A1761627&amp;xg_source=activity">Supposedly the company is developing another similar sensor</a> with a longer&nbsp;range.</li>
+<li>Expensive! At $300 a pop, equipping a fleet of drones with these will be&nbsp;pricey.</li>
+<li>Looks like the manufacturer is making these only for the hobbyist market. This means that they may make them in bulk, they might not be made to high industrial standards or that there it could be suddenly discontinued if they decide the hobbyist market isn’t worth&nbsp;it.</li>
+</ul>
+<p><strong>Alternatives</strong>:</p>
+<p>To address some of the <span class="caps">SF02</span>’s cons (and given that we’re equipping a fleet), I looked for an alternate sensor on <a href="http://www.alibaba.com/">Alibaba</a>. If you’re not familiar with Alibaba, it is basically a way to buy wholesale electronics / components / sub-assemblies directly from Chinese suppliers. The best option I found for a laser rangefinder module is <a href="http://www.alibaba.com/product-detail/rangefinder-module_713054756.html">this sensor</a>. It is $100 - $300, so potentially a third of the cost per unit compared to the <span class="caps">SF02</span>, which is a massive savings. The range is also much better (says 10 - 800 m). Details on power consumption and how to interface with it are not clear, but I’m sure talking with the manufacturer (which is easy on Alibaba) would clear that up. Finally, the stated minimum distance (10 m) and accuracy (1 m vs. the <span class="caps">SF02</span>’s 1 cm) is pretty bad and won’t be useful for&nbsp;landings.</p>
+<p><a href="http://www.dragoninnovation.com/projects/32-lidar-lite-by-pulsedlight">This sensor is intriguing</a> but not yet available. Good to keep an eye on, especially since <a href="https://store.3drobotics.com/products/lidar-lite/"><span class="caps">3DR</span> seems to be supporting it</a>. Far cheaper and smaller but still only a 40 m&nbsp;range.</p>
+<p>So while these other sensors may potentially work, for the sake of this analysis I’m going to with the&nbsp;<span class="caps">SF02</span>.</p>
+<h2 id="step-1-connect-to-the-pixhawk">Step 1: Connect to the&nbsp;Pixhawk</h2>
+<p>The wiring from the <span class="caps">SF02</span> to the Pixhawk goes like&nbsp;this:</p>
+<table class="table table-striped table-bordered"><br><thead><br><tr><br><th>Pixhawk <span class="caps"><span class="caps">UART</span></span> pin</th><br><th><span class="caps"><span class="caps">SF02</span></span>/F pin</th><br><th>Comment </th><br></tr><br></thead><br><tbody><br><tr><br><td> 1 / +5V</td><br><td>3 / +5V</td><br><td>Power supply </td><br></tr><br><tr><br><td> 2 / <span class="caps"><span class="caps">TX</span></span></td><br><td>9 / <span class="caps"><span class="caps">RX</span></span></td><br><td>3.3V <span class="caps"><span class="caps">UART</span></span> <span class="caps"><span class="caps">SF02</span></span>/F receive </td><br></tr><br><tr><br><td> 3 / <span class="caps"><span class="caps">RX</span></span></td><br><td>8 / <span class="caps"><span class="caps">TX</span></span></td><br><td>3.3V <span class="caps"><span class="caps">UART</span></span> <span class="caps"><span class="caps">SF02</span></span>/F transmit </td><br></tr><br><tr><br><td> 6 / <span class="caps"><span class="caps">GND</span></span></td><br><td>2 / -</td><br><td>Ground </td><br></tr><br></tbody><br></table>
+
+<p>Since the <span class="caps">SF02</span> uses screw terminals, depending on how much the aircraft vibrates it may be a good idea to soldier up the leads to the screw terminal. This is the <a href="https://store.3drobotics.com/products/df13-6-position-connector-45-cm">cable / connector</a> you’d use. Plug the <span class="caps">SF02</span> into <span class="caps">TELEM2</span> of the&nbsp;Pixhawk.</p>
+<h2 id="step-2-install-on-the-aircraft">Step 2: Install on the&nbsp;aircraft</h2>
+<p>You’ll want to put the sensor pointing at the ground obviously, keeping it perpendicular to the aircraft. The sensor should also be mounted in a recessed position so that the optics arn’t scratched during a rough landing. Also, it should be positioned such that it doesn’t mess with the center of gravity for the aircraft otherwise it will affect glide&nbsp;characteristics.</p>
+<h2 id="step-3-software">Step 3: Software</h2>
+<p><strong>Drivers</strong></p>
+<p>The <a href="https://github.com/PX4/Firmware/tree/master/src/drivers/sf0x">sf0x driver</a> needed for the Pixhawk is already part of the firmware. To start the&nbsp;driver:</p>
+<p><strong>Drivers</strong></p>
+<p>The <a href="https://github.com/PX4/Firmware/tree/master/src/drivers/sf0x">sf0x driver</a> needed for the Pixhawk is already part of the firmware. To start the&nbsp;driver:</p>
+<pre><code class="lang-bash">sf0x start
+</code></pre>
+<p>And to run a test and verify the sensor is&nbsp;working:</p>
+<pre><code class="lang-bash">sf0x <span class="built_in">test</span>
+</code></pre>
+<p>Add a file called <code>etc/extras.txt</code> to your microSD card with this content to autostart the&nbsp;driver:</p>
+<pre><code class="lang-bash">sf0x start
+</code></pre>
+<p><strong>Receiving sensor data in your <span class="caps">PX4</span>&nbsp;application</strong></p>
+<p><span class="caps">PX4</span> has some great hardware abstraction, so we don’t have to directly interact with the driver at all. Instead, we <a href="http://pixhawk.org/dev/px4_simple_app#step_5subscribing_sensor_data">subscribe to inter-process messages</a> published by the sensor driver. In order to get data from the laser rangefinder, we need to subscribe to the topic that it publishes on. <a href="http://pixhawk.org/dev/shared_object_communication">This</a> is a good resource on how to do that. Looking at the source for the <code>sf0x</code> driver, we need to subscribe to the <code>sensor_range_finder</code> topic which comes from <a href="https://github.com/PX4/Firmware/blob/master/src/drivers/drv_range_finder.h"><code>drivers/drv_range_finder.h</code></a>. So in our application we’d subscribe like&nbsp;this:</p>
+<pre><code class="lang-c"><span class="preprocessor">#<span class="keyword">include</span> &lt;drivers/drv_range_finder.h&gt;</span>
+..
+<span class="keyword">int</span> rangefinder_sub_fd = orb_subscribe(ORB_ID(sensor_range_finder));
+</code></pre>
+<p>To actually get data out of the subscriber, we need to use the <code>poll()</code> <span class="caps">POSIX</span> system call. This approach will sleep the thread (consuming no <span class="caps">CPU</span> cycles) until data from the sensor actually gets published. We achieve this like&nbsp;so:</p>
+<pre><code class="lang-c"><span class="preprocessor">#<span class="keyword">include</span> &lt;poll.h&gt;</span>
+<span class="preprocessor">#<span class="keyword">include</span> &lt;drivers/drv_range_finder.h&gt;</span>
+..
+<span class="keyword">int</span> rangefinder_sub_fd = orb_subscribe(ORB_ID(sensor_range_finder));
+
+<span class="comment">/* one could wait for multiple topics with this technique, just using one here */</span>
+
+<span class="keyword">struct</span> pollfd fds[] = {
+  { .fd = rangefinder_sub_fd,   .events = <span class="caps">POLLIN</span> },
+};
+
+<span class="keyword">while</span> (<span class="keyword">true</span>) {
+
+  <span class="comment">/* wait for sensor update of 1 file descriptor for 1000 ms (1 second) */</span>
+
+  <span class="keyword">int</span> poll_ret = poll(fds, <span class="number">1</span>, <span class="number">1000</span>);
+  <span class="keyword">if</span> (fds[<span class="number">0</span>].revents <span class="amp">&amp;</span> <span class="caps">POLLIN</span>) {
+
+    <span class="comment">/* obtained data for the first file descriptor */</span>
+
+    <span class="keyword">struct</span> range_finder_report rangefinder_data;
+
+    <span class="comment">/* copy rangefinder data into local buffer */</span>
+
+    orb_copy(ORB_ID(sensor_range_finder), rangefinder_sub_fd, &amp;rangefinder_data);
+    <span class="built_in">printf</span>(<span class="string">"Rangefinder distance:\t%8.4f\t%8.4f\t%8.4f\n"</span>, (<span class="keyword">double</span>)rangefinder_data.distance[<span class="number">0</span>]);
+  }
+}
+</code></pre>
+<h2 id="step-4-use-it-in-your-application">Step 4: use it in your&nbsp;application</h2>
+<p>The code snippet above isn’t a complete application, but you get the idea. Once the range finder data is copied into that <code>range_finder_report</code> struct instance, the sky is the limit (pun intended) for what you want to do to it. This is where higher level, application specific things get implemented. Some things I can think of to do with altimeter&nbsp;data:</p>
+<ul>
+<li>Log the data, fly the drone fleet in a lawnmower / zig zag pattern to try to cover a large area, and then use it for 3d reconstruction later. To do this you would also need a decent estimate of aircraft position and&nbsp;orientation.</li>
+<li>Transmit data to a ground station for similar logging purposes. The ground station could be the central data aggregation point for the fleet. If the ground station has an internet connection, it could run a webserver for others to monitor aircraft data in real time from&nbsp;off-site. </li>
+<li>Implement an automated landing routine. Would need to figure out at what speed / altitude you’d need to flare the aircraft right before&nbsp;touchdown.</li>
+</ul>
+<p>Without knowing any more details about the exact application, I think this is where I’ll&nbsp;stop.</p>
+</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="box">
+                  <div class="col-lg-12 footer-nav"><a href="/blog.html">
+                      <h4 class="pull-left">« Back</h4></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mastfoot"><a href="https://www.facebook.com/stonelinks" target="_blank" class="social"><i class="fa fa-facebook"></i></a><a href="https://github.com/Stonelinks" target="_blank" class="social"><i class="fa fa-github"></i></a><a href="https://twitter.com/#!/Stonelinks" target="_blank" class="social"><i class="fa fa-twitter"></i></a><a href="https://plus.google.com/116178490514652721625/posts" target="_blank" class="social"><i class="fa fa-google-plus"></i></a><a href="http://www.linkedin.com/pub/lucas-doyle/25/550/169" target="_blank" class="social"><i class="fa fa-linkedin"></i></a><a href="http://www.youtube.com/user/RealStonelinks" target="_blank" class="social"><i class="fa fa-youtube"></i></a><a href="mailto:lucas.p.doyle@gmail.com?Subject=Hello" target="_top">Contact me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/underscore/underscore.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      var BASENAME = 'posts/laser-altimeter-integration';
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-18750328-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+extends layout
+
+block append js
+  script(src='/node_modules/isotope/dist/isotope.pkgd.min.js')
+  script(src='/node_modules/isotope-packery/packery-mode.pkgd.min.js')
+  script(src='/node_modules/imagesloaded/imagesloaded.pkgd.min.js')
+
+block content
+  .row.tag-row.project-tag-row
+    .box.background-color-2
+      .col-lg-12
+        p#project-filters
+          span.label.label-primary.tag(data-filter='*')
+            | show all
+          - var allTags = _.uniq(_.flatten(_.map(page.metadata.projects, function(p) { return p.tags.split(', ') })))
+          each tag in allTags
+            span.label.label-primary.tag(data-filter=tag)= tag
+
+  #projects.project-row
+    div(class='project-box external-links')
+      a(href='https://github.com/Stonelinks')
+        h3.intro-text.text-center= "Github"
+      a(href='https://github.com/Stonelinks')
+        img(src='/images/logos/github.png')
+      a(href='https://github.com/Stonelinks')
+        p
+          | !{ typogr('Find the latest and greatest things I\'m working on over at Github.').typogrify() }
+
+    each project in page.metadata.projects
+      div(class='project-box ' + project.tags.split(', ').join(' '))
+        a(href='/projects/' + project.id + '/index.html')
+          h3.intro-text.text-center= project.name
+        a(href='/projects/' + project.id + '/index.html')
+          img(src='/images/' + project.image)
+        a(href='/projects/' + project.id + '/index.html')
+          p
+            | !{ typogr(project.desc).typogrify() }
+    .grid-sizer
+    .gutter-sizer

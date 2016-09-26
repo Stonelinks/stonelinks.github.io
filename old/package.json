@@ -1,0 +1,52 @@
+{
+  "name": "stonelinks.github.io",
+  "description": "Lucas Doyle's personal website.",
+  "version": "0.0.0",
+  "homepage": "https://github.com/stonelinks/stonelinks.github.io",
+  "author": {
+    "name": "Lucas Doyle",
+    "url": "http://github.com/stonelinks/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stonelinks/stonelinks.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stonelinks/stonelinks.github.io/issues"
+  },
+  "engines": {
+    "node": ">=0.8"
+  },
+  "dependencies": {
+    "blueimp-bootstrap-image-gallery": "3.1.1",
+    "blueimp-gallery": "2.16.0",
+    "bootstrap": "3.3.6",
+    "color-themes-for-google-code-prettify": "https://github.com/jmblog/color-themes-for-highlightjs.git",
+    "font-awesome": "4.1.0",
+    "gulp": "3.9.0",
+    "gulp-clean": "0.3.1",
+    "gulp-gh-pages": "0.5.2",
+    "gulp-less": "3.0.3",
+    "gulp-rsync": "0.0.5",
+    "gulp-sequence": "0.4.1",
+    "gulp-sourcemaps": "1.5.2",
+    "gulp-webserver": "0.9.0",
+    "imagesloaded": "3.1.8",
+    "isotope": "https://github.com/metafizzy/isotope.git#v2.0.0",
+    "isotope-packery": "https://github.com/metafizzy/isotope-packery.git#v1.0.0",
+    "jquery": "2.1.4",
+    "marked": "0.3.5",
+    "moment": "2.5.0",
+    "slug": "0.5.0",
+    "typogr": "0.6.5",
+    "underscore": "1.6.0",
+    "wintersmith": "2.2.1"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/stonelinks/stonelinks-github-io/blob/master/LICENSE-MIT"
+    }
+  ],
+  "keywords": []
+}

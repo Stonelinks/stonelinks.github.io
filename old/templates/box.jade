@@ -1,0 +1,11 @@
+extends layout
+
+block prepend content
+    .box-row
+        .row
+            .box.background-color-2
+                .col-lg-12.external-links
+                    | !{ typogr(page.html).typogrify() }
+
+block append js
+    script(src='/node_modules/imagesloaded/imagesloaded.pkgd.min.js')
