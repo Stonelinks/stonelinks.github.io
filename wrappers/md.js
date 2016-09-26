@@ -20,12 +20,13 @@ const style = {
     backgroundColor: 'gray',
   },
   Tags: {
-    marginBottom: rhythm(1),
+    marginBottom: rhythm(1 / 2),
     fontSize: rhythm(1 / 2),
     color: 'gray',
   },
   date: {
     marginTop: rhythm(1 / 4),
+    marginBottom: rhythm(1 / 2),
     fontSize: rhythm(1 / 2),
     color: 'gray',
   },
@@ -44,11 +45,9 @@ class MarkdownWrapper extends React.Component {
     <DocumentTitle title={post.title ? `${post.title} | ${config.blogTitle}` : config.blogTitle}>
       <div className="markdown">
         <h1 style={style.h1}>{post.title}</h1>
-        {!post.date ? null : <div style={style.date}>
-                               {`Posted ${moment(post.date).calendar().toLowerCase()}`}
-                             </div>}
-        <Tags post={post} style={style.Tags} />
+        {!post.date ? null : <div style={style.date}>{moment(post.date).calendar().toLowerCase()}</div>}
         <div className="article" ref="markdown" dangerouslySetInnerHTML={{ __html: post.body }} />
+        <Tags post={post} style={style.Tags} />
         <hr style={style.hr} />
         <ReadNext post={post} pages={route.pages} />
         <Bio />
