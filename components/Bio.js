@@ -1,8 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router'
-import { config } from 'config'
-import { rhythm } from 'utils/typography'
-import { prefixLink } from 'gatsby-helpers'
+import React from 'react';
+import { config } from 'config';
+import { rhythm } from 'utils/typography';
+import { prefixLink } from 'gatsby-helpers';
 
 const style = {
   img: {
@@ -14,15 +13,15 @@ const style = {
     borderRadius: '50%',
   },
   p: {
-    marginBottom: rhythm(1.5)
-  }
-}
+    marginBottom: rhythm(1.5),
+  },
+};
 
 const Bio = props => (
   <p style={style.p}>
     <img src={prefixLink('/author.png')} alt={config.authorName} style={style.img} />
-    <span dangerouslySetInnerHTML={{__html: config.authorBio}} />
+    <span dangerouslySetInnerHTML={{ __html: config.authorBio }} />
   </p>
-)
+);
 
-export default Bio
+export default Bio;
