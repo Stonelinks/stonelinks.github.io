@@ -4,13 +4,14 @@ import DocumentTitle from 'react-document-title';
 
 import Summary from 'components/Summary';
 import { config } from 'config';
-import { tagMap, getTags, getAllTags } from 'utils';
+import { tagMap, getTags, getAllTags, capitalizeFirstLetter } from 'utils';
 import { prefixLink } from 'gatsby-helpers';
 
 const style = {
   tagLink: {
     color: 'inherit',
     boxShadow: 'none',
+    textDecoration: 'none',
   },
 };
 
@@ -28,12 +29,15 @@ const ShowTag = ({ tag, pages, hideSummary }) => {
     .filter(getTags)
     .filter(page => getTags(page).map(tagMap).indexOf(tag) !== -1);
   return (
-  <div>
-    <h2><Link style={style.tagLink} to={{ pathname: prefixLink('/tags/'), hash: '#' + tagMap(tag) }}> {tag} </Link></h2>
-    <ul>
-      {taggedPages.map((page, i) => (<TaggedPage hideSummary={hideSummary} key={i} page={page} />))}
-    </ul>
-  </div>
+    <div>
+      <h2>
+        <Link style={style.tagLink} to={{ pathname: prefixLink('/tags/'), hash: '#' + tagMap(tag) }}> {capitalizeFirstLetter(tag)}
+        </Link>
+      </h2>
+      <ul>
+        {taggedPages.map((page, i) => (<TaggedPage hideSummary={hideSummary} key={i} page={page} />))}
+      </ul>
+    </div>
   );
 };
 

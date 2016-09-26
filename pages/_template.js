@@ -4,6 +4,8 @@ import { Container } from 'react-responsive-grid';
 import { prefixLink } from 'gatsby-helpers';
 import { rhythm, fontSizeToMS } from 'utils/typography';
 import { config } from 'config';
+import flatten from 'lodash/flatten'
+import includes from 'lodash/includes'
 
 const logoSize = 60;
 const smallerLogoSize = 35;
@@ -61,18 +63,26 @@ const style = {
     padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
   },
 };
-
 class Template extends React.Component {
-  get nav () {
+  get navItems() {
     const navItems = [
       ['Home', '/'],
-      ['Posts', '/posts'],
+      ['Posts', '/posts/'],
       ['Projects', '/projects'],
       ['About', '/about'],
     ];
+
+    navItems.forEach((navItem) => {
+      navItem[1] = prefixLink(navItem[1])
+    })
+
+    return navItems
+  }
+
+  get nav () {
     return (
       <span>
-        {navItems.map((navItem) => {
+        {this.navItems.map((navItem) => {
           return <Link to={prefixLink(navItem[1])}>{navItem[0]}</Link>;
         }).reduce((accu, elem) => {
           return accu === null ? [elem] : [...accu, ' | ', elem];
@@ -83,7 +93,7 @@ class Template extends React.Component {
 
   get headerContents () {
     const { location } = this.props;
-    if (location.pathname === prefixLink('/')) {
+    if (includes(flatten(this.navItems), location.pathname)) {
       return (
       <div>
       <h1 style={style.h1}>

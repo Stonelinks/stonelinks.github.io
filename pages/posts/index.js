@@ -11,8 +11,6 @@ import Bio from 'components/Bio';
 import Summary from 'components/Summary';
 import moment from 'moment';
 
-import Posts from './posts'
-
 const style = {
   post: {
     marginBottom: rhythm(1),
@@ -30,9 +28,10 @@ const style = {
   },
 };
 
-class BlogIndex extends React.Component {
+class PostsIndex extends React.Component {
   get posts () {
     const pageLinks = [];
+
     const sortedPages = sortBy(this.props.route.pages, (page) => access(page, 'data.date')
     ).reverse();
 
@@ -52,29 +51,21 @@ class BlogIndex extends React.Component {
         );
       }
     });
-
-    return (
-      <div>
-        <h3 style={style.h3}>Posts</h3>
-        {pageLinks}
-      </div>
-    );
+    return pageLinks
   }
 
   render () {
     return (
-    <DocumentTitle title={config.blogTitle}>
-      <div>
-        <Bio />
-        <Posts route={this.props.route} />
-      </div>
-    </DocumentTitle>
+      <ul style={style.postList}>
+        <h3 style={style.h3}>Posts</h3>
+        {this.posts}
+      </ul>
     );
   }
 }
 
-BlogIndex.propTypes = {
+PostsIndex.propTypes = {
   route: React.PropTypes.object,
 };
 
-export default BlogIndex;
+export default PostsIndex;
