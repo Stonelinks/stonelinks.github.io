@@ -1,7 +1,6 @@
 ---
 title: Active Face Tracking with Stonebot
 date: 2011-03-13
-layout: post
 path: /posts/active-face-tracking-with-stonebot/
 tags: 
   - robots

@@ -1,7 +1,6 @@
 ---
 title: New WebGL Projects
 date: 2014-10-10
-layout: post
 path: /posts/new-webgl-projects/
 tags: 
   - webgl

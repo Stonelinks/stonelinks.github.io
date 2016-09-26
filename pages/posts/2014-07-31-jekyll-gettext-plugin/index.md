@@ -1,7 +1,6 @@
 ---
 title: Jekyll i18n
 date: 2014-07-31
-layout: post
 path: /posts/jekyll-gettext-plugin/
 tags: 
   - web development

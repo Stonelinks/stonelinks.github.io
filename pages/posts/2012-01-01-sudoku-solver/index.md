@@ -1,7 +1,6 @@
 ---
 title: Sudoku Solver
 date: 2012-01-01
-layout: post
 path: /posts/sudoku-solver/
 tags: 
   - algorithms

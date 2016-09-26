@@ -1,7 +1,6 @@
 ---
 title: Butt Soup
 date: 2014-07-31
-layout: post
 path: /posts/butt-soup/
 tags: 
   - javascript

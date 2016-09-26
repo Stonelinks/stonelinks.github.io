@@ -1,7 +1,6 @@
 ---
 title: Mt. Major Drone Flight
 date: 2014-07-31
-layout: post
 path: /posts/mt-major-drone/
 tags: 
   - airplane

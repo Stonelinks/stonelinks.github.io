@@ -1,7 +1,6 @@
 ---
 title: The Phoenix
 date: 2014-06-02
-layout: post
 path: /posts/looking-back/
 tags: 
   - web development

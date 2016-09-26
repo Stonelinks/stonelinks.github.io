@@ -1,7 +1,6 @@
 ---
 title: FCC ECFS Comment Dataset
 date: 2014-08-19
-layout: post
 path: /posts/FCC-data/
 tags: 
   - net neutrality

@@ -1,7 +1,6 @@
 ---
 title: New Aerial Drone
 date: 2012-04-21
-layout: post
 path: /posts/new-drone/
 tags: 
   - airplane

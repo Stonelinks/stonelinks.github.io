@@ -1,7 +1,6 @@
 ---
 title: Contribution to Open Source Software
 date: 2012-03-26
-layout: post
 path: /posts/first-contribution-to-opensource/
 tags: 
   - computer vision

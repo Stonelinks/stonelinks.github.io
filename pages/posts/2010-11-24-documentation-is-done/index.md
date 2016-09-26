@@ -1,7 +1,6 @@
 ---
 title: Documentation is done
 date: 2010-11-24
-layout: post
 path: /posts/documentation-is-done/
 tags: 
   - harvard

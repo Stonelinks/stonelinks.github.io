@@ -1,7 +1,6 @@
 ---
 title: New Resume
 date: 2013-01-05
-layout: post
 path: /posts/new-resume/
 tags: 
   - documentation

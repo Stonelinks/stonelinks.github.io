@@ -1,7 +1,6 @@
 ---
 title: A More Accurate Coordinate System
 date: 2011-01-06
-layout: post
 path: /posts/a-more-accurate-coordinate-system/
 tags: 
   - robots

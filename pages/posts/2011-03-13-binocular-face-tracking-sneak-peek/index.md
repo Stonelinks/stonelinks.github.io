@@ -1,7 +1,6 @@
 ---
 title: Binocular Face Tracking Sneak Peek
 date: 2011-03-13
-layout: post
 path: /posts/binocular-face-tracking-sneak-peek/
 tags: 
   - robots

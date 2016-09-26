@@ -5,7 +5,7 @@ const moment = require('moment');
 const mkdirp = require('mkdirp');
 
 const postsBasePath = path.join('.', 'old', 'contents', 'posts');
-const postsDestPath = path.join('.', 'pages');
+const postsDestPath = path.join('.', 'pages', 'posts');
 
 const files = fs.readdirSync(postsBasePath);
 files.forEach(function (origPostFilepath) {
@@ -23,7 +23,6 @@ files.forEach(function (origPostFilepath) {
   let newFrontMatter = '---\n';
   newFrontMatter += 'title: ' + content.attributes.title + '\n';
   newFrontMatter += 'date: ' + date + '\n';
-  newFrontMatter += 'layout: post' + '\n';
   newFrontMatter += 'path: /posts/' + postTitleNoExtention + '/\n';
   newFrontMatter += 'tags: \n';
   content.attributes.tags.split(', ').forEach(function (tag) {

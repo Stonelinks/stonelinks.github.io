@@ -1,7 +1,6 @@
 ---
 title: Latex is Fun
 date: 2010-11-21
-layout: post
 path: /posts/latex-is-fun/
 tags: 
   - harvard

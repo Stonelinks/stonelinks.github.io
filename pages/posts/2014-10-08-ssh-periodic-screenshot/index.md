@@ -1,7 +1,6 @@
 ---
 title: SSH Periodic Screenshot
 date: 2014-10-08
-layout: post
 path: /posts/ssh-periodic-screenshot/
 tags: 
   - hacks

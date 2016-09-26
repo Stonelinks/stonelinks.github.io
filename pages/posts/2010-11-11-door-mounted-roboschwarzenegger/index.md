@@ -1,7 +1,6 @@
 ---
 title: Door Mounted Robo Schwarzenegger
 date: 2010-11-11
-layout: post
 path: /posts/door-mounted-roboschwarzenegger/
 tags: 
   - robots

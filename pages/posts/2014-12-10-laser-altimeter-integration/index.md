@@ -1,7 +1,6 @@
 ---
 title: Laser Altimeter Integration on Pixhawk
 date: 2014-12-10
-layout: post
 path: /posts/laser-altimeter-integration/
 tags: 
   - airplane

@@ -1,7 +1,6 @@
 ---
 title: How I do Word Processing
 date: 2012-04-29
-layout: post
 path: /posts/lite-write/
 tags: 
   - documentation
