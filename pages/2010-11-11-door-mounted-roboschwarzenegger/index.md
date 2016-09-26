@@ -1,9 +1,15 @@
 ---
 title: Door Mounted Robo Schwarzenegger
-date: 2010-11-12
-template: article.jade
-tags: robots, computer vision, telemetry, python
+date: 2010-11-11
+layout: post
+path: /posts/door-mounted-roboschwarzenegger/
+tags: 
+  - robots
+  - computer vision
+  - telemetry
+  - python
 ---
+
 
 <!-- gallery:
   anchor: '#gallery'

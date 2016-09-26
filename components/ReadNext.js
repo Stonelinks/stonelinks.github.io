@@ -20,7 +20,7 @@ const style = {
     marginBottom: rhythm(1 / 4)
   },
   hr: {
-    marginTop: rhythm(1 / 4),
+    marginTop: rhythm(1),
     backgroundColor: 'gray'
   },
 }

@@ -1,9 +1,12 @@
 ---
 title: The Phoenix
-date: 2014-06-03
-template: article.jade
-tags: web development
+date: 2014-06-02
+layout: post
+path: /posts/looking-back/
+tags: 
+  - web development
 ---
+
 
 Stonelinks has been around since 2008. It is six years old as of this writing. I feel like that is a long time in internet years. It seems like a long time in real world years -- I started it when I was 18 and I just turned 24 a few weeks ago.
 

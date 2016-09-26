@@ -26,3 +26,7 @@ export function getTags (page) {
 export function getAllTags (pages) {
   return uniq([].concat.apply([], pages.map(page => getTags(page).map(tagMap)))).sort()
 }
+
+export function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}

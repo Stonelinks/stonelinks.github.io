@@ -14,7 +14,8 @@ import 'css/zenburn.css'
 
 const style = {
   h1: {
-    marginTop: 0
+    marginTop: 0,
+    
   },
   hr: {
     backgroundColor: 'gray'

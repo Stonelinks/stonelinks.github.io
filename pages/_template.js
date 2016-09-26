@@ -9,7 +9,7 @@ const logoSize = 60;
 const smallerLogoSize = 35;
 const style = {
   header: {
-    marginBottom: rhythm(1.5)
+    marginBottom: rhythm(1)
   },
   h1: {
     marginBottom: 0,

@@ -28,7 +28,7 @@ module.exports = React.createClass({
           <TypographyStyle typography={typography} />
           <GoogleFont typography={typography} />
         </head>
-        <body className="landing-page">
+        <body>
           <div id="react-mount" dangerouslySetInnerHTML={{ __html: body }} />
           <script src={prefixLink(`/bundle.js?t=${BUILD_TIME}`)} />
         </body>
