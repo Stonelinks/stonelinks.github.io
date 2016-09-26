@@ -10,6 +10,7 @@ import { rhythm } from 'utils/typography';
 import { config } from 'config';
 
 import 'css/zenburn.css';
+import 'font-awesome/css/font-awesome.min.css';
 
 const style = {
   h1: {

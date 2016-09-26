@@ -14,7 +14,7 @@ const style = {
     borderRadius: '50%',
   },
   p: {
-    marginBottom: rhythm(1.5),
+    marginBottom: rhythm(1),
   },
 };
 

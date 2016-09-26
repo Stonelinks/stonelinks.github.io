@@ -4,3 +4,11 @@ blogUrl = "http://stonelinks.org/"
 authorName = "Lucas Doyle"
 authorBio = "Written by Lucas Doyle, a robotics engineer who does a lot of web development in San Francisco."
 gaCode = "UA-18750328-2"
+
+[socialNetworks]
+github = "https://github.com/Stonelinks"
+twitter = "https://twitter.com/#!/Stonelinks"
+linkedin = "http://www.linkedin.com/pub/lucas-doyle/25/550/169"
+youtube = "https://www.youtube.com/c/LukeDoyle0"
+# youtube = "http://www.youtube.com/user/RealStonelinks"
+dribbble = "https://dribbble.com/Stonelinks"

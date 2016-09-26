@@ -68,8 +68,8 @@ class Template extends React.Component {
     const navItems = [
       ['Home', '/'],
       ['Posts', '/posts/'],
-      ['Projects', '/projects'],
-      ['About', '/about'],
+      ['Projects', '/projects/'],
+      ['About', '/about/'],
     ];
 
     navItems.forEach((navItem) => {
