@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-drunkenblog",
-  "description": "A Gatsby Blog",
+  "name": "stonelinks",
+  "description": "Homepage of Lucas Doyle",
   "version": "1.0.0",
-  "author": "David Konsumer <konsumer@jetboystudio.com>",
+  "author": "Lucas Doyle <lucas.p.doyle@gmail.com>",
   "dependencies": {
     "babel-plugin-add-module-exports": "0.2.1",
     "babel-preset-es2015": "6.9.0",
@@ -38,11 +38,11 @@
     "eslint-plugin-import": "1.11.0",
     "eslint-plugin-jsx-a11y": "2.0.1",
     "eslint-plugin-react": "5.2.2",
-    "front-matter": "^2.1.0",
+    "front-matter": "2.1.0",
     "gh-pages": "0.11.0",
     "image-webpack-loader": "2.0.0",
-    "mkdirp": "^0.5.1",
-    "moment": "^2.14.1",
+    "mkdirp": "0.5.1",
+    "moment": "2.14.1",
     "null-loader": "0.1.1",
     "postcss-loader": "0.9.1",
     "react-transform-catch-errors": "1.0.2",
@@ -51,12 +51,12 @@
     "style-loader": "0.13.1",
     "webpack": "1.13.1"
   },
-  "homepage": "http://blog.jetboystudio.com",
+  "homepage": "http://stonelinks.org/",
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/konsumer/blog.jetboystudio.com.git"
+    "url": "git+https://github.com/Stonelinks/stonelinks.github.io.git"
   },
   "scripts": {
     "dev": "gatsby develop",
@@ -81,13 +81,6 @@
       ],
       "func-names": [
         0
-      ],
-      "semi": [
-        2,
-        "never"
-      ],
-      "no-extra-semi": [
-        2
       ],
       "space-before-function-paren": [
         2,
