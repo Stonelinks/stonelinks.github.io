@@ -14,20 +14,20 @@ import 'css/zenburn.css';
 const style = {
   h1: {
     marginTop: 0,
-    marginBottom: rhythm(1 / 4),
+    marginBottom: rhythm(0.25),
   },
   hr: {
     backgroundColor: 'gray',
   },
   Tags: {
-    marginBottom: rhythm(1 / 2),
-    fontSize: rhythm(1 / 2),
+    marginBottom: rhythm(0.5),
+    fontSize: rhythm(0.5),
     color: 'gray',
   },
   date: {
-    marginTop: rhythm(1 / 4),
-    marginBottom: rhythm(1 / 2),
-    fontSize: rhythm(1 / 2),
+    marginTop: rhythm(0.25),
+    marginBottom: rhythm(0.5),
+    fontSize: rhythm(0.5),
     color: 'gray',
   },
 };

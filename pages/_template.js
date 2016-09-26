@@ -4,8 +4,8 @@ import { Container } from 'react-responsive-grid';
 import { prefixLink } from 'gatsby-helpers';
 import { rhythm, fontSizeToMS } from 'utils/typography';
 import { config } from 'config';
-import flatten from 'lodash/flatten'
-import includes from 'lodash/includes'
+import flatten from 'lodash/flatten';
+import includes from 'lodash/includes';
 
 const logoSize = 60;
 const smallerLogoSize = 35;
@@ -34,8 +34,8 @@ const style = {
     lineHeight: fontSizeToMS(.6).lineHeight,
   },
   hr: {
-    marginTop: rhythm(.5),
-    marginBottom: rhythm(.5),
+    marginTop: rhythm(0.5),
+    marginBottom: rhythm(0.5),
     backgroundColor: 'gray',
   },
   img: {
@@ -60,11 +60,11 @@ const style = {
   },
   Container: {
     maxWidth: rhythm(26),
-    padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+    padding: `${rhythm(1.5)} ${rhythm(0.75)}`,
   },
 };
 class Template extends React.Component {
-  get navItems() {
+  get navItems () {
     const navItems = [
       ['Home', '/'],
       ['Posts', '/posts/'],
@@ -73,10 +73,10 @@ class Template extends React.Component {
     ];
 
     navItems.forEach((navItem) => {
-      navItem[1] = prefixLink(navItem[1])
-    })
+      navItem[1] = prefixLink(navItem[1]);
+    });
 
-    return navItems
+    return navItems;
   }
 
   get nav () {
@@ -96,42 +96,38 @@ class Template extends React.Component {
     if (includes(flatten(this.navItems), location.pathname)) {
       return (
       <div>
-      <h1 style={style.h1}>
-        <Link style={style.Link} to={prefixLink('/')} >
-          <img src={prefixLink('/icon.png')} style={style.img} /> {config.blogTitle}
-        </Link>
-      </h1>
-      <h2 style={style.h2}>
-        {config.subTitle}
-      </h2>
+        <h1 style={style.h1}>
+          <Link style={style.Link} to={prefixLink('/')} >
+            <img src={prefixLink('/icon.png')} style={style.img} /> {config.blogTitle}
+          </Link>
+        </h1>
+        <h2 style={style.h2}>
+          {config.subTitle}
+        </h2>
       </div>
     );
     } else {
       return (
       <div>
-      <h3 style={style.h3}>
-        <Link style={style.Link} to={prefixLink('/')} >
-          <img src={prefixLink('/icon.png')} style={style.smallerImg} /> {config.blogTitle}
-        </Link>
-      </h3>
+        <h3 style={style.h3}>
+          <Link style={style.Link} to={prefixLink('/')} >
+            <img src={prefixLink('/icon.png')} style={style.smallerImg} /> {config.blogTitle}
+          </Link>
+        </h3>
       </div>
     );
     }
   }
 
-
   render () {
     const { children } = this.props;
     return (
       <Container style={style.Container}>
-
-      <header style={style.header}>
-        {this.headerContents}
-
-        <hr style={style.hr} />
-        {this.nav}
-      </header>
-
+        <header style={style.header}>
+          {this.headerContents}
+          <hr style={style.hr} />
+          {this.nav}
+        </header>
         {children}
       </Container>
     );

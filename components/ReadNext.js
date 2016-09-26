@@ -17,7 +17,7 @@ const style = {
   },
   h3: {
     marginTop: 0,
-    marginBottom: rhythm(1 / 4),
+    marginBottom: rhythm(0.25),
   },
   hr: {
     marginTop: rhythm(1),
@@ -45,7 +45,7 @@ class ReadNext extends React.Component {
         })
         .sort((a, b) => a.diff - b.diff)
         .slice(-5)
-        .sort((a, b) => Math.random() * -0.5)
+        .sort(() => Math.random() * -0.5)
         .pop();
       if (readNext) {
         readNext = readNext.path;

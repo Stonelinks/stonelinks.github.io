@@ -6,7 +6,7 @@ import { prefixLink } from 'gatsby-helpers';
 const style = {
   img: {
     float: 'left',
-    marginRight: rhythm(1 / 4),
+    marginRight: rhythm(0.25),
     marginBottom: 0,
     width: rhythm(2),
     height: rhythm(2),
@@ -17,7 +17,7 @@ const style = {
   },
 };
 
-const Bio = props => (
+const Bio = () => (
   <p style={style.p}>
     <img src={prefixLink('/author.png')} alt={config.authorName} style={style.img} />
     <span dangerouslySetInnerHTML={{ __html: config.authorBio }} />
