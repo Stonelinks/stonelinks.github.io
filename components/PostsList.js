@@ -4,6 +4,7 @@ import access from 'safe-access';
 import include from 'underscore.string/include';
 
 import List from './List';
+import { isPost } from 'utils';
 
 class PostsList extends List {
   get list () {
@@ -12,7 +13,7 @@ class PostsList extends List {
     ).reverse();
 
     sortedPages.forEach((page) => {
-      if (access(page, 'file.ext') === 'md' && !include(page.path, '/404') && include(page.path, '/posts')) {
+      if (access(page, 'file.ext') === 'md' && !include(page.path, '/404') && isPost(page)) {
         pageLinks.push(page);
       }
     });

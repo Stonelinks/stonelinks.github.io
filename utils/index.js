@@ -1,5 +1,6 @@
 import catchLinks from 'catch-links';
 import slugify from 'slugify';
+import include from 'underscore.string/include';
 import uniq from 'lodash/uniq';
 
 // update internal links to use router
@@ -29,4 +30,12 @@ export function getAllTags (pages) {
 
 export function capitalizeFirstLetter (string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+export function isPost (page) {
+  return include(page.path, '/posts');
+}
+
+export function isProject (page) {
+  return include(page.path, '/projects') && include(page.file.name, 'index');
 }
