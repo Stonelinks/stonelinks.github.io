@@ -17,25 +17,57 @@ const style = {
   date: {
     fontSize: rhythm(0.5),
     color: 'gray',
+    marginBottom: rhythm(0.1),
   },
   h3: {
     marginBottom: rhythm(0.5),
+  },
+  img: {
+    float: 'left',
+    marginTop: rhythm(-0.1),
+    marginBottom: 0,
+    marginRight: rhythm(0.25),
+    width: rhythm(2),
+    height: rhythm(2),
+    borderRadius: '50%',
+    border: '1px gray solid',
   },
 };
 
 class PostsList extends React.Component {
 
   makeListItem (page) {
-    const title = access(page, 'data.title') || page.path;
-    return (
-      <li key={page.path} style={style.listItem}>
+    const pageTitle = access(page, 'data.title') || page.path;
+    const image = access(page, 'data.image');
+
+    let listItemContents = (
+      <div>
         <Link to={prefixLink(page.path)}>
-        {title}
+        {pageTitle}
         </Link>
         <div style={style.date}>
           {moment(page.data.date).calendar()}
         </div>
         <Summary body={page.data.body} />
+      </div>
+    );
+
+    if (image) {
+      listItemContents = (
+        <div>
+          <Link to={prefixLink(page.path)}>
+            <img src={prefixLink(image)} alt={pageTitle} style={style.img} />
+          </Link>
+          <span>
+            {listItemContents}
+          </span>
+        </div>
+      );
+    }
+
+    return (
+      <li key={page.path} style={style.listItem}>
+        {listItemContents}
       </li>
     );
   }
