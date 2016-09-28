@@ -60,7 +60,7 @@ const style = {
   },
   Container: {
     maxWidth: rhythm(26),
-    padding: `${rhythm(1.5)} ${rhythm(0.75)}`,
+    padding: rhythm(0.75),
   },
 };
 class Template extends React.Component {

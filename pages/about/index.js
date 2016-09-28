@@ -10,6 +10,7 @@ import FontAwesome from 'react-fontawesome';
 const style = {
   img: {
     float: 'left',
+    marginTop: rhythm(0.25),
     marginRight: rhythm(0.5),
     marginBottom: rhythm(0.5),
     width: rhythm(5),
