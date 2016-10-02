@@ -2,6 +2,7 @@ import catchLinks from 'catch-links';
 import slugify from 'slugify';
 import include from 'underscore.string/include';
 import uniq from 'lodash/uniq';
+import moment from 'moment';
 
 // update internal links to use router
 export function fixLinks (ref, router) {
@@ -38,4 +39,8 @@ export function isPost (page) {
 
 export function isProject (page) {
   return include(page.path, '/projects') && include(page.file.name, 'index');
+}
+
+export function getPageDate (page) {
+  return moment(page.data.date).add(0.5, 'days').format(page.data.dateFormat ? page.data.dateFormat : 'MM/DD/YYYY');
 }

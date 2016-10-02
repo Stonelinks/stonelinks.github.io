@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router';
 import { prefixLink } from 'gatsby-helpers';
 import { rhythm } from 'utils/typography';
+import { getPageDate } from 'utils';
 import Summary from './Summary';
-import moment from 'moment';
 import access from 'safe-access';
 
 const style = {
@@ -46,7 +46,7 @@ class PostsList extends React.Component {
         {pageTitle}
         </Link>
         <div style={style.date}>
-          {moment(page.data.date).calendar()}
+          {getPageDate(page)}
         </div>
         <Summary body={page.data.body} />
       </div>

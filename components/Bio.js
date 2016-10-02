@@ -7,12 +7,13 @@ import { prefixLink } from 'gatsby-helpers';
 const style = {
   img: {
     float: 'left',
-    marginTop: rhythm(0.25),
-    marginRight: rhythm(0.25),
+    marginTop: 0,
     marginBottom: 0,
+    marginRight: rhythm(0.25),
     width: rhythm(2),
     height: rhythm(2),
     borderRadius: '50%',
+    border: '1px gray solid',
   },
   p: {
     marginBottom: rhythm(1),

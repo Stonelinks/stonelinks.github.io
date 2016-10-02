@@ -63,6 +63,7 @@ const style = {
     padding: rhythm(0.75),
   },
 };
+
 class Template extends React.Component {
   get navItems () {
     const navItems = [

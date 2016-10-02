@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import DocumentTitle from 'react-document-title';
-import { fixLinks } from 'utils';
+import { fixLinks, isPost, getPageDate } from 'utils';
 
 import ReadNext from 'components/ReadNext';
 import Bio from 'components/Bio';
@@ -40,20 +40,32 @@ class MarkdownWrapper extends React.Component {
 
   render () {
     const { route } = this.props;
-    const post = route.page.data;
+    const page = route.page.data;
 
-    return (
-    <DocumentTitle title={post.title ? `${post.title} | ${config.blogTitle}` : config.blogTitle}>
-      <div className="markdown">
-        <h1 style={style.h1}>{post.title}</h1>
-        {!post.date ? null : <div style={style.date}>{moment(post.date).calendar().toLowerCase()}</div>}
-        <div className="article" ref="markdown" dangerouslySetInnerHTML={{ __html: post.body }} />
-        <Tags post={post} style={style.Tags} />
+    const header = (
+      <div>
+        <h1 style={style.h1}>{page.title}</h1>
+        {!page.date ? null : <div style={style.date}>{getPageDate(route.page)}</div>}
+      </div>
+    );
+
+    const footer = (
+      <div>
+        <Tags page={page} style={style.Tags} />
         <hr style={style.hr} />
-        <ReadNext post={post} pages={route.pages} />
+        {isPost(page) ? <ReadNext page={page} pages={route.pages} /> : null}
         <Bio />
       </div>
-    </DocumentTitle>
+    );
+
+    return (
+      <DocumentTitle title={page.title ? `${page.title} | ${config.blogTitle}` : config.blogTitle}>
+        <div className="markdown">
+          {header}
+          <div className="article" ref="markdown" dangerouslySetInnerHTML={{ __html: page.body }} />
+          {footer}
+        </div>
+      </DocumentTitle>
     );
   }
 }
