@@ -2,17 +2,14 @@
 title: Door Mounted Robo Schwarzenegger
 date: 2010-11-11
 path: /posts/door-mounted-roboschwarzenegger/
-tags: 
+tags:
   - robots
   - computer vision
   - telemetry
   - python
+image: /posts/2010-11-11-door-mounted-roboschwarzenegger/personal-robot-gallery/downsize_4.jpg
+gallery: [/posts/2010-11-11-door-mounted-roboschwarzenegger/personal-robot-gallery/downsize_4.jpg, /posts/2010-11-11-door-mounted-roboschwarzenegger/personal-robot-gallery/2010-02-08-193124.jpg, /posts/2010-11-11-door-mounted-roboschwarzenegger/personal-robot-gallery/2010-02-08-193147.jpg, /posts/2010-11-11-door-mounted-roboschwarzenegger/personal-robot-gallery/2010-02-08-193241.jpg, /posts/2010-11-11-door-mounted-roboschwarzenegger/personal-robot-gallery/2010-02-08-193359.jpg, /posts/2010-11-11-door-mounted-roboschwarzenegger/personal-robot-gallery/downsize_2.jpg, /posts/2010-11-11-door-mounted-roboschwarzenegger/personal-robot-gallery/downsize_3.jpg, /posts/2010-11-11-door-mounted-roboschwarzenegger/personal-robot-gallery/downsize.jpg]
 ---
-
-
-<!-- gallery:
-  anchor: '#gallery'
-  images: [/images/projects/personal-robot-gallery/2010-02-08-193124.jpg, /images/projects/personal-robot-gallery/2010-02-08-193147.jpg, /images/projects/personal-robot-gallery/2010-02-08-193241.jpg, /images/projects/personal-robot-gallery/2010-02-08-193359.jpg, /images/projects/personal-robot-gallery/downsize_2.jpg, /images/projects/personal-robot-gallery/downsize_3.jpg, /images/projects/personal-robot-gallery/downsize_4.jpg, /images/projects/personal-robot-gallery/downsize.jpg] -->
 
 <div class="media-container">
 

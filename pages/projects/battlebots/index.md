@@ -3,9 +3,7 @@ title: The Battlebot
 image: /projects/battlebots/battlebot.jpg
 date: 2009-01-01
 dateFormat: "YYYY"
-gallery:
-  anchor: '#gallery'
-  images: [/images/projects/battlebot-gallery/101.jpg, /images/projects/battlebot-gallery/102.jpg, /images/projects/battlebot-gallery/17072_1233403910760_1099020141_30727302_7903880_n.jpg, /images/projects/battlebot-gallery/21.jpg, /images/projects/battlebot-gallery/3.jpg, /images/projects/battlebot-gallery/4.jpg, /images/projects/battlebot-gallery/51.jpg, /images/projects/battlebot-gallery/61.jpg, /images/projects/battlebot-gallery/81.jpg, /images/projects/battlebot-gallery/91.jpg, /images/projects/battlebot-gallery/battlebot1.jpg, /images/projects/battlebot-gallery/battlebot_kitchen.jpg, /images/projects/battlebot-gallery/bizarro-1024x576.png, /images/projects/battlebot-gallery/z71.jpg]
+gallery: [/projects/battlebots/battlebot-gallery/101.jpg, /projects/battlebots/battlebot-gallery/102.jpg, /projects/battlebots/battlebot-gallery/17072_1233403910760_1099020141_30727302_7903880_n.jpg, /projects/battlebots/battlebot-gallery/21.jpg, /projects/battlebots/battlebot-gallery/3.jpg, /projects/battlebots/battlebot-gallery/4.jpg, /projects/battlebots/battlebot-gallery/51.jpg, /projects/battlebots/battlebot-gallery/61.jpg, /projects/battlebots/battlebot-gallery/81.jpg, /projects/battlebots/battlebot-gallery/91.jpg, /projects/battlebots/battlebot-gallery/battlebot1.jpg, /projects/battlebots/battlebot-gallery/battlebot_kitchen.jpg, /projects/battlebots/battlebot-gallery/bizarro-1024x576.png, /projects/battlebots/battlebot-gallery/z71.jpg]
 ---
 
 Concept for a combat robot I designed.

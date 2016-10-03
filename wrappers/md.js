@@ -9,8 +9,11 @@ import Tags from 'components/Tags';
 import { rhythm } from 'utils/typography';
 import { config } from 'config';
 
+import Gallery from 'components/Gallery';
+
 import 'css/zenburn.css';
 import 'font-awesome/css/font-awesome.min.css';
+import 'react-image-gallery/styles/css/image-gallery.css';
 
 const style = {
   h1: {
@@ -62,6 +65,7 @@ class MarkdownWrapper extends React.Component {
       <DocumentTitle title={page.title ? `${page.title} | ${config.blogTitle}` : config.blogTitle}>
         <div className="markdown">
           {header}
+          {page.gallery ? <Gallery images={page.gallery} /> : null}
           <div className="article" ref="markdown" dangerouslySetInnerHTML={{ __html: page.body }} />
           {footer}
         </div>
