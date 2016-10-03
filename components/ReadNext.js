@@ -27,19 +27,19 @@ const style = {
 
 class ReadNext extends React.Component {
   render () {
-    const { pages, post } = this.props;
-    let { readNext } = post;
+    const { pages, page } = this.props;
+    let { readNext } = page;
     let nextPost;
 
     if (readNext) {
       nextPost = find(pages, (page) => includes(page.path, readNext));
     } else {
       readNext = pages
-        .filter(p => p.data.tags && p.data.body !== post.body)
+        .filter(p => p.data.tags && p.data.body !== page.body)
         .map(p => {
-          if (post.tags) {
+          if (page.tags) {
             const t = getTags(p);
-            p.diff = intersect(post.tags, t).length;
+            p.diff = intersect(page.tags, t).length;
           }
           return p;
         })
@@ -72,7 +72,7 @@ class ReadNext extends React.Component {
 }
 
 ReadNext.propTypes = {
-  post: React.PropTypes.object.isRequired,
+  page: React.PropTypes.object.isRequired,
   pages: React.PropTypes.array,
 };
 
