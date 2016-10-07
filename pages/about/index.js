@@ -39,6 +39,12 @@ class PostsIndex extends React.Component {
       </a>
     );
 
+    socialIcons.push(
+      <a key={'contact'} href={'mailto:lucas.p.doyle@gmail.com?subject=Hello'} target="blank_">
+        Contact
+      </a>
+    );
+
     Object.keys(config.socialNetworks).forEach(function (network) {
       const networkUrl = config.socialNetworks[network];
       socialIcons.push(
