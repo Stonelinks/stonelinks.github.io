@@ -9,7 +9,7 @@ class Summary extends React.Component {
 
   summary (body) {
     const split = body.split('<hr>');
-    return split.length !== 0 && split[0].length < 200 ? split[0] : prune(body.replace(/<[^>]*>/g, ''), 200);
+    return split.length !== 0 && split[0].length < 200 ? split[0] : prune(body.replace(/<(?!\/?a)[^>]*>/g, ''), 200);
   }
 
   render () {
