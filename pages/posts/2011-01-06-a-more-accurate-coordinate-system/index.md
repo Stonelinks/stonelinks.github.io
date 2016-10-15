@@ -2,23 +2,16 @@
 title: A More Accurate Coordinate System
 date: 2011-01-06
 path: /posts/a-more-accurate-coordinate-system/
-tags: 
+tags:
   - robots
   - computer vision
   - python
   - arduino
 ---
 
-
-<div class="media-container">
-
 <iframe src="http://www.youtube.com/embed/c72tK4KTTj0" frameborder="0" allowfullscreen></iframe>
 
-</div>
-
 RPI health and safety inspections did not take kindly to my [door mounted Robo-Schwarzenegger](/posts/door-mounted-roboschwarzenegger/). Apparently I'm not breaking any rules with an internet controlled webcam hanging from my door, but the power cord across the doorway is a tripping hazard. I took Arnold down and brought him home with me over the break with the goal of teaching myself some python and jumping into OpenCV.
-
-<span class="more"></span>  
 
 I played with both OpenCV and Python a few years ago when I more or less [followed this tutorial](http://blog.jozilla.net/2008/06/27/fun-with-python-opencv-and-face-detection/), but ultimately could not get decent control of the camera. I figured the first step in doing this the right way was to get better control over the camera. Below I'll describe how I accomplished this.
 
@@ -45,19 +38,19 @@ def spiral():
 
     # time loop that stops when the stretch factor is 1
     while (a < 1) :
-        
+
         # increase the time step
         t+=1
-        
+
         # if 50 time steps have gone by, increment a
         if (t % 50 == 0) : a+=.01
-        
+
         # move the servos to middle, plus or minus some scaled
         # value of sin or cosine. Change 'a' to something fixed
         # between 0 and 1 and the spiral is now a circle
         servo.move(1, 90 + a * math.degrees(math.cos(math.radians(t))))
         servo.move(2, 90 + a * math.degrees(math.sin(math.radians(t))))
-        
+
         # delay between the move calls
         time.sleep(.0045)
 ```

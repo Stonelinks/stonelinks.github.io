@@ -2,12 +2,12 @@
 title: Windows Based Webcam Control Software
 date: 2010-09-29
 path: /posts/windows-based-webcam-control-software/
-tags: 
+image: /posts/windows-based-webcam-control-software/2010-02-08-193359-150x150.jpg
+tags:
   - systems
   - arduino
   - telemetry
 ---
-
 
 I love nothing more in life than creating and tinkering with the stuff around me. Over the years, this love has taken many different forms. It started out somewhere in elementary school with Legos and taking my toys apart (much to the chagrin of my loving parents). Today it has evolved over the years into weekend projects such as the I'm about to tell you about.
 
@@ -17,11 +17,7 @@ Projects such as this are just the kind of thing that I love taking time to do. 
 
 ### Hardware
 
-<div class="media-container">
-
-<img src="/images/posts/2010-02-08-193359-150x150.jpg">
-
-</div>
+![](/posts/windows-based-webcam-control-software/2010-02-08-193359-150x150.jpg)
 
 This summer I came into possession of an [Arduino](http://www.arduino.cc/) micro controller and [some servos](http://www.rcuniverse.com/product_guide/servoprofile.cfm?servo_id=67). As you can see from the pictures, I connected the servos up to the micro controller, making Y-cables for the power, ground, and signal pins of the servos. I also added a laser diode for good measure.
 
@@ -98,30 +94,30 @@ unsigned int EEPROMReadInt(int p_address)
   byte lowByte = EEPROM.read(p_address);
   byte highByte = EEPROM.read(p_address + 1);
   return ((lowByte << 0) & 0xFF) + ((highByte << 8) & 0xFF00); }
-  
-  
+
+
 void setup()
 {
   // Set up servo and laser pins as an output  
   pinMode(servoPinX, OUTPUT);  
   pinMode(laserpin, OUTPUT);
   pinMode(servoPinY, OUTPUT);  
-  
+
   // calculate center positions for both servos  
   centerServoX = maxPulseX - ((maxPulseX - minPulseX)/2);  
   centerServoY = maxPulseY - (((maxPulseY - minPulseY)/2)-280);  
-  
+
   // If you're running this for the first time on your arduino,  
   // uncomment the next two lines to initialize the EEPROM
   // EEPROMWriteInt(0, centerServoX);  
   // EEPROMWriteInt(2, centerServoY);  
-  
+
   pulseWidthX = EEPROMReadInt(0);  
   pulseWidthY = EEPROMReadInt(2);  
-  
+
   // begin serial communication  
   Serial.begin(9600);  
-  
+
   //Serial.println("Arduino Serial Pan/tilt Control");
   //Serial.println("Standard WASD to move, spacebar to center");
   //Serial.println("L toggles the laser, TFGH goes to the extremes");
@@ -195,12 +191,12 @@ void loop()
   if (pulseWidthX < minPulseX) { pulseWidthX = minPulseX; }
   if (pulseWidthY > maxPulseY) { pulseWidthY = maxPulseY; }
   if (pulseWidthY < minPulseY) { pulseWidthY = minPulseY; }
-  
+
   // print pulseWidth back to the Serial Monitor (uncomment to debug)
   // Serial.print("Pulse Width: ");
   // Serial.print(pulseWidth);
   // Serial.println("us");   // microseconds
-  
+
   // pulse the servo every 20 ms (refreshTime) with current pulseWidth
   // this will hold the servo's position if unchanged, or move it if changed
   if (millis() - lastPulse >= refreshTime)
@@ -233,13 +229,9 @@ This was not good enough for me though, as I wanted to control this through a we
 
 ### The Web Server
 
-<div class="media-container">
+![](/posts/windows-based-webcam-control-software/2010-02-08-193241-150x150.jpg)
 
-<img src="/images/posts/2010-02-08-193241-150x150.jpg">
-
-</div>
-
-The Arduino is cool and all, but since the ultimate goal of this project is to control it over the internet, having a web server is an obvious requirement. Unfortunately for me, my web server also happens to be my self-built desktop that I use for almost all my other engineering work and day to day activities. Because of this, I need access to few windows only applications (Solidworks, LabVIEW, Photoshop, Steam, etc..) which rules out any linux server platforms if I want 100% uptime. This is an unfortunate constraint that caused me quite a lot of headaches down the line. In the future when I have another computer to spare and improve on this project, I will use the [right tool](http://blog.taragana.com/wp-content/uploads/2008/03/linux-logo.jpg) for the job. 
+The Arduino is cool and all, but since the ultimate goal of this project is to control it over the internet, having a web server is an obvious requirement. Unfortunately for me, my web server also happens to be my self-built desktop that I use for almost all my other engineering work and day to day activities. Because of this, I need access to few windows only applications (Solidworks, LabVIEW, Photoshop, Steam, etc..) which rules out any linux server platforms if I want 100% uptime. This is an unfortunate constraint that caused me quite a lot of headaches down the line. In the future when I have another computer to spare and improve on this project, I will use the [right tool](http://blog.taragana.com/wp-content/uploads/2008/03/linux-logo.jpg) for the job.
 
 After all that rambling, you're probably wondering how I have my web server configured. The only relevant details are that I am running stock [WampServer](http://www.wampserver.com/en/) with PHP 5.3.0 with short tags enabled.
 

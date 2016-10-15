@@ -2,28 +2,22 @@
 title: Dr. Serverlove, or How I Learned to Stop Worrying and Love the RAID
 date: 2010-12-06
 path: /posts/dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid/
-tags: 
+image: /posts/dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid/downsize-300x225.jpg
+tags:
   - web development
 ---
 
+![](/posts/dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid/downsize-300x225.jpg)
 
-<div class="media-container">
-
-<img src="/images/posts/downsize-300x225.jpg">
-
-<p>These two suckers now live on my desk and throw off a ton of heat.</p>
-
-</div>
+These two suckers now live on my desk and throw off a ton of heat.
 
 I recently completed some much needed upgrades to the servers (hardware and software) that run Stonelinks. This has me very excited and has been a long time in the works! Warning: long and somewhat pointless story of blood, sweat, nerdrage and glorious payoff ahead.
 
-<span class="more"></span>
-
-Despite being a humongous Linux nerd, for years I have hosted Stonelinks using Windows / [WAMP](http://www.wampserver.com/en/) server (which is the same thing as LAMP, just replace Linux with Windows). For a long time this was my only option as far as "free" hosting using RPI's bandwidth, as my desktop is the only computer I own that is consistently on 24/7 and can function in a server role. 
+Despite being a humongous Linux nerd, for years I have hosted Stonelinks using Windows / [WAMP](http://www.wampserver.com/en/) server (which is the same thing as LAMP, just replace Linux with Windows). For a long time this was my only option as far as "free" hosting using RPI's bandwidth, as my desktop is the only computer I own that is consistently on 24/7 and can function in a server role.
 
 By necessity, my desktop needs to be running Windows 7 because unfortunately I need access to a bunch of programs that I can't get or don't exist for Linux. Things like LabVIEW for work at the [Harvard-Smithsonain Center for Astrophysics](/projects/amf/index.html), MATLAB so my room mate can run his week long computational fluid dynamic simulations on for his research (we need our own supercomputer for this!), Solidworks for random CAD I occasionally do, Netflix because content licensing people are afraid of Linux and finally Team Fortress 2 because I occasionally like to get my game on. Because of the sporadic nature of when I use most of these programs, it also means that dual booting between Linux and Windows is of the question since that doesn't guarantee uptime. I didn't want to shut down the server while someone was using it just so I could boot into Windows and do some CAD.
 
-Therefore, I have stuck with my WAMP setup for many years. As far as WAMP is concerned, it has sort of been "fine" most of the time, but definitely not ideal. All of the other websites I work on are hosted from some flavor of Linux. It is free, extremely stable, makes administration and development a breeze compared to Windows (what a nightmare it was to get PHP's mail() command to work with SSL in Windows), the list goes on. 
+Therefore, I have stuck with my WAMP setup for many years. As far as WAMP is concerned, it has sort of been "fine" most of the time, but definitely not ideal. All of the other websites I work on are hosted from some flavor of Linux. It is free, extremely stable, makes administration and development a breeze compared to Windows (what a nightmare it was to get PHP's mail() command to work with SSL in Windows), the list goes on.
 
 Hosting Stonelinks under Linux has been a goal/dream of mine for awhile now. Occasionally I would try using a virtual machine to host, but I'd always find that to be too resource intensive and would BSOD windows after awhile if left on for too long. Cygwin was and always has been a nightmare for me too, so I didn't even go there. Interestingly, I did have some success with something called [andLinux](http://www.andlinux.org/) which, by my understanding, is an Ubuntu installation based around a Linux kernel compiled to use win32 system calls a la [coLinux](http://www.colinux.org/). All the benefits of a virtual machine without the instability and losing a massive chunk of RAM. I ultimately dumped andLinux, mostly because andLinux uses a virtual network adapter to communicate with Windows. A webserver running under andLinux would be heavily bandwidth constrained for any clients other than localhost. So up until writing this I've been really, throughly stuck.
 

@@ -2,15 +2,13 @@
 title: FCC ECFS Comment Dataset
 date: 2014-08-19
 path: /posts/FCC-data/
-tags: 
+tags:
   - net neutrality
   - datasets
 ---
 
 
-<div class="gh-container">
-  <a href="https://github.com/Stonelinks/FCC-Proceeding-14-28-Data" class="btn btn-primary btn-lg btn-block">github.com/Stonelinks/FCC-Proceeding-14-28-Data</a>
-</div>
+  <a href="https://github.com/Stonelinks/FCC-Proceeding-14-28-Data">github.com/Stonelinks/FCC-Proceeding-14-28-Data</a>
 
 If you've looked at US news in the last couple months, you've no doubt heard something about "net neutrality". A lot of people have probably heard of it but probably don't know what it is or why it is important. [John Oliver](https://www.youtube.com/watch?v=fpbOEoRrHyU) does an awesome job motivating the topic for the average person. Fair warning, it is a bit scatological.
 

@@ -2,11 +2,10 @@
 title: Laser Altimeter Integration on Pixhawk
 date: 2014-12-10
 path: /posts/laser-altimeter-integration/
-tags: 
+tags:
   - airplane
   - drones
 ---
-
 
 As some of you may know, I have left Tokyo and the world of industrial robotics and am now in the midst of immersing myself in the world of drones in San Francisco. Its a very exciting time in my life! Among other things, I did some research into the different drone platforms out there.
 
@@ -16,11 +15,7 @@ As a sample exercise, I took an in-depth look at how I'd go about integrating a 
 
 All signs of googling point to the [SF02/F laser altimeter](http://www.lightware.co.za/shop/en/lrf-modules/7-sf02f.html) as the quickest option to get something working.
 
-<div class="media-container">
-
-<img src="https://pixhawk.org/_media/peripherals/sf02_f_laser_rangefinder_pixhawk_wiring.jpg?w=600&tok=605f64">
-
-</div>
+![](https://pixhawk.org/_media/peripherals/sf02_f_laser_rangefinder_pixhawk_wiring.jpg?w=600&tok=605f64)
 
 **Specs**:
 
@@ -59,11 +54,9 @@ So while these other sensors may potentially work, for the sake of this analysis
 
 ## Step 1: Connect to the Pixhawk
 
-
 The wiring from the SF02 to the Pixhawk goes like this:
 
-
-<table class="table table-striped table-bordered">
+<table>
 <thead>
 <tr>
 <th>Pixhawk <span class="caps">UART</span> pin</th>
@@ -144,13 +137,13 @@ To actually get data out of the subscriber, we need to use the `poll()` POSIX sy
 #include <drivers/drv_range_finder.h>
 ..
 int rangefinder_sub_fd = orb_subscribe(ORB_ID(sensor_range_finder));
- 
+
 /* one could wait for multiple topics with this technique, just using one here */
 
 struct pollfd fds[] = {
   { .fd = rangefinder_sub_fd,   .events = POLLIN },
 };
- 
+
 while (true) {
 
   /* wait for sensor update of 1 file descriptor for 1000 ms (1 second) */
@@ -175,7 +168,7 @@ while (true) {
 The code snippet above isn't a complete application, but you get the idea. Once the range finder data is copied into that `range_finder_report` struct instance, the sky is the limit (pun intended) for what you want to do to it. This is where higher level, application specific things get implemented. Some things I can think of to do with altimeter data:
 
 - Log the data, fly the drone fleet in a lawnmower / zig zag pattern to try to cover a large area, and then use it for 3d reconstruction later. To do this you would also need a decent estimate of aircraft position and orientation.
-- Transmit data to a ground station for similar logging purposes. The ground station could be the central data aggregation point for the fleet. If the ground station has an internet connection, it could run a webserver for others to monitor aircraft data in real time from off-site. 
+- Transmit data to a ground station for similar logging purposes. The ground station could be the central data aggregation point for the fleet. If the ground station has an internet connection, it could run a webserver for others to monitor aircraft data in real time from off-site.
 - Implement an automated landing routine. Would need to figure out at what speed / altitude you'd need to flare the aircraft right before touchdown.
 
 Without knowing any more details about the exact application, I think this is where I'll stop.

@@ -2,7 +2,7 @@
 title: 2013 IREX Binpicking Survey
 date: 2013-10-31
 path: /posts/2013-irex-binpicking/
-tags: 
+tags:
   - robots
 ---
 
@@ -11,4 +11,4 @@ Back in November I had the chance to take a survey of all the different binpicki
 
 As a small robot company just starting out at trying to make one of these binpicking systems, I felt it was important to make a survey of these things. Maybe someone other than us will find this exhaustive analysis useful. I've included videos of each (got some really nasty looks trying to record them)!
 
-<iframe style="width: 100%; height: 569px;" src="https://docs.google.com/presentation/d/1UHa4pqw1bnrdN5l-d-cL84rmfrxs0kg98q3t2X60boA/embed?start=false&loop=false&delayms=3000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>  
+<iframe style="height: 569px;" src="https://docs.google.com/presentation/d/1UHa4pqw1bnrdN5l-d-cL84rmfrxs0kg98q3t2X60boA/embed?start=false&loop=false&delayms=3000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>  

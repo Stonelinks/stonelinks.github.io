@@ -2,17 +2,14 @@
 title: Jekyll i18n
 date: 2014-07-31
 path: /posts/jekyll-gettext-plugin/
-tags: 
+tags:
   - web development
   - ruby
   - jekyll
   - i18n
 ---
 
-
-<div class="gh-container">
-  <a href="https://github.com/Stonelinks/jekyll-gettext-plugin" class="btn btn-primary btn-lg btn-block">github.com/Stonelinks/jekyll-gettext</a>
-</div>
+[https://github.com/Stonelinks/jekyll-gettext-plugin](https://github.com/Stonelinks/jekyll-gettext-plugin)
 
 As the friendly neighborhood web developer at MUJIN, one of my responsibilities is [our company's website](http://mujin.co.jp/). I made this site mostly by myself using [jekyll](http://jekyllrb.com/), the static website generator that github uses for github pages by default.
 

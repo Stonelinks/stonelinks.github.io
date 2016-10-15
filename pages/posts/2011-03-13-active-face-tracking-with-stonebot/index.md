@@ -2,24 +2,19 @@
 title: Active Face Tracking with Stonebot
 date: 2011-03-13
 path: /posts/active-face-tracking-with-stonebot/
-tags: 
+tags:
   - robots
   - computer vision
   - python
 ---
 
-
 I finally have it working! Very excited as I write this. So glad spring break exists otherwise I'd never have the time for this. Long story short, I have face detection working on my personal robot. Check out the video after the break to see it in action.
-
-<div class="media-container">
 
 <iframe src="http://www.youtube.com/embed/RRwMJ8GYT7Y" frameborder="0" allowfullscreen></iframe>
 
-</div>
-
 This has been a goal of mine ever since I started building my personal robot (which, in keeping with the Stonelinks legacy, shall henceforth be known as "Stonebot"). This face tracking makes use of my [new method for positioning the camera](/posts/a-more-accurate-coordinate-system/) that I worked on a little over winter break, and is probably the most complicated piece of python I have written to date. Here are some highlights of the project:
 
-<span class="more"></span>
+
 
 ### OpenCV
 
@@ -39,11 +34,7 @@ and OpenCV is yours for the taking! Install the documentation and run the exampl
 
 ### Classifiers are easily fooled
 
-<div class="media-container">
-
 <img src="http://i.imgur.com/XPuhpl.jpg">
-
-</div>
 
 This is pretty self explanatory. I drew the above face with a purple magic marker in about five seconds and it is able to fool the Haar classifier.
 
@@ -51,4 +42,4 @@ Additionally, I have found that the wrong lighting, glasses, and long hair can t
 
 ### CPU speed
 
-As I said in the video, performance on the eee PC was terrible. While not surprising, this is kind of upsetting as I was considering putting it to use as the brains of the robot once I add some sort of locomotion to the system. I was pleasantly surprised however when I loaded up the code on to my new laptop (which has a Core 2 duo operating at 1.3GHz) and things worked beautifully. It would seem that OpenCV, even though I thought that python couldn't be threaded, is somehow threading itself across both cores of the processor. As I'm still new to python and all of these technology, so sit tight! I'm still learning how all this stuff works. 
+As I said in the video, performance on the eee PC was terrible. While not surprising, this is kind of upsetting as I was considering putting it to use as the brains of the robot once I add some sort of locomotion to the system. I was pleasantly surprised however when I loaded up the code on to my new laptop (which has a Core 2 duo operating at 1.3GHz) and things worked beautifully. It would seem that OpenCV, even though I thought that python couldn't be threaded, is somehow threading itself across both cores of the processor. As I'm still new to python and all of these technology, so sit tight! I'm still learning how all this stuff works.

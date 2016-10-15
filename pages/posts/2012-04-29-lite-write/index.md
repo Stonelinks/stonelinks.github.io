@@ -2,14 +2,11 @@
 title: How I do Word Processing
 date: 2012-04-29
 path: /posts/lite-write/
-tags: 
+tags:
   - documentation
 ---
 
-
-<div class="gh-container">
-  <a href="https://github.com/Stonelinks/Lite-Write" class="btn btn-primary btn-lg btn-block">github.com/Stonelinks/Lite-Write</a>
-</div>
+[https://github.com/Stonelinks/Lite-Write](https://github.com/Stonelinks/Lite-Write)
 
 A few months ago I came up with a quick and dirty way to write text documents. I'm calling it [Lite Write](https://github.com/Stonelinks/Lite-Write) because it is so simple. I've been using it in place of a word processor for awhile and been very happy with it.
 
