@@ -4,11 +4,11 @@ import { tagMap, capitalizeFirstLetter } from 'utils';
 import { prefixLink } from 'gatsby-helpers';
 
 const Tags = props => {
-  return (props.post && props.post.tags || []).length ?
+  return (props.page && props.page.tags || []).length ?
     (
       <div {...props}>
         <span>
-          Tags: {props.post.tags.map((tag, i) => {
+          Tags: {props.page.tags.map((tag, i) => {
             return (
              <Link key={i} to={{ pathname: prefixLink('/tags/'), hash: '#'+tagMap(tag) }}>
                {capitalizeFirstLetter(tag)}
