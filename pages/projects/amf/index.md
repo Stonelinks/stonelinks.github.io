@@ -2,20 +2,14 @@
 title: Harvard - Smithsonian Center for Astrophysics
 image: /projects/amf/chamber.png
 date: 2013-01-01
-dateFormat: "YYYY"
+dateFormat: "YYYY - [onwards]"
 ---
 
-Work at the Harvard-Smithsonian Center for Astrophysics on prototyping X-ray optics.
+![chamber](/projects/amf/chamber.png)
 
-<div class="media-container">
+Since 2009 I have worked at the [Harvard-Smithsonian Center for Astrophysics](http://www.cfa.harvard.edu/hea/) on prototyping X-ray optics Dr. Suzanne Romaine and Ric Bruni. There I've helped designed hardware and wrote all of the software to automate the fabrication of multilayer X-ray optics.
 
-<img src="/images/projects/amf/chamber-logo.png">
-
-</div>
-
-Since 2009 I have worked at the [Harvard-Smithsonian Center for Astrophysics](http://www.cfa.harvard.edu/hea/) on a wide array of projects for Dr. Suzanne Romaine and Ricardo Bruni. Mainly I've been designing hardware and software that automates the fabrication of multilayer (and sometimes non-multilayer) coatings on the surfaces of optics to be used for X-ray imaging (mostly in astronomy).
-
-These multilayer coatings are designed to capture, focus and reflect the X-ray photons from deep space back on to an array of detectors inside of the telescope to form an image. The coatings are called "multilayers" because they consist of very thin (sometimes only a couple of angstroms) alternating layers of different materials (they are essentially highly specialized man-made [bragg crystals](http://en.wikipedia.org/wiki/Bragg's_law)).
+These multilayer coatings are designed to capture, focus and reflect the X-ray photons from deep space back on to a detectors inside of the telescope to form an image. The coatings are called "multilayers" because they consist of very thin (sometimes only a couple of angstroms) alternating layers of different materials (they are essentially highly specialized man-made [bragg crystals](http://en.wikipedia.org/wiki/Bragg's_law)).
 
 My time at Harvard-CFA has been tremendously valuable to me. While there, I have:
 
@@ -31,13 +25,9 @@ One of the most challenging parts has been the program's organization. As the co
 
 The current incarnation of the software has actually split into two major parts. At the lowest level, there is a __LabVIEW hardware interpreter__ and simple tools for manually controlling the chambers. Fundamentally, there a simple instruction set (with things in it like `MOVE_AXIS`, `OPEN_SHUTTER`, etc.) that it implements. Lists of these instructions are fed into it and it executes them sequentially and moves chamber hardware. The other program, a __simple [webpy](http://webpy.org/) application__, actually generates and keeps track of these instructions and the parameters used to generate them. The source code for this web ui is [available on github](https://github.com/Stonelinks/amf). This decoupling is really nice since there are so many different types of coatings, optic geometries and chamber hardware configurations. LabVIEW requires an extraordinary amount of work for developing large scale applications such as this, so keeping the LabVIEW components simple has turned out to be a fantastic choice.
 
-<div class="media-container">
+![screen](/projects/amf/screen.jpg)
 
-<img src="/images/projects/amf/screen.jpg">
-
-<p>**Multilayer Fabrication Software**: The gray window is for production runs, the blue window is for manually controlling chamber hardware, and the yellow window displays the state of the chamber.</p>
-
-</div>
+**Multilayer Fabrication Software**: The gray window is for production runs, the blue window is for manually controlling chamber hardware, and the yellow window displays the state of the chamber.
 
 ## The Hardware
 

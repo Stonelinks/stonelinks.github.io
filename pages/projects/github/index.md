@@ -1,7 +1,7 @@
 ---
 title: Github
 image: /projects/github/github.png
-dateFormat: "YYYY"
+dateFormat: "2010 - [onwards]"
 ---
 
-I've mostly stopped updating this list. Find the latest and greatest things I’m working on over at [Github](https://github.com/Stonelinks).
+Find the latest and greatest things I’m working on over at [Github](https://github.com/Stonelinks). I've mostly stopped updating this list.

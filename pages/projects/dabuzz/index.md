@@ -7,11 +7,7 @@ dateFormat: "YYYY"
 
 Applying natural language processing and scraping financial news sources to gauge public sentiment of the stock market.
 
-<div class="media-container">
-
-<img src="/images/projects/dabuzz.png">
-
-</div>
+![](/projects/dabuzz/dabuzz.png)
 
 The modern day investor has tools such as MSN Money, Yahoo Finance and Google Finance at their disposal. Problem is these tools aggregate news about companies, but don't analyze the sentiment of the news sources. Given the wealth of data and the collective intelligence of the internet, DaBuzz aims to use natural language processing and machine learning techniques to gauge the overall public perception of companies in the stock market. Investors could then get an idea of present or future trends in the market by uploading their portfolios and viewing rankings by browsing DaBuzz. In the future, DaBuzz could be used as part of a more advanced computer program to make semi or fully autonomous trading decisions.
 

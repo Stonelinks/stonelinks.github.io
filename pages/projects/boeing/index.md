@@ -5,19 +5,11 @@ date: 2012-01-01
 dateFormat: "YYYY"
 ---
 
-
 A robot that performs maintenance from inside an aircraft wing. Developed as part of my Boeing sponsored capstone project.
-
 
 My capstone team was tasked to develop a simulation and control system for a robot designed to operate inside an aircraft wing. If you're wondering why Boeing would want this, check out [this](#why). In addition to being the the team leader and coordinating with Boeing, I also wrote all the code for the simulator and the control system as other members of the team were not familiar with programming. The general architecture of the system was split into three parts: a client, server and simulation data.
 
-<div class="media-container">
-
-<img src="/images/projects/boeing/sc14.png">
-
-<p>Screenshot of the client aligning to bolt holes.</p>
-
-</div>
+![](/projects/boeing/sc14.png)
 
 ### Client
 
@@ -31,13 +23,9 @@ Modified state from the client could then be sent to the server, which would do 
 
 Finally, all the simulation data (descriptions of the kinematic bodies that comprise a robot, the location and contents of the simulation environment, etc) was kept separate to increase flexibility and portability of the software as it was used in both the client and the server.
 
-<div class="media-container">
-
 <iframe src="http://www.youtube.com/embed/slJodwZfds0" frameborder="0" allowfullscreen></iframe>
 
-<p>Demonstration of the whole system in operation.</p>
-
-</div>
+Demonstration of the whole system in operation.
 
 ## Why
 

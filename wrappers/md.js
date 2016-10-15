@@ -12,6 +12,7 @@ import { config } from 'config';
 import Gallery from 'components/Gallery';
 
 import 'css/zenburn.css';
+import 'css/style.css';
 import 'font-awesome/css/font-awesome.min.css';
 import 'react-image-gallery/styles/css/image-gallery.css';
 

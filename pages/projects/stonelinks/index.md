@@ -7,11 +7,7 @@ dateFormat: "YYYY"
 
 Grandaddy of the website you’re looking at.
 
-<div class="media-container">
-
-<img src="/images/projects/stonelinks-web-framework.png">
-
-</div>
+![](/projects/stonelinks/stonelinks-web-framework.png)
 
 "Stonelinks" is a name I use for myself all over the internet and of course the name of this website. In one form or another, Stonelinks the website has been online since late 2008 when I decided to figure out how the internet / websites work (a task which is still ongoing... I'll report back).
 

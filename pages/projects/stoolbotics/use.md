@@ -2,13 +2,15 @@
 title: Using the Simulator - Stoolbotics
 ---
 
-<ul class="nav navbar-nav">
-  <li>[Home](/projects/stoolbotics/index.html)</li>
-  <li>[Download](/projects/stoolbotics/download.html)</li>
-  <li>[Quickstart](/projects/stoolbotics/quickstart.html)</li>
-  <li>[Docs](/projects/stoolbotics/use.html)</li>
-  <li>[About](/projects/stoolbotics/implementation.html)</li>
-</ul>
+[Home](/projects/stoolbotics/)
+|
+[Download](/projects/stoolbotics/download/)
+|
+[Quickstart](/projects/stoolbotics/quickstart/)
+|
+[Docs](/projects/stoolbotics/use/)
+|
+[About](/projects/stoolbotics/implementation/)
 
 
 This section of the documentation goes into some more detailed use cases of Stoolbotics. Before reading this you should probably check out the [quickstart](/projects/stoolbotics/quickstart.html).
@@ -47,28 +49,28 @@ As covered in the quickstart, robots are specified in json files that contain se
 "R3T" : "eye(3, 3)"
 ```
 
-- <code>N</code> is first declared to tell the simulator the number of joints to expect in this robot.
-- All the joint axes are specified with an <code>h</code> and an index. In this case, shorthand is used (e.g. use of <code>z</code> instead of <code>[0, 0, 1]</code>), but if we wanted a non-standard axis vector we could have used something like <code>[-.1, .2, .4]</code>.
-- Angle parameters are specified with a <code>q</code> and an index. These can be completely arbitrary functions of time, static numbers, or whatever you like. These parameters represent how much an axis has rotated or displaced along its axis.
-- Link lengths are specified with an <code>l</code> and an index.
-- Position vectors tell the simulator how to get from one frame to the next. Additionally, prismatic joints are specified here by including a joint axis parameter (a <code>q</code>) in the vector.
-- Finally, the rotation matrices are specified by using the <code>rot()</code> command, which calculates the rotation matrix using the Euler-Rodriguez formula. If no rotation is desired, just specify the identity matrix with the <code>eye()</code> command. Sometimes, for static links it is necessary to specify extra frames that don't have any rotation matrix. If this is the case, you would also just use the <code>eye()</code> command here.
+- `N` is first declared to tell the simulator the number of joints to expect in this robot.
+- All the joint axes are specified with an `h` and an index. In this case, shorthand is used (e.g. use of `z` instead of `[0, 0, 1]`), but if we wanted a non-standard axis vector we could have used something like `[-.1, .2, .4]`.
+- Angle parameters are specified with a `q` and an index. These can be completely arbitrary functions of time, static numbers, or whatever you like. These parameters represent how much an axis has rotated or displaced along its axis.
+- Link lengths are specified with an `l` and an index.
+- Position vectors tell the simulator how to get from one frame to the next. Additionally, prismatic joints are specified here by including a joint axis parameter (a `q`) in the vector.
+- Finally, the rotation matrices are specified by using the `rot()` command, which calculates the rotation matrix using the Euler-Rodriguez formula. If no rotation is desired, just specify the identity matrix with the `eye()` command. Sometimes, for static links it is necessary to specify extra frames that don't have any rotation matrix. If this is the case, you would also just use the `eye()` command here.
 
 
 ### Loading a robot into the simulator
 
-First, all robots are pulled from the <code>robots</code> directory in the root directory of the simulator. It is recommended to actually copy an existing robot file and modify it to suit your needs.
+First, all robots are pulled from the `robots` directory in the root directory of the simulator. It is recommended to actually copy an existing robot file and modify it to suit your needs.
 
-Writing and/or modifying one of these files is for the most part a straightforward process. The only hiccup you may encounter is in specifying extra frames in order to get the simulator to handle extra links. Additionally, another interesting way of specifying robots is by programmatically generating a json file. An example of this can be seen with <code>snake.py</code> which generates <code>snake.json</code>.
+Writing and/or modifying one of these files is for the most part a straightforward process. The only hiccup you may encounter is in specifying extra frames in order to get the simulator to handle extra links. Additionally, another interesting way of specifying robots is by programmatically generating a json file. An example of this can be seen with `snake.py` which generates `snake.json`.
 
-Once you have written a robot.json file, there are two commands that will help you out getting it into the simulator. First, use the <code>list</code> command to see all robot configuration files that the simulator believes to be properly configured and placed correctly. You should see a list containing the Omni, Puma560, etc. and whatever else you have put in the robots directory. Next, use the <code>load</code> command to load your robot.
+Once you have written a robot.json file, there are two commands that will help you out getting it into the simulator. First, use the `list` command to see all robot configuration files that the simulator believes to be properly configured and placed correctly. You should see a list containing the Omni, Puma560, etc. and whatever else you have put in the robots directory. Next, use the `load` command to load your robot.
 
 
 ## Command Overview
 
 Here is a detailed list of all the commands built into Stoolbotics:
 
-<table class="table table-striped"><tr><td><h4 style="width: 100px;">Command</h4></td><td><h4 style="width: 300px;">Usage</h4></td><td><h4>Description</h4></td></tr><tr><td><b>axis</b></td><td><b>axis &lt;on/off&gt;</b></td><td>Turn robot axis on/off. Providing no arguments toggles the axis.</td></tr><tr><td><b>eval</b></td><td><b>eval &lt;expression&gt;</b></td><td>Return some variable from the simulator. e.g. 'eval robot.P01'. Output might look a little weird.</td></tr><tr><td><b>exit</b></td><td><b>exit or quit</b></td><td>Closes the simulator.</td></tr><tr><td><b>floor</b></td><td><b>floor &lt;on/off&gt;</b></td><td>Turns the floor on and off. Providing no arguments toggles the floor.</td></tr><tr><td><b>ghost</b></td><td><b>ghost &lt;on/off/interval&gt; &lt;number&gt;</b></td><td>turn robot ghosts on/off. If &lt;interval&gt; is present, provide a number to set the ghost interval. Providing no arguments toggles the ghosts.</td></tr><tr><td><b>help</b></td><td><b>help &lt;cmd (optional)&gt;</b></td><td>If &lt;cmd&gt; is provided, display help for that command. Otherwise  it just list all commands.</td></tr><tr><td><b>hide</b></td><td><b>hide</b></td><td>Hides this terminal.</td></tr><tr><td><b>list</b></td><td><b>list</b></td><td>Lists all the robots that can be loaded into the simulator. To add something to this list, just place a valid robot.json file in the 'robots' folder.</td></tr><tr><td><b>load</b></td><td><b>load &lt;robot file&gt;</b></td><td>Loads a robot file into the simulator. Use the 'list' command to see what robots are able to be loaded.</td></tr><tr><td><b>play</b></td><td><b>play &lt;file (optional)&gt;</b></td><td>If &lt;file&gt; is present, the simulator plays that file. Otherwise, it just starts the simulator.</td></tr><tr><td><b>record</b></td><td><b>record &lt;file&gt;</b></td><td>Outputs current arm movements to a file which can be exported or played back later.</td></tr><tr><td><b>screendump</b></td><td><b>screendump</b></td><td>Take a picture of the current screen and save it to disk.</td></tr><tr><td><b>set</b></td><td><b>set &lt;var&gt; &lt;expression&gt;</b></td><td>Sets a symbolic variable in the simulator. e.g. 'set q3 cos(t)', 'set t 0', 'set tscale -.1', 'set P23 [0, 0, l2 + q2]'.</td></tr><tr><td><b>skew</b></td><td><b>skew</b></td><td>Enters skew mode, where the view of the robot and simulation speed can be rapidly adjusted.</td></tr><tr><td><b>status</b></td><td><b>status</b></td><td>Tells you what the simulator is currently doing.</td></tr><tr><td><b>stop</b></td><td><b>stop</b></td><td>Halts the simulation.</td></tr><tr><td><b>trace</b></td><td><b>trace &lt;on/off/clear/limit&gt; &lt;number&gt;</b></td><td>Turn robot traces on/off, or clear the current set of traces. If the &lt;limit&gt; argument is used, provide a number to set the maximum number of traces.</td></tr></table>
+<table><tr><td><h4>Command</h4></td><td><h4>Usage</h4></td><td><h4>Description</h4></td></tr><tr><td><b>axis</b></td><td><b>axis <on/off></b></td><td>Turn robot axis on/off. Providing no arguments toggles the axis.</td></tr><tr><td><b>eval</b></td><td><b>eval <expression></b></td><td>Return some variable from the simulator. e.g. 'eval robot.P01'. Output might look a little weird.</td></tr><tr><td><b>exit</b></td><td><b>exit or quit</b></td><td>Closes the simulator.</td></tr><tr><td><b>floor</b></td><td><b>floor <on/off></b></td><td>Turns the floor on and off. Providing no arguments toggles the floor.</td></tr><tr><td><b>ghost</b></td><td><b>ghost <on/off/interval> <number></b></td><td>turn robot ghosts on/off. If <interval> is present, provide a number to set the ghost interval. Providing no arguments toggles the ghosts.</td></tr><tr><td><b>help</b></td><td><b>help <cmd (optional)></b></td><td>If <cmd> is provided, display help for that command. Otherwise  it just list all commands.</td></tr><tr><td><b>hide</b></td><td><b>hide</b></td><td>Hides this terminal.</td></tr><tr><td><b>list</b></td><td><b>list</b></td><td>Lists all the robots that can be loaded into the simulator. To add something to this list, just place a valid robot.json file in the 'robots' folder.</td></tr><tr><td><b>load</b></td><td><b>load <robot file></b></td><td>Loads a robot file into the simulator. Use the 'list' command to see what robots are able to be loaded.</td></tr><tr><td><b>play</b></td><td><b>play <file (optional)></b></td><td>If <file> is present, the simulator plays that file. Otherwise, it just starts the simulator.</td></tr><tr><td><b>record</b></td><td><b>record <file></b></td><td>Outputs current arm movements to a file which can be exported or played back later.</td></tr><tr><td><b>screendump</b></td><td><b>screendump</b></td><td>Take a picture of the current screen and save it to disk.</td></tr><tr><td><b>set</b></td><td><b>set <var> <expression></b></td><td>Sets a symbolic variable in the simulator. e.g. 'set q3 cos(t)', 'set t 0', 'set tscale -.1', 'set P23 [0, 0, l2 + q2]'.</td></tr><tr><td><b>skew</b></td><td><b>skew</b></td><td>Enters skew mode, where the view of the robot and simulation speed can be rapidly adjusted.</td></tr><tr><td><b>status</b></td><td><b>status</b></td><td>Tells you what the simulator is currently doing.</td></tr><tr><td><b>stop</b></td><td><b>stop</b></td><td>Halts the simulation.</td></tr><tr><td><b>trace</b></td><td><b>trace <on/off/clear/limit> <number></b></td><td>Turn robot traces on/off, or clear the current set of traces. If the <limit> argument is used, provide a number to set the maximum number of traces.</td></tr></table>
 
 
 ## Examples
@@ -80,16 +82,16 @@ Here are some quick examples of what you can use commands for in Stoolbotics.
 The cosmetics of the simulation environment are highly configurable. Here are some of the commands that can modify the appearance:
 
 - Axis
-    - The joint coordinate frame axis display can be turned on and off with the use of the <code>axis</code> command.
+    - The joint coordinate frame axis display can be turned on and off with the use of the `axis` command.
 - Floor
-    - The floor in the simulator can be turned on and off with the use of the <code>floor</code> command.
+    - The floor in the simulator can be turned on and off with the use of the `floor` command.
 - Ghosts
-    - A 'ghost' is a shadow of a robot in a previous articulated position. Use the <code>ghost</code> command to control them.
-    - The interval of when ghosts appear can be set with <code>ghost interval &lt;somenumber&gt;</code>.
+    - A 'ghost' is a shadow of a robot in a previous articulated position. Use the `ghost` command to control them.
+    - The interval of when ghosts appear can be set with `ghost interval <somenumber>`.
 - Traces
-    - The trace that the robot leaves behind is completely configurable with the <code>trace</code> command.
-    - The number of traces saved can be set by executing <code>trace limit &lt;somenumber&gt;</code>.
-    - Finally, traces can get kind of ugly and annoying sometimes, so it is nice to be able to clear them by running <code>trace clear</code>.
+    - The trace that the robot leaves behind is completely configurable with the `trace` command.
+    - The number of traces saved can be set by executing `trace limit <somenumber>`.
+    - Finally, traces can get kind of ugly and annoying sometimes, so it is nice to be able to clear them by running `trace clear`.
 
 Here is an example of some simulation environment manipulation with the above commands and the result:
 
@@ -101,7 +103,7 @@ Here is an example of some simulation environment manipulation with the above co
 
 ### Skew mode
 
-Skew mode allows you to rapidly adjust where the camera is positioned in the simulation as well as adjust the timestep. To enter skew mode, just type <code>skew</code>. From there you can use the arrow keys to translate the camera up or down, use 'f' and 'd' to speed up or slow down the simulation, and finally 'j' and 'k' to zoom in and out. While in skew mode, none of the other commands work, so to exit you need to type 't'. Its hard to show a picture of skew mode in action.
+Skew mode allows you to rapidly adjust where the camera is positioned in the simulation as well as adjust the timestep. To enter skew mode, just type `skew`. From there you can use the arrow keys to translate the camera up or down, use 'f' and 'd' to speed up or slow down the simulation, and finally 'j' and 'k' to zoom in and out. While in skew mode, none of the other commands work, so to exit you need to type 't'. Its hard to show a picture of skew mode in action.
 
 
 ### Set
@@ -174,7 +176,7 @@ set R12 eye(3, 3)
 
 ### Playback and Recording
 
-The simulator also includes functionality to play back and record robot motion through the <code>play</code> and <code>record</code> commands.
+The simulator also includes functionality to play back and record robot motion through the `play` and `record` commands.
 
 
 #### File Format
@@ -205,21 +207,21 @@ The file format that Stoolbotics uses to store robot activity is very straightfo
 
 #### Recording
 
-Recording is as easy as using the <code>record</code> command. Providing an argument to the command, such as "example" will automatically start recording to a file called "example.csv" in the root folder of Stoolbotics.
+Recording is as easy as using the `record` command. Providing an argument to the command, such as "example" will automatically start recording to a file called "example.csv" in the root folder of Stoolbotics.
 
 
 #### Playback
 
-When playing back, all you need to do is use the <code>play</code> command with the filename you want to play back. For example, after recording to "example", you could type <code>play example.csv</code> to start playing what was recorded in the file.
+When playing back, all you need to do is use the `play` command with the filename you want to play back. For example, after recording to "example", you could type `play example.csv` to start playing what was recorded in the file.
 
 
 ### Realtime Control from Matlab
 
 Stoolbotics also has the capacity to be driven by external applications like Matlab *without* the use of saved recordings. This is done through a UDP socket that accepts a comma separated list of joint angles and moves the arm to this position.
 
-Matlab can therefore compute things like inverse kinematics, and send the joint angles to the simulator to have them visualized over UDP. In order to accept UDP connections, the <code>server</code> command needs to be used. Specifically, running something like <code>server start 5005</code> will be run to start the server listening on port 5005. Then, from matlab you can use the included <code>judp.m</code> to send UDP messages to the simulator.
+Matlab can therefore compute things like inverse kinematics, and send the joint angles to the simulator to have them visualized over UDP. In order to accept UDP connections, the `server` command needs to be used. Specifically, running something like `server start 5005` will be run to start the server listening on port 5005. Then, from matlab you can use the included `judp.m` to send UDP messages to the simulator.
 
-A rudimentary example of this technique can be seen in the <code>matlab</code> folder by running <code>omni_invkin_example</code> in matlab. This is a drastically simple example attempts to move the phantom omni in a circle. Here it is reproduced below:
+A rudimentary example of this technique can be seen in the `matlab` folder by running `omni_invkin_example` in matlab. This is a drastically simple example attempts to move the phantom omni in a circle. Here it is reproduced below:
 
 ```python
 
@@ -246,4 +248,4 @@ end
 
 As you can see, since this is technically operating over a network we need to specify a host. If you're running matlab and stoolbotics on the same machine, this will always be 127.0.0.1 for localhost. Technically, you could be running the simulator and matlab on two separate computers. As long as you had the IP address of the computer running the simulator plugged into the 'host' variable inside matlab, everything will still work.
 
-Next, the port needs to match what you entered with the <code>>server start</code> command. From then on, all that needs to happen is to do some calculation, and pass off the comma separated list of joint angled to the simulator.
+Next, the port needs to match what you entered with the `>server start` command. From then on, all that needs to happen is to do some calculation, and pass off the comma separated list of joint angled to the simulator.

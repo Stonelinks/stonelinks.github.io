@@ -3,35 +3,28 @@ title: Stoolbotics
 image: /projects/stoolbotics/stoolbotics.png
 date: 2012-01-03
 dateFormat: "YYYY"
+path: /projects/stoolbotics
 ---
 
-A beginner friendly, minimalistic and open source robot simulator.
-
-![Stoolbotics](/projects/stoolbotics/stoolbotics.png)
-
-<ul class="nav navbar-nav">
-  <li>[Home](/projects/stoolbotics/index.html)</li>
-  <li>[Download](/projects/stoolbotics/download.html)</li>
-  <li>[Quickstart](/projects/stoolbotics/quickstart.html)</li>
-  <li>[Docs](/projects/stoolbotics/use.html)</li>
-  <li>[About](/projects/stoolbotics/implementation.html)</li>
-</ul>
-
-<div class="media-container">
+A beginner friendly, minimalistic and open source robot simulator. It is a fairly general purpose arm and kinematics simulator aimed at being a teaching tool for aspiring roboticists.
 
 <iframe src="http://www.youtube.com/embed/h3Rus5mUkzY" frameborder="0" allowfullscreen></iframe>
 
-</div>
+[Home](/projects/stoolbotics/)
+|
+[Download](/projects/stoolbotics/download/)
+|
+[Quickstart](/projects/stoolbotics/quickstart/)
+|
+[Docs](/projects/stoolbotics/use/)
+|
+[About](/projects/stoolbotics/implementation/)
 
-Stoolbotics is a general purpose robotic arm and kinematics simulator aimed at being a teaching tool for aspiring roboticists. The motivation for this project was simple: the linear algebra and mathematical concepts behind robotics is difficult for a beginner to understand without any visual context. This is especially true for people who are primarily visual learners.
+The motivation for this project was simple: the linear algebra and mathematical concepts behind robotics is difficult for a beginner to understand without any visual context. This is especially true for people who are primarily visual learners.
 
-<div class="media-container">
+![Omni](/projects/stoolbotics/omni.jpg)
 
-<img src="/images/projects/stoolbotics/omni.jpg">
-
-<p>Stoolbotics (right) simulating a phantom omni (left).</p>
-
-</div>
+Stoolbotics (right) simulating a phantom omni (left).
 
 This tool will hopefully fill a gap in many higher education robotics classrooms. It was designed to be easy to use and compatible with other technologies (like MATLAB). The project itself was conceived and implemented halfway through the Fall 2011 semester at RPI by Lucas Doyle with some help from Scott Peck.
 
