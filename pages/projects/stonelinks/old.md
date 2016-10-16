@@ -3,13 +3,9 @@ title: Stonelinks web framework (defunct)
 template: page.jade
 ---
 
-<div class="media-container">
+![](/projects/stonelinks/stonelinks-web-framework.png)
 
-<img src="/images/projects/stonelinks-web-framework.png">
-
-</div>
-
-This project is my take on how writing a mostly static website with a lot of content should work. It is what runs this very website. It requires no server side scripting or database of any kind. In fact it is all static files that are compiled from simple markdown files. It is a not well suited for web apps with an API and lots of dynamic content.
+This project is my take on how writing a mostly static website with a lot of content should work. It is what runs this very website. It requires no server side scripting or database of any kind. The whole thing is static files that are compiled from markdown files. It is a not well suited for web apps with an API and lots of dynamic content.
 
 ## History
 
@@ -23,9 +19,9 @@ Fast forward to winter break 2012. I happened to have a bunch of spare time on a
 
 My design goals for this was to have something that, from an authors perspective, was dead simple to use. Basically all I wanted authors to do is create a single [markdown](http://daringfireball.net/projects/markdown/) file with just the body of a page and have it automatically add the rest of the website around it. This means things like contextual sidebars, navigation, comments, links, etc.
 
-In keeping with the goal of trying to keep this as simple as possible, this meant no server side scripting lanugages or databases. I tried to only add complexity as I need it. Therefore, all the content of this website is static HTML that was automatically generated.
+In keeping with the goal of trying to keep this as simple as possible, this meant no server side scripting languages or databases. I tried to only add complexity as I needed it. Therefore, all the content of this website is static HTML that was automatically generated.
 
-In hindsight, static HTML generators like this have been done a zillion times before. Hyde and Firmant come to mind. But as with a lot of things, its feels nice to make a tool yourself and use it for yourself. Things like this also help you appreciate the work and expertise that others have done. Too many times I have heard programmers say things like "django sucks!". If django sucks so much, try to write something that does what django does (or better yet, submit a patch or something), then we'll talk! **tl;dr**: [eat your own dog food](http://en.wikipedia.org/wiki/Eating_your_own_dog_food).
+In hindsight, static HTML generators like this have been done a zillion times before. Hyde and Firmant come to mind. But as with a lot of things, its feels nice to make a tool yourself and use it for yourself. Things like this also help me appreciate the work and expertise that others have done. Too many times I have heard programmers say things like "django sucks!". If django sucks so much, try to write something that does what django does (or better yet, submit a patch or something), then we'll talk! **tl;dr**: [eat your own dog food](http://en.wikipedia.org/wiki/Eating_your_own_dog_food).
 
 ## Features
 
@@ -33,7 +29,7 @@ In hindsight, static HTML generators like this have been done a zillion times be
     - Store all content as markdown files structured into directories to form a hierarchy
     - Automatic generation of a site map based on hierarchy
     - Automatic generation of navigation sidebar for all pages on the same level in hierarchy
-    - Automatic generation of index pages in a directory if an `index.md` file doesn't exist (sorta how a web server does)
+    - Automatic generation of index pages in a directory if an `index.md` file doesn't exist (sorta how apache does)
     - Breadcrumb navigation for each page from root of tree to current page
 - URL control
     - Should be able to control everything about a URL from:
@@ -74,7 +70,7 @@ The general process of how to use the Stonelinks web framework is pretty simple:
 
 ## How it works
 
-First, a website object from `objects.py` is created. It crawls the source directory (in this case it is `content`) and constructs a tree out of the filenames and directory names contained inside. In the tree, each node is actually a page object. At first glance, this makes no sense because it means directories are actually being picked up as files representing web pages. However, as we will soon see, if an `index.md` file is not present under a directory, the parent directory page object will yeild an automatically generated index similar to what apache and other webservers do.
+First, a website object from `objects.py` is created. It crawls the source directory (in this case it is `content`) and constructs a tree out of the filenames and directory names contained inside. In the tree, each node is actually a page object. At first glance, this makes no sense because it means directories are actually being picked up as files representing web pages. However, as we will soon see, if an `index.md` file is not present under a directory, the parent directory page object will yield an automatically generated index similar to what apache and other webservers do.
 
 ### Traversal
 
@@ -103,4 +99,4 @@ Lets consider a website with the following structure:
         - `project2.md`
         - `project3.md`
 
-As you can see, the files `index.md`, `content.md`, `about.md`, and `projects[1-3].md` are compiled in a straightforward manner, and their html files are placed in the cooresponding location in the build directory. However, one will notice that if you were to visit `www.domain.com/projects`, no index would be presented. Therefore, when this occurs, the parent page object (created from the `projects` directory) generates a dummy index.
+As you can see, the files `index.md`, `content.md`, `about.md`, and `projects[1-3].md` are compiled in a straightforward manner, and their html files are placed in the corresponding location in the build directory. However, one will notice that if you were to visit `www.domain.com/projects`, no index would be presented. Therefore, when this occurs, the parent page object (created from the `projects` directory) generates a dummy index.

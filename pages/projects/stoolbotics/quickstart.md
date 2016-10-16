@@ -8,9 +8,7 @@ title: Quickstart - Stoolbotics
 |
 [Quickstart](/projects/stoolbotics/quickstart/)
 |
-[Docs](/projects/stoolbotics/use/)
-|
-[About](/projects/stoolbotics/implementation/)
+[Docs](/projects/stoolbotics/docs/)
 
 When you fire up the simulator for the first time, you should see something like what is shown below.
 
@@ -50,11 +48,10 @@ Let's look at this file line by line to see how it makes a complete robot object
 - All the joint axes are specified with an `h` and an index. In this case, shorthand is used (e.g. use of `z` instead of `[0, 0, 1]`), but if we wanted a non-standard axis vector we could have used something like `[-.1, .2, .4]`.
 - Angle parameters are specified with a `q` and an index. These can be completely arbitrary functions of time, static numbers, or whatever you like. These parameters represent how much an axis has rotated or displaced along its axis.
 - Link lengths are specified with an `l` and an index.
-- Position vectors tell the simulator how to get from one frame to the next. Additionally, prismatic joints are specified here by including a joint axis parameter (a `q`) in the vector.
-- Finally, the rotation matrices are specified by using the `rot()` command, which calculates the rotation matrix using the Euler-Rodriguez formula. If no rotation is desired, just specify the identity matrix with the `eye()` command. Sometimes, for static links it is necessary to specify extra frames that don't have any rotation matrix. If this is the case, you would also just use the `eye()` command here.
+- Position vectors (`P` + index) tell the simulator how to get from one frame to the next. Prismatic joints can be created by including a joint axis parameter (a `q`) in the vector.
+- Finally, rotation matrices (`R` + index) are specified by using the `rot()` command, which calculates the rotation matrix using the Euler-Rodriguez formula. If no rotation is desired, just specify the identity matrix with the `eye()` command. Sometimes, for static links it is necessary to specify extra frames that don't have any rotation matrix. If this is the case, you would also just use the `eye()` command here.
 
 All these variables can be changed once the simulator has started using the `set` command. There are many more commands available to you in the simulator that can be accessed through the command line. To see a list of them, just type `help` into the console and you should see a list like what's below. To view help about a specific command, just type `help <command>`. A table showing what all the commands are, their syntax, and what they do is also included later on in this documentation.
-
 
 ![](/projects/stoolbotics/3.png)
 
@@ -74,4 +71,4 @@ Though you can't see it in a static picture, that joint is now moving pretty fas
 
 ![](/projects/stoolbotics/7.png)
 
-This concludes the quickstart. To do more advanced things like play, record, manipulate the environment, drive the simulator from matlab, etc., check out the [usage](/projects/stoolbotics/use.html) section!
+This concludes the quickstart. To do more advanced things like play, record, manipulate the environment, drive the simulator from matlab, etc., check out the [full documentation](/projects/stoolbotics/docs/)!

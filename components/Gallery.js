@@ -3,22 +3,23 @@ import ImageGallery from 'react-image-gallery';
 
 class Gallery extends React.Component {
 
-  render() {
+  render () {
 
     const images = this.props.images.map((imageURL) => {
       return {
         original: imageURL,
         thumbnail: imageURL,
-      }
-    })
+      };
+    });
 
     return (
       <ImageGallery
         ref={i => this._imageGallery = i}
         items={images}
-        slideInterval={2000} />
+        slideInterval={2000}
+      />
     );
   }
 }
 
-export default Gallery
+export default Gallery;

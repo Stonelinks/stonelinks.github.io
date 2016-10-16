@@ -6,14 +6,13 @@ dateFormat: "YYYY"
 ---
 Robots I helped design as part of Team 1831.
 
-I had the great fortune of participating and captaining [FIRST robotics](http://www.usfirst.org/) team 1831 throughout my time at Gilford High School. Here are the robots we built in chronological order.
-
+I had the great fortune of participating and captaining [FIRST robotics](http://www.usfirst.org/) team 1831 throughout my time at Gilford High School. Here are the robots we built while I was there in chronological order.
 
 ## Aim High - (2006)
 
 ![](/projects/FIRST/2006.jpg)
 
-This was the first year Gilford High School had a First Robotics team. Pictured above is our rookie team's entry into the [Aim High](http://en.wikipedia.org/wiki/Aim_High) competition. It is a relatively unsophisticated beast of a robot that could pretty much get hit by a train and still work. Fundamentally, its function was to pick up, store and shoot foam balls into a goal. Sadly this was so long ago (5 years as of writing this) I don't specifically remember much of the details about it.
+This was the first year Gilford High School had a First Robotics team. Pictured above is our rookie team's entry into the [Aim High](http://en.wikipedia.org/wiki/Aim_High) competition. It is a relatively unsophisticated beast that could pretty much get hit by a train and still work. Fundamentally, its function was to pick up, store and shoot foam balls into a goal. Sadly this was so long ago (5 years as of writing this) I don't specifically remember much of the details about it.
 
 ## Rack 'n Roll - (2007)
 
@@ -27,7 +26,7 @@ As is evident from that video, this robot represented our team's first foray int
 
 This was basically the 2007 design, part two. The competition was [Overdrive](http://en.wikipedia.org/wiki/FIRST_Overdrive), which was essentially a race with large balls in the track that accumulate points as you corral them around. You could also just drive around for points. As captain, I wanted to steer the team in the direction of "do one thing and do it well" and essentially wanted to design a dragster type robot. However, part of working as a team is accepting other people's ideas even when you don't necessarily agree with them.
 
-The team went with mechanum wheels, and again we lost sight of what we were originally trying to do (heard the ball) and probably could have made a better robot. Still, I tried to make the best of it and designed a completely modular chassis for the wheels. I made one standard "box" design that self-contained a speed controller, the wheel, bearings, pillow blocks, etc. This box could be iterated four times and bolted together to make a robot. This saved design time, simplified troubleshooting and made it a breeze to replace parts.
+The team went with mechanum wheels, and again we lost sight of what we were originally trying to do (heard the ball) and probably could have made a better robot. Still, I tried to make the best of it and designed a completely modular chassis for the wheels. I made one standard "box" design that self-contained a speed controller, the wheel, bearings, pillow blocks, etc. Four of these boxes were then bolted together to make a robot. This saved design time, simplified troubleshooting and made it a breeze to replace parts.
 
 Another interesting side effect of the box wheel module design -- I learned how to properly weld aluminum (there were a TON of joints), which is quite tricky (but fun!).
 
@@ -37,4 +36,4 @@ All in all our team had really perfected the mechanum drive train, so it was not
 
 ![](/projects/FIRST/question-mark.png)
 
-Something awesome about FIRST is the role of mentors. They arn't there to design or build things for you, but to be a resource that can enable, advise and empower students to accomplish and learn amazing things. At some point in my life, I'd really like to be a FIRST mentor so that I can get a taste of what this is like and inspire the next generation of young roboticists just like the mentors at Gilford inspired me.
+Something awesome about FIRST is the role of mentors. They aren't there to design or build things for you, but to be a resource that can enable, advise and empower students to accomplish and learn amazing things. At some point in my life, I'd really like to be a FIRST mentor so that I can get a taste of what this is like and inspire the next generation of young roboticists just like the mentors at Gilford inspired me.
