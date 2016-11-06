@@ -1,5 +1,5 @@
 ---
-title: New Aerial Drone
+title: New Drone
 date: 2012-04-21
 path: /posts/new-drone/
 image: /posts/new-drone/drone.jpg
@@ -16,7 +16,7 @@ Good news and bad news! The good news is that in the last month or so at RPI, my
 Early mock up of the drone with the wings removed.
 The camera has since been mounted to a custom pan/tilt module under the engine.
 
-Which leads to the bad news. The bad news is that it crashed! Or rather I crashed it. Basically the wind was really strong and blew it out of range. We think it took a nose dive several hundred feet into the ground and crashed near Troy Highschool, which was very far away from us. It was lost for two days before we recovered it thanks to [Reddit](http://www.reddit.com/r/RPI/comments/tj2b2/anyone_seen_a_red_rc_plane_last_seen_doing_a_nose/).
+Which leads to the bad news. The bad news is that it crashed! Or rather I crashed it. The wind was really strong and blew it out of range. We think it took a nose dive several hundred feet into the ground and crashed near Troy High, which was very far away from us. It was lost for two days before we recovered it thanks to [Reddit](http://www.reddit.com/r/RPI/comments/tj2b2/anyone_seen_a_red_rc_plane_last_seen_doing_a_nose/).
 
 The damage was substantial. Besides the airframe being totally trashed, I lost my camera and a brushless motor. Drew faired better, only suffering minor damage to his radio equipment.
 

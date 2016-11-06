@@ -9,7 +9,7 @@ tags:
   - documentation
 ---
 
-LabVIEW is a necessary and constant evil with my work at the Harvard-Smithsonian Center for Astrophysics, but sometimes it pulls through. Earlier today I found myself with a need to extract a whole bunch of icons, block diagrams and VI hierarchies a bunch of LabVIEW programs. I had begun that onerous task that many programmers like to sip: documentation. In my case, I was using LaTeX and wanted to include visuals from my LabVIEW stuff.
+LabVIEW is a necessary and constant evil with my work at the Harvard-Smithsonian Center for Astrophysics, but sometimes it pulls through. Earlier today I found myself with a need to extract a whole bunch of icons, block diagrams and VI hierarchies a bunch of LabVIEW programs for some documentation I was writing. In my case, I was using LaTeX and wanted to include visuals from my LabVIEW stuff.
 
 Up until now I thought this would mean trying to do a million screenshots over VNC on my work computer, and then going back and cropping what I needed. This seemed horrible though and on further research I was thrilled to find out that LabVIEW can pretty much do this on its own. See the [NI website on printing VI documentation](http://zone.ni.com/reference/en-XX/help/371361B-01/lvconcepts/printing_vis/).
 

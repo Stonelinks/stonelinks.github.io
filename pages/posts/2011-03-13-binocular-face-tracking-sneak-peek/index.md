@@ -1,5 +1,5 @@
 ---
-title: Binocular Face Tracking Sneak Peek
+title: Binocular Face Tracking
 date: 2011-03-13
 path: /posts/binocular-face-tracking-sneak-peek/
 tags:

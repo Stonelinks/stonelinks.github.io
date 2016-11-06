@@ -13,7 +13,7 @@ tags:
 
 As the friendly neighborhood web developer at MUJIN, one of my responsibilities is [our company's website](http://mujin.co.jp/). I made this site mostly by myself using [jekyll](http://jekyllrb.com/), the static website generator that github uses for github pages by default.
 
-Jekyll is pretty awesome, but doesn't support internationalization which we obviously need as a Japanese company. I got something really simple working with [jekyll-multiple-languages-plugin](https://github.com/screeninteraction/jekyll-multiple-languages-plugin), I wasn't happy with it. The translation index had to be manually kept which was a giant pain (especially since non-technical people edit content on the site).
+Jekyll is pretty awesome, but doesn't support internationalization which we obviously need as a Japanese company. I got something really simple working with [jekyll-multiple-languages-plugin](https://github.com/screeninteraction/jekyll-multiple-languages-plugin), but I wasn't happy with it. The translation index had to be manually kept which was a giant pain (especially since non-technical people edit content on the site).
 
 As a long time django user, I really like the way it handles [internationalization](https://docs.djangoproject.com/en/dev/topics/i18n/), namely the fact that the translation index was automatically updated as people edited content in the standard gettext `.po` file format.
 

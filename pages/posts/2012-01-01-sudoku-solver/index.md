@@ -7,6 +7,4 @@ tags:
   - C++
 ---
 
-I got really bored over the holidays and wrote a very naive sudoku solver in C++. Hit read more to see it!
-
-<script src="https://gist.github.com/Stonelinks/1522578.js"></script>
+I got really bored over the holidays and wrote a very naive sudoku solver in C++. Check out [this gist](https://gist.github.com/Stonelinks/1522578) to see it!

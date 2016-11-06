@@ -10,16 +10,14 @@ tags:
 
 ![](/posts/execute-time-and-plot-c-programs-with-python/Fig.png)
 
-Hate excel? Have python take all the pain away from you! This should appeal to everyone out there who needs a quick way to analyze the runtime time of a bunch of commands to a program given an arbitrary list of arguments. Hating excel/openoffice/spreadsheets in general is optional.
+Hate excel? Why not have python take all the pain away! This should appeal to everyone out there who needs a quick way to analyze the runtime time of a bunch of commands to a program given an arbitrary list of arguments. Hating excel/openoffice/spreadsheets in general is optional.
 
-Just like every programmer, I am always trying to find new and interesting ways of automating myself out of a job. To that end, I wrote a pretty cool program last night to help automate my first algorithms lab.
+Just like every programmer, I am always trying to find new and interesting ways of automating routine tasks. To that end, I wrote a pretty cool program last night to help automate my first algorithms lab which consisted of many repeated calls to the same program on the command line.
 
-Consistent with the recent trend of mine, it is in python and makes use of the [subprocess](http://docs.python.org/library/subprocess.html) module to spawn and time instances of my C++ program and [pylab](http://matplotlib.sourceforge.net/) to make plotting the times super easy. The comments in my code explain things in more detail, but here is the one sentence summary: Python is being used to execute two programs written in C++ with the same set of arguments and spits out a plot of their times. In this case the two C++ programs are recursive (rfib) and iterative (ifib) implementations of the Fibonacci algorithm. The fun stuff is in the python:
+Consistent with the recent trend of mine, I wrote this in python and makes use of the [subprocess](http://docs.python.org/library/subprocess.html) module to spawn and time instances of my C++ program and [pylab](http://matplotlib.sourceforge.net/) to make plotting the times super easy. The comments in my code explain things in more detail, but here is the summary: Python is being used to execute two programs written in C++ with the same set of arguments and spits out a plot of their times. In this case the two C++ programs are recursive (rfib) and iterative (ifib) implementations of the Fibonacci algorithm. The fun stuff is in the python:
 
 ```python
 #!/usr/bin/env python
-
-# Lucas Doyle wrote this
 
 import subprocess
 import string
@@ -61,8 +59,6 @@ def main():
     # args = 1, 5, 10, 15, 20, 25, 30, 35, 40, 41, 42, 43, 44, 45, 46, 47, 48
     args = range(1, 56)
 
-
-
     # Compute the runtimes of the recursive algorithm, then the iterative one
     rtimes = timerun('rfib', args)
     itimes = timerun('ifib', args)
@@ -90,5 +86,3 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-
-I've also attached the whole lab [here](/misc/lab1.zip) in case the python does not make sense by itself. Hope someone finds this useful!

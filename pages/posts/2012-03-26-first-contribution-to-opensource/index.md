@@ -1,5 +1,5 @@
 ---
-title: Contribution to Open Source Software
+title: First Contribution to Open Source Software
 date: 2012-03-26
 path: /posts/first-contribution-to-opensource/
 tags:
@@ -11,7 +11,7 @@ tags:
 
 Up until now, all my contributions to open source have been programs I have written, and as a general practice I like to make all my work open source if I can. However, its a nice feeling to have some code I wrote incorporated into someone else's project for a change.
 
-The program in question here is called [OpenTLD](https://github.com/gnebehay/OpenTLD). Its a program for tracking objects (not just faces) in unconstrained video streams with NO training data beforehand (TLD stands for Tracking, Learning and Detection). Instead of using precomputed classifiers (like I previously have done with OpenCV), OpenTLD builds a model of what it is supposed to be detecting on the fly. To demonstrate, above is a slightly creepy demo of OpenTLD tracking my face.
+The program in question here is called [OpenTLD](https://github.com/gnebehay/OpenTLD). Its a program for tracking objects (not just faces) in unconstrained video streams with NO training data beforehand (TLD stands for **T**racking, **L**earning and **D**etection). Instead of using precomputed classifiers (like I previously have done with OpenCV), OpenTLD builds a model of what it is supposed to be detecting on the fly. To demonstrate, above is a slightly creepy demo of OpenTLD tracking my face.
 
 The version of OpenTLD here is actually the C++ implementation of OpenTLD. OpenTLD began life as a bunch of [Matlab programs](https://github.com/zk00006/OpenTLD) written as part of Zdenek Kalal's PHD thesis. [Here](http://www.youtube.com/watch?v=1GhNXHCQGsM) is a more advanced video by him talking / showing off OpenTLD (he calls it Predator).
 
