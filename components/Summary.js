@@ -10,7 +10,7 @@ class Summary extends React.Component {
   summary (body) {
     const explicitSplit = '<div class="summary-end"></div>';
     if (include(body, explicitSplit)) {
-      return body.split(explicitSplit)[0] + '...';
+      return body.split(explicitSplit)[0];
     } else {
       return prune(body.replace(/<(?!\/?a)[^>]*>/g, ''), 200);
     }

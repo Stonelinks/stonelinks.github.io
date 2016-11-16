@@ -5,7 +5,6 @@ import { config } from 'config';
 import { Link } from 'react-router';
 import { rhythm } from 'utils/typography';
 import { prefixLink } from 'gatsby-helpers';
-import FontAwesome from 'react-fontawesome';
 
 import 'font-awesome/css/font-awesome.css';
 
@@ -48,10 +47,10 @@ class PostsIndex extends React.Component {
     );
 
     Object.keys(config.socialNetworks).forEach(function (network) {
-      const networkUrl = config.socialNetworks[network];
+      const URL = config.socialNetworks[network];
       socialIcons.push(
-        <a key={networkUrl} href={networkUrl} target="blank_">
-          <FontAwesome name={network} style={style.socialIcon} />
+        <a key={URL} href={URL} target="blank_">
+          <span className={`fa fa-${network}`} style={style.socialIcon} />
         </a>
       );
     });
