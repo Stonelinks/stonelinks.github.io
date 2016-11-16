@@ -33,12 +33,17 @@ export function capitalizeFirstLetter (string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+// count the number of "/" in a page path
+export function pageDepth (page) {
+  return (page.path.match(/\//g) || []).length - 1;
+}
+
 export function isPost (page) {
-  return include(page.path, '/posts');
+  return include(page.path, '/posts') && pageDepth(page) == 2;
 }
 
 export function isProject (page) {
-  return include(page.path, '/projects') && include(page.file.name, 'index');
+  return include(page.path, '/projects') && pageDepth(page) == 2 && include(page.file.name, 'index');
 }
 
 export function getPageDate (page) {

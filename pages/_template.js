@@ -83,8 +83,8 @@ class Template extends React.Component {
   get nav () {
     return (
       <span>
-        {this.navItems.map((navItem) => {
-          return <Link to={prefixLink(navItem[1])}>{navItem[0]}</Link>;
+        {this.navItems.map((navItem, i) => {
+          return <Link key={i} to={prefixLink(navItem[1])}>{navItem[0]}</Link>;
         }).reduce((accu, elem) => {
           return accu === null ? [elem] : [...accu, ' | ', elem];
         }, null)}

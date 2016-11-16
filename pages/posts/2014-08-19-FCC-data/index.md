@@ -9,6 +9,8 @@ tags:
 
 **Update (9-18-2014)**: Turns out the FCC just ended up releasing all the data in bluk and [other people have already cleaned it up and are doing cool things with it](http://sunlightfoundation.com/blog/2014/09/02/what-can-we-learn-from-800000-public-comments-on-the-fccs-net-neutrality-plan/).
 
+<div class="summary-end"></div>
+
 [github.com/Stonelinks/FCC-Proceeding-14-28-Data](https://github.com/Stonelinks/FCC-Proceeding-14-28-Data)
 
 If you've looked at US news in the last couple months, you've no doubt heard something about "net neutrality". A lot of people have probably heard of it but probably don't know what it is or why it is important. [John Oliver](https://www.youtube.com/watch?v=fpbOEoRrHyU) does an awesome job motivating the topic for the average person. Fair warning, it is a bit scatological.

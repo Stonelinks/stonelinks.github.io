@@ -7,6 +7,8 @@ import { rhythm } from 'utils/typography';
 import { prefixLink } from 'gatsby-helpers';
 import FontAwesome from 'react-fontawesome';
 
+import 'font-awesome/css/font-awesome.css';
+
 const style = {
   img: {
     float: 'left',
@@ -77,7 +79,7 @@ class PostsIndex extends React.Component {
             Prior to SF, I lived in Tokyo for two years where I was the 4th employee of a Japanese startup called <a target="blank_" href="http://mujin.co.jp/en/">MUJIN</a> where I built tools to make industrial robots efficient and easy for others to program. I spent time during my college years at the Harvard-Smithsonian Center for Astrophysics developing systems to fabricate experimental X-ray optics.
           </p>
           <p style={style.p}>
-            I constantly have side projects going on and am a naturally curious individual. I'm most excited when I'm learning new things and making complex technology useful for other people.
+            I constantly have <Link to={prefixLink('/projects/')}>side projects</Link> going on and am a naturally curious individual. I'm most excited when I'm learning new things and making technology useful for other people.
           </p>
           <p style={style.p}>
              Here is my <a target="blank_" href="https://gist.github.com/Stonelinks/1df867c1bb830a8c0c67">cryptographic proof of identity</a> for all the nerds out there.

@@ -1,5 +1,5 @@
 import React from 'react';
-import { prune } from 'underscore.string';
+import { prune, include } from 'underscore.string';
 import { fixLinks } from 'utils';
 
 class Summary extends React.Component {
@@ -8,12 +8,18 @@ class Summary extends React.Component {
   }
 
   summary (body) {
-    const split = body.split('<div class="summary-end"></div>');
-    return split.length !== 0 && split[0].length < 200 ? split[0] : prune(body.replace(/<(?!\/?a)[^>]*>/g, ''), 200);
+    const explicitSplit = '<div class="summary-end"></div>';
+    if (include(body, explicitSplit)) {
+      return body.split(explicitSplit)[0] + '...';
+    } else {
+      return prune(body.replace(/<(?!\/?a)[^>]*>/g, ''), 200);
+    }
   }
 
   render () {
-    return (<div ref="markdown" dangerouslySetInnerHTML={{ __html: this.summary(this.props.body) }} />);
+    return (
+      <div ref="markdown" dangerouslySetInnerHTML={{ __html: this.summary(this.props.body) }} />
+    );
   }
 }
 
