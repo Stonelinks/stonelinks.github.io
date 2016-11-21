@@ -1,7 +1,7 @@
 import Typography from 'typography';
-import Wordpress2016 from 'typography-theme-noriega';
+import theme from 'typography-theme-noriega';
 
-const typography = new Typography(Wordpress2016);
+const typography = new Typography(theme);
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== 'production') {
