@@ -1,5 +1,4 @@
 import React from 'react';
-import moment from 'moment';
 import DocumentTitle from 'react-document-title';
 import { fixLinks, isPost, getPageDate } from 'utils';
 

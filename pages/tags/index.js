@@ -18,7 +18,7 @@ const style = {
 const TaggedPage = ({ page, hideSummary }) => (
   <li>
     <Link to={prefixLink(page.data.path)}>
-    {page.data.title}
+      {page.data.title}
     </Link>
     {hideSummary ? null : <Summary body={page.data.body} />}
   </li>
@@ -31,7 +31,7 @@ const ShowTag = ({ tag, pages, hideSummary }) => {
   return (
     <div>
       <h2>
-        <Link style={style.tagLink} to={{ pathname: prefixLink('/tags/'), hash: '#' + tagMap(tag) }}> {capitalizeFirstLetter(tag)}
+        <Link style={style.tagLink} to={{ pathname: prefixLink('/tags/'), hash: `#${tagMap(tag)}` }}> {capitalizeFirstLetter(tag)}
         </Link>
       </h2>
       <ul>
@@ -46,12 +46,12 @@ class BlogTags extends React.Component {
     const tag = this.props.location.hash.replace('#', '');
     const allTags = tag ? [] : getAllTags(this.props.route.pages);
     return (
-    <DocumentTitle title={tag ? `${tag} - ${config.blogTitle}` : config.blogTitle}>
-      <div>
-        {tag ? <ShowTag tag={tag} pages={this.props.route.pages} /> : null}
-        {!tag ? allTags.map((tag, i) => <ShowTag hideSummary key={i} tag={tag} pages={this.props.route.pages} />) : null}
-      </div>
-    </DocumentTitle>
+      <DocumentTitle title={tag ? `${tag} - ${config.blogTitle}` : config.blogTitle}>
+        <div>
+          {tag ? <ShowTag tag={tag} pages={this.props.route.pages} /> : null}
+          {!tag ? allTags.map((tag, i) => <ShowTag hideSummary key={i} tag={tag} pages={this.props.route.pages} />) : null}
+        </div>
+      </DocumentTitle>
     );
   }
 }

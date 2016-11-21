@@ -2,6 +2,7 @@ import React from 'react';
 import DocumentTitle from 'react-document-title';
 import { prefixLink } from 'gatsby-helpers';
 import { GoogleFont, TypographyStyle } from 'react-typography';
+
 import typography from './utils/typography';
 
 const BUILD_TIME = new Date().getTime();
@@ -17,7 +18,7 @@ module.exports = React.createClass({
 
     // have to manually include this in prod
     let faStyles = null;
-    if (process.env.NODE_ENV == 'production') {
+    if (process.env.NODE_ENV === 'production') {
       faStyles = (
         <link rel="stylesheet" type="text/css" href="/font-awesome.css" />
       );

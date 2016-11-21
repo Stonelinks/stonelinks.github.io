@@ -22,16 +22,16 @@ const style = {
   h2: {
     marginTop: '5px',
     marginBottom: 0,
-    fontSize: scale(.1).fontSize,
-    lineHeight: scale(.1).lineHeight,
+    fontSize: scale(0.1).fontSize,
+    lineHeight: scale(0.1).lineHeight,
     paddingLeft: `${logoSize + 12.5}px`,
     color: 'gray',
   },
   h3: {
     marginTop: 0,
     marginBottom: 0,
-    fontSize: scale(.6).fontSize,
-    lineHeight: scale(.6).lineHeight,
+    fontSize: scale(0.6).fontSize,
+    lineHeight: scale(0.6).lineHeight,
   },
   hr: {
     marginTop: rhythm(0.5),
@@ -83,11 +83,7 @@ class Template extends React.Component {
   get nav () {
     return (
       <span>
-        {this.navItems.map((navItem, i) => {
-          return <Link key={i} to={prefixLink(navItem[1])}>{navItem[0]}</Link>;
-        }).reduce((accu, elem) => {
-          return accu === null ? [elem] : [...accu, ' | ', elem];
-        }, null)}
+        {this.navItems.map((navItem, i) => <Link key={i} to={prefixLink(navItem[1])}>{navItem[0]}</Link>).reduce((accu, elem) => accu === null ? [elem] : [...accu, ' | ', elem], null)}
       </span>
     );
   }
@@ -96,27 +92,27 @@ class Template extends React.Component {
     const { location } = this.props;
     if (includes(flatten(this.navItems), location.pathname)) {
       return (
-      <div>
-        <h1 style={style.h1}>
-          <Link style={style.Link} to={prefixLink('/')} >
-            <img src={prefixLink('/icon.png')} style={style.img} /> {config.blogTitle}
-          </Link>
-        </h1>
-        <h2 style={style.h2}>
-          {config.subTitle}
-        </h2>
-      </div>
-    );
+        <div>
+          <h1 style={style.h1}>
+            <Link style={style.Link} to={prefixLink('/')} >
+              <img src={prefixLink('/icon.png')} style={style.img} /> {config.blogTitle}
+            </Link>
+          </h1>
+          <h2 style={style.h2}>
+            {config.subTitle}
+          </h2>
+        </div>
+      );
     } else {
       return (
-      <div>
-        <h3 style={style.h3}>
-          <Link style={style.Link} to={prefixLink('/')} >
-            <img src={prefixLink('/icon.png')} style={style.smallerImg} /> {config.blogTitle}
-          </Link>
-        </h3>
-      </div>
-    );
+        <div>
+          <h3 style={style.h3}>
+            <Link style={style.Link} to={prefixLink('/')} >
+              <img src={prefixLink('/icon.png')} style={style.smallerImg} /> {config.blogTitle}
+            </Link>
+          </h3>
+        </div>
+      );
     }
   }
 

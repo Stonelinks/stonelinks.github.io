@@ -4,13 +4,10 @@ import ImageGallery from 'react-image-gallery';
 class Gallery extends React.Component {
 
   render () {
-
-    const images = this.props.images.map((imageURL) => {
-      return {
-        original: imageURL,
-        thumbnail: imageURL,
-      };
-    });
+    const images = this.props.images.map(imageURL => ({
+      original: imageURL,
+      thumbnail: imageURL,
+    }));
 
     return (
       <ImageGallery

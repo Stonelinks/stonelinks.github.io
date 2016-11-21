@@ -32,34 +32,32 @@ const style = {
 class PostsIndex extends React.Component {
 
   get socialIcons () {
-    let socialIcons = [];
+    const socialIcons = [];
 
     socialIcons.push(
       <a key={'resume'} href={'http://stonelinks.github.io/resume/'} target="blank_">
         Résumé
-      </a>
+      </a>,
     );
 
     socialIcons.push(
       <a key={'contact'} href={'mailto:lucas.p.doyle@gmail.com?Subject=Hello'} target="blank_">
         Contact
-      </a>
+      </a>,
     );
 
-    Object.keys(config.socialNetworks).forEach(function (network) {
+    Object.keys(config.socialNetworks).forEach((network) => {
       const URL = config.socialNetworks[network];
       socialIcons.push(
         <a key={URL} href={URL} target="blank_">
           <span className={`fa fa-${network}`} style={style.socialIcon} />
-        </a>
+        </a>,
       );
     });
 
     return (
       <span>
-        {socialIcons.reduce((accu, elem) => {
-          return accu === null ? [elem] : [...accu, ' | ', elem];
-        }, null)}
+        {socialIcons.reduce((accu, elem) => accu === null ? [elem] : [...accu, ' | ', elem], null)}
       </span>
     );
   }

@@ -3,8 +3,9 @@ import { Link } from 'react-router';
 import { prefixLink } from 'gatsby-helpers';
 import { rhythm } from 'utils/typography';
 import { getPageDate } from 'utils';
-import Summary from './Summary';
 import access from 'safe-access';
+
+import Summary from './Summary';
 
 const style = {
   listItem: {
@@ -43,7 +44,7 @@ class PostsList extends React.Component {
     let listItemContents = (
       <div>
         <Link to={prefixLink(page.path)}>
-        {pageTitle}
+          {pageTitle}
         </Link>
         <div style={style.date}>
           {getPageDate(page)}
@@ -92,7 +93,7 @@ class PostsList extends React.Component {
       list.push(
         <li key={'more'} style={style.listItem}>
           Showing last {this.props.limit} | <Link to={prefixLink(this.props.viewAllPath)}>View all</Link>
-        </li>
+        </li>,
       );
     }
 

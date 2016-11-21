@@ -26,7 +26,7 @@ export function getTags (page) {
 
 // get every tag from pages
 export function getAllTags (pages) {
-  return uniq([].concat.apply([], pages.map(page => getTags(page).map(tagMap)))).sort();
+  return uniq([].concat(...pages.map(page => getTags(page).map(tagMap)))).sort();
 }
 
 export function capitalizeFirstLetter (string) {
@@ -39,11 +39,11 @@ export function pageDepth (page) {
 }
 
 export function isPost (page) {
-  return include(page.path, '/posts') && pageDepth(page) == 2;
+  return include(page.path, '/posts') && pageDepth(page) === 2;
 }
 
 export function isProject (page) {
-  return include(page.path, '/projects') && pageDepth(page) == 2 && include(page.file.name, 'index');
+  return include(page.path, '/projects') && pageDepth(page) === 2 && include(page.file.name, 'index');
 }
 
 export function getPageDate (page) {

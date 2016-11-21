@@ -11,7 +11,7 @@ if (config.gaCode) {
 }
 
 // force 16 / 9 resolution for all videos
-const resizeVideos = _.debounce(function () {
+const resizeVideos = _.debounce(() => {
   $("iframe[src^='http://www.youtube.com']").each(function () {
     const $el = $(this);
     $el.height($el.width() * 9 / 16);
@@ -20,7 +20,7 @@ const resizeVideos = _.debounce(function () {
 
 $(window).resize(resizeVideos);
 
-exports.onRouteUpdate = state => {
+exports.onRouteUpdate = (state) => {
   const page = find(pages, { path: state.pathname });
   if (page && page.data && page.data.redirect) {
     browserHistory.push(page.data.redirect);

@@ -32,11 +32,11 @@ class ReadNext extends React.Component {
     let nextPost;
 
     if (readNext) {
-      nextPost = find(pages, (page) => includes(page.path, readNext));
+      nextPost = find(pages, page => includes(page.path, readNext));
     } else {
       readNext = pages
         .filter(p => p.data.tags && p.data.body !== page.body)
-        .map(p => {
+        .map((p) => {
           if (page.tags) {
             const t = getTags(p);
             p.diff = intersect(page.tags, t).length;
@@ -49,14 +49,14 @@ class ReadNext extends React.Component {
         .pop();
       if (readNext) {
         readNext = readNext.path;
-        nextPost = find(pages, (page) => includes(page.path, readNext));
+        nextPost = find(pages, page => includes(page.path, readNext));
       }
     }
 
     if (!nextPost) {
       return React.createElement('noscript', null);
     } else {
-      nextPost = find(pages, (page) => includes(page.path, readNext.slice(1, -1))
+      nextPost = find(pages, page => includes(page.path, readNext.slice(1, -1)),
       );
 
       return (

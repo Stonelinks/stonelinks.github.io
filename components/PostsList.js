@@ -3,13 +3,14 @@ import sortBy from 'lodash/sortBy';
 import access from 'safe-access';
 import include from 'underscore.string/include';
 
-import List from './List';
 import { isPost } from 'utils';
+
+import List from './List';
 
 class PostsList extends List {
   get list () {
-    let pageLinks = [];
-    const sortedPages = sortBy(this.props.route.pages, (page) => access(page, 'data.date')
+    const pageLinks = [];
+    const sortedPages = sortBy(this.props.route.pages, page => access(page, 'data.date'),
     ).reverse();
 
     sortedPages.forEach((page) => {
