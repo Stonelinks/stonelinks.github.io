@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import { Container } from 'react-responsive-grid';
 import { prefixLink } from 'gatsby-helpers';
-import { rhythm, fontSizeToMS } from 'utils/typography';
+import { rhythm, scale } from 'utils/typography';
 import { config } from 'config';
 import flatten from 'lodash/flatten';
 import includes from 'lodash/includes';
@@ -15,23 +15,23 @@ const style = {
   },
   h1: {
     marginBottom: 0,
-    fontSize: fontSizeToMS(1.5).fontSize,
-    lineHeight: fontSizeToMS(1.5).lineHeight,
+    fontSize: scale(1.5).fontSize,
+    lineHeight: scale(1.5).lineHeight,
     marginTop: 0,
   },
   h2: {
     marginTop: '5px',
     marginBottom: 0,
-    fontSize: fontSizeToMS(.1).fontSize,
-    lineHeight: fontSizeToMS(.1).lineHeight,
+    fontSize: scale(.1).fontSize,
+    lineHeight: scale(.1).lineHeight,
     paddingLeft: `${logoSize + 12.5}px`,
     color: 'gray',
   },
   h3: {
     marginTop: 0,
     marginBottom: 0,
-    fontSize: fontSizeToMS(.6).fontSize,
-    lineHeight: fontSizeToMS(.6).lineHeight,
+    fontSize: scale(.6).fontSize,
+    lineHeight: scale(.6).lineHeight,
   },
   hr: {
     marginTop: rhythm(0.5),
