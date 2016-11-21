@@ -41,7 +41,7 @@ class PostsIndex extends React.Component {
     );
 
     socialIcons.push(
-      <a key={'contact'} href={'mailto:lucas.p.doyle@gmail.com?subject=Hello'} target="blank_">
+      <a key={'contact'} href={'mailto:lucas.p.doyle@gmail.com?Subject=Hello'} target="blank_">
         Contact
       </a>
     );
