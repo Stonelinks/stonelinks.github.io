@@ -1,5 +1,5 @@
 ---
-title: Harvard Documentation is Done
+title: Harvard Documentation is done
 date: 2010-11-24
 path: /posts/documentation-is-done/
 tags:
