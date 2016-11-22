@@ -8,13 +8,16 @@ tags:
   - web development
 ---
 
+<iframe style="height: 500px; width: 100%;" src="http://stonelinks.github.io/three.js/examples/webgl_loader_collada_kinematics.html"></iframe>
+
 I've been working on some new WebGL related projects for a 3d viewer and editor that targets robotics applications.
+
+<div class="summary-end"></div>
 
 ### [My three.js fork](https://github.com/Stonelinks/three.js)
 
 All these projects are built on top of three.js. My fork added kinematics support to the collada loader. [Check it out!](https://stonelinks.github.io/three.js/examples/#webgl_loader_collada_kinematics)
 
-<iframe style="height: 500px;" src="http://stonelinks.github.io/three.js/examples/webgl_loader_collada_kinematics.html"></iframe>
 
 ### [Marionette-three.js](https://github.com/Stonelinks/marionette-three.js)
 
