@@ -22,6 +22,7 @@ const style = {
   },
   h3: {
     marginBottom: rhythm(0.5),
+    display: 'inline-block',
   },
   img: {
     float: 'left',
@@ -32,6 +33,10 @@ const style = {
     height: rhythm(2),
     borderRadius: '50%',
     border: '1px gray solid',
+  },
+  inlineviewMoreLink: {
+    marginLeft: rhythm(0.1),
+    display: 'inline-block',
   },
 };
 
@@ -79,9 +84,24 @@ class PostsList extends React.Component {
   }
 
   get title () {
-    const titleText = `${this.props.limit > 0 ? 'Latest ' : ''}${this.props.title}`;
+    let titleText = '';
+    let viewMoreLink = null;
+    if (this.props.limit > 0) {
+      titleText += 'Latest ';
+      viewMoreLink = (<div style={style.inlineviewMoreLink}>
+        {'| '}
+        <Link to={prefixLink(this.props.viewAllPath)}>View all</Link>
+      </div>);
+    } else {
+      titleText += 'All ';
+    }
+    titleText += this.props.title;
+
     return (
-      <h3 style={style.h3}>{titleText}</h3>
+      <span>
+        <h3 style={style.h3}>{titleText}</h3>
+        {viewMoreLink}
+      </span>
     );
   }
 
