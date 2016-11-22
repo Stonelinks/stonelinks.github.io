@@ -13,7 +13,7 @@ Grandaddy of the website you’re looking at.
 
 Since 2008, Stonelinks has gone through many incarnations. It started out life hosted out of my dorm room on a window's machine as an ugly hodge-podge of PHP and dreamweaver garbage. For a long time after that, it ran on [wordpress](https://wordpress.org/).
 
-At some point I decided that since Stonelinks is fundamentally static content (and because I had just learned how to program), I decided to write a static site generator back in 2012. You can still read a sassy page I wrote about it [here](/projects/stonelinks/old/). This worked pretty well for my needs up until 2014.
+At some point I decided that since Stonelinks is fundamentally static content (and because I had just learned how to program), I decided to write a static site generator back in 2012. You can still see it up on github [here](https://github.com/Stonelinks/stonelinks.org). This worked pretty well for my needs up until 2014.
 
 After a year and a half at MUJIN learning how to be a serious front-end developer, I decided to transition Stonelinks to a more modern 3rd party static generator called [wintersmith](http://wintersmith.io/) built on top of [nodejs](http://nodejs.org/). The switch made sense because wintersmith was fast, feature complete, simple and well tested. In addition, it also fit in nicely with the development tool's I've come to rely on in my professional life at the time ([grunt](http://gruntjs.com/), [npm](https://www.npmjs.org/), [bower](http://bower.io/), etc.). It also supports a bunch of simple [plugins](https://github.com/jnordberg/wintersmith/wiki/Plugins) to do things like tagging, livereloading and whatnot.
 
