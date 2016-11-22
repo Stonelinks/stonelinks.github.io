@@ -17,11 +17,12 @@ module.exports = React.createClass({
     const title = DocumentTitle.rewind();
 
     // have to manually include this in prod
-    let faStyles = null;
+    let extraStyles = null;
     if (process.env.NODE_ENV === 'production') {
-      faStyles = (
-        <link rel="stylesheet" type="text/css" href="/font-awesome.css" />
-      );
+      extraStyles = [
+        <link rel="stylesheet" type="text/css" href="/font-awesome.css" />,
+        <link rel="stylesheet" type="text/css" href="/image-gallery.css" />,
+      ];
     }
 
     return (
@@ -35,7 +36,7 @@ module.exports = React.createClass({
           />
           <title>{title}</title>
           <TypographyStyle typography={typography} />
-          {faStyles}
+          {extraStyles}
           <GoogleFont typography={typography} />
         </head>
         <body>

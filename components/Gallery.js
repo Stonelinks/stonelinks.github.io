@@ -11,7 +11,6 @@ class Gallery extends React.Component {
 
     return (
       <ImageGallery
-        ref={i => this._imageGallery = i}
         items={images}
         slideInterval={2000}
       />
