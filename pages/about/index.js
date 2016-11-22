@@ -33,19 +33,6 @@ class PostsIndex extends React.Component {
 
   get socialIcons () {
     const socialIcons = [];
-
-    socialIcons.push(
-      <a key={'resume'} href={'http://stonelinks.github.io/resume/'} target="blank_">
-        Résumé
-      </a>,
-    );
-
-    socialIcons.push(
-      <a key={'contact'} href={'mailto:lucas.p.doyle@gmail.com?Subject=Hello'} target="blank_">
-        Contact
-      </a>,
-    );
-
     Object.keys(config.socialNetworks).forEach((network) => {
       const URL = config.socialNetworks[network];
       socialIcons.push(
@@ -56,9 +43,9 @@ class PostsIndex extends React.Component {
     });
 
     return (
-      <span>
+      <div>
         {socialIcons.reduce((accu, elem) => accu === null ? [elem] : [...accu, ' | ', elem], null)}
-      </span>
+      </div>
     );
   }
 
@@ -68,6 +55,16 @@ class PostsIndex extends React.Component {
         <div>
           <img src={prefixLink('/author.png')} alt={config.authorName} style={style.img} />
           <h3 style={style.h3}>{config.authorName}</h3>
+          <div>
+
+            <a key={'resume'} href={'http://stonelinks.github.io/resume/'} target="blank_">
+                  Résumé
+                </a>
+            {' | '}
+            <a key={'contact'} href={'mailto:lucas.p.doyle@gmail.com?Subject=Hello'} target="blank_">
+                  Contact
+                </a>
+          </div>
           {this.socialIcons}
           <p style={style.p}>
             I'm a roboticist, engineer, web developer, runner and furniture maker. I live in San Francisco where I work at <a target="blank_" href="http://www.airware.com/">Airware</a> building an operating system for commercial drones.
