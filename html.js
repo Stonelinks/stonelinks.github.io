@@ -22,6 +22,8 @@ module.exports = React.createClass({
       extraStyles = [
         <link rel="stylesheet" type="text/css" href="/font-awesome.css" />,
         <link rel="stylesheet" type="text/css" href="/image-gallery.css" />,
+        <link rel="stylesheet" type="text/css" href="/css/zenburn.css" />,
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />,
       ];
     }
 
