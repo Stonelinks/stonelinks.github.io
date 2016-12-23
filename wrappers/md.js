@@ -63,7 +63,7 @@ class MarkdownWrapper extends React.Component {
     );
 
     return (
-      <DocumentTitle title={page.title ? `${page.title} | ${config.blogTitle}` : config.blogTitle}>
+      <DocumentTitle title={page.title ? `${page.title} - ${config.blogTitle}` : config.blogTitle}>
         <div className="markdown">
           {header}
           {page.gallery ? <Gallery images={page.gallery} /> : null}

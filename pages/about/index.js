@@ -51,7 +51,7 @@ class PostsIndex extends React.Component {
 
   render () {
     return (
-      <DocumentTitle title={`Posts - ${config.blogTitle}`}>
+      <DocumentTitle title={`About - ${config.blogTitle}`}>
         <div>
           <img src={prefixLink('/author.png')} alt={config.authorName} style={style.img} />
           <h3 style={style.h3}>{config.authorName}</h3>
