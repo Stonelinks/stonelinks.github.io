@@ -34,11 +34,9 @@
     "babel-loader": "6.2.9",
     "babel-preset-react-hmre": "1.1.1",
     "css-loader": "0.26.1",
-    "eslint": "3.10.2",
-    "eslint-config-airbnb": "13.0.0",
-    "eslint-plugin-import": "2.2.0",
-    "eslint-plugin-jsx-a11y": "2.2.3",
-    "eslint-plugin-react": "6.8.0",
+    "standard": "8.6.0",
+    "snazzy": "5.0.0",
+    "babel-eslint": "7.1.1",
     "front-matter": "2.1.1",
     "gh-pages": "0.12.0",
     "mkdirp": "0.5.1",
@@ -58,66 +56,11 @@
   },
   "scripts": {
     "dev": "gatsby develop",
-    "lint": "./node_modules/.bin/eslint --fix --ext .js,.jsx --ignore-pattern public --ignore-pattern scripts .",
+    "lint": "standard --fix | snazzy",
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "gatsby develop",
     "build": "gatsby build",
     "deploy": "gatsby build && gh-pages -d public -b master"
-  },
-  "eslintConfig": {
-    "extends": "eslint-config-airbnb",
-    "rules": {
-      "indent": [
-        2,
-        2,
-        {
-          "SwitchCase": 1
-        }
-      ],
-      "no-console": [
-        0
-      ],
-      "func-names": [
-        0
-      ],
-      "space-before-function-paren": [
-        2,
-        "always"
-      ],
-      "no-else-return": [
-        0
-      ],
-      "space-infix-ops": [
-        0
-      ],
-      "react/prefer-es6-class": [
-        0
-      ],
-      "react/prefer-stateless-function": [
-        0
-      ],
-      "react/jsx-filename-extension": [
-        0
-      ],
-      "react/forbid-prop-types": [
-        0
-      ],
-      "import/no-unresolved": [
-        0
-      ],
-      "import/no-extraneous-dependencies": [
-        0
-      ],
-      "import/extensions": [
-        0
-      ],
-      "global-require": [
-        0
-      ]
-    },
-    "globals": {
-      "__PREFIX_LINKS__": true
-    }
   },
   "babel": {
     "presets": [
@@ -128,5 +71,8 @@
     "plugins": [
       "add-module-exports"
     ]
+  },
+  "standard": {
+    "parser": "babel-eslint"
   }
 }

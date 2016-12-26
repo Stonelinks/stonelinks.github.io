@@ -1,28 +1,28 @@
-import React from 'react';
-import { Link } from 'react-router';
-import { prefixLink } from 'gatsby-helpers';
-import { rhythm } from 'utils/typography';
-import { getPageDate } from 'utils';
-import access from 'safe-access';
+import React from 'react'
+import { Link } from 'react-router'
+import { prefixLink } from 'gatsby-helpers'
+import { rhythm } from 'utils/typography'
+import { getPageDate } from 'utils'
+import access from 'safe-access'
 
-import Summary from './Summary';
+import Summary from './Summary'
 
 const style = {
   listItem: {
     marginBottom: rhythm(1),
-    listStyle: 'none',
+    listStyle: 'none'
   },
   list: {
-    marginLeft: 0,
+    marginLeft: 0
   },
   date: {
     fontSize: rhythm(0.5),
     color: 'gray',
-    marginBottom: rhythm(0.1),
+    marginBottom: rhythm(0.1)
   },
   h3: {
     marginBottom: rhythm(0.5),
-    display: 'inline-block',
+    display: 'inline-block'
   },
   img: {
     float: 'left',
@@ -32,19 +32,19 @@ const style = {
     width: rhythm(2),
     height: rhythm(2),
     borderRadius: '50%',
-    border: '1px gray solid',
+    border: '1px gray solid'
   },
   inlineviewMoreLink: {
     marginLeft: rhythm(0.1),
-    display: 'inline-block',
-  },
-};
+    display: 'inline-block'
+  }
+}
 
 class PostsList extends React.Component {
 
   makeListItem (page) {
-    const pageTitle = access(page, 'data.title') || page.path;
-    const image = access(page, 'data.image');
+    const pageTitle = access(page, 'data.title') || page.path
+    const image = access(page, 'data.image')
 
     let listItemContents = (
       <div>
@@ -56,7 +56,7 @@ class PostsList extends React.Component {
         </div>
         <Summary body={page.data.body} />
       </div>
-    );
+    )
 
     if (image) {
       listItemContents = (
@@ -68,53 +68,53 @@ class PostsList extends React.Component {
             {listItemContents}
           </span>
         </div>
-      );
+      )
     }
 
     return (
       <li key={page.path} style={style.listItem}>
         {listItemContents}
       </li>
-    );
+    )
   }
 
   // overrride this
   get list () {
-    return this.props.route.pages;
+    return this.props.route.pages
   }
 
   get title () {
-    let titleText = '';
-    let viewMoreLink = null;
+    let titleText = ''
+    let viewMoreLink = null
     if (this.props.limit > 0) {
-      titleText += 'Latest ';
+      titleText += 'Latest '
       viewMoreLink = (<div style={style.inlineviewMoreLink}>
         {'| '}
         <Link to={prefixLink(this.props.viewAllPath)}>View all</Link>
-      </div>);
+      </div>)
     } else {
-      titleText += 'All ';
+      titleText += 'All '
     }
-    titleText += this.props.title;
+    titleText += this.props.title
 
     return (
       <span>
         <h3 style={style.h3}>{titleText}</h3>
         {viewMoreLink}
       </span>
-    );
+    )
   }
 
   render () {
-    let list = this.list.map(this.makeListItem);
+    let list = this.list.map(this.makeListItem)
 
     if (this.props.limit > 0) {
-      list = list.slice(0, this.props.limit);
+      list = list.slice(0, this.props.limit)
       list.push(
         <li key={'more'} style={style.listItem}>
           Showing last {this.props.limit} | <Link to={prefixLink(this.props.viewAllPath)}>View all</Link>
         </li>,
-      );
+      )
     }
 
     return (
@@ -124,20 +124,20 @@ class PostsList extends React.Component {
           {list}
         </ul>
       </div>
-    );
+    )
   }
 }
 
 PostsList.defaultProps = {
   limit: -1,
-  title: 'Pages',
-};
+  title: 'Pages'
+}
 
 PostsList.propTypes = {
   title: React.PropTypes.string,
   route: React.PropTypes.object,
   limit: React.PropTypes.number,
-  viewAllPath: React.PropTypes.string,
-};
+  viewAllPath: React.PropTypes.string
+}
 
-export default PostsList;
+export default PostsList

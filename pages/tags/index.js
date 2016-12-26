@@ -1,19 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router';
-import DocumentTitle from 'react-document-title';
+import React from 'react'
+import { Link } from 'react-router'
+import DocumentTitle from 'react-document-title'
 
-import Summary from 'components/Summary';
-import { config } from 'config';
-import { tagMap, getTags, getAllTags, capitalizeFirstLetter } from 'utils';
-import { prefixLink } from 'gatsby-helpers';
+import Summary from 'components/Summary'
+import { config } from 'config'
+import { tagMap, getTags, getAllTags, capitalizeFirstLetter } from 'utils'
+import { prefixLink } from 'gatsby-helpers'
 
 const style = {
   tagLink: {
     color: 'inherit',
     boxShadow: 'none',
-    textDecoration: 'none',
-  },
-};
+    textDecoration: 'none'
+  }
+}
 
 const TaggedPage = ({ page, hideSummary }) => (
   <li>
@@ -22,12 +22,12 @@ const TaggedPage = ({ page, hideSummary }) => (
     </Link>
     {hideSummary ? null : <Summary body={page.data.body} />}
   </li>
-);
+)
 
 const ShowTag = ({ tag, pages, hideSummary }) => {
   const taggedPages = pages
     .filter(getTags)
-    .filter(page => getTags(page).map(tagMap).indexOf(tag) !== -1);
+    .filter(page => getTags(page).map(tagMap).indexOf(tag) !== -1)
   return (
     <div>
       <h2>
@@ -38,13 +38,13 @@ const ShowTag = ({ tag, pages, hideSummary }) => {
         {taggedPages.map((page, i) => (<TaggedPage hideSummary={hideSummary} key={i} page={page} />))}
       </ul>
     </div>
-  );
-};
+  )
+}
 
 class BlogTags extends React.Component {
   render () {
-    const tag = this.props.location.hash.replace('#', '');
-    const allTags = tag ? [] : getAllTags(this.props.route.pages);
+    const tag = this.props.location.hash.replace('#', '')
+    const allTags = tag ? [] : getAllTags(this.props.route.pages)
     return (
       <DocumentTitle title={tag ? `${tag} - ${config.blogTitle}` : config.blogTitle}>
         <div>
@@ -52,13 +52,13 @@ class BlogTags extends React.Component {
           {!tag ? allTags.map((tag, i) => <ShowTag hideSummary key={i} tag={tag} pages={this.props.route.pages} />) : null}
         </div>
       </DocumentTitle>
-    );
+    )
   }
 }
 
 BlogTags.propTypes = {
   route: React.PropTypes.object,
-  location: React.PropTypes.object,
-};
+  location: React.PropTypes.object
+}
 
-export default BlogTags;
+export default BlogTags

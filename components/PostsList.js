@@ -1,37 +1,37 @@
-import React from 'react';
-import sortBy from 'lodash/sortBy';
-import access from 'safe-access';
-import include from 'underscore.string/include';
+import React from 'react'
+import sortBy from 'lodash/sortBy'
+import access from 'safe-access'
+import include from 'underscore.string/include'
 
-import { isPost } from 'utils';
+import { isPost } from 'utils'
 
-import List from './List';
+import List from './List'
 
 class PostsList extends List {
   get list () {
-    const pageLinks = [];
+    const pageLinks = []
     const sortedPages = sortBy(this.props.route.pages, page => access(page, 'data.date'),
-    ).reverse();
+    ).reverse()
 
     sortedPages.forEach((page) => {
       if (access(page, 'file.ext') === 'md' && !include(page.path, '/404') && isPost(page)) {
-        pageLinks.push(page);
+        pageLinks.push(page)
       }
-    });
+    })
 
-    return pageLinks;
+    return pageLinks
   }
 }
 
 PostsList.defaultProps = {
   limit: -1,
   title: 'Posts',
-  viewAllPath: '/posts/',
-};
+  viewAllPath: '/posts/'
+}
 
 PostsList.propTypes = {
   route: React.PropTypes.object,
-  limit: React.PropTypes.number,
-};
+  limit: React.PropTypes.number
+}
 
-export default PostsList;
+export default PostsList

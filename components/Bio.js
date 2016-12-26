@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router';
-import { config } from 'config';
-import { rhythm } from 'utils/typography';
-import { prefixLink } from 'gatsby-helpers';
+import React from 'react'
+import { Link } from 'react-router'
+import { config } from 'config'
+import { rhythm } from 'utils/typography'
+import { prefixLink } from 'gatsby-helpers'
 
 const style = {
   img: {
@@ -13,15 +13,15 @@ const style = {
     width: rhythm(2),
     height: rhythm(2),
     borderRadius: '50%',
-    border: '1px gray solid',
+    border: '1px gray solid'
   },
   p: {
-    marginBottom: rhythm(1),
-  },
-};
+    marginBottom: rhythm(1)
+  }
+}
 
 const Bio = () => {
-  const bioParts = config.authorBio.split(config.authorName);
+  const bioParts = config.authorBio.split(config.authorName)
 
   return (
     <p style={style.p}>
@@ -36,7 +36,7 @@ const Bio = () => {
         {bioParts[1]}
       </span>
     </p>
-  );
-};
+  )
+}
 
-export default Bio;
+export default Bio

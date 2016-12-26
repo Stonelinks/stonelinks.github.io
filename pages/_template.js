@@ -1,23 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router';
-import { Container } from 'react-responsive-grid';
-import { prefixLink } from 'gatsby-helpers';
-import { rhythm, scale } from 'utils/typography';
-import { config } from 'config';
-import flatten from 'lodash/flatten';
-import includes from 'lodash/includes';
+import React from 'react'
+import { Link } from 'react-router'
+import { Container } from 'react-responsive-grid'
+import { prefixLink } from 'gatsby-helpers'
+import { rhythm, scale } from 'utils/typography'
+import { config } from 'config'
+import flatten from 'lodash/flatten'
+import includes from 'lodash/includes'
 
-const logoSize = 60;
-const smallerLogoSize = 35;
+const logoSize = 60
+const smallerLogoSize = 35
 const style = {
   header: {
-    marginBottom: rhythm(1),
+    marginBottom: rhythm(1)
   },
   h1: {
     marginBottom: 0,
     fontSize: scale(1.5).fontSize,
     lineHeight: scale(1.5).lineHeight,
-    marginTop: 0,
+    marginTop: 0
   },
   h2: {
     marginTop: '5px',
@@ -25,25 +25,25 @@ const style = {
     fontSize: scale(0.1).fontSize,
     lineHeight: scale(0.1).lineHeight,
     paddingLeft: `${logoSize + 12.5}px`,
-    color: 'gray',
+    color: 'gray'
   },
   h3: {
     marginTop: 0,
     marginBottom: 0,
     fontSize: scale(0.6).fontSize,
-    lineHeight: scale(0.6).lineHeight,
+    lineHeight: scale(0.6).lineHeight
   },
   hr: {
     marginTop: rhythm(0.5),
     marginBottom: rhythm(0.5),
-    backgroundColor: 'gray',
+    backgroundColor: 'gray'
   },
   img: {
     margin: 0,
     border: 0,
     width: `${logoSize}px`,
     height: `${logoSize}px`,
-    verticalAlign: 'middle',
+    verticalAlign: 'middle'
   },
   smallerImg: {
     margin: 0,
@@ -51,18 +51,18 @@ const style = {
     border: 0,
     width: `${smallerLogoSize}px`,
     height: `${smallerLogoSize}px`,
-    verticalAlign: 'middle',
+    verticalAlign: 'middle'
   },
   Link: {
     boxShadow: 'none',
     textDecoration: 'none',
-    color: 'inherit',
+    color: 'inherit'
   },
   Container: {
     maxWidth: rhythm(26),
-    padding: rhythm(0.75),
-  },
-};
+    padding: rhythm(0.75)
+  }
+}
 
 class Template extends React.Component {
   get navItems () {
@@ -70,14 +70,14 @@ class Template extends React.Component {
       ['Home', '/'],
       ['Posts', '/posts/'],
       ['Projects', '/projects/'],
-      ['About', '/about/'],
-    ];
+      ['About', '/about/']
+    ]
 
     navItems.forEach((navItem) => {
-      navItem[1] = prefixLink(navItem[1]);
-    });
+      navItem[1] = prefixLink(navItem[1])
+    })
 
-    return navItems;
+    return navItems
   }
 
   get nav () {
@@ -85,11 +85,11 @@ class Template extends React.Component {
       <span>
         {this.navItems.map((navItem, i) => <Link key={i} to={prefixLink(navItem[1])}>{navItem[0]}</Link>).reduce((accu, elem) => accu === null ? [elem] : [...accu, ' | ', elem], null)}
       </span>
-    );
+    )
   }
 
   get headerContents () {
-    const { location } = this.props;
+    const { location } = this.props
     if (includes(flatten(this.navItems), location.pathname)) {
       return (
         <div>
@@ -102,7 +102,7 @@ class Template extends React.Component {
             {config.subTitle}
           </h2>
         </div>
-      );
+      )
     } else {
       return (
         <div>
@@ -112,12 +112,12 @@ class Template extends React.Component {
             </Link>
           </h3>
         </div>
-      );
+      )
     }
   }
 
   render () {
-    const { children } = this.props;
+    const { children } = this.props
     return (
       <Container style={style.Container}>
         <header style={style.header}>
@@ -127,14 +127,14 @@ class Template extends React.Component {
         </header>
         {children}
       </Container>
-    );
+    )
   }
 }
 
 Template.propTypes = {
   children: React.PropTypes.any,
   location: React.PropTypes.object,
-  route: React.PropTypes.object,
-};
+  route: React.PropTypes.object
+}
 
-export default Template;
+export default Template

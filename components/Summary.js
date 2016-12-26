@@ -1,34 +1,34 @@
-import React from 'react';
-import { prune, include } from 'underscore.string';
-import { fixLinks } from 'utils';
+import React from 'react'
+import { prune, include } from 'underscore.string'
+import { fixLinks } from 'utils'
 
 class Summary extends React.Component {
   componentDidMount () {
-    fixLinks(this.refs.markdown, this.context.router);
+    fixLinks(this.refs.markdown, this.context.router)
   }
 
   summary (body) {
-    const explicitSplit = '<div class="summary-end"></div>';
+    const explicitSplit = '<div class="summary-end"></div>'
     if (include(body, explicitSplit)) {
-      return body.split(explicitSplit)[0];
+      return body.split(explicitSplit)[0]
     } else {
-      return prune(body.replace(/<(?!\/?a)[^>]*>/g, ''), 200);
+      return prune(body.replace(/<(?!\/?a)[^>]*>/g, ''), 200)
     }
   }
 
   render () {
     return (
-      <div ref="markdown" dangerouslySetInnerHTML={{ __html: this.summary(this.props.body) }} />
-    );
+      <div ref='markdown' dangerouslySetInnerHTML={{ __html: this.summary(this.props.body) }} />
+    )
   }
 }
 
 Summary.propTypes = {
-  body: React.PropTypes.string.isRequired,
-};
+  body: React.PropTypes.string.isRequired
+}
 
 Summary.contextTypes = {
-  router: React.PropTypes.object.isRequired,
-};
+  router: React.PropTypes.object.isRequired
+}
 
-export default Summary;
+export default Summary
