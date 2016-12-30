@@ -67,7 +67,7 @@ class PostsIndex extends React.Component {
           </div>
           {this.socialIcons}
           <p style={style.p}>
-            I'm a roboticist, engineer, web developer, runner and furniture maker. I live in San Francisco where I work at <a target='blank_' href='http://www.airware.com/'>Airware</a> building an operating system for commercial drones.
+            I'm a roboticist, engineer, web developer, runner and furniture maker. I live in San Francisco where I work at <a target='blank_' href='http://www.airware.com/'>Airware</a> writing lots of interesting software for commercial drones.
           </p>
           <p style={style.p}>
             Prior to SF, I lived in Tokyo for two years where I was the 4th employee of a Japanese startup called <a target='blank_' href='http://mujin.co.jp/en/'>MUJIN</a> where I built tools to make industrial robots efficient and easy for others to program. I spent time during my college years at the Harvard-Smithsonian Center for Astrophysics developing systems to fabricate experimental X-ray optics.
