@@ -2,5 +2,11 @@
 
 My personal website
 
-## Running in development
-`gatsby develop`
+## Install
+`npm i`
+
+## Develop
+`npm run dev`
+
+## Deploy
+`npm run deploy`
