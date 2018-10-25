@@ -7,7 +7,7 @@ import { prefixLink } from 'gatsby-helpers'
 const style = {
   img: {
     float: 'left',
-    marginTop: 0,
+    marginTop: rhythm(-0.5),
     marginBottom: 0,
     marginRight: rhythm(0.25),
     width: rhythm(2),
@@ -17,6 +17,9 @@ const style = {
   },
   p: {
     marginBottom: rhythm(1)
+  },
+  span: {
+    marginTop: rhythm(1)
   }
 }
 
@@ -28,7 +31,7 @@ const Bio = () => {
       <Link to={prefixLink('/about/')}>
         <img src={prefixLink('/author.png')} alt={config.authorName} style={style.img} />
       </Link>
-      <span>
+      <span style={style.span}>
         {bioParts[0]}
         <Link to={prefixLink('/about/')}>
           {config.authorName}
