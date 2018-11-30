@@ -7,11 +7,11 @@ dateFormat: "[1999] - YYYY"
 
 Robots I've been involved with, unless otherwise mentioned on this site such as the [battlebot](/projects/battlebots/), [FIRST](/projects/FIRST/), etc.
 
-### IED Border Patrol Robot - (2010)
+<!-- ### IED Border Patrol Robot - (2010)
 
 ![](/projects/robots/ied-robot.jpg)
 
-This robot went from idea to implementation in six short weeks in response to an open ended project for a "GPS robotic platform" sponsored by Lockheed Martin at RPI. We chose to make a robot with the goal of remotely detecting trespassers across out nation's borders. With enough of these robots, our border patrol forces could remotely monitor much more safely and effectively.
+This robot went from idea to implementation in six short weeks in response to an open ended project for a "GPS robotic platform" sponsored by Lockheed Martin at RPI. We chose to make a robot that would allow border patrol personnel to remotely monitor much more safely and effectively than in person.
 
 On one hand, we totally failed to produce a mechanically sound robot that could drive around and do what we wanted. On the other hand, I learned a ton writing the software to control this thing. Some of the what I wrote:
 
@@ -28,7 +28,7 @@ I also learned some very important non-technical things:
 - Present things to a non-technical audience (that one was fun! I couldn't talk about programming at all in the final presentation)
 - Make technical decisions with a deadline in mind
 
-Probably the most frustrating thing about this robot was that despite having many team members on the mechanical side of things, the only thing that didn't work were the mechanics. Overall I had a blast, and it remains a robot I am very proud of.
+Probably the most frustrating thing about this robot was that despite having many team members on the mechanical side of things, the only thing that didn't work were the mechanics. Overall I had a blast, and it remains a robot I am very proud of. -->
 
 ### Litec Blimp - (2010)
 

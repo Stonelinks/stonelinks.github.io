@@ -91,7 +91,7 @@ class PostsIndex extends React.Component {
               Airware
             </a>
             {
-              ', with a strong GIS focus. Previously, I spent a couple years in Japan working on optimizing industrial / manufacturing robotics at '
+              '. Previously, I spent a couple years in Japan working on optimizing industrial / manufacturing robotics at '
             }
             <a target='blank_' href='http://mujin.co.jp/en/'>
               MUJIN
@@ -119,7 +119,7 @@ class PostsIndex extends React.Component {
           </p>
           <p style={style.p}>
             {
-              "I'm serious about spending time outdoors away from cities and screens, and continue to enjoy all Northern CA has to offer (which is a lot). Also constantly have random, sometimes useless but entertaining, side projects going on probably in various states of disarray. "
+              "I'm serious about spending time outdoors away from cities and screens, and continue to enjoy all Northern CA has to offer (which is a lot). Also constantly have random, sometimes useless, usually entertaining side projects going on probably in various states of disarray. "
             }
           </p>
           <p style={style.p}>
