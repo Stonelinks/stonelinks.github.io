@@ -1,0 +1,41 @@
+{
+  "name": "stonelinks",
+  "description": "Homepage of Lucas Doyle",
+  "version": "1.0.0",
+  "author": "Lucas Doyle <lucas.p.doyle@gmail.com>",
+  "private": true,
+  "scripts": {
+    "develop": "gatsby develop",
+    "deploy": "gatsby build && gh-pages -d public -b master",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@types/node": "^16.11.10",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "babel-plugin-styled-components": "^2.0.1",
+    "gatsby": "^4.2.0",
+    "gatsby-plugin-image": "^2.2.0",
+    "gatsby-plugin-manifest": "^4.2.0",
+    "gatsby-plugin-react-helmet": "^5.2.0",
+    "gatsby-plugin-sharp": "^4.2.0",
+    "gatsby-plugin-sitemap": "^5.2.0",
+    "gatsby-plugin-styled-components": "^5.2.0",
+    "gatsby-plugin-typescript": "^4.2.0",
+    "gatsby-source-filesystem": "^4.2.0",
+    "gatsby-transformer-remark": "^5.2.0",
+    "gatsby-transformer-sharp": "^4.2.0",
+    "gh-pages": "^3.2.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "styled-components": "^5.3.3"
+  },
+  "engines": {
+    "node": "16.13.0",
+    "yarn": "1.22.17"
+  }
+}
