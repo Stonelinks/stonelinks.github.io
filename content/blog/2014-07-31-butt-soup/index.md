@@ -7,7 +7,6 @@ tags:
   - web development
 ---
 
-
 [Buttsoup](http://buttsoup.herokuapp.com/) is a silly little text to speech web chat thing I made a few months ago. It allowed me to familiarize myself with a few technologies I'd been meaning to try out. There are also a few easter eggs built in (try typing "cage mode" in and see what happens). Code for buttsoup itself is on [github](https://github.com/Stonelinks/buttsoup).
 
 ## Web Sockets

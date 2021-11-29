@@ -14,7 +14,6 @@ I finally have it working! Very excited as I write this. So glad spring break ex
 
 This has been a goal of mine ever since I started building my personal robot (which, in keeping with the Stonelinks legacy, shall henceforth be known as "Stonebot"). This face tracking makes use of my [new method for positioning the camera](/posts/a-more-accurate-coordinate-system/) that I worked on a little over winter break, and is probably the most complicated piece of python I have written to date. Here are some highlights of the project:
 
-
 ### OpenCV
 
 By far, the hardest thing about this was getting OpenCV set up correctly. Once set up, it is relatively easy to use, comes with a lot of cool examples and seems extremely powerful (if you don't believe me check out what the folks over at [Willow Garage](http://www.willowgarage.com/) do with it on a routine basis). In the future it is definitely something I want to experiment more with, and not just use for face and object detection.

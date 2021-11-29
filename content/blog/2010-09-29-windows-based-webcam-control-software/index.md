@@ -98,25 +98,25 @@ unsigned int EEPROMReadInt(int p_address)
 
 void setup()
 {
-  // Set up servo and laser pins as an output  
-  pinMode(servoPinX, OUTPUT);  
+  // Set up servo and laser pins as an output
+  pinMode(servoPinX, OUTPUT);
   pinMode(laserpin, OUTPUT);
-  pinMode(servoPinY, OUTPUT);  
+  pinMode(servoPinY, OUTPUT);
 
-  // calculate center positions for both servos  
-  centerServoX = maxPulseX - ((maxPulseX - minPulseX)/2);  
-  centerServoY = maxPulseY - (((maxPulseY - minPulseY)/2)-280);  
+  // calculate center positions for both servos
+  centerServoX = maxPulseX - ((maxPulseX - minPulseX)/2);
+  centerServoY = maxPulseY - (((maxPulseY - minPulseY)/2)-280);
 
-  // If you're running this for the first time on your arduino,  
+  // If you're running this for the first time on your arduino,
   // uncomment the next two lines to initialize the EEPROM
-  // EEPROMWriteInt(0, centerServoX);  
-  // EEPROMWriteInt(2, centerServoY);  
+  // EEPROMWriteInt(0, centerServoX);
+  // EEPROMWriteInt(2, centerServoY);
 
-  pulseWidthX = EEPROMReadInt(0);  
-  pulseWidthY = EEPROMReadInt(2);  
+  pulseWidthX = EEPROMReadInt(0);
+  pulseWidthY = EEPROMReadInt(2);
 
-  // begin serial communication  
-  Serial.begin(9600);  
+  // begin serial communication
+  Serial.begin(9600);
 
   //Serial.println("Arduino Serial Pan/tilt Control");
   //Serial.println("Standard WASD to move, spacebar to center");
@@ -124,7 +124,7 @@ void setup()
 }
 
 void loop()
-{  
+{
   // wait for serial input
   if (Serial.available() > 0)
   {

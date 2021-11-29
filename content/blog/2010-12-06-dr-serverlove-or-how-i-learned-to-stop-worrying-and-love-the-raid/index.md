@@ -9,7 +9,6 @@ tags:
 
 I recently completed some much needed upgrades to the servers (hardware and software) that run Stonelinks. This has me very excited and has been a long time in the works! Warning: long and somewhat pointless story of blood, sweat, nerdrage and glorious payoff ahead.
 
-
 ![](/posts/dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid/downsize-300x225.jpg)
 
 These two suckers now live on my desk and throw off a ton of heat.

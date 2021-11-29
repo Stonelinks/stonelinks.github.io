@@ -2,10 +2,9 @@
 title: SSH Periodic Screenshot
 date: 2014-10-08
 path: /posts/ssh-periodic-screenshot/
-tags: 
+tags:
   - hacks
 ---
-
 
 I came up with this fairly scary bash one liner that will periodically ssh into a machine that you have access to, take a screenshot and copy it back to your machine. Just fill in the USER and HOST variables.
 
