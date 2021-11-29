@@ -1,14 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Stonelinks`,
     author: {
-      name: `Kyle Mathews`,
+      name: `Lucas Doyle`,
       summary: `who lives and works in San Francisco building useful things.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `http://stonelinks.org/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `Stonelinks`,
+      github: `Stonelinks`,
+      linkedin: `lucas-doyle/25/550/169`,
+      youtube: `LukeDoyle1`,
     },
   },
   plugins: [
@@ -19,15 +22,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Stonelinks`,
+        short_name: `Stonelinks`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
     {
