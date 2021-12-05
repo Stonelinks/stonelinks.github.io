@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-blog-post-tsx",
+    "path": "/2012-01-01-sudoku-solver/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Stonelinks"}},"markdownRemark":{"id":"b9db2ff6-7477-5794-9313-9e3f47a0f41f","excerpt":"I got really bored over the holidays and wrote a very naive sudoku solver in C++. Check out this gist to see it!","html":"<p>I got really bored over the holidays and wrote a very naive sudoku solver in C++. Check out <a href=\"https://gist.github.com/Stonelinks/1522578\">this gist</a> to see it!</p>","frontmatter":{"title":"Sudoku Solver","date":"January 01, 2012","description":null}},"previous":{"fields":{"slug":"/2011-03-13-binocular-face-tracking-sneak-peek/"},"frontmatter":{"title":"Binocular Face Tracking"}},"next":{"fields":{"slug":"/2012-03-26-first-contribution-to-opensource/"},"frontmatter":{"title":"First Contribution to Open Source Software"}}},"pageContext":{"id":"b9db2ff6-7477-5794-9313-9e3f47a0f41f","previousPostId":"e7ffe67a-1e43-5659-bdff-91cbc12df5ed","nextPostId":"3de5f2f6-539d-542b-9fb8-e8fb82b553ea"}},
+    "staticQueryHashes": ["1632011873","2841359383"]}
