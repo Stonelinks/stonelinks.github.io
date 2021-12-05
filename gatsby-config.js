@@ -3,9 +3,9 @@ module.exports = {
     title: `Stonelinks`,
     author: {
       name: `Lucas Doyle`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      description: `an engineer living in San Francisco`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `The home page of Lucas Doyle`,
     siteUrl: `http://stonelinks.org/`,
     social: {
       twitter: `Stonelinks`,

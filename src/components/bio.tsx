@@ -6,7 +6,7 @@
  */
 
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 const Bio = () => {
@@ -16,7 +16,7 @@ const Bio = () => {
         siteMetadata {
           author {
             name
-            summary
+            description
           }
           social {
             twitter
@@ -39,28 +39,37 @@ const Bio = () => {
         className="bio-avatar"
         layout="fixed"
         formats={["auto", "webp", "avif"]}
-        src="../images/profile-pic.png"
+        src="../images/author.png"
         width={50}
         height={50}
         quality={95}
         alt="Profile picture"
       />
       {author?.name && (
-        <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>Twitter</a>
-          {` `}
-          <a href={`https://github.com/${social?.github || ``}`}>Github</a>
-          {` `}
-          <a href={`http://www.linkedin.com/pub/${social?.linkedin || ``}`}>
-            Linkedin
-          </a>
-          {` `}
-          <a href={`https://www.youtube.com/c/${social?.youtube || ``}`}>
-            Youtube
-          </a>
-        </p>
+        <React.Fragment>
+          <div>
+            Written by <strong>{author.name}</strong>, {author.description}
+          </div>
+          <div>
+            <Link to="/todo">About</Link>
+            {` | `}
+            <Link to={`https://twitter.com/${social?.twitter || ``}`}>
+              Twitter
+            </Link>
+            {` | `}
+            <Link to={`https://github.com/${social?.github || ``}`}>
+              Github
+            </Link>
+            {` | `}
+            <Link to={`http://www.linkedin.com/pub/${social?.linkedin || ``}`}>
+              Linkedin
+            </Link>
+            {` | `}
+            <Link to={`https://www.youtube.com/c/${social?.youtube || ``}`}>
+              Youtube
+            </Link>
+          </div>
+        </React.Fragment>
       )}
     </div>
   )

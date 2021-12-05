@@ -246,10 +246,6 @@ a:focus {
   padding: var(--spacing-10) var(--spacing-5);
 }
 
-.global-wrapper[data-is-root-path="true"] .bio {
-  margin-bottom: var(--spacing-20);
-}
-
 .global-header {
   margin-bottom: var(--spacing-12);
 }
@@ -286,20 +282,29 @@ a:focus {
   font-size: var(--fontSize-2);
 }
 
-.bio {
-  display: flex;
-  margin-bottom: var(--spacing-16);
+.header-img {
+  min-width: 80px;
+  float: left;
+  margin-right: var(--spacing-4);
 }
 
-.bio p {
-  margin-bottom: var(--spacing-0);
+.header-link-nav {
+  font-weight: var(--fontWeight-bold);
+  font-family: var(--font-heading);
+  font-size: var(--fontSize-1);
+}
+
+.bio {
+  margin-bottom: var(--spacing-4);
+  padding-bottom: var(--spacing-8);
+  border-bottom: 1px solid var(--color-heading);
 }
 
 .bio-avatar {
   margin-right: var(--spacing-4);
-  margin-bottom: var(--spacing-0);
   min-width: 50px;
   border-radius: 100%;
+  float: left;
 }
 
 .blog-post header h1 {
