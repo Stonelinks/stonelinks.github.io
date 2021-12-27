@@ -6,17 +6,17 @@ tags:
   - computer vision
   - telemetry
   - python
-image: /posts/2010-11-11-door-mounted-roboschwarzenegger/personal-robot-gallery/downsize_4.jpg
+image: ./downsize_4.jpg
 gallery:
   [
-    /posts/2010-11-11-door-mounted-roboschwarzenegger/personal-robot-gallery/downsize_4.jpg,
-    /posts/2010-11-11-door-mounted-roboschwarzenegger/personal-robot-gallery/2010-02-08-193124.jpg,
-    /posts/2010-11-11-door-mounted-roboschwarzenegger/personal-robot-gallery/2010-02-08-193147.jpg,
-    /posts/2010-11-11-door-mounted-roboschwarzenegger/personal-robot-gallery/2010-02-08-193241.jpg,
-    /posts/2010-11-11-door-mounted-roboschwarzenegger/personal-robot-gallery/2010-02-08-193359.jpg,
-    /posts/2010-11-11-door-mounted-roboschwarzenegger/personal-robot-gallery/downsize_2.jpg,
-    /posts/2010-11-11-door-mounted-roboschwarzenegger/personal-robot-gallery/downsize_3.jpg,
-    /posts/2010-11-11-door-mounted-roboschwarzenegger/personal-robot-gallery/downsize.jpg,
+    ./downsize_4.jpg,
+    ./2010-02-08-193124.jpg,
+    ./2010-02-08-193147.jpg,
+    ./2010-02-08-193241.jpg,
+    ./2010-02-08-193359.jpg,
+    ./downsize_2.jpg,
+    ./downsize_3.jpg,
+    ./downsize.jpg,
   ]
 ---
 

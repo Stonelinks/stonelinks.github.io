@@ -1,13 +1,13 @@
 ---
 title: Execute, Time and Plot C++ Programs with Python
 date: 2011-02-02
-image: /posts/execute-time-and-plot-c-programs-with-python/Fig.png
+image: ./Fig.png
 tags:
   - algorithms
   - python
 ---
 
-![](/posts/execute-time-and-plot-c-programs-with-python/Fig.png)
+![](./Fig.png)
 
 Hate excel? Why not have python take all the pain away! This should appeal to everyone out there who needs a quick way to analyze the runtime time of a bunch of commands to a program given an arbitrary list of arguments. Hating excel/openoffice/spreadsheets in general is optional.
 

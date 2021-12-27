@@ -1,12 +1,12 @@
 ---
 title: Electromagnets, How do They Work?
 date: 2010-12-21
-image: /posts/electromagnets-how-do-they-work/downsize1-225x300.jpg
+image: ./downsize1-225x300.jpg
 tags:
   - science
 ---
 
-![](/posts/electromagnets-how-do-they-work/downsize1-225x300.jpg)
+![](./downsize1-225x300.jpg)
 
 Home for the break! My brother asked me for help making a small electromagnet to bring into Boy Scouts for electricity merit badge. I of course jumped at the opportunity, and asked what kind of power source they are going to be using to drive said magnet. He tells me they will be using a single D battery. Thinking this is kind of small, I spent a few hours making the biggest electromagnet I could from a few things around the house I could find.
 

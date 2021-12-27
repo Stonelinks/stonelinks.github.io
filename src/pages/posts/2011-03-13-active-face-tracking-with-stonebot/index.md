@@ -11,7 +11,7 @@ I finally have it working! Very excited as I write this. So glad spring break ex
 
 <iframe src="http://www.youtube.com/embed/RRwMJ8GYT7Y" frameborder="0" allowfullscreen></iframe>
 
-This has been a goal of mine ever since I started building my personal robot (which, in keeping with the Stonelinks legacy, shall henceforth be known as "Stonebot"). This face tracking makes use of my [new method for positioning the camera](/posts/a-more-accurate-coordinate-system/) that I worked on a little over winter break, and is probably the most complicated piece of python I have written to date. Here are some highlights of the project:
+This has been a goal of mine ever since I started building my personal robot (which, in keeping with the Stonelinks legacy, shall henceforth be known as "Stonebot"). This face tracking makes use of my [new method for positioning the camera](/posts/2011-01-06-a-more-accurate-coordinate-system/) that I worked on a little over winter break, and is probably the most complicated piece of python I have written to date. Here are some highlights of the project:
 
 ### OpenCV
 

@@ -10,7 +10,7 @@ tags:
 
 <iframe src="http://www.youtube.com/embed/c72tK4KTTj0" frameborder="0" allowfullscreen></iframe>
 
-RPI health and safety inspections did not take kindly to my [door mounted Robo-Schwarzenegger](/posts/door-mounted-roboschwarzenegger/). Apparently I'm not breaking any rules with an internet controlled webcam hanging from my door, but the power cord across the doorway is a tripping hazard. I took Arnold down and brought him home with me over the break with the goal of teaching myself some python and jumping into OpenCV.
+RPI health and safety inspections did not take kindly to my [door mounted Robo-Schwarzenegger](/posts/2010-11-11-door-mounted-roboschwarzenegger/). Apparently I'm not breaking any rules with an internet controlled webcam hanging from my door, but the power cord across the doorway is a tripping hazard. I took Arnold down and brought him home with me over the break with the goal of teaching myself some python and jumping into OpenCV.
 
 I played with both OpenCV and Python a few years ago when I more or less [followed this tutorial](http://blog.jozilla.net/2008/06/27/fun-with-python-opencv-and-face-detection/), but ultimately could not get decent control of the camera. I figured the first step in doing this the right way was to get better control over the camera. Below I'll describe how I accomplished this.
 
