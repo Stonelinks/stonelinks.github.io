@@ -1,7 +1,6 @@
 ---
 title: Stonelinks Refresh
 date: 2014-06-02
-path: /posts/stonelinks-refresh/
 tags:
   - web development
 ---

@@ -1,7 +1,6 @@
 ---
 title: First Contribution to Open Source Software
 date: 2012-03-26
-path: /posts/first-contribution-to-opensource/
 tags:
   - computer vision
   - C++

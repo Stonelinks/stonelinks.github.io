@@ -1,7 +1,6 @@
 ---
 title: Latex is Fun
 date: 2010-11-21
-path: /posts/latex-is-fun/
 tags:
   - harvard
   - astrophysics

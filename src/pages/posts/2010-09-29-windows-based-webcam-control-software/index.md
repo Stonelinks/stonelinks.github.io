@@ -1,7 +1,6 @@
 ---
 title: Windows Based Webcam Control Software
 date: 2010-09-29
-path: /posts/windows-based-webcam-control-software/
 image: /posts/windows-based-webcam-control-software/2010-02-08-193359-150x150.jpg
 tags:
   - systems

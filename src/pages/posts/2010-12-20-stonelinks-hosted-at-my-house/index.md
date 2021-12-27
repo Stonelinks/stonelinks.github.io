@@ -1,7 +1,6 @@
 ---
 title: Stonelinks Hosted at my House
 date: 2010-12-20
-path: /posts/stonelinks-hosted-at-my-house/
 tags:
   - web development
 ---

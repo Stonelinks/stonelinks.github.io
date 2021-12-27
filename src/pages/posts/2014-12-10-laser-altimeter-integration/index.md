@@ -1,7 +1,6 @@
 ---
 title: Laser Altimeter Integration on Pixhawk
 date: 2014-12-10
-path: /posts/laser-altimeter-integration/
 image: https://pixhawk.org/_media/peripherals/sf02_f_laser_rangefinder_pixhawk_wiring.jpg?w=600&tok=605f64
 tags:
   - airplane

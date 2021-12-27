@@ -1,7 +1,6 @@
 ---
 title: Execute, Time and Plot C++ Programs with Python
 date: 2011-02-02
-path: /posts/execute-time-and-plot-c-programs-with-python/
 image: /posts/execute-time-and-plot-c-programs-with-python/Fig.png
 tags:
   - algorithms

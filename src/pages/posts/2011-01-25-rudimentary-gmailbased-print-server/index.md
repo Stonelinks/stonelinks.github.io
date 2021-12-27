@@ -1,7 +1,6 @@
 ---
 title: Rudimentary Gmail-based Print Server
 date: 2011-01-25
-path: /posts/rudimentary-gmailbased-print-server/
 tags:
   - python
 ---

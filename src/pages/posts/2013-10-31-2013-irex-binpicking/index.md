@@ -1,7 +1,6 @@
 ---
 title: 2013 IREX Binpicking Survey
 date: 2013-10-31
-path: /posts/2013-irex-binpicking/
 image: /posts/2013-irex-binpicking/IMG_20131107_102636.jpg
 tags:
   - robots

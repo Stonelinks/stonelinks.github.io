@@ -1,7 +1,6 @@
 ---
 title: LabVIEW Custom Documentation Formats
 date: 2010-11-21
-path: /posts/labview-custom-documentation-formats/
 tags:
   - harvard
   - astrophysics

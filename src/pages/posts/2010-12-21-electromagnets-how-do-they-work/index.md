@@ -1,7 +1,6 @@
 ---
 title: Electromagnets, How do They Work?
 date: 2010-12-21
-path: /posts/electromagnets-how-do-they-work/
 image: /posts/electromagnets-how-do-they-work/downsize1-225x300.jpg
 tags:
   - science

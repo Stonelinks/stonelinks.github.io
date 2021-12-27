@@ -1,7 +1,6 @@
 ---
 title: Dr. Serverlove, or How I Learned to Stop Worrying and Love the RAID
 date: 2010-12-06
-path: /posts/dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid/
 image: /posts/dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid/downsize-300x225.jpg
 tags:
   - web development

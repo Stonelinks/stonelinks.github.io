@@ -1,7 +1,6 @@
 ---
 title: Leaflet Google Maps
 date: 2016-10-27
-path: /posts/leaflet-google-maps-experiment/
 tags:
   - leaflet
   - geospatial
