@@ -1,0 +1,7 @@
+#!/bin/bash
+set -ex
+
+yarn fix
+yarn type-check
+
+link-check
