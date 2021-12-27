@@ -7,7 +7,7 @@ tags:
   - datasets
 ---
 
-**Update (9-18-2014)**: Turns out the FCC just ended up releasing all the data in bluk and [other people have already cleaned it up and are doing cool things with it](http://sunlightfoundation.com/blog/2014/09/02/what-can-we-learn-from-800000-public-comments-on-the-fccs-net-neutrality-plan/).
+**Update (9-18-2014)**: Turns out the FCC just ended up releasing all the data in bulk and [other people have already cleaned it up and are doing cool things with it](http://sunlightfoundation.com/blog/2014/09/02/what-can-we-learn-from-800000-public-comments-on-the-fccs-net-neutrality-plan/).
 
 <div class="summary-end"></div>
 
