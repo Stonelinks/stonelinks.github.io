@@ -1,7 +1,7 @@
 ---
 title: Windows Based Webcam Control Software
 date: 2010-09-29
-image: ./2010-02-08-193359-150x150.jpg
+featuredImage: 2010-02-08-193359-150x150.jpg
 tags:
   - systems
   - arduino
@@ -16,7 +16,7 @@ Projects such as this are just the kind of thing that I love taking time to do. 
 
 ### Hardware
 
-![](./2010-02-08-193359-150x150.jpg)
+![](2010-02-08-193359-150x150.jpg)
 
 This summer I came into possession of an [Arduino](http://www.arduino.cc/) micro controller and [some servos](http://www.rcuniverse.com/product_guide/servoprofile.cfm?servo_id=67). As you can see from the pictures, I connected the servos up to the micro controller, making Y-cables for the power, ground, and signal pins of the servos. I also added a laser diode for good measure.
 
@@ -228,7 +228,7 @@ This was not good enough for me though, as I wanted to control this through a we
 
 ### The Web Server
 
-![](./2010-02-08-193241-150x150.jpg)
+![](2010-02-08-193241-150x150.jpg)
 
 The Arduino is cool and all, but since the ultimate goal of this project is to control it over the internet, having a web server is an obvious requirement. Unfortunately for me, my web server also happens to be my self-built desktop that I use for almost all my other engineering work and day to day activities. Because of this, I need access to few windows only applications (Solidworks, LabVIEW, Photoshop, Steam, etc..) which rules out any linux server platforms if I want 100% uptime. This is an unfortunate constraint that caused me quite a lot of headaches down the line. In the future when I have another computer to spare and improve on this project, I will use the [right tool](http://blog.taragana.com/wp-content/uploads/2008/03/linux-logo.jpg) for the job.
 

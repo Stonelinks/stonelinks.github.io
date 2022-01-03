@@ -1,12 +1,10 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import { Link } from "gatsby"
+import Img from "gatsby-image"
 
 const PostPreview = ({ post }) => {
   const title = post.frontmatter.title || post.fields.slug
+  let featuredImgFluid = post.frontmatter.featuredImage?.childImageSharp?.fluid
   return (
     <li key={post.fields.slug}>
       <article
@@ -15,6 +13,7 @@ const PostPreview = ({ post }) => {
         itemType="http://schema.org/Article"
       >
         <header>
+          <Img className="blog-post-img" fluid={featuredImgFluid} />
           <h2>
             <Link to={post.fields.slug} itemProp="url">
               <span itemProp="headline">{title}</span>

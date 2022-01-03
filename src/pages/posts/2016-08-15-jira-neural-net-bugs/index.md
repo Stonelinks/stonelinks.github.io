@@ -1,7 +1,7 @@
 ---
 title: Neural Network Bug Generator
 date: 2016-08-15
-image: /posts/jira-neural-net-bugs/Pasted image at 2016_08_14 10_06 PM (1).png
+featuredImage: Pasted image at 2016_08_14 10_06 PM (1).png
 gallery: [/posts/jira-neural-net-bugs/Pasted image at 2016_08_14 08_48 PM.png,
 /posts/jira-neural-net-bugs/Pasted image at 2016_08_14 08_50 PM (1).png,
 /posts/jira-neural-net-bugs/Pasted image at 2016_08_14 08_52 PM.png,

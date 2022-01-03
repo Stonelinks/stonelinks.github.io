@@ -6,7 +6,7 @@ tags:
   - computer vision
   - telemetry
   - python
-image: ./downsize_4.jpg
+featuredImage: downsize_4.jpg
 gallery:
   [
     ./downsize_4.jpg,

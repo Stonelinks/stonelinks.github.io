@@ -296,19 +296,26 @@ a:focus {
 
 .bio {
   margin-bottom: var(--spacing-4);
-  padding-bottom: var(--spacing-8);
-  border-bottom: 1px solid var(--color-heading);
 }
 
 .bio-avatar {
   margin-right: var(--spacing-4);
-  min-width: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 100%;
   float: left;
 }
 
 .blog-post header h1 {
   margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
+}
+
+.blog-post-img {
+  margin-right: var(--spacing-4);
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  float: left;
 }
 
 .blog-post header p {

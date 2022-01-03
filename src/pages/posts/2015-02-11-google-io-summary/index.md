@@ -1,7 +1,7 @@
 ---
 title: Google I/O 2015 Summary
 date: 2015-02-11
-image: /posts/google-io-summary/io15-color.png
+featuredImage: io15-color.png
 tags:
   - javascript
   - web development
