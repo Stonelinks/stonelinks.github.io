@@ -24,6 +24,15 @@ const BlogPostTemplate = ({ data, location }) => {
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
         </header>
+        {post.frontmatter.iframeFeature ? (
+          <iframe
+            style={{
+              width: "100%",
+              height: post.frontmatter.iframeFeature.height,
+            }}
+            src={post.frontmatter.iframeFeature.src}
+          />
+        ) : null}
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
@@ -92,10 +101,14 @@ export const pageQuery = graphql`
     }
     markdownRemark(id: { eq: $id }) {
       id
-      excerpt(pruneLength: 160)
+      excerpt(pruneLength: 200)
       html
       frontmatter {
         title
+        iframeFeature {
+          src
+          height
+        }
         date(formatString: "MMMM DD, YYYY")
         tags
         gallery

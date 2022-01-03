@@ -38,13 +38,17 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
-        excerpt
+        excerpt(pruneLength: 200)
         fields {
           slug
         }
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title
+          iframeFeature {
+            src
+            height
+          }
           featuredImage {
             childImageSharp {
               fluid(maxWidth: 800) {

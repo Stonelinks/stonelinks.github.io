@@ -21,6 +21,15 @@ const PostPreview = ({ post }) => {
           </h2>
           <small>{post.frontmatter.date}</small>
         </header>
+        {post.frontmatter.iframeFeature ? (
+          <iframe
+            style={{
+              width: "100%",
+              height: post.frontmatter.iframeFeature.height,
+            }}
+            src={post.frontmatter.iframeFeature.src}
+          />
+        ) : null}
         <section>
           <p
             dangerouslySetInnerHTML={{

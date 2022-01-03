@@ -105,9 +105,15 @@ exports.createSchemaCustomization = ({ actions }) => {
       fields: Fields
     }
 
+    type IframeFeature {
+      src: String
+      height: String
+    }
+
     type Frontmatter {
       title: String
       description: String
+      iframeFeature: IframeFeature
       date: Date @dateformat
       tags: [String]
       gallery: [String]

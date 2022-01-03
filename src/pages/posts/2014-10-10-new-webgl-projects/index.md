@@ -1,13 +1,14 @@
 ---
 title: New WebGL Projects
 date: 2014-10-10
+iframeFeature:
+  src: http://stonelinks.github.io/three.js/examples/webgl_loader_collada_kinematics.html
+  height: 500px
 tags:
   - webgl
   - javascript
   - web development
 ---
-
-<iframe style="height: 500px; width: 100%;" src="http://stonelinks.github.io/three.js/examples/webgl_loader_collada_kinematics.html"></iframe>
 
 I've been working on some new WebGL related projects for a 3d viewer and editor that targets robotics applications.
 
