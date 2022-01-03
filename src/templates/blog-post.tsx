@@ -12,10 +12,9 @@ const BlogPostTemplate = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-      />
+      <Seo title={post.frontmatter.title} description={post.excerpt} />
+      <hr />
+      <br />
       <article
         className="blog-post"
         itemScope
@@ -29,6 +28,20 @@ const BlogPostTemplate = ({ data, location }) => {
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
+        <hr />
+        <span>
+          Tags:{" "}
+          {post.frontmatter.tags
+            .map((tag, i) => (
+              <Link key={i} to={`/tags#${tag}`}>
+                {tag}
+              </Link>
+            ))
+            .reduce(
+              (accu, elem) => (accu === null ? [elem] : [...accu, " | ", elem]),
+              null
+            )}
+        </span>
         <hr />
         <footer>
           <Bio />
@@ -84,7 +97,9 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        description
+        tags
+        image
+        gallery
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
