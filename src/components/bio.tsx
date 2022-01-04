@@ -29,7 +29,6 @@ const Bio = () => {
     }
   `)
 
-  // Set these values by editing "siteMetadata" in gatsby-config.js
   const author = data.site.siteMetadata?.author
   const social = data.site.siteMetadata?.social
 
@@ -46,7 +45,7 @@ const Bio = () => {
         alt="Profile picture"
       />
       {author?.name && (
-        <React.Fragment>
+        <>
           <div>
             Written by <strong>{author.name}</strong>, {author.description}
           </div>
@@ -69,7 +68,7 @@ const Bio = () => {
               Youtube
             </Link>
           </div>
-        </React.Fragment>
+        </>
       )}
     </div>
   )

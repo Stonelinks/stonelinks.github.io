@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
+import Gallery from "@browniebroke/gatsby-image-gallery"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -9,6 +10,8 @@ const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
+
+  const images = data.allFile.edges.map(({ node }) => node.childImageSharp)
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -33,13 +36,19 @@ const BlogPostTemplate = ({ data, location }) => {
             src={post.frontmatter.iframeFeature.src}
           />
         ) : null}
+        {images.length ? (
+          <>
+            <Gallery images={images} />
+            <br />
+          </>
+        ) : null}
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
         <hr />
         <span>
-          Tags:{" "}
+          {"Tags: "}
           {post.frontmatter.tags
             .map((tag, i) => (
               <Link key={i} to={`/tags#${tag}`}>
@@ -91,9 +100,30 @@ export default BlogPostTemplate
 export const pageQuery = graphql`
   query BlogPostBySlug(
     $id: String!
+    $galleryDirectory: String!
     $previousPostId: String
     $nextPostId: String
   ) {
+    allFile(
+      filter: {
+        extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+        relativeDirectory: { eq: $galleryDirectory }
+      }
+    ) {
+      edges {
+        node {
+          base
+          childImageSharp {
+            thumb: gatsbyImageData(
+              width: 270
+              height: 270
+              placeholder: BLURRED
+            )
+            full: gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
+      }
+    }
     site {
       siteMetadata {
         title

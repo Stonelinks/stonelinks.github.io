@@ -6,18 +6,7 @@ tags:
   - computer vision
   - telemetry
   - python
-featuredImage: downsize_4.jpg
-gallery:
-  [
-    ./downsize_4.jpg,
-    ./2010-02-08-193124.jpg,
-    ./2010-02-08-193147.jpg,
-    ./2010-02-08-193241.jpg,
-    ./2010-02-08-193359.jpg,
-    ./downsize_2.jpg,
-    ./downsize_3.jpg,
-    ./downsize.jpg,
-  ]
+featuredImage: gallery/downsize_4.jpg
 ---
 
 I don't get to fool around with my own projects nearly as much as I would like, but this weekend I did devote a few hours to finishing up a robotic internet controlled camera on our apartment door, and I made it look like Arnold Schwarzenegger.

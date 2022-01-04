@@ -12,7 +12,6 @@ const TagsIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
   const tag = windowGlobal()?.decodeURIComponent(location.hash.slice(1))
-  let body: React.ReactElement
 
   if (tag) {
     const p = posts
