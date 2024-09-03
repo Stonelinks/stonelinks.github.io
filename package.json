@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "next export",
     "typecheck": "tsc --noEmit",
     "next-lint-fix": "next lint --fix",
     "prettier-fix": "prettier --write .",
@@ -24,11 +25,12 @@
     "remark-html": "^16.0.1"
   },
   "devDependencies": {
-    "typescript": "<5.5.0",
+    "@types/bun": "^1.1.8",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.2.7"
+    "eslint-config-next": "14.2.7",
+    "typescript": "<5.5.0"
   }
 }

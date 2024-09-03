@@ -5,4 +5,4 @@ cd $PROJECT_ROOT
 
 source env.sh
 
-bun --bun run dev
+bun run dev

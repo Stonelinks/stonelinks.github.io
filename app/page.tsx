@@ -1,17 +1,33 @@
 import Image from 'next/image';
 import styles from './page.module.css';
 import { getAllPostSlugs, getPostBySlug } from '../lib/posts';
-import { PostMetadata } from '../types';
-import { GetStaticProps } from 'next';
 
-interface HomeProps {
-  posts: {
-    slug: string;
-    metadata: PostMetadata;
-  }[];
-}
+const AllPostsList = async () => {
+  const slugs = getAllPostSlugs();
+  const posts = await Promise.all(
+    slugs.map(async (slug) => {
+      const post = await getPostBySlug(slug);
+      return {
+        slug: slug,
+        metadata: post.metadata,
+      };
+    }),
+  );
 
-const Home: React.FC<HomeProps> = ({ posts }) => {
+  return (
+    <div>
+      {posts.map((post) => (
+        <div key={post.slug}>
+          <h2>
+            <a href={`/posts/${post.slug}`}>{post.metadata.title}</a>
+          </h2>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const Home = () => {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -51,11 +67,7 @@ const Home: React.FC<HomeProps> = ({ posts }) => {
 
       <div>
         <h1>All posts</h1>
-        {posts.map(({ slug }) => (
-          <a key={slug} href={`/posts/${slug}`}>
-            {slug}
-          </a>
-        ))}
+        <AllPostsList />
       </div>
 
       <div className={styles.grid}>
@@ -114,22 +126,3 @@ const Home: React.FC<HomeProps> = ({ posts }) => {
 };
 
 export default Home;
-
-export const getStaticProps: GetStaticProps = async () => {
-  const slugs = getAllPostSlugs();
-  const posts = await Promise.all(
-    slugs.map(async (slug) => {
-      const post = await getPostBySlug(slug);
-      return {
-        slug,
-        metadata: post.metadata,
-      };
-    }),
-  );
-
-  return {
-    props: {
-      posts,
-    },
-  };
-};
