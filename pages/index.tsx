@@ -1,9 +1,8 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import { getAllPostSlugs, getPostBySlug } from "../lib/posts";
-import Link from "next/link";
-import { PostMetadata } from "../types";
-import { GetStaticProps } from "next";
+import Image from 'next/image';
+import styles from './page.module.css';
+import { getAllPostSlugs, getPostBySlug } from '../lib/posts';
+import { PostMetadata } from '../types';
+import { GetStaticProps } from 'next';
 
 interface HomeProps {
   posts: {
@@ -26,7 +25,7 @@ const Home: React.FC<HomeProps> = ({ posts }) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{" "}
+            By{' '}
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
@@ -52,13 +51,11 @@ const Home: React.FC<HomeProps> = ({ posts }) => {
 
       <div>
         <h1>All posts</h1>
-        {
-          posts.map(({slug}) => (
-            <a key={slug} href={`/posts/${slug}`}>
-              {slug}
-            </a>
-          ))
-        }
+        {posts.map(({ slug }) => (
+          <a key={slug} href={`/posts/${slug}`}>
+            {slug}
+          </a>
+        ))}
       </div>
 
       <div className={styles.grid}>
@@ -114,10 +111,9 @@ const Home: React.FC<HomeProps> = ({ posts }) => {
       </div>
     </main>
   );
-}
+};
 
-export default Home
-
+export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
   const slugs = getAllPostSlugs();
@@ -128,7 +124,7 @@ export const getStaticProps: GetStaticProps = async () => {
         slug,
         metadata: post.metadata,
       };
-    })
+    }),
   );
 
   return {

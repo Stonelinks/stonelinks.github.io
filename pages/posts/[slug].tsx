@@ -13,7 +13,10 @@ const Post: React.FC<PostProps> = ({ metadata, content }) => {
     <article className={styles.post}>
       <h1 className={styles.title}>{metadata.title}</h1>
       <p className={styles.date}>{metadata.date}</p>
-      <div className={styles.content} dangerouslySetInnerHTML={{ __html: content }} />
+      <div
+        className={styles.content}
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
     </article>
   );
 };

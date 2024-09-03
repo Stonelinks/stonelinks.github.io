@@ -7,7 +7,9 @@ import { PostMetadata } from '../types';
 
 const getPostsDirectory = () => path.join(process.cwd(), 'posts');
 
-export async function getPostBySlug(slug: string): Promise<{ metadata: PostMetadata; content: string }> {
+export async function getPostBySlug(
+  slug: string,
+): Promise<{ metadata: PostMetadata; content: string }> {
   const postDirectory = path.join(getPostsDirectory(), slug);
   const fullPath = path.join(postDirectory, 'index.md');
   const fileContents = fs.readFileSync(fullPath, 'utf8');
