@@ -30,10 +30,10 @@ const AllPostsList = async () => {
 const Home = () => {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
+      <div>
         <p>
           Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
+          <code>src/app/page.tsx</code>
         </p>
         <div>
           <a
@@ -45,7 +45,6 @@ const Home = () => {
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
-              className={styles.vercelLogo}
               width={100}
               height={24}
               priority
@@ -54,9 +53,8 @@ const Home = () => {
         </div>
       </div>
 
-      <div className={styles.center}>
+      <div>
         <Image
-          className={styles.logo}
           src="/next.svg"
           alt="Next.js Logo"
           width={180}
@@ -70,10 +68,9 @@ const Home = () => {
         <AllPostsList />
       </div>
 
-      <div className={styles.grid}>
+      <div>
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -85,7 +82,6 @@ const Home = () => {
 
         <a
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -97,7 +93,6 @@ const Home = () => {
 
         <a
           href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -109,7 +104,6 @@ const Home = () => {
 
         <a
           href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
           target="_blank"
           rel="noopener noreferrer"
         >
