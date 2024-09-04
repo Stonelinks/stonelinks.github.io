@@ -11,4 +11,4 @@ source env.sh
 format
 bun run build
 
-bun run ./bin/serve.ts
+bun run --bun http-server -p 3000 out

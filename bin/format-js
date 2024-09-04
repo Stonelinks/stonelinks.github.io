@@ -5,5 +5,5 @@ cd $PROJECT_ROOT
 
 source env.sh
 
-bun run typecheck
 bun run format
+bun run typecheck
