@@ -6,34 +6,30 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export",
     "typecheck": "tsc --noEmit",
     "next-lint-fix": "next lint --fix",
     "prettier-fix": "prettier --write .",
     "format": "bun run next-lint-fix && bun run prettier-fix"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^8.4.0",
+    "@typescript-eslint/eslint-plugin": "^8.34.1",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-prettier": "^5.5.0",
     "gray-matter": "^4.0.3",
     "next": "14.2.7",
-    "prettier": "^3.3.3",
-    "react": "^18",
-    "react-dom": "^18",
+    "prettier": "^3.5.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "remark": "^15.0.1",
-    "remark-html": "^16.0.1"
-  },
-  "devDependencies": {
-    "@types/bun": "^1.1.8",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
+    "remark-html": "^16.0.1",
+    "@types/bun": "^1.2.16",
+    "@types/node": "^20.19.1",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "eslint": "^8.57.1",
     "eslint-config-next": "14.2.7",
     "eslint-plugin-css": "^0.11.0",
     "eslint-plugin-css-modules": "^2.12.0",
-    "http-server": "^14.1.1",
-    "typescript": "<5.5.0"
+    "typescript": "^5.4.5"
   }
 }

@@ -7,8 +7,13 @@ source env.sh
 
 echo "Checking if we have go $GO_VERSION."
 if [ ! -f $OPT_DIR/go$GO_VERSION/bin/go ]; then
-	echo Downloading go.
-	GO_DOWNLOAD_URL=https://golang.org/dl/go$GO_VERSION.$OS-$ARCH.tar.gz
+	ARCH=$(uname -m)
+	case $ARCH in
+	x86_64) ARCH=amd64 ;;
+	aarch64) ARCH=arm64 ;;
+	esac
+	GO_DOWNLOAD_URL=https://go.dev/dl/go$GO_VERSION.$OS-$ARCH.tar.gz
+	echo Downloading go from $GO_DOWNLOAD_URL
 	GO_TMP_PATH=/tmp/go$GO_VERSION.tar.gz
 	curl -# -fsSL "$GO_DOWNLOAD_URL" -o $GO_TMP_PATH
 	mkdir -p $OPT_DIR/go$GO_VERSION
@@ -24,3 +29,5 @@ if [ ! -L "$OPT_DIR/goroot" ] || [ "$(readlink -- $OPT_DIR/goroot)" != "go$GO_VE
 	echo "Updating $OPT_DIR/goroot -> go$GO_VERSION"
 	ln -sfn "go$GO_VERSION" $OPT_DIR/goroot
 fi
+
+go install mvdan.cc/sh/v3/cmd/shfmt@latest

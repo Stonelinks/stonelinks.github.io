@@ -11,4 +11,4 @@ source env.sh
 format
 bun run build
 
-bun run --bun http-server -p 3000 out
+python3 -m http.server -d out/
