@@ -9,6 +9,10 @@ cd $PROJECT_ROOT
 source env.sh
 
 format
+
+rm -fr out
+mkdir -p out
 bun run build
 
-python3 -m http.server -d out/
+# python3 -m http.server -d out/
+gh-pages -d out -b master --nojekyll --cname stonelinks.org
