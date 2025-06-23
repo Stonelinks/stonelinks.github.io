@@ -34,3 +34,21 @@ export function getAllPostSlugs(): string[] {
 
   return directories;
 }
+
+/**
+ * Safely truncates HTML content to a specified length without breaking tags
+ * @param {string} htmlString - The HTML content to truncate
+ * @param {number} length - The maximum length of the truncated content
+ * @returns {string} - The truncated HTML content with all tags stripped
+ */
+export function truncateHtml(htmlString: string, length: number): string {
+  // Extract text content from HTML, ignoring all tags
+  const textContent = htmlString.replace(/<\/?[^>]+(>|$)/g, '');
+
+  // Truncate the text content to the specified length
+  if (textContent.length > length) {
+    return textContent.slice(0, length);
+  }
+
+  return textContent;
+}
