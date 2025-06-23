@@ -12,7 +12,10 @@ const Post = async ({ params }: { params: { slug: string } }) => {
     <PageWrapper>
       <article className={styles.post}>
         <h1 className={styles.title}>{post.metadata.title}</h1>
-        <DateDisplay  date={post.metadata.date} />
+        <DateDisplay date={post.metadata.date} />
+        <div className={styles.featuredImage}>
+          <img src={post.metadata.featuredImage} alt={post.metadata.title} />
+        </div>
         {post.metadata.tags && <TagList tags={post.metadata.tags} />}
         <div
           className={styles.content}

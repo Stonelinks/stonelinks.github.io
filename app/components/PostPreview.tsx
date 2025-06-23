@@ -6,6 +6,7 @@ export interface PostPreviewProps {
   slug: string;
   title: string;
   date: string;
+  featuredImage?: string;
   tags?: string[];
   excerpt?: string;
 }
