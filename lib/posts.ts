@@ -3,13 +3,13 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
-import { PostMetadata } from '../types';
+import { PostPreviewProps } from '@/components/PostPreview';
 
 const getPostsDirectory = () => path.join(process.cwd(), 'posts');
 
 export async function getPostBySlug(
   slug: string,
-): Promise<{ metadata: PostMetadata; content: string }> {
+): Promise<{ metadata: PostPreviewProps; content: string }> {
   const postDirectory = path.join(getPostsDirectory(), slug);
   const fullPath = path.join(postDirectory, 'index.md');
   const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -23,7 +23,7 @@ export async function getPostBySlug(
   const contentHtml = processedContent.toString();
 
   return {
-    metadata: data as PostMetadata,
+    metadata: data as PostPreviewProps,
     content: contentHtml,
   };
 }
