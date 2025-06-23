@@ -1,0 +1,26 @@
+.tagTitle {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.postPreview {
+  margin-bottom: 20px;
+}
+
+.postPreview h3 {
+  margin: 0 0 10px;
+}
+
+.postPreview a {
+  text-decoration: none;
+  color: #0070f3;
+}
+
+.postPreview a:hover {
+  text-decoration: underline;
+}
+
+.date {
+  color: gray;
+  margin-bottom: 10px;
+}

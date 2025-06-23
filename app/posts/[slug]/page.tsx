@@ -1,7 +1,8 @@
 import { PageWrapper } from '@/components/PageWrapper';
 import { getAllPostSlugs, getPostBySlug } from '../../../lib/posts';
-import { format } from 'date-fns';
+import TagList from '@/components/TagList';
 import styles from './post.module.css';
+import { DateDisplay } from '@/components/Date';
 
 const Post = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
@@ -11,11 +12,8 @@ const Post = async ({ params }: { params: { slug: string } }) => {
     <PageWrapper>
       <article className={styles.post}>
         <h1 className={styles.title}>{post.metadata.title}</h1>
-        <p className={styles.date}>
-          {post.metadata.date
-            ? format(new Date(post.metadata.date), 'MMMM d, yyyy')
-            : 'Date unknown'}
-        </p>
+        <DateDisplay  date={post.metadata.date} />
+        {post.metadata.tags && <TagList tags={post.metadata.tags} />}
         <div
           className={styles.content}
           dangerouslySetInnerHTML={{ __html: post.content }}
@@ -28,6 +26,8 @@ const Post = async ({ params }: { params: { slug: string } }) => {
 export default Post;
 
 export async function generateStaticParams() {
-  const slugs = getAllPostSlugs();
-  return slugs.map((slug) => ({ slug }));
+  const slugs = getAllPostSlugs()
+    // For some reason we need to keep both encoded and unencoded versions of the slug, otherwise we break either the local dev experience or the static site generator when we publish.
+    .flatMap((slug) => [encodeURIComponent(slug), slug]);
+  return Array.from(new Set(slugs)).map((slug) => ({ slug }));
 }
