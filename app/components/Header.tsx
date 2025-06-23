@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from '../page.module.css';
+import Link from 'next/link';
 
 export const Header = () => {
   return (
@@ -9,16 +10,16 @@ export const Header = () => {
         <h1 className={styles['hero-title']}>Stonelinks</h1>
         <ul className={styles['nav-list']}>
           <li>
-            <a href="/">Home</a>
+            <Link href="/">Home</Link>
           </li>
           <li>
-            <a href="/posts">Posts</a>
+            <Link href="/posts">Posts</Link>
           </li>
           <li>
-            <a href="/todo">Projects</a>
+            <Link href="/todo">Projects</Link>
           </li>
           <li>
-            <a href="/todo">About</a>
+            <Link href="/todo">About</Link>
           </li>
         </ul>
       </div>
