@@ -1,4 +1,5 @@
-import { getAllPostSlugs, getPostBySlug } from '../../lib/posts';
+import { getAllPostSlugs, getPostBySlug, truncateHtml } from '../../lib/posts';
+import PostPreview from './PostPreview';
 
 export const AllPostsList = async () => {
   const slugs = getAllPostSlugs();
@@ -8,6 +9,7 @@ export const AllPostsList = async () => {
       return {
         slug: slug,
         metadata: post.metadata,
+        content: post.content,
       };
     }),
   );
@@ -15,11 +17,13 @@ export const AllPostsList = async () => {
   return (
     <div>
       {posts.map((post) => (
-        <div key={post.slug}>
-          <h2>
-            <a href={`/posts/${post.slug}`}>{post.metadata.title}</a>
-          </h2>
-        </div>
+        <PostPreview
+          key={post.slug}
+          slug={post.slug}
+          title={post.metadata.title}
+          date={post.metadata.date}
+          excerpt={truncateHtml(post.content, 150) + '...'}
+        />
       ))}
     </div>
   );
