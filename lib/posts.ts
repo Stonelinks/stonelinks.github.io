@@ -5,13 +5,11 @@ import { remark } from 'remark';
 import remarkRehype from 'remark-rehype';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeStringify from 'rehype-stringify';
-import { PostPreviewProps } from '@/components/PostPreview';
+import Post, { PostMetadata } from '@/posts/[slug]/page';
 
 const getPostsDirectory = () => path.join(process.cwd(), 'posts');
 
-export async function getPostBySlug(
-  slug: string,
-): Promise<{ metadata: PostPreviewProps; content: string }> {
+export async function getPostBySlug(slug: string): Promise<Post> {
   const postDirectory = path.join(getPostsDirectory(), slug);
   const fullPath = path.join(postDirectory, 'index.md');
   const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -30,7 +28,7 @@ export async function getPostBySlug(
   const contentHtml = processedContent.toString();
 
   return {
-    metadata: data as PostPreviewProps,
+    metadata: data as PostMetadata,
     content: contentHtml,
   };
 }

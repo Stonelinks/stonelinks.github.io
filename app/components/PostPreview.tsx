@@ -1,17 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import { DateDisplay } from './Date';
+import { PostMetadata } from '@/posts/[slug]/page';
 
-export interface PostPreviewProps {
-  slug: string;
-  title: string;
-  date: string;
-  featuredImage?: string;
-  tags?: string[];
-  excerpt?: string;
-}
-
-const PostPreview: React.FC<PostPreviewProps> = ({
+const PostPreview: React.FC<PostMetadata> = ({
   slug,
   title,
   date,

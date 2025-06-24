@@ -4,15 +4,46 @@ import TagList from '@/components/TagList';
 import styles from './post.module.css';
 import { DateDisplay } from '@/components/Date';
 
-const Post = async ({ params }: { params: { slug: string } }) => {
+interface PostProps {
+  params: { slug: string };
+}
+
+export interface PostMetadata {
+  slug: string;
+  title: string;
+  date: string;
+  featuredImage?: string;
+  tags?: string[];
+  gallery?: string[];
+  excerpt?: string;
+}
+
+interface Post {
+  metadata: PostMetadata;
+  content: string;
+}
+
+interface PostContentProps {
+  post: Post;
+}
+
+const Post = async ({ params }: PostProps) => {
   const { slug } = params;
   const post = await getPostBySlug(slug);
 
   return (
     <PageWrapper>
-      <article className={styles.post}>
-        <h1 className={styles.title}>{post.metadata.title}</h1>
-        <DateDisplay date={post.metadata.date} />
+      <PostContent post={post} />
+    </PageWrapper>
+  );
+};
+
+const PostContent = ({ post }: PostContentProps) => {
+  return (
+    <article className={styles.post}>
+      <h1 className={styles.title}>{post.metadata.title}</h1>
+      <DateDisplay date={post.metadata.date} />
+      {post.metadata.featuredImage && (
         <div className={styles.featuredImage}>
           <img src={post.metadata.featuredImage} alt={post.metadata.title} />
         </div>
