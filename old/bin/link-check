@@ -1,6 +1,0 @@
-#!/bin/bash
-set -ex
-
-yarn build
-
-linkinator ./public/ -r --format json | jq -r '[.links[] | select(.state=="BROKEN") | select(.url | startswith("public"))]' | ts-node ./bin/link-check.ts
