@@ -1,11 +1,10 @@
 import { describe, it, expect, beforeAll, afterAll } from 'bun:test';
 import * as postsLib from './posts';
 import { getAllPostSlugs } from './__mocks__/posts';
-import Post, { PostMetadata } from '@/posts/[slug]/page';
+import Post from '@/posts/[slug]/page';
 
 describe('posts.ts', () => {
   const originalCwd = process.cwd;
-  const testPostsDir = 'test-posts-dir';
 
   beforeAll(() => {
     // Mock process.cwd() to return a test directory
@@ -33,7 +32,8 @@ describe('posts.ts', () => {
 
   describe('truncateHtml', () => {
     it('should truncate HTML content to the specified length', () => {
-      const htmlString = '<p>This is a test paragraph with some HTML content.</p>';
+      const htmlString =
+        '<p>This is a test paragraph with some HTML content.</p>';
       const length = 20;
       const result = postsLib.truncateHtml(htmlString, length);
       expect(result).toBe('This is a test parag');

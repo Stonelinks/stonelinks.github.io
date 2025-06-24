@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeAll, afterAll } from 'bun:test';
 import * as projectsLib from './projects';
 import { getAllProjectSlugs } from './__mocks__/projects';
-import Project, { ProjectMetadata } from '@/projects/[slug]/page';
+import Project from '@/projects/[slug]/page';
 
 describe('projects.ts', () => {
   const originalCwd = process.cwd;
@@ -32,7 +32,8 @@ describe('projects.ts', () => {
 
   describe('truncateHtml', () => {
     it('should truncate HTML content to the specified length', () => {
-      const htmlString = '<p>This is a test paragraph with some HTML content.</p>';
+      const htmlString =
+        '<p>This is a test paragraph with some HTML content.</p>';
       const length = 20;
       const result = projectsLib.truncateHtml(htmlString, length);
       expect(result).toBe('This is a test parag');
