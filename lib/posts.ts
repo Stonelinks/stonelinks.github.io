@@ -18,7 +18,9 @@ export async function getPostBySlug(slug: string): Promise<Post> {
 
   // convert date to something JSON serializable
   // Add one day to the date
-  data.date.setDate(data.date.getDate() + 1);
+  if (data.date instanceof Date) {
+    data.date.setDate(data.date.getDate() + 1);
+  }
   data.date = data.date.toString();
 
   const processedContent = await remark()
@@ -31,6 +33,7 @@ export async function getPostBySlug(slug: string): Promise<Post> {
 
   return {
     metadata: data as PostMetadata,
+    slug,
     content: contentHtml,
   };
 }
@@ -59,3 +62,11 @@ export function truncateHtml(htmlString: string, length: number): string {
 
   return textContent;
 }
+
+export const sortPosts = (posts: Post[]): Post[] => {
+  posts.sort(
+    (a, b) =>
+      new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime(),
+  );
+  return posts;
+};

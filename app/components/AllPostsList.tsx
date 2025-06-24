@@ -1,4 +1,9 @@
-import { getAllPostSlugs, getPostBySlug, truncateHtml } from '../../lib/posts';
+import {
+  getAllPostSlugs,
+  getPostBySlug,
+  sortPosts,
+  truncateHtml,
+} from '../../lib/posts';
 import PostPreview from './PostPreview';
 
 export const AllPostsList = async () => {
@@ -16,7 +21,7 @@ export const AllPostsList = async () => {
 
   return (
     <div>
-      {posts.map((post) => (
+      {sortPosts(posts).map((post) => (
         <PostPreview
           key={post.slug}
           slug={post.slug}

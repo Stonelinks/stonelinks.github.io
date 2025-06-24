@@ -22,6 +22,7 @@ export interface PostMetadata {
 interface Post {
   metadata: PostMetadata;
   content: string;
+  slug: string;
 }
 
 interface PostContentProps {

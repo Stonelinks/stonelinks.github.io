@@ -18,8 +18,7 @@ const TagPage: React.FC<TagPageProps> = async ({ params }) => {
   const slugs = getAllPostSlugs();
   const posts = await Promise.all(
     slugs.map(async (slug) => {
-      const post = await getPostBySlug(slug);
-      return { slug, ...post };
+      return await getPostBySlug(slug);
     }),
   );
 
