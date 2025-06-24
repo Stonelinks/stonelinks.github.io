@@ -3,6 +3,7 @@ import { getAllPostSlugs, getPostBySlug } from '../../../lib/posts';
 import TagList from '@/components/TagList';
 import styles from './post.module.css';
 import { DateDisplay } from '@/components/Date';
+import Lightbox from '@/components/Lightbox';
 
 interface PostProps {
   params: { slug: string };
@@ -47,13 +48,14 @@ const PostContent = ({ post }: PostContentProps) => {
         <div className={styles.featuredImage}>
           <img src={post.metadata.featuredImage} alt={post.metadata.title} />
         </div>
-        {post.metadata.tags && <TagList tags={post.metadata.tags} />}
-        <div
-          className={styles.content}
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
-      </article>
-    </PageWrapper>
+      )}
+      {post.metadata.tags && <TagList tags={post.metadata.tags} />}
+      <Lightbox images={post.metadata.gallery!} />
+      <div
+        className={styles.content}
+        dangerouslySetInnerHTML={{ __html: post.content }}
+      />
+    </article>
   );
 };
 
