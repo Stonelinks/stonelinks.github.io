@@ -6,7 +6,17 @@ tags:
   - computer vision
   - telemetry
   - python
-featuredImage: gallery/downsize_4.jpg
+gallery:
+  - /2010-11-11-door-mounted-roboschwarzenegger/gallery/2010-02-08-193124.jpg
+  - /2010-11-11-door-mounted-roboschwarzenegger/gallery/2010-02-08-193147.jpg
+  - /2010-11-11-door-mounted-roboschwarzenegger/gallery/2010-02-08-193241.jpg
+  - /2010-11-11-door-mounted-roboschwarzenegger/gallery/2010-02-08-193359.jpg
+  - /2010-11-11-door-mounted-roboschwarzenegger/gallery/downsize.jpg
+  - /2010-11-11-door-mounted-roboschwarzenegger/gallery/downsize_2.jpg
+  - /2010-11-11-door-mounted-roboschwarzenegger/gallery/downsize_3.jpg
+  - /2010-11-11-door-mounted-roboschwarzenegger/gallery/downsize_4.jpg
+
+featuredImage: /2010-11-11-door-mounted-roboschwarzenegger/gallery/downsize_4.jpg
 ---
 
 I don't get to fool around with my own projects nearly as much as I would like, but this weekend I did devote a few hours to finishing up a robotic internet controlled camera on our apartment door, and I made it look like Arnold Schwarzenegger.
@@ -18,5 +28,7 @@ One day in August I had this idea of creating a Generic Web Enabled Robotic Oper
 Basically I thought it could be like a less hardcore version of [ROS](http://www.ros.org/wiki/) (which is totally badass) for use exclusively in the browser. I even think if done properly and given enough time to gather community support, people much smarter than myself could write plugins that would allow GWEROS users to do powerful things with their robots [right from their web browser](http://mjpg-streamer.svn.sourceforge.net/viewvc/mjpg-streamer/mjpg-streamer/www/javascript_motiondetection.html?revision=83&view=markup&pathrev=83) typically reserved high end or high priced robots.
 
 Needless to say it was an extremely ambitious for a project for the middle of a busy summer internship. While I wish I had the time to pour into making it a reality, I had more than enough on my plate at the Harvard-Smithsonain Center for Astrophysics. Therefore I only started writing the interface and just finished writing some basic camera / telemetry code this weekend. The end result is what you see here:
+
+![](/2010-11-11-door-mounted-roboschwarzenegger/gallery/downsize_4.jpg)
 
 The best part about it? Nobody even knows it's there because it is disguised as Arnold Schwarzenegger.
