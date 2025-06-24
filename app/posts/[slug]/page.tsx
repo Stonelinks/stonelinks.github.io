@@ -50,7 +50,7 @@ const PostContent = ({ post }: PostContentProps) => {
         </div>
       )}
       {post.metadata.tags && <TagList tags={post.metadata.tags} />}
-      <Lightbox images={post.metadata.gallery!} />
+      {post.metadata.gallery && <Lightbox images={post.metadata.gallery!} />}
       <div
         className={styles.content}
         dangerouslySetInnerHTML={{ __html: post.content }}

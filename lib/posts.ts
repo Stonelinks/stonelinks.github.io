@@ -17,6 +17,8 @@ export async function getPostBySlug(slug: string): Promise<Post> {
   const { data, content } = matter(fileContents);
 
   // convert date to something JSON serializable
+  // Add one day to the date
+  data.date.setDate(data.date.getDate() + 1);
   data.date = data.date.toString();
 
   const processedContent = await remark()
