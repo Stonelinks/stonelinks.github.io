@@ -9,7 +9,8 @@
     "typecheck": "tsc --noEmit",
     "next-lint-fix": "next lint --fix",
     "prettier-fix": "prettier --write .",
-    "format": "bun run next-lint-fix && bun run prettier-fix"
+    "format": "bun run next-lint-fix && bun run prettier-fix",
+    "test": "bun test lib"
   },
   "dependencies": {
     "@types/bun": "^1.2.16",
