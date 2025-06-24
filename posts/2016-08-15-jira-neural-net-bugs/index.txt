@@ -1,0 +1,126 @@
+3:I[9275,[],""]
+5:I[1343,[],""]
+6:I[8173,["30","static/chunks/30-05a526192e143cc7.js","333","static/chunks/app/posts/%5Bslug%5D/page-ec7b6e3c69ebdd52.js"],"Image"]
+7:I[231,["30","static/chunks/30-05a526192e143cc7.js","333","static/chunks/app/posts/%5Bslug%5D/page-ec7b6e3c69ebdd52.js"],""]
+4:["slug","2016-08-15-jira-neural-net-bugs","d"]
+0:["o_NpWiwkf0eVZo-xacprK",[[["",{"children":["posts",{"children":[["slug","2016-08-15-jira-neural-net-bugs","d"],{"children":["__PAGE__?{\"slug\":\"2016-08-15-jira-neural-net-bugs\"}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["posts",{"children":[["slug","2016-08-15-jira-neural-net-bugs","d"],{"children":["__PAGE__",{},[["$L1","$L2"],null],null]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","posts","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/c857412b86ee8a27.css","precedence":"next","crossOrigin":"$undefined"}]]}],null]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","posts","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}],null]},[["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__className_c99d77","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"page_main__nw1Wk","children":[["$","div",null,{"className":"page_header__oRW75","children":[["$","$L6",null,{"src":"/icon.png","alt":"Logo","width":100,"height":100,"priority":true}],["$","div",null,{"className":"page_title-nav-container__yDV6g","children":[["$","h1",null,{"className":"page_hero-title__ISM_Q","children":"Stonelinks"}],["$","ul",null,{"className":"page_nav-list__BIYWj","children":[["$","li",null,{"children":["$","$L7",null,{"href":"/","children":"Home"}]}],["$","li",null,{"children":["$","$L7",null,{"href":"/posts","children":"Posts"}]}],["$","li",null,{"children":["$","$L7",null,{"href":"/projects","children":"Projects"}]}],["$","li",null,{"children":["$","$L7",null,{"href":"/luke","children":"About"}]}]]}]]}]]}],[["$","h1",null,{"children":"404 - Page Not Found"}],["$","p",null,{"children":"Sorry, that page does not exist."}]],["$","footer",null,{"children":["© Lucas Doyle ",2025]}]]}],"notFoundStyles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/c857412b86ee8a27.css","precedence":"next","crossOrigin":"$undefined"}]],"styles":null}]}]}],null],null],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/4561a6c03121424a.css","precedence":"next","crossOrigin":"$undefined"}]],[null,"$L8"]]]]]
+9:I[2193,["30","static/chunks/30-05a526192e143cc7.js","333","static/chunks/app/posts/%5Bslug%5D/page-ec7b6e3c69ebdd52.js"],"default"]
+a:T2630,<p>Ever wanted to piss off your team by generating plausible (but fake) sounding bug reports? Then look no further! This guide will walk you through exporting all your bugs from JIRA and using <a href="https://github.com/jcjohnson/torch-rnn">torch-rnn</a> to generate nonsense like this:</p>
+<p>You may need to swap URLs / field names as needed depending on your exact JIRA setup.</p>
+<h2>Step 1: Download all your bugs to your hard drive</h2>
+<p>JIRA isn't too keen on exporting every single bug in one go, so we need to batch download them. Go to the JIRA issues search and search for <code>type = bug</code> to get on all your bugs. Make sure to show the "Description" field (the "Columns" dropdown on the right).</p>
+<p>Open up the javascript console for your browser (CTRL + Shift + J in chrome) and paste the blow in to batch download your bugs as excel spreadsheets. You may have to adjust some variables at the top as needed.</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">var</span> numberOfPages = <span class="hljs-number">6</span>;
+<span class="hljs-keyword">var</span> baseUrl =
+  <span class="hljs-string">'http://jira/sr/jira.issueviews:searchrequest-excel-current-fields/temp/SearchRequest.xls?jqlQuery=type+%3D+bug&#x26;tempMax=1000'</span>;
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">downloadURI</span>(<span class="hljs-params">uri</span>) {
+  <span class="hljs-keyword">var</span> link = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">'a'</span>);
+  link.<span class="hljs-property">href</span> = uri;
+  link.<span class="hljs-title function_">click</span>();
+}
+
+<span class="hljs-title function_">downloadURI</span>(baseUrl);
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">1</span>; i &#x3C; numberOfPages; i++) {
+  (<span class="hljs-keyword">function</span> (<span class="hljs-params">i</span>) {
+    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+      <span class="hljs-keyword">var</span> url = baseUrl + <span class="hljs-string">'&#x26;pager/start='</span> + (i + <span class="hljs-number">1</span>) + <span class="hljs-string">'001'</span>;
+      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'download'</span>, url);
+      <span class="hljs-title function_">downloadURI</span>(url);
+    }, i * <span class="hljs-number">5000</span>);
+  })(i);
+}
+</code></pre>
+<p>This should download a bunch of spreadsheets named <code>JIRA.xls</code>, <code>JIRA (1).xls</code>, ...<code>JIRA (n).xls</code> to your Downloads folder.</p>
+<h2>Step 2: Merge all bugs into a single CSV file</h2>
+<p>We need a giant CSV of all these bugs. There is probably a better way to do this, but I merged them all manually in google docs:</p>
+<ul>
+<li>Create a google docs spreadsheet, I called mine "JIRA Bug Dump"</li>
+<li>Open up as many tabs as you have spreadsheets that got downloaded in Step 1 (trust me on this)</li>
+<li>For each tab, go to File -> Import -> Upload and upload <code>JIRA (i).xls</code> (where <code>i</code> is the index of the sheet)</li>
+<li>Insert the upload as a new sheet in the document</li>
+<li>Once all sheets are inserted, create a new blank sheet (this is your "master" sheet)</li>
+<li>Copy in the column headings from one of the sheets</li>
+<li>Copy in the bugs from all the other sheets into this blank sheet (watch out for the extra cell JIRA creates at the end of each sheet)</li>
+<li>Export this "master" sheet as a CSV, I named mine <code>dump.csv</code></li>
+</ul>
+<p>If anyone knows a more efficient way to do this, by all means go ahead!</p>
+<h2>Step 3: Generate markdown corpus</h2>
+<p>I used <code>node</code> to generate a large markdown document from <code>dump.csv</code>. For below to work, make sure to <code>npm i jira2md csvtojson</code>.</p>
+<pre><code class="hljs language-js"><span class="hljs-comment">// for markdown generation:</span>
+<span class="hljs-keyword">var</span> j2m = <span class="hljs-built_in">require</span>(<span class="hljs-string">'jira2md'</span>);
+<span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+<span class="hljs-keyword">var</span> <span class="hljs-title class_">Converter</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">'csvtojson'</span>).<span class="hljs-property">Converter</span>;
+<span class="hljs-keyword">var</span> csvConverter = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Converter</span>({
+  <span class="hljs-attr">workerNum</span>: <span class="hljs-number">4</span>,
+});
+
+<span class="hljs-comment">// record_parsed will be emitted each csv row being processed</span>
+csvConverter.<span class="hljs-title function_">on</span>(<span class="hljs-string">'record_parsed'</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params">jsonObj</span>) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(jsonObj[<span class="hljs-string">'Key'</span>], <span class="hljs-string">'parsed'</span>);
+});
+
+<span class="hljs-comment">// end_parsed will be emitted once parsing finished</span>
+csvConverter.<span class="hljs-title function_">on</span>(<span class="hljs-string">'end_parsed'</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params">jsonArray</span>) {
+  <span class="hljs-comment">// uncomment below to to test on first 10 items</span>
+  <span class="hljs-comment">// var outputMarkdown = jsonArray.slice(0, 10).map(function (row) {</span>
+  <span class="hljs-keyword">var</span> outputMarkdown = jsonArray
+    .<span class="hljs-title function_">map</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">row</span>) {
+      <span class="hljs-keyword">var</span> r = <span class="hljs-string">''</span>;
+      r += <span class="hljs-string">'## '</span> + row[<span class="hljs-string">'Key'</span>] + <span class="hljs-string">': '</span> + row[<span class="hljs-string">'Summary'</span>];
+      r += <span class="hljs-string">'\n\n'</span>;
+      <span class="hljs-keyword">var</span> headerKeys = [
+        <span class="hljs-string">'Priority'</span>,
+        <span class="hljs-string">'Component'</span>,
+        <span class="hljs-string">'FixVersion'</span>,
+        <span class="hljs-string">'Reporter'</span>,
+        <span class="hljs-string">'Assignee'</span>,
+      ];
+      headerKeys.<span class="hljs-title function_">forEach</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">k</span>) {
+        r += <span class="hljs-string">'- **'</span> + k + <span class="hljs-string">':** '</span> + (row[k] ? row[k] : <span class="hljs-string">'*None*'</span>) + <span class="hljs-string">'\n'</span>;
+      });
+
+      <span class="hljs-keyword">if</span> (row[<span class="hljs-string">'Description'</span>]) {
+        r += <span class="hljs-string">'\n'</span> + j2m.<span class="hljs-title function_">to_markdown</span>(row[<span class="hljs-string">'Description'</span>]) + <span class="hljs-string">'\n'</span>;
+      }
+
+      <span class="hljs-keyword">return</span> r;
+    })
+    .<span class="hljs-title function_">join</span>(<span class="hljs-string">'\n-------\n\n'</span>);
+  fs.<span class="hljs-title function_">writeFile</span>(<span class="hljs-string">'./bugs.md'</span>, outputMarkdown, <span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) {
+    <span class="hljs-keyword">if</span> (err) {
+      <span class="hljs-keyword">return</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(err);
+    }
+
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'done'</span>);
+  });
+});
+
+<span class="hljs-comment">// read from file</span>
+fs.<span class="hljs-title function_">createReadStream</span>(<span class="hljs-string">'./dump.csv'</span>).<span class="hljs-title function_">pipe</span>(csvConverter);
+</code></pre>
+<p>Running this should generate <code>bugs.md</code>, which should be a monster concatenation of every bug ever filed (mine was 4.4MB).</p>
+<h2>Step 4: Preprocess, train and sample your RNN</h2>
+<p>You need to install <a href="https://github.com/jcjohnson/torch-rnn">torch-rnn</a> for this. You can install straight from that repo, but since I'm on linux I opted for the docker version: <a href="https://github.com/crisbal/docker-torch-rnn">docker-torch-rnn</a>. These instructions assume the docker version of <code>torch-rnn</code>.</p>
+<p>Spin up and get a console in the container</p>
+<pre><code>docker run --rm -ti -v `pwd`:/data crisbal/torch-rnn:base bash
+</code></pre>
+<p>Preprocess data. This is a one-time thing.</p>
+<pre><code>python scripts/preprocess.py \
+--input_txt /data/bugs.md \
+--output_h5 /data/bugs.h5 \
+--output_json /data/bugs.json
+</code></pre>
+<p>Train the network. This part took me two days, but the checkpoints saved periodically can still be sampled.</p>
+<pre><code>time th train.lua \
+-input_h5 /data/bugs.h5 \
+-input_json /data/bugs.json \
+-gpu -1 \
+-checkpoint_every 1000
+</code></pre>
+<p>Sample the network. Change length and checkpoint around to sample from different checkpoints / character lengths. Access the markdown output on your host machine in whatever path the container was started.</p>
+<pre><code>th sample.lua -gpu -1 -length 18000 -checkpoint cv/checkpoint_67900.t7 > /data/rnn_out.md
+</code></pre>2:["$","div",null,{"className":"page_main__nw1Wk","children":[["$","div",null,{"className":"page_header__oRW75","children":[["$","$L6",null,{"src":"/icon.png","alt":"Logo","width":100,"height":100,"priority":true}],["$","div",null,{"className":"page_title-nav-container__yDV6g","children":[["$","h1",null,{"className":"page_hero-title__ISM_Q","children":"Stonelinks"}],["$","ul",null,{"className":"page_nav-list__BIYWj","children":[["$","li",null,{"children":["$","$L7",null,{"href":"/","children":"Home"}]}],["$","li",null,{"children":["$","$L7",null,{"href":"/posts","children":"Posts"}]}],["$","li",null,{"children":["$","$L7",null,{"href":"/projects","children":"Projects"}]}],["$","li",null,{"children":["$","$L7",null,{"href":"/luke","children":"About"}]}]]}]]}]]}],["$","article",null,{"className":"post_post__6EpyE","children":[["$","h1",null,{"className":"post_title__Rgtqi","children":"Neural Network Bug Generator"}],["$","p",null,{"className":"common_date__JU5vN","children":"August 15, 2016"}],"$undefined",["$","div",null,{"className":"TagList_tagList__ukBDA","children":[["$","$L7","0",{"className":"TagList_tag__225v4","href":"/tags/generators","children":"generators"}],["$","$L7","1",{"className":"TagList_tag__225v4","href":"/tags/neural%20networks","children":"neural networks"}]]}],["$","$L9",null,{"images":["/2016-08-15-jira-neural-net-bugs/gallery/Pasted image at 2016_08_14 08_48 PM.png","/2016-08-15-jira-neural-net-bugs/gallery/Pasted image at 2016_08_14 08_50 PM (1).png","/2016-08-15-jira-neural-net-bugs/gallery/Pasted image at 2016_08_14 08_52 PM.png","/2016-08-15-jira-neural-net-bugs/gallery/Pasted image at 2016_08_14 10_06 PM (1).png","/2016-08-15-jira-neural-net-bugs/gallery/Pasted image at 2016_08_14 10_09 PM (1).png","/2016-08-15-jira-neural-net-bugs/gallery/Pasted image at 2016_08_15 07_45 AM (1).png","/2016-08-15-jira-neural-net-bugs/gallery/Pasted image at 2016_08_15 07_46 AM.png","/2016-08-15-jira-neural-net-bugs/gallery/Pasted image at 2016_08_15 07_47 AM.png","/2016-08-15-jira-neural-net-bugs/gallery/Pasted image at 2016_08_15 07_49 AM.png"]}],["$","div",null,{"className":"post_content__KF6Q6","dangerouslySetInnerHTML":{"__html":"$a"}}]]}],["$","footer",null,{"children":["© Lucas Doyle ",2025]}]]}]
+8:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Stonelinks"}],["$","meta","3",{"name":"description","content":"Personal website of Lucas Doyle"}],["$","link","4",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"16x16"}],["$","meta","5",{"name":"next-size-adjust"}]]
+1:null

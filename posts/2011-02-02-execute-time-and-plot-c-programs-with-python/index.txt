@@ -1,0 +1,80 @@
+3:I[9275,[],""]
+5:I[1343,[],""]
+6:I[8173,["30","static/chunks/30-05a526192e143cc7.js","333","static/chunks/app/posts/%5Bslug%5D/page-ec7b6e3c69ebdd52.js"],"Image"]
+7:I[231,["30","static/chunks/30-05a526192e143cc7.js","333","static/chunks/app/posts/%5Bslug%5D/page-ec7b6e3c69ebdd52.js"],""]
+4:["slug","2011-02-02-execute-time-and-plot-c-programs-with-python","d"]
+0:["o_NpWiwkf0eVZo-xacprK",[[["",{"children":["posts",{"children":[["slug","2011-02-02-execute-time-and-plot-c-programs-with-python","d"],{"children":["__PAGE__?{\"slug\":\"2011-02-02-execute-time-and-plot-c-programs-with-python\"}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["posts",{"children":[["slug","2011-02-02-execute-time-and-plot-c-programs-with-python","d"],{"children":["__PAGE__",{},[["$L1","$L2"],null],null]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","posts","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/c857412b86ee8a27.css","precedence":"next","crossOrigin":"$undefined"}]]}],null]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","posts","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}],null]},[["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__className_c99d77","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"page_main__nw1Wk","children":[["$","div",null,{"className":"page_header__oRW75","children":[["$","$L6",null,{"src":"/icon.png","alt":"Logo","width":100,"height":100,"priority":true}],["$","div",null,{"className":"page_title-nav-container__yDV6g","children":[["$","h1",null,{"className":"page_hero-title__ISM_Q","children":"Stonelinks"}],["$","ul",null,{"className":"page_nav-list__BIYWj","children":[["$","li",null,{"children":["$","$L7",null,{"href":"/","children":"Home"}]}],["$","li",null,{"children":["$","$L7",null,{"href":"/posts","children":"Posts"}]}],["$","li",null,{"children":["$","$L7",null,{"href":"/projects","children":"Projects"}]}],["$","li",null,{"children":["$","$L7",null,{"href":"/luke","children":"About"}]}]]}]]}]]}],[["$","h1",null,{"children":"404 - Page Not Found"}],["$","p",null,{"children":"Sorry, that page does not exist."}]],["$","footer",null,{"children":["© Lucas Doyle ",2025]}]]}],"notFoundStyles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/c857412b86ee8a27.css","precedence":"next","crossOrigin":"$undefined"}]],"styles":null}]}]}],null],null],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/4561a6c03121424a.css","precedence":"next","crossOrigin":"$undefined"}]],[null,"$L8"]]]]]
+9:T1916,<p>Hate excel? Why not have python take all the pain away! This should appeal to everyone out there who needs a quick way to analyze the runtime time of a bunch of commands to a program given an arbitrary list of arguments. Hating excel/openoffice/spreadsheets in general is optional.</p>
+<p>Just like every programmer, I am always trying to find new and interesting ways of automating routine tasks. To that end, I wrote a pretty cool program last night to help automate my first algorithms lab which consisted of many repeated calls to the same program on the command line.</p>
+<p>Consistent with the recent trend of mine, I wrote this in python and makes use of the <a href="http://docs.python.org/library/subprocess.html">subprocess</a> module to spawn and time instances of my C++ program and <a href="http://matplotlib.sourceforge.net/">pylab</a> to make plotting the times super easy. The comments in my code explain things in more detail, but here is the summary: Python is being used to execute two programs written in C++ with the same set of arguments and spits out a plot of their times. In this case the two C++ programs are recursive (rfib) and iterative (ifib) implementations of the Fibonacci algorithm. The fun stuff is in the python:</p>
+<pre><code class="hljs language-python"><span class="hljs-comment">#!/usr/bin/env python</span>
+
+<span class="hljs-keyword">import</span> subprocess
+<span class="hljs-keyword">import</span> string
+<span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">import</span> pylab  <span class="hljs-comment"># matplotlib</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">timerun</span>(<span class="hljs-params">program, args</span>) :
+    <span class="hljs-built_in">print</span> <span class="hljs-string">'Starting timed execution of '</span> + program + <span class="hljs-string">' with '</span> + <span class="hljs-built_in">str</span>(<span class="hljs-built_in">len</span>(args)) + <span class="hljs-string">' arguments.'</span>
+    i = <span class="hljs-number">1</span>
+
+    <span class="hljs-comment"># Execute program, once for each n argument</span>
+    <span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> args :
+
+        <span class="hljs-comment"># This was really annoying. Build the arguments to the time system call to the time command.</span>
+        <span class="hljs-comment"># First of all, for whatever reason 'time' didn't work correctly with any arguments other than -p,</span>
+        <span class="hljs-comment"># so I used /usr/bin/time instead. Since I could not figure out why the output of 'time' was not</span>
+        <span class="hljs-comment"># coming back to stdin, I use the -o (output file) and -a (append) option to just output the real</span>
+        <span class="hljs-comment"># execution time ( thats where '-f' and '%e' comes from ) to the file.</span>
+        p = subprocess.Popen([<span class="hljs-string">'/usr/bin/time'</span>, <span class="hljs-string">'-o'</span>, <span class="hljs-string">'runtimes.txt'</span>, <span class="hljs-string">'-a'</span>, <span class="hljs-string">'-f'</span>, <span class="hljs-string">'%e'</span>, <span class="hljs-string">'./'</span> + program, <span class="hljs-built_in">str</span>(n)], stdout=subprocess.PIPE)
+
+        <span class="hljs-comment"># Read back from stdin, print where we are (not required, but its nice)</span>
+        output = p.communicate()[<span class="hljs-number">0</span>]
+        sys.stdout.write( <span class="hljs-built_in">str</span>(i) + <span class="hljs-string">':\tfib('</span>+ <span class="hljs-built_in">str</span>(n) + <span class="hljs-string">') = '</span> + output)
+        i += <span class="hljs-number">1</span>
+    <span class="hljs-built_in">print</span> <span class="hljs-string">'done'</span>
+
+    <span class="hljs-comment"># Open up, read and return the times in the output file</span>
+    f = <span class="hljs-built_in">open</span>(<span class="hljs-string">'runtimes.txt'</span>, <span class="hljs-string">'r'</span>)
+    times = f.read().splitlines()
+
+    <span class="hljs-comment"># Clean up old runtimes</span>
+    subprocess.Popen([<span class="hljs-string">'rm'</span>, <span class="hljs-string">'runtimes.txt'</span>],stdout=subprocess.PIPE)
+
+    <span class="hljs-keyword">return</span> times
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():
+
+    <span class="hljs-comment"># Arguments we are interested in testing runtimes for</span>
+    <span class="hljs-comment"># args = 1, 5, 10, 15, 20, 25, 30, 35, 40, 41, 42, 43, 44, 45, 46, 47, 48</span>
+    args = <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, <span class="hljs-number">56</span>)
+
+    <span class="hljs-comment"># Compute the runtimes of the recursive algorithm, then the iterative one</span>
+    rtimes = timerun(<span class="hljs-string">'rfib'</span>, args)
+    itimes = timerun(<span class="hljs-string">'ifib'</span>, args)
+
+    <span class="hljs-comment"># Plot it with pylab</span>
+    pylab.xlabel(<span class="hljs-string">'N'</span>)
+    pylab.ylabel(<span class="hljs-string">'Time to compute fib(N) (seconds)'</span>)
+    pylab.title(<span class="hljs-string">'Recursive vs. Iterative Execution Time for Fibionacci Sequence'</span>)
+    pylab.plot(args, rtimes, <span class="hljs-string">'ro-'</span>, label=<span class="hljs-string">'Recursive'</span>)
+    pylab.plot(args, itimes, <span class="hljs-string">'bo-'</span>, label=<span class="hljs-string">'Iterative'</span>)
+    pylab.legend()
+
+    <span class="hljs-comment"># other drawing styles for plots in pylab:</span>
+    <span class="hljs-comment"># 'r' red line, 'g' green line, 'y' yellow line</span>
+    <span class="hljs-comment"># 'ro' red dots as markers, 'r.' smaller red dots, 'r+' red pluses</span>
+    <span class="hljs-comment"># 'r--' red dashed line, 'g^' green triangles, 'bs' blue squares</span>
+    <span class="hljs-comment"># 'rp' red pentagons, 'r1', 'r2', 'r3', 'r4' well, check out the markers</span>
+
+    <span class="hljs-comment"># save the plot as a PNG image</span>
+    pylab.savefig(<span class="hljs-string">'Fig.png'</span>)
+
+    <span class="hljs-comment"># show the pylab plot window</span>
+    pylab.show()
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+    main()
+</code></pre>2:["$","div",null,{"className":"page_main__nw1Wk","children":[["$","div",null,{"className":"page_header__oRW75","children":[["$","$L6",null,{"src":"/icon.png","alt":"Logo","width":100,"height":100,"priority":true}],["$","div",null,{"className":"page_title-nav-container__yDV6g","children":[["$","h1",null,{"className":"page_hero-title__ISM_Q","children":"Stonelinks"}],["$","ul",null,{"className":"page_nav-list__BIYWj","children":[["$","li",null,{"children":["$","$L7",null,{"href":"/","children":"Home"}]}],["$","li",null,{"children":["$","$L7",null,{"href":"/posts","children":"Posts"}]}],["$","li",null,{"children":["$","$L7",null,{"href":"/projects","children":"Projects"}]}],["$","li",null,{"children":["$","$L7",null,{"href":"/luke","children":"About"}]}]]}]]}]]}],["$","article",null,{"className":"post_post__6EpyE","children":[["$","h1",null,{"className":"post_title__Rgtqi","children":"Execute, Time and Plot C++ Programs with Python"}],["$","p",null,{"className":"common_date__JU5vN","children":"February 2, 2011"}],["$","img",null,{"className":"post_featuredImage__bHzsc","src":"/2011-02-02-execute-time-and-plot-c-programs-with-python/Fig.png","alt":"Execute, Time and Plot C++ Programs with Python"}],["$","div",null,{"className":"TagList_tagList__ukBDA","children":[["$","$L7","0",{"className":"TagList_tag__225v4","href":"/tags/algorithms","children":"algorithms"}],["$","$L7","1",{"className":"TagList_tag__225v4","href":"/tags/python","children":"python"}]]}],"$undefined",["$","div",null,{"className":"post_content__KF6Q6","dangerouslySetInnerHTML":{"__html":"$9"}}]]}],["$","footer",null,{"children":["© Lucas Doyle ",2025]}]]}]
+8:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Stonelinks"}],["$","meta","3",{"name":"description","content":"Personal website of Lucas Doyle"}],["$","link","4",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"16x16"}],["$","meta","5",{"name":"next-size-adjust"}]]
+1:null
