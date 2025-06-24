@@ -1,7 +1,6 @@
 ---
 title: Laser Altimeter Integration on Pixhawk
 date: 2014-12-10
-featuredImage: rangefinder_sf02_pixhawk_connections.jpg
 tags:
   - airplane
   - drones
@@ -15,7 +14,7 @@ As a sample exercise, I took an in-depth look at how I'd go about integrating a 
 
 All signs of googling point to the [SF02/F laser altimeter](http://www.lightware.co.za/shop/en/lrf-modules/7-sf02f.html) as the quickest option to get something working.
 
-![](rangefinder_sf02_pixhawk_connections.jpg)
+![](/2014-12-10-laser-altimeter-integration/rangefinder_sf02_pixhawk_connections.jpg)
 
 **Specs**:
 
