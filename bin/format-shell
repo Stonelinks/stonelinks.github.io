@@ -22,7 +22,7 @@ for file in "${files[@]}"; do
 		# get the file extension
 		extension="${file##*.}"
 		# ignore files with extensions
-		if [[ "$extension" != "py" && "$extension" != "ts" && "$extension" != "tsx" && "$extension" != "json" ]]; then
+		if [[ "$extension" != "py" && "$extension" != "ts" && "$extension" != "tsx" && "$extension" != "json" && "$extension" != "jpg" && "$extension" != "png" && "$extension" != "jpeg" ]]; then
 			if head -n 1 "$file" | grep -q "sh"; then
 				bin_shell_paths+=("$file")
 			fi
