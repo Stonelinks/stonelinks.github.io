@@ -7,7 +7,6 @@ tags:
   - web development
 ---
 
-
 I've been working on some new WebGL related projects for a 3d viewer and editor that targets robotics applications.
 
 ### [My three.js fork](https://github.com/Stonelinks/three.js)

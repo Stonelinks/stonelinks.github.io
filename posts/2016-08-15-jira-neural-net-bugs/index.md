@@ -27,26 +27,26 @@ JIRA isn't too keen on exporting every single bug in one go, so we need to batch
 Open up the javascript console for your browser (CTRL + Shift + J in chrome) and paste the blow in to batch download your bugs as excel spreadsheets. You may have to adjust some variables at the top as needed.
 
 ```js
-var numberOfPages = 6
+var numberOfPages = 6;
 var baseUrl =
-  "http://jira/sr/jira.issueviews:searchrequest-excel-current-fields/temp/SearchRequest.xls?jqlQuery=type+%3D+bug&tempMax=1000"
+  'http://jira/sr/jira.issueviews:searchrequest-excel-current-fields/temp/SearchRequest.xls?jqlQuery=type+%3D+bug&tempMax=1000';
 
 function downloadURI(uri) {
-  var link = document.createElement("a")
-  link.href = uri
-  link.click()
+  var link = document.createElement('a');
+  link.href = uri;
+  link.click();
 }
 
-downloadURI(baseUrl)
+downloadURI(baseUrl);
 
 for (var i = 1; i < numberOfPages; i++) {
-  ;(function (i) {
+  (function (i) {
     setTimeout(function () {
-      var url = baseUrl + "&pager/start=" + (i + 1) + "001"
-      console.log("download", url)
-      downloadURI(url)
-    }, i * 5000)
-  })(i)
+      var url = baseUrl + '&pager/start=' + (i + 1) + '001';
+      console.log('download', url);
+      downloadURI(url);
+    }, i * 5000);
+  })(i);
 }
 ```
 
@@ -73,56 +73,56 @@ I used `node` to generate a large markdown document from `dump.csv`. For below t
 
 ```js
 // for markdown generation:
-var j2m = require("jira2md")
-var fs = require("fs")
-var Converter = require("csvtojson").Converter
+var j2m = require('jira2md');
+var fs = require('fs');
+var Converter = require('csvtojson').Converter;
 var csvConverter = new Converter({
   workerNum: 4,
-})
+});
 
 // record_parsed will be emitted each csv row being processed
-csvConverter.on("record_parsed", function (jsonObj) {
-  console.log(jsonObj["Key"], "parsed")
-})
+csvConverter.on('record_parsed', function (jsonObj) {
+  console.log(jsonObj['Key'], 'parsed');
+});
 
 // end_parsed will be emitted once parsing finished
-csvConverter.on("end_parsed", function (jsonArray) {
+csvConverter.on('end_parsed', function (jsonArray) {
   // uncomment below to to test on first 10 items
   // var outputMarkdown = jsonArray.slice(0, 10).map(function (row) {
   var outputMarkdown = jsonArray
     .map(function (row) {
-      var r = ""
-      r += "## " + row["Key"] + ": " + row["Summary"]
-      r += "\n\n"
+      var r = '';
+      r += '## ' + row['Key'] + ': ' + row['Summary'];
+      r += '\n\n';
       var headerKeys = [
-        "Priority",
-        "Component",
-        "FixVersion",
-        "Reporter",
-        "Assignee",
-      ]
+        'Priority',
+        'Component',
+        'FixVersion',
+        'Reporter',
+        'Assignee',
+      ];
       headerKeys.forEach(function (k) {
-        r += "- **" + k + ":** " + (row[k] ? row[k] : "*None*") + "\n"
-      })
+        r += '- **' + k + ':** ' + (row[k] ? row[k] : '*None*') + '\n';
+      });
 
-      if (row["Description"]) {
-        r += "\n" + j2m.to_markdown(row["Description"]) + "\n"
+      if (row['Description']) {
+        r += '\n' + j2m.to_markdown(row['Description']) + '\n';
       }
 
-      return r
+      return r;
     })
-    .join("\n-------\n\n")
-  fs.writeFile("./bugs.md", outputMarkdown, function (err) {
+    .join('\n-------\n\n');
+  fs.writeFile('./bugs.md', outputMarkdown, function (err) {
     if (err) {
-      return console.log(err)
+      return console.log(err);
     }
 
-    console.log("done")
-  })
-})
+    console.log('done');
+  });
+});
 
 // read from file
-fs.createReadStream("./dump.csv").pipe(csvConverter)
+fs.createReadStream('./dump.csv').pipe(csvConverter);
 ```
 
 Running this should generate `bugs.md`, which should be a monster concatenation of every bug ever filed (mine was 4.4MB).
