@@ -2,7 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
-import html from 'remark-html';
+import remarkRehype from 'remark-rehype';
+import rehypeHighlight from 'rehype-highlight';
+import rehypeStringify from 'rehype-stringify';
 import { PostPreviewProps } from '@/components/PostPreview';
 
 const getPostsDirectory = () => path.join(process.cwd(), 'posts');
@@ -19,7 +21,12 @@ export async function getPostBySlug(
   // convert date to something JSON serializable
   data.date = data.date.toString();
 
-  const processedContent = await remark().use(html).process(content);
+  const processedContent = await remark()
+    .use(remarkRehype) // Convert Markdown to HTML AST
+    .use(rehypeHighlight) // Apply syntax highlighting
+    .use(rehypeStringify) // Stringify HTML AST to HTML
+    .process(content);
+
   const contentHtml = processedContent.toString();
 
   return {

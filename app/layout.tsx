@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { EB_Garamond } from 'next/font/google';
 import './globals.css';
+import 'highlight.js/styles/github.css';
 
 const font = EB_Garamond({ subsets: ['latin'] });
 
