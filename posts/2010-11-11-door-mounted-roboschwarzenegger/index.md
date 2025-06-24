@@ -15,8 +15,6 @@ gallery:
   - /2010-11-11-door-mounted-roboschwarzenegger/gallery/downsize_2.jpg
   - /2010-11-11-door-mounted-roboschwarzenegger/gallery/downsize_3.jpg
   - /2010-11-11-door-mounted-roboschwarzenegger/gallery/downsize_4.jpg
-
-featuredImage: /2010-11-11-door-mounted-roboschwarzenegger/gallery/downsize_4.jpg
 ---
 
 I don't get to fool around with my own projects nearly as much as I would like, but this weekend I did devote a few hours to finishing up a robotic internet controlled camera on our apartment door, and I made it look like Arnold Schwarzenegger.
