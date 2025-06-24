@@ -1,14 +1,13 @@
 ---
 title: Dr. Serverlove, or How I Learned to Stop Worrying and Love the RAID
 date: 2010-12-06
-featuredImage: downsize-300x225.jpg
 tags:
   - web development
 ---
 
 I recently completed some much needed upgrades to the servers (hardware and software) that run Stonelinks. This has me very excited and has been a long time in the works! Warning: long and somewhat pointless story of blood, sweat, nerdrage and glorious payoff ahead.
 
-![](downsize-300x225.jpg)
+![](/2010-12-06-dr-serverlove-or-how-i-learned-to-stop-worrying-and-love-the-raid/downsize-300x225.jpg)
 
 These two suckers now live on my desk and throw off a ton of heat.
 
