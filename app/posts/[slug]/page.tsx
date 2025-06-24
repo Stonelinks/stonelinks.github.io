@@ -46,9 +46,11 @@ const PostContent = ({ post }: PostContentProps) => {
       <h1 className={styles.title}>{post.metadata.title}</h1>
       <DateDisplay date={post.metadata.date} />
       {post.metadata.featuredImage && (
-        <div className={styles.featuredImage}>
-          <img src={post.metadata.featuredImage} alt={post.metadata.title} />
-        </div>
+        <img
+          className={styles.featuredImage}
+          src={post.metadata.featuredImage}
+          alt={post.metadata.title}
+        />
       )}
       {post.metadata.tags && <TagList tags={post.metadata.tags} />}
       {post.metadata.gallery && <Lightbox images={post.metadata.gallery!} />}

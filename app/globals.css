@@ -72,3 +72,8 @@ code {
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
 }
+
+iframe {
+  width: 50vw;
+  aspect-ratio: 16 / 9;
+}

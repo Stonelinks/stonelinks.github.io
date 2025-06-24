@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import remarkRehype from 'remark-rehype';
 import rehypeHighlight from 'rehype-highlight';
+import rehypeRaw from 'rehype-raw';
 import rehypeStringify from 'rehype-stringify';
 import Post, { PostMetadata } from '@/posts/[slug]/page';
 
@@ -24,7 +25,8 @@ export async function getPostBySlug(slug: string): Promise<Post> {
   data.date = data.date.toString();
 
   const processedContent = await remark()
-    .use(remarkRehype) // Convert Markdown to HTML AST
+    .use(remarkRehype, { allowDangerousHtml: true }) // Convert Markdown to HTML AST
+    .use(rehypeRaw) // Preserve raw HTML
     .use(rehypeHighlight) // Apply syntax highlighting
     .use(rehypeStringify) // Stringify HTML AST to HTML
     .process(content);
