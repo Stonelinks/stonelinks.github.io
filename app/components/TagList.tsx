@@ -1,9 +1,6 @@
 import Link from 'next/link';
 import styles from './TagList.module.css';
-
-interface TagListProps {
-  tags: string[];
-}
+import { TagListProps } from '../../types';
 
 const TagList: React.FC<TagListProps> = ({ tags }) => {
   if (!tags || tags.length === 0) return null;

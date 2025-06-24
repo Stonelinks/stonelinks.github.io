@@ -2,10 +2,7 @@
 
 import React, { useState } from 'react';
 import styles from './Lightbox.module.css';
-
-interface LightboxProps {
-  images: string[];
-}
+import { LightboxProps } from '../../types';
 
 const Lightbox: React.FC<LightboxProps> = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

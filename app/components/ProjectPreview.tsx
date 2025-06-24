@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { DateDisplay } from './Date';
-import { ProjectMetadata } from '@/projects/[slug]/page';
+import { ProjectMetadata } from '../../types';
 
 const ProjectPreview: React.FC<ProjectMetadata> = ({
   slug,

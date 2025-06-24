@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { DateDisplay } from './Date';
-import { PostMetadata } from '@/posts/[slug]/page';
+import { PostMetadata } from '../../types';
 
 const PostPreview: React.FC<PostMetadata> = ({
   slug,
