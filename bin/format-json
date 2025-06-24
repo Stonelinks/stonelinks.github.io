@@ -1,0 +1,29 @@
+#!/bin/bash
+set -e
+
+cd $PROJECT_ROOT
+
+source env.sh
+
+files=()
+json_files=()
+
+ignore_files=()
+# ignore_files+=("dagster_gqlschema.json" "samsara_gqlschema.json" "openapi.json")
+
+# List all tracked files and untracked files not ignored by .gitignore
+while IFS= read -r file; do
+	files+=("$file")
+done < <(
+	git ls-files .
+	git ls-files --others --exclude-standard .
+)
+
+# Filter array for files with .json extensions and check if they exist
+for file in "${files[@]}"; do
+	if [[ -f $file && $file == *.json && ! " ${ignore_files[*]} " =~ " ${file} " ]]; then
+		json_files+=("$file")
+	fi
+done
+
+bun run --bun biome check --write "${json_files[@]}"

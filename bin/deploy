@@ -1,0 +1,20 @@
+#!/bin/bash
+set -e
+
+start_time=$(date +%s)
+trap 'echo "Total time: $(($(date +%s)-$start_time)) seconds"' EXIT
+
+cd $PROJECT_ROOT
+
+source env.sh
+
+# Locally format + build the project
+format
+bun run build
+
+# # Install and run services
+# ansible-playbook \
+# 	$PLAYBOOKS_PATH/mirepoix.yaml \
+# 	--limit=mirepoix
+
+echo "DONE"

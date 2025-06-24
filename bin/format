@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+
+cd $PROJECT_ROOT
+
+source env.sh
+
+format-shell
+format-js
+format-json
+format-yaml
+format-ansible

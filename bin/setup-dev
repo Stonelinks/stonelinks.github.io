@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+cd $PROJECT_ROOT
+
+source env.sh
+
+install-node
+setup-node
+
+install-go
+go install mvdan.cc/sh/v3/cmd/shfmt@latest
+
+# gen
+# format

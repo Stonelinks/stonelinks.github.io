@@ -1,0 +1,32 @@
+#!/bin/bash
+set -e
+
+cd $PROJECT_ROOT
+
+source env.sh
+
+files=()
+bin_shell_paths=()
+
+# List all tracked files and untracked files not ignored by .gitignore
+while IFS= read -r file; do
+	files+=("$file")
+done < <(
+	git ls-files .
+	git ls-files --others --exclude-standard .
+)
+
+# scan everything in $files. if the file has `sh` in the first line, add it to bin_shell_paths
+for file in "${files[@]}"; do
+	if [ -f "$file" ]; then
+		# get the file extension
+		extension="${file##*.}"
+		# ignore files with extensions
+		if [[ "$extension" != "py" && "$extension" != "ts" && "$extension" != "tsx" && "$extension" != "json" ]]; then
+			if head -n 1 "$file" | grep -q "sh"; then
+				bin_shell_paths+=("$file")
+			fi
+		fi
+	fi
+done
+shfmt -l -w "${bin_shell_paths[@]}"
