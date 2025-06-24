@@ -7,6 +7,7 @@ import rehypeHighlight from 'rehype-highlight';
 import rehypeRaw from 'rehype-raw';
 import rehypeStringify from 'rehype-stringify';
 import Project, { ProjectMetadata } from '@/projects/[slug]/page';
+import { dateToString } from '@/components/Date';
 
 const getProjectsDirectory = () => path.join(process.cwd(), 'projects');
 
@@ -69,8 +70,25 @@ export function truncateHtml(htmlString: string, length: number): string {
 
 export const sortProjects = (projects: Project[]): Project[] => {
   projects.sort((a, b) => {
-    const dateA = a.metadata.date ? new Date(a.metadata.date).getTime() : 0;
-    const dateB = b.metadata.date ? new Date(b.metadata.date).getTime() : 0;
+    const title = a.metadata.title || '';
+    if (title.toLowerCase() == 'github') {
+      return -1;
+    }
+
+    const dateA = a.metadata.date
+      ? Number(
+          dateToString(new Date(a.metadata.date), a.metadata.dateFormat).split(
+            ' ',
+          )[0],
+        )
+      : 0;
+    const dateB = b.metadata.date
+      ? Number(
+          dateToString(new Date(b.metadata.date), b.metadata.dateFormat).split(
+            ' ',
+          )[0],
+        )
+      : 0;
     return dateB - dateA;
   });
   return projects;

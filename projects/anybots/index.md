@@ -7,8 +7,6 @@ dateFormat: 'yyyy'
 
 Tools for Anybots that statistically monitor and compute information about fleets of robots.
 
-<div class="summary-end"></div>
-
 I spent the summer of 2011 at an internship with [Anybots](http://anybots.com), a small robotics startup in Mountain View. For a long time Anybots was mostly a research company, producing robots like Monty and Dexter (both pictured below). However, two years ago they began to design QB (pictured above), a telepresence robot that aims to act as a robotic avatar to allow users to project their presence to other people from afar.
 
 During my short time at Anybots, I noticed a severe lack of infrastructure for monitoring the fleet of about ~130 robots out in the world. This was several million dollars' worth of robots deployed over the country and in some cases outside of the country. A coworker of mine, Robert, was spending a tremendous amount of time every day manually checking what robots were online by SSHing into each one and reading the logs, which were often thousands of lines long. Because scalability is one of the things that can kill a startup and because I wanted to free up his time, I wrote `super_robert` and Anystats to help him out by automatically gathering logs from robots and computing information and statistics about global robot fleet status.
