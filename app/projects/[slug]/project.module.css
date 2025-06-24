@@ -1,0 +1,17 @@
+.project {
+  padding: 20px;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.content {
+  line-height: 1.6;
+}
+
+.featuredImage {
+  margin-bottom: 20px;
+  max-width: 50vw;
+}
