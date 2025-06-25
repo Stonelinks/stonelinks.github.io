@@ -9,11 +9,11 @@ const PostsIndex = () => {
       <h1>About</h1>
       <hr />
 
-      <div className="mb-4">
-        <Image src="/author.png" alt="Lucas Doyle" width={200} height={200} />
-      </div>
+      <div className="flex flex-col items-center justify-center p-6">
+        <div className="mb-4">
+          <Image src="/author.png" alt="Lucas Doyle" width={250} height={250} />
+        </div>
 
-      <div className="mb-4">
         <ul className="flex gap-4 list-none">
           <li>
             <Link
