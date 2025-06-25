@@ -1,6 +1,7 @@
 {
   "name": "src",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -13,6 +14,7 @@
     "test": "bun test lib"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.10",
     "@types/bun": "^1.2.16",
     "@types/node": "^20.19.1",
     "@types/react": "^18.3.23",
@@ -30,6 +32,7 @@
     "highlight.js": "^11.11.1",
     "next": "14.2.7",
     "node-fetch": "^3.3.2",
+    "postcss": "^8.5.6",
     "prettier": "^3.5.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -39,6 +42,7 @@
     "rehype-stringify": "^10.0.1",
     "remark": "^15.0.1",
     "remark-rehype": "^11.1.2",
+    "tailwindcss": "^4.1.10",
     "typescript": "^5.4.5"
   }
 }
