@@ -6,6 +6,6 @@ tags:
   - airplane
 ---
 
-<iframe src="http://www.youtube.com/embed/Ak_TNK0fq_M" frameborder="0" allowfullscreen></iframe>
+<iframe src="//www.youtube.com/embed/Ak_TNK0fq_M" frameborder="0" allowfullscreen></iframe>
 
 A month ago my friend Rhys and I hiked up Mt. Major with my plane and his gopro and managed to get a pretty decent flight recording from the summit!

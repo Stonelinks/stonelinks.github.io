@@ -46,7 +46,7 @@ I designed most of this robot on my own for a now dissolved group of students at
 
 ### Personal robot - (2008 - onwards)
 
-<iframe src="http://www.youtube.com/embed/RRwMJ8GYT7Y" frameborder="0" allowfullscreen></iframe>
+<iframe src="//www.youtube.com/embed/RRwMJ8GYT7Y" frameborder="0" allowfullscreen></iframe>
 
 This robot at first wasn't even really a robot, just some servos, a pan tilt module and an Arduino. However, just like this website, it has had many incarnations over the years and exists primary as an educational tool for me to learn more and tinker around with whenever I find the time. Over the years it has been controlled from Windows, Linux, LabVIEW, by hand, over the internet and sometimes purely autonomous.
 

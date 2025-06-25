@@ -39,7 +39,7 @@ const PostsIndex = () => {
 
       <MarkdownContent
         content={`
-Hi! I'm Lucas Doyle, an engineer who likes building stuff for robots, autonomous vehicles and industrial machinery. Or whatever. Sounds cliché, but making code do something in the real world is what excites me.
+Hi! I'm Lucas Doyle, an engineer who likes building stuff for robots, IoT, autonomous vehicles and industrial machinery. Or whatever. Sounds cliché, but making code do something in the real world is what excites me!
 
 I have been in San Francisco for 10 years (!!!) working on software, IoT, drones, you name it. Prior to SF, I spent a couple years in Japan at a small company optimizing industrial / manufacturing robotics at [MUJIN](http://mujin.co.jp/en/). And even before that I worked at the Harvard-Smithsonian Center for Astrophysics on an [experimental X-ray optic production facility](/projects/amf/).
 

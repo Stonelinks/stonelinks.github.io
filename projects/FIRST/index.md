@@ -17,7 +17,7 @@ This was the first year Gilford High School had a First Robotics team. Pictured 
 
 ## Rack 'n Roll - (2007)
 
-<iframe src="http://www.youtube.com/embed/419zf3rytvU" frameborder="0" allowfullscreen></iframe>
+<iframe src="//www.youtube.com/embed/419zf3rytvU" frameborder="0" allowfullscreen></iframe>
 
 As is evident from that video, this robot represented our team's first foray into the world of [mechanum wheels](http://en.wikipedia.org/wiki/Mecanum_wheel). These wheels are a variation on a theme of omni wheels that let the robot move in any direction unconstrained. For the next two years, I would help design mechanum drive trains for our team (CAD mostly). While really cool, our teams obsession over these wheels would cause us to lose sight of the arm attachment that would need to perform the robot's function of removing tubes from the rack for 2007's [Rack 'n Roll](http://goo.gl/qhaI1X) competition.
 

@@ -6,7 +6,7 @@ tags:
   - C++
 ---
 
-<iframe src="http://www.youtube.com/embed/gLsdHmCKoEw" frameborder="0" allowfullscreen></iframe>
+<iframe src="//www.youtube.com/embed/gLsdHmCKoEw" frameborder="0" allowfullscreen></iframe>
 
 Up until now, all my contributions to open source have been programs I have written, and as a general practice I like to make all my work open source if I can. However, its a nice feeling to have some code I wrote incorporated into someone else's project for a change.
 

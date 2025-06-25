@@ -9,7 +9,7 @@ dateFormat: 'yyyy'
 
 A beginner friendly, minimalistic and open source robot arm simulator I wrote in python for a robotics class back in 2012. Stoolbotics is designed to be a general purpose arm and kinematics simulator aimed at being a teaching tool for aspiring roboticists.
 
-<iframe src="http://www.youtube.com/embed/h3Rus5mUkzY" frameborder="0" allowfullscreen></iframe>
+<iframe src="//www.youtube.com/embed/h3Rus5mUkzY" frameborder="0" allowfullscreen></iframe>
 
 [Home](/projects/stoolbotics/)
 |

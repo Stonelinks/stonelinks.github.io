@@ -7,7 +7,7 @@ dateFormat: 'yyyy'
 
 A robot that performs maintenance from inside an aircraft wing. Developed as part of my Boeing sponsored capstone project. Our team was specify tasked to develop a simulation and control system for this.
 
-<iframe src="http://www.youtube.com/embed/slJodwZfds0" frameborder="0" allowfullscreen></iframe>
+<iframe src="//www.youtube.com/embed/slJodwZfds0" frameborder="0" allowfullscreen></iframe>
 
 I served as the project lead, where I was responsible for coordinating with Boeing as well as writing all of the code for the simulator (other members of the team were not familiar with programming). I also did a lot of report writing.
 

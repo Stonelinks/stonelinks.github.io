@@ -22,7 +22,7 @@ const TagPage: React.FC<TagPageProps> = async ({ params }) => {
 
   return (
     <PageWrapper>
-      <h1 className="font-bold mt-6">{`Posts tagged with "${tag}"`}</h1>
+      <h1 className="mt-6">{`Posts tagged with "${tag}"`}</h1>
       <hr />
       {taggedPosts.length > 0 ? (
         <div className="space-y-4">
