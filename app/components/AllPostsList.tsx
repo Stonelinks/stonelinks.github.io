@@ -21,7 +21,7 @@ export const AllPostsList = async ({ limit = Infinity }: AllPostsListProps) => {
   );
 
   return (
-    <div className="py-6">
+    <div className="pb-8 mb-8">
       <h1>{limit === Infinity ? 'All posts' : 'Recent posts'}</h1>
       <hr />
 

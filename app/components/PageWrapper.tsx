@@ -14,13 +14,13 @@ interface PageWrapperProps {
 export const PageWrapper = ({ children, className }: PageWrapperProps) => {
   return (
     <div
-      className={`flex flex-col justify-between items-center min-h-screen p-6 pt-0 ${className || ''}`}
+      className={`flex flex-col items-center min-h-screen p-6 pt-0 ${className || ''}`}
     >
       <Header />
       <div className="max-w-3xl">
         {children}
-        <footer className="mt-6">
-          <hr />© <Link href="/luke">Lucas Doyle</Link>{' '}
+        <footer>
+          <hr className="py-4" />© <Link href="/luke">Lucas Doyle</Link>{' '}
           {new Date().getFullYear()}
         </footer>
       </div>
