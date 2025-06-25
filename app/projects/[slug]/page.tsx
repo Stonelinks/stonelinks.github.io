@@ -1,6 +1,5 @@
 import { PageWrapper } from '@/components/PageWrapper';
 import TagList from '@/components/TagList';
-import styles from './project.module.css';
 import { DateDisplay } from '@/components/Date';
 import Lightbox from '@/components/Lightbox';
 import { getAllProjectSlugs, getProjectBySlug } from '../../../lib/projects';
@@ -43,15 +42,15 @@ const Project = async ({ params }: ProjectProps) => {
 
 const ProjectContent = ({ project }: ProjectContentProps) => {
   return (
-    <article className={styles.project}>
-      <h1 className={styles.title}>{project.metadata.title}</h1>
+    <article className="p-5">
+      <h1 className="text-2xl mb-2.5">{project.metadata.title}</h1>
       <DateDisplay
         date={project.metadata.date}
         dateFormat={project.metadata.dateFormat}
       />
       {project.metadata.featuredImage && (
         <img
-          className={styles.featuredImage}
+          className="mb-5 max-w-[50vw] rounded-lg shadow-md"
           src={project.metadata.featuredImage}
           alt={project.metadata.title}
         />
@@ -61,7 +60,7 @@ const ProjectContent = ({ project }: ProjectContentProps) => {
         <Lightbox images={project.metadata.gallery!} />
       )}
       <div
-        className={styles.content}
+        className="prose max-w-none mt-4"
         dangerouslySetInnerHTML={{ __html: project.content }}
       />
     </article>

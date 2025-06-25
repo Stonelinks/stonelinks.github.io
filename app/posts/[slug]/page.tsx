@@ -1,7 +1,6 @@
 import { PageWrapper } from '@/components/PageWrapper';
 import { getAllPostSlugs, getPostBySlug } from '../../../lib/posts';
 import TagList from '@/components/TagList';
-import styles from './post.module.css';
 import { DateDisplay } from '@/components/Date';
 import Lightbox from '@/components/Lightbox';
 
@@ -42,12 +41,12 @@ const Post = async ({ params }: PostProps) => {
 
 const PostContent = ({ post }: PostContentProps) => {
   return (
-    <article className={styles.post}>
-      <h1 className={styles.title}>{post.metadata.title}</h1>
+    <article className="p-5">
+      <h1 className="text-2xl mb-2.5">{post.metadata.title}</h1>
       <DateDisplay date={post.metadata.date} />
       {post.metadata.featuredImage && (
         <img
-          className={styles.featuredImage}
+          className="mb-5 max-w-[50vw] rounded-lg shadow-md"
           src={post.metadata.featuredImage}
           alt={post.metadata.title}
         />
@@ -55,7 +54,7 @@ const PostContent = ({ post }: PostContentProps) => {
       {post.metadata.tags && <TagList tags={post.metadata.tags} />}
       {post.metadata.gallery && <Lightbox images={post.metadata.gallery!} />}
       <div
-        className={styles.content}
+        className="prose max-w-none mt-4"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
     </article>

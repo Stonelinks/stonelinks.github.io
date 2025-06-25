@@ -1,6 +1,5 @@
 import { PageWrapper } from '@/components/PageWrapper';
 import { getAllPostSlugs, getPostBySlug } from '../../../lib/posts';
-import styles from './tag.module.css';
 
 import PostPreview from '../../components/PostPreview';
 import { truncateHtml } from '../../../lib/content';
@@ -25,19 +24,21 @@ const TagPage: React.FC<TagPageProps> = async ({ params }) => {
 
   return (
     <PageWrapper>
-      <h1 className={styles.tagTitle}>{title}</h1>
+      <h1 className="text-2xl mb-5">{title}</h1>
       {taggedPosts.length > 0 ? (
-        taggedPosts.map((post) => (
-          <PostPreview
-            key={post.metadata.title}
-            slug={post.slug}
-            title={post.metadata.title}
-            date={post.metadata.date}
-            excerpt={truncateHtml(post.content, 150) + '...'}
-          />
-        ))
+        <div className="space-y-4">
+          {taggedPosts.map((post) => (
+            <PostPreview
+              key={post.metadata.title}
+              slug={post.slug}
+              title={post.metadata.title}
+              date={post.metadata.date}
+              excerpt={truncateHtml(post.content, 150) + '...'}
+            />
+          ))}
+        </div>
       ) : (
-        <p>No posts found with this tag.</p>
+        <p className="text-gray-600">No posts found with this tag.</p>
       )}
     </PageWrapper>
   );
