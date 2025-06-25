@@ -2,7 +2,11 @@ import { truncateHtml } from '../../lib/content';
 import { getAllPostSlugs, getPostBySlug, sortPosts } from '../../lib/posts';
 import PostPreview from './PostPreview';
 
-export const AllPostsList = async () => {
+interface AllPostsListProps {
+  limit?: number;
+}
+
+export const AllPostsList = async ({ limit = Infinity }: AllPostsListProps) => {
   const slugs = getAllPostSlugs();
   const posts = await Promise.all(
     slugs.map(async (slug) => {
@@ -17,15 +21,17 @@ export const AllPostsList = async () => {
 
   return (
     <div>
-      {sortPosts(posts).map((post) => (
-        <PostPreview
-          key={post.slug}
-          slug={post.slug}
-          title={post.metadata.title}
-          date={post.metadata.date}
-          excerpt={truncateHtml(post.content, 150) + '...'}
-        />
-      ))}
+      {sortPosts(posts)
+        .slice(0, limit)
+        .map((post) => (
+          <PostPreview
+            key={post.slug}
+            slug={post.slug}
+            title={post.metadata.title}
+            date={post.metadata.date}
+            excerpt={truncateHtml(post.content, 150) + '...'}
+          />
+        ))}
     </div>
   );
 };
