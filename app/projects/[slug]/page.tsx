@@ -3,6 +3,8 @@ import TagList from '@/components/TagList';
 import { DateDisplay } from '@/components/Date';
 import Lightbox from '@/components/Lightbox';
 import { getAllProjectSlugs, getProjectBySlug } from '../../../lib/projects';
+import type { Metadata } from 'next';
+import { DEFAULT_TITLE } from '../../../lib/const';
 
 interface ProjectProps {
   params: { slug: string };
@@ -74,4 +76,26 @@ export async function generateStaticParams() {
     // For some reason we need to keep both encoded and unencoded versions of the slug, otherwise we break either the local dev experience or the static site generator when we publish.
     .flatMap((slug) => [encodeURIComponent(slug), slug]);
   return Array.from(new Set(slugs)).map((slug) => ({ slug }));
+}
+
+/**
+ * Generate metadata for the project page
+ */
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const project = await getProjectBySlug(params.slug);
+
+  return {
+    title: `${project.metadata.title} - ${DEFAULT_TITLE}`,
+    description:
+      project.metadata.excerpt || 'Read about this project by Lucas Doyle',
+    openGraph: {
+      title: project.metadata.title,
+      description: project.metadata.excerpt,
+      images: [project.metadata.featuredImage || ''],
+    },
+  };
 }

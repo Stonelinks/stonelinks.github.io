@@ -1,6 +1,7 @@
 import { AllPostsList } from './components/AllPostsList';
 import { AllProjectsList } from './components/AllProjectsList';
 import { PageWrapper } from './components/PageWrapper';
+import type { Metadata } from 'next';
 
 const Home = () => {
   return (
@@ -12,3 +13,14 @@ const Home = () => {
 };
 
 export default Home;
+
+/**
+ * Generate metadata for the homepage
+ */
+export function generateMetadata(): Metadata {
+  return {
+    title: 'Lucas Doyle - Personal Website | Stonelinks',
+    description:
+      'Welcome to the personal website of Lucas Doyle. Explore projects, posts, and more.',
+  };
+}

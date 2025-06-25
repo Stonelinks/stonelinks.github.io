@@ -1,8 +1,10 @@
 import { PageWrapper } from '@/components/PageWrapper';
 import { getAllPostSlugs, getPostBySlug } from '../../../lib/posts';
+import type { Metadata } from 'next';
 
 import PostPreview from '../../components/PostPreview';
 import { truncateHtml } from '../../../lib/content';
+import { DEFAULT_TITLE } from '../../../lib/const';
 
 interface TagPageProps {
   params: { tag: string };
@@ -59,4 +61,21 @@ export async function generateStaticParams() {
     // For some reason we need to keep both encoded and unencoded versions of the tag, otherwise we break either the local dev experience or the static site generator when we publish.
     .flatMap((tag) => [encodeURIComponent(tag), tag]);
   return Array.from(new Set(allTags)).map((tag) => ({ tag }));
+}
+
+/**
+ * Generate metadata for the tag page
+ */
+export async function generateMetadata({
+  params,
+}: {
+  params: { tag: string };
+}): Promise<Metadata> {
+  const { tag: encodedTag } = params;
+  const tag = decodeURIComponent(encodedTag);
+
+  return {
+    title: `Posts tagged with "${tag}" - ${DEFAULT_TITLE}`,
+    description: `Posts tagged with "${tag}" on Lucas Doyle's personal website`,
+  };
 }
