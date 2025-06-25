@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import styles from './Lightbox.module.css';
+import Image from 'next/image';
 import { LightboxProps } from '../../types';
 
 const Lightbox: React.FC<LightboxProps> = ({ images }) => {
@@ -20,23 +20,27 @@ const Lightbox: React.FC<LightboxProps> = ({ images }) => {
   };
 
   return (
-    <div className={styles.lightboxContent}>
+    <div className="flex items-center justify-center w-full max-w-screen-lg mx-auto">
       {images.length > 1 && (
         <button
-          className={styles.navButton + ' ' + styles.prev}
+          className="bg-white bg-opacity-80 border-none p-2.5 cursor-pointer text-2xl mx-2"
           onClick={goToPrevious}
           aria-label="Previous image"
         >
           {'<'}
         </button>
       )}
-      <img
+      <Image
+        className="max-w-full max-h-full"
         src={images[currentIndex]}
         alt={`Gallery image ${currentIndex + 1}`}
+        width={800}
+        height={600}
+        layout="intrinsic"
       />
       {images.length > 1 && (
         <button
-          className={styles.navButton + ' ' + styles.next}
+          className="bg-white bg-opacity-80 border-none p-2.5 cursor-pointer text-2xl mx-2"
           onClick={goToNext}
           aria-label="Next image"
         >

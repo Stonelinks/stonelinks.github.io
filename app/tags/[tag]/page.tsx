@@ -20,11 +20,10 @@ const TagPage: React.FC<TagPageProps> = async ({ params }) => {
 
   const taggedPosts = posts.filter((post) => post.metadata.tags?.includes(tag));
 
-  const title = `Posts tagged with "${tag}"`;
-
   return (
     <PageWrapper>
-      <h1 className="text-2xl mb-5">{title}</h1>
+      <h1 className="font-bold mt-6">{`Posts tagged with "${tag}"`}</h1>
+      <hr />
       {taggedPosts.length > 0 ? (
         <div className="space-y-4">
           {taggedPosts.map((post) => (
@@ -38,7 +37,7 @@ const TagPage: React.FC<TagPageProps> = async ({ params }) => {
           ))}
         </div>
       ) : (
-        <p className="text-gray-600">No posts found with this tag.</p>
+        <p>No posts found with this tag.</p>
       )}
     </PageWrapper>
   );

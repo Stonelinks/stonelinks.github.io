@@ -27,8 +27,10 @@ export const AllProjectsList = async ({
   );
 
   return (
-    <div>
+    <div className="py-6">
       <h1>{limit === Infinity ? 'All projects' : 'Recent projects'}</h1>
+      <hr />
+
       {sortProjects(projects)
         .slice(0, limit)
         .map((project) => (
@@ -38,7 +40,8 @@ export const AllProjectsList = async ({
             title={project.metadata.title}
             date={project.metadata.date}
             dateFormat={project.metadata.dateFormat}
-            excerpt={truncateHtml(project.content, 150) + '...'}
+            excerpt={truncateHtml(project.content, 200) + '...'}
+            featuredImage={project.metadata.featuredImage}
           />
         ))}
       {limit !== Infinity && <Link href="/projects">View all projects</Link>}

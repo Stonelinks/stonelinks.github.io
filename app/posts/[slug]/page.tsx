@@ -42,16 +42,17 @@ const Post = async ({ params }: PostProps) => {
 const PostContent = ({ post }: PostContentProps) => {
   return (
     <article className="p-5">
-      <h1 className="text-2xl mb-2.5">{post.metadata.title}</h1>
+      <h1>{post.metadata.title}</h1>
       <DateDisplay date={post.metadata.date} />
+      {post.metadata.tags && <TagList tags={post.metadata.tags} />}
       {post.metadata.featuredImage && (
         <img
-          className="mb-5 max-w-[50vw] rounded-lg shadow-md"
+          className="mb-6"
           src={post.metadata.featuredImage}
           alt={post.metadata.title}
         />
       )}
-      {post.metadata.tags && <TagList tags={post.metadata.tags} />}
+
       {post.metadata.gallery && <Lightbox images={post.metadata.gallery!} />}
       <div
         className="prose max-w-none mt-4"

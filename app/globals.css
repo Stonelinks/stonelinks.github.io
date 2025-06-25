@@ -64,4 +64,9 @@
     @apply border-t;
     @apply border-gray-300;
   }
+
+  iframe {
+    @apply w-full;
+    aspect-ratio: 16 / 9;
+  }
 }

@@ -43,14 +43,14 @@ const Project = async ({ params }: ProjectProps) => {
 const ProjectContent = ({ project }: ProjectContentProps) => {
   return (
     <article className="p-5">
-      <h1 className="text-2xl mb-2.5">{project.metadata.title}</h1>
+      <h1>{project.metadata.title}</h1>
       <DateDisplay
         date={project.metadata.date}
         dateFormat={project.metadata.dateFormat}
       />
       {project.metadata.featuredImage && (
         <img
-          className="mb-5 max-w-[50vw] rounded-lg shadow-md"
+          className="mb-6"
           src={project.metadata.featuredImage}
           alt={project.metadata.title}
         />

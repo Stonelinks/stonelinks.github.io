@@ -1,4 +1,3 @@
-import commonStyles from './common.module.css';
 import { format } from 'date-fns';
 import { DateDisplayProps } from '../../types';
 
@@ -13,7 +12,7 @@ export const dateToString = (date: Date, dateFormat?: string) => {
 
 export const DateDisplay = ({ date, dateFormat }: DateDisplayProps) => {
   return (
-    <p className={commonStyles.date}>
+    <p className="text-sm text-gray-500 mt-0 mb-4">
       {date ? dateToString(new Date(date), dateFormat) : 'Date unknown'}
     </p>
   );

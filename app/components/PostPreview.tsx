@@ -10,7 +10,7 @@ const PostPreview: React.FC<PostMetadata> = ({
   excerpt,
 }) => {
   return (
-    <div>
+    <div className="pb-4">
       <h2>
         <Link href={`/posts/${slug}`}>{title}</Link>
       </h2>

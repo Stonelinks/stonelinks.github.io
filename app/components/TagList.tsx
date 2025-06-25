@@ -1,15 +1,14 @@
 import Link from 'next/link';
-import styles from './TagList.module.css';
 import { TagListProps } from '../../types';
 
 const TagList: React.FC<TagListProps> = ({ tags }) => {
   if (!tags || tags.length === 0) return null;
 
   return (
-    <div className={styles.tagList}>
+    <div className="flex flex-wrap gap-2 mb-6">
       {tags.map((tag, index) => (
         <Link
-          className={styles.tag}
+          className="bg-gray-200 hover:bg-gray-300 text-gray-700 text-sm font-medium rounded px-2.5 py-0.5"
           key={index}
           href={`/tags/${encodeURIComponent(tag)}`}
         >

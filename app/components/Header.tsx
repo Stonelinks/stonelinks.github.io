@@ -1,14 +1,15 @@
 import Image from 'next/image';
-import styles from '../page.module.css';
 import Link from 'next/link';
 
 export const Header = () => {
   return (
-    <div className={styles.header}>
-      <Image src="/icon.png" alt="Logo" width={100} height={100} priority />
-      <div className={styles['title-nav-container']}>
-        <h1 className={styles['hero-title']}>Stonelinks</h1>
-        <ul className={styles['nav-list']}>
+    <div className="flex flex-col items-center mt-6 mb-2 md:mb-8 md:flex-row md:items-center md:justify-start">
+      <div className="mb-4 md:mb-0 md:mr-4 flex justify-center">
+        <Image src="/icon.png" alt="Logo" width={100} height={100} priority />
+      </div>
+      <div className="flex flex-col items-center md:items-start">
+        <h1 className="text-4xl md:text-6xl font-serif mb-2">Stonelinks</h1>
+        <ul className="flex list-none gap-4">
           <li>
             <Link href="/">Home</Link>
           </li>
