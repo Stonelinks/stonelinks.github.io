@@ -1,1 +1,67 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@theme static {
+  --font-sans: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  --font-serif:
+    'Playfair Display', ui-serif, Georgia, Cambria, 'Times New Roman', Times,
+    serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+
+  --color-primary: #63768d; /* Tailwind equivalent: bg-blue-900 */
+  --color-secondary: #8ac6d0; /* Tailwind equivalent: bg-yellow-200 */
+  --color-accent: #009b72; /* Tailwind equivalent: bg-teal-500 */
+  --color-muted: #c5d8d1; /* Tailwind equivalent: bg-gray-300 */
+  --color-background: #d7d9ce; /* Tailwind equivalent: bg-gray-100 */
+}
+
+@layer base {
+  p {
+    @apply my-4;
+    @apply text-gray-700;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply my-2;
+    @apply font-serif;
+    /* @apply font-bold; */
+    /* color: var(--color-accent); */
+  }
+
+  h1 {
+    @apply text-3xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  h4 {
+    @apply text-lg;
+  }
+
+  a {
+    color: var(--color-accent);
+    /* @apply font-bold; */
+  }
+
+  a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  hr {
+    @apply my-4;
+    @apply border-t;
+    @apply border-gray-300;
+  }
+}
