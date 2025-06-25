@@ -1,8 +1,8 @@
+import { truncateHtml } from '../../lib/content';
 import {
   getAllProjectSlugs,
   getProjectBySlug,
   sortProjects,
-  truncateHtml,
 } from '../../lib/projects';
 import ProjectPreview from './ProjectPreview';
 

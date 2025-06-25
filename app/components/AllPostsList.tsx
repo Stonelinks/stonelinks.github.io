@@ -1,9 +1,5 @@
-import {
-  getAllPostSlugs,
-  getPostBySlug,
-  sortPosts,
-  truncateHtml,
-} from '../../lib/posts';
+import { truncateHtml } from '../../lib/content';
+import { getAllPostSlugs, getPostBySlug, sortPosts } from '../../lib/posts';
 import PostPreview from './PostPreview';
 
 export const AllPostsList = async () => {

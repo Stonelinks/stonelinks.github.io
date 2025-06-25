@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeAll, afterAll } from 'bun:test';
 import * as postsLib from './posts';
 import { getAllPostSlugs } from './__mocks__/posts';
+import { truncateHtml } from './content';
 import Post from '@/posts/[slug]/page';
 
 describe('posts.ts', () => {
@@ -35,14 +36,14 @@ describe('posts.ts', () => {
       const htmlString =
         '<p>This is a test paragraph with some HTML content.</p>';
       const length = 20;
-      const result = postsLib.truncateHtml(htmlString, length);
+      const result = truncateHtml(htmlString, length);
       expect(result).toBe('This is a test parag');
     });
 
     it('should return the full text if it is shorter than the specified length', () => {
       const htmlString = '<p>Short</p>';
       const length = 10;
-      const result = postsLib.truncateHtml(htmlString, length);
+      const result = truncateHtml(htmlString, length);
       expect(result).toBe('Short');
     });
   });

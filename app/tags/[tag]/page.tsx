@@ -1,12 +1,9 @@
 import { PageWrapper } from '@/components/PageWrapper';
-import {
-  getAllPostSlugs,
-  getPostBySlug,
-  truncateHtml,
-} from '../../../lib/posts';
+import { getAllPostSlugs, getPostBySlug } from '../../../lib/posts';
 import styles from './tag.module.css';
 
 import PostPreview from '../../components/PostPreview';
+import { truncateHtml } from '../../../lib/content';
 
 interface TagPageProps {
   params: { tag: string };
