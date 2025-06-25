@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { truncateHtml } from '../../lib/content';
 import { getAllPostSlugs, getPostBySlug, sortPosts } from '../../lib/posts';
 import PostPreview from './PostPreview';
@@ -21,7 +22,7 @@ export const AllPostsList = async ({ limit = Infinity }: AllPostsListProps) => {
 
   return (
     <div>
-      <h2>{limit === Infinity ? 'All posts' : 'Recent posts'}</h2>
+      <h1>{limit === Infinity ? 'All posts' : 'Recent posts'}</h1>
       {sortPosts(posts)
         .slice(0, limit)
         .map((post) => (
@@ -33,6 +34,7 @@ export const AllPostsList = async ({ limit = Infinity }: AllPostsListProps) => {
             excerpt={truncateHtml(post.content, 150) + '...'}
           />
         ))}
+      {limit !== Infinity && <Link href="/posts">View all posts</Link>}
     </div>
   );
 };

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { truncateHtml } from '../../lib/content';
 import {
   getAllProjectSlugs,
@@ -27,7 +28,7 @@ export const AllProjectsList = async ({
 
   return (
     <div>
-      <h2>{limit === Infinity ? 'All projects' : 'Recent projects'}</h2>
+      <h1>{limit === Infinity ? 'All projects' : 'Recent projects'}</h1>
       {sortProjects(projects)
         .slice(0, limit)
         .map((project) => (
@@ -40,6 +41,7 @@ export const AllProjectsList = async ({
             excerpt={truncateHtml(project.content, 150) + '...'}
           />
         ))}
+      {limit !== Infinity && <Link href="/projects">View all projects</Link>}
     </div>
   );
 };
