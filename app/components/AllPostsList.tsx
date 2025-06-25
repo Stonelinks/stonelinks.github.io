@@ -21,6 +21,7 @@ export const AllPostsList = async ({ limit = Infinity }: AllPostsListProps) => {
 
   return (
     <div>
+      <h2>{limit === Infinity ? 'All posts' : 'Recent posts'}</h2>
       {sortPosts(posts)
         .slice(0, limit)
         .map((post) => (

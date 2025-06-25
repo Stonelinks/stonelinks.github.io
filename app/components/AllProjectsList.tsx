@@ -27,6 +27,7 @@ export const AllProjectsList = async ({
 
   return (
     <div>
+      <h2>{limit === Infinity ? 'All projects' : 'Recent projects'}</h2>
       {sortProjects(projects)
         .slice(0, limit)
         .map((project) => (
