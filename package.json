@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port 3001",
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
@@ -16,11 +16,14 @@
   "dependencies": {
     "@fontsource/montserrat": "^5.2.6",
     "@fontsource/playfair-display": "^5.2.6",
+    "@react-three/drei": "9.88.13",
+    "@react-three/fiber": "8.15.19",
     "@tailwindcss/postcss": "^4.1.11",
     "@types/bun": "^1.2.19",
     "@types/node": "^20.19.9",
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
+    "@types/three": "0.158.3",
     "@typescript-eslint/eslint-plugin": "^8.38.0",
     "autoprefixer": "^10.4.21",
     "date-fns": "^4.1.0",
@@ -33,7 +36,7 @@
     "gh-pages": "^6.3.0",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.11.1",
-    "next": "^14.2.7",
+    "next": "^14.2.31",
     "node-fetch": "^3.3.2",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
@@ -46,6 +49,7 @@
     "remark": "^15.0.1",
     "remark-rehype": "^11.1.2",
     "tailwindcss": "^4.1.11",
+    "three": "0.158.0",
     "typescript": "^5.9.2"
   }
 }
