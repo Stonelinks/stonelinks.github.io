@@ -33,17 +33,20 @@ export const AllProjectsList = async ({
 
       {sortProjects(projects)
         .slice(0, limit)
-        .map((project) => (
-          <ProjectPreview
-            key={project.slug}
-            slug={project.slug}
-            title={project.metadata.title}
-            date={project.metadata.date}
-            dateFormat={project.metadata.dateFormat}
-            excerpt={truncateHtml(project.content, 200) + '...'}
-            featuredImage={project.metadata.featuredImage}
-          />
-        ))}
+        .map((project) => {
+          if (project.metadata.hidden) return null;
+          return (
+            <ProjectPreview
+              key={project.slug}
+              slug={project.slug}
+              title={project.metadata.title}
+              date={project.metadata.date}
+              dateFormat={project.metadata.dateFormat}
+              excerpt={truncateHtml(project.content, 200) + '...'}
+              featuredImage={project.metadata.featuredImage}
+            />
+          );
+        })}
       {limit !== Infinity && <Link href="/projects">View all projects</Link>}
     </div>
   );

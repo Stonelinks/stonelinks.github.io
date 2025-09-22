@@ -19,6 +19,7 @@ export interface ProjectMetadata {
   tags?: string[];
   gallery?: string[];
   excerpt?: string;
+  hidden?: boolean;
 }
 
 interface Project {
