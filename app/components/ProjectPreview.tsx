@@ -4,18 +4,27 @@ import { DateDisplay } from './Date';
 import { ProjectMetadata } from '../../types';
 import Image from 'next/image';
 
-const ProjectPreview: React.FC<ProjectMetadata> = ({
+interface ProjectPreviewProps extends ProjectMetadata {
+  disableLink?: boolean;
+}
+
+const ProjectPreview: React.FC<ProjectPreviewProps> = ({
   slug,
   title,
   date,
   dateFormat,
   excerpt,
   featuredImage,
+  disableLink,
 }) => {
   return (
     <div className="pb-4">
       <h2>
-        <Link href={`/projects/${slug}`}>{title}</Link>
+        {disableLink ? (
+          <Link href={`/projects/${slug}`}>{title}</Link>
+        ) : (
+          <span>{title}</span>
+        )}
       </h2>
       <DateDisplay date={date} dateFormat={dateFormat} />
       <div className="flex items-center space-x-4 mb-8">

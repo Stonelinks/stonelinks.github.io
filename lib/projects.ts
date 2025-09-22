@@ -1,4 +1,3 @@
-import { dateToString } from '@/components/Date';
 import { getContentByType, getAllSlugs } from './content';
 import Project from '@/projects/[slug]/page';
 

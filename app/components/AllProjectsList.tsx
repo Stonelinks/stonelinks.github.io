@@ -34,8 +34,9 @@ export const AllProjectsList = async ({
       {sortProjects(projects)
         .slice(0, limit)
         .map((project) => {
+          const isGithub = project.metadata.title.toLowerCase() == 'github';
           if (project.metadata.hidden) return null;
-          return (
+          const p = (
             <ProjectPreview
               key={project.slug}
               slug={project.slug}
@@ -44,8 +45,21 @@ export const AllProjectsList = async ({
               dateFormat={project.metadata.dateFormat}
               excerpt={truncateHtml(project.content, 200) + '...'}
               featuredImage={project.metadata.featuredImage}
+              disableHeaderLink={isGithub}
             />
           );
+          if (isGithub) {
+            return (
+              <a
+                key={project.slug}
+                href="https://github.com/Stonelinks"
+                target="_blank"
+              >
+                {p}
+              </a>
+            );
+          }
+          return p;
         })}
       {limit !== Infinity && <Link href="/projects">View all projects</Link>}
     </div>
