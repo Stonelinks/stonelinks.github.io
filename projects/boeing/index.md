@@ -1,7 +1,7 @@
 ---
 title: Boeing Robotic Wingbox
 featuredImage: /boeing/screenshot.png
-date: 2012-01-01
+date: 2012-01-05
 dateFormat: 'yyyy'
 ---
 

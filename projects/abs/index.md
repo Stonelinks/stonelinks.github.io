@@ -3,6 +3,7 @@ title: Awesome Backup System
 featuredImage: /abs/abs.png
 date: 2011-01-03
 dateFormat: 'yyyy'
+hidden: true
 ---
 
 Cross platform and bandwidth efficient file backups.

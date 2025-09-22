@@ -1,7 +1,7 @@
 ---
 title: Harvard - Smithsonian Center for Astrophysics
 featuredImage: /amf/chamber.png
-date: 2012-01-01
+date: 2012-01-04
 dateFormat: '2009 - yyyy'
 ---
 

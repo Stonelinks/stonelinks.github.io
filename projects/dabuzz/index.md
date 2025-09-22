@@ -3,6 +3,7 @@ title: DaBuzz
 featuredImage: /dabuzz/dabuzz.png
 date: 2011-01-03
 dateFormat: 'yyyy'
+hidden: true
 ---
 
 Applying natural language processing and scraping financial news sources to gauge public sentiment of the stock market.

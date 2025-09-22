@@ -12,26 +12,22 @@ export function getAllProjectSlugs(): string[] {
 
 export const sortProjects = (projects: Project[]): Project[] => {
   projects.sort((a, b) => {
-    const title = a.metadata.title || '';
-    if (title.toLowerCase() == 'github') {
-      return -1;
-    }
+    const titleA = (a.metadata.title || '').toLowerCase();
+    const titleB = (b.metadata.title || '').toLowerCase();
 
-    const dateA = a.metadata.date
-      ? Number(
-          dateToString(new Date(a.metadata.date), a.metadata.dateFormat).split(
-            ' ',
-          )[0],
-        )
-      : 0;
-    const dateB = b.metadata.date
-      ? Number(
-          dateToString(new Date(b.metadata.date), b.metadata.dateFormat).split(
-            ' ',
-          )[0],
-        )
-      : 0;
-    return dateB - dateA;
+    // Place the GitHub article at the very top
+    if (titleA === 'github' && titleB !== 'github') return -1;
+    if (titleB === 'github' && titleA !== 'github') return 1;
+    if (titleA === 'github' && titleB === 'github') return 0;
+
+    const dateA = a.metadata.date ? new Date(a.metadata.date).getTime() : 0;
+    const dateB = b.metadata.date ? new Date(b.metadata.date).getTime() : 0;
+
+    // Sort by date descending
+    if (dateA !== dateB) return dateB - dateA;
+
+    // If dates are equal, sort by title alphabetically
+    return a.metadata.title?.localeCompare(b.metadata.title ?? '') ?? 0;
   });
   return projects;
 };
