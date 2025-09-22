@@ -5,7 +5,7 @@ import { ProjectMetadata } from '../../types';
 import Image from 'next/image';
 
 interface ProjectPreviewProps extends ProjectMetadata {
-  disableLink?: boolean;
+  disableHeaderLink?: boolean;
 }
 
 const ProjectPreview: React.FC<ProjectPreviewProps> = ({
@@ -15,12 +15,12 @@ const ProjectPreview: React.FC<ProjectPreviewProps> = ({
   dateFormat,
   excerpt,
   featuredImage,
-  disableLink,
+  disableHeaderLink,
 }) => {
   return (
     <div className="pb-4">
       <h2>
-        {disableLink ? (
+        {disableHeaderLink ? (
           <Link href={`/projects/${slug}`}>{title}</Link>
         ) : (
           <span>{title}</span>
