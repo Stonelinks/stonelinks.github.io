@@ -21,9 +21,9 @@ const ProjectPreview: React.FC<ProjectPreviewProps> = ({
     <div className="pb-4">
       <h2>
         {disableHeaderLink ? (
-          <Link href={`/projects/${slug}`}>{title}</Link>
-        ) : (
           <span>{title}</span>
+        ) : (
+          <Link href={`/projects/${slug}`}>{title}</Link>
         )}
       </h2>
       <DateDisplay date={date} dateFormat={dateFormat} />
